@@ -179,7 +179,7 @@ export type OriginateParamsBase = {
   fee?: number;
   gasLimit?: number;
   storageLimit?: number;
-  mutez?: boolean;
+  mumav?: boolean;
 };
 
 /**
@@ -291,7 +291,7 @@ export interface TransferParams {
   parameter?: TransactionOperationParameter;
   gasLimit?: number;
   storageLimit?: number;
-  mutez?: boolean;
+  mumav?: boolean;
 }
 
 /**

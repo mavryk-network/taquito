@@ -36,7 +36,7 @@ export class SaplingTransactionViewer {
   /**
    * @description Retrieve the unspent balance associated with the configured viewing key and sapling state
    *
-   * @returns the balance in mutez represented as a BigNumber
+   * @returns the balance in mumav represented as a BigNumber
    *
    */
   async getBalance(): Promise<BigNumber> {

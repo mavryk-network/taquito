@@ -8,7 +8,7 @@ export interface SendParams {
     gasLimit?: number;
     amount: number;
     source?: string;
-    mutez?: boolean;
+    mumav?: boolean;
 }
 
 // Ensure that all parameter that are not in SendParams are defined

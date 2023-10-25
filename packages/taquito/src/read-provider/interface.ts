@@ -24,7 +24,7 @@ export interface TzReadProvider {
    * @description Access the balance of a contract.
    * @param address address from which we want to retrieve the balance
    * @param block from which we want to retrieve the balance
-   * @returns the balance in mutez
+   * @returns the balance in mumav
    */
   getBalance(address: string, block: BlockIdentifier): Promise<BigNumber>;
 

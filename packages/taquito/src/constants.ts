@@ -90,13 +90,13 @@ export const getRevealGasLimit = (address: string) =>
 
 const getRevealGasLimitInternal = (address: string) => {
   switch (address.substring(0, 3)) {
-    case 'tz1':
+    case 'mv1':
       return DEFAULT_GAS_LIMIT.REVEAL_TZ1;
-    case 'tz2':
+    case 'mv2':
       return DEFAULT_GAS_LIMIT.REVEAL_TZ2;
-    case 'tz3':
+    case 'mv3':
       return DEFAULT_GAS_LIMIT.REVEAL_TZ3;
-    case 'tz4':
+    case 'mv4':
       return DEFAULT_GAS_LIMIT.REVEAL_TZ4;
     default:
       throw new Error(`Cannot estimate reveal gas limit for ${address}`);

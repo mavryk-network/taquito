@@ -52,19 +52,19 @@ const pref = {
   ed: {
     pk: prefix['edpk'],
     sk: prefix['edsk'],
-    pkh: prefix.tz1,
+    pkh: prefix.mv1,
     sig: prefix.edsig,
   },
   p2: {
     pk: prefix['p2pk'],
     sk: prefix['p2sk'],
-    pkh: prefix.tz3,
+    pkh: prefix.mv3,
     sig: prefix.p2sig,
   },
   sp: {
     pk: prefix['sppk'],
     sk: prefix['spsk'],
-    pkh: prefix.tz2,
+    pkh: prefix.mv2,
     sig: prefix.spsig,
   },
 };

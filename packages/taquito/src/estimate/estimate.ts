@@ -55,7 +55,7 @@ export class Estimate {
     public readonly opSize: number | string,
     private readonly minimalFeePerStorageByteMutez: number | string,
     /**
-     * @description Base fee in mutez (1 mutez = 1e10−6 tez)
+     * @description Base fee in mumav (1 mumav = 1e10−6 tez)
      */
     private readonly baseFeeMutez: number | string = MINIMAL_FEE_MUTEZ
   ) {}

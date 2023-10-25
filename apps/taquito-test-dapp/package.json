@@ -24,17 +24,17 @@
     "vite": "^4.4.11"
   },
   "dependencies": {
-    "@airgap/beacon-sdk": "4.1.0",
-    "@taquito/beacon-wallet": "^17.5.2",
-    "@taquito/core": "^17.5.2",
-    "@taquito/taquito": "^17.5.2",
-    "@taquito/utils": "^17.5.2",
+    "@mavrykdynamics/beacon-sdk": "4.1.0",
+    "@mavrykdynamics/taquito-beacon-wallet": "^17.5.2",
+    "@mavrykdynamics/taquito": "^17.5.2",
+    "@mavrykdynamics/taquito-utils": "^17.5.2",
+    "@mavrykdynamics/taquito-core": "^17.5.2",
     "buffer": "^6.0.3",
     "svelte-select": "^5.7.0",
     "vite-compatible-readable-stream": "^3.6.1"
   },
   "alias": {
-    "@airgap/beacon-sdk": "../../node_modules/@airgap/beacon-sdk/dist/esm/index.js"
+    "@mavrykdynamics/beacon-sdk": "../../node_modules/@mavrykdynamics/beacon-sdk/dist/esm/index.js"
   },
   "prettier": {
     "svelteSortOrder": "options-scripts-styles-markup"

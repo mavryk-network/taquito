@@ -158,7 +158,7 @@ export type MichelsonSimpleComparableTypeID =
   | 'int'
   | 'bytes'
   | 'bool'
-  | 'mutez'
+  | 'mumav'
   | 'key_hash'
   | 'address'
   | 'timestamp'
@@ -205,7 +205,7 @@ export type MichelsonTypeInt = Type0<'int'>;
 export type MichelsonTypeNat = Type0<'nat'>;
 export type MichelsonTypeString = Type0<'string'>;
 export type MichelsonTypeBytes = Type0<'bytes'>;
-export type MichelsonTypeMutez = Type0<'mutez'>;
+export type MichelsonTypeMutez = Type0<'mumav'>;
 export type MichelsonTypeBool = Type0<'bool'>;
 export type MichelsonTypeKeyHash = Type0<'key_hash'>;
 export type MichelsonTypeTimestamp = Type0<'timestamp'>;
@@ -250,7 +250,7 @@ export type MichelsonType<T extends MichelsonTypeID = MichelsonTypeID> = T exten
   ? MichelsonTypeString
   : T extends 'bytes'
   ? MichelsonTypeBytes
-  : T extends 'mutez'
+  : T extends 'mumav'
   ? MichelsonTypeMutez
   : T extends 'bool'
   ? MichelsonTypeBool

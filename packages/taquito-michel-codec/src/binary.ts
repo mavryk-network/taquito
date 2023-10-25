@@ -145,7 +145,7 @@ const primitives: PrimID[] = [
   'signature',
   'string',
   'bytes',
-  'mutez',
+  'mumav',
   'timestamp',
   'unit',
   'operation',

@@ -11,7 +11,7 @@ export const ENTRYPOINT_MAX_LENGTH = 31;
 export enum CODEC {
   SECRET = 'secret',
   RAW = 'raw',
-  TZ1 = 'tz1',
+  TZ1 = 'mv1',
   BRANCH = 'branch',
   ZARITH = 'zarith',
   PUBLIC_KEY = 'public_key',
@@ -172,7 +172,7 @@ export const opMapping: { [key: string]: string } = {
   '67': 'signature',
   '68': 'string',
   '69': 'bytes',
-  '6a': 'mutez',
+  '6a': 'mumav',
   '6b': 'timestamp',
   '6c': 'unit',
   '6d': 'operation',

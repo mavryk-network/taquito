@@ -58,7 +58,7 @@ export interface ParametersSaplingTransaction {
   to: string;
   amount: number;
   memo?: string;
-  mutez?: boolean;
+  mumav?: boolean;
 }
 
 export type ParametersUnshieldedTransaction = Omit<ParametersSaplingTransaction, 'memo'>;

@@ -317,7 +317,7 @@ export const script24 = {
                                 ]
                               },
                               {
-                                "prim": "mutez",
+                                "prim": "mumav",
                                 "annots": [
                                   "%update_price"
                                 ]
@@ -886,7 +886,7 @@ export const script24 = {
                             "prim": "pair",
                             "args": [
                               {
-                                "prim": "mutez",
+                                "prim": "mumav",
                                 "annots": [
                                   "%price"
                                 ]
@@ -2367,7 +2367,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "0"
@@ -4098,7 +4098,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "1"
@@ -4248,7 +4248,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "0"
@@ -4294,7 +4294,7 @@ export const script24 = {
                                                     "prim": "string"
                                                   },
                                                   {
-                                                    "string": "WrongCondition: ((params.amount_tokens == sp.to_int(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()))) & (sp.amount == sp.mul(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()) * sp.fst(sp.ediv(self.data.price, sp.mutez(1)).open_some()), sp.mutez(1)))) & (sp.amount > sp.tez(0))"
+                                                    "string": "WrongCondition: ((params.amount_tokens == sp.to_int(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()))) & (sp.amount == sp.mul(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()) * sp.fst(sp.ediv(self.data.price, sp.mumav(1)).open_some()), sp.mumav(1)))) & (sp.amount > sp.tez(0))"
                                                   }
                                                 ]
                                               },
@@ -5696,7 +5696,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "0"
@@ -6454,7 +6454,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -6533,7 +6533,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -6612,7 +6612,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -6691,7 +6691,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -6770,7 +6770,7 @@ export const script24 = {
                                           "prim": "AMOUNT"
                                         },
                                         {
-                                          "prim": "SUB_MUTEZ"
+                                          "prim": "SUB_mumav"
                                         },
                                         {
                                           "prim": "IF_NONE",
@@ -6797,7 +6797,7 @@ export const script24 = {
                                           ]
                                         },
                                         {
-                                          "prim": "SUB_MUTEZ"
+                                          "prim": "SUB_mumav"
                                         },
                                         {
                                           "prim": "IF_NONE",
@@ -6942,7 +6942,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -7021,7 +7021,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -7208,7 +7208,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -7287,7 +7287,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -8499,7 +8499,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "1"
@@ -8649,7 +8649,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "0"
@@ -8695,7 +8695,7 @@ export const script24 = {
                                                     "prim": "string"
                                                   },
                                                   {
-                                                    "string": "WrongCondition: ((params.amount_tokens == sp.to_int(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()))) & (sp.amount == sp.mul(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()) * sp.fst(sp.ediv(self.data.price, sp.mutez(1)).open_some()), sp.mutez(1)))) & (sp.amount > sp.tez(0))"
+                                                    "string": "WrongCondition: ((params.amount_tokens == sp.to_int(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()))) & (sp.amount == sp.mul(sp.fst(sp.ediv(sp.amount, self.data.price).open_some()) * sp.fst(sp.ediv(self.data.price, sp.mumav(1)).open_some()), sp.mumav(1)))) & (sp.amount > sp.tez(0))"
                                                   }
                                                 ]
                                               },
@@ -10094,7 +10094,7 @@ export const script24 = {
                                                 "prim": "PUSH",
                                                 "args": [
                                                   {
-                                                    "prim": "mutez"
+                                                    "prim": "mumav"
                                                   },
                                                   {
                                                     "int": "0"
@@ -10826,7 +10826,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -10902,7 +10902,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -10981,7 +10981,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -11057,7 +11057,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -11136,7 +11136,7 @@ export const script24 = {
                                           "prim": "AMOUNT"
                                         },
                                         {
-                                          "prim": "SUB_MUTEZ"
+                                          "prim": "SUB_mumav"
                                         },
                                         {
                                           "prim": "IF_NONE",
@@ -11163,7 +11163,7 @@ export const script24 = {
                                           ]
                                         },
                                         {
-                                          "prim": "SUB_MUTEZ"
+                                          "prim": "SUB_mumav"
                                         },
                                         {
                                           "prim": "IF_NONE",
@@ -11308,7 +11308,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -11384,7 +11384,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -11571,7 +11571,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -11647,7 +11647,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "1"
@@ -13483,7 +13483,7 @@ export const script24 = {
                                           "prim": "PUSH",
                                           "args": [
                                             {
-                                              "prim": "mutez"
+                                              "prim": "mumav"
                                             },
                                             {
                                               "int": "0"

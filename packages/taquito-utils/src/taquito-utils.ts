@@ -86,9 +86,9 @@ export function b58decode(payload: string) {
   const buf = bs58check.decode(payload);
 
   const prefixMap = {
-    [prefix.tz1.toString()]: '0000',
-    [prefix.tz2.toString()]: '0001',
-    [prefix.tz3.toString()]: '0002',
+    [prefix.mv1.toString()]: '0000',
+    [prefix.mv2.toString()]: '0001',
+    [prefix.mv3.toString()]: '0002',
   };
 
   const rollupPrefMap = {
@@ -132,9 +132,9 @@ export function b58decodeL2Address(payload: string) {
 export function encodePubKey(value: string) {
   if (value.substring(0, 2) === '00') {
     const pref: { [key: string]: Uint8Array } = {
-      '0000': prefix.tz1,
-      '0001': prefix.tz2,
-      '0002': prefix.tz3,
+      '0000': prefix.mv1,
+      '0001': prefix.mv2,
+      '0002': prefix.mv3,
     };
 
     return b58cencode(value.substring(4), pref[value.substring(0, 4)]);
@@ -151,7 +151,7 @@ export function encodePubKey(value: string) {
  * @returns return address
  */
 export function encodeL2Address(value: string) {
-  return b58cencode(value, prefix.tz4);
+  return b58cencode(value, prefix.mv4);
 }
 /**
  *

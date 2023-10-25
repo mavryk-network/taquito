@@ -20,7 +20,7 @@ export const rpcContractResponse = {
                   {
                     prim: 'or',
                     args: [
-                      { prim: 'mutez', annots: ['%_Liq_entry_withdraw'] },
+                      { prim: 'mumav', annots: ['%_Liq_entry_withdraw'] },
                       {
                         prim: 'or',
                         args: [
@@ -28,12 +28,12 @@ export const rpcContractResponse = {
                           {
                             prim: 'pair',
                             args: [
-                              { prim: 'mutez', annots: ['%sellP'] },
+                              { prim: 'mumav', annots: ['%sellP'] },
                               {
                                 prim: 'pair',
                                 args: [
-                                  { prim: 'mutez', annots: ['%buyP'] },
-                                  { prim: 'mutez', annots: ['%extraBalance'] }
+                                  { prim: 'mumav', annots: ['%buyP'] },
+                                  { prim: 'mumav', annots: ['%extraBalance'] }
                                 ]
                               }
                             ],
@@ -80,7 +80,7 @@ export const rpcContractResponse = {
                               {
                                 prim: 'pair',
                                 args: [
-                                  { prim: 'mutez', annots: ['%inBaker'] },
+                                  { prim: 'mumav', annots: ['%inBaker'] },
                                   {
                                     prim: 'pair',
                                     args: [
@@ -89,11 +89,11 @@ export const rpcContractResponse = {
                                         prim: 'pair',
                                         args: [
                                           {
-                                            prim: 'mutez',
+                                            prim: 'mumav',
                                             annots: ['%buyPrice']
                                           },
                                           {
-                                            prim: 'mutez',
+                                            prim: 'mumav',
                                             annots: ['%sellPrice']
                                           }
                                         ]
@@ -848,11 +848,11 @@ export const rpcContractResponse = {
                         ],
                         {
                           prim: 'PUSH',
-                          args: [{ prim: 'mutez' }, { int: '1000000000000' }]
+                          args: [{ prim: 'mumav' }, { int: '1000000000000' }]
                         },
                         {
                           prim: 'PUSH',
-                          args: [{ prim: 'mutez' }, { int: '1000000' }]
+                          args: [{ prim: 'mumav' }, { int: '1000000' }]
                         },
                         [
                           {
@@ -907,7 +907,7 @@ export const rpcContractResponse = {
                               { prim: 'SENDER', annots: ['@addr'] },
                               {
                                 prim: 'PUSH',
-                                args: [{ prim: 'mutez' }, { int: '0' }]
+                                args: [{ prim: 'mumav' }, { int: '0' }]
                               },
                               { prim: 'AMOUNT', annots: ['@txAmount'] },
                               { prim: 'COMPARE' },

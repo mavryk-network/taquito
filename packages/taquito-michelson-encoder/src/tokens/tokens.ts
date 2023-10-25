@@ -19,7 +19,7 @@ import { OrToken } from './or';
 import { ContractToken } from './contract';
 
 import { ListToken } from './list';
-import { MutezToken } from './comparable/mutez';
+import { MutezToken } from './comparable/mumav';
 import { BytesToken } from './comparable/bytes';
 import { OptionToken } from './option';
 import { TimestampToken } from './comparable/timestamp';

@@ -116,7 +116,7 @@ export const rpcContractResponse = {
         prim: 'code',
         args: [
           [
-            { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+            { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
             { prim: 'AMOUNT' },
             { prim: 'COMPARE' },
             { prim: 'EQ' },
@@ -207,7 +207,7 @@ export const rpcContractResponse = {
                                     { prim: 'CAR' },
                                     {
                                       prim: 'PUSH',
-                                      args: [{ prim: 'mutez' }, { int: '0' }]
+                                      args: [{ prim: 'mumav' }, { int: '0' }]
                                     },
                                     { prim: 'DIG', args: [{ int: '2' }] },
                                     { prim: 'DIG', args: [{ int: '4' }] },
@@ -455,7 +455,7 @@ export const rpcContractResponse = {
                       [
                         { prim: 'DIG', args: [{ int: '2' }] },
                         { prim: 'CAR' },
-                        { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                        { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                         { prim: 'DIG', args: [{ int: '2' }] },
                         { prim: 'TRANSFER_TOKENS' },
                         { prim: 'DIG', args: [{ int: '3' }] },

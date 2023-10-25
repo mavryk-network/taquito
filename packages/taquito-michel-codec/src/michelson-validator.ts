@@ -141,7 +141,7 @@ const simpleComparableTypeIDs: Record<MichelsonSimpleComparableTypeID, true> = {
   string: true,
   chain_id: true,
   bytes: true,
-  mutez: true,
+  mumav: true,
   key_hash: true,
   key: true,
   signature: true,

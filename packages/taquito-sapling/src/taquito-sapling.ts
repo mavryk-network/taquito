@@ -117,7 +117,7 @@ export class SaplingToolkit {
    * @description Prepare a shielded transaction
    * @param shieldedTxParams `to` is the payment address that will receive the shielded tokens (zet).
    * `amount` is the amount of shielded tokens in tez by default.
-   * `mutez` needs to be set to true if the amount of shielded tokens is in mutez.
+   * `mumav` needs to be set to true if the amount of shielded tokens is in mumav.
    * `memo` is an empty string by default.
    * @returns a string representing the sapling transaction
    */
@@ -150,7 +150,7 @@ export class SaplingToolkit {
    * @description Prepare an unshielded transaction
    * @param unshieldedTxParams `to` is the Tezos address that will receive the unshielded tokens (tz1, tz2 or tz3).
    * `amount` is the amount of unshielded tokens in tez by default.
-   * `mutez` needs to be set to true if the amount of unshielded tokens is in mutez.
+   * `mumav` needs to be set to true if the amount of unshielded tokens is in mumav.
    * @returns a string representing the sapling transaction.
    */
   async prepareUnshieldedTransaction(unshieldedTxParams: ParametersUnshieldedTransaction) {
@@ -187,7 +187,7 @@ export class SaplingToolkit {
    * @description Prepare a sapling transaction (zet to zet)
    * @param saplingTxParams `to` is the payment address that will receive the shielded tokens (zet).
    * `amount` is the amount of unshielded tokens in tez by default.
-   * `mutez` needs to be set to true if the amount of unshielded tokens is in mutez.
+   * `mumav` needs to be set to true if the amount of unshielded tokens is in mumav.
    * `memo` is an empty string by default.
    * @returns a string representing the sapling transaction.
    */
@@ -232,9 +232,9 @@ export class SaplingToolkit {
 
     txParams.forEach((param) => {
       validateDestination(param.to);
-      const amountMutez = param.mutez
+      const amountMutez = param.mumav
         ? param.amount.toString()
-        : format('tz', 'mutez', param.amount).toString();
+        : format('tz', 'mumav', param.amount).toString();
       totalAmount = totalAmount.plus(new BigNumber(amountMutez));
       const memo = param.memo ?? DEFAULT_MEMO;
       if (memo.length > this.#memoSize) {
@@ -264,15 +264,15 @@ export class SaplingToolkit {
 
     let pad: Buffer;
     switch (pref) {
-      case 'tz1': {
+      case 'mv1': {
         pad = Buffer.from('00', 'hex');
         break;
       }
-      case 'tz2': {
+      case 'mv2': {
         pad = Buffer.from('01', 'hex');
         break;
       }
-      case 'tz3': {
+      case 'mv3': {
         pad = Buffer.from('02', 'hex');
         break;
       }

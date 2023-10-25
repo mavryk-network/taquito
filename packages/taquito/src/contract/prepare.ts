@@ -63,7 +63,7 @@ export const createOriginationOperation = async ({
   fee = DEFAULT_FEE.ORIGINATION,
   gasLimit = DEFAULT_GAS_LIMIT.ORIGINATION,
   storageLimit = DEFAULT_STORAGE_LIMIT.ORIGINATION,
-  mutez = false,
+  mumav = false,
 }: OriginateParams) => {
   if (storage !== undefined && init !== undefined) {
     throw new OriginationParameterError(
@@ -105,7 +105,7 @@ export const createOriginationOperation = async ({
     fee,
     gas_limit: gasLimit,
     storage_limit: storageLimit,
-    balance: mutez ? balance.toString() : format('tz', 'mutez', balance).toString(),
+    balance: mumav ? balance.toString() : format('tz', 'mumav', balance).toString(),
     script,
   };
 
@@ -122,14 +122,14 @@ export const createTransferOperation = async ({
   fee = DEFAULT_FEE.TRANSFER,
   gasLimit = DEFAULT_GAS_LIMIT.TRANSFER,
   storageLimit = DEFAULT_STORAGE_LIMIT.TRANSFER,
-  mutez = false,
+  mumav = false,
 }: TransferParams) => {
   const operation: RPCTransferOperation = {
     kind: OpKind.TRANSACTION,
     fee,
     gas_limit: gasLimit,
     storage_limit: storageLimit,
-    amount: mutez ? amount.toString() : format('tz', 'mutez', amount).toString(),
+    amount: mumav ? amount.toString() : format('tz', 'mumav', amount).toString(),
     destination: to,
     parameters: parameter,
   };

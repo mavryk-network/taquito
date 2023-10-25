@@ -1,4 +1,4 @@
-import { NetworkType } from "@airgap/beacon-sdk";
+import { NetworkType } from "@mavrykdynamics/beacon-sdk";
 
 export type SupportedNetworks = NetworkType.NAIROBINET | NetworkType.GHOSTNET | NetworkType.MAINNET | NetworkType.CUSTOM;
 

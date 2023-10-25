@@ -16,13 +16,13 @@ const pref = {
   p256: {
     pk: prefix['p2pk'],
     sk: prefix['p2sk'],
-    pkh: prefix.tz3,
+    pkh: prefix.mv3,
     sig: prefix.p2sig,
   },
   secp256k1: {
     pk: prefix['sppk'],
     sk: prefix['spsk'],
-    pkh: prefix.tz2,
+    pkh: prefix.mv2,
     sig: prefix.spsig,
   },
 };

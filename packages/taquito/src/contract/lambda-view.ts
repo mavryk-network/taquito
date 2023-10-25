@@ -47,7 +47,7 @@ export default class LambdaView {
     }
 
     return [
-      { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+      { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
       { prim: 'NONE', args: [{ prim: 'key_hash' }] },
       {
         prim: 'CREATE_CONTRACT',
@@ -133,7 +133,7 @@ export default class LambdaView {
                               },
                               {
                                 prim: 'PUSH',
-                                args: [{ prim: 'mutez' }, { int: '0' }],
+                                args: [{ prim: 'mumav' }, { int: '0' }],
                               },
                             ],
                           ],
@@ -193,7 +193,7 @@ export default class LambdaView {
                       [{ prim: 'DIP', args: [[{ prim: 'DROP' }]] }],
                     ],
                   },
-                  { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                  { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                 ],
               ],
             },

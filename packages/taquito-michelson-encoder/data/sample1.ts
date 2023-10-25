@@ -3514,7 +3514,7 @@ export const rpcContractResponse = {
                                     { prim: 'CDR', annots: ['@forward'] },
                                     {
                                       prim: 'PUSH',
-                                      args: [{ prim: 'mutez' }, { int: '0' }]
+                                      args: [{ prim: 'mumav' }, { int: '0' }]
                                     },
                                     [
                                       {
@@ -3812,7 +3812,7 @@ export const rpcContractResponse = {
                                           {
                                             prim: 'PUSH',
                                             args: [
-                                              { prim: 'mutez' },
+                                              { prim: 'mumav' },
                                               { int: '0' }
                                             ]
                                           },

@@ -91,13 +91,13 @@ export class ContractMethod<T extends ContractProvider | Wallet>
     storageLimit,
     source,
     amount = 0,
-    mutez = false,
+    mumav = false,
   }: Partial<SendParams> = {}): TransferParams {
     const fullTransferParams: ExplicitTransferParams = {
       to: this.address,
       amount,
       fee,
-      mutez,
+      mumav,
       source,
       gasLimit,
       storageLimit,

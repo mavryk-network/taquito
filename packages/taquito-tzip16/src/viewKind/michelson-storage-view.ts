@@ -89,7 +89,7 @@ export class MichelsonStorageView implements View {
         { prim: 'CONTRACT', args: [{ prim: 'unit' }] },
         { prim: 'IF_NONE', args: [[{ prim: 'UNIT' }, { prim: 'FAILWITH' }], []] },
       ],
-      BALANCE: [{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: contractBalance }] }],
+      BALANCE: [{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: contractBalance }] }],
       NOW: [{ prim: 'PUSH', args: [{ prim: 'timestamp' }, { string: blockTimeStamp }] }],
       CHAIN_ID: [{ prim: 'PUSH', args: [{ prim: 'string' }, { string: chainId }] }],
     };

@@ -3,8 +3,8 @@
   import { fly } from "svelte/transition";
   import { TezosToolkit } from "@taquito/taquito";
   import { BeaconWallet } from "@taquito/beacon-wallet";
-  // import { BeaconEvent, defaultEventCallbacks } from "@airgap/beacon-sdk";
-  import { BeaconEvent, type DAppClientOptions } from "@airgap/beacon-sdk";
+  // import { BeaconEvent, defaultEventCallbacks } from "@mavrykdynamics/beacon-sdk";
+  import type { BeaconEvent, type DAppClientOptions } from "@mavrykdynamics/beacon-sdk";
   import store from "../store";
   import { formatTokenAmount, shortenHash } from "../utils";
   import { defaultMatrixNode, getRpcUrl, defaultNetworkType, type SupportedNetworks } from "../config";

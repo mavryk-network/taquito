@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 const TZ_DECIMALS = 6;
 const MTZ_DECIMALS = 3;
 
-type Format = 'tz' | 'mtz' | 'mutez';
+type Format = 'tz' | 'mtz' | 'mumav';
 
 function getDecimal(format: Format) {
   switch (format) {
@@ -11,15 +11,15 @@ function getDecimal(format: Format) {
       return TZ_DECIMALS;
     case 'mtz':
       return MTZ_DECIMALS;
-    case 'mutez':
+    case 'mumav':
     default:
       return 0;
   }
 }
 
 export function format(
-  from: Format = 'mutez',
-  to: Format = 'mutez',
+  from: Format = 'mumav',
+  to: Format = 'mumav',
   amount: number | string | BigNumber
 ) {
   const bigNum = new BigNumber(amount);
