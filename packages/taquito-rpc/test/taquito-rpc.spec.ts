@@ -311,7 +311,7 @@ describe('RpcClient test', () => {
           { cycle: 53, deposits: '770072500000', fees: '784655', rewards: '23952869735' },
         ],
         staking_balance: '5902972035162',
-        delegated_contracts: ['tz1NFs6yP2sXd5vAAbR43bbDRpV2nahDZope'],
+        delegated_contracts: ['mv1GMPR1GXak5XEQdEXnh3P5odyZ1kvXzU5S'],
         delegated_balance: '0',
         deactivated: false,
         grace_period: 59,
@@ -337,7 +337,7 @@ describe('RpcClient test', () => {
           },
         ],
         staking_balance: new BigNumber('5902972035162'),
-        delegated_contracts: ['tz1NFs6yP2sXd5vAAbR43bbDRpV2nahDZope'],
+        delegated_contracts: ['mv1GMPR1GXak5XEQdEXnh3P5odyZ1kvXzU5S'],
         delegated_balance: new BigNumber('0'),
         deactivated: false,
         grace_period: 59,
@@ -354,7 +354,7 @@ describe('RpcClient test', () => {
         current_frozen_deposits: new BigNumber('120167343864'),
         frozen_deposits: new BigNumber('120167343864'),
         staking_balance: new BigNumber('1203308804406'),
-        delegated_contracts: ['tz1cjyja1TU6fiyiFav3mFAdnDsCReJ12hPD'],
+        delegated_contracts: ['mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'],
         delegated_balance: new BigNumber('4357512085'),
         deactivated: false,
         grace_period: 37,
@@ -371,7 +371,7 @@ describe('RpcClient test', () => {
         current_frozen_deposits: new BigNumber('96350095609'),
         frozen_deposits: new BigNumber('96350095609'),
         staking_balance: new BigNumber('970221941952'),
-        delegated_contracts: ['tz1cjyja1TU6fiyiFav3mFAdnDsCReJ12hPD'],
+        delegated_contracts: ['mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'],
         delegated_balance: new BigNumber('4689073922'),
         deactivated: false,
         grace_period: 42,
@@ -520,7 +520,7 @@ describe('RpcClient test', () => {
           { max_size: 135168, max_op: 132 },
           { max_size: 524288 },
         ],
-        baker: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+        baker: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
         level: {
           level: 596469,
           level_position: 596468,
@@ -534,25 +534,25 @@ describe('RpcClient test', () => {
         nonce_hash: null,
         consumed_gas: '10200',
         deactivated: [],
-        proposer_consensus_key: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
-        baker_consensus_key: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+        proposer_consensus_key: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
+        baker_consensus_key: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+            contract: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
             change: '-512000000',
           },
           {
             kind: 'freezer',
             category: 'deposits',
-            delegate: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+            delegate: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
             cycle: 145,
             change: '512000000',
           },
           {
             kind: 'freezer',
             category: 'rewards',
-            delegate: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+            delegate: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
             cycle: 145,
             change: '16000000',
           },
@@ -585,7 +585,7 @@ describe('RpcClient test', () => {
           { max_size: 135168, max_op: 132 },
           { max_size: 524288 },
         ],
-        baker: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+        baker: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
         level: {
           level: 596469,
           level_position: 596468,
@@ -599,25 +599,25 @@ describe('RpcClient test', () => {
         nonce_hash: null,
         consumed_gas: '10200',
         deactivated: [],
-        proposer_consensus_key: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
-        baker_consensus_key: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+        proposer_consensus_key: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
+        baker_consensus_key: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+            contract: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
             change: '-512000000',
           },
           {
             kind: 'freezer',
             category: 'deposits',
-            delegate: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+            delegate: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
             cycle: 145,
             change: '512000000',
           },
           {
             kind: 'freezer',
             category: 'rewards',
-            delegate: 'tz1Lhf4J9Qxoe3DZ2nfe8FGDnvVj7oKjnMY6',
+            delegate: 'mv1F873FYFUde4ZLVzoV26rkzXGAftWpciTN',
             cycle: 145,
             change: '16000000',
           },
@@ -680,7 +680,7 @@ describe('RpcClient test', () => {
           numerator: 1,
           denominator: 2,
         },
-        testnet_dictator: 'tz1Xf8zdT3DbAX9cHw3c3CXh79rc4nK4gCe8',
+        testnet_dictator: 'mv1TQVEqbq743rV4f3z4XG8cGX6vk9DniVUP',
         cache_script_size: 100000000,
         cache_stake_distribution_cycles: 8,
         cache_sampler_state_cycles: 8,
@@ -784,7 +784,7 @@ describe('RpcClient test', () => {
           numerator: 1,
           denominator: 2,
         },
-        testnet_dictator: 'tz1Xf8zdT3DbAX9cHw3c3CXh79rc4nK4gCe8',
+        testnet_dictator: 'mv1TQVEqbq743rV4f3z4XG8cGX6vk9DniVUP',
         cache_script_size: 100000000,
         cache_stake_distribution_cycles: 8,
         cache_sampler_state_cycles: 8,
@@ -1361,7 +1361,7 @@ describe('RpcClient test', () => {
                 max_size: 524288,
               },
             ],
-            baker: 'tz1NpWrAyDL9k2Lmnyxcgr9xuJakbBxdq7FB',
+            baker: 'mv1D4z1avNCNYvxrFZJCSuaKgE6pzxLRTJgm',
             level: {
               level: 578756,
               level_position: 578755,
@@ -1378,20 +1378,20 @@ describe('RpcClient test', () => {
             balance_updates: [
               {
                 kind: 'contract',
-                contract: 'tz1NpWrAyDL9k2Lmnyxcgr9xuJakbBxdq7FB',
+                contract: 'mv1D4z1avNCNYvxrFZJCSuaKgE6pzxLRTJgm',
                 change: '-512000000',
               },
               {
                 kind: 'freezer',
                 category: 'deposits',
-                delegate: 'tz1NpWrAyDL9k2Lmnyxcgr9xuJakbBxdq7FB',
+                delegate: 'mv1D4z1avNCNYvxrFZJCSuaKgE6pzxLRTJgm',
                 cycle: 141,
                 change: '512000000',
               },
               {
                 kind: 'freezer',
                 category: 'rewards',
-                delegate: 'tz1NpWrAyDL9k2Lmnyxcgr9xuJakbBxdq7FB',
+                delegate: 'mv1D4z1avNCNYvxrFZJCSuaKgE6pzxLRTJgm',
                 cycle: 141,
                 change: '16000000',
               },
@@ -1412,25 +1412,25 @@ describe('RpcClient test', () => {
                       balance_updates: [
                         {
                           kind: 'contract',
-                          contract: 'tz1iZEKy4LaAjnTmn2RuGDf2iqdAQKnRi8kY',
+                          contract: 'mv1R4zXmLb92pvPD1kfvfT4HVCydbmg4zoUU',
                           change: '-64000000',
                         },
                         {
                           kind: 'freezer',
                           category: 'deposits',
-                          delegate: 'tz1iZEKy4LaAjnTmn2RuGDf2iqdAQKnRi8kY',
+                          delegate: 'mv1R4zXmLb92pvPD1kfvfT4HVCydbmg4zoUU',
                           cycle: 141,
                           change: '64000000',
                         },
                         {
                           kind: 'freezer',
                           category: 'rewards',
-                          delegate: 'tz1iZEKy4LaAjnTmn2RuGDf2iqdAQKnRi8kY',
+                          delegate: 'mv1R4zXmLb92pvPD1kfvfT4HVCydbmg4zoUU',
                           cycle: 141,
                           change: '2000000',
                         },
                       ],
-                      delegate: 'tz1iZEKy4LaAjnTmn2RuGDf2iqdAQKnRi8kY',
+                      delegate: 'mv1R4zXmLb92pvPD1kfvfT4HVCydbmg4zoUU',
                       slots: [16],
                     },
                   },
@@ -1500,7 +1500,7 @@ describe('RpcClient test', () => {
                 max_size: 524288,
               },
             ],
-            baker: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+            baker: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
             level: {
               level: 90973,
               level_position: 90972,
@@ -1533,20 +1533,20 @@ describe('RpcClient test', () => {
             balance_updates: [
               {
                 kind: 'contract',
-                contract: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+                contract: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
                 change: '-512000000',
               },
               {
                 kind: 'freezer',
                 category: 'deposits',
-                delegate: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+                delegate: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
                 cycle: 44,
                 change: '512000000',
               },
               {
                 kind: 'freezer',
                 category: 'rewards',
-                delegate: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+                delegate: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
                 cycle: 44,
                 change: '38750000',
               },
@@ -1562,7 +1562,7 @@ describe('RpcClient test', () => {
                 contents: [
                   {
                     kind: 'transaction',
-                    source: 'tz3beCZmQhd5Q1KNMZbiLCarXVo9aqpPHYe8',
+                    source: 'mv3JTxK9Yr6KU1cq5QAN3ZxVYKK5w6sg4xoV',
                     fee: '2820',
                     counter: '184578',
                     gas_limit: '24760',
@@ -1575,7 +1575,7 @@ describe('RpcClient test', () => {
                         prim: 'Pair',
                         args: [
                           {
-                            string: 'tz3beCZmQhd5Q1KNMZbiLCarXVo9aqpPHYe8',
+                            string: 'mv3JTxK9Yr6KU1cq5QAN3ZxVYKK5w6sg4xoV',
                           },
                           {
                             int: '100',
@@ -1587,13 +1587,13 @@ describe('RpcClient test', () => {
                       balance_updates: [
                         {
                           kind: 'contract',
-                          contract: 'tz3beCZmQhd5Q1KNMZbiLCarXVo9aqpPHYe8',
+                          contract: 'mv3JTxK9Yr6KU1cq5QAN3ZxVYKK5w6sg4xoV',
                           change: '-2820',
                         },
                         {
                           kind: 'freezer',
                           category: 'fees',
-                          delegate: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+                          delegate: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
                           cycle: 44,
                           change: '2820',
                         },
@@ -1636,7 +1636,7 @@ describe('RpcClient test', () => {
                         balance_updates: [
                           {
                             kind: 'contract',
-                            contract: 'tz3beCZmQhd5Q1KNMZbiLCarXVo9aqpPHYe8',
+                            contract: 'mv3JTxK9Yr6KU1cq5QAN3ZxVYKK5w6sg4xoV',
                             change: '-250',
                           },
                         ],
@@ -1739,14 +1739,14 @@ describe('RpcClient test', () => {
                       balance_updates: [
                         {
                           kind: 'contract',
-                          contract: 'tz1VWasoyFGAWZt5K2qZRzP3cWzv3z7MMhP8',
+                          contract: 'mv1XAsUdbF1PgG3iierMq88yzqKNUwhQYsJr',
                           change: '-320000000',
                           origin: 'block',
                         },
                         {
                           kind: 'freezer',
                           category: 'deposits',
-                          delegate: 'tz1VWasoyFGAWZt5K2qZRzP3cWzv3z7MMhP8',
+                          delegate: 'mv1XAsUdbF1PgG3iierMq88yzqKNUwhQYsJr',
                           cycle: 85,
                           change: '320000000',
                           origin: 'block',
@@ -1754,13 +1754,13 @@ describe('RpcClient test', () => {
                         {
                           kind: 'freezer',
                           category: 'rewards',
-                          delegate: 'tz1VWasoyFGAWZt5K2qZRzP3cWzv3z7MMhP8',
+                          delegate: 'mv1XAsUdbF1PgG3iierMq88yzqKNUwhQYsJr',
                           cycle: 85,
                           change: '6250000',
                           origin: 'block',
                         },
                       ],
-                      delegate: 'tz1VWasoyFGAWZt5K2qZRzP3cWzv3z7MMhP8',
+                      delegate: 'mv1XAsUdbF1PgG3iierMq88yzqKNUwhQYsJr',
                       slots: [4, 11, 18, 21, 24],
                     },
                   },
@@ -1829,7 +1829,7 @@ describe('RpcClient test', () => {
                 max_size: 524288,
               },
             ],
-            baker: 'tz1W5VkdB5s7ENMESVBtwyt9kyvLqPcUczRT',
+            baker: 'mv1LBrT781yyeKUhe3w63BWBHo5wGzHTokuN',
             level: {
               level: 1470478,
               level_position: 1470477,
@@ -1862,14 +1862,14 @@ describe('RpcClient test', () => {
             balance_updates: [
               {
                 kind: 'contract',
-                contract: 'tz1W5VkdB5s7ENMESVBtwyt9kyvLqPcUczRT',
+                contract: 'mv1LBrT781yyeKUhe3w63BWBHo5wGzHTokuN',
                 change: '-512000000',
                 origin: 'block',
               },
               {
                 kind: 'freezer',
                 category: 'deposits',
-                delegate: 'tz1W5VkdB5s7ENMESVBtwyt9kyvLqPcUczRT',
+                delegate: 'mv1LBrT781yyeKUhe3w63BWBHo5wGzHTokuN',
                 cycle: 359,
                 change: '512000000',
                 origin: 'block',
@@ -1877,7 +1877,7 @@ describe('RpcClient test', () => {
               {
                 kind: 'freezer',
                 category: 'rewards',
-                delegate: 'tz1W5VkdB5s7ENMESVBtwyt9kyvLqPcUczRT',
+                delegate: 'mv1LBrT781yyeKUhe3w63BWBHo5wGzHTokuN',
                 cycle: 359,
                 change: '33750000',
                 origin: 'block',
@@ -1894,7 +1894,7 @@ describe('RpcClient test', () => {
                 contents: [
                   {
                     kind: 'transaction',
-                    source: 'tz1PaJwmmL2nrRt5K6HvwFEc6fUfxNe6Dyp5',
+                    source: 'mv1B5r3fzVLpSUQSNNk7SPbUL6zXbnNqBh4n',
                     fee: '12543',
                     counter: '12961179',
                     gas_limit: '122564',
@@ -1919,14 +1919,14 @@ describe('RpcClient test', () => {
                       balance_updates: [
                         {
                           kind: 'contract',
-                          contract: 'tz1PaJwmmL2nrRt5K6HvwFEc6fUfxNe6Dyp5',
+                          contract: 'mv1B5r3fzVLpSUQSNNk7SPbUL6zXbnNqBh4n',
                           change: '-12543',
                           origin: 'block',
                         },
                         {
                           kind: 'freezer',
                           category: 'fees',
-                          delegate: 'tz1W5VkdB5s7ENMESVBtwyt9kyvLqPcUczRT',
+                          delegate: 'mv1LBrT781yyeKUhe3w63BWBHo5wGzHTokuN',
                           cycle: 359,
                           change: '12543',
                           origin: 'block',
@@ -2034,7 +2034,7 @@ describe('RpcClient test', () => {
                         balance_updates: [
                           {
                             kind: 'contract',
-                            contract: 'tz1PaJwmmL2nrRt5K6HvwFEc6fUfxNe6Dyp5',
+                            contract: 'mv1B5r3fzVLpSUQSNNk7SPbUL6zXbnNqBh4n',
                             change: '-500000',
                             origin: 'block',
                           },
@@ -2234,7 +2234,7 @@ describe('RpcClient test', () => {
                             balance_updates: [
                               {
                                 kind: 'contract',
-                                contract: 'tz1PaJwmmL2nrRt5K6HvwFEc6fUfxNe6Dyp5',
+                                contract: 'mv1B5r3fzVLpSUQSNNk7SPbUL6zXbnNqBh4n',
                                 change: '-16750',
                                 origin: 'block',
                               },
@@ -2406,7 +2406,7 @@ describe('RpcClient test', () => {
                 contents: [
                   {
                     kind: 'origination',
-                    source: 'tz2BG2915vryjQF4kTnqUWC7hQ6Bc4YKZQC4',
+                    source: 'mv2bGF58V4EPdZnjwb8QpkerLvB7xW7bnqTg',
                     fee: '2138',
                     counter: '1000052',
                     gas_limit: '8849',
@@ -2421,12 +2421,12 @@ describe('RpcClient test', () => {
                         balance_updates: [
                           {
                             kind: 'contract',
-                            contract: 'tz2BG2915vryjQF4kTnqUWC7hQ6Bc4YKZQC4',
+                            contract: 'mv2bGF58V4EPdZnjwb8QpkerLvB7xW7bnqTg',
                             change: '-261250',
                           },
                           {
                             kind: 'contract',
-                            contract: 'tz2BG2915vryjQF4kTnqUWC7hQ6Bc4YKZQC4',
+                            contract: 'mv2bGF58V4EPdZnjwb8QpkerLvB7xW7bnqTg',
                             change: '-64250',
                           },
                         ],
@@ -2530,7 +2530,7 @@ describe('RpcClient test', () => {
               { max_size: 135168, max_op: 132 },
               { max_size: 524288 },
             ],
-            baker: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+            baker: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
             level_info: {
               level: 218022,
               level_position: 218021,
@@ -2640,7 +2640,7 @@ describe('RpcClient test', () => {
                 contents: [
                   {
                     kind: 'register_global_constant',
-                    source: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+                    source: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
                     fee: '372',
                     counter: '7423375',
                     gas_limit: '1330',
@@ -2660,14 +2660,14 @@ describe('RpcClient test', () => {
                       balance_updates: [
                         {
                           kind: 'contract',
-                          contract: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+                          contract: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
                           change: '-372',
                           origin: 'block',
                         },
                         {
                           kind: 'freezer',
                           category: 'fees',
-                          delegate: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+                          delegate: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
                           cycle: 17,
                           change: '372',
                           origin: 'block',
@@ -2678,7 +2678,7 @@ describe('RpcClient test', () => {
                         balance_updates: [
                           {
                             kind: 'contract',
-                            contract: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+                            contract: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
                             change: '-18250',
                             origin: 'block',
                           },
@@ -2703,7 +2703,7 @@ describe('RpcClient test', () => {
       expect(response.operations[3][0].contents[0].kind).toEqual('register_global_constant');
       const content = response.operations[3][0]
         .contents[0] as OperationContentsAndResultRegisterGlobalConstant;
-      expect(content.source).toEqual('tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D');
+      expect(content.source).toEqual('mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF');
       expect(content.fee).toEqual('372');
       expect(content.counter).toEqual('7423375');
       expect(content.gas_limit).toEqual('1330');
@@ -2722,7 +2722,7 @@ describe('RpcClient test', () => {
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toBeDefined();
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D'
+        'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF'
       );
       expect(content.metadata.balance_updates![0].change).toBeDefined();
       expect(content.metadata.balance_updates![0].change).toEqual('-372');
@@ -2786,7 +2786,7 @@ describe('RpcClient test', () => {
       const response = await client.getBlock();
 
       expect(response.metadata.proposer).toBeDefined();
-      expect(response.metadata.proposer).toEqual('tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9');
+      expect(response.metadata.proposer).toEqual('mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq');
       expect(response.metadata.balance_updates![0].category).toBeDefined();
     });
 
@@ -2820,7 +2820,7 @@ describe('RpcClient test', () => {
       expect(response.operations[3][0].contents[0].kind).toEqual(OpKind.SET_DEPOSITS_LIMIT);
       const content = response.operations[3][0]
         .contents[0] as OperationContentsAndResultSetDepositsLimit;
-      expect(content.source).toEqual('tz2FViF6XzJ4PqD5TTuaAtZScmiwpJBGBpSh');
+      expect(content.source).toEqual('mv2WjrtMR7h9izSEi5TF4BVFfK2hnV9pMoWm');
       expect(content.fee).toEqual('1500');
       expect(content.counter).toEqual('146662');
       expect(content.gas_limit).toEqual('1000');
@@ -2830,7 +2830,7 @@ describe('RpcClient test', () => {
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toBeDefined();
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz2FViF6XzJ4PqD5TTuaAtZScmiwpJBGBpSh'
+        'mv2WjrtMR7h9izSEi5TF4BVFfK2hnV9pMoWm'
       );
       expect(content.metadata.balance_updates![0].change).toBeDefined();
       expect(content.metadata.balance_updates![0].change).toEqual('-1500');
@@ -2855,7 +2855,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultTxRollupOrigination;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_ORIGINATION);
-      expect(content.source).toEqual('tz1QWLc8oL7Bo7BMa6CKfFioeJ4XdmCFf2xZ');
+      expect(content.source).toEqual('mv1VMUTeo5K5HGm8CSGFZQEAoJW9wtff359j');
       expect(content.fee).toEqual('380');
       expect(content.counter).toEqual('173977');
       expect(content.gas_limit).toEqual('1521');
@@ -2864,7 +2864,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1QWLc8oL7Bo7BMa6CKfFioeJ4XdmCFf2xZ'
+        'mv1VMUTeo5K5HGm8CSGFZQEAoJW9wtff359j'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-380');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -2886,7 +2886,7 @@ describe('RpcClient test', () => {
       expect(content.metadata.operation_result.balance_updates).toBeDefined();
       expect(content.metadata.operation_result.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.operation_result.balance_updates![0].contract).toEqual(
-        'tz1QWLc8oL7Bo7BMa6CKfFioeJ4XdmCFf2xZ'
+        'mv1VMUTeo5K5HGm8CSGFZQEAoJW9wtff359j'
       );
       expect(content.metadata.operation_result.balance_updates![0].change).toEqual('-1000000');
       expect(content.metadata.operation_result.balance_updates![0].origin).toEqual('block');
@@ -2907,7 +2907,7 @@ describe('RpcClient test', () => {
         .contents[1] as OperationContentsAndResultTxRollupSubmitBatch;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_SUBMIT_BATCH);
-      expect(content.source).toEqual('tz1QWLc8oL7Bo7BMa6CKfFioeJ4XdmCFf2xZ');
+      expect(content.source).toEqual('mv1VMUTeo5K5HGm8CSGFZQEAoJW9wtff359j');
       expect(content.fee).toEqual('476');
       expect(content.counter).toEqual('173978');
       expect(content.gas_limit).toEqual('2209');
@@ -2917,7 +2917,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1QWLc8oL7Bo7BMa6CKfFioeJ4XdmCFf2xZ'
+        'mv1VMUTeo5K5HGm8CSGFZQEAoJW9wtff359j'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-476');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -2942,7 +2942,7 @@ describe('RpcClient test', () => {
         .contents[2] as OperationContentsAndResultTxRollupCommit;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_COMMIT);
-      expect(content.source).toEqual('tz1gqDrJYH8rTkdG3gCLTtRA1d7UZDjYFNRY');
+      expect(content.source).toEqual('mv1L3PwqW9feicKKFtsXnCpw2F2G4hTpwAGN');
       expect(content.fee).toEqual('735');
       expect(content.counter).toEqual('182217');
       expect(content.gas_limit).toEqual('3838');
@@ -2965,7 +2965,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1gqDrJYH8rTkdG3gCLTtRA1d7UZDjYFNRY'
+        'mv1L3PwqW9feicKKFtsXnCpw2F2G4hTpwAGN'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-735');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -2989,7 +2989,7 @@ describe('RpcClient test', () => {
         .contents[3] as OperationContentsAndResultTxRollupFinalizeCommitment;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_FINALIZE_COMMITMENT);
-      expect(content.source).toEqual('tz1gqDrJYH8rTkdG3gCLTtRA1d7UZDjYFNRY');
+      expect(content.source).toEqual('mv1L3PwqW9feicKKFtsXnCpw2F2G4hTpwAGN');
       expect(content.fee).toEqual('507');
       expect(content.counter).toEqual('182232');
       expect(content.gas_limit).toEqual('2602');
@@ -3000,7 +3000,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1gqDrJYH8rTkdG3gCLTtRA1d7UZDjYFNRY'
+        'mv1L3PwqW9feicKKFtsXnCpw2F2G4hTpwAGN'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-507');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -3025,7 +3025,7 @@ describe('RpcClient test', () => {
         .contents[4] as OperationContentsAndResultTxRollupDispatchTickets;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_DISPATCH_TICKETS);
-      expect(content.source).toEqual('tz1inuxjXxKhd9e4b97N1Wgz7DwmZSxFcDpM');
+      expect(content.source).toEqual('mv1BPbLKTyEnFcXMKVYFtETTS1RzN7ez2Tmd');
       expect(content.fee).toEqual('835');
       expect(content.counter).toEqual('252405');
       expect(content.gas_limit).toEqual('4354');
@@ -3047,7 +3047,7 @@ describe('RpcClient test', () => {
       expect((content.tickets_info[0].ty as MichelsonV1ExpressionExtended).prim).toEqual('string');
       expect(content.tickets_info[0].ticketer).toEqual('KT1EMQxfYVvhTJTqMiVs2ho2dqjbYfYKk6BY');
       expect(content.tickets_info[0].amount).toEqual('2');
-      expect(content.tickets_info[0].claimer).toEqual('tz1inuxjXxKhd9e4b97N1Wgz7DwmZSxFcDpM');
+      expect(content.tickets_info[0].claimer).toEqual('mv1BPbLKTyEnFcXMKVYFtETTS1RzN7ez2Tmd');
     });
 
     it('should access the properties of the operation type tx_rollup_remove_commitment, proto13', async () => {
@@ -3058,7 +3058,7 @@ describe('RpcClient test', () => {
         .contents[5] as OperationContentsAndResultTxRollupRemoveCommitment;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_REMOVE_COMMITMENT);
-      expect(content.source).toEqual('tz1M1PXyMAhAsXroc6DtuWUUeHvb79ZzCnCp');
+      expect(content.source).toEqual('mv196Ys7iqGUNqb83SDs3TKPiR7GzKEMysse');
       expect(content.fee).toEqual('574');
       expect(content.counter).toEqual('252310');
       expect(content.gas_limit).toEqual('3272');
@@ -3069,7 +3069,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1M1PXyMAhAsXroc6DtuWUUeHvb79ZzCnCp'
+        'mv196Ys7iqGUNqb83SDs3TKPiR7GzKEMysse'
       );
 
       expect(content.metadata.balance_updates![1].kind).toEqual('accumulator');
@@ -3092,7 +3092,7 @@ describe('RpcClient test', () => {
         .contents[6] as OperationContentsAndResultTxRollupRejection;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_REJECTION);
-      expect(content.source).toEqual('tz1MDU45gNc9Ko1Q9obcz6hQkKSMiQRib6GZ');
+      expect(content.source).toEqual('mv1V3i8g48ZdcjTqXscgysigjvkhqjjkiQNY');
       expect(content.fee).toEqual('2837');
       expect(content.counter).toEqual('266515');
       expect(content.gas_limit).toEqual('11633');
@@ -3174,7 +3174,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1MDU45gNc9Ko1Q9obcz6hQkKSMiQRib6GZ'
+        'mv1V3i8g48ZdcjTqXscgysigjvkhqjjkiQNY'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-2837');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -3190,7 +3190,7 @@ describe('RpcClient test', () => {
       expect(content.metadata.operation_result.balance_updates![0].kind).toEqual('freezer');
       expect(content.metadata.operation_result.balance_updates![0].category!).toEqual('bonds');
       expect(content.metadata.operation_result.balance_updates![0].contract!).toEqual(
-        'tz1Lg9iLTS8Hk6kLfTN6rrrL9gYPfsTQ9z75'
+        'mv1GAboWXYCjUNwZaM99ErKF3RJFgRLipKzu'
       );
       expect(content.metadata.operation_result.balance_updates![0].bond_id!.tx_rollup).toEqual(
         'txr1V16e1hXyVKndP4aE8cujRfryoHTiHK9fG'
@@ -3214,7 +3214,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.operation_result.balance_updates![3].kind).toEqual('contract');
       expect(content.metadata.operation_result.balance_updates![3].contract!).toEqual(
-        'tz1MDU45gNc9Ko1Q9obcz6hQkKSMiQRib6GZ'
+        'mv1V3i8g48ZdcjTqXscgysigjvkhqjjkiQNY'
       );
       expect(content.metadata.operation_result.balance_updates![3].change).toEqual('5000000000');
       expect(content.metadata.operation_result.balance_updates![3].origin!).toEqual('block');
@@ -3231,7 +3231,7 @@ describe('RpcClient test', () => {
         .contents[7] as OperationContentsAndResultTxRollupReturnBond;
 
       expect(content.kind).toEqual(OpKind.TX_ROLLUP_RETURN_BOND);
-      expect(content.source).toEqual('tz2Q3efwpRvKL2Tvta8h6N5niV54Rw8iSEes');
+      expect(content.source).toEqual('mv2PAwapUGtxrTt3JcbgAB49uSWMWeW7qC7L');
       expect(content.fee).toEqual('512');
       expect(content.counter).toEqual('36');
       expect(content.gas_limit).toEqual('2676');
@@ -3241,7 +3241,7 @@ describe('RpcClient test', () => {
       expect(content.metadata.balance_updates).toBeDefined();
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz2Q3efwpRvKL2Tvta8h6N5niV54Rw8iSEes'
+        'mv2PAwapUGtxrTt3JcbgAB49uSWMWeW7qC7L'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-512');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -3255,7 +3255,7 @@ describe('RpcClient test', () => {
       expect(content.metadata.operation_result.balance_updates![0].kind).toEqual('freezer');
       expect(content.metadata.operation_result.balance_updates![0].category).toEqual('bonds');
       expect(content.metadata.operation_result.balance_updates![0].contract).toEqual(
-        'tz2Q3efwpRvKL2Tvta8h6N5niV54Rw8iSEes'
+        'mv2PAwapUGtxrTt3JcbgAB49uSWMWeW7qC7L'
       );
       expect(content.metadata.operation_result.balance_updates![0].bond_id!.tx_rollup).toEqual(
         'txr1TeZQiQrjaEop11Lh8fpsTdyJgQvr5igST'
@@ -3272,7 +3272,7 @@ describe('RpcClient test', () => {
         .contents[1] as OperationContentsAndResultTransferTicket;
 
       expect(content.kind).toEqual(OpKind.TRANSFER_TICKET);
-      expect(content.source).toEqual('tz1TNiFHBzrJjVkXXzigJLxGaNrcgREe7Hwa');
+      expect(content.source).toEqual('mv1MrAxeLrJ7VTe7fBkzaNFJhHvZMMmMA2CJ');
       expect(content.fee).toEqual('708');
       expect(content.counter).toEqual('1826');
       expect(content.gas_limit).toEqual('5009');
@@ -3288,7 +3288,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1TNiFHBzrJjVkXXzigJLxGaNrcgREe7Hwa'
+        'mv1MrAxeLrJ7VTe7fBkzaNFJhHvZMMmMA2CJ'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-708');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -3311,7 +3311,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultIncreasePaidStorage;
 
       expect(content.kind).toEqual(OpKind.INCREASE_PAID_STORAGE);
-      expect(content.source).toEqual('tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG');
+      expect(content.source).toEqual('mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2');
       expect(content.fee).toEqual('349');
       expect(content.counter).toEqual('108123');
       expect(content.gas_limit).toEqual('1000');
@@ -3323,7 +3323,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG'
+        'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-349');
       expect(content.metadata.balance_updates![1].origin).toEqual('block');
@@ -3392,36 +3392,36 @@ describe('RpcClient test', () => {
         .contents[1] as OperationContentsAndResultDrainDelegate;
 
       expect(content.kind).toEqual(OpKind.DRAIN_DELEGATE);
-      expect(content.consensus_key).toEqual('tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj');
-      expect(content.delegate).toEqual('tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv');
-      expect(content.destination).toEqual('tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj');
+      expect(content.consensus_key).toEqual('mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq');
+      expect(content.delegate).toEqual('mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr');
+      expect(content.destination).toEqual('mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq');
 
       expect(content.metadata.balance_updates).toBeDefined();
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv'
+        'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-15525772494');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
 
       expect(content.metadata.balance_updates![1].kind).toEqual('contract');
       expect(content.metadata.balance_updates![1].contract).toEqual(
-        'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj'
+        'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq'
       );
       expect(content.metadata.balance_updates![1].change).toEqual('15525772494');
       expect(content.metadata.balance_updates![1].origin).toEqual('block');
 
       expect(content.metadata.balance_updates![2].kind).toEqual('contract');
       expect(content.metadata.balance_updates![2].contract).toEqual(
-        'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv'
+        'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr'
       );
       expect(content.metadata.balance_updates![2].change).toEqual('-156825984');
       expect(content.metadata.balance_updates![2].origin).toEqual('block');
 
       expect(content.metadata.balance_updates![3].kind).toEqual('contract');
       expect(content.metadata.balance_updates![3].contract).toEqual(
-        'tz1hoyMUiJYYr4FRPMU8Z7WJzYkqgjygjaTy'
+        'mv1S3xzu9KfHfebbXDsT9ynfLrCM6QrMaEeL'
       );
       expect(content.metadata.balance_updates![3].change).toEqual('156825984');
       expect(content.metadata.balance_updates![3].origin).toEqual('block');
@@ -3435,7 +3435,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultUpdateConsensusKey;
 
       expect(content.kind).toEqual(OpKind.UPDATE_CONSENSUS_KEY);
-      expect(content.source).toEqual('tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv');
+      expect(content.source).toEqual('mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr');
       expect(content.fee).toEqual('369');
       expect(content.counter).toEqual('19043');
       expect(content.gas_limit).toEqual('1100');
@@ -3446,7 +3446,7 @@ describe('RpcClient test', () => {
 
       expect(content.metadata.balance_updates![0].kind).toEqual('contract');
       expect(content.metadata.balance_updates![0].contract).toEqual(
-        'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv'
+        'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr'
       );
       expect(content.metadata.balance_updates![0].change).toEqual('-369');
       expect(content.metadata.balance_updates![0].origin).toEqual('block');
@@ -3498,37 +3498,37 @@ describe('RpcClient test', () => {
       httpBackend.createRequest.mockResolvedValue([
         {
           level: 547387,
-          delegate: 'tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN',
+          delegate: 'mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL',
           priority: 4,
           estimated_time: '2019-08-02T09:48:56Z',
-          consensus_key: 'tz1asyQFDgjv2muoaiZ5x5U5RPpaNz33Z2F6',
+          consensus_key: 'mv1PamFfqchwSDu2zPvs8WbtEhPzBXozSEVn',
         },
         {
           level: 547387,
-          delegate: 'tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e',
+          delegate: 'mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU',
           priority: 8,
           estimated_time: '2019-08-02T09:53:56Z',
           consensus_key: 'tz1N4GvBKsfdBdtgbNeQQLv52L7YB4FBZtVf',
         },
       ]);
       const result = await client.getBakingRights({
-        delegate: ['tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN', 'tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e'],
+        delegate: ['mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL', 'mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU'],
       });
 
       expect(httpBackend.createRequest.mock.calls[0][0]).toEqual({
         method: 'GET',
         query: {
           delegate: [
-            'tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN',
-            'tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e',
+            'mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL',
+            'mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU',
           ],
         },
         url: 'root/chains/test/blocks/head/helpers/baking_rights',
       });
 
-      expect(result[0].delegate).toEqual('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN');
+      expect(result[0].delegate).toEqual('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL');
       expect(result[0].estimated_time).toEqual('2019-08-02T09:48:56Z');
-      expect(result[0].consensus_key).toEqual('tz1asyQFDgjv2muoaiZ5x5U5RPpaNz33Z2F6');
+      expect(result[0].consensus_key).toEqual('mv1PamFfqchwSDu2zPvs8WbtEhPzBXozSEVn');
     });
   });
 
@@ -3537,25 +3537,25 @@ describe('RpcClient test', () => {
       httpBackend.createRequest.mockResolvedValue([
         {
           level: 547386,
-          delegate: 'tz3WMqdzXqRWXwyvj5Hp2H7QEepaUuS7vd9K',
+          delegate: 'mv3V4zLbrZc6grWr2BnCvP8P7QdyWputqnTy',
           slots: [27],
           estimated_time: '2019-08-02T09:42:56Z',
         },
         {
           level: 547386,
-          delegate: 'tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN',
+          delegate: 'mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL',
           slots: [23, 12, 0],
           estimated_time: '2019-08-02T09:42:56Z',
         },
         {
           level: 547386,
-          delegate: 'tz3RB4aoyjov4KEVRbuhvQ1CKJgBJMWhaeB8',
+          delegate: 'mv3AGu3hCvXE6SwkaJRX8gvvFoLhw8BSzbsV',
           slots: [31, 17, 13],
           estimated_time: '2019-08-02T09:42:56Z',
         },
         {
           level: 547386,
-          delegate: 'tz3NExpXn9aPNZPorRE4SdjJ2RGrfbJgMAaV',
+          delegate: 'mv3NMZKzwCJFFgmGCjQu2GTa72bK4bcAjb5Q',
           slots: [24, 9, 1],
           estimated_time: '2019-08-02T09:42:56Z',
         },
@@ -3568,7 +3568,7 @@ describe('RpcClient test', () => {
         url: 'root/chains/test/blocks/head/helpers/endorsing_rights',
       });
 
-      expect(result[1].delegate).toEqual('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN');
+      expect(result[1].delegate).toEqual('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL');
       expect(result[1].estimated_time).toEqual('2019-08-02T09:42:56Z');
       expect(result[1].slots!.length).toEqual(3);
     });
@@ -3579,10 +3579,10 @@ describe('RpcClient test', () => {
           level: 547386,
           delegates: [
             {
-              delegate: 'tz3WMqdzXqRWXwyvj5Hp2H7QEepaUuS7vd9K',
+              delegate: 'mv3V4zLbrZc6grWr2BnCvP8P7QdyWputqnTy',
               first_slot: 1,
               endorsing_power: 1,
-              consensus_key: 'tz1asyQFDgjv2muoaiZ5x5U5RPpaNz33Z2F6',
+              consensus_key: 'mv1PamFfqchwSDu2zPvs8WbtEhPzBXozSEVn',
             },
           ],
           slots: [27],
@@ -3598,10 +3598,10 @@ describe('RpcClient test', () => {
       });
 
       expect(result[0].delegates).toBeDefined();
-      expect(result[0].delegates![0].delegate).toEqual('tz3WMqdzXqRWXwyvj5Hp2H7QEepaUuS7vd9K');
+      expect(result[0].delegates![0].delegate).toEqual('mv3V4zLbrZc6grWr2BnCvP8P7QdyWputqnTy');
       expect(result[0].delegates![0].first_slot).toEqual(1);
       expect(result[0].delegates![0].endorsing_power).toEqual(1);
-      expect(result[0].delegates![0].consensus_key).toEqual('tz1asyQFDgjv2muoaiZ5x5U5RPpaNz33Z2F6');
+      expect(result[0].delegates![0].consensus_key).toEqual('mv1PamFfqchwSDu2zPvs8WbtEhPzBXozSEVn');
       expect(result[0].estimated_time).toEqual('2019-08-02T09:42:56Z');
       expect(result[0].slots!.length).toEqual(1);
     });
@@ -3612,27 +3612,27 @@ describe('RpcClient test', () => {
       httpBackend.createRequest.mockReturnValue(
         Promise.resolve([
           {
-            pkh: 'tz3e75hU4EhDU3ukyJueh5v6UvEHzGwkg3yC',
+            pkh: 'mv3FrvuPbKie8jL4LXuBx8dXofuHmUMgX8kh',
             ballot: 'yay',
           },
           {
-            pkh: 'tz1iJ4qgGTzyhaYEzd1RnC6duEkLBd1nzexh',
+            pkh: 'mv1AaVYuypkoSyYXiv1uu1vtpWigsKR7nqGR',
             ballot: 'yay',
           },
           {
-            pkh: 'tz1hx8hMmmeyDBi6WJgpKwK4n5S2qAEpavx2',
+            pkh: 'mv1MovZFehAiy56Ut4HbcLxdP4XJYA7vJSx4',
             ballot: 'yay',
           },
           {
-            pkh: 'tz1gvrUnfTfEcRW6qcgB6FJdZnAxv4HG1rj9',
+            pkh: 'mv1Eqarf7SdWFYF6uMaU25i6uGxNvSepfvbd',
             ballot: 'yay',
           },
           {
-            pkh: 'tz1go7f6mEQfT2xX2LuHAqgnRGN6c2zHPf5c',
+            pkh: 'mv1EwTNk5oykGeZ5MUPA3ogHugX7SAskZiCG',
             ballot: 'yay',
           },
           {
-            pkh: 'tz1gCx1V63bSaQnPZoQreqNgVLuFMzyMcqry',
+            pkh: 'mv1EwJnmykNBk9hsTVbPyZ8GuKR8wx5J34U1',
             ballot: 'yay',
           },
         ])
@@ -3643,7 +3643,7 @@ describe('RpcClient test', () => {
         method: 'GET',
         url: 'root/chains/test/blocks/head/votes/ballot_list',
       });
-      expect(response[2].pkh).toEqual('tz1hx8hMmmeyDBi6WJgpKwK4n5S2qAEpavx2');
+      expect(response[2].pkh).toEqual('mv1MovZFehAiy56Ut4HbcLxdP4XJYA7vJSx4');
     });
   });
 
@@ -3693,43 +3693,43 @@ describe('RpcClient test', () => {
       httpBackend.createRequest.mockReturnValue(
         Promise.resolve([
           {
-            pkh: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m',
+            pkh: 'mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC',
             voting_power: 3726,
           },
           {
-            pkh: 'tz2Q7Km98GPzV1JLNpkrQrSo5YUhPfDp6LmA',
+            pkh: 'mv2LwbsvNMdhC7ZugvFVwgtj1vb9HmYXtYzP',
             rolls: 2,
           },
           {
-            pkh: 'tz2PdGc7U5tiyqPgTSgqCDct94qd6ovQwP6u',
+            pkh: 'mv2PYPbSsqDzSGFC6uupneKAsHRpPEe4f6EY',
             rolls: 73,
           },
           {
-            pkh: 'tz2KrmHRWu7b7Vr3GYQ3SJ41xaW64PiqWBYm',
+            pkh: 'mv2NRuoh7LTR8PpWDmac4CQxWk75pXnKH1Dw',
             rolls: 17,
           },
           {
-            pkh: 'tz2JMPu9yVKuX2Au8UUbp7YrKBZJSdYhgwwu',
+            pkh: 'mv2VtHpsWYGXUygukYPufT77SfQisbAJdnY8',
             rolls: 2,
           },
           {
-            pkh: 'tz2FCNBrERXtaTtNX6iimR1UJ5JSDxvdHM93',
+            pkh: 'mv2VinoqEas5rgzwc1DACntjrtptTrwK2uaW',
             rolls: 233,
           },
           {
-            pkh: 'tz2E3BvcMiGvFEgNVdsAiwVvPHcwJDTA8wLt',
+            pkh: 'mv2cu2zRTFhMLMHXutMWnV59X9zY1U5NgZHM',
             rolls: 14,
           },
           {
-            pkh: 'tz3eQFJL9Pw7EXkuEVSYTVtuwtfjhUU3xqi1',
+            pkh: 'mv3Pa4tiYCELZwaEVzGhaQauShtiUPcMFb4x',
             rolls: 1,
           },
           {
-            pkh: 'tz3e7LbZvUtoXhpUD1yb6wuFodZpfYRb9nWJ',
+            pkh: 'mv3Qp87Z2exPU25uDT1Wzh2SFKZqZapNbMzG',
             rolls: 25,
           },
           {
-            pkh: 'tz3e75hU4EhDU3ukyJueh5v6UvEHzGwkg3yC',
+            pkh: 'mv3FrvuPbKie8jL4LXuBx8dXofuHmUMgX8kh',
             rolls: 334,
           },
         ])
@@ -3742,7 +3742,7 @@ describe('RpcClient test', () => {
       });
       expect(response[0].voting_power).toEqual(new BigNumber(3726));
       expect(response[0].rolls).toBeUndefined();
-      expect(response[4].pkh).toEqual('tz2JMPu9yVKuX2Au8UUbp7YrKBZJSdYhgwwu');
+      expect(response[4].pkh).toEqual('mv2VtHpsWYGXUygukYPufT77SfQisbAJdnY8');
       expect(response[4].voting_power).toBeUndefined();
     });
   });
@@ -4226,7 +4226,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupOriginate;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_ORIGINATE);
-      expect(content.source).toEqual('tz1NyHPL2CidRquW3a9zPGde59YYtMDyyzCg');
+      expect(content.source).toEqual('mv1UnqCHsfF7YyiQy586noUkvJnmSk5YQoEs');
       expect(content.fee).toEqual('1497');
       expect(content.counter).toEqual('19783');
       expect(content.gas_limit).toEqual('2849');
@@ -4260,7 +4260,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupAddMessages;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_ADD_MESSAGES);
-      expect(content.source).toEqual('tz2Q3yRaczTqZVf3ZQvwiiTqKjhJFyDzeRSz');
+      expect(content.source).toEqual('mv2VyMfL7y978FiLR5S33M7U5XbGtM21qveH');
       expect(content.fee).toEqual('398');
       expect(content.counter).toEqual('12191');
       expect(content.gas_limit).toEqual('1103');
@@ -4286,7 +4286,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupExecuteOutboxMessage;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_EXECUTE_OUTBOX_MESSAGE);
-      expect(content.source).toEqual('tz1adKm6kWEkiejZ9WYpuHvBCgUewtCxpqRF');
+      expect(content.source).toEqual('mv1KPkmkC2vMBf5DE9fARbRuAPhqdovWqRQ4');
       expect(content.fee).toEqual('1618');
       expect(content.counter).toEqual('13');
       expect(content.gas_limit).toEqual('6485');
@@ -4316,7 +4316,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupPublish;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_PUBLISH);
-      expect(content.source).toEqual('tz1gCe1sFpppbGGVwCt5jLRqDS9FD1W4Qca4');
+      expect(content.source).toEqual('mv1BPPMvozPCe1NS8NnAM7zpXYBxfnTV26eh');
       expect(content.fee).toEqual('964');
       expect(content.counter).toEqual('41266');
       expect(content.gas_limit).toEqual('6418');
@@ -4367,7 +4367,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupCement;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_CEMENT);
-      expect(content.source).toEqual('tz1d5inEKUnAChSgScYuaJrtVmAZ9L5cKGSW');
+      expect(content.source).toEqual('mv1NgAgPTpVp5Pfp2cHGseGgzgU5MCvRigt8');
       expect(content.fee).toEqual('977');
       expect(content.counter).toEqual('150010');
       expect(content.gas_limit).toEqual('6986');
@@ -4394,13 +4394,13 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupRefute;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_REFUTE);
-      expect(content.source).toEqual('tz1ZpuBypK6G754crXDZyoMPaVPoBmBsPda2');
+      expect(content.source).toEqual('mv1HiRtxzhWHA4fMGqrbCJ7rdqsWKgoUmHZm');
       expect(content.fee).toEqual('2096');
       expect(content.counter).toEqual('32553');
       expect(content.gas_limit).toEqual('6299');
       expect(content.storage_limit).toEqual('0');
       expect(content.rollup).toEqual('sr1LhGA2zC9VcYALSifpRBCgDiQfDSQ6bb4x');
-      expect(content.opponent).toEqual('tz1QD39GBmSzccuDxWMevj2gudiTX1pZL5kC');
+      expect(content.opponent).toEqual('mv1MqSDoqWk6YBvG1ZtKu2P5uSrgymPzQQYR');
 
       const refutation = content.refutation as SmartRollupRefutationMove;
       if (refutation.refutation_kind !== SmartRollupRefutationOptions.MOVE) {
@@ -4427,13 +4427,13 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupRefute;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_REFUTE);
-      expect(content.source).toEqual('tz1Qn5AXWB5vYPgzDXsunDbZ7tTUp9cFDaRp');
+      expect(content.source).toEqual('mv18fba4Pv3BEFxBxw7LDGxHGrSvaiDY2Wei');
       expect(content.fee).toEqual('943');
       expect(content.counter).toEqual('25002');
       expect(content.gas_limit).toEqual('6109');
       expect(content.storage_limit).toEqual('0');
       expect(content.rollup).toEqual('sr1Ce7znpA1ea2YZca3v1CefxqXMhqYgDEXR');
-      expect(content.opponent).toEqual('tz1VN3J6DyH712W1y13Uu1N8fxkt8RvMyqzm');
+      expect(content.opponent).toEqual('mv1UGgEGgfYo7qC2xzSVgzX3Bj6aKxfCXYTM');
 
       const refutation = content.refutation as SmartRollupRefutationStart;
 
@@ -4452,13 +4452,13 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupRefute;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_REFUTE);
-      expect(content.source).toEqual('tz1QD39GBmSzccuDxWMevj2gudiTX1pZL5kC');
+      expect(content.source).toEqual('mv1MqSDoqWk6YBvG1ZtKu2P5uSrgymPzQQYR');
       expect(content.fee).toEqual('1989');
       expect(content.counter).toEqual('32546');
       expect(content.gas_limit).toEqual('4333');
       expect(content.storage_limit).toEqual('0');
       expect(content.rollup).toEqual('sr1LhGA2zC9VcYALSifpRBCgDiQfDSQ6bb4x');
-      expect(content.opponent).toEqual('tz1ZpuBypK6G754crXDZyoMPaVPoBmBsPda2');
+      expect(content.opponent).toEqual('mv1HiRtxzhWHA4fMGqrbCJ7rdqsWKgoUmHZm');
 
       const refutation = content.refutation;
       if (refutation.refutation_kind !== SmartRollupRefutationOptions.MOVE) {
@@ -4491,13 +4491,13 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupRecoverBond;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_RECOVER_BOND);
-      expect(content.source).toEqual('tz1bTS4QDBnpQPmMPNM3rn7jN1hevkWDHSKw');
+      expect(content.source).toEqual('mv18JDLdcxN3gxhrxCoM1TLqfkfhcsRLjiVV');
       expect(content.fee).toEqual('1000000');
       expect(content.counter).toEqual('25156');
       expect(content.gas_limit).toEqual('4016');
       expect(content.storage_limit).toEqual('0');
       expect(content.rollup).toEqual('sr1EYxm4fQjr15TASs2Q7PgZ1LqS6unkZhHL');
-      expect(content.staker).toEqual('tz1bTS4QDBnpQPmMPNM3rn7jN1hevkWDHSKw');
+      expect(content.staker).toEqual('mv18JDLdcxN3gxhrxCoM1TLqfkfhcsRLjiVV');
     });
   });
 
@@ -4509,7 +4509,7 @@ describe('RpcClient test', () => {
         .contents[0] as OperationContentsAndResultSmartRollupTimeout;
 
       expect(content.kind).toEqual(OpKind.SMART_ROLLUP_TIMEOUT);
-      expect(content.source).toEqual('tz1TecRhYLVV9bTKRKU9g1Hhpb1Ymw3ynzWS');
+      expect(content.source).toEqual('mv1A8ve91yKr6hi8majbVN5ihSYtc2HHLj8g');
       expect(content.fee).toEqual('753');
       expect(content.counter).toEqual('23077');
       expect(content.gas_limit).toEqual('4647');
@@ -4518,8 +4518,8 @@ describe('RpcClient test', () => {
 
       const stakers = content.stakers;
 
-      expect(stakers.alice).toEqual('tz1TecRhYLVV9bTKRKU9g1Hhpb1Ymw3ynzWS');
-      expect(stakers.bob).toEqual('tz1iFnSQ6V2d8piVMPMjtDNdkYNMaUfKwsoy');
+      expect(stakers.alice).toEqual('mv1A8ve91yKr6hi8majbVN5ihSYtc2HHLj8g');
+      expect(stakers.bob).toEqual('mv1QKB2hj3Ufq2CEDQUDG7jf7J8ti7dSLmbv');
     });
   });
 

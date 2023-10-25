@@ -94,7 +94,7 @@ describe('Schema test', () => {
     const result = schema.Encode({
       accounts: new MichelsonMap(),
       name: 'Token B',
-      owner: 'tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS',
+      owner: 'mv1Ly8iGNbSg8hSNd632hnGf5xKzoGE67MTp',
       symbol: 'B',
       totalSupply: new BigNumber('1000'),
       version: new BigNumber('1'),
@@ -107,7 +107,7 @@ describe('Schema test', () => {
 
   it('Should encode parameter schema properly', () => {
     const schema = new ParameterSchema(params);
-    const result = schema.Encode('approve', 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn', '0');
+    const result = schema.Encode('approve', 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW', '0');
     expect(schema.isMultipleEntryPoint).toBeTruthy();
     expect(result).toEqual({
       prim: 'Right',
@@ -117,7 +117,7 @@ describe('Schema test', () => {
           args: [
             {
               prim: 'Pair',
-              args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '0' }],
+              args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '0' }],
             },
           ],
         },
@@ -129,8 +129,8 @@ describe('Schema test', () => {
     const schema = new ParameterSchema(params);
     const result = schema.Encode(
       'allowance',
-      'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-      'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+      'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+      'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
       'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D'
     );
     expect(result).toEqual({
@@ -151,11 +151,11 @@ describe('Schema test', () => {
                         {
                           prim: 'Pair',
                           args: [
-                            { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+                            { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
                             {
                               prim: 'Pair',
                               args: [
-                                { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+                                { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
                                 { string: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D' },
                               ],
                             },
@@ -178,7 +178,7 @@ describe('Schema test', () => {
     expect(s).toEqual({
       accounts: expectMichelsonMap(),
       name: 'Token B',
-      owner: 'tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS',
+      owner: 'mv1Ly8iGNbSg8hSNd632hnGf5xKzoGE67MTp',
       symbol: 'B',
       totalSupply: new BigNumber('1000'),
       version: new BigNumber('1'),
@@ -190,9 +190,9 @@ describe('Schema test', () => {
     const s = schema.ExecuteOnBigMapDiff(bigMapDiff);
     expect(s).toEqual(
       expectMichelsonMap({
-        tz1Ra8yQVQN4Nd7LpPQ6UT6t3bsWWqHZ9wa6: {
+        mv1TmzDzJj8sTDgdnfr3RC8uAwzPpkcf5uWc: {
           allowances: MichelsonMap.fromLiteral({
-            tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD: new BigNumber('60'),
+            mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf: new BigNumber('60'),
           }),
           balance: new BigNumber('200'),
         },
@@ -389,7 +389,7 @@ describe('Schema test', () => {
     const s = schema.Execute(txParams);
     expect(s).toEqual({
       approve: {
-        '1': 'tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD',
+        '1': 'mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf',
         '2': new BigNumber('60'),
       },
     });

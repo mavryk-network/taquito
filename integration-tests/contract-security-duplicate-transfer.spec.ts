@@ -30,7 +30,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                 PUSH address "${publicKeyHash}";
                 CONTRACT unit;
                 IF_NONE { FAIL } {};
-                PUSH mutez 1;
+                PUSH mumav 1;
                 UNIT;
                 TRANSFER_TOKENS;
                 DUP;

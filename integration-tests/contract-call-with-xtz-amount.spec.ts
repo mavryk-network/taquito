@@ -31,7 +31,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
         const operationMutez = await contract.methods
           .deposit(null)
-          .send({ amount: 1, mutez: true } as any);
+          .send({ amount: 1, mumav: true } as any);
         await operationMutez.confirmation();
         expect(operationMutez.status).toEqual('applied');
         balance = await Tezos.tz.getBalance(contract.address);

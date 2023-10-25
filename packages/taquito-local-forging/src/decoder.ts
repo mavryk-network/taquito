@@ -63,7 +63,7 @@ export type Decoder = (val: Uint8ArrayConsumer) => string | number | object | un
 export const decoders: { [key: string]: Decoder } = {
   [CODEC.SECRET]: (val) => toHexString(val.consume(20)),
   [CODEC.RAW]: (val) => toHexString(val.consume(32)),
-  [CODEC.TZ1]: tz1Decoder,
+  [CODEC.MV1]: tz1Decoder,
   [CODEC.BRANCH]: branchDecoder,
   [CODEC.ZARITH]: zarithDecoder,
   [CODEC.PUBLIC_KEY]: publicKeyDecoder,

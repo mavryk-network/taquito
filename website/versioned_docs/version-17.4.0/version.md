@@ -490,7 +490,7 @@ Provided 2 utility functions to convert results from the `PrepareProvider` (`Pre
 // pre-apply
 const prepared = await Tezos.prepare.transaction({
   amount: 1,
-  to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+  to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
 const params = await Tezos.prepare.toPreapply(prepared);
 const preapplyOp = await Tezos.rpc.preapplyOperations(params);
@@ -498,7 +498,7 @@ const preapplyOp = await Tezos.rpc.preapplyOperations(params);
 // forge
 const prepared = await Tezos.prepare.transaction({
   amount: 1,
-  to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+  to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
 const params = Tezos.prepare.toForge(prepared);
 const forgedBytes = await forger.forge(params);
@@ -608,7 +608,7 @@ For more information, refer to [this page](https://gitlab.com/tezos/tezos/-/merg
 ```typescript
 // example of a transaction operation preparation
 const prepare = await Tezos.prepare.transaction({
-    to: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+    to: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
     amount: 5
 });
 ```
@@ -625,7 +625,7 @@ The expected output will look something like this:
               gas_limit: '101',
               storage_limit: '1000',
               amount: '5000000',
-              destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+              destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
               source: 'PUBLIC_KEY_HASH',
               counter: '1',
             },
@@ -1470,7 +1470,7 @@ Response example for ithacanet:
 [
       {
         level: 182704,
-        delegate: 'tz1MeT8NACB8Q4uV9dPQ3YxXBmYgapbxQxQ5',
+        delegate: 'mv1Hob4Psz8YDnE8K47GNtjuEQAG7i3geQ4j',
         round: 0,
         estimated_time: '2022-03-05T00:28:55Z'
       }...
@@ -1481,7 +1481,7 @@ Response example for hangzhounet:
 [
       {
         level: 619462,
-        delegate: 'tz1PirbogVqfmBT9XCuYJ1KnDx4bnMSYfGru',
+        delegate: 'mv1N8EDYeej4Cg6VshBx8bERkw3yXySxwnaH',
         priority: 0,
         estimated_time: '2022-03-05T00:28:45Z'
       }...
@@ -2937,13 +2937,13 @@ This release introduces `MichelsonMap()` class that provides an abstraction over
 Existing code that accesses Map or BigMap storage via the Taquito data abstraction in the following fashion:
 
 ```typescript
-const account = storage.accounts["tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD"]
+const account = storage.accounts["mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ"]
 ```
 
 Must be updated to use the `get()` and `set()` methods as follows;
 
 ```typescript
-const account = storage.accounts.get("tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD")
+const account = storage.accounts.get("mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ")
 ```
 Additionally, if existing code initializes storage (during contract origination for example), this code must be updated. One can create a new `MichelsonMap()` as follows:
 
@@ -2964,12 +2964,12 @@ Or one can also use the `fromLiteral` convenience method, as illustrated below.
     Tezos.contract.originate({
         code: assertContractCode,
         storage: {
-            owner: "tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD",
+            owner: "mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ",
             accounts: MichelsonMap.fromLiteral({
-                "tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD": {
+                "mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ": {
                     balance: "1",
                     allowances: MichelsonMap.fromLiteral({
-                      "tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2": "1"
+                      "mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5": "1"
                     })
                 }
             })

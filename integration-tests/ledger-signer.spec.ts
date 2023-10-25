@@ -73,7 +73,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           'edpkuRkcStobJ569XFxmE6edyRQQzMmtf4ZnmPkTPfSQnt6P3Nym2V'
         );
         expect(pkh).toEqual(
-          'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY'
+          'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq'
         );
       });
 
@@ -90,7 +90,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           'sppk7ZMM9NZLPPueTKcoJobdUG7MjLtaGsdrZqddcn9U6C9Yt99m8sU'
         );
         expect(pkh).toEqual(
-          'tz2SxDTGnT3mHzaHf6mwy6Wtw1qUX1hzm1Sw'
+          'mv2efHjyQ74JL9AwwWNDYEh3MpKxLLsjYRPz'
         );
       });
 
@@ -107,7 +107,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           'p2pk66MZ9MuDHfn5cQsUvtCvU376cijjvDLtTQzBFNeDHMijG4snUZZ'
         );
         expect(pkh).toEqual(
-          'tz3PX4M9x9N7oXp2WWxNcQNK6GtaGdCdesK9'
+          'mv3BtXekGWfUNobFeqXDrE4LFHkYq1i4Lzpz'
         );
       });
     });
@@ -142,7 +142,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
       jest.setTimeout(240000)
       it('Verify that a contract can be originated with Ledger', async () => {
 
-        const fundAccountFirst = await tezos.contract.transfer({ to: 'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY', amount: 9 });
+        const fundAccountFirst = await tezos.contract.transfer({ to: 'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq', amount: 9 });
         await fundAccountFirst.confirmation();
 
         const signer = new LedgerSigner(
@@ -176,7 +176,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
         );
         const Tezos = new TezosToolkit(rpc);
         Tezos.setSignerProvider(signer);
-        const op = await Tezos.wallet.transfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.1 }).send()
+        const op = await Tezos.wallet.transfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.1 }).send()
         await op.confirmation()
         expect(op.opHash).toBeDefined();
       });

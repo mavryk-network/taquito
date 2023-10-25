@@ -70,7 +70,7 @@ describe('ImportKey', () => {
     expect(toolkit.signer).toEqual({});
     await importKey(toolkit, 'p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1');
     expect(toolkit.signer).toBeInstanceOf(InMemorySigner);
-    expect(await toolkit.signer.publicKeyHash()).toEqual('tz3Lfm6CyfSTZ7EgMckptZZGiPxzs9GK59At');
+    expect(await toolkit.signer.publicKeyHash()).toEqual('mv393EPoJ2jp8P1uVwKg8PFHsQpyRXqi1s1a');
   });
 
   it('should use InMemorySigner and activate faucet account when called with {privateKeyOrEmail, passphrase, mnemonic, secret} parameters', async () => {
@@ -92,13 +92,13 @@ describe('ImportKey', () => {
       contents: [
         {
           kind: 'activate_account',
-          pkh: 'tz1gaD8adax6qAST1a79sj78XfyPs5k9Nj78',
+          pkh: 'mv1UwgSAwxFTQSDg9tg17Yo9ggqNRUG1oKFr',
           secret: '837f402873eff00fa0b0977c08725b1f8d78a94b',
         },
       ],
     });
     expect(mockRpcClient.injectOperation).toHaveBeenCalled();
-    expect(await toolkit.signer.publicKeyHash()).toEqual('tz1gaD8adax6qAST1a79sj78XfyPs5k9Nj78');
+    expect(await toolkit.signer.publicKeyHash()).toEqual('mv1UwgSAwxFTQSDg9tg17Yo9ggqNRUG1oKFr');
   });
 
   it('should use InMemorySigner and skip activate faucet account when called with already activated account', async () => {
@@ -113,6 +113,6 @@ describe('ImportKey', () => {
       '837f402873eff00fa0b0977c08725b1f8d78a94b'
     );
     expect(toolkit.signer).toBeInstanceOf(InMemorySigner);
-    expect(await toolkit.signer.publicKeyHash()).toEqual('tz1bg7HTLJxHrDcivFUSTx8TLNsJcty7j9r5');
+    expect(await toolkit.signer.publicKeyHash()).toEqual('mv1Q3ab3egFeRVPx4a3HhmpUVPjHBHXDaUix');
   });
 });

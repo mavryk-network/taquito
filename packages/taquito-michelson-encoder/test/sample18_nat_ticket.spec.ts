@@ -7,7 +7,7 @@ describe('Schema with a ticket of type nat inside a big map %tickets in storage'
     it('Should decode storage properly', () => {
         const schema = new Schema(storage);
         expect(schema.Execute(rpcContractResponse.script.storage)).toEqual({
-            admin: 'tz1bwfmSYqrhUTAoybGdhWBBefsbuhNdcC2Y',
+            admin: 'mv1GBmu3deZ7gvgMTE7dgfz2y8FA22znzH7u',
             current_id: new BigNumber(2),
             tickets: '142',
             token_metadata: '143'

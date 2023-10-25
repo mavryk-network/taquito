@@ -17,7 +17,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         code: codeViewsTopLevel,
         storage: 2,
         balance: '2',
-        mutez: false
+        mumav: false
       });
       await op.confirmation();
       const contract = await op.contract();
@@ -41,8 +41,8 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       expect(contract.contractViews.step_constants().getSignature()).toEqual({
         parameter: 'unit',
         result: {
-          '0': 'mutez',
-          '1': 'mutez',
+          '0': 'mumav',
+          '1': 'mumav',
           '2': 'address',
           '3': 'address',
           '4': 'address'

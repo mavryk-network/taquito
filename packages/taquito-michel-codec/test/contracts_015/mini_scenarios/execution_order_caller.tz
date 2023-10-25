@@ -10,7 +10,7 @@ code {
        MAP {
              CONTRACT unit;
              ASSERT_SOME;
-             PUSH mutez 0;
+             PUSH mumav 0;
              UNIT;
              TRANSFER_TOKENS;
            };

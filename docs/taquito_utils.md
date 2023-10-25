@@ -41,7 +41,7 @@ In the following example, the function is first called with a valid public key h
 import { validateAddress } from '@taquito/utils';
 
 //valid
-const pkh = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const pkh = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 const validation = validateAddress(pkh);
 println(`Calling the validateAddress function with ${pkh} returns ${validation}.`);
 
@@ -61,7 +61,7 @@ Here is a valid example with a pkh and an invalid one where the prefix is missin
 import { validateKeyHash } from '@taquito/utils';
 
 //valid
-const keyHash = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const keyHash = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 const validation = validateKeyHash(keyHash);
 println(`Calling the validateKeyHash function with ${keyHash} returns ${validation}.`);
 
@@ -119,7 +119,7 @@ const validation = validatePublicKey(publicKey);
 println(`Calling the validatePublicKey function with ${publicKey} returns ${validation}.`);
 
 //invalid prefix
-const value = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const value = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 const invalidValidation = validatePublicKey(value);
 println(`Calling the validatePublicKey function with ${value} returns ${invalidValidation}.`);
 ```

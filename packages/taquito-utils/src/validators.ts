@@ -61,7 +61,7 @@ function validatePrefixedValue(value: string, prefixes: Prefix[]) {
   return ValidationResult.VALID;
 }
 
-const implicitPrefix = [Prefix.TZ1, Prefix.TZ2, Prefix.TZ3, Prefix.TZ4];
+const implicitPrefix = [Prefix.MV1, Prefix.MV2, Prefix.MV3, Prefix.MV4];
 const contractPrefix = [Prefix.KT1, Prefix.TXR1];
 const signaturePrefix = [Prefix.EDSIG, Prefix.P2SIG, Prefix.SPSIG, Prefix.SIG];
 const pkPrefix = [Prefix.EDPK, Prefix.SPPK, Prefix.P2PK, Prefix.BLPK];
@@ -79,7 +79,7 @@ const smartRollupPrefix = [Prefix.SR1];
  * @example
  * ```
  * import { validateAddress } from '@taquito/utils';
- * const pkh = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx'
+ * const pkh = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH'
  * const validation = validateAddress(pkh)
  * console.log(validation)
  * // This example return 3 which correspond to VALID

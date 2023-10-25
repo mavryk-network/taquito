@@ -44,7 +44,7 @@ The `PrepareProvider` will be accessible via the `TezosToolkit`:
 // const Tezos = new TezosToolkit('RPC_ENDPOINT');
 
 const prepared = await Tezos.prepare.transaction({ 
-  to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+  to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
   amount: 5
 });
 ```
@@ -65,12 +65,12 @@ The `PrepareProvider` also provides support for batch operations:
 const prepared = await Tezos.prepare.batch([
   {
     kind: OpKind.TRANSACTION,
-    to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+    to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
     amount: 2,
   },
   {
     kind: OpKind.TRANSACTION,
-    to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+    to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
     amount: 2,
   },
 ]);
@@ -100,7 +100,7 @@ The `toPreapply()` method converts a `PreparedOperation` object into an entity t
 // omitted for brevity
 const preparedTransferOp = await Tezos.prepare.transaction({
     amount: 1,
-    to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+    to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
 const params = await Tezos.prepare.toPreapply(preparedTransferOp);
 const preapplyOp = await Tezos.rpc.preapplyOperations(params);
@@ -115,7 +115,7 @@ The `toForge()` method converts a `PreparedOperation` into an object that can be
 ```typescript
 const preparedTransfer = await Tezos.prepare.transaction({
   amount: 1,
-  to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+  to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
 const params = Tezos.prepare.toForge(preparedTransfer);
 const forgedBytes = await forger.forge(params);

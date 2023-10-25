@@ -15,9 +15,9 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
         test('Verify wallet.batch simple transfers with origination code in JSON Michelson format', async () => {
             const batch = Tezos.wallet
                 .batch()
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
                 .withOrigination({
                     balance: '1',
                     code: ligoSample,
@@ -43,9 +43,9 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
         test('Verify wallet.batch simple transfers with origination code in Michelson format', async () => {
             const batch = Tezos.wallet
                 .batch()
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
                 .withOrigination({
                     balance: '1',
                     code: ligoSampleMichelson,
@@ -73,7 +73,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
                 .batch([
                     {
                         kind: OpKind.TRANSACTION,
-                        to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+                        to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
                         amount: 0.02
                     },
                     {
@@ -83,8 +83,8 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
                         storage: 0
                     }
                 ])
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-                .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+                .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
                 .send();
 
             const conf1 = await op.confirmation();
@@ -111,7 +111,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
                 .batch([
                     {
                         kind: OpKind.TRANSACTION,
-                        to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+                        to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
                         amount: 1
                     },
                     {
@@ -145,7 +145,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
                 .batch()
                 .withTransfer({ to: contract.address, amount: 1 })
                 .withContractCall(
-                    contract.methods.do(MANAGER_LAMBDA.transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 5))
+                    contract.methods.do(MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 5))
                 )
                 .withContractCall(contract.methods.do(MANAGER_LAMBDA.setDelegate(knownBaker)))
                 .withContractCall(contract.methods.do(MANAGER_LAMBDA.removeDelegate()));
@@ -171,8 +171,8 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
             const contract = await Tezos.wallet.at(knownContract);
             const batch = await Tezos.wallet
                 .batch([
-                    { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 },
-                    { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 },
+                    { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 },
+                    { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 },
                     { kind: OpKind.TRANSACTION, ...contract.methods.default([['Unit']]).toTransferParams() }
                 ])
                 .send();
@@ -235,7 +235,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
         const contract = await op.contract();
 
         const estimateOp = await Tezos.estimate.batch([
-            { ...(contract.methodsObject.do(MANAGER_LAMBDA.transferImplicit("tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh", 5)).toTransferParams()), kind: OpKind.TRANSACTION },
+            { ...(contract.methodsObject.do(MANAGER_LAMBDA.transferImplicit("mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m", 5)).toTransferParams()), kind: OpKind.TRANSACTION },
             { ...(contract.methods.do(MANAGER_LAMBDA.setDelegate(knownBaker)).toTransferParams()), kind: OpKind.TRANSACTION },
             { ...(contract.methods.do(MANAGER_LAMBDA.removeDelegate()).toTransferParams()), kind: OpKind.TRANSACTION },
 
@@ -244,7 +244,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }
         const batch = Tezos.wallet
             .batch()
             .withContractCall(
-                contract.methods.do(MANAGER_LAMBDA.transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 5), { fee: estimateOp[0].suggestedFeeMutez, gasLimit: estimateOp[0].gasLimit, storageLimit: estimateOp[0].storageLimit })
+                contract.methods.do(MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 5), { fee: estimateOp[0].suggestedFeeMutez, gasLimit: estimateOp[0].gasLimit, storageLimit: estimateOp[0].storageLimit })
             )
             .withContractCall(
                 contract.methods.do(MANAGER_LAMBDA.setDelegate(knownBaker), { fee: estimateOp[1].suggestedFeeMutez, gasLimit: estimateOp[1].gasLimit, storageLimit: estimateOp[1].storageLimit })

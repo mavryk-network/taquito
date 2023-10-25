@@ -19,12 +19,12 @@ code { # Stack manipulation
        # In the case of an invalid transaction, we stop.
               ASSERT_SOME;
               UNPAIR;
-              # Convert the balance in mutez, keeping the signed
-              # balance on top of the stack and the balance in mutez as the second
+              # Convert the balance in mumav, keeping the signed
+              # balance on top of the stack and the balance in mumav as the second
               # element
               DUP;
               DIP { ABS; # in case of negative balance i.e. shielding
-                    PUSH mutez 1;
+                    PUSH mumav 1;
                     MUL; };
               # We have three cases now: unshielding, shielding and transfers.
               # If the balance is strictly positive (i.e. unshielding), we send funds
@@ -44,7 +44,7 @@ code { # Stack manipulation
                    # If the balance is negative or 0 (i.e. shielding or transfer),
                    # we verify the amount transferred in the transaction is exactly the
                    # balance of the verify_update output. It does enforce the conversion
-                   # 1-1 between mutez and shielded token.
+                   # 1-1 between mumav and shielded token.
                    # No operation is executed.
                    {
                      DIIP {SWAP};
@@ -60,7 +60,7 @@ code { # Stack manipulation
                    };
             };
        DIP {
-             PUSH mutez 0;
+             PUSH mumav 0;
              ASSERT_CMPEQ;};
        SWAP;
        PAIR}`

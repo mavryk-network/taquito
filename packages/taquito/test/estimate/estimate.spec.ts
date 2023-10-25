@@ -1,7 +1,7 @@
 import { Estimate } from '../../src/estimate/estimate';
 
 describe('Estimate', () => {
-  it('Calculate fees in mutez properly for Carthagenet', () => {
+  it('Calculate fees in mumav properly for Carthagenet', () => {
     const estimate = new Estimate(27147000, 960, 861, 1000);
     expect(estimate.minimalFeeMutez).toStrictEqual(3686);
     expect(estimate.suggestedFeeMutez).toStrictEqual(3786);
@@ -10,7 +10,7 @@ describe('Estimate', () => {
     expect(estimate.consumedMilligas).toStrictEqual(27147000);
   });
 
-  it('Calculate fees in mutez properly with string for Carthagenet', () => {
+  it('Calculate fees in mumav properly with string for Carthagenet', () => {
     const estimate = new Estimate('17311000', '300', '180', '1000', '10000');
     expect(estimate.minimalFeeMutez).toStrictEqual(2022);
     expect(estimate.suggestedFeeMutez).toStrictEqual(2122);
@@ -20,7 +20,7 @@ describe('Estimate', () => {
     expect(estimate.consumedMilligas).toStrictEqual(17311000);
   });
 
-  it('Calculate fees in mutez properly for Delphinet', () => {
+  it('Calculate fees in mumav properly for Delphinet', () => {
     const estimate = new Estimate(27147000, 960, 861, 250);
     expect(estimate.minimalFeeMutez).toStrictEqual(3686);
     expect(estimate.suggestedFeeMutez).toStrictEqual(3786);
@@ -29,7 +29,7 @@ describe('Estimate', () => {
     expect(estimate.consumedMilligas).toStrictEqual(27147000);
   });
 
-  it('Calculate fees in mutez properly with string for Delphinet', () => {
+  it('Calculate fees in mumav properly with string for Delphinet', () => {
     const estimate = new Estimate('17311000', '300', '180', '250', '10000');
     expect(estimate.minimalFeeMutez).toStrictEqual(2022);
     expect(estimate.suggestedFeeMutez).toStrictEqual(2122);

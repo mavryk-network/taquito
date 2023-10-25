@@ -115,7 +115,7 @@ describe('Typecheck', () => {
 
   it('assertDataValid: address', () => {
     const typedef: MichelsonType = { prim: 'address' };
-    const data: MichelsonData = { string: 'tz1VmUWL8DxseZnPTdhHQkkuk6nK55NVdKCG' };
+    const data: MichelsonData = { string: 'mv1U9wtCpcJ7iGxbLUEU8U5cfXkKrYrXJ4Fy' };
     assertDataValid(data, typedef);
   });
 
@@ -125,8 +125,8 @@ describe('Typecheck', () => {
     assertDataValid(data, typedef);
   });
 
-  it('assertDataValid: mutez', () => {
-    const typedef: MichelsonType = { prim: 'mutez' };
+  it('assertDataValid: mumav', () => {
+    const typedef: MichelsonType = { prim: 'mumav' };
     const data: MichelsonData = { int: '0' };
     assertDataValid(data, typedef);
   });

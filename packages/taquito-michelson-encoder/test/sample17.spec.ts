@@ -9,7 +9,7 @@ describe('Schema.FindFirstInTopLevelPair test', () => {
                 { prim: 'nat' },
                 {
                     prim: 'pair',
-                    args: [{ prim: 'nat', annots: ['%current_stock'] }, { prim: 'mutez', annots: ['%max_price'] }]
+                    args: [{ prim: 'nat', annots: ['%current_stock'] }, { prim: 'mumav', annots: ['%max_price'] }]
                 }
             ],
             annots: ['%taco_shop_storage']

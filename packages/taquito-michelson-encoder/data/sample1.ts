@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 export const rpcContractResponse = {
-  manager: 'tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD',
+  manager: 'mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf',
   balance: '0',
   spendable: false,
   delegate: { setable: false },
@@ -4965,7 +4965,7 @@ export const rpcContractResponse = {
                       prim: 'Pair',
                       args: [
                         { string: 'B' },
-                        { string: 'tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS' }
+                        { string: 'mv1Ly8iGNbSg8hSNd632hnGf5xKzoGE67MTp' }
                       ]
                     }
                   ]
@@ -4989,7 +4989,7 @@ export const parameter = {
         {
           prim: 'Pair',
           args: [
-            { string: 'tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD' },
+            { string: 'mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf' },
             { int: '60' }
           ]
         }
@@ -5036,7 +5036,7 @@ export const txParams = {
         {
           prim: 'Pair',
           args: [
-            { string: 'tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD' },
+            { string: 'mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf' },
             { int: '60' }
           ]
         }

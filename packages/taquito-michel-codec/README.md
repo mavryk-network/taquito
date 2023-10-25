@@ -16,7 +16,7 @@ See the top-level project [https://github.com/ecadlabs/taquito](https://github.c
 
 ```js
 const code = `(Pair 
-                     (Pair { Elt 1 (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx") 0x0501000000026869)}
+                     (Pair { Elt 1 (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe") 0x0501000000026869)}
                            10000000)
                      (Pair 2 333)
                   )`;
@@ -48,7 +48,7 @@ Output:
                     "prim": "Pair",
                     "args": [
                       { "string": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" },
-                      { "string": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx" }
+                      { "string": "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe" }
                     ]
                   },
                   { "bytes": "0501000000026869" }

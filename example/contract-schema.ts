@@ -15,7 +15,7 @@ async function example() {
         console.log(contract.methods);
         console.log("Showing initial storage...");
         console.log(await contract.storage())
-        const op = await contract.methods.mint("tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys", 100).send()
+        const op = await contract.methods.mint("mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg", 100).send()
         console.log('Awaiting confirmation...');
         await op.confirmation();
         console.log(op.hash, op.includedInBlock);

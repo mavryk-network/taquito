@@ -20,7 +20,7 @@ export const storageContractWithPairAsKey = [{ "prim": "parameter", "args": [{ "
                           { prim: "bytes" },
                           {
                             prim: "pair", args: [
-                              { prim: "mutez" },
+                              { prim: "mumav" },
                               {
                                 prim: "pair", args: [
                                   { prim: "bool" },

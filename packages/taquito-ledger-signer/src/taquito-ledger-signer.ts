@@ -218,19 +218,19 @@ export class LedgerSigner implements Signer {
     ) {
       return {
         prefPk: prefix[Prefix.EDPK],
-        prefPkh: prefix[Prefix.TZ1],
+        prefPkh: prefix[Prefix.MV1],
         prefSig: prefix[Prefix.EDSIG],
       };
     } else if (this.derivationType === DerivationType.SECP256K1) {
       return {
         prefPk: prefix[Prefix.SPPK],
-        prefPkh: prefix[Prefix.TZ2],
+        prefPkh: prefix[Prefix.MV2],
         prefSig: prefix[Prefix.SPSIG],
       };
     } else {
       return {
         prefPk: prefix[Prefix.P2PK],
-        prefPkh: prefix[Prefix.TZ3],
+        prefPkh: prefix[Prefix.MV3],
         prefSig: prefix[Prefix.P2SIG],
       };
     }

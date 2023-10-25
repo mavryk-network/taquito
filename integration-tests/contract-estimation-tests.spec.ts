@@ -19,7 +19,7 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
         await setup();
         LowAmountTez = await createAddress();
         const pkh = await LowAmountTez.signer.publicKeyHash();
-        const transfer = await Tezos.contract.transfer({ to: pkh, mutez: true, amount: amt });
+        const transfer = await Tezos.contract.transfer({ to: pkh, mumav: true, amount: amt });
         await transfer.confirmation();
         const op = await Tezos.contract.originate({
           balance: '1',
@@ -166,12 +166,12 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
       await setup();
       LowAmountTez = await createAddress();
       const pkh = await LowAmountTez.signer.publicKeyHash();
-      const transfer = await Tezos.contract.transfer({ to: pkh, mutez: true, amount: amt });
+      const transfer = await Tezos.contract.transfer({ to: pkh, mumav: true, amount: amt });
       await transfer.confirmation();
     });
 
     it('Verify .estimate.transfer to regular address', async () => {
-      let estimate = await LowAmountTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), mutez: true, amount: amt - (1382 + DEFAULT_FEE.REVEAL) });
+      let estimate = await LowAmountTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), mumav: true, amount: amt - (1382 + DEFAULT_FEE.REVEAL) });
       expect(estimate.gasLimit).toEqual(201);
       expect(estimate.storageLimit).toEqual(0);
       expect(estimate.suggestedFeeMutez).toEqual(372);
@@ -184,7 +184,7 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
 
     it('Estimate transfer to regular address with a fixed fee', async () => {
 
-      const params = { fee: 2000, to: await Tezos.signer.publicKeyHash(), mutez: true, amount: amt - (1382 + DEFAULT_FEE.REVEAL) };
+      const params = { fee: 2000, to: await Tezos.signer.publicKeyHash(), mumav: true, amount: amt - (1382 + DEFAULT_FEE.REVEAL) };
 
       await expect(LowAmountTez.estimate.transfer(params)).rejects.toMatchObject({
         id: expect.stringContaining('empty_implicit_contract'),
@@ -193,7 +193,7 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
 
     it('Estimate transfer to regular address with insufficient balance', async () => {
       await expect(
-        LowAmountTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), mutez: true, amount: amt })
+        LowAmountTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), mumav: true, amount: amt })
       ).rejects.toMatchObject({
         id: expect.stringContaining('subtraction_underflow'),
       });
@@ -201,7 +201,7 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
 
     it('Estimate transfer to regular address with insufficient balance to pay storage for allocation', async () => {
       await expect(
-        LowAmountTez.estimate.transfer({ to: await (await createAddress()).signer.publicKeyHash(), mutez: true, amount: amt - (1382 + DEFAULT_FEE.REVEAL) })
+        LowAmountTez.estimate.transfer({ to: await (await createAddress()).signer.publicKeyHash(), mumav: true, amount: amt - (1382 + DEFAULT_FEE.REVEAL) })
       ).rejects.toEqual(
         expect.objectContaining({
           message: expect.stringContaining('storage_exhausted'),

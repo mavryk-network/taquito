@@ -29,7 +29,7 @@ The `ValidationResult` returned by these functions is an enum that can take the 
 ```ts
 import { validateAddress } from '@taquito/utils';
 
-const pkh = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const pkh = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 console.log(validateAddress(pkh));
 // output: 3 which is valid
 ```
@@ -39,7 +39,7 @@ console.log(validateAddress(pkh));
 ```ts
 import { validateKeyHash } from '@taquito/utils';
 
-const keyHash = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const keyHash = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 console.log(validateKeyHash(keyHash));
 // output: 3 which is valid
 ```
@@ -180,7 +180,7 @@ console.log(mergebuf(buff, buff2));
 import { encodeKeyHash } from '@taquito/utils';
 
 console.log(encodeKeyHash('01106d79a502c4135b10e61e92f4c5a72ca740fb87'));
-// output: tz29p6csejX9FcHXgQERr5sXsAinLvxmVerM
+// output: mv2MXAuaGPXgHktBxophRE3gHyDGAGArD3cC
 ```
 
 **Base58 encode a public key according to its prefix**
@@ -197,7 +197,7 @@ console.log(encodeKey('0060842d4ba23a9940ef5dcf4404fdaa430cfaaccb5029fad06cb5ea8
 import { encodePubKey } from '@taquito/utils'; 
 
 console.log(encodePubKey('0000e96b9f8b19af9c7ffa0c0480e1977b295850961f'));
-// output: tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM
+// output: mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q
 
 console.log(encodePubKey('01f9b689a478253793bd92357c5e08e5ebcd8db47600'));
 // output: KT1XM8VUFBiM9AC5czWU15fEeE9nmuEYWt3Y
@@ -208,7 +208,7 @@ console.log(encodePubKey('01f9b689a478253793bd92357c5e08e5ebcd8db47600'));
 ```ts
 import { b58decode } from '@taquito/utils'; 
 
-console.log(b58decode('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'));
+console.log(b58decode('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'));
 // output: 0000e96b9f8b19af9c7ffa0c0480e1977b295850961f
 ```
 
@@ -217,7 +217,7 @@ console.log(b58decode('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'));
 ```ts
 import { b58cdecode, prefix, Prefix } from '@taquito/utils'; 
 
-console.log(b58cdecode('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM', prefix[Prefix.TZ1]));
+console.log(b58cdecode('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q', prefix[Prefix.MV1]));
 // output: <Buffer e9 6b 9f 8b 19 af 9c 7f fa 0c 04 80 e1 97 7b 29 58 50 96 1f>
 ```
 
@@ -226,8 +226,8 @@ console.log(b58cdecode('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM', prefix[Prefix.TZ1
 ```ts
 import { b58cencode } from '@taquito/utils';
 
-console.log(b58cdecode('e96b9f8b19af9c7ffa0c0480e1977b295850961f', prefix[Prefix.TZ1]));
-// output: tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM
+console.log(b58cdecode('e96b9f8b19af9c7ffa0c0480e1977b295850961f', prefix[Prefix.MV1]));
+// output: mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q
 ```
 
 **Return the operation hash of a signed operation**
@@ -259,7 +259,7 @@ import { getPkhfromPk } from '@taquito/utils';
 
 const publicKey = 'sppk7czKu6So3zDWjhBPBv9wgCrBAfbEFoKYzEaKUsjhNr5Ug6E4Sn1';
 console.log(getPkhfromPk(publicKey));
-// output: 'tz2Gsf1Q857wUzkNGzHsJNC98z881UutMwjg
+// output: 'mv2UajJ6jj8UX9M2ZPt8sWNHZncbpp6AkTLA
 ```
 
 ## Additional info

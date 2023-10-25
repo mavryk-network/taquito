@@ -2661,8 +2661,8 @@ export const rpcContractResponse = {
 						},
 						{ prim: 'None' },
 						{ prim: 'False' },
-						{ string: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb' },
-						{ string: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb' }
+						{ string: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv' },
+						{ string: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv' }
 					]
 				},
 				{ int: '24060' }

@@ -18,10 +18,10 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         code: storageContract,
         storage: {
           "map1": MichelsonMap.fromLiteral({
-            "tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD": 1,
+            "mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ": 1,
             'KT1CDEg2oY3VfMa1neB7hK5LoVMButvivKYv': 2,
-            "tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2": 2,
-            "tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS": 3,
+            "mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5": 2,
+            "mv1Ly8iGNbSg8hSNd632hnGf5xKzoGE67MTp": 3,
           }),
           "map2": MichelsonMap.fromLiteral({
             "2": 1,

@@ -7,7 +7,7 @@ code {
        # (pair parameter storage) : []
 
        # make sure that the participant has contributed at least 1 tez
-       PUSH mutez 1000000;
+       PUSH mumav 1000000;
        AMOUNT;
        IFCMPGE {} { PUSH string "You did not provide enough tez."; FAILWITH; };
 
@@ -56,7 +56,7 @@ export const miObject = [
 		prim: 'code',
 		args: [
 			[
-				{ prim: 'PUSH', args: [ { prim: 'mutez' }, { int: '1000000' } ] },
+				{ prim: 'PUSH', args: [ { prim: 'mumav' }, { int: '1000000' } ] },
 				{ prim: 'AMOUNT' },
 				[
 					{ prim: 'COMPARE' },

@@ -65,7 +65,7 @@ recordsBigMap.set(
     'FFFF', //key of the bigMap %records is in bytes
     { //address %address is optional,
       data : dataMap,
-      owner : 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       //nat %ttl is optional
       //nat %validator is optional
     })
@@ -73,7 +73,7 @@ recordsBigMap.set(
     'AAAA', //key of the bigMap %records is in bytes
     { //address %address is optional
       data : dataMap,
-      owner : 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       //nat %ttl is optional
       validator : '1' //nat %validator is optional
     })
@@ -88,7 +88,7 @@ importKey(Tezos, secretKey)
   return Tezos.contract.originate({
     code : contractJson,
     storage : {
-      owner : 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       records: recordsBigMap, 
       validators : validatorsMap
     }})
@@ -138,7 +138,7 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
-    let inspect = myContract.methods.set_child_record('tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', dataMap, 'EEEE', 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', 'FFFF', '10').toTransferParams(); 
+    let inspect = myContract.methods.set_child_record('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', dataMap, 'EEEE', 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', 'FFFF', '10').toTransferParams(); 
     println(JSON.stringify(inspect, null, 2))
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -158,10 +158,10 @@ importKey(Tezos, secretKey)
     dataMap.set("Hello World", { bool : true })
   
     return myContract.methods.set_child_record(
-      'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address(optional)
+      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address(optional)
       dataMap, //data
       'EEEE', //label
-      'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //owner
+      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
       'FFFF', //parent
       '10' //ttl(optional)
     ).send(); 
@@ -192,7 +192,7 @@ importKey(Tezos, secretKey)
       null, //address(optional)
       dataMap, //data
       'EEEE', //label
-      'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //owner
+      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
       'FFFF', //parent
       undefined //ttl(optional)
     ).send(); 

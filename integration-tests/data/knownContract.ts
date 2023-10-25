@@ -78,7 +78,7 @@ export const knownContract = [
                     args: [
                         [{ prim: 'DROP' }, { prim: 'NIL', args: [{ prim: 'operation' }] }, { prim: 'PAIR' }],
                         [
-                            { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                            { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                             { prim: 'AMOUNT' },
                             [
                                 [{ prim: 'COMPARE' }, { prim: 'EQ' }],

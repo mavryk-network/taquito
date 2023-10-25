@@ -38,7 +38,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
 
             const opTransfer = await sender.contract.transfer({
                 to: receiver_pkh,
-                mutez: true,
+                mumav: true,
                 amount: maxAmount,
                 fee: estimate.suggestedFeeMutez,
                 gasLimit: estimate.gasLimit,

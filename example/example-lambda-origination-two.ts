@@ -12,12 +12,12 @@ async function example() {
     console.log('Deploying LambdaTwo contract...');
 
     const bigMapLedger = new MichelsonMap();
-    bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
-      allowances: ['tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY'],
+    bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
+      allowances: ['mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc'],
       balance: '50'
     });
-    bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
-      allowances: ['tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'],
+    bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
+      allowances: ['mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi'],
       balance: '50',
     });
 

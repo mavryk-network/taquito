@@ -340,7 +340,7 @@ export const metadataViewsExample2 = {
 			implementations: [
 				{
 					michelsonStorageView: {
-						returnType: { prim: 'mutez', args: [], annots: [] },
+						returnType: { prim: 'mumav', args: [], annots: [] },
 						code: [ { prim: 'DROP', args: [], annots: [] }, { prim: 'BALANCE', args: [], annots: [] } ]
 					}
 				}
@@ -359,7 +359,7 @@ export const metadataViewsExample2 = {
 									prim: 'pair',
 									args: [
 										{ prim: 'string', args: [], annots: [ '%arg_one' ] },
-										{ prim: 'mutez', args: [], annots: [ '%arg_two' ] }
+										{ prim: 'mumav', args: [], annots: [ '%arg_two' ] }
 									],
 									annots: []
 								}
@@ -374,7 +374,7 @@ export const metadataViewsExample2 = {
 									prim: 'pair',
 									args: [
 										{ prim: 'string', args: [], annots: [ '%arg_one_result' ] },
-										{ prim: 'mutez', args: [], annots: [ '%arg_two' ] }
+										{ prim: 'mumav', args: [], annots: [ '%arg_two' ] }
 									],
 									annots: []
 								}

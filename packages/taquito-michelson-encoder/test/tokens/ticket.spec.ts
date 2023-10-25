@@ -55,7 +55,7 @@ describe('Ticket token', () => {
       0
     ) as TicketToken;
     tokenTicketMutez = createToken(
-      { prim: 'ticket', args: [{ prim: 'mutez' }], annots: ['%test'] },
+      { prim: 'ticket', args: [{ prim: 'mumav' }], annots: ['%test'] },
       0
     ) as TicketToken;
     tokenTicketOption = createToken(
@@ -99,7 +99,7 @@ describe('Ticket token', () => {
       expect(() => tokenTicketNat.EncodeObject('11')).toThrowError(EncodeTicketError);
       expect(() => tokenTicketTimestamp.EncodeObject(new Date())).toThrowError(EncodeTicketError);
       expect(() =>
-        tokenTicketAddress.EncodeObject('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')
+        tokenTicketAddress.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketError);
       expect(() => tokenTicketBool.EncodeObject(true)).toThrowError(EncodeTicketError);
       expect(() => tokenTicketBytes.EncodeObject('CAFE')).toThrowError(EncodeTicketError);
@@ -111,11 +111,11 @@ describe('Ticket token', () => {
         tokenTicketKey.EncodeObject('edpkuRkcStobJ569XFxmE6edyRQQzMmtf4ZnmPkTPfSQnt6P3Nym2V')
       ).toThrowError(EncodeTicketError);
       expect(() =>
-        tokenTicketKeyHash.EncodeObject('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')
+        tokenTicketKeyHash.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketError);
       expect(() => tokenTicketMutez.EncodeObject(1000000)).toThrowError(EncodeTicketError);
       expect(() =>
-        tokenTicketOption.EncodeObject('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')
+        tokenTicketOption.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketError);
       expect(() => tokenTicketOption.EncodeObject(null)).toThrowError(EncodeTicketError);
       expect(() => tokenTicketOr.EncodeObject('string')).toThrowError(EncodeTicketError);
@@ -141,7 +141,7 @@ describe('Ticket token', () => {
       expect(() => tokenTicketNat.Encode([{}])).toThrowError(EncodeTicketError);
       expect(() => tokenTicketTimestamp.Encode([new Date()])).toThrowError(EncodeTicketError);
       expect(() =>
-        tokenTicketAddress.Encode(['tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'])
+        tokenTicketAddress.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketError);
       expect(() => tokenTicketBool.Encode([true])).toThrowError(EncodeTicketError);
       expect(() => tokenTicketBytes.Encode(['CAFE'])).toThrowError(EncodeTicketError);
@@ -151,10 +151,10 @@ describe('Ticket token', () => {
         tokenTicketKey.Encode(['edpkuRkcStobJ569XFxmE6edyRQQzMmtf4ZnmPkTPfSQnt6P3Nym2V'])
       ).toThrowError(EncodeTicketError);
       expect(() =>
-        tokenTicketKeyHash.Encode(['tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'])
+        tokenTicketKeyHash.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketError);
       expect(() => tokenTicketMutez.Encode([1000000])).toThrowError(EncodeTicketError);
-      expect(() => tokenTicketOption.Encode(['tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'])).toThrowError(
+      expect(() => tokenTicketOption.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])).toThrowError(
         EncodeTicketError
       );
       expect(() => tokenTicketOption.Encode([null])).toThrowError(EncodeTicketError);
@@ -207,13 +207,13 @@ describe('Ticket token', () => {
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
-            { string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' },
+            { string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' },
             { int: '2' },
           ],
         })
       ).toEqual({
         ticketer: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw',
-        value: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        value: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         amount: new BigNumber('2'),
       });
     });
@@ -305,18 +305,18 @@ describe('Ticket token', () => {
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
-            { string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' },
+            { string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' },
             { int: '2' },
           ],
         })
       ).toEqual({
         ticketer: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw',
-        value: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        value: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         amount: new BigNumber('2'),
       });
     });
 
-    it('Should execute on readTicketType with ticket of type mutez', () => {
+    it('Should execute on readTicketType with ticket of type mumav', () => {
       expect(
         tokenTicketMutez.Execute({
           prim: 'Pair',
@@ -339,13 +339,13 @@ describe('Ticket token', () => {
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
-            { prim: 'Some', args: [{ string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' }] },
+            { prim: 'Some', args: [{ string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' }] },
             { int: '2' },
           ],
         })
       ).toEqual({
         ticketer: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw',
-        value: { Some: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' },
+        value: { Some: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' },
         amount: new BigNumber('2'),
       });
     });

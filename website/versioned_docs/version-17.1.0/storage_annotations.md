@@ -42,7 +42,7 @@ Tezos.contract
   .originate({
     code: contractStorageAnnot,
     storage: {
-      theAddress: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      theAddress: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       theBool: true,
       theNat: '3',
       theNumber: '5',
@@ -68,7 +68,7 @@ Tezos.wallet
   .originate({
     code: contractStorageAnnot,
     storage: {
-      theAddress: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      theAddress: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       theBool: true,
       theNat: '3',
       theNumber: '5',
@@ -117,7 +117,7 @@ Tezos.contract
   .originate({
     code: contractStorageWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       2: '3', //nat
       3: '5', //int
@@ -143,7 +143,7 @@ Tezos.wallet
   .originate({
     code: contractStorageWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       2: '3', //nat
       3: '5', //int
@@ -194,7 +194,7 @@ Tezos.contract
   .originate({
     code: contractStorageWithAndWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       theNat: '3',
       theNumber: '5',
@@ -221,7 +221,7 @@ Tezos.wallet
   .originate({
     code: contractStorageWithAndWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       theNat: '3',
       theNumber: '5',

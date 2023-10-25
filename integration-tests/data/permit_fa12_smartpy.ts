@@ -749,7 +749,7 @@ export const permit_fa12_smartpy = `{ parameter
                          NIL operation ;
                          SWAP ;
                          IF_SOME {} { PUSH int 219 ; FAILWITH } ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 3 ;
                          DUP ;
                          DUG 4 ;
@@ -766,7 +766,7 @@ export const permit_fa12_smartpy = `{ parameter
                          NIL operation ;
                          SWAP ;
                          IF_SOME {} { PUSH int 209 ; FAILWITH } ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 4 ;
                          DUP ;
                          DUG 5 ;
@@ -795,7 +795,7 @@ export const permit_fa12_smartpy = `{ parameter
                          NIL operation ;
                          SWAP ;
                          IF_SOME {} { PUSH int 204 ; FAILWITH } ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 4 ;
                          DUP ;
                          DUG 5 ;
@@ -815,7 +815,7 @@ export const permit_fa12_smartpy = `{ parameter
                          NIL operation ;
                          SWAP ;
                          IF_SOME {} { PUSH int 223 ; FAILWITH } ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 3 ;
                          DUP ;
                          DUG 4 ;
@@ -833,7 +833,7 @@ export const permit_fa12_smartpy = `{ parameter
                          NIL operation ;
                          SWAP ;
                          IF_SOME {} { PUSH int 229 ; FAILWITH } ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 3 ;
                          DUP ;
                          DUG 4 ;
@@ -848,7 +848,7 @@ export const permit_fa12_smartpy = `{ parameter
                          NIL operation ;
                          SWAP ;
                          IF_SOME {} { PUSH int 214 ; FAILWITH } ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 3 ;
                          DUP ;
                          DUG 4 ;

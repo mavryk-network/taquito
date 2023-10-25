@@ -36,7 +36,7 @@ CONFIGS().forEach(({ lib, setup, protocol, createAddress }) => {
 
     it('should be able to prepare a transaction operation', async () => {
       const prepared = await Tezos.prepare.transaction({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 5
       });
 
@@ -49,7 +49,7 @@ CONFIGS().forEach(({ lib, setup, protocol, createAddress }) => {
       const content = prepared.opOb.contents[0] as OperationContentsTransaction;
 
       expect(content.kind).toEqual('transaction');
-      expect(content.destination).toEqual('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')
+      expect(content.destination).toEqual('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')
       expect(content.amount).toEqual('5000000');
 
     });
@@ -58,12 +58,12 @@ CONFIGS().forEach(({ lib, setup, protocol, createAddress }) => {
       const prepared = await Tezos.prepare.batch([
         {
           kind: OpKind.TRANSACTION,
-          to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: 2,
         },
         {
           kind: OpKind.TRANSACTION,
-          to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: 2,
         },
       ]);

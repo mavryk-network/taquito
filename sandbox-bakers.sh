@@ -9,7 +9,7 @@ export SECRET_KEY="${secret_key}"
 export TEZOS_RPC_"${testnet_uppercase}"="http://localhost:20000"
 export POLLING_INTERVAL_MILLISECONDS=100
 export RPC_CACHE_MILLISECONDS=0
-export TEZOS_BAKER=tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb
+export TEZOS_BAKER=mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv
 
 alice=$(docker run --rm "${flextesa_docker_image}" flextesa key alice)
 bob=$(docker run --rm "${flextesa_docker_image}" flextesa key bob)

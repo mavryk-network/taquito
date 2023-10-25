@@ -6,7 +6,7 @@ const example = async () => {
     // Encode initial storage values to JSON that is acceptable to the Tezos RPC
     const ex1 = '(Pair {Elt "0" 0} 0)'
     const ex2 = `(Pair (Pair { Elt 1
-                  (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx")
+                  (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
                         0x0501000000026869) }
             10000000)
       (Pair 2 333))`;

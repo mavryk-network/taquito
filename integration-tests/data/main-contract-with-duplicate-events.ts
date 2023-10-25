@@ -9,7 +9,7 @@ export const mainContractWithDuplicateEvents = [
               prim: 'pair',
               args: [
                 {
-                  prim: 'mutez',
+                  prim: 'mumav',
                   annots: ['%amount'],
                 },
                 {

@@ -43,22 +43,22 @@ export const prefixDecoder = (pre: Prefix) => (str: Uint8ArrayConsumer) => {
   return b58cencode(val, prefixMap[pre]);
 };
 
-export const tz1Decoder = prefixDecoder(Prefix.TZ1);
+export const tz1Decoder = prefixDecoder(Prefix.MV1);
 export const branchDecoder = prefixDecoder(Prefix.B);
 export const pkhDecoder = (val: Uint8ArrayConsumer) => {
   const prefix = val.consume(1);
 
   if (prefix[0] === 0x00) {
-    return prefixDecoder(Prefix.TZ1)(val);
+    return prefixDecoder(Prefix.MV1)(val);
   } else if (prefix[0] === 0x01) {
-    return prefixDecoder(Prefix.TZ2)(val);
+    return prefixDecoder(Prefix.MV2)(val);
   } else if (prefix[0] === 0x02) {
-    return prefixDecoder(Prefix.TZ3)(val);
+    return prefixDecoder(Prefix.MV3)(val);
   }
 };
 
 export const branchEncoder = prefixEncoder(Prefix.B);
-export const tz1Encoder = prefixEncoder(Prefix.TZ1);
+export const tz1Encoder = prefixEncoder(Prefix.MV1);
 
 export const boolEncoder = (bool: unknown): string => (bool ? 'ff' : '00');
 
@@ -196,19 +196,19 @@ export const delegateDecoder = (val: Uint8ArrayConsumer) => {
 export const pkhEncoder = (val: string) => {
   const pubkeyPrefix = val.substring(0, 3);
   switch (pubkeyPrefix) {
-    case Prefix.TZ1:
-      return '00' + prefixEncoder(Prefix.TZ1)(val);
-    case Prefix.TZ2:
-      return '01' + prefixEncoder(Prefix.TZ2)(val);
-    case Prefix.TZ3:
-      return '02' + prefixEncoder(Prefix.TZ3)(val);
-    case Prefix.TZ4:
-      return '03' + prefixEncoder(Prefix.TZ4)(val);
+    case Prefix.MV1:
+      return '00' + prefixEncoder(Prefix.MV1)(val);
+    case Prefix.MV2:
+      return '01' + prefixEncoder(Prefix.MV2)(val);
+    case Prefix.MV3:
+      return '02' + prefixEncoder(Prefix.MV3)(val);
+    case Prefix.MV4:
+      return '03' + prefixEncoder(Prefix.MV4)(val);
     default:
       throw new InvalidKeyHashError(
         val,
         invalidDetail(ValidationResult.NO_PREFIX_MATCHED) +
-          ` expecting one for the following "${Prefix.TZ1}", "${Prefix.TZ2}", "${Prefix.TZ3}" or "${Prefix.TZ4}".`
+          ` expecting one for the following "${Prefix.MV1}", "${Prefix.MV2}", "${Prefix.MV3}" or "${Prefix.MV4}".`
       );
   }
 };
@@ -234,10 +234,10 @@ export const publicKeyEncoder = (val: string) => {
 export const addressEncoder = (val: string): string => {
   const pubkeyPrefix = val.substring(0, 3);
   switch (pubkeyPrefix) {
-    case Prefix.TZ1:
-    case Prefix.TZ2:
-    case Prefix.TZ3:
-    case Prefix.TZ4:
+    case Prefix.MV1:
+    case Prefix.MV2:
+    case Prefix.MV3:
+    case Prefix.MV4:
       return '00' + pkhEncoder(val);
     case Prefix.KT1:
       return '01' + prefixEncoder(Prefix.KT1)(val) + '00';
@@ -245,7 +245,7 @@ export const addressEncoder = (val: string): string => {
       throw new InvalidAddressError(
         val,
         invalidDetail(ValidationResult.NO_PREFIX_MATCHED) +
-          ` expecting one of the following prefix '${Prefix.TZ1}', ${Prefix.TZ2}', '${Prefix.TZ3}', '${Prefix.TZ4}' or '${Prefix.KT1}'.`
+          ` expecting one of the following prefix '${Prefix.MV1}', ${Prefix.MV2}', '${Prefix.MV3}', '${Prefix.MV4}' or '${Prefix.KT1}'.`
       );
   }
 };

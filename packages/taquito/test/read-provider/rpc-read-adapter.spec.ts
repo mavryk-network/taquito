@@ -72,24 +72,24 @@ describe('RpcReadAdapter test', () => {
     it(`should get the balance given a pkh at block: ${block}`, async () => {
       mockRpcClient.getBalance.mockResolvedValue(new BigNumber('10000'));
 
-      const result = await readProvider.getBalance('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn', block);
+      const result = await readProvider.getBalance('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW', block);
       expect(result).toBeInstanceOf(BigNumber);
       expect(result.toString()).toStrictEqual('10000');
 
       expect(mockRpcClient.getBalance.mock.calls[0][0]).toEqual(
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
       );
       expect(mockRpcClient.getBalance.mock.calls[0][1]).toEqual({ block: `${block}` });
     });
 
     it(`should get the delegate given a pkh at block: ${block}`, async () => {
-      mockRpcClient.getDelegate.mockResolvedValue('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu');
+      mockRpcClient.getDelegate.mockResolvedValue('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM');
 
-      const result = await readProvider.getDelegate('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn', block);
-      expect(result).toEqual('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu');
+      const result = await readProvider.getDelegate('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW', block);
+      expect(result).toEqual('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM');
 
       expect(mockRpcClient.getDelegate.mock.calls[0][0]).toEqual(
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
       );
       expect(mockRpcClient.getDelegate.mock.calls[0][1]).toEqual({ block: `${block}` });
     });
@@ -154,11 +154,11 @@ describe('RpcReadAdapter test', () => {
     it(`should get the counter given a pkh at block: ${block}`, async () => {
       mockRpcClient.getContract.mockResolvedValue(contractResponse);
 
-      const result = await readProvider.getCounter('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', block);
+      const result = await readProvider.getCounter('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', block);
       expect(result).toEqual('161327');
 
       expect(mockRpcClient.getContract.mock.calls[0][0]).toEqual(
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
       );
       expect(mockRpcClient.getContract.mock.calls[0][1]).toEqual({ block: `${block}` });
     });
@@ -225,13 +225,13 @@ describe('RpcReadAdapter test', () => {
       mockRpcClient.getManagerKey.mockResolvedValue(null);
 
       const result = await readProvider.isAccountRevealed(
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         block
       );
       expect(result).toEqual(false);
 
       expect(mockRpcClient.getManagerKey.mock.calls[0][0]).toEqual(
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
       );
       expect(mockRpcClient.getManagerKey.mock.calls[0][1]).toEqual({ block: `${block}` });
     });
@@ -242,13 +242,13 @@ describe('RpcReadAdapter test', () => {
       );
 
       const result = await readProvider.isAccountRevealed(
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         block
       );
       expect(result).toEqual(true);
 
       expect(mockRpcClient.getManagerKey.mock.calls[0][0]).toEqual(
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
       );
       expect(mockRpcClient.getManagerKey.mock.calls[0][1]).toEqual({ block: `${block}` });
     });

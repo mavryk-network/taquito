@@ -193,7 +193,7 @@ const allowances = new MichelsonMap();
       code: knownBigMapContract,
       storage: {
         ledger,
-        owner: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        owner: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         totalSupply: '100',
       },
     });   }
@@ -239,12 +239,12 @@ storage (pair
 
 ```js
 const bigMapLedger = new MichelsonMap();
-bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
-  allowances: ['tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY'],
+bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
+  allowances: ['mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc'],
   balance: '50',
 });
-bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
-  allowances: ['tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'],
+bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
+  allowances: ['mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi'],
   balance: '50',
 });
 
@@ -350,7 +350,7 @@ const op = await tezos.contract.originate({
 This contract has a single default entrypoint that takes unit and produces a map:
 
 ```js
-Pair 10 (Pair 20 (Pair "Hello" (Pair 0xffff (Pair 100 (Pair False (Pair "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx" (Pair 1570374509 "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx")))))))
+Pair 10 (Pair 20 (Pair "Hello" (Pair 0xffff (Pair 100 (Pair False (Pair "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe" (Pair 1570374509 "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")))))))
 ```
 
 The get method of the MichelsonMap class accesses values of the map for a specified key.
@@ -492,7 +492,7 @@ Tezos.contract
         //When called on a map, the get method returns the value directly
         const valueMap = myStorage['themap'].get({
           0: '1', //nat
-          1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+          1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
         });
         println(`The value associated with the specified key of the map is ${valueMap}.`);
         return myContract.storage();
@@ -502,7 +502,7 @@ Tezos.contract
         //When called on a bigMap, the get method returns a promise
         return myStorage['thebigmap'].get({
           0: '10', //nat
-          1: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address
+          1: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address
         });
       })
       .then((valueBigMap) => {
@@ -701,7 +701,7 @@ const opknownBigMapContract = await tezos.contract.originate({
   code: knownBigMapContract,
   storage: {
     ledger,
-    owner: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+    owner: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
     paused: true,
     totalSupply: '100',
   },

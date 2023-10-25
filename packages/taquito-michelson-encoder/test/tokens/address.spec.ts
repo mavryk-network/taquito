@@ -8,8 +8,8 @@ describe('Address token', () => {
 
   describe('EncodeObject', () => {
     it('Should encode address to string', () => {
-      expect(token.EncodeObject('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual({
-        string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+      expect(token.EncodeObject('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual({
+        string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
       });
     });
 
@@ -22,8 +22,8 @@ describe('Address token', () => {
 
   describe('Encode', () => {
     it('Should encode address to string', () => {
-      expect(token.Encode(['tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'])).toEqual({
-        string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+      expect(token.Encode(['mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'])).toEqual({
+        string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
       });
     });
 
@@ -85,7 +85,7 @@ describe('Address Token with txr1', () => {
       expect(() => token.EncodeObject([])).toThrowError(AddressValidationError);
       expect(() => token.EncodeObject({})).toThrowError(AddressValidationError);
       expect(() => token.EncodeObject(1)).toThrowError(AddressValidationError);
-      expect(() => token.EncodeObject('tz4QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toThrowError(
+      expect(() => token.EncodeObject('mv4ZiKZicuRjE3YVp9Yno2ZHE6fHLEMVLVMH')).toThrowError(
         AddressValidationError
       );
     });
@@ -149,13 +149,13 @@ describe('Address Token with txr1', () => {
       expect(
         token.compare(
           'KT1CDEg2oY3VfMa1neB7hK5LoVMButvivKYv',
-          'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD'
+          'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ'
         )
       ).toEqual(1);
       expect(
         token.compare(
-          'tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2',
-          'tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS'
+          'mv3GA4FfCXCXmt5BXCBC9Uv8SYum2eGRMFNp',
+          'mv1H8wdojc6rxccdLaB7yBeuK54d289KXiDc'
         )
       ).toEqual(1);
       expect(

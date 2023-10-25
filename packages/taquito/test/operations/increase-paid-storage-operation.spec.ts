@@ -11,7 +11,7 @@ describe('IncreasePaidStorage operation', () => {
   const successfulResult = [
     {
       kind: 'increase_paid_storage',
-      source: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+      source: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
       fee: '349',
       counter: '108123',
       gas_limit: '1000',
@@ -22,7 +22,7 @@ describe('IncreasePaidStorage operation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+            contract: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
             change: '-349',
             origin: 'block',
           },
@@ -38,7 +38,7 @@ describe('IncreasePaidStorage operation', () => {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+              contract: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
               change: '-500',
               origin: 'block',
             },

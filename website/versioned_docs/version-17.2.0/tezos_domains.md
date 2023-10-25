@@ -4,7 +4,7 @@ id: tezos_domains
 author: Claude Barde
 ---
 
-A Tezos domain is a feature that allows users of the Tezos blockchain to use a human-readable and easy to remember address (for example, `alice.tez`) instead of a long string of letters and numbers (for example, `tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb`). The data about which address owns which domain is stored as a token inside a smart contract, so it's possible to find this piece of information when inspecting the storage of the contract.
+A Tezos domain is a feature that allows users of the Tezos blockchain to use a human-readable and easy to remember address (for example, `alice.tez`) instead of a long string of letters and numbers (for example, `mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv`). The data about which address owns which domain is stored as a token inside a smart contract, so it's possible to find this piece of information when inspecting the storage of the contract.
 
 Let's have a look at the Tezos domain contract on testnet to see how we can find a domain associated to an address and vice-versa.
 

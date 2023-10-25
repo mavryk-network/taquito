@@ -60,19 +60,19 @@ describe('Tests for Entrypoint functions and for encode and decoder error messag
   });
 
   test(`Verify pkhEncoder`, async () => {
-    const tz1 = pkhEncoder('tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY');
+    const tz1 = pkhEncoder('mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq');
     expect(tz1).toEqual('00c9fc72e8491bd2973e196f04ec6918ad5bcee22d');
-    const tz2 = pkhEncoder('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD');
+    const tz2 = pkhEncoder('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ');
     expect(tz2).toEqual('012ffebbf1560632ca767bc960ccdb84669d284c2c');
-    const tz3 = pkhEncoder('tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5');
+    const tz3 = pkhEncoder('mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV');
     expect(tz3).toEqual('026fde46af0356a0476dae4e4600172dc9309b3aa4');
-    const tz4 = pkhEncoder('tz4HQ8VeXAyrZMhES1qLMJAc9uAVXjbMpS8u');
+    const tz4 = pkhEncoder('mv4V7CnM8pzPbWHtiRRbvSLkaheyM4pEnMSC');
     expect(tz4).toEqual('035c14a7a05c10fc8b402fbcdd48dc8136236bf3c1');
-    expect(() => pkhEncoder('tz5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5')).toThrow(InvalidKeyHashError);
+    expect(() => pkhEncoder('mv5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5')).toThrow(InvalidKeyHashError);
     try {
-      pkhEncoder('tz5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5');
+      pkhEncoder('mv5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5');
     } catch (e) {
-      expect(e.message).toContain(`Invalid public key hash "tz5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"`);
+      expect(e.message).toContain(`Invalid public key hash "mv5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"`);
     }
   });
 

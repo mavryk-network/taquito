@@ -24,8 +24,8 @@ describe('Schema with a ticket of type timestamp inside a big map %tickets in st
         },
         validator: null,
         pending_validation: false,
-        oracle: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
-        admin: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+        oracle: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
+        admin: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
       },
       tickets: '24060',
     });
@@ -38,7 +38,7 @@ describe('Schema with a ticket of type timestamp inside a big map %tickets in st
         winners: {
           big_map: {
             key: 'address',
-            value: 'mutez',
+            value: 'mumav',
           },
         },
         bets: {
@@ -47,12 +47,12 @@ describe('Schema with a ticket of type timestamp inside a big map %tickets in st
             value: 'nat',
           },
         },
-        current_pot: 'mutez',
+        current_pot: 'mumav',
         opened_at: 'timestamp',
         settings: {
           pool_type: 'string',
-          entrance_fee: 'mutez',
-          minimum_bet: 'mutez',
+          entrance_fee: 'mumav',
+          minimum_bet: 'mumav',
           open_period: 'int',
           validation_delay: 'int',
           ticket_validity: 'int',
@@ -89,8 +89,8 @@ describe('Schema with a ticket of type timestamp inside a big map %tickets in st
                   schema: 'address',
                 },
                 value: {
-                  __michelsonType: 'mutez',
-                  schema: 'mutez',
+                  __michelsonType: 'mumav',
+                  schema: 'mumav',
                 },
               },
             },
@@ -108,8 +108,8 @@ describe('Schema with a ticket of type timestamp inside a big map %tickets in st
               },
             },
             current_pot: {
-              __michelsonType: 'mutez',
-              schema: 'mutez',
+              __michelsonType: 'mumav',
+              schema: 'mumav',
             },
             opened_at: {
               __michelsonType: 'timestamp',
@@ -123,12 +123,12 @@ describe('Schema with a ticket of type timestamp inside a big map %tickets in st
                   schema: 'string',
                 },
                 entrance_fee: {
-                  __michelsonType: 'mutez',
-                  schema: 'mutez',
+                  __michelsonType: 'mumav',
+                  schema: 'mumav',
                 },
                 minimum_bet: {
-                  __michelsonType: 'mutez',
-                  schema: 'mutez',
+                  __michelsonType: 'mumav',
+                  schema: 'mumav',
                 },
                 open_period: {
                   __michelsonType: 'int',

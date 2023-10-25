@@ -3,13 +3,13 @@ import BigNumber from 'bignumber.js';
 const TZ_DECIMALS = 6;
 const MTZ_DECIMALS = 3;
 
-type Format = 'tz' | 'mtz' | 'mumav';
+type Format = 'mv' | 'mmv' | 'mumav';
 
 function getDecimal(format: Format) {
   switch (format) {
-    case 'tz':
+    case 'mv':
       return TZ_DECIMALS;
-    case 'mtz':
+    case 'mmv':
       return MTZ_DECIMALS;
     case 'mumav':
     default:

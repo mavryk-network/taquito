@@ -11,7 +11,7 @@ describe('RegisterGlobalConstant operation', () => {
   const successfulResult = [
     {
       kind: 'register_global_constant',
-      source: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+      source: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
       fee: '372',
       counter: '7423375',
       gas_limit: '1330',
@@ -31,14 +31,14 @@ describe('RegisterGlobalConstant operation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+            contract: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
             change: '-372',
             origin: 'block',
           },
           {
             kind: 'freezer',
             category: 'fees',
-            delegate: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+            delegate: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
             cycle: 17,
             change: '372',
             origin: 'block',
@@ -49,7 +49,7 @@ describe('RegisterGlobalConstant operation', () => {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+              contract: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
               change: '-18250',
               origin: 'block',
             },

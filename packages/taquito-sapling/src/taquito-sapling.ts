@@ -234,7 +234,7 @@ export class SaplingToolkit {
       validateDestination(param.to);
       const amountMutez = param.mumav
         ? param.amount.toString()
-        : format('tz', 'mumav', param.amount).toString();
+        : format('mv', 'mumav', param.amount).toString();
       totalAmount = totalAmount.plus(new BigNumber(amountMutez));
       const memo = param.memo ?? DEFAULT_MEMO;
       if (memo.length > this.#memoSize) {
@@ -280,7 +280,7 @@ export class SaplingToolkit {
         throw new InvalidAddressError(
           destination,
           invalidDetail(ValidationResult.NO_PREFIX_MATCHED) +
-            ` expecting one of the following prefix '${Prefix.TZ1}', '${Prefix.TZ2}' or '${Prefix.TZ3}'.`
+            ` expecting one of the following prefix '${Prefix.MV1}', '${Prefix.MV2}' or '${Prefix.MV3}'.`
         );
       }
     }

@@ -11,7 +11,7 @@ describe('Transfer operation', () => {
   const successfulResult = [
     {
       kind: 'transaction',
-      source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+      source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
       fee: '2991',
       counter: '121619',
       gas_limit: '26260',
@@ -25,10 +25,10 @@ describe('Transfer operation', () => {
           { prim: 'NIL', args: [{ prim: 'operation' }] },
           {
             prim: 'PUSH',
-            args: [{ prim: 'key_hash' }, { string: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh' }],
+            args: [{ prim: 'key_hash' }, { string: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m' }],
           },
           { prim: 'IMPLICIT_ACCOUNT' },
-          { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '50' }] },
+          { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '50' }] },
           { prim: 'UNIT' },
           { prim: 'TRANSFER_TOKENS' },
           { prim: 'CONS' },
@@ -36,11 +36,11 @@ describe('Transfer operation', () => {
       },
       metadata: {
         balance_updates: [
-          { kind: 'contract', contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys', change: '-2991' },
+          { kind: 'contract', contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg', change: '-2991' },
           {
             kind: 'freezer',
             category: 'fees',
-            delegate: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+            delegate: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
             cycle: 54,
             change: '2991',
           },
@@ -57,7 +57,7 @@ describe('Transfer operation', () => {
             source: 'KT1AiWmfuCGSttuMBKbDUqZG6SzKQNrySFei',
             nonce: 0,
             amount: '50',
-            destination: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
+            destination: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
             result: {
               status: 'applied',
               balance_updates: [
@@ -68,7 +68,7 @@ describe('Transfer operation', () => {
                 },
                 {
                   kind: 'contract',
-                  contract: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
+                  contract: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
                   change: '50',
                 },
               ],

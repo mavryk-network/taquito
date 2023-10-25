@@ -59,11 +59,11 @@ The main value of the parameters is an array. Each object in the array will be a
 ```typescript
 const transfer_params = [
     {
-        from_: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+        from_: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv",
         txs: [...]
     },
     {
-        from_: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+        from_: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
         txs: [...]
     }
 ]
@@ -73,15 +73,15 @@ The **txs** property itself contains a list of objects holding the recipient's a
 ```typescript
 const transfer_params = [
     {
-        from_: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+        from_: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv",
         txs: [
                 {
-                    to_: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+                    to_: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
                     token_id: 0,
                     amount: 11111
                 },
                 {
-                    to_: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+                    to_: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
                     token_id: 1,
                     amount: 22222
                 },
@@ -166,14 +166,14 @@ A union value inside a list is represented as an object with one property: the a
 const operator_params = [
     {
         add_operator: {
-            owner: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
-            operator: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+            owner: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv",
+            operator: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
             token_id: 0
         }
     },
     {
         remove_operator: {
-            owner: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+            owner: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
             operator: "tz1Me1MGhK7taay748h4gPnX2cXvbgL6xsYL",
             token_id: 2
         }

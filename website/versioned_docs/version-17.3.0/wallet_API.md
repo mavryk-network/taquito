@@ -209,7 +209,7 @@ Although it is possible to transfer tokens directly from the wallets, Taquito ca
 
 ```js live noInline wallet
 Tezos.wallet
-  .transfer({ to: 'tz1NhNv9g7rtcjyNsH8Zqu79giY5aTqDDrzB', amount: 0.2 })
+  .transfer({ to: 'mv1JnsMA5ArZr926mKNzQf4TeTpibVWfpEx3', amount: 0.2 })
   .send()
   .then((op) => {
     println(`Hash: ${op.opHash}`);
@@ -292,7 +292,7 @@ In the case of multiple arguments (for example if the entrypoint expects a pair)
 Tezos.wallet
   .at('KT1SHiNUNmqBFGNysX9pmh1DC2tQ5pGmRagC')
   .then((contract) =>
-    contract.methods.addName('tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', 'Alice').send()
+    contract.methods.addName('mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', 'Alice').send()
   )
   .then((op) => {
     println(`Hash: ${op.opHash}`);

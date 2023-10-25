@@ -62,7 +62,7 @@ describe('Lambda token', () => {
                         },
                         { prim: 'CONTRACT', args: [{ prim: 'nat' }], annots: ['%foo'] },
                         [{ prim: 'IF_NONE', args: [[{ prim: 'UNIT' }, { prim: 'FAILWITH' }], []] }],
-                        { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                        { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                         { prim: 'PUSH', args: [{ prim: 'nat' }, { int: '3' }] },
                         { prim: 'TRANSFER_TOKENS' },
                         { prim: 'CONS' }
@@ -80,7 +80,7 @@ describe('Lambda token', () => {
                     },
                     { prim: 'CONTRACT', args: [{ prim: 'nat' }], annots: ['%foo'] },
                     [{ prim: 'IF_NONE', args: [[{ prim: 'UNIT' }, { prim: 'FAILWITH' }], []] }],
-                    { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                    { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                     { prim: 'PUSH', args: [{ prim: 'nat' }, { int: '3' }] },
                     { prim: 'TRANSFER_TOKENS' },
                     { prim: 'CONS' }

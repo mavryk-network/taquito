@@ -39,7 +39,7 @@ const sendTez = async (Tezos: TezosToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
-      .transfer({ to: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb", amount: 0.1 })
+      .transfer({ to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv", amount: 0.1 })
       .send();
     await op.confirmation();
     opHash = op.opHash;
@@ -192,19 +192,19 @@ const batchApiTest = async (Tezos: TezosToolkit): Promise<TestResult> => {
       .batch([
         {
           kind: OpKind.TRANSACTION,
-          to: "tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu",
+          to: "mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM",
           amount: 300000,
           mutez: true
         },
         {
           kind: OpKind.TRANSACTION,
-          to: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+          to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv",
           amount: 300000,
           mutez: true
         },
         {
           kind: OpKind.TRANSACTION,
-          to: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+          to: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
           amount: 300000,
           mutez: true
         }
@@ -409,7 +409,7 @@ const tryConfirmationObservable = async (
   let opHash = "";
   try {
     /*const op = await Tezos.wallet
-        .transfer({ to: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb", amount: 1 })
+        .transfer({ to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv", amount: 1 })
         .send();*/
     store.resetConfirmationObservableTest();
 

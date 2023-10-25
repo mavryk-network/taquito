@@ -19,7 +19,7 @@ This is the simplest token transfer scenario
 await Tezos.contract.transfer({ to: contract.address, amount: 1 });
 ```
 
-In the following example, we transfer 0.5ꜩ from a `tz1aaYoabvj2DQtpHz74Z83fSNjY29asdBfZ` address that signs the operation to `tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY`.
+In the following example, we transfer 0.5ꜩ from a `tz1aaYoabvj2DQtpHz74Z83fSNjY29asdBfZ` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
 
 ```js live noInline
 // import { TezosToolkit } from '@taquito/taquito';
@@ -37,7 +37,7 @@ fetch('https://keygen.ecadinfra.com/ghostnet/', {
   })
   .then(() => {
     const amount = 0.5;
-    const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+    const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
     render(`Transfering ${amount} ꜩ to ${address}...`);
     return Tezos.contract.transfer({ to: address, amount: amount });
@@ -62,14 +62,14 @@ A call to the KT1's smart contracts' `do` method is required to transfer tokens 
 
 ## Transfer 0.00005 (50 mutez) tokens from a KT1 address to a tz1 address
 
-Sending 50 mutez from `kt1...` to `tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh`.
+Sending 50 mutez from `kt1...` to `mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m`.
 
 ### Example transfer from a KT1 to a tz1 address on Carthage/Proto006
 
 ```js
 const contract = await Tezos.contract.at('kt1...');
 await contract.methods
-  .do(transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 50))
+  .do(transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 50))
   .send({ amount: 0 });
 ```
 

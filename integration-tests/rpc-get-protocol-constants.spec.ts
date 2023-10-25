@@ -179,7 +179,7 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
           numerator: 1,
           denominator: 2
         },
-        testnet_dictator: 'tz1Xf8zdT3DbAX9cHw3c3CXh79rc4nK4gCe8',
+        testnet_dictator: 'mv1TQVEqbq743rV4f3z4XG8cGX6vk9DniVUP',
         cache_script_size: 100000000,
         cache_stake_distribution_cycles: 8,
         cache_sampler_state_cycles: 8,

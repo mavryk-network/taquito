@@ -55,7 +55,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                           SWAP;
                           CONTRACT (ticket string);
                           IF_NONE { FAIL } {};
-                          PUSH mutez 0;
+                          PUSH mumav 0;
                           DIG 2;
                           TRANSFER_TOKENS;
                           DUP;

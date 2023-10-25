@@ -13,7 +13,7 @@ async function example() {
       balance: '0',
       code: `parameter unit;
       storage int;
-      code { PUSH address "tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr" ;
+      code { PUSH address "mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo" ;
              CONTRACT unit ;
              IF_NONE { PUSH string "Not a contract" ; FAILWITH } { DUP ; DIP { DROP } } ;
              DUP ;

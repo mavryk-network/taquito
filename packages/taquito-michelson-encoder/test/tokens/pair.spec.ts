@@ -232,7 +232,7 @@ describe('Complexe pair token', () => {
         last_checked_sig: {
           // or null
           msg: '0554657a6f73205369676e6564204d6573736167653a20626561636f6e2d746573742d646170702e6e65746c6966792e6170702f20323032322d30332d30395431393a34313a31382e3035375a203130',
-          sender: 'tz1X1exK5QTHZgj44rVw8BgARdsURGpHa2BL',
+          sender: 'mv1BVZi8XFX8wWoJ3hiiT4RwrG5CJsLJzctu',
           sig_: 'sigfRR4eWYXHRAXafFY5muQoH6Hh43kSLBeDzcPjBsDH5TKQzRATyoMafMtcDp19Gs8BveGbFSm77hzEjioKq2UWKpTF1j6T',
         },
       })
@@ -294,7 +294,7 @@ describe('Complexe pair token', () => {
                                 '0554657a6f73205369676e6564204d6573736167653a20626561636f6e2d746573742d646170702e6e65746c6966792e6170702f20323032322d30332d30395431393a34313a31382e3035375a203130',
                             },
                             {
-                              string: 'tz1X1exK5QTHZgj44rVw8BgARdsURGpHa2BL',
+                              string: 'mv1BVZi8XFX8wWoJ3hiiT4RwrG5CJsLJzctu',
                             },
                           ],
                         },

@@ -1,8 +1,8 @@
 export enum Prefix {
-  TZ1 = 'mv1',
-  TZ2 = 'mv2',
-  TZ3 = 'mv3',
-  TZ4 = 'mv4',
+  MV1 = 'mv1',
+  MV2 = 'mv2',
+  MV3 = 'mv3',
+  MV4 = 'mv4',
   KT = 'KT',
   KT1 = 'KT1',
 
@@ -57,10 +57,10 @@ export enum Prefix {
 }
 
 export const prefix = {
-  [Prefix.TZ1]: new Uint8Array([5, 186, 196]),
-  [Prefix.TZ2]: new Uint8Array([5, 186, 199]),
-  [Prefix.TZ3]: new Uint8Array([5, 186, 201]),
-  [Prefix.TZ4]: new Uint8Array([5, 186, 204]),
+  [Prefix.MV1]: new Uint8Array([5, 186, 196]),
+  [Prefix.MV2]: new Uint8Array([5, 186, 199]),
+  [Prefix.MV3]: new Uint8Array([5, 186, 201]),
+  [Prefix.MV4]: new Uint8Array([5, 186, 204]),
   [Prefix.KT]: new Uint8Array([2, 90, 121]),
   [Prefix.KT1]: new Uint8Array([2, 90, 121]),
 
@@ -114,10 +114,10 @@ export const prefix = {
 };
 
 export const prefixLength: { [key: string]: number } = {
-  [Prefix.TZ1]: 20,
-  [Prefix.TZ2]: 20,
-  [Prefix.TZ3]: 20,
-  [Prefix.TZ4]: 20,
+  [Prefix.MV1]: 20,
+  [Prefix.MV2]: 20,
+  [Prefix.MV3]: 20,
+  [Prefix.MV4]: 20,
   [Prefix.KT]: 20,
   [Prefix.KT1]: 20,
 

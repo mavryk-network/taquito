@@ -3945,8 +3945,8 @@ export const rpcContractResponse = {
 						{
 							prim: 'Pair',
 							args: [
-								{ string: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao' },
-								{ string: 'tz1gi6qyzWuK2ciD2tAXDW2XdudmoQHy5YR9' }
+								{ string: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo' },
+								{ string: 'mv1BGRhvgEi5NFv5r317pu8GTLJvHnWY51ht' }
 							]
 						},
 						{ int: '68953' },

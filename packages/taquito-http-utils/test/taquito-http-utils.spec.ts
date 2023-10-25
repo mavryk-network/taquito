@@ -21,23 +21,23 @@ describe('HttpBackend test', () => {
 
   it('Should serialize object while repsecting non-zero values.', async () => {
     const httpRequestQuery = {
-      delegate: ['tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN', 'tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e'],
+      delegate: ['mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL', 'mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU'],
       max_priority: 1,
     };
     const response = httpBackend['serialize'](httpRequestQuery);
     expect(response).toEqual(
-      '?delegate=tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN&delegate=tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e&max_priority=1'
+      '?delegate=mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL&delegate=mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU&max_priority=1'
     );
   });
 
   it('Should serialize object while repsecting zero values.', async () => {
     const httpRequestQuery = {
-      delegate: ['tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN', 'tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e'],
+      delegate: ['mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL', 'mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU'],
       max_priority: 0,
     };
     const response = httpBackend['serialize'](httpRequestQuery);
     expect(response).toEqual(
-      '?delegate=tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN&delegate=tz1NMdMmWZN8QPB8pY4ddncACDg1cHi1xD2e&max_priority=0'
+      '?delegate=mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL&delegate=mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU&max_priority=0'
     );
   });
 });

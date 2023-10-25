@@ -83,7 +83,7 @@ describe('Token contract with big map', () => {
 
   it('should encode a big map key properly', () => {
     const schema = Schema.fromRPCResponse(rpcContractResponse as any);
-    expect(schema.EncodeBigMapKey('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')).toEqual({
+    expect(schema.EncodeBigMapKey('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')).toEqual({
       key: {
         bytes: '000099e9dc72acd837c6c069a30688969e8747a32157',
       },
@@ -97,7 +97,7 @@ describe('Token contract with big map', () => {
     const schema = Schema.fromRPCResponse(rpcContractResponse as any);
     expect(schema.Execute(rpcContractResponse.script.storage)).toEqual({
       '0': '20',
-      '1': 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+      '1': 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
       '2': false,
       '3': new BigNumber('300'),
     });
@@ -107,10 +107,10 @@ describe('Token contract with big map', () => {
     const schema = Schema.fromRPCResponse(rpcContractResponse as any);
     expect(schema.ExecuteOnBigMapDiff(bigMapDiff)).toEqual(
       expectMichelsonMap({
-        tz1Ra8yQVQN4Nd7LpPQ6UT6t3bsWWqHZ9wa6: {
+        mv1TmzDzJj8sTDgdnfr3RC8uAwzPpkcf5uWc: {
           '0': new BigNumber('200'),
           '1': MichelsonMap.fromLiteral({
-            tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD: new BigNumber('60'),
+            mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf: new BigNumber('60'),
           }),
         },
       })
@@ -122,7 +122,7 @@ describe('Token contract with big map', () => {
     expect(schema.ExecuteOnBigMapValue(bigMapValue)).toEqual({
       '0': new BigNumber('200'),
       '1': expectMichelsonMap({
-        tz1fPjyo55HwUAkd1xcL5vo6DGzJrkxAMpiD: new BigNumber('60'),
+        mv1QDoi63Zde221sAaHHXttwZB9cmMhHyuQf: new BigNumber('60'),
       }),
     });
   });

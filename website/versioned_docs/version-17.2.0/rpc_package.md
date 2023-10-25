@@ -27,7 +27,7 @@ The `RpcClient` constructor takes the URL of the node you want to use and the ch
 /* Fetching the balance of an account
  * using the client set up above */
 
-const balance = await client.getBalance('tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb');
+const balance = await client.getBalance('mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv');
 console.log('-- Balance:', balance.toNumber());
 ```
 

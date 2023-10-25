@@ -17,7 +17,7 @@ async function example() {
     console.log(storage);
 
     console.log('Getting balance...');
-    const balance = await tezos.tz.getBalance('tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys');
+    const balance = await tezos.tz.getBalance('mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg');
     console.log(`${balance.toNumber() / 1000000} ꜩ`)
 
     console.log('Getting big map key...');

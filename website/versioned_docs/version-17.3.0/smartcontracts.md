@@ -272,10 +272,10 @@ importKey(Tezos, secretKey)
   .then((contract) => {
     return contract.methods
       .set_child_record(
-        'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address(optional)
+        'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address(optional)
         new MichelsonMap(), //data
         'EEEE', //label
-        'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //owner
+        'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
         'FFFF', //parent
         '10' //ttl(optional)
       )
@@ -326,10 +326,10 @@ importKey(Tezos, secretKey)
   .then((contract) => {
     return contract.methodsObject
       .set_child_record({
-        address: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+        address: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
         data: new MichelsonMap(),
         label: 'EEEE',
-        owner: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+        owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
         parent: 'FFFF',
       })
       .send();

@@ -21,7 +21,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                       code { UNPAIR ;
                              CONTRACT unit ;
                              IF_NONE { PUSH string "none" ; FAILWITH } {} ;
-                             PUSH mutez 0 ;
+                             PUSH mumav 0 ;
                              UNIT ;
                              TRANSFER_TOKENS ;
                              SWAP ;

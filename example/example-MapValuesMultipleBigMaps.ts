@@ -15,9 +15,9 @@ async function example() {
 
             const bigMapInit = new MichelsonMap();
             bigMapInit.set(signer, { 0: '1', 1: new MichelsonMap() });
-            bigMapInit.set('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', { 0: '2', 1: new MichelsonMap() });
-            bigMapInit.set('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD', { 0: '3', 1: new MichelsonMap() });
-            bigMapInit.set('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2', { 0: '4', 1: new MichelsonMap() });
+            bigMapInit.set('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', { 0: '2', 1: new MichelsonMap() });
+            bigMapInit.set('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ', { 0: '3', 1: new MichelsonMap() });
+            bigMapInit.set('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5', { 0: '4', 1: new MichelsonMap() });
             // Deploy a contract with a big map
             const op = await tezos.contract.originate({
                 code: tokenCode,

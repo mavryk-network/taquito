@@ -13,20 +13,20 @@ import {
 
 describe('Utils functions', () => {
   it('Should concatenate watermark and bytes and return a hex string', () => {
-    const bytes = 'a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e0000eadc0855adb415fa69a76fc10397dc2fb37039a000';
+    const bytes = 'a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e01eadc0855adb415fa69a76fc10397dc2fb37039a00000';
     const watermark = new Uint8Array([3])
     const transaction = appendWatermark(bytes, watermark);
     expect(transaction).toEqual(
-      '03a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e0000eadc0855adb415fa69a76fc10397dc2fb37039a000'
+      '03a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e01eadc0855adb415fa69a76fc10397dc2fb37039a00000'
     );
   });
 
     it('Should return a hex string without watermark', () => {
-    const bytes = 'a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e0000eadc0855adb415fa69a76fc10397dc2fb37039a000';
+    const bytes = 'a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e01eadc0855adb415fa69a76fc10397dc2fb37039a00000';
     let watermark;
     const transaction = appendWatermark(bytes, watermark);
     expect(transaction).toEqual(
-      'a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e0000eadc0855adb415fa69a76fc10397dc2fb37039a000'
+      'a4586adf1c2eae408d5ccbbaab186768457702c442b0b11edd0a674761699cc16c008097b09b3bfdd573ca638ca83ee62cc80a7f4adba80aaf9c60c35000a0c21e01eadc0855adb415fa69a76fc10397dc2fb37039a00000'
     );
   });
 

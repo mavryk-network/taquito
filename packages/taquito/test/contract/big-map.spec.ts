@@ -43,7 +43,7 @@ describe('BigMapAbstraction test', () => {
       );
       await expect(
         bigMap.getMultipleValues([
-          'tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwNtest',
+          'mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8test',
           'tz2gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwNtest',
         ])
       ).rejects.toEqual(expectedError);
@@ -52,7 +52,7 @@ describe('BigMapAbstraction test', () => {
     it('returns value for 1 key', async () => {
       rpcContractProvider.getBigMapKeysByID.mockResolvedValue(
         MichelsonMap.fromLiteral({
-          tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN: new BigNumber(3),
+          mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8: new BigNumber(3),
         })
       );
       const bigMap = new BigMapAbstraction(
@@ -63,15 +63,15 @@ describe('BigMapAbstraction test', () => {
         }),
         rpcContractProvider as any
       );
-      const result = await bigMap.getMultipleValues(['tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN']);
-      expect(result.get('tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN')).toEqual(new BigNumber(3));
+      const result = await bigMap.getMultipleValues(['mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8']);
+      expect(result.get('mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8')).toEqual(new BigNumber(3));
     });
 
     it('returns values for 2 keys', async () => {
       rpcContractProvider.getBigMapKeysByID.mockResolvedValue(
         MichelsonMap.fromLiteral({
-          tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: undefined,
-          tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN: new BigNumber(3),
+          mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: undefined,
+          mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8: new BigNumber(3),
         })
       );
       const bigMap = new BigMapAbstraction(
@@ -83,11 +83,11 @@ describe('BigMapAbstraction test', () => {
         rpcContractProvider as any
       );
       const result = await bigMap.getMultipleValues([
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-        'tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN',
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+        'mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8',
       ]);
-      expect(result.get('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toBeUndefined();
-      expect(result.get('tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN')).toEqual(new BigNumber(3));
+      expect(result.get('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toBeUndefined();
+      expect(result.get('mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8')).toEqual(new BigNumber(3));
     });
   });
 

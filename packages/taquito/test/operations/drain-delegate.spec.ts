@@ -15,32 +15,32 @@ describe('DrainDelegate operation', () => {
   const successfulResult = [
     {
       kind: 'drain_delegate',
-      consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-      delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-      destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+      consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+      delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+      destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
       metadata: {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
+            contract: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
             change: '-15525772494',
             origin: 'block',
           },
           {
             kind: 'contract',
-            contract: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+            contract: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
             change: '15525772494',
             origin: 'block',
           },
           {
             kind: 'contract',
-            contract: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
+            contract: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
             change: '-156825984',
             origin: 'block',
           },
           {
             kind: 'contract',
-            contract: 'tz1hoyMUiJYYr4FRPMU8Z7WJzYkqgjygjaTy',
+            contract: 'mv1S3xzu9KfHfebbXDsT9ynfLrCM6QrMaEeL',
             change: '156825984',
             origin: 'block',
           },
@@ -70,9 +70,9 @@ describe('DrainDelegate operation', () => {
       'oo7gLAnWgTe7XtoYjgnkNBXDDvUy2e1DVcVwtvALxajx6KRzkXb',
       {
         kind: OpKind.DRAIN_DELEGATE,
-        consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-        delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-        destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+        consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+        delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+        destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
       },
       fakeForgedBytes,
       successfulResult,
@@ -89,16 +89,16 @@ describe('DrainDelegate operation', () => {
       'oo7gLAnWgTe7XtoYjgnkNBXDDvUy2e1DVcVwtvALxajx6KRzkXb',
       {
         kind: OpKind.DRAIN_DELEGATE,
-        consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-        delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-        destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+        consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+        delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+        destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
       },
       fakeForgedBytes,
       successfulResult,
       fakeContext
     );
 
-    expect(op.consensusKey).toEqual('tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj');
+    expect(op.consensusKey).toEqual('mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq');
   });
 
   it('should return delegate of DrainDelegate operation', () => {
@@ -106,16 +106,16 @@ describe('DrainDelegate operation', () => {
       'oo7gLAnWgTe7XtoYjgnkNBXDDvUy2e1DVcVwtvALxajx6KRzkXb',
       {
         kind: OpKind.DRAIN_DELEGATE,
-        consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-        delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-        destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+        consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+        delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+        destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
       },
       fakeForgedBytes,
       successfulResult,
       fakeContext
     );
 
-    expect(op.delegate).toEqual('tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv');
+    expect(op.delegate).toEqual('mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr');
   });
 
   it('should return destination of DrainDelegate operation', () => {
@@ -123,15 +123,15 @@ describe('DrainDelegate operation', () => {
       'oo7gLAnWgTe7XtoYjgnkNBXDDvUy2e1DVcVwtvALxajx6KRzkXb',
       {
         kind: OpKind.DRAIN_DELEGATE,
-        consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-        delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-        destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+        consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+        delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+        destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
       },
       fakeForgedBytes,
       successfulResult,
       fakeContext
     );
 
-    expect(op.destination).toEqual('tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj');
+    expect(op.destination).toEqual('mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq');
   });
 });

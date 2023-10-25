@@ -107,7 +107,7 @@ values={[
 
 ```js
 const amount = 0.5;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 console.log(`Transfering ${amount} ꜩ to ${address}...`);
 Tezos.contract
@@ -125,7 +125,7 @@ Tezos.contract
 
 ```js
 const amount = 0.5;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 console.log(`Transfering ${amount} ꜩ to ${address}...`);
 Tezos.wallet

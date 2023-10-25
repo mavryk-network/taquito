@@ -30,19 +30,19 @@ describe('Encode expr', () => {
 describe('encodePubKey', () => {
   it('Should encode address properly (tz1)', () => {
     expect(encodePubKey('0000e96b9f8b19af9c7ffa0c0480e1977b295850961f')).toEqual(
-      'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'
+      'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'
     );
   });
 
   it('Should encode address properly (tz2)', () => {
     expect(encodePubKey('0001907d6a7e9f084df840d6e67ffa8db5464f87d4d1')).toEqual(
-      'tz2MVED1t9Jery77Bwm1m5YhUx8Wp5KWWRQe'
+      'mv2ZCJViVoKBu7hmUMMHLDiqukczdQVfb71b'
     );
   });
 
   it('Should encode address properly (tz3)', () => {
     expect(encodePubKey('00022165a26786121eff8203bed56ffaf85d6bb25e42')).toEqual(
-      'tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1'
+      'mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina'
     );
   });
 
@@ -82,7 +82,7 @@ describe('encodeKey', () => {
 describe('encodeKeyHash', () => {
   it('Should encode key hash properly', () => {
     expect(encodeKeyHash('01106d79a502c4135b10e61e92f4c5a72ca740fb87')).toEqual(
-      'tz29p6csejX9FcHXgQERr5sXsAinLvxmVerM'
+      'mv2MXAuaGPXgHktBxophRE3gHyDGAGArD3cC'
     );
   });
 });
@@ -188,21 +188,21 @@ describe('Public Key conversions', () => {
     const publicKey = 'edpku61nGAwkeoA7PQJEFWmrVP1eWrSTVoHgCaF2isjWqDeGdux37k';
     const result = getPkhfromPk(publicKey);
 
-    expect(result).toEqual('tz1ipB38oB5F76HnbTRqWPLEnVtCgj6yf2nB');
+    expect(result).toEqual('mv1XBeLj7YNbgN51jmzgkD2FwWkBF7enjh1z');
   });
 
   it('Should be able to get PKH from tz2/secp256k1 Public Key', () => {
     const publicKey = 'sppk7czKu6So3zDWjhBPBv9wgCrBAfbEFoKYzEaKUsjhNr5Ug6E4Sn1';
     const result = getPkhfromPk(publicKey);
 
-    expect(result).toEqual('tz2Gsf1Q857wUzkNGzHsJNC98z881UutMwjg');
+    expect(result).toEqual('mv2UajJ6jj8UX9M2ZPt8sWNHZncbpp6AkTLA');
   });
 
   it('Should be able to get PKH from tz3/p256 Public Key', () => {
     const publicKey = 'p2pk67BANWUUX2fod9EQbv8ev7GGLpb4UXvLHEVVMiHBSWPHgyzf1tv';
     const result = getPkhfromPk(publicKey);
 
-    expect(result).toEqual('tz3daYfTrShLBfH24hv2kGwXD5y2bApH83RC');
+    expect(result).toEqual('mv3Rx1y4Aozgkw4FD2Usz6dYN6q19ZPdbARx');
   });
 
   it('Should throw and error when passed an invalid Public Key', () => {
@@ -294,12 +294,12 @@ describe('Hex conversions', () => {
       'BLpk1w1wkESXN91Ry39ZMRAhaaHJsDaMZ8wBax5QsKPEKPWTjDBk6dgKMDkoejxxPWJf52cm2osh';
     const result = getPkhfromPk(publicKey);
 
-    expect(result).toEqual('tz4WjcodNRoS9LpvDcjuVLHEvWBAqcCwQjJt');
+    expect(result).toEqual('mv4iSh6Kz5oyBVRaW2LB4UTPMJfeewTsmiUo');
   });
 });
 describe('decode l2_address', () => {
   it('should return hex of address', () => {
-    expect(b58decodeL2Address('tz4QyWfEiv56CVDATV3DT3CDVhPaMKif2Ce8')).toEqual(
+    expect(b58decodeL2Address('mv4cgawwLa5dEdopjtdV2BNMvVt4Aeuy6U2m')).toEqual(
       'af2dc3c40667abc0e89c0ef40171d22aed08d5eb'
     );
   });
@@ -307,7 +307,7 @@ describe('decode l2_address', () => {
 describe('encode l2_address', () => {
   it('should encode hex to address', () => {
     expect(encodeL2Address('af2dc3c40667abc0e89c0ef40171d22aed08d5eb')).toEqual(
-      'tz4QyWfEiv56CVDATV3DT3CDVhPaMKif2Ce8'
+      'mv4cgawwLa5dEdopjtdV2BNMvVt4Aeuy6U2m'
     );
   });
 });

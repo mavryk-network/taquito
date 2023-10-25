@@ -32,7 +32,7 @@ export const managerCode = [{
                 [[{
                     "prim": "PUSH",
                     "args":
-                        [{ "prim": "mutez" },
+                        [{ "prim": "mumav" },
                         { "int": "0" }]
                 },
                 { "prim": "AMOUNT" },

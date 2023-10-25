@@ -18,12 +18,12 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       await op2.confirmation();
 
       const balance = await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())
-      const estimate = await LocalTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), amount: balance.toNumber(), mutez: true });
+      const estimate = await LocalTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), amount: balance.toNumber(), mumav: true });
 
       // Emptying the account
       // The max amount that can be sent now is the total balance minus the fees (no need for reveal fees)
       const maxAmount = balance.minus(estimate.suggestedFeeMutez).toNumber();
-      const op3 = await LocalTez.contract.transfer({ to: await Tezos.signer.publicKeyHash(), mutez: true, amount: maxAmount, fee: estimate.suggestedFeeMutez, gasLimit: estimate.gasLimit, storageLimit: 0 })
+      const op3 = await LocalTez.contract.transfer({ to: await Tezos.signer.publicKeyHash(), mumav: true, amount: maxAmount, fee: estimate.suggestedFeeMutez, gasLimit: estimate.gasLimit, storageLimit: 0 })
       await op3.confirmation();
 
       expect((await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())).toString()).toEqual("0")

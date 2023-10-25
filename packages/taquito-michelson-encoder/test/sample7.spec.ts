@@ -7,7 +7,7 @@ describe('Schema test', () => {
     const storage = schema.Execute(rpcContractResponse7.script.storage);
     expect(storage).toEqual({
       game: null,
-      oracle_id: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+      oracle_id: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
     });
   });
 
@@ -15,7 +15,7 @@ describe('Schema test', () => {
     const schema = new Schema(storage7);
     const storage = schema.Encode({
       game: null,
-      oracle_id: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+      oracle_id: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
     });
     expect(storage).toEqual(rpcContractResponse7.script.storage);
   });
@@ -26,9 +26,9 @@ describe('Schema test', () => {
       game: {
         number: 1,
         bet: 1,
-        player: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+        player: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
       },
-      oracle_id: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+      oracle_id: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
     });
     expect(storage).toEqual({
       args: [
@@ -45,7 +45,7 @@ describe('Schema test', () => {
                       int: '1',
                     },
                     {
-                      string: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+                      string: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
                     },
                   ],
                   prim: 'Pair',
@@ -57,7 +57,7 @@ describe('Schema test', () => {
           prim: 'Some',
         },
         {
-          string: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+          string: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
         },
       ],
       prim: 'Pair',

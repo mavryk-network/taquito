@@ -20,7 +20,7 @@ describe('RemoteSigner test', () => {
   it('RemoteSigner is instantiable', () => {
     expect(
       new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any
@@ -31,7 +31,7 @@ describe('RemoteSigner test', () => {
   describe('Sign messages', () => {
     it('Should sign messages', async () => {
       const signer = new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any
@@ -52,7 +52,7 @@ describe('RemoteSigner test', () => {
 
       expect(httpBackend.createRequest.mock.calls[0][0]).toEqual({
         method: 'POST',
-        url: 'http://127.0.0.1:6732/keys/tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        url: 'http://127.0.0.1:6732/keys/mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         headers: undefined,
       });
 
@@ -62,7 +62,7 @@ describe('RemoteSigner test', () => {
 
       expect(httpBackend.createRequest.mock.calls[1][0]).toEqual({
         method: 'GET',
-        url: 'http://127.0.0.1:6732/keys/tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        url: 'http://127.0.0.1:6732/keys/mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         headers: undefined,
       });
 
@@ -79,7 +79,7 @@ describe('RemoteSigner test', () => {
 
     it('Should sign messages with 5 digit edsig prefix', async () => {
       const signer = new RemoteSigner(
-        'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY',
+        'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any
@@ -95,39 +95,39 @@ describe('RemoteSigner test', () => {
         });
 
       const signed = await signer.sign(
-        '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c0000eadc0855adb415fa69a76fc10397dc2fb37039a000'
+        '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c01eadc0855adb415fa69a76fc10397dc2fb37039a00000'
       );
 
       expect(httpBackend.createRequest.mock.calls[0][0]).toEqual({
         method: 'POST',
-        url: 'http://127.0.0.1:6732/keys/tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY',
+        url: 'http://127.0.0.1:6732/keys/mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq',
         headers: undefined,
       });
 
       expect(httpBackend.createRequest.mock.calls[0][1]).toEqual(
-        '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c0000eadc0855adb415fa69a76fc10397dc2fb37039a000'
+        '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c01eadc0855adb415fa69a76fc10397dc2fb37039a00000'
       );
 
       expect(httpBackend.createRequest.mock.calls[1][0]).toEqual({
         method: 'GET',
-        url: 'http://127.0.0.1:6732/keys/tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY',
+        url: 'http://127.0.0.1:6732/keys/mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq',
         headers: undefined,
       });
 
       expect(signed).toEqual({
         bytes:
-          '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c0000eadc0855adb415fa69a76fc10397dc2fb37039a000',
+          '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c01eadc0855adb415fa69a76fc10397dc2fb37039a00000',
         prefixSig:
           'edsigu38iivupB2WoYAUtithpX28W1y9vZDHHQxGdm2XD6DFaiEYRbKAgrj33KEorjiXFSYQrQER1rLQHqkaN5WDDKg8E9QHvNZ',
         sbytes:
-          '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c0000eadc0855adb415fa69a76fc10397dc2fb37039a000e029a32d628fe101d9c07f82bfd34c86c0b04ee7e3bbe317420ea098944464f18d701857c42fae94ff81bfaf838b6c16df1188ca462bd78b5dd1a2b7371f3108',
+          '03281e35275248696304421740804c13f1434162474ee9449f70fb0f02cfd178f26c00c9fc72e8491bd2973e196f04ec6918ad5bcee22daa0abeb98d01c35000c09a0c01eadc0855adb415fa69a76fc10397dc2fb37039a00000e029a32d628fe101d9c07f82bfd34c86c0b04ee7e3bbe317420ea098944464f18d701857c42fae94ff81bfaf838b6c16df1188ca462bd78b5dd1a2b7371f3108',
         sig: 'sigsKFbsguu6KmUyVbarrdZiqzF94zaaQh3GWu2gXE5sEdQQbq6RFbmfo8GeC4eFLtzzwEUidf1iSX6xYARMsF8d48HAxQv9',
       });
     });
 
     it('Should fail if signature is invalid', async () => {
       const signer = new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any
@@ -166,7 +166,7 @@ describe('RemoteSigner test', () => {
 
     it('Should strip trailing slashes when creating URL because it is assumed to be included in path', async () => {
       const signer = new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732///',
         {},
         httpBackend as any
@@ -187,7 +187,7 @@ describe('RemoteSigner test', () => {
 
       expect(httpBackend.createRequest.mock.calls[0][0]).toEqual({
         method: 'POST',
-        url: 'http://127.0.0.1:6732/keys/tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        url: 'http://127.0.0.1:6732/keys/mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         headers: undefined,
       });
 
@@ -197,7 +197,7 @@ describe('RemoteSigner test', () => {
 
       expect(httpBackend.createRequest.mock.calls[1][0]).toEqual({
         method: 'GET',
-        url: 'http://127.0.0.1:6732/keys/tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        url: 'http://127.0.0.1:6732/keys/mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         headers: undefined,
       });
 
@@ -214,7 +214,7 @@ describe('RemoteSigner test', () => {
 
     it('Verify error message for signer.publicKey HttpResponse failure with STATUS_CODE.NOT_FOUND', async () => {
       const signer = new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any
@@ -239,7 +239,7 @@ describe('RemoteSigner test', () => {
 
     it('Verify error messages for signer.sign HttpResponse failure with STATUS_CODE.FORBIDDEN', async () => {
       const signer = new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any
@@ -266,7 +266,7 @@ describe('RemoteSigner test', () => {
 
     it('Verify error messages for HttpResponse failure with STATUS_CODE.BAD_REQUEST', async () => {
       const signer = new RemoteSigner(
-        'tz1iD5nmudc4QtfNW14WWaiP7JEDuUHnbXuv',
+        'mv1WaZ6NDzuQzASbeKdMkQQQGK6CTrmKrDGh',
         'http://127.0.0.1:6732',
         {},
         httpBackend as any

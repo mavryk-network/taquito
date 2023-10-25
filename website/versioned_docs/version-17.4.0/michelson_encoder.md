@@ -401,7 +401,7 @@ Here is an example of `encode`:
 ```js live noInline
 const parameterSchema = new ParameterSchema({"prim":"pair","args":[{"prim":"address","annots":[":spender"]},{"prim":"nat","annots":[":value"]}],"annots":["%approve"]});
 const michelsonData = parameterSchema.Encode(
-    'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     '12'
 )
 println(JSON.stringify(michelsonData, null, 2));

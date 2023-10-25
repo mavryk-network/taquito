@@ -1,9 +1,9 @@
-import { MutezToken, MutezValidationError } from '../../src/tokens/comparable/mutez';
+import { MutezToken, MutezValidationError } from '../../src/tokens/comparable/mumav';
 
 describe('Mutez token', () => {
   let token: MutezToken;
   beforeEach(() => {
-    token = new MutezToken({ prim: 'mutez', args: [], annots: [] }, 0, null as any);
+    token = new MutezToken({ prim: 'mumav', args: [], annots: [] }, 0, null as any);
   });
 
   describe('EncodeObject', () => {
@@ -51,8 +51,8 @@ describe('Mutez token', () => {
   describe('generateSchema', () => {
     it('Should generate the schema properly', () => {
       expect(token.generateSchema()).toEqual({
-        __michelsonType: 'mutez',
-        schema: 'mutez'
+        __michelsonType: 'mumav',
+        schema: 'mumav'
       });
     });
   });

@@ -58,7 +58,7 @@ Tezos.setProvider({
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 Tezos.tz
-  .getBalance('tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY')
+  .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
   .then((balance) => println(`${balance.toNumber() / 1000000} ꜩ`))
   .catch((error) => println(JSON.stringify(error)));
 ```
@@ -100,7 +100,7 @@ values={[
 
 ```js live noInline
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Transfering ${amount} ꜩ to ${address}...`);
 Tezos.contract
@@ -118,7 +118,7 @@ Tezos.contract
 
 ```js live noInline wallet
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Transfering ${amount} ꜩ to ${address}...`);
 Tezos.wallet

@@ -154,37 +154,37 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         to: paymentAddress2Index0,
         amount: 10,
         memo: 'tx1',
-        mutez: true
+        mumav: true
       },
       {
         to: paymentAddress2Index5,
         amount: 20,
         memo: 'tx2',
-        mutez: true
+        mumav: true
       },
       {
         to: paymentAddress2Index8,
         amount: 30,
         memo: 'tx3',
-        mutez: true
+        mumav: true
       },
       {
         to: paymentAddress3Index0,
         amount: 40,
         memo: 'tx4',
-        mutez: true
+        mumav: true
       },
       {
         to: paymentAddress3Index5,
         amount: 50,
         memo: 'tx5',
-        mutez: true
+        mumav: true
       },
       {
         to: paymentAddress3Index8,
         amount: 60,
         memo: 'tx6',
-        mutez: true
+        mumav: true
       }
       ])
 

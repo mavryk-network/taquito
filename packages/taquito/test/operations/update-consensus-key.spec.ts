@@ -11,7 +11,7 @@ describe('Update Consensus Key operation', () => {
   const successfulResult = [
     {
       kind: 'update_consensus_key',
-      source: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
+      source: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
       fee: '369',
       counter: '19043',
       gas_limit: '1100',
@@ -21,7 +21,7 @@ describe('Update Consensus Key operation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
+            contract: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
             change: '-369',
             origin: 'block',
           },
@@ -73,13 +73,13 @@ describe('Update Consensus Key operation', () => {
     const op = new UpdateConsensusKeyOperation(
       'opNzjyNGHBAgvsVMyezUAPSZKbFcXZmTh6GTjcTjAGtGMpVG3Eh',
       {} as any,
-      'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
+      'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
       fakeForgedBytes,
       successfulResult,
       fakeContext
     );
 
-    expect(op.source).toEqual('tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv');
+    expect(op.source).toEqual('mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr');
   });
 
   it('should return fee of update consensus operation', () => {
@@ -176,7 +176,7 @@ describe('Update Consensus Key operation', () => {
               {
                 kind: 'temporary',
                 id: 'proto.015-PtLimaPt.operation.update_consensus_key_on_unregistered_delegate',
-                delegate: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+                delegate: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
               },
             ],
           })
@@ -189,7 +189,7 @@ describe('Update Consensus Key operation', () => {
     expect(op.errors?.[0]).toEqual({
       kind: 'temporary',
       id: 'proto.015-PtLimaPt.operation.update_consensus_key_on_unregistered_delegate',
-      delegate: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+      delegate: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
     });
   });
 });

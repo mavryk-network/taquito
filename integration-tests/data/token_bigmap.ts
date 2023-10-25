@@ -6,7 +6,7 @@ export const tokenBigmapStorage = {
       args: [
         [],
         {
-          string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
       ],
     },

@@ -125,7 +125,7 @@ describe('OperationBatch test', () => {
     mockRpcClient.getManagerKey.mockResolvedValue('test');
     mockSigner.sign.mockResolvedValue({ sbytes: 'test', prefixSig: 'test_sig' });
     mockSigner.publicKey.mockResolvedValue('test_pub_key');
-    mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+    mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
     mockRpcClient.preapplyOperations.mockResolvedValue([]);
     mockRpcClient.getChainId.mockResolvedValue('chain-id');
     mockRpcClient.injectOperation.mockResolvedValue(
@@ -169,7 +169,7 @@ describe('OperationBatch test', () => {
               fee: '475',
               gas_limit: '1330',
               kind: 'register_global_constant',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '93',
             },
           ],
@@ -204,7 +204,7 @@ describe('OperationBatch test', () => {
               fee: '500',
               gas_limit: '1400',
               kind: 'register_global_constant',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '100',
             },
           ],
@@ -235,7 +235,7 @@ describe('OperationBatch test', () => {
               gas_limit: '1100',
               kind: 'reveal',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '0',
             },
             {
@@ -244,7 +244,7 @@ describe('OperationBatch test', () => {
               fee: '475',
               gas_limit: '1330',
               kind: 'register_global_constant',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '93',
             },
           ],
@@ -281,7 +281,7 @@ describe('OperationBatch test', () => {
               fee: '475',
               gas_limit: '1330',
               kind: 'register_global_constant',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '93',
             },
           ],
@@ -319,7 +319,7 @@ describe('OperationBatch test', () => {
               fee: '500',
               gas_limit: '1400',
               kind: 'register_global_constant',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '100',
             },
           ],
@@ -356,7 +356,7 @@ describe('OperationBatch test', () => {
               gas_limit: '1100',
               kind: 'reveal',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '0',
             },
             {
@@ -365,7 +365,7 @@ describe('OperationBatch test', () => {
               fee: '475',
               gas_limit: '1330',
               kind: 'register_global_constant',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '93',
             },
           ],
@@ -399,7 +399,7 @@ describe('OperationBatch test', () => {
           contents: [
             {
               kind: 'increase_paid_storage',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '475',
               gas_limit: '1330',
               storage_limit: '93',
@@ -442,12 +442,12 @@ describe('OperationBatch test', () => {
               gas_limit: '1100',
               kind: 'reveal',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               storage_limit: '0',
             },
             {
               kind: 'increase_paid_storage',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '475',
               gas_limit: '1330',
               storage_limit: '93',
@@ -487,7 +487,7 @@ describe('OperationBatch test', () => {
           contents: [
             {
               kind: 'increase_paid_storage',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '500',
               gas_limit: '1400',
               storage_limit: '100',
@@ -528,7 +528,7 @@ describe('OperationBatch test', () => {
           contents: [
             {
               kind: 'smart_rollup_add_messages',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '475',
               gas_limit: '1330',
               storage_limit: '93',
@@ -571,7 +571,7 @@ describe('OperationBatch test', () => {
           contents: [
             {
               kind: 'smart_rollup_add_messages',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '399',
               gas_limit: '1100',
               storage_limit: '95',
@@ -614,14 +614,14 @@ describe('OperationBatch test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'smart_rollup_add_messages',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '475',
               gas_limit: '1330',
               storage_limit: '93',
@@ -663,7 +663,7 @@ describe('OperationBatch test', () => {
           contents: [
             {
               kind: 'smart_rollup_originate',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '475',
               gas_limit: '1330',
               storage_limit: '93',
@@ -707,7 +707,7 @@ describe('OperationBatch test', () => {
           contents: [
             {
               kind: 'smart_rollup_originate',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '399',
               gas_limit: '1100',
               storage_limit: '95',
@@ -751,14 +751,14 @@ describe('OperationBatch test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'smart_rollup_originate',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '475',
               gas_limit: '1330',
               storage_limit: '93',

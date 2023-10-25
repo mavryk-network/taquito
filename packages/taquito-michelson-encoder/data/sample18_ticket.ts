@@ -481,7 +481,7 @@ export const rpcContractResponse = {
     ],
     storage: {
       prim: 'Pair',
-      args: [{ string: 'tz1bwfmSYqrhUTAoybGdhWBBefsbuhNdcC2Y' }, { int: '142' }, { int: '2' }, { int: '143' }]
+      args: [{ string: 'mv1GBmu3deZ7gvgMTE7dgfz2y8FA22znzH7u' }, { int: '142' }, { int: '2' }, { int: '143' }]
     }
   }
 };

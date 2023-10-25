@@ -1,9 +1,9 @@
 export const contractWithNever = `{ parameter
     (or (or %adminAndInteract (or (never %admin) (nat %bid)) (or (nat %cancel) (nat %resolve)))
         (pair %configure
-           (mutez %opening_price)
+           (mumav %opening_price)
            (pair (nat %min_raise_percent)
-                 (pair (mutez %min_raise)
+                 (pair (mumav %min_raise)
                        (pair (nat %round_time)
                              (pair (nat %extend_time)
                                    (pair (list %asset
@@ -17,7 +17,7 @@ export const contractWithNever = `{ parameter
                             (big_map %auctions
                                nat
                                (pair (address %seller)
-                                     (pair (mutez %current_bid)
+                                     (pair (mumav %current_bid)
                                            (pair (timestamp %start_time)
                                                  (pair (timestamp %last_bid_time)
                                                        (pair (int %round_time)
@@ -25,7 +25,7 @@ export const contractWithNever = `{ parameter
                                                                    (pair (list %asset
                                                                             (pair (address %fa2_address) (list %fa2_batch (pair (nat %token_id) (nat %amount)))))
                                                                          (pair (nat %min_raise_percent)
-                                                                               (pair (mutez %min_raise) (pair (timestamp %end_time) (address %highest_bidder)))))))))))))))) ;
+                                                                               (pair (mumav %min_raise) (pair (timestamp %end_time) (address %highest_bidder)))))))))))))))) ;
   code { LAMBDA
            (pair bool string)
            unit
@@ -44,7 +44,7 @@ export const contractWithNever = `{ parameter
                      (list (pair (address %from_)
                                  (list %txs (pair (address %to_) (pair (nat %token_id) (nat %amount)))))) ;
                    IF_NONE { PUSH string "Invalid FA2 Address" ; FAILWITH } {} ;
-                   PUSH mutez 0 ;
+                   PUSH mumav 0 ;
                    NIL (pair address (list (pair address (pair nat nat)))) ;
                    DIG 3 ;
                    DUP 5 ;
@@ -64,21 +64,21 @@ export const contractWithNever = `{ parameter
                                          (big_map
                                             nat
                                             (pair address
-                                                  (pair mutez
+                                                  (pair mumav
                                                         (pair timestamp
                                                               (pair timestamp
                                                                     (pair int
                                                                           (pair int
                                                                                 (pair (list (pair address (list (pair nat nat))))
-                                                                                      (pair nat (pair mutez (pair timestamp address))))))))))))))))
+                                                                                      (pair nat (pair mumav (pair timestamp address))))))))))))))))
            (pair address
-                 (pair mutez
+                 (pair mumav
                        (pair timestamp
                              (pair timestamp
                                    (pair int
                                          (pair int
                                                (pair (list (pair address (list (pair nat nat))))
-                                                     (pair nat (pair mutez (pair timestamp address))))))))))
+                                                     (pair nat (pair mumav (pair timestamp address))))))))))
            { UNPAIR ;
              SWAP ;
              CDR ;
@@ -99,13 +99,13 @@ export const contractWithNever = `{ parameter
                {} } ;
          LAMBDA
            (pair address
-                 (pair mutez
+                 (pair mumav
                        (pair timestamp
                              (pair timestamp
                                    (pair int
                                          (pair int
                                                (pair (list (pair address (list (pair nat nat))))
-                                                     (pair nat (pair mutez (pair timestamp address))))))))))
+                                                     (pair nat (pair mumav (pair timestamp address))))))))))
            bool
            { DUP ;
              CDR ;
@@ -152,8 +152,8 @@ export const contractWithNever = `{ parameter
                      DROP ;
                      DIG 2 ;
                      DROP ;
-                     PUSH string "Amount must be 0mutez" ;
-                     PUSH mutez 0 ;
+                     PUSH string "Amount must be 0mumav" ;
+                     PUSH mumav 0 ;
                      AMOUNT ;
                      COMPARE ;
                      EQ ;
@@ -292,11 +292,11 @@ export const contractWithNever = `{ parameter
                      IF_NONE
                        { PUSH string "DIVISION_BY_ZERO" ; FAILWITH }
                        { UNPAIR ;
-                         PUSH mutez 0 ;
+                         PUSH mumav 0 ;
                          DIG 2 ;
                          COMPARE ;
                          GT ;
-                         IF { PUSH mutez 1 ; ADD } {} } ;
+                         IF { PUSH mumav 1 ; ADD } {} } ;
                      DUP 4 ;
                      CDR ;
                      CAR ;
@@ -682,8 +682,8 @@ export const contractWithNever = `{ parameter
                      SWAP ;
                      EXEC ;
                      DROP ;
-                     PUSH string "Amount must be 0mutez" ;
-                     PUSH mutez 0 ;
+                     PUSH string "Amount must be 0mumav" ;
+                     PUSH mumav 0 ;
                      AMOUNT ;
                      COMPARE ;
                      EQ ;
@@ -736,13 +736,13 @@ export const contractWithNever = `{ parameter
                      CDR ;
                      DIG 3 ;
                      NONE (pair address
-                                (pair mutez
+                                (pair mumav
                                       (pair timestamp
                                             (pair timestamp
                                                   (pair int
                                                         (pair int
                                                               (pair (list (pair address (list (pair nat nat))))
-                                                                    (pair nat (pair mutez (pair timestamp address)))))))))) ;
+                                                                    (pair nat (pair mumav (pair timestamp address)))))))))) ;
                      SWAP ;
                      UPDATE ;
                      DUP 4 ;
@@ -788,8 +788,8 @@ export const contractWithNever = `{ parameter
                      SWAP ;
                      EXEC ;
                      DROP ;
-                     PUSH string "Amount must be 0mutez" ;
-                     PUSH mutez 0 ;
+                     PUSH string "Amount must be 0mumav" ;
+                     PUSH mumav 0 ;
                      AMOUNT ;
                      COMPARE ;
                      EQ ;
@@ -842,13 +842,13 @@ export const contractWithNever = `{ parameter
                      CDR ;
                      DIG 3 ;
                      NONE (pair address
-                                (pair mutez
+                                (pair mumav
                                       (pair timestamp
                                             (pair timestamp
                                                   (pair int
                                                         (pair int
                                                               (pair (list (pair address (list (pair nat nat))))
-                                                                    (pair nat (pair mutez (pair timestamp address)))))))))) ;
+                                                                    (pair nat (pair mumav (pair timestamp address)))))))))) ;
                      SWAP ;
                      UPDATE ;
                      DUP 4 ;
@@ -979,8 +979,8 @@ export const contractWithNever = `{ parameter
              SWAP ;
              EXEC ;
              DROP ;
-             PUSH string "Opening price must be greater than 0mutez" ;
-             PUSH mutez 0 ;
+             PUSH string "Opening price must be greater than 0mumav" ;
+             PUSH mumav 0 ;
              DUP 3 ;
              CAR ;
              COMPARE ;

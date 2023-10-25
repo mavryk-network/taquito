@@ -6,7 +6,7 @@ import {
 
 describe('TxRollupL2Address Token', () => {
   let token: TxRollupL2AddressToken;
-  const bytes = b58decodeL2Address('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf');
+  const bytes = b58decodeL2Address('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D');
   beforeEach(() => {
     token = new TxRollupL2AddressToken(
       { prim: 'tx_rollup_l2_address', args: [], annots: [] },
@@ -17,7 +17,7 @@ describe('TxRollupL2Address Token', () => {
 
   describe('test ToBigMapKey', () => {
     it('to email bytes', () => {
-      expect(token.ToBigMapKey('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf')).toEqual({
+      expect(token.ToBigMapKey('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D')).toEqual({
         key: { bytes },
         type: { prim: 'bytes' },
       });
@@ -26,27 +26,27 @@ describe('TxRollupL2Address Token', () => {
 
   describe('EncodeObject', () => {
     it('Should encode address to string', () => {
-      expect(token.EncodeObject('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf')).toEqual({
-        string: 'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf',
+      expect(token.EncodeObject('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D')).toEqual({
+        string: 'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D',
       });
     });
 
     it('test semantic', () => {
-      const val = token.EncodeObject('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf', {
+      const val = token.EncodeObject('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D', {
         tx_rollup_l2_address: () => ({ string: 'tester' }),
       });
-      const val2 = token.EncodeObject('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf', {
+      const val2 = token.EncodeObject('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D', {
         tx_rollup_l2_address: (arg) => ({ string: arg }),
       });
       expect(val).toEqual({ string: 'tester' });
-      expect(val2).toEqual({ string: 'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf' });
+      expect(val2).toEqual({ string: 'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D' });
     });
 
     it('Should throw a new validation error when address is not valid', () => {
-      expect(() => token.EncodeObject('tz4').toThrowError(TxRollupL2AddressValidationError));
+      expect(() => token.EncodeObject('mv4').toThrowError(TxRollupL2AddressValidationError));
       expect(() =>
         token
-          .EncodeObject('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')
+          .EncodeObject('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')
           .toThrowError(TxRollupL2AddressValidationError)
       );
       expect(() => token.EncodeObject(1).toThrowError(TxRollupL2AddressValidationError));
@@ -56,8 +56,8 @@ describe('TxRollupL2Address Token', () => {
 
   describe('Encode', () => {
     it('Should encode address to string', () => {
-      expect(token.Encode(['tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf'])).toEqual({
-        string: 'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf',
+      expect(token.Encode(['mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D'])).toEqual({
+        string: 'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D',
       });
     });
 
@@ -97,19 +97,19 @@ describe('TxRollupL2Address Token', () => {
       );
     });
     it('should return string', () => {
-      expect(token.Execute({ bytes: '', string: 'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf' })).toEqual(
-        'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf'
+      expect(token.Execute({ bytes: '', string: 'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D' })).toEqual(
+        'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D'
       );
     });
     it('should return string', () => {
-      expect(token.Execute({ bytes })).toEqual('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf');
+      expect(token.Execute({ bytes })).toEqual('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D');
     });
   });
   describe('ToKey', () => {
-    it('tz4 address should be returned', () => {
-      expect(token.ToKey({ bytes })).toEqual('tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf');
-      expect(token.ToKey({ string: 'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf' })).toEqual(
-        'tz49XoaXbDZcWi2R1iKxQUxtBWXt4g4S1qtf'
+    it('mv4 address should be returned', () => {
+      expect(token.ToKey({ bytes })).toEqual('mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D');
+      expect(token.ToKey({ string: 'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D' })).toEqual(
+        'mv4MEssECsa9Yrd5J7vDyd92cK2Mt1Kuhm8D'
       );
     });
     it('should throw error when incorrect provided', () => {

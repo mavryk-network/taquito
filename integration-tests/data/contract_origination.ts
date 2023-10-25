@@ -53,7 +53,7 @@ export const rpcToForge = {
               { "prim": "SWAP" },
               {
                 "prim": "PUSH",
-                "args": [{ "prim": "mutez" }, { "int": "0" }]
+                "args": [{ "prim": "mumav" }, { "int": "0" }]
               },
               { "prim": "SWAP" },
               { "prim": "TRANSFER_TOKENS" },

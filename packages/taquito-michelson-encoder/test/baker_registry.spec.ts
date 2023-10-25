@@ -18,8 +18,8 @@ describe('Baker Registry contract test', () => {
         },
       },
       owner: 'address',
-      signup_fee: 'mutez',
-      update_fee: 'mutez',
+      signup_fee: 'mumav',
+      update_fee: 'mumav',
     });
 
     expect(schema.generateSchema()).toEqual({
@@ -62,12 +62,12 @@ describe('Baker Registry contract test', () => {
           schema: 'address',
         },
         signup_fee: {
-          __michelsonType: 'mutez',
-          schema: 'mutez',
+          __michelsonType: 'mumav',
+          schema: 'mumav',
         },
         update_fee: {
-          __michelsonType: 'mutez',
-          schema: 'mutez',
+          __michelsonType: 'mumav',
+          schema: 'mumav',
         },
       },
     });
@@ -77,7 +77,7 @@ describe('Baker Registry contract test', () => {
     const schema = new Schema(storage);
     expect(schema.Execute(rpcContractResponse.script.storage)).toEqual({
       '0': expect.objectContaining(new MichelsonMap()),
-      owner: 'tz1aicu922KqrGxpdTpVdSD1Jrqz7fJiUu6L',
+      owner: 'mv192Yu22BEY6mYwEc8UjLVWYQutDmeFjMtF',
       signup_fee: new BigNumber('8000000'),
       update_fee: new BigNumber('1000000'),
     });
@@ -85,9 +85,9 @@ describe('Baker Registry contract test', () => {
 
   it('Encode big map key properly', () => {
     const schema = new Schema(storage);
-    expect(schema.EncodeBigMapKey('tz1MXFrtZoaXckE41bjUCSjAjAap3AFDSr3N')).toEqual({
+    expect(schema.EncodeBigMapKey('mv1FFjTF51uXYLKEpYaxLWwaK4o8s557vV1b')).toEqual({
       key: {
-        string: 'tz1MXFrtZoaXckE41bjUCSjAjAap3AFDSr3N',
+        string: 'mv1FFjTF51uXYLKEpYaxLWwaK4o8s557vV1b',
       },
       type: {
         prim: 'key_hash',
@@ -115,8 +115,8 @@ describe('Baker Registry contract test', () => {
         reporter: { Some: 'address' },
       },
       set_fees: {
-        signup_fee: 'mutez',
-        update_fee: 'mutez',
+        signup_fee: 'mumav',
+        update_fee: 'mumav',
       },
       withdraw: 'contract',
     });
@@ -151,12 +151,12 @@ describe('Baker Registry contract test', () => {
           __michelsonType: 'pair',
           schema: {
             signup_fee: {
-              __michelsonType: 'mutez',
-              schema: 'mutez',
+              __michelsonType: 'mumav',
+              schema: 'mumav',
             },
             update_fee: {
-              __michelsonType: 'mutez',
-              schema: 'mutez',
+              __michelsonType: 'mumav',
+              schema: 'mumav',
             },
           },
         },
@@ -173,7 +173,7 @@ describe('Baker Registry contract test', () => {
     });
 
     expect(schema.ExtractSignatures()).toContainEqual(['set_data', 'key_hash', 'bytes', 'address']);
-    expect(schema.ExtractSignatures()).toContainEqual(['set_fees', 'mutez', 'mutez']);
+    expect(schema.ExtractSignatures()).toContainEqual(['set_fees', 'mumav', 'mumav']);
     expect(schema.ExtractSignatures()).toContainEqual(['withdraw', 'contract']);
   });
 
@@ -182,16 +182,16 @@ describe('Baker Registry contract test', () => {
     expect(
       schema.Encode(
         'set_data',
-        'tz1PPPYChg5xXHpGzygnNkmzPd1hyVRMxvJf',
+        'mv1Uvg8eAfZaQfFr9KDizh2wtczfLu4YzzRq',
         '0123',
-        'tz1PPPYChg5xXHpGzygnNkmzPd1hyVRMxvJf'
+        'mv1Uvg8eAfZaQfFr9KDizh2wtczfLu4YzzRq'
       )
     ).toEqual({
       args: [
         {
           args: [
             {
-              string: 'tz1PPPYChg5xXHpGzygnNkmzPd1hyVRMxvJf',
+              string: 'mv1Uvg8eAfZaQfFr9KDizh2wtczfLu4YzzRq',
             },
             {
               args: [
@@ -206,7 +206,7 @@ describe('Baker Registry contract test', () => {
                 {
                   args: [
                     {
-                      string: 'tz1PPPYChg5xXHpGzygnNkmzPd1hyVRMxvJf',
+                      string: 'mv1Uvg8eAfZaQfFr9KDizh2wtczfLu4YzzRq',
                     },
                   ],
                   prim: 'Some',

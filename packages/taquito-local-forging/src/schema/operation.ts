@@ -14,7 +14,7 @@ export const ManagerOperationSchema = {
 };
 
 export const ActivationSchema = {
-  pkh: CODEC.TZ1,
+  pkh: CODEC.MV1,
   secret: CODEC.SECRET,
 };
 

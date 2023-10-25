@@ -27,7 +27,7 @@ The `Estimate` object has the following properties:
 
 ### Estimate a transfer operation
 
-The following example shows an estimate of the fees associated with transferring 2ꜩ to `tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY` address. The configuration of the signer is to use a throw-away private key for demonstration purposes.
+The following example shows an estimate of the fees associated with transferring 2ꜩ to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc` address. The configuration of the signer is to use a throw-away private key for demonstration purposes.
 
 <Tabs
 defaultValue="signer"
@@ -42,7 +42,7 @@ values={[
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Estimating the transfer of ${amount} ꜩ to ${address} : `);
 Tezos.estimate
@@ -67,7 +67,7 @@ Tezos.estimate
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Estimating the transfer of ${amount} ꜩ to ${address} : `);
 Tezos.estimate

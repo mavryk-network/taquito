@@ -15,7 +15,7 @@ async function example() {
       code { DUP ; CAR ; SWAP ; CDR ; SWAP ; DUP ; DUG 2 ; CDR ; DIG 2 ; CAR ; SWAP ; SOME ; SWAP ; UPDATE ; NIL operation ; PAIR }`,
       init: [{
         prim: 'Elt',
-        args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '0' }],
+        args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '0' }],
       }],
     });
 

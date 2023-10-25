@@ -66,7 +66,7 @@ describe('ContractView test', () => {
     });
     mockSigner.sign.mockResolvedValue({ sbytes: 'test', prefixSig: 'test_sig' });
     mockSigner.publicKey.mockResolvedValue('test_pub_key');
-    mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+    mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
 
     mockRpcClient.getEntrypoints.mockResolvedValue({
       entrypoints: {
@@ -106,20 +106,20 @@ describe('ContractView test', () => {
 
     expect(() => result.views.transfer()).toThrow(); // Entry point transfer is not a view
     expect(result.views.getTotalSupply([['Unit']])).toBeInstanceOf(ContractView);
-    expect(result.views.getBalance('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1')).toBeInstanceOf(
+    expect(result.views.getBalance('mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3')).toBeInstanceOf(
       ContractView
     );
     expect(
       result.views.getAllowance(
-        'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1',
-        'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'
+        'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3',
+        'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra'
       )
     ).toBeInstanceOf(ContractView);
 
     try {
       result.views.getAllowance(
-        'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1',
-        'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE',
+        'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3',
+        'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra',
         'test'
       );
     } catch (e: any) {
@@ -136,7 +136,7 @@ describe('ContractView test', () => {
 
     const contractView = await rpcContractProvider.at('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D');
     const result = await contractView.views
-      .getBalance('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1')
+      .getBalance('mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3')
       .read();
 
     expect(result.toString()).toEqual('100');
@@ -145,7 +145,7 @@ describe('ContractView test', () => {
   it('Should be able to execute tzip4 views by calling the read method (with passing chainId)', async () => {
     const contractView = await rpcContractProvider.at('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D');
     const result = await contractView.views
-      .getBalance('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1')
+      .getBalance('mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3')
       .read(ChainIds.ITHACANET2);
 
     expect(result.toString()).toEqual('100');
@@ -155,7 +155,7 @@ describe('ContractView test', () => {
     const contractView = await rpcContractProvider.at('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D');
     try {
       await contractView.views
-        .getBalance('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1')
+        .getBalance('mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3')
         .read('invalid' as any);
     } catch (e: any) {
       expect(e).toBeInstanceOf(Error);
@@ -167,7 +167,7 @@ describe('ContractView test', () => {
     const contractView = await rpcContractProvider.at('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D');
     try {
       await contractView.views
-        .getBalance('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1')
+        .getBalance('mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3')
         .read('KT1H2a5vGkMLFGBPMs6oRRJshCvYeXSBSadn' as any);
     } catch (e: any) {
       expect(e.message).toEqual(

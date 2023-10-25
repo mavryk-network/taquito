@@ -1,5 +1,5 @@
 /// How to use:
-///   Ensure the Testfunder account tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys has at least 2k tokens
+///   Ensure the Testfunder account mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg has at least 2k tokens
 ///   for the testnet in use. The script will first check if addresses used in the script are funded,
 ///   and top them up if needed. The script will then originate each contract needed for Live Code
 ///   examples in Taquito Docs and produce a JSON file with each Contract Identifier and its PKH.
@@ -43,21 +43,21 @@ const contract_catalogue = new Map();
 
 const users: Array<string> = [
   //live code examples
-  'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
-  'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
-  'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY',
-  'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
-  'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx',
-  'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
-  'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx',
-  'tz1NhNv9g7rtcjyNsH8Zqu79giY5aTqDDrzB',
-  'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE',
-  'tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq',
-  'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1',
+  'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
+  'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
+  'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc',
+  'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
+  'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe',
+  'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+  'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH',
+  'mv1JnsMA5ArZr926mKNzQf4TeTpibVWfpEx3',
+  'mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi',
+  'mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx',
+  'mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF',
   //integration tests
-  'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
-  'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
-  'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+  'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
+  'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
+  'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
 ];
 
 const user_addresses = new Map();
@@ -257,12 +257,12 @@ async function originateLambda2() {
   tezos.setSignerProvider(signer);
   try {
     const bigMapLedger = new MichelsonMap();
-    bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
-      allowances: ['tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY'],
+    bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
+      allowances: ['mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc'],
       balance: '50'
     });
-    bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
-      allowances: ['tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'],
+    bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
+      allowances: ['mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi'],
       balance: '50',
     });
 
@@ -744,7 +744,7 @@ async function originateWalletOriginateContractTransfer() {
       balance: '0',
       code: `parameter unit;
       storage int;
-      code { PUSH address "tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr" ;
+      code { PUSH address "mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo" ;
              CONTRACT unit ;
              IF_NONE { PUSH string "Not a contract" ; FAILWITH } { DUP ; DIP { DROP } } ;
              DUP ;
@@ -1051,7 +1051,7 @@ async function originateMichelsonMap() {
       init: [
         {
           prim: 'Elt',
-          args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '0' }],
+          args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '0' }],
         },
       ],
     });

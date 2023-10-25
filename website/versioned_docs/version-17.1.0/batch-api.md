@@ -27,7 +27,7 @@ await op2.confirmation();
  * Error Message that was returned by the node (before Kathmandu):
  * "Error while applying operation opWH2nEcmmzUwK4T6agHg3bn9GDR7fW1ynqWL58AVRAb7aZFciD:
  * branch refused (Error:
- * Counter 1122148 already used for contract tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb (expected 1122149))"
+ * Counter 1122148 already used for contract mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv (expected 1122149))"
  */
 ```
 
@@ -58,9 +58,9 @@ This method allows you to add a transfer of tez to the batched operations. It ta
 
 ```js
 const batch = await Tezos.wallet.batch()
-  .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 })
-  .withTransfer({ to: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', amount: 4000000, mutez: true })
-  .withTransfer({ to: 'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6', amount: 3 });
+  .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
+  .withTransfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 4000000, mutez: true })
+  .withTransfer({ to: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 3 });
 ```
 
 #### - The `withOrigination` method
@@ -69,12 +69,12 @@ This method allows you to add the origination of one or multiple contracts to an
 
 ```js
 const batch = await Tezos.contract.batch()
-  .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 })
+  .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
   .withOrigination({
     code: validCode,
     storage: initialStorage,
     balance: 2,
-    delegate: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+    delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
   });
 ```
 
@@ -84,7 +84,7 @@ This simple method allows batching multiple delegation transactions. The method 
 
 ```js
 const batch = await Tezos.contract.batch().withDelegation({
-  delegate: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+  delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
 });
 ```
 
@@ -109,7 +109,7 @@ import { OpKind } from '@taquito/taquito';
 const batch = await Tezos.wallet.batch([
   {
     kind: OpKind.TRANSACTION,
-    to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     amount: 2000000,
     mutez: true,
   },
@@ -121,7 +121,7 @@ const batch = await Tezos.wallet.batch([
   },
   {
     kind: OpKind.DELEGATION,
-    delegate: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+    delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
   },
   { kind: OpKind.TRANSACTION, 
     ...contract.methods.default([['Unit']]).toTransferParams() 

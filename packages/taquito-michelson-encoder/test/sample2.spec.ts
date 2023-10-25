@@ -9,7 +9,7 @@ describe('Schema test', () => {
     const s = schema.Execute(rpcContractResponse2.script.storage);
     expect(s).toEqual({
       '0': expectMichelsonMap(),
-      admin: 'tz1M9CMEtsXm3QxA7FmMU2Qh7xzsuGXVbcDr',
+      admin: 'mv1M2JyNhwZ2YVeASqLE3kkCJQGY6ApLtFBe',
       metaData: expectMichelsonMap({
         By: 'https://SmartPy.io',
         Help: 'Use Build to define a new game board and Play to make moves',
@@ -25,7 +25,7 @@ describe('Schema test', () => {
     const schema = new Schema(storage2);
     const result = schema.Encode({
       '0': new MichelsonMap(),
-      admin: 'tz1M9CMEtsXm3QxA7FmMU2Qh7xzsuGXVbcDr',
+      admin: 'mv1M2JyNhwZ2YVeASqLE3kkCJQGY6ApLtFBe',
       metaData: MichelsonMap.fromLiteral({
         By: 'https://SmartPy.io',
         Help: 'Use Build to define a new game board and Play to make moves',

@@ -116,7 +116,7 @@ describe('PrepareProvider test', () => {
 
     mockReadProvider.getChainId.mockResolvedValue('chain-id');
 
-    mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+    mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
     mockSigner.publicKey.mockResolvedValue('test_pub_key');
 
     mockReadProvider.getBlockHash.mockResolvedValue('test_block_hash');
@@ -134,7 +134,7 @@ describe('PrepareProvider test', () => {
   describe('activate', () => {
     it('should return a prepared activation operation', async () => {
       const prepared = await prepareProvider.activate({
-        pkh: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        pkh: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         secret: '123',
       });
 
@@ -145,7 +145,7 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'activate_account',
-              pkh: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              pkh: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
               secret: '123',
             },
           ],
@@ -201,7 +201,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(false);
 
       const prepared = await prepareProvider.transaction({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
       });
 
@@ -213,7 +213,7 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
@@ -224,8 +224,8 @@ describe('PrepareProvider test', () => {
               gas_limit: '1040000',
               storage_limit: '60000',
               amount: '2000000',
-              destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '2',
               parameters: undefined,
             },
@@ -240,7 +240,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(true);
 
       const prepared = await prepareProvider.transaction({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
       });
 
@@ -254,8 +254,8 @@ describe('PrepareProvider test', () => {
               gas_limit: '1040000',
               storage_limit: '60000',
               amount: '2000000',
-              destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '1',
             },
           ],
@@ -271,9 +271,9 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(true);
 
       const prepared = await prepareProvider.drainDelegate({
-        consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-        delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-        destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+        consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+        delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+        destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
       });
 
       expect(prepared).toEqual({
@@ -282,9 +282,9 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'drain_delegate',
-              consensus_key: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
-              delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-              destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+              consensus_key: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
+              delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+              destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
             },
           ],
           protocol: 'test_protocol',
@@ -299,7 +299,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(false);
 
       const prepared = await prepareProvider.delegation({
-        source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         delegate: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
       });
 
@@ -311,14 +311,14 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'delegation',
-              source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -336,7 +336,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(true);
 
       const prepared = await prepareProvider.delegation({
-        source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         delegate: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
       });
 
@@ -346,7 +346,7 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'delegation',
-              source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -377,7 +377,7 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
@@ -398,7 +398,7 @@ describe('PrepareProvider test', () => {
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '2',
             },
           ],
@@ -435,7 +435,7 @@ describe('PrepareProvider test', () => {
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '1',
             },
           ],
@@ -461,14 +461,14 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'update_consensus_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -495,7 +495,7 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'update_consensus_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -515,7 +515,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(false);
 
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+        source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
         ticketContents: { string: 'foobar' },
         ticketTy: { prim: 'string' },
         ticketTicketer: 'KT1AL8we1Bfajn2M7i3gQM5PJEuyD36sXaYb',
@@ -534,7 +534,7 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
@@ -544,7 +544,7 @@ describe('PrepareProvider test', () => {
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
-              source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+              source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
               ticket_contents: {
                 string: 'foobar',
               },
@@ -568,7 +568,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(true);
 
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+        source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
         ticketContents: { string: 'foobar' },
         ticketTy: { prim: 'string' },
         ticketTicketer: 'KT1AL8we1Bfajn2M7i3gQM5PJEuyD36sXaYb',
@@ -587,7 +587,7 @@ describe('PrepareProvider test', () => {
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
-              source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+              source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
               ticket_contents: {
                 string: 'foobar',
               },
@@ -611,7 +611,7 @@ describe('PrepareProvider test', () => {
       mockReadProvider.isAccountRevealed.mockResolvedValue(true);
 
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+        source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
         fee: 804,
         gasLimit: 5009,
         storageLimit: 130,
@@ -633,7 +633,7 @@ describe('PrepareProvider test', () => {
               fee: '804',
               gas_limit: '5009',
               storage_limit: '130',
-              source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+              source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
               ticket_contents: {
                 string: 'foobar',
               },
@@ -671,14 +671,14 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'increase_paid_storage',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -707,7 +707,7 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'increase_paid_storage',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -837,14 +837,14 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'smart_rollup_add_messages',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -875,7 +875,7 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'smart_rollup_add_messages',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -904,7 +904,7 @@ describe('PrepareProvider test', () => {
         },
         {
           kind: OpKind.TRANSACTION,
-          to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: 2,
         },
       ]);
@@ -917,7 +917,7 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
@@ -929,7 +929,7 @@ describe('PrepareProvider test', () => {
               storage_limit: '60000',
               amount: '2000000',
               destination: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '2',
               parameters: undefined,
             },
@@ -939,8 +939,8 @@ describe('PrepareProvider test', () => {
               gas_limit: '1040000',
               storage_limit: '60000',
               amount: '2000000',
-              destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '3',
               parameters: undefined,
             },
@@ -962,7 +962,7 @@ describe('PrepareProvider test', () => {
         },
         {
           kind: OpKind.TRANSACTION,
-          to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: 2,
         },
       ]);
@@ -978,7 +978,7 @@ describe('PrepareProvider test', () => {
               storage_limit: '60000',
               amount: '2000000',
               destination: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '1',
             },
             {
@@ -987,8 +987,8 @@ describe('PrepareProvider test', () => {
               gas_limit: '1040000',
               storage_limit: '60000',
               amount: '2000000',
-              destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               counter: '2',
             },
           ],
@@ -1064,7 +1064,7 @@ describe('PrepareProvider test', () => {
               gas_limit: '1040000',
               storage_limit: '60000',
               counter: '1',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
             },
           ],
           protocol: 'test_protocol',
@@ -1092,7 +1092,7 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '374',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '1100',
               storage_limit: '0',
               counter: '1',
@@ -1109,7 +1109,7 @@ describe('PrepareProvider test', () => {
               gas_limit: '1040000',
               storage_limit: '60000',
               counter: '2',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
             },
           ],
           protocol: 'test_protocol',

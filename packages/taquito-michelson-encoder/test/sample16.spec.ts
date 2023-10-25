@@ -11,23 +11,23 @@ describe('Schema test when calling contract with complex object as param and nul
 
   it('Should encode parameter schema properly', () => {
     const schema = new ParameterSchema(getBalance.args[0]);
-    const result = schema.Encode('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1');
+    const result = schema.Encode('mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3');
     expect(schema).toBeTruthy();
-    expect(result).toEqual({ string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' });
+    expect(result).toEqual({ string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' });
   });
 
   it('Should encode parameter schema properly', () => {
     const schema = new ParameterSchema(getAllowance.args[0]);
     const result = schema.Encode(
-      'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1',
-      'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'
+      'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3',
+      'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra'
     );
     expect(schema).toBeTruthy();
     expect(result).toEqual({
       prim: 'Pair',
       args: [
-        { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-        { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+        { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+        { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
       ],
     });
   });

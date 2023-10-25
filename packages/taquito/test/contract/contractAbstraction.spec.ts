@@ -109,7 +109,7 @@ describe('ContractAbstraction test', () => {
       expect(methodObjectMainChangeKeys.toTransferParams()).toEqual({
         to: 'contractAddress',
         amount: 0,
-        mutez: false,
+        mumav: false,
         parameter: {
           entrypoint: 'main',
           value: {
@@ -176,7 +176,7 @@ describe('ContractAbstraction test', () => {
       const methodMainoperation = contractAbs.methods.main(
         '2', // Counter
         'operation', // Sub function
-        MANAGER_LAMBDA.transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 500), // Action
+        MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 500), // Action
         [
           'sigb1FKPeiRgPApxqBMpyBSMpwgnbzhaMcqQcTVwMz82MSzNLBrmRUuVZVgWTBFGcoWQcjTyhfJaxjFtfvB6GGHkfwpxBkFd',
         ] // Signature list
@@ -190,7 +190,7 @@ describe('ContractAbstraction test', () => {
           counter: 2,
           action: {
             // the chosen action is operation (rather than change_keys)
-            operation: MANAGER_LAMBDA.transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 500),
+            operation: MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 500),
           },
         },
         sigs: [
@@ -206,7 +206,7 @@ describe('ContractAbstraction test', () => {
       expect(methodObjectMainoperation.toTransferParams()).toEqual({
         to: 'contractAddress',
         amount: 0,
-        mutez: false,
+        mumav: false,
         parameter: {
           entrypoint: 'main',
           value: {
@@ -240,7 +240,7 @@ describe('ContractAbstraction test', () => {
                               prim: 'key_hash',
                             },
                             {
-                              string: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
+                              string: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
                             },
                           ],
                         },
@@ -251,7 +251,7 @@ describe('ContractAbstraction test', () => {
                           prim: 'PUSH',
                           args: [
                             {
-                              prim: 'mutez',
+                              prim: 'mumav',
                             },
                             {
                               int: '500',
@@ -304,16 +304,16 @@ describe('ContractAbstraction test', () => {
       );
 
       const method0 = contractAbs.methods[0](
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
-        'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
+        'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         '1'
       );
       expect(method0).toBeInstanceOf(ContractMethod);
       expect(method0.getSignature()).toEqual(['address', 'address', 'nat']);
 
       const methodObject0 = contractAbs.methodsObject[0]({
-        0: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
-        1: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        0: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
+        1: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         2: '1',
       });
       expect(methodObject0).toBeInstanceOf(ContractMethodObject);
@@ -323,7 +323,7 @@ describe('ContractAbstraction test', () => {
       expect(methodObject0.toTransferParams()).toEqual({
         to: 'contractAddress',
         amount: 0,
-        mutez: false,
+        mumav: false,
         parameter: {
           entrypoint: 'default',
           value: {
@@ -339,13 +339,13 @@ describe('ContractAbstraction test', () => {
                         prim: 'Pair',
                         args: [
                           {
-                            string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+                            string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
                           },
                           {
                             prim: 'Pair',
                             args: [
                               {
-                                string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+                                string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
                               },
                               {
                                 int: '1',
@@ -378,11 +378,11 @@ describe('ContractAbstraction test', () => {
         mockReadProvider as any
       );
 
-      const method2 = contractAbs.methods[2]('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', '1');
+      const method2 = contractAbs.methods[2]('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', '1');
       expect(method2).toBeInstanceOf(ContractMethod);
 
       const methodObject2 = contractAbs.methodsObject[2]({
-        2: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        2: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         3: '1',
       });
       expect(methodObject2).toBeInstanceOf(ContractMethodObject);
@@ -391,7 +391,7 @@ describe('ContractAbstraction test', () => {
       expect(methodObject2.toTransferParams()).toEqual({
         to: 'contractAddress',
         amount: 0,
-        mutez: false,
+        mumav: false,
         parameter: {
           entrypoint: 'default',
           value: {
@@ -410,7 +410,7 @@ describe('ContractAbstraction test', () => {
                             prim: 'Pair',
                             args: [
                               {
-                                string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+                                string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
                               },
                               {
                                 int: '1',

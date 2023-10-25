@@ -13,7 +13,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         test('Verify wallet.originate for a contract having UNPAIR with code and init in Michelson', 2, async () => {
             const op = await Tezos.wallet.originate({
                 code: miStr,
-                init: '(Pair 0 "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn")'
+                init: '(Pair 0 "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW")'
             }).send();
 
             await op.confirmation();
@@ -30,7 +30,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         test('Verify wallet.originate for a contract having UNPAIR with code in Michelson and init in JSON Michelson', 2, async () => {
             const op = await Tezos.wallet.originate({
                 code: miStr,
-                init: { prim: 'Pair', args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }] }
+                init: { prim: 'Pair', args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }] }
             }).send();
 
             await op.confirmation();
@@ -49,7 +49,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
                 code: miStr,
                 storage: {
                     0: '0',
-                    1: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+                    1: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
                 }
             }).send();
 
@@ -67,7 +67,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         test('Verify wallet.originate for a contract having UNPAIR with code in JSON Michelson and init in Michelson', 2, async () => {
             const op = await Tezos.wallet.originate({
                 code: miObject,
-                init: '(Pair 0 "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn")'
+                init: '(Pair 0 "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW")'
             }).send();
 
             await op.confirmation();
@@ -84,7 +84,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         test('Verify wallet.originate for a contract having UNPAIR with code and init in JSON Michelson', 2, async () => {
             const op = await Tezos.wallet.originate({
                 code: miObject,
-                init: { prim: 'Pair', args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }] }
+                init: { prim: 'Pair', args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }] }
             }).send();
 
             await op.confirmation();
@@ -103,7 +103,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
                 code: miObject,
                 storage: {
                     0: '0',
-                    1: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+                    1: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
                 }
             }).send();
 

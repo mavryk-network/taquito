@@ -94,7 +94,7 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
       code: knownBigMapContract,
       storage: {
         ledger: ledgerBigMap,
-        owner: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        owner: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         paused: true,
         totalSupply: '100',
       }
@@ -104,14 +104,14 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     const ledger = new MichelsonMap();
     ledger.set(
       {
-        0: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+        0: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
         1: 0,
       },
       '20000'
     );
     ledger.set(
       {
-        0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+        0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
         1: 1,
       },
       '20000'
@@ -151,7 +151,7 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     await originateKnownContract('tzip12BigMapOffChainContract', tezos, {
       code: fa2ForTokenMetadataView,
       storage: {
-        administrator: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+        administrator: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
         all_tokens: '2',
         ledger: ledger,
         metadata,

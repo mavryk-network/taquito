@@ -12,19 +12,19 @@ async function example() {
     console.log('Deploying LambdaOne contract...');
 
     const mapAccount1 = new MichelsonMap();
-    mapAccount1.set('tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY', '25');
-    mapAccount1.set('tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE', '25');
+    mapAccount1.set('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc', '25');
+    mapAccount1.set('mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi', '25');
 
     const mapAccount2 = new MichelsonMap();
-    mapAccount2.set('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM', '25');
+    mapAccount2.set('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q', '25');
     mapAccount2.set('tz1bmyy6QX9HVf7EnBJ6avmWZJbPYGAgXhbH', '25');
 
     const bigMapLedger = new MichelsonMap();
-    bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
+    bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
       balance: '50',
       allowances: mapAccount1
     });
-    bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
+    bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
       balance: '50',
       allowances: mapAccount2
     });

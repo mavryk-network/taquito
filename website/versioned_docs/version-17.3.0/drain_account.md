@@ -36,7 +36,7 @@ Tezos.signer
             );
             return Tezos.estimate
                 .transfer({
-                    to: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+                    to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                     amount: balance.toNumber() - DEFAULT_FEE.REVEAL, // Remove default reveal fee
                     mutez: true
                 })
@@ -54,7 +54,7 @@ Tezos.signer
                         } ꜩ.`
                     );
                     return Tezos.contract.transfer({
-                        to: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+                        to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                         mutez: true,
                         amount: maxAmount,
                         fee: estimate.suggestedFeeMutez,
@@ -128,7 +128,7 @@ Tezos.signer
         Tezos.tz.getBalance(contract.address).then((balance) => {
           println(`The balance of the contract is ${balance.toNumber() / 1000000} ꜩ.`);
           const estimateOp = contract.methods
-            .do(transferImplicit('tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', balance.toNumber()))
+            .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
             .toTransferParams({});
           println(`Waiting for the estimation of the smart contract call...`);
           Tezos.estimate
@@ -139,7 +139,7 @@ Tezos.signer
                 `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMutez} mutez.`
               );
               return contract.methods
-                .do(transferImplicit('tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', balance.toNumber()))
+                .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
                 .send({ amount: 0 });
             })
             .then((operation) => {

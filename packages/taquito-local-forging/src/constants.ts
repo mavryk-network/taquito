@@ -11,7 +11,7 @@ export const ENTRYPOINT_MAX_LENGTH = 31;
 export enum CODEC {
   SECRET = 'secret',
   RAW = 'raw',
-  TZ1 = 'mv1',
+  MV1 = 'mv1',
   BRANCH = 'branch',
   ZARITH = 'zarith',
   PUBLIC_KEY = 'public_key',

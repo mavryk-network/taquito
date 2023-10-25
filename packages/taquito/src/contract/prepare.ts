@@ -105,7 +105,7 @@ export const createOriginationOperation = async ({
     fee,
     gas_limit: gasLimit,
     storage_limit: storageLimit,
-    balance: mumav ? balance.toString() : format('tz', 'mumav', balance).toString(),
+    balance: mumav ? balance.toString() : format('mv', 'mumav', balance).toString(),
     script,
   };
 
@@ -129,7 +129,7 @@ export const createTransferOperation = async ({
     fee,
     gas_limit: gasLimit,
     storage_limit: storageLimit,
-    amount: mumav ? amount.toString() : format('tz', 'mumav', amount).toString(),
+    amount: mumav ? amount.toString() : format('mv', 'mumav', amount).toString(),
     destination: to,
     parameters: parameter,
   };

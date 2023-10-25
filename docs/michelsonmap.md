@@ -66,7 +66,7 @@ Finally, you can also pass some values you want to create the instance with and 
 
 ```ts
 const newMapfromLiteral = MichelsonMap.fromLiteral({
-  tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb: new BigNumber(123),
+  mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv: new BigNumber(123),
 });
 ```
 
@@ -119,8 +119,8 @@ The code above will output:
 [
   { address: 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6', amount: 789 },
   { address: 'tz1R2oNqANNy2vZhnZBJc8iMEqW79t85Fv7L', amount: 912 },
-  { address: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', amount: 123 },
-  { address: 'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6', amount: 456 },
+  { address: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 123 },
+  { address: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 456 },
 ];
 ```
 
@@ -154,8 +154,8 @@ This example will output the following array containing all the keys of the map:
 [
   'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6',
   'tz1R2oNqANNy2vZhnZBJc8iMEqW79t85Fv7L',
-  'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
-  'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6',
+  'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
+  'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU',
 ];
 ```
 

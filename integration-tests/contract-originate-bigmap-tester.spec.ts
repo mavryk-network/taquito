@@ -12,13 +12,13 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     test('Originates a contract having various types of bigmaps', async () => {
       const op = await Tezos.contract.originate({
         code: ` parameter (or (or (nat %compoundKey) (nat %compoundKeyCompoundValue))
-                    (or (nat %compoundValue) (mutez %singleValue)));
+                    (or (nat %compoundValue) (mumav %singleValue)));
                 storage (pair
                             (pair (big_map %compound_keys (pair address nat) nat)
                                 (big_map %compound_keys_compound_values (pair address nat)
                                                                         (pair (nat %score) (address %sender))))
                             (pair (big_map %compound_values address (pair (nat %score) (address %sender)))
-                                (big_map %simple_values address mutez)));
+                                (big_map %simple_values address mumav)));
                 code { UNPAIR ;
                         IF_LEFT
                         { IF_LEFT

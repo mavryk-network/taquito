@@ -180,9 +180,9 @@ export function encodeKey(value: string) {
 export function encodeKeyHash(value: string) {
   if (value[0] === '0') {
     const pref: { [key: string]: Uint8Array } = {
-      '00': new Uint8Array([6, 161, 159]),
-      '01': new Uint8Array([6, 161, 161]),
-      '02': new Uint8Array([6, 161, 164]),
+      '00': new Uint8Array([5, 186, 196]),
+      '01': new Uint8Array([5, 186, 199]),
+      '02': new Uint8Array([5, 186, 201]),
     };
 
     return b58cencode(value.substring(2), pref[value.substring(0, 2)]);
@@ -315,20 +315,20 @@ export const getPkhfromPk = (publicKey: string): string => {
 
   switch (keyPrefix) {
     case Prefix.EDPK:
-      encodingPrefix = prefix[Prefix.TZ1];
-      prefixLen = prefixLength[Prefix.TZ1];
+      encodingPrefix = prefix[Prefix.MV1];
+      prefixLen = prefixLength[Prefix.MV1];
       break;
     case Prefix.SPPK:
-      encodingPrefix = prefix[Prefix.TZ2];
-      prefixLen = prefixLength[Prefix.TZ2];
+      encodingPrefix = prefix[Prefix.MV2];
+      prefixLen = prefixLength[Prefix.MV2];
       break;
     case Prefix.P2PK:
-      encodingPrefix = prefix[Prefix.TZ3];
-      prefixLen = prefixLength[Prefix.TZ3];
+      encodingPrefix = prefix[Prefix.MV3];
+      prefixLen = prefixLength[Prefix.MV3];
       break;
     case Prefix.BLPK:
-      encodingPrefix = prefix[Prefix.TZ4];
-      prefixLen = prefixLength[Prefix.TZ4];
+      encodingPrefix = prefix[Prefix.MV4];
+      prefixLen = prefixLength[Prefix.MV4];
   }
 
   const hashed = hash(decoded, prefixLen);

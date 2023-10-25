@@ -14,7 +14,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
       storageMap = new MichelsonMap();
       // The contract schema in this example has a key with 8 nested pairs
-      // (int(nat(string(bytes(mutez(bool(key_hash(timestamp(address)))))))))
+      // (int(nat(string(bytes(mumav(bool(key_hash(timestamp(address)))))))))
       // and a value of `int`
       // The contract schema in this particular test does not have map
       // annotations which means that each value needs to have an index
@@ -24,11 +24,11 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         1: "2",                                    // nat
         2: "test",                                 // string
         3: "cafe",                                 // bytes
-        4: "10",                                   // mutez
+        4: "10",                                   // mumav
         5: true,                                   // bool
-        6: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5", // key_hash
+        6: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV", // key_hash
         7: "2019-09-06T15:08:29.000Z",             // timestamp
-        8: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"  // address
+        8: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"  // address
       }, 100);
 
       storageMap.set({
@@ -38,9 +38,9 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         3: "cafe",
         4: "10",
         5: false,
-        6: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5",
+        6: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV",
         7: "2019-09-06T15:08:29.000Z",
-        8: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+        8: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
       }, 100);
 
       storageMap.set({
@@ -50,9 +50,9 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         3: "cafe",
         4: "10",
         5: true,
-        6: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5",
+        6: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV",
         7: "2019-09-06T15:08:29.000Z",
-        8: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+        8: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
       }, 100);
 
       storageMap.set({
@@ -62,9 +62,9 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         3: "cafe",
         4: "10",
         5: true,
-        6: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5",
+        6: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV",
         7: "2018-09-06T15:08:29.000Z",
-        8: "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+        8: "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
       }, 100);
     });
 

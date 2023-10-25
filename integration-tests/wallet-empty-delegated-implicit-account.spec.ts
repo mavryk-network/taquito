@@ -27,7 +27,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress, knownBaker }) => {
       const maxAmount = balance.minus(estimate.suggestedFeeMutez).toNumber();
       expect.assertions(1)
       try {
-        await LocalTez.wallet.transfer({ to: await Tezos.signer.publicKeyHash(), mutez: true, amount: maxAmount }).send();
+        await LocalTez.wallet.transfer({ to: await Tezos.signer.publicKeyHash(), mumav: true, amount: maxAmount }).send();
       } catch (ex: any) {
         expect(ex.message).toMatch('empty_implicit_delegated_contract')
       }

@@ -43,7 +43,7 @@ describe('RpcClientCache test', () => {
   let rpcCache: RpcClientCache;
   let mockRpcClient: any;
 
-  const address = 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn';
+  const address = 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW';
   const contractAddress = 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D';
   const txRollupId = 'txr1YTdi9BktRmybwhgkhRK7WPrutEWVGJT7w';
   const blockLevel = '0';

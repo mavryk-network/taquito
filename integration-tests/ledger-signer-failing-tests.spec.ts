@@ -66,7 +66,7 @@ CONFIGS().forEach(({ lib, setup }) => {
                     );
                     tezos.setSignerProvider(signer);
                     try {
-                        const op = await tezos.wallet.transfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.1 }).send()
+                        const op = await tezos.wallet.transfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.1 }).send()
                         await op.confirmation()
                     }
                     catch (error: any) {

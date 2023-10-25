@@ -2,7 +2,7 @@ import { Protocols } from '@taquito/taquito';
 import { CONFIGS } from './config';
 
 /**
- *  TC-004: Example of mutez underflow - showing that SUB_MUTEZ; ASSERT_SOME prevents underflow by catching and going to FAILWITH
+ *  TC-004: Example of mumav underflow - showing that SUB_MUTEZ; ASSERT_SOME prevents underflow by catching and going to FAILWITH
  *  To see why the test fails with error message {\"prim\":\"Unit\"}, look at the Micheline form of the contract.
  *  If underflows are not prevented the contract is unusable. Any tokens locked in the contract will be irretrievable, etc.
  */
@@ -16,14 +16,14 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       await setup();
     });
 
-    mondaynet('Verify mutez underflow example', async () => {
+    mondaynet('Verify mumav underflow example', async () => {
       try {
         const op = await Tezos.contract.originate({
           code: `        { parameter unit ;
-            storage mutez ;
+            storage mumav ;
             code { DROP ;
-                   PUSH mutez 2 ;
-                   PUSH mutez 1 ;
+                   PUSH mumav 2 ;
+                   PUSH mumav 1 ;
                    SUB_MUTEZ ;
                    ASSERT_SOME ;
                    NIL operation ;

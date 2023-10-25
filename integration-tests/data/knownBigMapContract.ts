@@ -141,7 +141,7 @@ export const knownBigMapContract = [
             [
                 { prim: 'DUP' },
                 { prim: 'CDR' },
-                { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                 { prim: 'AMOUNT' },
                 { prim: 'COMPARE' },
                 { prim: 'NEQ' },
@@ -1019,7 +1019,7 @@ export const knownBigMapContract = [
                                                                             {
                                                                                 prim: 'PUSH',
                                                                                 args: [
-                                                                                    { prim: 'mutez' },
+                                                                                    { prim: 'mumav' },
                                                                                     { int: '0' }
                                                                                 ]
                                                                             }
@@ -1126,7 +1126,7 @@ export const knownBigMapContract = [
                                                                             {
                                                                                 prim: 'PUSH',
                                                                                 args: [
-                                                                                    { prim: 'mutez' },
+                                                                                    { prim: 'mumav' },
                                                                                     { int: '0' }
                                                                                 ]
                                                                             }
@@ -1211,7 +1211,7 @@ export const knownBigMapContract = [
                                                                             {
                                                                                 prim: 'PUSH',
                                                                                 args: [
-                                                                                    { prim: 'mutez' },
+                                                                                    { prim: 'mumav' },
                                                                                     { int: '0' }
                                                                                 ]
                                                                             }

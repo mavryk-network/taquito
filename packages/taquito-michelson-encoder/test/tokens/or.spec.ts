@@ -576,9 +576,9 @@ describe('Or token', () => {
 
       expect(tokenComplexNoAnnots.ExtractSchema()).toEqual({
         0: { 0: 'nat', 1: 'nat', 2: 'timestamp' },
-        1: { 1: 'nat', 2: 'mutez', 3: 'nat', 4: 'timestamp' },
+        1: { 1: 'nat', 2: 'mumav', 3: 'nat', 4: 'timestamp' },
         2: { 2: 'nat', 3: 'timestamp' },
-        3: { 3: 'nat', 4: 'mutez', 5: 'timestamp' },
+        3: { 3: 'nat', 4: 'mumav', 5: 'timestamp' },
         4: 'nat',
       });
 
@@ -610,8 +610,8 @@ describe('Or token', () => {
                 schema: 'nat',
               },
               2: {
-                __michelsonType: 'mutez',
-                schema: 'mutez',
+                __michelsonType: 'mumav',
+                schema: 'mumav',
               },
               3: {
                 __michelsonType: 'nat',
@@ -644,8 +644,8 @@ describe('Or token', () => {
                 schema: 'nat',
               },
               4: {
-                __michelsonType: 'mutez',
-                schema: 'mutez',
+                __michelsonType: 'mumav',
+                schema: 'mumav',
               },
               5: {
                 __michelsonType: 'timestamp',
@@ -662,9 +662,9 @@ describe('Or token', () => {
 
       expect(tokenComplex.ExtractSchema()).toEqual({
         option0: { 0: 'nat', 1: 'nat', 2: 'timestamp' },
-        option1: { 1: 'nat', 2: 'mutez', 3: 'nat', 4: 'timestamp' },
+        option1: { 1: 'nat', 2: 'mumav', 3: 'nat', 4: 'timestamp' },
         option2: { 2: 'nat', 3: 'timestamp' },
-        option3: { 3: 'nat', 4: 'mutez', 5: 'timestamp' },
+        option3: { 3: 'nat', 4: 'mumav', 5: 'timestamp' },
         option4: 'nat',
       });
 
@@ -696,8 +696,8 @@ describe('Or token', () => {
                 schema: 'nat',
               },
               2: {
-                __michelsonType: 'mutez',
-                schema: 'mutez',
+                __michelsonType: 'mumav',
+                schema: 'mumav',
               },
               3: {
                 __michelsonType: 'nat',
@@ -730,8 +730,8 @@ describe('Or token', () => {
                 schema: 'nat',
               },
               4: {
-                __michelsonType: 'mutez',
-                schema: 'mutez',
+                __michelsonType: 'mumav',
+                schema: 'mumav',
               },
               5: {
                 __michelsonType: 'timestamp',
@@ -758,8 +758,8 @@ describe('Or token', () => {
             schema: 'nat',
           },
           2: {
-            __michelsonType: 'mutez',
-            schema: 'mutez',
+            __michelsonType: 'mumav',
+            schema: 'mumav',
           },
           3: {
             __michelsonType: 'option',
@@ -800,13 +800,13 @@ describe('Or token', () => {
               args: [
                 {
                   prim: 'Left',
-                  args: [{ bytes: '000035e993d8c7aaa42b5e3ccd86a33390ececc73abd' }],
+                  args: [{ bytes: '0000a147d3fdd7df7eac61a24ea9ee4aac730ad3ab17' }],
                 },
               ],
             },
           ],
         })
-      ).toEqual({ myAddress: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }); // '{ 0: { 0: { "myAddress": 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'} } }
+      ).toEqual({ myAddress: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }); // '{ 0: { 0: { "myAddress": 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'} } }
       expect(
         tokenNestedOr.Execute({
           prim: 'Left',
@@ -883,13 +883,13 @@ describe('Or token', () => {
               args: [
                 {
                   prim: 'Left',
-                  args: [{ bytes: '000035e993d8c7aaa42b5e3ccd86a33390ececc73abd' }],
+                  args: [{ bytes: '0000a147d3fdd7df7eac61a24ea9ee4aac730ad3ab17' }],
                 },
               ],
             },
           ],
         })
-      ).toEqual({ 0: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }); // '{ 0: { 0: { "myAddress": 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'} } }
+      ).toEqual({ 0: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }); // '{ 0: { 0: { "myAddress": 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'} } }
       expect(
         tokenNestedOrWithoutAnnot.Execute({
           prim: 'Left',

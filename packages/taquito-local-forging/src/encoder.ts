@@ -61,7 +61,7 @@ export type Encoder<T> = (val: T) => string;
 export const encoders: { [key: string]: Encoder<any> } = {
   [CODEC.SECRET]: (val: string) => val,
   [CODEC.RAW]: (val: string) => val,
-  [CODEC.TZ1]: tz1Encoder,
+  [CODEC.MV1]: tz1Encoder,
   [CODEC.BRANCH]: branchEncoder,
   [CODEC.ZARITH]: zarithEncoder,
   [CODEC.PUBLIC_KEY]: publicKeyEncoder,

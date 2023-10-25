@@ -26,7 +26,7 @@ export const main = ({mode, targetContractAddress, amount, newStore} : parameter
 }`; */
 
 const mainContractMichelson = `{ parameter
-  (pair (pair (mutez %amount) (int %mode))
+  (pair (pair (mumav %amount) (int %mode))
         (int %newStore)
         (address %targetContractAddress)) ;
   storage int ;

@@ -33,7 +33,7 @@ describe('Exchange contract test', () => {
             },
             '1': {
               '1': 'nat',
-              '2': 'mutez',
+              '2': 'mumav',
               '3': 'nat',
               '4': 'timestamp',
             },
@@ -43,7 +43,7 @@ describe('Exchange contract test', () => {
             },
             '3': {
               '3': 'nat',
-              '4': 'mutez',
+              '4': 'mumav',
               '5': 'timestamp',
             },
           },
@@ -191,8 +191,8 @@ describe('Exchange contract test', () => {
                       schema: 'nat'
                     },
                     '2': {
-                      __michelsonType: 'mutez',
-                      schema: 'mutez'
+                      __michelsonType: 'mumav',
+                      schema: 'mumav'
                     },
                     '3': {
                       __michelsonType: 'nat',
@@ -225,8 +225,8 @@ describe('Exchange contract test', () => {
                       schema: 'nat'
                     },
                     '4': {
-                      __michelsonType: 'mutez',
-                      schema: 'mutez'
+                      __michelsonType: 'mumav',
+                      schema: 'mumav'
                     },
                     '5': {
                       __michelsonType: 'timestamp',
@@ -279,7 +279,7 @@ describe('Exchange contract test', () => {
       },
       '1': {
         '1': 'nat',
-        '2': 'mutez',
+        '2': 'mumav',
         '3': 'nat',
         '4': 'timestamp',
       },
@@ -289,7 +289,7 @@ describe('Exchange contract test', () => {
       },
       '3': {
         '3': 'nat',
-        '4': 'mutez',
+        '4': 'mumav',
         '5': 'timestamp',
       },
       '4': 'nat',
@@ -323,8 +323,8 @@ describe('Exchange contract test', () => {
               schema: 'nat'
             },
             '2': {
-              __michelsonType: 'mutez',
-              schema: 'mutez'
+              __michelsonType: 'mumav',
+              schema: 'mumav'
             },
             '3': {
               __michelsonType: 'nat',
@@ -357,8 +357,8 @@ describe('Exchange contract test', () => {
               schema: 'nat'
             },
             '4': {
-              __michelsonType: 'mutez',
-              schema: 'mutez'
+              __michelsonType: 'mumav',
+              schema: 'mumav'
             },
             '5': {
               __michelsonType: 'timestamp',
@@ -649,8 +649,8 @@ describe('Exchange contract test', () => {
     expect(
       schema.Encode(
         '0',
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         '1'
       )
     ).toEqual({
@@ -658,12 +658,12 @@ describe('Exchange contract test', () => {
         {
           args: [
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
             {
               args: [
                 {
-                  string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+                  string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
                 },
                 {
                   int: '1',
@@ -681,10 +681,10 @@ describe('Exchange contract test', () => {
 
   it('Encode parameter properly func 1', () => {
     const schema = new ParameterSchema(paramsToken);
-    expect(schema.Encode('1', 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual({
+    expect(schema.Encode('1', 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual({
       args: [
         {
-          string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
       ],
       prim: 'Right',

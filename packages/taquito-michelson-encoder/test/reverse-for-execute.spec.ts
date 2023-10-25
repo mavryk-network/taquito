@@ -105,7 +105,7 @@ describe('Exact reverse for Schema.Execute', () => {
         bigmapId: 17,
         contractAddress: 'KT1ChNsEFxwyCbJyWGSL3KdjeXE28AY1Kaog',
         data_type: { prim: 'key_hash' },
-        data: { bytes: '0022c45a24cb37da97be334c0f70865f946cb6902d' },
+        data: { bytes: '003a92b4f2892174482145219ac58f81196ca16e3a' },
       },
       {
         ignoreMessage:
@@ -113,7 +113,7 @@ describe('Exact reverse for Schema.Execute', () => {
          The execute method creates an object where the keys are the annots.\
          However, in this case, the annots `owner` are present 2 times in the code, so their values are overridden: \
          Instead of having an object with 3 properties, the object only contains 2 properties.',
-        name: 'Address: 000014be10910b0fa385f88aea0603dd93b64c4b6589',
+        name: 'Address: 0000c8b1f8c8fc5a17407e2bcf8bbcc5cd05f61c89b5',
         bigmapId: 837,
         contractAddress: 'KT1EH8yKXkRoxNkULRB1dSuwhkKyi5LJH82o',
         data_type: {
@@ -126,9 +126,9 @@ describe('Exact reverse for Schema.Execute', () => {
         },
         data: {
           args: [
-            { bytes: '000014be10910b0fa385f88aea0603dd93b64c4b6589' },
+            { bytes: '0000c8b1f8c8fc5a17407e2bcf8bbcc5cd05f61c89b5' },
             {
-              args: [{ bytes: '0133e65012a368dadf1d3d8fff4570b8a4e3c0458c00' }, { int: '381' }],
+              args: [{ bytes: '0000cfce8e7f564ab68ff2aa2360cf5786a5beb3f21e' }, { int: '381' }],
               prim: 'Pair',
             },
           ],

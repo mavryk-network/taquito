@@ -40,12 +40,12 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
         const storageArg = {
             mgr1: {
-                addr: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+                addr: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                 key: null,
             },
             mgr2: {
-                addr: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
-                key: { Some: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr' },
+                addr: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+                key: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
             },
         }
 

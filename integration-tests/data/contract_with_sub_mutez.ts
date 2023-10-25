@@ -1,11 +1,11 @@
-export const submutezStorage = {
+export const submumavStorage = {
   prim: 'Pair',
   args: [
     [
       {
         prim: 'Elt',
         args: [
-          { string: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys' },
+          { string: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg' },
           { prim: 'Pair', args: [{ string: '2019-10-25T17:00:54Z' }, { int: '5000000' }] },
         ],
       },
@@ -13,7 +13,7 @@ export const submutezStorage = {
     { int: '0' },
   ],
 };
-export const submutezCode = [
+export const submumavCode = [
   {
     prim: 'parameter',
     args: [
@@ -40,13 +40,13 @@ export const submutezCode = [
                 prim: 'pair',
                 args: [
                   { prim: 'timestamp', annots: ['%blockTimestamp'] },
-                  { prim: 'mutez', annots: ['%tezAmount'] },
+                  { prim: 'mumav', annots: ['%tezAmount'] },
                 ],
               },
             ],
             annots: ['%deposits'],
           },
-          { prim: 'mutez', annots: ['%liquidity'] },
+          { prim: 'mumav', annots: ['%liquidity'] },
         ],
       },
     ],
@@ -75,7 +75,7 @@ export const submutezCode = [
                       prim: 'PUSH',
                       args: [
                         { prim: 'address' },
-                        { string: 'tz1MZ4GPjAA2gZxKTozJt8Cu5Gvu6WU2ikZ4' },
+                        { string: 'mv1SftsbjTN7orrPU9hKV5PHy1kamQezmXiW' },
                       ],
                     },
                     { prim: 'PUSH', args: [{ prim: 'unit' }, { prim: 'Unit' }] },
@@ -96,10 +96,10 @@ export const submutezCode = [
           prim: 'LAMBDA',
           args: [
             { prim: 'int' },
-            { prim: 'mutez' },
+            { prim: 'mumav' },
             [
               { prim: 'DUP' },
-              { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+              { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
               { prim: 'SWAP' },
               { prim: 'PUSH', args: [{ prim: 'int' }, { int: '100' }] },
               { prim: 'SWAP' },
@@ -110,7 +110,7 @@ export const submutezCode = [
                 args: [
                   [
                     { prim: 'DROP' },
-                    { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '1000000' }] },
+                    { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '1000000' }] },
                     { prim: 'PUSH', args: [{ prim: 'unit' }, { prim: 'Unit' }] },
                   ],
                   [{ prim: 'PUSH', args: [{ prim: 'unit' }, { prim: 'Unit' }] }],
@@ -138,16 +138,16 @@ export const submutezCode = [
                       prim: 'map',
                       args: [
                         { prim: 'address' },
-                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mutez' }] },
+                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mumav' }] },
                       ],
                     },
-                    { prim: 'mutez' },
+                    { prim: 'mumav' },
                   ],
                 },
                 {
                   prim: 'pair',
                   args: [
-                    { prim: 'lambda', args: [{ prim: 'int' }, { prim: 'mutez' }] },
+                    { prim: 'lambda', args: [{ prim: 'int' }, { prim: 'mumav' }] },
                     {
                       prim: 'pair',
                       args: [
@@ -170,10 +170,10 @@ export const submutezCode = [
                       prim: 'map',
                       args: [
                         { prim: 'address' },
-                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mutez' }] },
+                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mumav' }] },
                       ],
                     },
-                    { prim: 'mutez' },
+                    { prim: 'mumav' },
                   ],
                 },
               ],
@@ -198,7 +198,7 @@ export const submutezCode = [
                   ],
                 ],
               },
-              { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+              { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
               { prim: 'AMOUNT' },
               { prim: 'COMPARE' },
               { prim: 'EQ' },
@@ -837,16 +837,16 @@ export const submutezCode = [
                       prim: 'map',
                       args: [
                         { prim: 'address' },
-                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mutez' }] },
+                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mumav' }] },
                       ],
                     },
-                    { prim: 'mutez' },
+                    { prim: 'mumav' },
                   ],
                 },
                 {
                   prim: 'pair',
                   args: [
-                    { prim: 'lambda', args: [{ prim: 'int' }, { prim: 'mutez' }] },
+                    { prim: 'lambda', args: [{ prim: 'int' }, { prim: 'mumav' }] },
                     { prim: 'lambda', args: [{ prim: 'bool' }, { prim: 'address' }] },
                   ],
                 },
@@ -863,10 +863,10 @@ export const submutezCode = [
                       prim: 'map',
                       args: [
                         { prim: 'address' },
-                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mutez' }] },
+                        { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mumav' }] },
                       ],
                     },
-                    { prim: 'mutez' },
+                    { prim: 'mumav' },
                   ],
                 },
               ],
@@ -1107,7 +1107,7 @@ export const submutezCode = [
                           {
                             prim: 'NONE',
                             args: [
-                              { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mutez' }] },
+                              { prim: 'pair', args: [{ prim: 'timestamp' }, { prim: 'mumav' }] },
                             ],
                           },
                         ],

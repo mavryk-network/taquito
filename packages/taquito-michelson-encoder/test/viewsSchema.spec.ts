@@ -48,11 +48,11 @@ describe('ViewSchema test', () => {
   it('Should encode view args properly', () => {
     const result = viewSchema.encodeViewArgs({
       0: '12',
-      1: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+      1: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
     });
     expect(result).toEqual({
       prim: 'Pair',
-      args: [{ int: '12' }, { string: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb' }],
+      args: [{ int: '12' }, { string: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv' }],
     });
   });
 

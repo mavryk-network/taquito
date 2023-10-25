@@ -37,7 +37,7 @@ export const tokenComplex = createToken(
           {
             prim: 'pair',
             args: [
-              { prim: 'pair', args: [{ prim: 'nat' }, { prim: 'mutez' }] },
+              { prim: 'pair', args: [{ prim: 'nat' }, { prim: 'mumav' }] },
               {
                 prim: 'pair',
                 args: [{ prim: 'nat' }, { prim: 'timestamp' }],
@@ -64,7 +64,7 @@ export const tokenComplex = createToken(
                   { prim: 'nat' },
                   {
                     prim: 'pair',
-                    args: [{ prim: 'mutez' }, { prim: 'timestamp' }],
+                    args: [{ prim: 'mumav' }, { prim: 'timestamp' }],
                   },
                 ],
                 annots: ['%option3'],
@@ -98,7 +98,7 @@ export const tokenComplexNoAnnots = createToken(
           {
             prim: 'pair',
             args: [
-              { prim: 'pair', args: [{ prim: 'nat' }, { prim: 'mutez' }] },
+              { prim: 'pair', args: [{ prim: 'nat' }, { prim: 'mumav' }] },
               {
                 prim: 'pair',
                 args: [{ prim: 'nat' }, { prim: 'timestamp' }],
@@ -120,7 +120,7 @@ export const tokenComplexNoAnnots = createToken(
                   { prim: 'nat' },
                   {
                     prim: 'pair',
-                    args: [{ prim: 'mutez' }, { prim: 'timestamp' }],
+                    args: [{ prim: 'mumav' }, { prim: 'timestamp' }],
                   },
                 ],
               },
@@ -170,7 +170,7 @@ export const tokenNestedOr = createToken(
               { prim: 'string', annots: ['%myString'] },
             ],
           },
-          { prim: 'mutez', annots: ['%myTez'] },
+          { prim: 'mumav', annots: ['%myTez'] },
         ],
       },
     ],
@@ -232,7 +232,7 @@ export const tokenNestedOrWithoutAnnot = createToken(
             prim: 'or',
             args: [{ prim: 'pair', args: [{ prim: 'nat' }, { prim: 'int' }] }, { prim: 'string' }],
           },
-          { prim: 'mutez' },
+          { prim: 'mumav' },
         ],
       },
     ],
@@ -251,7 +251,7 @@ export const tokenOrWithOption = createToken(
           {
             prim: 'or',
             args: [
-              { prim: 'mutez' },
+              { prim: 'mumav' },
               {
                 prim: 'option',
                 args: [
