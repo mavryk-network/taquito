@@ -1,6 +1,6 @@
 import { CONFIGS } from './config';
 import { storageContract } from './data/storage-contract';
-import { MichelsonMap, BigMapAbstraction, MichelCodecPacker } from '@taquito/taquito';
+import { MichelsonMap, BigMapAbstraction, MichelCodecPacker } from '@mavrykdynamics/taquito';
 import { tokenBigmapCode } from './data/token_bigmap';
 import { tokenCode, tokenInit } from './data/tokens';
 import BigNumber from 'bignumber.js';

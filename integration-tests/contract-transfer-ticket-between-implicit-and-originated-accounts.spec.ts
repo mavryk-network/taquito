@@ -1,7 +1,7 @@
 import { CONFIGS } from "./config";
-import { DefaultContractType, TezosToolkit } from "@taquito/taquito";
+import { DefaultContractType, TezosToolkit } from "@mavrykdynamics/taquito";
 import { ticketsSendTz, ticketsBagTz, ticketsBlackholeTz } from "./data/code_with_ticket_transfer";
-import { RpcClient, TicketTokenParams } from '@taquito/rpc';
+import { RpcClient, TicketTokenParams } from '@mavrykdynamics/taquito-rpc';
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
   const Tezos1 = lib;

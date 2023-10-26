@@ -1,6 +1,6 @@
 // Michelson code from https://ide-staging.ligolang.org/p/SHUGuQ2nTVpinYoQ0uW2_Q
 export const idInitData = `(Pair (Pair { Elt 1
-                  (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
+                  (Pair (Pair "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
                         0x0501000000026869) }
             10000000)
       (Pair 2 333))`

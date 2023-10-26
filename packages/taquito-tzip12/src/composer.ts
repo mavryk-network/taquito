@@ -1,6 +1,6 @@
-import { Context, ContractAbstraction, ContractProvider, Wallet } from '@taquito/taquito';
+import { Context, ContractAbstraction, ContractProvider, Wallet } from '@mavrykdynamics/taquito';
 import { Tzip12ContractAbstraction } from './tzip12-contract-abstraction';
-import { MetadataContext } from '@taquito/tzip16';
+import { MetadataContext } from '@mavrykdynamics/taquito-tzip16';
 
 const ABSTRACTION_KEY = Symbol('Tzip12ContractAbstractionObjectKey');
 

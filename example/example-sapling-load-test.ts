@@ -1,6 +1,6 @@
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
-import { InMemorySpendingKey, SaplingToolkit } from '@taquito/sapling';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { InMemorySpendingKey, SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
 import { singleSaplingStateContractJProtocol } from '../integration-tests/data/single_sapling_state_contract_jakarta_michelson';
 const numberOfSaplingTx = 100;
 let totalTime = 0;

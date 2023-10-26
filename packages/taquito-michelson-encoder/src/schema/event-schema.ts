@@ -2,7 +2,7 @@ import {
   MichelsonV1Expression,
   MichelsonV1ExpressionExtended,
   ScriptResponse,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { deepEqual } from './storage';
 
 export class EventSchema {

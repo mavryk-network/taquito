@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 
 // TC-T-009 - Create Ticket - callback case 2 - address and option

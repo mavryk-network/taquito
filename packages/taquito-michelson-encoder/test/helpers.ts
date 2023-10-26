@@ -1,5 +1,5 @@
-import { MichelsonV1Expression, MichelsonV1ExpressionExtended } from '@taquito/rpc';
-import { b58decode } from '@taquito/utils';
+import { MichelsonV1Expression, MichelsonV1ExpressionExtended } from '@mavrykdynamics/taquito-rpc';
+import { b58decode } from '@mavrykdynamics/taquito-utils';
 import { Schema } from '../src/schema/storage';
 import { SemanticEncoding } from '../src/tokens/token';
 

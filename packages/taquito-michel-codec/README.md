@@ -1,6 +1,6 @@
 # Taquito michel-codec package
 
-`@taquito/michel-codec` Converts and validates Michelson expressions between JSON based Michelson and Micheline.
+`@mavrykdynamics/taquito-michel-codec` Converts and validates Michelson expressions between JSON based Michelson and Micheline.
 
 This package can:
 
@@ -16,7 +16,7 @@ See the top-level project [https://github.com/ecadlabs/taquito](https://github.c
 
 ```js
 const code = `(Pair 
-                     (Pair { Elt 1 (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe") 0x0501000000026869)}
+                     (Pair { Elt 1 (Pair (Pair "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe") 0x0501000000026869)}
                            10000000)
                      (Pair 2 333)
                   )`;
@@ -47,7 +47,7 @@ Output:
                   {
                     "prim": "Pair",
                     "args": [
-                      { "string": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" },
+                      { "string": "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" },
                       { "string": "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe" }
                     ]
                   },

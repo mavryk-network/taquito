@@ -1,5 +1,5 @@
 import { ForgedBytes } from '../../src/operations/types';
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 import { RevealOperationBuilder, TxRollupSubmitBatchOperationBuilder } from '../helpers';
 import { TxRollupBatchOperation } from '../../src/operations/tx-rollup-batch-operation';
@@ -11,7 +11,7 @@ describe('TxRollupBatchOperation', () => {
   const successfulResult = [
     {
       kind: 'tx_rollup_submit_batch',
-      source: 'tz2MRqRjuMz7i7GjFcwTGE3HF3cbh9sQavXX',
+      source: 'mv2Mh47Ufu4UD9bhBeXoQhoccB2rBuBSiU2x',
       fee: '580',
       counter: '249650',
       gas_limit: '2869',
@@ -22,7 +22,7 @@ describe('TxRollupBatchOperation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2MRqRjuMz7i7GjFcwTGE3HF3cbh9sQavXX',
+            contract: 'mv2Mh47Ufu4UD9bhBeXoQhoccB2rBuBSiU2x',
             change: '-580',
             origin: 'block',
           },

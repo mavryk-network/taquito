@@ -1,6 +1,6 @@
 import { CONFIGS } from './config';
 import { managerCode } from './data/manager_code';
-import { DefaultContractType, MANAGER_LAMBDA, OriginationOperation } from '@taquito/taquito';
+import { DefaultContractType, MANAGER_LAMBDA, OriginationOperation } from '@mavrykdynamics/taquito';
 
 CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract }) => {
   const Tezos = lib;

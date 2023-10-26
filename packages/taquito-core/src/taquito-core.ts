@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/core
+ * @module @mavrykdynamics/taquito-core
  */
 
 export * from './errors';

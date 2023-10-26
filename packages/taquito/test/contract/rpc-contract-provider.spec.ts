@@ -24,7 +24,7 @@ import { preapplyResultFrom } from './helper';
 import { OpKind, ParamsWithKind, TransferTicketParams } from '../../src/operations/types';
 import { NoopParser } from '../../src/taquito';
 import { OperationBatch } from '../../src/batch/rpc-batch-provider';
-import { PvmKind } from '@taquito/rpc';
+import { PvmKind } from '@mavrykdynamics/taquito-rpc';
 
 /**
  * RPCContractProvider test

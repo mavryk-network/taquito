@@ -117,7 +117,7 @@ describe('Schema test', () => {
       }),
       fa2: 'KT18hLaKKTfizp7BEiQLH32uroU68mCcX6Ru',
       joko_id: new BigNumber('15'),
-      manager: 'mv1SqxAdNiSKsDP5UK8jTTg1uQSdL1mxEDR7',
+      manager: 'mv1Daxuv5cvCaCF3T3RmuszbdWYYA8KMhxEF',
       max_mint: new BigNumber('5'),
       max_per_address: expectMichelsonMap({
         Arria: { tier3: { int: '104919' } },
@@ -125,7 +125,7 @@ describe('Schema test', () => {
       }),
       metadata: '104761',
       pixel_artist_map: expectMichelsonMap({
-        Charlie: 'mv1SqxAdNiSKsDP5UK8jTTg1uQSdL1mxEDR7',
+        Charlie: 'mv1Daxuv5cvCaCF3T3RmuszbdWYYA8KMhxEF',
         Sutu: 'mv1CW4WWhKM2x1jiAdRc1Qqd2yZxT5hHmodv',
       }),
       price: new BigNumber('10000000'),

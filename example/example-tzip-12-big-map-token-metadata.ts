@@ -1,6 +1,6 @@
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
-import { importKey, InMemorySigner } from '@taquito/signer';
-import { b58cencode, char2Bytes, Prefix, prefix } from '@taquito/utils';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { importKey, InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { b58cencode, char2Bytes, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
 import { fa2TokenFactory } from '../integration-tests/data/fa2-token-factory';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

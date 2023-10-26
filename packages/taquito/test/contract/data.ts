@@ -3,7 +3,7 @@ import {
   MichelsonData,
   MichelsonContractStorage,
   MichelsonType,
-} from '@taquito/michel-codec';
+} from '@mavrykdynamics/taquito-michel-codec';
 import { DEFAULT_STORAGE_LIMIT, DEFAULT_FEE, getRevealGasLimit } from '../../src/constants';
 
 const scriptSample = {

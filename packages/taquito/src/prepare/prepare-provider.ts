@@ -4,7 +4,7 @@ import {
   VotingPeriodBlockResult,
   PreapplyParams,
   ConstantsResponse,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import {
   DelegateParams,
   RevealParams,
@@ -31,7 +31,7 @@ import {
 import { PreparationProvider, PreparedOperation } from './interface';
 import { DEFAULT_FEE, DEFAULT_STORAGE_LIMIT, Protocols, getRevealGasLimit } from '../constants';
 import { RPCResponseError } from '../errors';
-import { PublicKeyNotFoundError, InvalidOperationKindError, DeprecationError } from '@taquito/core';
+import { PublicKeyNotFoundError, InvalidOperationKindError, DeprecationError } from '@mavrykdynamics/taquito-core';
 import { Context } from '../context';
 import { ContractMethod } from '../contract/contract-methods/contract-method-flat-param';
 import { ContractMethodObject } from '../contract/contract-methods/contract-method-object-param';
@@ -56,7 +56,7 @@ import {
   createActivationOperation,
 } from '../contract';
 import { Estimate } from '../estimate';
-import { ForgeParams } from '@taquito/local-forging';
+import { ForgeParams } from '@mavrykdynamics/taquito-local-forging';
 import { Provider } from '../provider';
 import BigNumber from 'bignumber.js';
 import { BlockIdentifier } from '../read-provider/interface';

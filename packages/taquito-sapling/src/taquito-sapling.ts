@@ -1,10 +1,10 @@
 /**
  * @packageDocumentation
- * @module @taquito/sapling
+ * @module @mavrykdynamics/taquito-sapling
  */
 
 import BigNumber from 'bignumber.js';
-import { MichelCodecPacker, Packer, TzReadProvider } from '@taquito/taquito';
+import { MichelCodecPacker, Packer, TzReadProvider } from '@mavrykdynamics/taquito';
 import {
   b58cdecode,
   format,
@@ -13,7 +13,7 @@ import {
   validateKeyHash,
   ValidationResult,
   invalidDetail,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import { InsufficientBalance, InvalidMemo } from './errors';
 import { convertValueToBigNumber } from './sapling-tx-viewer/helpers';
 import { InMemorySpendingKey } from './sapling-keys/in-memory-spending-key';
@@ -30,7 +30,7 @@ import {
 import { SaplingTransactionBuilder } from './sapling-tx-builder/sapling-transactions-builder';
 import { DEFAULT_BOUND_DATA, DEFAULT_MEMO } from './constants';
 import { InMemoryProvingKey } from './sapling-keys/in-memory-proving-key';
-import { InvalidAddressError, InvalidKeyHashError } from '@taquito/core';
+import { InvalidAddressError, InvalidKeyHashError } from '@mavrykdynamics/taquito-core';
 
 export { SaplingTransactionViewer } from './sapling-tx-viewer/sapling-transaction-viewer';
 export { InMemoryViewingKey } from './sapling-keys/in-memory-viewing-key';
@@ -148,7 +148,7 @@ export class SaplingToolkit {
 
   /**
    * @description Prepare an unshielded transaction
-   * @param unshieldedTxParams `to` is the Tezos address that will receive the unshielded tokens (tz1, tz2 or tz3).
+   * @param unshieldedTxParams `to` is the Tezos address that will receive the unshielded tokens (mv1, mv2 or mv3).
    * `amount` is the amount of unshielded tokens in tez by default.
    * `mumav` needs to be set to true if the amount of unshielded tokens is in mumav.
    * @returns a string representing the sapling transaction.

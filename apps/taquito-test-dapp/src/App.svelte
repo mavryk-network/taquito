@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { TezosToolkit } from "@taquito/taquito";
+  import { TezosToolkit } from "@mavrykdynamics/taquito";
   import { NetworkType } from "@mavrykdynamics/beacon-sdk";
   import Select from "svelte-select";
   import { getRpcUrl } from "./config";

@@ -9,7 +9,7 @@ import {
   InvalidPublicKeyError,
   ValidationResult,
   invalidDetail,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import {
   OversizedEntryPointError,
   InvalidBallotValueError,
@@ -30,7 +30,7 @@ import {
 } from './michelson/codec';
 import { Uint8ArrayConsumer } from './uint8array-consumer';
 import { pad } from './utils';
-import { InvalidAddressError, InvalidContractAddressError } from '@taquito/core';
+import { InvalidAddressError, InvalidContractAddressError } from '@mavrykdynamics/taquito-core';
 
 // https://tezos.gitlab.io/shell/p2p_api.html specifies data types and structure for forging
 

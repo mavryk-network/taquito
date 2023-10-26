@@ -1,5 +1,5 @@
-import { TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { voteInitSample, voteSample } from '../integration-tests/data/vote-contract';
 
 async function example() {

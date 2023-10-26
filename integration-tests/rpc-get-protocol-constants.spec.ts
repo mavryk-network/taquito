@@ -1,9 +1,9 @@
-import { Protocols } from "@taquito/taquito";
+import { Protocols } from "@mavrykdynamics/taquito";
 import { CONFIGS, NetworkType } from "./config";
 import BigNumber from 'bignumber.js';
 import {
   ConstantsResponseProto017,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 
 CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   const Tezos = lib;

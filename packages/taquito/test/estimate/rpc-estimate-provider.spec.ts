@@ -24,9 +24,9 @@ import {
   smartRollupAddMessagesNoReveal,
   smartRollupOriginateWithReveal,
 } from '../contract/helper';
-import { OpKind, PvmKind } from '@taquito/rpc';
+import { OpKind, PvmKind } from '@mavrykdynamics/taquito-rpc';
 import { TransferTicketParams } from '../../src/operations/types';
-import { InvalidAddressError } from '@taquito/utils';
+import { InvalidAddressError } from '@mavrykdynamics/taquito-utils';
 import { ContractAbstraction } from '../../src/contract';
 import { genericMultisig } from '../../../../integration-tests/data/multisig';
 import { RpcContractProvider } from '../../src/contract/rpc-contract-provider';
@@ -583,7 +583,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     it('should throw an error with invalid source', async () => {
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHG',
+        source: 'mv1liedxUBr81QxVfSh9pvHTstddKpuuaVkA',
         fee: 804,
         gasLimit: 5009,
         storageLimit: 130,
@@ -647,7 +647,7 @@ describe('RPCEstimateProvider test signer', () => {
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -659,7 +659,7 @@ describe('RPCEstimateProvider test signer', () => {
       });
       const estimate = await estimateProvider.batch([
         { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           value: {
@@ -715,7 +715,7 @@ describe('RPCEstimateProvider test signer', () => {
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -733,7 +733,7 @@ describe('RPCEstimateProvider test signer', () => {
           },
         },
         { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
       ]);
       expect(estimate.length).toEqual(4);
 
@@ -890,7 +890,7 @@ describe('RPCEstimateProvider test signer', () => {
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -902,7 +902,7 @@ describe('RPCEstimateProvider test signer', () => {
       });
       const estimate = await estimateProvider.batch([
         { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           value: {
@@ -1366,7 +1366,7 @@ describe('RPCEstimateProvider test wallet', () => {
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -1380,7 +1380,7 @@ describe('RPCEstimateProvider test wallet', () => {
       });
       const estimate = await estimateProvider.batch([
         { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           value: {
@@ -1408,7 +1408,7 @@ describe('RPCEstimateProvider test wallet', () => {
             },
           },
           { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
-          { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+          { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         ]);
       } catch (e: any) {
         expect(e.message).toContain('Public key not found of this address');

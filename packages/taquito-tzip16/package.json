@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/tzip16",
+  "name": "@mavrykdynamics/taquito-tzip16",
   "version": "17.5.2",
   "description": "Tzip16",
   "keywords": [
@@ -61,12 +61,12 @@
     ]
   },
   "dependencies": {
-    "@taquito/core": "^17.5.2",
-    "@taquito/http-utils": "^17.5.2",
-    "@taquito/michelson-encoder": "^17.5.2",
-    "@taquito/rpc": "^17.5.2",
-    "@taquito/taquito": "^17.5.2",
-    "@taquito/utils": "^17.5.2",
+    "@mavrykdynamics/taquito-core": "^17.5.2",
+    "@mavrykdynamics/taquito-http-utils": "^17.5.2",
+    "@mavrykdynamics/taquito-michelson-encoder": "^17.5.2",
+    "@mavrykdynamics/taquito-rpc": "^17.5.2",
+    "@mavrykdynamics/taquito": "^17.5.2",
+    "@mavrykdynamics/taquito-utils": "^17.5.2",
     "bignumber.js": "^9.1.2",
     "crypto-js": "^4.2.0"
   },

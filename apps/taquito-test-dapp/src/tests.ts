@@ -4,10 +4,10 @@ import {
   Wallet,
   MichelsonMap,
   OpKind
-} from "@taquito/taquito";
-import type { ContractProvider } from "@taquito/taquito";
-import type { BeaconWallet } from "@taquito/beacon-wallet";
-import { char2Bytes, verifySignature } from "@taquito/utils";
+} from "@mavrykdynamics/taquito";
+import type { ContractProvider } from "@mavrykdynamics/taquito";
+import type { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
+import { char2Bytes, verifySignature } from "@mavrykdynamics/taquito-utils";
 import { SigningType, type RequestSignPayloadInput } from "@mavrykdynamics/beacon-sdk";
 import { get } from "svelte/store";
 import type { TestSettings, TestResult } from "./types";

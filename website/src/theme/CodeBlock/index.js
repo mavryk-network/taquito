@@ -58,8 +58,8 @@ export default ({
 
   useEffect(() => {
     async function getDependencies() {
-      const { TezosToolkit, MichelsonMap, compose, DEFAULT_FEE, RpcReadAdapter } = await import('@taquito/taquito');
-      const { verifySignature } = await import('@taquito/utils');
+      const { TezosToolkit, MichelsonMap, compose, DEFAULT_FEE, RpcReadAdapter } = await import('@mavrykdynamics/taquito');
+      const { verifySignature } = await import('@mavrykdynamics/taquito-utils');
       const {
         validateAddress,
         validateChain,
@@ -73,16 +73,16 @@ export default ({
         b58cencode,
         prefix,
         Prefix
-      } = await import('@taquito/utils');
-      const { BeaconWallet } = await import('@taquito/beacon-wallet');
-      const { InMemorySigner, importKey, Path, ECDSA, Ed25519, generateSecretKey } = await import('@taquito/signer');
-      const { LedgerSigner, DerivationType } = await import('@taquito/ledger-signer');
-      const { Tzip16Module, tzip16, bytes2Char, MichelsonStorageView } = await import('@taquito/tzip16')
-      const { Tzip12Module, tzip12 } = await import("@taquito/tzip12");
-      const { Schema, ParameterSchema } = await import("@taquito/michelson-encoder");
-      const { Parser, packDataBytes } = await import('@taquito/michel-codec');
-      const { RpcClient } = await import('@taquito/rpc');
-      const { SaplingToolkit, InMemorySpendingKey, InMemoryViewingKey } = await import('@taquito/sapling');
+      } = await import('@mavrykdynamics/taquito-utils');
+      const { BeaconWallet } = await import('@mavrykdynamics/taquito-beacon-wallet');
+      const { InMemorySigner, importKey, Path, ECDSA, Ed25519, generateSecretKey } = await import('@mavrykdynamics/taquito-signer');
+      const { LedgerSigner, DerivationType } = await import('@mavrykdynamics/taquito-ledger-signer');
+      const { Tzip16Module, tzip16, bytes2Char, MichelsonStorageView } = await import('@mavrykdynamics/taquito-tzip16')
+      const { Tzip12Module, tzip12 } = await import("@mavrykdynamics/taquito-tzip12");
+      const { Schema, ParameterSchema } = await import("@mavrykdynamics/taquito-michelson-encoder");
+      const { Parser, packDataBytes } = await import('@mavrykdynamics/taquito-michel-codec');
+      const { RpcClient } = await import('@mavrykdynamics/taquito-rpc');
+      const { SaplingToolkit, InMemorySpendingKey, InMemoryViewingKey } = await import('@mavrykdynamics/taquito-sapling');
       const TransportWebHID = (await import("@ledgerhq/hw-transport-webhid")).default;
 
       let wallet;

@@ -1,4 +1,4 @@
-import { opMapping, ForgeParams } from '@taquito/local-forging';
+import { opMapping, ForgeParams } from '@mavrykdynamics/taquito-local-forging';
 import {
   rpcContractResponse,
   rpcContractResponse2,
@@ -19,7 +19,7 @@ import {
   codeContractWithConstant,
 } from './contract_with_constant';
 import { codeViewsTopLevel, storageViewsTopLevel } from './contract_views_top_level';
-import { MichelsonV1Expression, OpKind, PvmKind } from '@taquito/rpc';
+import { MichelsonV1Expression, OpKind, PvmKind } from '@mavrykdynamics/taquito-rpc';
 import { emitCode } from './code_with_emit';
 import { lambdaRecCode } from './code_with_lambda_rec';
 

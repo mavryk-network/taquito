@@ -1,19 +1,19 @@
-import { ParameterSchema } from '@taquito/michelson-encoder';
+import { ParameterSchema } from '@mavrykdynamics/taquito-michelson-encoder';
 import {
   RpcClientInterface,
   MichelsonV1Expression,
   MichelsonV1ExpressionExtended,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import {
   ContractAbstraction,
   ContractProvider,
   Wallet,
   ViewSimulationError,
-} from '@taquito/taquito';
+} from '@mavrykdynamics/taquito';
 import { ForbiddenInstructionInViewCodeError, NoParameterExpectedError } from '../errors';
-import { validateAndExtractFailwith, TzReadProvider } from '@taquito/taquito';
+import { validateAndExtractFailwith, TzReadProvider } from '@mavrykdynamics/taquito';
 import { View } from './interface';
-import { InvalidViewParameterError } from '@taquito/core';
+import { InvalidViewParameterError } from '@mavrykdynamics/taquito-core';
 
 export class MichelsonStorageView implements View {
   constructor(

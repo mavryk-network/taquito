@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/beacon-wallet",
+  "name": "@mavrykdynamics/taquito-beacon-wallet",
   "version": "17.5.2",
   "description": "Beacon wallet provider",
   "keywords": [
@@ -55,7 +55,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^@taquito/taquito$": "<rootDir>/../taquito/src/taquito.ts"
+      "^@mavrykdynamics/taquito$": "<rootDir>/../taquito/src/taquito.ts"
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -67,8 +67,8 @@
   },
   "dependencies": {
     "@mavrykdynamics/beacon-dapp": "4.1.0",
-    "@taquito/core": "^17.5.2",
-    "@taquito/taquito": "^17.5.2"
+    "@mavrykdynamics/taquito-core": "^17.5.2",
+    "@mavrykdynamics/taquito": "^17.5.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.40",

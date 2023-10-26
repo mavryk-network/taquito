@@ -81,8 +81,8 @@ jobs:
     ## The 4 Bootstrap Accounts (alias, pk, pkh, sk)
     # alice,edpkvGfYw3LyB1UcCahKQk4rF2tvbMUk8GFiTuMjL75uGXrpvKXhjn,mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv,unencrypted:edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq
     # bob,edpkurPsQ8eUApnLUJ9ZPDvu98E8VNj4KtJa1aZr16Cr5ow5VHKnz4,mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU,unencrypted:edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt
-    # charlie,edpkuvMuRuZ6ZbAquJH1XxBFfUmuBFz1zp9ENEqjCVgLp3NcY3Ww9M,tz1RDVcKmFcqzvTpJirvg4JaUVgZbjtnRT26,unencrypted:edsk3RgWvbKKA1atEUcaGwivge7QtckHkTL9nQJUXQKY5r8WKp4pF4
-    # donald,edpkvXGp1BMZxHkwg3mKnWfJYS6HTJ5JtufD8YXxLtH8UKqLZkZVun,tz1eSWp4B9s1qhtNMMNXAkaf2oqCnDHd2iAm,unencrypted:edsk3S8mG2sSBmSRbikAcZVLCz4SrCq4DjmsQRic6MGktqNFijfrS2
+    # charlie,edpkuvMuRuZ6ZbAquJH1XxBFfUmuBFz1zp9ENEqjCVgLp3NcY3Ww9M,mv1Daxuv5cvCaCF3T3RmuszbdWYYA8KMhxEF,unencrypted:edsk3RgWvbKKA1atEUcaGwivge7QtckHkTL9nQJUXQKY5r8WKp4pF4
+    # donald,edpkvXGp1BMZxHkwg3mKnWfJYS6HTJ5JtufD8YXxLtH8UKqLZkZVun,mv1Soz7eVXANQyfbVfwNQaGgBphBLbnYy5RZ,unencrypted:edsk3S8mG2sSBmSRbikAcZVLCz4SrCq4DjmsQRic6MGktqNFijfrS2
     - name: Generate Flextesa bootstrap accounts
       run: |-
         echo "alice=$(docker run --rm ${{ matrix.flextesa_docker_image }} flextesa key alice)" >> $GITHUB_ENV

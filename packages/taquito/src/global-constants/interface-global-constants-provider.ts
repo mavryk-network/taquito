@@ -1,4 +1,4 @@
-import { Expr } from "@taquito/michel-codec";
+import { Expr } from "@mavrykdynamics/taquito-michel-codec";
 
 export type GlobalConstantHash = string; 
 

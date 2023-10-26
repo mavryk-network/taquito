@@ -30,7 +30,7 @@ describe('Utils functions', () => {
     );
   });
 
-  it('Public key returned by ledger device should be compressed adequately for tz1 before b58 encoding', () => {
+  it('Public key returned by ledger device should be compressed adequately for mv1 before b58 encoding', () => {
     const buff = Buffer.from('02063ed375b28dd2c1841138d4959f57b4a2715730e2e28fcda9144a19876dd3c6', 'hex');
     const compressbuff = compressPublicKey(buff, 0x00);
     const compressbuff2hex = Buffer.from(compressbuff).toString('hex');
@@ -39,7 +39,7 @@ describe('Utils functions', () => {
     );
   });
 
-  it('Public key returned by ledger device should be compressed adequately for tz2 before b58 encoding', () => {
+  it('Public key returned by ledger device should be compressed adequately for mv2 before b58 encoding', () => {
     const buff = Buffer.from('04589caa8a1bc3b254ce32174daaded368a7e88f883bd4780a5ddb3d4f06d96f1805cec3577cf22d9f9a6f206d7f8fa5f7cb27d92f1cd8272b36cdcd080a670802', 'hex');
     const compressbuff = compressPublicKey(buff, 0x01);
     const compressbuff2hex = Buffer.from(compressbuff).toString('hex');
@@ -48,7 +48,7 @@ describe('Utils functions', () => {
     );
   });
 
-  it('Public key returned by ledger device should be compressed adequately for tz3 before b58 encoding', () => {
+  it('Public key returned by ledger device should be compressed adequately for mv3 before b58 encoding', () => {
     const buff = Buffer.from('042c51e6f861c41f98833c7654c682ff10c2bfd5bb2f8c045b97479001520dfe1a178629f337b8d51c016c1ab84144243c1db462227cd3a0c699dd73bc57a7f0d3', 'hex');
     const compressbuff = compressPublicKey(buff, 0x02);
     const compressbuff2hex = Buffer.from(compressbuff).toString('hex');

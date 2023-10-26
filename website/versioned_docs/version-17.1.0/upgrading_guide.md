@@ -71,7 +71,7 @@ We decided to update the Typescript version that we are using to take advantage 
 
 You might get the following error if a Typescript upgrade is needed in your project:
 ```
-Error: node_modules/@taquito/michel-codec/dist/types/michelson-types.d.ts:122:34 - error TS1110: Type expected.
+Error: node_modules/@mavrykdynamics/taquito-michel-codec/dist/types/michelson-types.d.ts:122:34 - error TS1110: Type expected.
 export declare type ProtocolID = `${Protocol}`;
 ```
 
@@ -108,17 +108,17 @@ When creating an instance of the `TezosToolkit`, one must specify the RPC node. 
 **Before version 7:**
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 const tezos = new TezosToolkit();
 // or
-import { Tezos } from '@taquito/taquito';
+import { Tezos } from '@mavrykdynamics/taquito';
 // ready-to-use Tezos singleton
 ```
 
 **Since version 7:**
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 const tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL_NOW_REQUIRED');
 // or
 // Those who were using the Tezos singleton may consider naming the variable like the singleton to avoid renaming it everywhere in their code:
@@ -129,7 +129,7 @@ const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL_NOW_REQUIRED');
 
 Here is an example of the compilation error you would get when updating Taquito to version 7, if you do not replace the Tezos singleton with an instance of the TezosToolkit:
 
-`Module '"../../node_modules/@taquito/taquito/dist/types/taquito"' has no exported member 'Tezos'.`
+`Module '"../../node_modules/@mavrykdynamics/taquito/dist/types/taquito"' has no exported member 'Tezos'.`
 
 ### Example Errors when the URL is not set:
 
@@ -174,15 +174,15 @@ If you update to version 7 without replacing main with default in your code, you
 
 ## Removed the `importKey` method from TezosToolkit class
 
-This method was marked as deprecated in March 2020 and recommended to use the signer provider: `@taquito/signer importKey`.
-The purpose of this change was to remove the `@taquito/signer` dependency from `@taquito/taquito` because it increased the bundle size by ~1.1mb while not being necessary for most browser-based use-cases.
+This method was marked as deprecated in March 2020 and recommended to use the signer provider: `@mavrykdynamics/taquito-signer importKey`.
+The purpose of this change was to remove the `@mavrykdynamics/taquito-signer` dependency from `@mavrykdynamics/taquito` because it increased the bundle size by ~1.1mb while not being necessary for most browser-based use-cases.
 
 ### Change required in your code:
 
 **Before version 7:**
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const tezos = new TezosToolkit('your_rpc_node');
 tezos.importKey(email, password, mnemonic, secret);
@@ -191,8 +191,8 @@ tezos.importKey(email, password, mnemonic, secret);
 **Since version 7:**
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
-import { importKey } from '@taquito/signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { importKey } from '@mavrykdynamics/taquito-signer';
 
 const tezos = new TezosToolkit('your_rpc_node');
 importKey(tezos, email, password, mnemonic, secret);

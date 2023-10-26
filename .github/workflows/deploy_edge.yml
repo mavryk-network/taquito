@@ -30,7 +30,7 @@ jobs:
     - run: npx lerna version "${TARGET_VERSION}" --no-push --no-git-tag-version --yes
     - run: npm run version-stamp
     - run: npm run build
-    - run: npm run -w @taquito/taquito build:release
+    - run: npm run -w @mavrykdynamics/taquito build:release
     - run: git config user.email "actions@github.com" && git config user.name "Github Actions"
     - run: git add . && git commit -m "committing changes to files to make lerna happy in next step, this is expected to never be pushed to remote"
     - run: echo ${VERDACCIO_TOKEN} >> ~/.npmrc

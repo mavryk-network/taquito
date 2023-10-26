@@ -1,4 +1,4 @@
-import { b58decode } from '@taquito/utils';
+import { b58decode } from '@mavrykdynamics/taquito-utils';
 import { ContractToken, ContractValidationError } from './../../src/tokens/contract';
 
 describe('Contract Token Tests', () => {

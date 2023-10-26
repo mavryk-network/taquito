@@ -1,8 +1,8 @@
 import { CONFIGS } from './config';
-import { DefaultContractType } from "@taquito/taquito";
-import { RpcClientCache, RpcClient, RPCRunViewParam, RPCRunScriptViewParam, PendingOperations, PvmKind } from '@taquito/rpc';
-import { encodeExpr } from '@taquito/utils';
-import { Schema } from '@taquito/michelson-encoder';
+import { DefaultContractType } from "@mavrykdynamics/taquito";
+import { RpcClientCache, RpcClient, RPCRunViewParam, RPCRunScriptViewParam, PendingOperations, PvmKind } from '@mavrykdynamics/taquito-rpc';
+import { encodeExpr } from '@mavrykdynamics/taquito-utils';
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { tokenBigmapCode, tokenBigmapStorage } from './data/token_bigmap';
 import { ticketCode, ticketStorage } from './data/code_with_ticket';
 

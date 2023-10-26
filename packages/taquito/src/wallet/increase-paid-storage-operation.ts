@@ -6,7 +6,7 @@ import {
   OpKind,
   OperationContentsAndResultReveal,
   OperationContentsAndResultIncreasePaidStorage,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { ObservableError } from './errors';
 
 export class IncreasePaidStorageWalletOperation extends WalletOperation {

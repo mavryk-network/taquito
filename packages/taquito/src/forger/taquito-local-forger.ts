@@ -4,7 +4,7 @@ import {
   ForgeParams,
   ForgeResponse,
   ProtocolsHash,
-} from '@taquito/local-forging';
+} from '@mavrykdynamics/taquito-local-forging';
 import { Protocols } from '../constants';
 import { Context } from '../context';
 

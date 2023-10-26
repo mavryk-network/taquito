@@ -1,4 +1,4 @@
-import { RpcReadAdapter } from '@taquito/taquito';
+import { RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { ForbiddenInstructionInViewCodeError, NoParameterExpectedError } from '../../src/errors';
 import { MichelsonStorageView } from '../../src/viewKind/michelson-storage-view';
 

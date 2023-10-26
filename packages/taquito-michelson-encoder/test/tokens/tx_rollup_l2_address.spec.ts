@@ -1,4 +1,4 @@
-import { b58decodeL2Address } from '@taquito/utils';
+import { b58decodeL2Address } from '@mavrykdynamics/taquito-utils';
 import {
   TxRollupL2AddressToken,
   TxRollupL2AddressValidationError,

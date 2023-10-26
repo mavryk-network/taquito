@@ -5,9 +5,9 @@ import {
   MichelsonV1Expression,
   SaplingDiffResponse,
   ScriptedContracts,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { ContractsLibrary } from './taquito-contracts-library';
-import { BigMapQuery, BlockIdentifier, SaplingStateQuery, TzReadProvider } from '@taquito/taquito';
+import { BigMapQuery, BlockIdentifier, SaplingStateQuery, TzReadProvider } from '@mavrykdynamics/taquito';
 
 export class ReadWrapperContractsLibrary implements TzReadProvider {
   constructor(private readProvider: TzReadProvider, private contractslibrary: ContractsLibrary) {}

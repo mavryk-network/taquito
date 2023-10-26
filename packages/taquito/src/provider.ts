@@ -3,7 +3,7 @@ import {
   RPCRunOperationParam,
   RPCSimulateOperationParam,
   RpcClientInterface,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { Context } from './context';
 import { ForgedBytes, ParamsWithKind, RPCOperation, isOpRequireReveal } from './operations/types';
 import {
@@ -22,8 +22,8 @@ import {
   createSmartRollupAddMessagesOperation,
   createSmartRollupOriginateOperation,
 } from './contract/prepare';
-import { OpKind } from '@taquito/rpc';
-import { InvalidOperationKindError } from '@taquito/utils';
+import { OpKind } from '@mavrykdynamics/taquito-rpc';
+import { InvalidOperationKindError } from '@mavrykdynamics/taquito-utils';
 import { PreparedOperation } from './prepare';
 import { Estimate } from './estimate';
 

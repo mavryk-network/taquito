@@ -1,4 +1,4 @@
-import { InvalidHexStringError } from '@taquito/core';
+import { InvalidHexStringError } from '@mavrykdynamics/taquito-core';
 
 export class Uint8ArrayConsumer {
   static fromHexString(hex: string) {

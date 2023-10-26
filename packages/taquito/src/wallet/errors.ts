@@ -1,4 +1,4 @@
-import { TezosToolkitConfigError, NetworkError } from '@taquito/core';
+import { TezosToolkitConfigError, NetworkError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

@@ -7,7 +7,7 @@ import {
   MichelsonTypePair,
 } from './michelson-types';
 import { HexParseError, LongIntegerError, TezosIdEncodeError } from './errors';
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 
 export type Tuple<N extends number, T> = N extends 1
   ? [T]

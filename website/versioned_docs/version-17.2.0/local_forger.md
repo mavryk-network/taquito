@@ -3,12 +3,12 @@ title: Local Forging Package
 id: local_forger
 author: Michael Kernaghan
 ---
-`@taquito/local-forging` allows developers to forge transactions locally without having to interact with a node. This document will outline some use cases and usage examples.
+`@mavrykdynamics/taquito-local-forging` allows developers to forge transactions locally without having to interact with a node. This document will outline some use cases and usage examples.
 
 ## Importing the Local Forger
 The `LocalForger` package can be imported to your code like so:
 ```typescript
-import { LocalForger } from '@taquito/local-forging';
+import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 ```
 
 ## Forging a transaction
@@ -16,7 +16,7 @@ In order to forge the operation you must first prepare an operation.
 
 ### Preparing a Transaction Operation
 ```typescript
-import { TezosToolkit } from '@taquito/taquito'
+import { TezosToolkit } from '@mavrykdynamics/taquito'
 
 const Tezos = new TezosToolkit(RPC_URL);
 

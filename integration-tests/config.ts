@@ -1,9 +1,9 @@
-import { CompositeForger, RpcForger, TezosToolkit, Protocols, TaquitoLocalForger, PollingSubscribeProvider } from '@taquito/taquito';
-import { RemoteSigner } from '@taquito/remote-signer';
-import { HttpBackend } from '@taquito/http-utils';
-import { b58cencode, Prefix, prefix } from '@taquito/utils';
-import { importKey, InMemorySigner } from '@taquito/signer';
-import { RpcClient, RpcClientCache } from '@taquito/rpc';
+import { CompositeForger, RpcForger, TezosToolkit, Protocols, TaquitoLocalForger, PollingSubscribeProvider } from '@mavrykdynamics/taquito';
+import { RemoteSigner } from '@mavrykdynamics/taquito-remote-signer';
+import { HttpBackend } from '@mavrykdynamics/taquito-http-utils';
+import { b58cencode, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
+import { importKey, InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 import { KnownContracts } from './known-contracts';
 import { knownContractsProtoALph } from './known-contracts-ProtoALph';
 import { knownContractsPtGhostnet } from './known-contracts-PtGhostnet';

@@ -1,5 +1,5 @@
 import { RpcContractProvider } from '../../src/contract/rpc-contract-provider';
-import { HttpResponseError, STATUS_CODE } from '@taquito/http-utils';
+import { HttpResponseError, STATUS_CODE } from '@mavrykdynamics/taquito-http-utils';
 import {
   sample,
   sampleStorage,
@@ -11,7 +11,7 @@ import {
 import BigNumber from 'bignumber.js';
 import { Context } from '../../src/context';
 import { ContractMethod } from '../../src/contract/contract-methods/contract-method-flat-param';
-import { MichelsonMap, Schema } from '@taquito/michelson-encoder';
+import { MichelsonMap, Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { BigMapAbstraction } from '../../src/contract/big-map';
 import { ContractMethodObject } from '../../src/contract/contract-methods/contract-method-object-param';
 import { smallNestedMapTypecheck, ticketTokenTestMock } from '../helpers';
@@ -246,7 +246,7 @@ describe('RpcContractProvider test', () => {
           'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe',
           'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc',
           'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
-          'tz1NAozDvi5e7frVq9cUaC3uXQQannemB8Jw',
+          'mv1KTJozfW7fHNjtLkeViQ5a864TU7TVdxbe',
         ],
         new Schema({
           prim: 'big_map',
@@ -258,7 +258,7 @@ describe('RpcContractProvider test', () => {
       expect(result.get('mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe')).toEqual(new BigNumber(6));
       expect(result.get('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')).toEqual(new BigNumber(5));
       expect(result.get('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m')).toEqual(new BigNumber(4));
-      expect(result.get('tz1NAozDvi5e7frVq9cUaC3uXQQannemB8Jw')).toEqual(new BigNumber(1));
+      expect(result.get('mv1KTJozfW7fHNjtLkeViQ5a864TU7TVdxbe')).toEqual(new BigNumber(1));
 
       expect(mockRpcClient.packData.mock.calls[0][0]).toEqual({
         data: {
@@ -302,7 +302,7 @@ describe('RpcContractProvider test', () => {
       });
       expect(mockRpcClient.packData.mock.calls[5][0]).toEqual({
         data: {
-          bytes: '011bc28a6b8fb2fb6af99fe3bba054e614539e5f1200',
+          bytes: '00007d8adcb03b4220f3c4788060e3b160497c4aff89',
         },
         type: {
           prim: 'bytes',
@@ -628,7 +628,7 @@ describe('RpcContractProvider test', () => {
       mockRpcClient.getBigMapExpr.mockRejectedValue(expectedError);
       const schema = new Schema(sampleBigMapAbstractionValue);
       const bigMap = new BigMapAbstraction(
-        new BigNumber('tz2UBGrEBKzzW6hjXjxxiQFJNg6WR2bm6GEN'),
+        new BigNumber('mv2bm7Juz5FAKvcGS1Zqcakz1LBVc92Xu2QJ'),
         schema,
         rpcContractProvider
       );
@@ -646,7 +646,7 @@ describe('RpcContractProvider test', () => {
       mockRpcClient.getBigMapExpr.mockRejectedValue(expectedError);
       const schema = new Schema(sampleBigMapAbstractionValue);
       const bigMap = new BigMapAbstraction(
-        new BigNumber('tz2UBGrEBKzzW6hjXjxxiQFJNg6WR2bm6GEN'),
+        new BigNumber('mv2bm7Juz5FAKvcGS1Zqcakz1LBVc92Xu2QJ'),
         schema,
         rpcContractProvider
       );

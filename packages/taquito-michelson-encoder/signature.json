@@ -69,7 +69,7 @@
             "sha512": "1693ab9af8a3ffe231a898d22cb3484b2beb3f030ab42f941c1e960f6deb89a1bf959c6c5c9067b9a02df732af1e258ea0e0c101000b3fa9303d65720b4a2fe3"
           },
           {
-            "path": "dist/lib/tokens/comparable/mutez.js",
+            "path": "dist/lib/tokens/comparable/mumav.js",
             "sha512": "65e44f25687c7afd7346ab0732c2d8359c46ef567a61984a75c0734d093de8251ed4a9424a3f6137e5a13f0e293f8831e801a1cfbbc27bd2dfced88339d38b44"
           },
           {
@@ -213,7 +213,7 @@
             "sha512": "bc8a09a1550381f1d2eaa75374f678e1c27febc482db147d679e46056741e287965ce45427426950ed0a5326ab0432507a664844b4277c4aeae1d3273eb241eb"
           },
           {
-            "path": "dist/lib/tokens/comparable/mutez.js.map",
+            "path": "dist/lib/tokens/comparable/mumav.js.map",
             "sha512": "5da59d85126ca23dbf7b2be5819d96440c4c812460a3464ea235ecc40cd4b8092ed465444fa4af07e6ebb9b02ad9ee4929d03be0c195a6f9c709baa282d39ad3"
           },
           {
@@ -361,7 +361,7 @@
             "sha512": "6cbd79d68a6652b4cc2e80d7a91b7e71d7f55933ac3cad1f538fe518b7cf7828393de767fa90f2699aff0881aa7875d314a7c93c4bead2c654bbe3f5a18d7e02"
           },
           {
-            "path": "dist/types/tokens/comparable/mutez.d.ts",
+            "path": "dist/types/tokens/comparable/mumav.d.ts",
             "sha512": "f87157ac98a76cde0af8108c6698b701265f35a38746278856ec03d4b42b9295568230057322783675eed38d5f3ebdffd3dee0b68432b8defb99ba293fe4f904"
           },
           {
@@ -474,7 +474,7 @@
       "entry": "packageJson/v1alpha2",
       "value": {
         "packageJson": {
-          "name": "@taquito/michelson-encoder",
+          "name": "@mavrykdynamics/taquito-michelson-encoder",
           "version": "8.0.4-beta.0",
           "description": "converts michelson data and types into convenient JS/TS objects",
           "keywords": [
@@ -530,7 +530,7 @@
               "js"
             ],
             "moduleNameMapper": {
-              "^@taquito/utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
+              "^@mavrykdynamics/taquito-utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
             },
             "coveragePathIgnorePatterns": [
               "/node_modules/",
@@ -541,13 +541,13 @@
             ]
           },
           "dependencies": {
-            "@taquito/rpc": "^8.0.4-beta.0",
-            "@taquito/utils": "^8.0.4-beta.0",
+            "@mavrykdynamics/taquito-rpc": "^8.0.4-beta.0",
+            "@mavrykdynamics/taquito-utils": "^8.0.4-beta.0",
             "bignumber.js": "^9.0.1",
             "fast-json-stable-stringify": "^2.1.0"
           },
           "devDependencies": {
-            "@taquito/rpc": "^7.1.0-beta.0",
+            "@mavrykdynamics/taquito-rpc": "^7.1.0-beta.0",
             "@types/jest": "^26.0.16",
             "@types/node": "^18",
             "colors": "^1.4.0",

@@ -1,5 +1,5 @@
-import { createTransferOperation } from '@taquito/taquito';
-import { encodeOpHash } from '@taquito/utils';
+import { createTransferOperation } from '@mavrykdynamics/taquito';
+import { encodeOpHash } from '@mavrykdynamics/taquito-utils';
 import { CONFIGS } from './config';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {

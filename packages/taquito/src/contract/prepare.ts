@@ -1,6 +1,6 @@
-import { Schema } from '@taquito/michelson-encoder';
-import { OpKind, MichelsonV1Expression } from '@taquito/rpc';
-import { Prim, Expr } from '@taquito/michel-codec';
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
+import { OpKind, MichelsonV1Expression } from '@mavrykdynamics/taquito-rpc';
+import { Prim, Expr } from '@mavrykdynamics/taquito-michel-codec';
 import {
   OriginateParams,
   RPCOriginationOperation,
@@ -38,7 +38,7 @@ import {
   DEFAULT_STORAGE_LIMIT,
   getRevealGasLimit,
 } from '../constants';
-import { format } from '@taquito/utils';
+import { format } from '@mavrykdynamics/taquito-utils';
 import {
   InvalidCodeParameter,
   InvalidInitParameter,

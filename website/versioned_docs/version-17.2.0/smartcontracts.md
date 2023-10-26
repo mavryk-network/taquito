@@ -261,9 +261,9 @@ Tezos.contract
 The preceding example returns an array which contains the different possible signatures. Different signatures are possible as the `set_child_record` method contains some optional arguments. In the following example the `set_child_record` method is called by passing the arguments in the flattened way:
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
+// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
-// import { importKey } from '@taquito/signer';
+// import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
   .then((signer) => {
@@ -315,9 +315,9 @@ Tezos.contract
 The preceding example returns an object giving indication on how to structure the parameter when calling the`set_child_record` method. Here is an example where the `set_child_record` method is called by passing the parameter in an object format:
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
+// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
-// import { importKey } from '@taquito/signer';
+// import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
   .then((signer) => {

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/local-forging
+ * @module @mavrykdynamics/taquito-local-forging
  */
 
 import { ForgeParams, Forger } from './interface';
@@ -8,11 +8,11 @@ import { CODEC } from './constants';
 import { decoders } from './decoder';
 import { encoders } from './encoder';
 import { Uint8ArrayConsumer } from './uint8array-consumer';
-import { validateBlock, ValidationResult, invalidDetail } from '@taquito/utils';
+import { validateBlock, ValidationResult, invalidDetail } from '@mavrykdynamics/taquito-utils';
 import { InvalidOperationSchemaError } from './errors';
 import { validateMissingProperty, validateOperationKind } from './validator';
 import { ProtocolsHash } from './protocols';
-import { InvalidBlockHashError, InvalidOperationKindError } from '@taquito/core';
+import { InvalidBlockHashError, InvalidOperationKindError } from '@mavrykdynamics/taquito-core';
 
 export { CODEC, opMapping, opMappingReverse } from './constants';
 export * from './decoder';

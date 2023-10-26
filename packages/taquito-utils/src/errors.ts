@@ -1,4 +1,4 @@
-import { ParameterValidationError, UnsupportedActionError } from '@taquito/core';
+import { ParameterValidationError, UnsupportedActionError } from '@mavrykdynamics/taquito-core';
 
 export {
   InvalidAddressError,
@@ -15,7 +15,7 @@ export {
   InvalidOperationKindError,
   DeprecationError,
   ProhibitedActionError,
-} from '@taquito/core';
+} from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

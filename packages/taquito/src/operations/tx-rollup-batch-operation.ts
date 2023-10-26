@@ -1,7 +1,7 @@
 import {
   OperationContentsAndResult,
   OperationContentsAndResultTxRollupSubmitBatch,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { BigNumber } from 'bignumber.js';
 import { Context } from '../context';
 import { Operation } from './operations';

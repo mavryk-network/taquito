@@ -1,7 +1,7 @@
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
-import { importKey, InMemorySigner } from '@taquito/signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { importKey, InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { fa2ForTokenMetadataView } from '../integration-tests/data/fa2-for-token-metadata-view';
-import { b58cencode, char2Bytes, Prefix, prefix } from '@taquito/utils';
+import { b58cencode, char2Bytes, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const nodeCrypto = require('crypto');
 

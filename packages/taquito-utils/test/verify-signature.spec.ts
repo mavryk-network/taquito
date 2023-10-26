@@ -1,5 +1,5 @@
 import { verifySignature } from '../src/verify-signature';
-import { InvalidMessageError, InvalidPublicKeyError, InvalidSignatureError } from '@taquito/core';
+import { InvalidMessageError, InvalidPublicKeyError, InvalidSignatureError } from '@mavrykdynamics/taquito-core';
 
 describe('utils signature validation tests', () => {
   describe('SECP256K1 curve', () => {

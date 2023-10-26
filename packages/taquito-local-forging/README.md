@@ -4,7 +4,7 @@
 
 ## General Information
 
-_Forging_ is the act of encoding your operation shell into its binary representation. Forging can be done either remotely by the RPC node, or locally. `@taquito/local-forging` is an npm package that provides developers with local forging functionality.
+_Forging_ is the act of encoding your operation shell into its binary representation. Forging can be done either remotely by the RPC node, or locally. `@mavrykdynamics/taquito-local-forging` is an npm package that provides developers with local forging functionality.
 
 
 Operations must be _forged_ and _signed_ before it gets injected to the blockchain.
@@ -38,12 +38,12 @@ The forged values can then be parsed back into its JSON counterpart
 ## Install
 Install the package as follows
 ```
-npm install @taquito/local-forging
+npm install @mavrykdynamics/taquito-local-forging
 ```
 ## Usage
 ```ts
-import { TezosToolkit } from '@taquito/taquito'
-import { LocalForger } from '@taquito/local-forging'
+import { TezosToolkit } from '@mavrykdynamics/taquito'
+import { LocalForger } from '@mavrykdynamics/taquito-local-forging'
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.setProvider({ forger: localForger })

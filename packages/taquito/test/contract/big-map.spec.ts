@@ -1,6 +1,6 @@
-import { HttpResponseError, STATUS_CODE } from '@taquito/http-utils';
+import { HttpResponseError, STATUS_CODE } from '@mavrykdynamics/taquito-http-utils';
 import BigNumber from 'bignumber.js';
-import { MichelsonMap, Schema } from '@taquito/michelson-encoder';
+import { MichelsonMap, Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { BigMapAbstraction } from '../../src/contract/big-map';
 
 /**
@@ -44,7 +44,7 @@ describe('BigMapAbstraction test', () => {
       await expect(
         bigMap.getMultipleValues([
           'mv1QBdiEFdMZ6HiZynK7ApD6diVCAAZpXBB8test',
-          'tz2gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwNtest',
+          'mv2QzQq5ExjZTPHnEaNBKkieUF55npMTpcWS',
         ])
       ).rejects.toEqual(expectedError);
     });

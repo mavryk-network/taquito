@@ -1,7 +1,7 @@
 import { CONFIGS } from './config';
 import { tacoContractTzip16 } from './data/modified-taco-contract';
-import { MichelsonMap } from '@taquito/taquito';
-import { char2Bytes, tzip16, Tzip16Module, IpfsHttpHandler, Handler, MetadataProvider } from '@taquito/tzip16';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
+import { char2Bytes, tzip16, Tzip16Module, IpfsHttpHandler, Handler, MetadataProvider } from '@mavrykdynamics/taquito-tzip16';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
     const Tezos = lib;

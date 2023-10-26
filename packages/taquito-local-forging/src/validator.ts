@@ -1,5 +1,5 @@
-import { OpKind } from '@taquito/rpc';
-import { OperationContents } from '@taquito/rpc';
+import { OpKind } from '@mavrykdynamics/taquito-rpc';
+import { OperationContents } from '@mavrykdynamics/taquito-rpc';
 import {
   ActivationSchema,
   DelegationSchema,

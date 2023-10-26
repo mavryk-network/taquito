@@ -2,7 +2,7 @@ import { InvalidSpendingKey } from '../errors';
 import toBuffer from 'typedarray-to-buffer';
 import { openSecretBox } from '@stablelib/nacl';
 import pbkdf2 from 'pbkdf2';
-import { Prefix, prefix, b58cdecode } from '@taquito/utils';
+import { Prefix, prefix, b58cdecode } from '@mavrykdynamics/taquito-utils';
 
 export function decryptKey(spendingKey: string, password?: string) {
   const keyArr = b58cdecode(spendingKey, prefix[Prefix.SASK]);

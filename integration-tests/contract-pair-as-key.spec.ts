@@ -1,5 +1,5 @@
 import { CONFIGS } from "./config";
-import { BigMapAbstraction, MichelsonMap } from "@taquito/taquito";
+import { BigMapAbstraction, MichelsonMap } from "@mavrykdynamics/taquito";
 import { storageContractWithPairAsKey } from "./data/storage-contract-with-pair-as-key";
 import { mapWithPairAsKeyCode, mapWithPairAsKeyStorage } from "./data/bigmap_with_pair_as_key";
 import { MichelsonMapKey } from "@taquito/michelson-encoder";

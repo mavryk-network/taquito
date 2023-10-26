@@ -3,8 +3,8 @@
 // Sometimes the transport will fail before all the paths have been scanned
 // rerun two or three times if needed
 
-import { LedgerSigner, DerivationType } from '@taquito/ledger-signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { LedgerSigner, DerivationType } from '@mavrykdynamics/taquito-ledger-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
 
 async function example() {

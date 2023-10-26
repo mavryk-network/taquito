@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MichelCodecPacker } from '@taquito/taquito';
+import { MichelCodecPacker } from '@mavrykdynamics/taquito';
 import BigNumber from 'bignumber.js';
 import { SaplingForger } from '../src/sapling-forger/sapling-forger';
 import {
@@ -276,7 +276,7 @@ describe('SaplingToolkit', () => {
     );
   });
 
-  it('Should prepare a valid unshielded transaction to a tz1 address', async () => {
+  it('Should prepare a valid unshielded transaction to a mv1 address', async () => {
     mockSaplingTxBuilder.createSaplingTx.mockResolvedValue({
       inputs: [
         {
@@ -349,7 +349,7 @@ describe('SaplingToolkit', () => {
     );
   });
 
-  it('Should prepare a valid unshielded transaction to a tz2 address', async () => {
+  it('Should prepare a valid unshielded transaction to a mv2 address', async () => {
     mockSaplingTxBuilder.createSaplingTx.mockResolvedValue({
       inputs: [
         {
@@ -422,7 +422,7 @@ describe('SaplingToolkit', () => {
     );
   });
 
-  it('Should prepare a valid unshielded transaction to a tz3 address', async () => {
+  it('Should prepare a valid unshielded transaction to a mv3 address', async () => {
     mockSaplingTxBuilder.createSaplingTx.mockResolvedValue({
       inputs: [
         {

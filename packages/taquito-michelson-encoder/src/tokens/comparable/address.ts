@@ -5,7 +5,7 @@ import {
   TokenValidationError,
   SemanticEncoding,
 } from '../token';
-import { b58decode, encodePubKey, validateAddress, ValidationResult } from '@taquito/utils';
+import { b58decode, encodePubKey, validateAddress, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { BaseTokenSchema } from '../../schema/types';
 
 /**

@@ -1,6 +1,6 @@
 import { InvalidCurveError, InvalidMnemonicError, ToBeImplemented } from '../src/errors';
 import { InMemorySigner } from '../src/taquito-signer';
-import { InvalidDerivationPathError } from '@taquito/core';
+import { InvalidDerivationPathError } from '@mavrykdynamics/taquito-core';
 
 describe('inmemory-signer', () => {
   const mnemonic = 'prefer wait flock brown volume recycle scrub elder rate pair twenty giant';
@@ -61,19 +61,19 @@ describe('inmemory-signer', () => {
     }).toThrow(`unsupported prefix`);
   });
 
-  it('(tz1) Invalid key unable to decode', () => {
+  it('(mv1) Invalid key unable to decode', () => {
     expect(function () {
       new InMemorySigner('edsk4TjJWEszkHKono7XMnepqwi37FrbVt1KCsifJeAGimxheShG');
     }).toThrow('Invalid checksum');
   });
 
-  it('(tz2) Invalid key unable to decode', () => {
+  it('(mv2) Invalid key unable to decode', () => {
     expect(function () {
       new InMemorySigner('spsk4TjJWEszkHKono7XMnepqwi37FrbVt1KCsifJeAGimxheShG');
     }).toThrow('Invalid checksum');
   });
 
-  it('(tz3) Invalid key unable to decode', () => {
+  it('(mv3) Invalid key unable to decode', () => {
     expect(function () {
       new InMemorySigner('p2sk4TjJWEszkHKono7XMnepqwi37FrbVt1KCsifJeAGimxheShG');
     }).toThrow('Invalid checksum');
@@ -199,14 +199,14 @@ describe('inmemory-signer', () => {
     );
   });
 
-  it('Should instantiate tz1 from mnemonic from in memory signer', async () => {
+  it('Should instantiate mv1 from mnemonic from in memory signer', async () => {
     const signer = InMemorySigner.fromMnemonic({ mnemonic });
     const pkh = await signer.publicKeyHash();
 
     expect(pkh).toEqual('mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq');
   });
 
-  it('Should instantiate tz1 from mnemonic will throw an error with non-hardened derivation paths', () => {
+  it('Should instantiate mv1 from mnemonic will throw an error with non-hardened derivation paths', () => {
     // good path: 44'/1729'/0'/0' || 44h/1729h/0h/0h
     const badPath = '44/1729/0/0';
 
@@ -215,7 +215,7 @@ describe('inmemory-signer', () => {
     );
   });
 
-  it('Should instantiate tz1 from mnemonic will throw an error if path option is greater than 2^31', () => {
+  it('Should instantiate mv1 from mnemonic will throw an error if path option is greater than 2^31', () => {
     // good path: 44'/1729'/0'/0' || 44h/1729h/0h/0h
     const badPath = `44/1729/${Number('0x80000000') + 10}'/0'`;
 
@@ -224,7 +224,7 @@ describe('inmemory-signer', () => {
     );
   });
 
-  it('Should instantiate tz1 from mnemonic will throw an error if path option NaN', () => {
+  it('Should instantiate mv1 from mnemonic will throw an error if path option NaN', () => {
     // good path: 44'/1729'/0'/0' || 44h/1729h/0h/0h
     const badPath = `44/1729/suspicious'/0'`;
 
@@ -250,7 +250,7 @@ describe('inmemory-signer', () => {
     ).toThrowError(InvalidMnemonicError);
   });
 
-  it('Should instantiate tz2 hardened from mnemonic from in memory signer', async () => {
+  it('Should instantiate mv2 hardened from mnemonic from in memory signer', async () => {
     const signer = InMemorySigner.fromMnemonic({
       mnemonic,
       derivationPath: "44'/1729'/0'/0'",
@@ -261,7 +261,7 @@ describe('inmemory-signer', () => {
     expect(pkh).toEqual('mv2efHjyQ74JL9AwwWNDYEh3MpKxLLsjYRPz');
   });
 
-  it('Should instantiate tz2 non-hardened from mnemonic from in memory signer', async () => {
+  it('Should instantiate mv2 non-hardened from mnemonic from in memory signer', async () => {
     const signer = InMemorySigner.fromMnemonic({
       mnemonic,
       derivationPath: "44'/1729'/0/0",
@@ -272,7 +272,7 @@ describe('inmemory-signer', () => {
     expect(pkh).toEqual('mv2iptuhiG5LrByJKBf2FMhs8sKmHu73TwCc');
   });
 
-  it('Should instantiate tz3 hardened path from mnemonic from in memory signer', async () => {
+  it('Should instantiate mv3 hardened path from mnemonic from in memory signer', async () => {
     const signer = InMemorySigner.fromMnemonic({
       mnemonic,
       derivationPath: "44'/1729'/0'/0'",
@@ -283,7 +283,7 @@ describe('inmemory-signer', () => {
     expect(pkh).toEqual('mv3RwnDXHpJfca8SgDgQ3KnG8W5aYGJFe7wt');
   });
 
-  it('Should instantiate tz3 non-hardened path from mnemonic from in memory signer', async () => {
+  it('Should instantiate mv3 non-hardened path from mnemonic from in memory signer', async () => {
     const signer = InMemorySigner.fromMnemonic({
       mnemonic,
       derivationPath: "44'/1729'/0/0",

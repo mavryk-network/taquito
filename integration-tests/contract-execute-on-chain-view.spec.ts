@@ -1,7 +1,7 @@
 import { codeViewsTopLevel } from "./data/contract_views_top_level";
 import { CONFIGS } from "./config";
 import BigNumber from 'bignumber.js';
-import { ViewSimulationError } from "@taquito/taquito";
+import { ViewSimulationError } from "@mavrykdynamics/taquito";
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;

@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/michel-codec",
+  "name": "@mavrykdynamics/taquito-michel-codec",
   "version": "17.5.2",
   "description": "Michelson parser/validator/formatter",
   "keywords": [
@@ -55,7 +55,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^@taquito/utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
+      "^@mavrykdynamics/taquito-utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -66,7 +66,7 @@
     ]
   },
   "dependencies": {
-    "@taquito/core": "^17.5.2"
+    "@mavrykdynamics/taquito-core": "^17.5.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.40",

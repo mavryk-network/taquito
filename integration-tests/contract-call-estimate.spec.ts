@@ -1,4 +1,4 @@
-import { Estimate } from '@taquito/taquito';
+import { Estimate } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;

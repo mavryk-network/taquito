@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 
 // TC-T-008: assume that the ticket is just a (pair address cty nat) and can "easily" be created via a callback.

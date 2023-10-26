@@ -5,8 +5,8 @@ import {
   ContractAbstraction,
   ContractProvider,
   Wallet,
-} from '@taquito/taquito';
-import { bytes2Char } from '@taquito/utils';
+} from '@mavrykdynamics/taquito';
+import { bytes2Char } from '@mavrykdynamics/taquito-utils';
 import { MetadataEnvelope, MetadataProviderInterface } from './metadata-provider';
 import {
   BigMapContractMetadataNotFoundError,
@@ -14,7 +14,7 @@ import {
   UriNotFoundError,
 } from './errors';
 import BigNumber from 'bignumber.js';
-import { Schema } from '@taquito/michelson-encoder';
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { ViewFactory } from './viewKind/viewFactory';
 import { View } from './viewKind/interface';
 import { ViewDefinition } from './metadata-interface';

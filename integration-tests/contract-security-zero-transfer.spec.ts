@@ -1,5 +1,5 @@
 import { CONFIGS } from './config';
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 
 // TC-007 - A 0tez transaction to an implicit account should fail.
 

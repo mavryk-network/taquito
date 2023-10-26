@@ -1,4 +1,4 @@
-import { PollingSubscribeProvider, TezosToolkit } from '@taquito/taquito';
+import { PollingSubscribeProvider, TezosToolkit } from '@mavrykdynamics/taquito';
 
 async function example() {
   const provider = 'https://ghostnet.ecadinfra.com/';

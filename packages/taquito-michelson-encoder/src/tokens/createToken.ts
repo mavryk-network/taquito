@@ -1,7 +1,7 @@
 import { tokens } from './tokens';
 import { Token } from './token';
 import { PairToken } from './pair';
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

@@ -55,15 +55,15 @@ First, we write the Michelson lambda that will be executed to transfer the tez, 
 
 The lambda for this particular use case is already offered by Taquito, so you don't have to write it every time, you can just import it:
 ```typescript
-import { MANAGER_LAMBDA } from "@taquito/taquito";
+import { MANAGER_LAMBDA } from "@mavrykdynamics/taquito";
 
 const lambda = MANAGER_LAMBDA.transferImplicit(RECIPIENT_ADDRESS, AMOUNT);
 ``` 
 
 Next, we will use the lambda to create the required payload for this action:
 ```typescript
-import { TezosToolkit } from "@taquito/taquito";
-import { Parser, packDataBytes } from "@taquito/michel-codec";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { Parser, packDataBytes } from "@mavrykdynamics/taquito-michel-codec";
 
 const Tezos = new TezosToolkit(RPC_URL);
 const chainId = await Tezos.rpc.getChainId();
@@ -87,7 +87,7 @@ const dataToPack = p.parseMichelineExpression(michelsonData);
 
 The payload expected by the multisig contract is a nested pair that contains the chain id, the address of the contract, the current counter (from the contract storage) and the option set to `Left` with the lambda as a value.  
 
-The payload is then parsed using the parser from the `@taquito/michel-codec` package.
+The payload is then parsed using the parser from the `@mavrykdynamics/taquito-michel-codec` package.
 
 After that, we need to parse the payload type in a similar fashion:
 ```typescript
@@ -120,7 +120,7 @@ const { bytes: payload } = packDataBytes(
 );
 ```
 
-This action uses the `packDataBytes` method that you can find in the `@taquito/michel-codec` package to pack the data we created above locally. This will output the payload that will be signed.
+This action uses the `packDataBytes` method that you can find in the `@mavrykdynamics/taquito-michel-codec` package to pack the data we created above locally. This will output the payload that will be signed.
 
 >Note:
 > `packDataBytes` allows local packing, which removes any risk of data corruption that may exist when using the packing feature of a remote RPC node.
@@ -174,8 +174,8 @@ const michelineListOfKeys = `{ ${listOfKeys
 
 Next, we are going to pack the required nested pair in the same way we did earlier while changing some values in the pair:
 ```typescript
-import { TezosToolkit } from "@taquito/taquito";
-import { Parser } from "@taquito/michel-codec";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { Parser } from "@mavrykdynamics/taquito-michel-codec";
 
 const Tezos = new TezosToolkit(RPC_URL);
 const chainId = await Tezos.rpc.getChainId();

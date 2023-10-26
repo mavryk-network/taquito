@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/utils
+ * @module @mavrykdynamics/taquito-utils
  */
 
 /*
@@ -17,7 +17,7 @@ import blake from 'blakejs';
 import bs58check from 'bs58check';
 import { ValueConversionError } from './errors';
 import BigNumber from 'bignumber.js';
-import { InvalidHexStringError } from '@taquito/core';
+import { InvalidHexStringError } from '@mavrykdynamics/taquito-core';
 export * from './validators';
 export { VERSION } from './version';
 
@@ -119,7 +119,7 @@ export function b58decode(payload: string) {
 export function b58decodeL2Address(payload: string) {
   const buf = bs58check.decode(payload);
 
-  // tz4 address currently
+  // mv4 address currently
   return buf2hex(buf.slice(3, 42));
 }
 
@@ -127,7 +127,7 @@ export function b58decodeL2Address(payload: string) {
  *
  * @description Base58 encode an address using predefined prefix
  *
- * @param value Address to base58 encode (tz1, tz2, tz3 or KT1)
+ * @param value Address to base58 encode (mv1, mv2, mv3 or KT1)
  */
 export function encodePubKey(value: string) {
   if (value.substring(0, 2) === '00') {
@@ -147,7 +147,7 @@ export function encodePubKey(value: string) {
 /**
  *
  * @description Base58 encode an address without predefined prefix
- * @param value Address to base58 encode (tz4) hex dec
+ * @param value Address to base58 encode (mv4) hex dec
  * @returns return address
  */
 export function encodeL2Address(value: string) {

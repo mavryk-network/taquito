@@ -1,10 +1,10 @@
-import { DEFAULT_FEE, MANAGER_LAMBDA, TezosToolkit } from '@taquito/taquito';
-import { Contract } from '@taquito/taquito';
+import { DEFAULT_FEE, MANAGER_LAMBDA, TezosToolkit } from '@mavrykdynamics/taquito';
+import { Contract } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 import { originate, originate2, transferImplicit2 } from './data/lambda';
 import { ligoSample } from './data/ligo-simple-contract';
 import { managerCode } from './data/manager_code';
-import { InvalidAmountError } from '@taquito/core';
+import { InvalidAmountError } from '@mavrykdynamics/taquito-core';
 
 CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
   const Tezos = lib;

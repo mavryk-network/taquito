@@ -1,8 +1,8 @@
 /**
  * @packageDocumentation
- * @module @taquito/remote-signer
+ * @module @mavrykdynamics/taquito-remote-signer
  */
-import { HttpBackend, HttpResponseError, STATUS_CODE } from '@taquito/http-utils';
+import { HttpBackend, HttpResponseError, STATUS_CODE } from '@mavrykdynamics/taquito-http-utils';
 import {
   b58cdecode,
   b58cencode,
@@ -15,7 +15,7 @@ import {
   validateKeyHash,
   ValidationResult,
   invalidDetail,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import { hash } from '@stablelib/blake2b';
 import toBuffer from 'typedarray-to-buffer';
 import {
@@ -24,13 +24,13 @@ import {
   PublicKeyVerificationError,
   SignatureVerificationError,
 } from './errors';
-import { Signer } from '@taquito/taquito';
+import { Signer } from '@mavrykdynamics/taquito';
 import {
   InvalidSignatureError,
   InvalidKeyHashError,
   ProhibitedActionError,
   PublicKeyNotFoundError,
-} from '@taquito/core';
+} from '@mavrykdynamics/taquito-core';
 
 interface PublicKeyResponse {
   public_key: string;

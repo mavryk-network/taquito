@@ -23,7 +23,7 @@ In the following example, we have not revealed the account that we want to empty
 
 ```js live noInline
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
-// import { DEFAULT_FEE } from "@taquito/taquito";
+// import { DEFAULT_FEE } from "@mavrykdynamics/taquito";
 
 Tezos.signer
     .publicKeyHash()

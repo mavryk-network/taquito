@@ -7,10 +7,10 @@ import {
   invalidDetail,
   Prefix,
   ValidationResult,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import toBuffer from 'typedarray-to-buffer';
 import elliptic from 'elliptic';
-import { InvalidKeyError } from '@taquito/core';
+import { InvalidKeyError } from '@mavrykdynamics/taquito-core';
 
 const pref = {
   p256: {
@@ -28,7 +28,7 @@ const pref = {
 };
 
 /**
- * @description Provide signing logic for elliptic curve based key (tz2, tz3)
+ * @description Provide signing logic for elliptic curve based key (mv2, mv3)
  */
 export class ECKey {
   private _key: Uint8Array;

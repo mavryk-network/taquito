@@ -4,7 +4,7 @@ import {
   encodeL2Address,
   validateAddress,
   ValidationResult,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import {
   ComparableToken,
   SemanticEncoding,

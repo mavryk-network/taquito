@@ -37,7 +37,7 @@ await op2.confirmation();
 The `contract` or `wallet` property of the `TezosToolkit` object exposes a method called `batch` (the choice between `contract` or `wallet` depends on your use case, whether the transaction will be signed by a wallet or not). Subsequently, the returned object exposes six different methods that you can concatenate according to the number of transactions to emit.
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('RPC address here');
 const batch = Tezos.wallet.batch(); // or Tezos.contract.batch()
@@ -103,7 +103,7 @@ const batch = await Tezos.wallet.batch()
 If you prefer having an array that contains objects with the different transactions you want to emit, you can use the `with` method. It allows you to group transactions as objects instead of concatenating function calls. The object you use expects the same properties as the parameter of the corresponding method with an additional `kind` property that indicates the kind of transaction you want to emit (a handy `opKind` enum is [exported from the Taquito package](https://github.com/ecadlabs/taquito/blob/master/packages/taquito-rpc/src/opkind.ts) with the valid values for the `kind` property).
 
 ```js
-import { OpKind } from '@taquito/taquito';
+import { OpKind } from '@mavrykdynamics/taquito';
 
 const batch = await Tezos.wallet.batch([
   {

@@ -1,4 +1,4 @@
-import { InvalidDerivationPathError } from '@taquito/core';
+import { InvalidDerivationPathError } from '@mavrykdynamics/taquito-core';
 
 export * as ECDSA from './ecdsa';
 export * as Ed25519 from './ed25519';

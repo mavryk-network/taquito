@@ -1,4 +1,4 @@
-import { PreapplyResponse, ConstantsResponse, RPCSimulateOperationParam } from '@taquito/rpc';
+import { PreapplyResponse, ConstantsResponse, RPCSimulateOperationParam } from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
 import { flattenErrors, flattenOperationResult, TezosOperationError } from '../operations/errors';
 import {
@@ -18,13 +18,13 @@ import {
 } from '../operations/types';
 import { Estimate, EstimateProperties } from './estimate';
 import { EstimationProvider } from '../estimate/estimate-provider-interface';
-import { validateAddress, ValidationResult, invalidDetail } from '@taquito/utils';
+import { validateAddress, ValidationResult, invalidDetail } from '@mavrykdynamics/taquito-utils';
 import { RevealEstimateError } from './errors';
 import { ContractMethod, ContractMethodObject, ContractProvider } from '../contract';
 import { Provider } from '../provider';
 import { PrepareProvider } from '../prepare/prepare-provider';
 import { PreparedOperation } from '../prepare';
-import { InvalidAddressError, InvalidAmountError } from '@taquito/core';
+import { InvalidAddressError, InvalidAmountError } from '@mavrykdynamics/taquito-core';
 
 export class RPCEstimateProvider extends Provider implements EstimationProvider {
   private readonly ALLOCATION_STORAGE = 257;

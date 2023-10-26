@@ -1,4 +1,4 @@
-import { ParameterValidationError, RpcError, NetworkError } from '@taquito/core';
+import { ParameterValidationError, RpcError, NetworkError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

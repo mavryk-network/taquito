@@ -1,5 +1,5 @@
 import { TokenSchema } from './../schema/types';
-import { encodePubKey, validateAddress, ValidationResult } from '@taquito/utils';
+import { encodePubKey, validateAddress, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { ContractTokenSchema } from '../schema/types';
 import { SemanticEncoding, Token, TokenFactory, TokenValidationError } from './token';
 

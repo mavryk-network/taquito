@@ -1,16 +1,16 @@
 /**
  * @packageDocumentation
- * @module @taquito/taquito
+ * @module @mavrykdynamics/taquito
  */
 
-import { RpcClient, RpcClientInterface } from '@taquito/rpc';
-import { Forger } from '@taquito/local-forging';
+import { RpcClient, RpcClientInterface } from '@mavrykdynamics/taquito-rpc';
+import { Forger } from '@mavrykdynamics/taquito-local-forging';
 import { RPCBatchProvider } from './batch/rpc-batch-provider';
 import { Protocols } from './constants';
 import { ConfigConfirmation, Context, TaquitoProvider } from './context';
 import { ContractProvider } from './contract/interface';
 import { Extension } from './extension/extension';
-import { format } from '@taquito/utils';
+import { format } from '@mavrykdynamics/taquito-utils';
 import { GlobalConstantsProvider } from './global-constants/interface-global-constants-provider';
 import { NoopGlobalConstantsProvider } from './global-constants/noop-global-constants-provider';
 import { Packer } from './packer/interface';
@@ -33,8 +33,8 @@ import { MichelCodecParser } from './parser/michel-codec-parser';
 import { Injector } from './injector/interface';
 import { RpcInjector } from './injector/rpc-injector';
 
-export { MichelsonMap, UnitValue } from '@taquito/michelson-encoder';
-export { Forger, ForgeParams, ForgeResponse } from '@taquito/local-forging';
+export { MichelsonMap, UnitValue } from '@mavrykdynamics/taquito-michelson-encoder';
+export { Forger, ForgeParams, ForgeResponse } from '@mavrykdynamics/taquito-local-forging';
 export * from './constants';
 export * from './context';
 export { TaquitoProvider } from './context';
@@ -205,7 +205,7 @@ export class TezosToolkit {
 
   /**
    * @description Sets forger provider on the Tezos Taquito instance
-   * The `LocalForger` from `@taquito/local-forging` is set by default.
+   * The `LocalForger` from `@mavrykdynamics/taquito-local-forging` is set by default.
    *
    * @param options forger to use to interact with the Tezos network
    *

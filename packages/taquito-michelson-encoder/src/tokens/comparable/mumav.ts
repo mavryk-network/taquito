@@ -94,9 +94,9 @@ export class MutezToken extends ComparableToken {
     return int;
   }
 
-  compare(mutez1: string | number, mutez2: string | number) {
-    const o1 = Number(mutez1);
-    const o2 = Number(mutez2);
+  compare(mumav1: string | number, mumav2: string | number) {
+    const o1 = Number(mumav1);
+    const o2 = Number(mumav2);
     if (o1 === o2) {
       return 0;
     }

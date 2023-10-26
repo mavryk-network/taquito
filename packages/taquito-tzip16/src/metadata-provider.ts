@@ -1,4 +1,4 @@
-import { ContractAbstraction, ContractProvider, Wallet, Context } from '@taquito/taquito';
+import { ContractAbstraction, ContractProvider, Wallet, Context } from '@mavrykdynamics/taquito';
 import { MetadataInterface } from './metadata-interface';
 import { MetadataContext } from './tzip16-contract-abstraction';
 import { InvalidContractMetadataError, InvalidUriError, ProtocolNotSupportedError } from './errors';

@@ -1,5 +1,5 @@
-import { TezosToolkit } from "@taquito/taquito";
-import { tzip16, Tzip16Module } from '@taquito/tzip16';
+import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { tzip16, Tzip16Module } from '@mavrykdynamics/taquito-tzip16';
 
 async function example() {
   try {

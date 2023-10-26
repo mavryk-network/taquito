@@ -1,6 +1,6 @@
-import { MichelsonV1Expression, MichelsonV1ExpressionExtended } from '@taquito/rpc';
+import { MichelsonV1Expression, MichelsonV1ExpressionExtended } from '@mavrykdynamics/taquito-rpc';
 import { TokenSchema } from '../schema/types';
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

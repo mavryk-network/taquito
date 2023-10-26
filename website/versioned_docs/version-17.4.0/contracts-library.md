@@ -4,7 +4,7 @@ author: Roxane Letourneau
 ---
 
 To increase dApp performance, we aim to provide ways to reduce the number of calls made by Taquito to the RPC.
-The `@taquito/contracts-library` package allows developers to supply the static contracts data, preventing Taquito from fetching them from the network.
+The `@mavrykdynamics/taquito-contracts-library` package allows developers to supply the static contracts data, preventing Taquito from fetching them from the network.
 
 
 The `ContractsLibrary` class can be populated by users with contract addresses and their corresponding script and entry points. Then, the `ContractsLibrary` instance can be injected into a `TezosToolkit` as an extension using its `addExtension` method. 
@@ -14,8 +14,8 @@ When creating a `ContractAbstraction` instance using the `at` method of the Cont
 ### Example of use:
 
 ```ts
-import { ContractsLibrary } from '@taquito/contracts-library';
-import { TezosToolkit } from '@taquito/taquito';
+import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const contractsLibrary = new ContractsLibrary();
 const Tezos = new TezosToolkit('rpc');

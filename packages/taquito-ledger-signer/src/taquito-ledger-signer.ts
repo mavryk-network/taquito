@@ -1,11 +1,11 @@
 /**
  * @packageDocumentation
- * @module @taquito/ledger-signer
+ * @module @mavrykdynamics/taquito-ledger-signer
  */
 
-import { Signer } from '@taquito/taquito';
+import { Signer } from '@mavrykdynamics/taquito';
 import Transport from '@ledgerhq/hw-transport';
-import { b58cencode, invalidDetail, prefix, Prefix, ValidationResult } from '@taquito/utils';
+import { b58cencode, invalidDetail, prefix, Prefix, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import {
   appendWatermark,
   transformPathToBuffer,
@@ -21,17 +21,17 @@ import {
   InvalidLedgerResponseError,
   InvalidDerivationTypeError,
 } from './errors';
-import { InvalidDerivationPathError, ProhibitedActionError } from '@taquito/core';
+import { InvalidDerivationPathError, ProhibitedActionError } from '@mavrykdynamics/taquito-core';
 
-export { InvalidDerivationPathError } from '@taquito/core';
+export { InvalidDerivationPathError } from '@mavrykdynamics/taquito-core';
 
 export type LedgerTransport = Pick<Transport, 'send' | 'decorateAppAPIMethods' | 'setScrambleKey'>;
 
 export enum DerivationType {
-  ED25519 = 0x00, // tz1
-  SECP256K1 = 0x01, // tz2
-  P256 = 0x02, // tz3
-  BIP32_ED25519 = 0x03, // tz1 BIP32
+  ED25519 = 0x00, // mv1
+  SECP256K1 = 0x01, // mv2
+  P256 = 0x02, // mv3
+  BIP32_ED25519 = 0x03, // mv1 BIP32
 }
 
 export { InvalidDerivationTypeError } from './errors';

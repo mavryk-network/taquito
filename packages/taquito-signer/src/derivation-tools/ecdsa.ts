@@ -6,7 +6,7 @@ import { SHA512 } from '@stablelib/sha512';
 import BN from 'bn.js';
 import { parseHex } from './utils';
 import { InvalidBitSize, InvalidCurveError, InvalidSeedLengthError } from '../errors';
-import { InvalidKeyError } from '@taquito/core';
+import { InvalidKeyError } from '@mavrykdynamics/taquito-core';
 
 export type CurveName = 'p256' | 'secp256k1';
 

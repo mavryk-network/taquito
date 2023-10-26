@@ -28,19 +28,19 @@ describe('Encode expr', () => {
 });
 
 describe('encodePubKey', () => {
-  it('Should encode address properly (tz1)', () => {
+  it('Should encode address properly (mv1)', () => {
     expect(encodePubKey('0000e96b9f8b19af9c7ffa0c0480e1977b295850961f')).toEqual(
       'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'
     );
   });
 
-  it('Should encode address properly (tz2)', () => {
+  it('Should encode address properly (mv2)', () => {
     expect(encodePubKey('0001907d6a7e9f084df840d6e67ffa8db5464f87d4d1')).toEqual(
       'mv2ZCJViVoKBu7hmUMMHLDiqukczdQVfb71b'
     );
   });
 
-  it('Should encode address properly (tz3)', () => {
+  it('Should encode address properly (mv3)', () => {
     expect(encodePubKey('00022165a26786121eff8203bed56ffaf85d6bb25e42')).toEqual(
       'mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina'
     );
@@ -184,21 +184,21 @@ describe('String/Bytes conversions', () => {
 });
 
 describe('Public Key conversions', () => {
-  it('Should be able to get PKH from tz1/ed25519 Public Key', () => {
+  it('Should be able to get PKH from mv1/ed25519 Public Key', () => {
     const publicKey = 'edpku61nGAwkeoA7PQJEFWmrVP1eWrSTVoHgCaF2isjWqDeGdux37k';
     const result = getPkhfromPk(publicKey);
 
     expect(result).toEqual('mv1XBeLj7YNbgN51jmzgkD2FwWkBF7enjh1z');
   });
 
-  it('Should be able to get PKH from tz2/secp256k1 Public Key', () => {
+  it('Should be able to get PKH from mv2/secp256k1 Public Key', () => {
     const publicKey = 'sppk7czKu6So3zDWjhBPBv9wgCrBAfbEFoKYzEaKUsjhNr5Ug6E4Sn1';
     const result = getPkhfromPk(publicKey);
 
     expect(result).toEqual('mv2UajJ6jj8UX9M2ZPt8sWNHZncbpp6AkTLA');
   });
 
-  it('Should be able to get PKH from tz3/p256 Public Key', () => {
+  it('Should be able to get PKH from mv3/p256 Public Key', () => {
     const publicKey = 'p2pk67BANWUUX2fod9EQbv8ev7GGLpb4UXvLHEVVMiHBSWPHgyzf1tv';
     const result = getPkhfromPk(publicKey);
 
@@ -289,7 +289,7 @@ describe('Hex conversions', () => {
     expect(() => hex2buf('abcq')).toThrow();
   });
 
-  it('should be able to get phk from tz4 Public key', () => {
+  it('should be able to get phk from mv4 Public key', () => {
     const publicKey =
       'BLpk1w1wkESXN91Ry39ZMRAhaaHJsDaMZ8wBax5QsKPEKPWTjDBk6dgKMDkoejxxPWJf52cm2osh';
     const result = getPkhfromPk(publicKey);

@@ -1,9 +1,9 @@
 import { CONFIGS } from './config';
-import { LedgerSigner, LedgerTransport, DerivationType } from '@taquito/ledger-signer';
+import { LedgerSigner, LedgerTransport, DerivationType } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
 import { ligoSample } from "./data/ligo-simple-contract";
-import { TezosToolkit } from '@taquito/taquito';
-import { localForger } from '@taquito/local-forging';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { localForger } from '@mavrykdynamics/taquito-local-forging';
 import { rpcToForge } from './data/contract_origination';
 
 // PLEASE NOTE MAY NEED TO TEST ONE TEST AT A TIME

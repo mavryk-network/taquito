@@ -4,7 +4,7 @@ author: Davis Sawali
 ---
 
 ## Description
-The `@taquito/utils` package provides developers with utility functions in Taquito.
+The `@mavrykdynamics/taquito-utils` package provides developers with utility functions in Taquito.
 
 You can find a full list of available utility functions in Taquito [here](https://tezostaquito.io/typedoc/modules/_taquito_utils.html)
 
@@ -12,7 +12,7 @@ You can find a full list of available utility functions in Taquito [here](https:
 To use the functions, simply import the function you need as such:
 
 ```js
-import { getPkhfromPk, b58cencode, b58cdecode } from '@taquito/utils';
+import { getPkhfromPk, b58cencode, b58cdecode } from '@mavrykdynamics/taquito-utils';
 
 const publicKeyHash = getPkhfromPk('replace_with_publickey');
 const encoded = b58cencode('replace_with_publickey');

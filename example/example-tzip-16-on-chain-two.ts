@@ -1,7 +1,7 @@
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { contractCode, metadataViewsExample2 } from '../integration-tests/data/metadataViews';
-import { char2Bytes } from '@taquito/utils';
+import { char2Bytes } from '@mavrykdynamics/taquito-utils';
 
 async function example() {
   const provider = 'https://ghostnet.ecadinfra.com';

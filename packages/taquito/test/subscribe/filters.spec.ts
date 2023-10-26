@@ -1,4 +1,4 @@
-import { InternalOperationResult } from '@taquito/rpc';
+import { InternalOperationResult } from '@mavrykdynamics/taquito-rpc';
 import { evaluateOpFilter, evaluateExpression, eventFilter } from '../../src/subscribe/filters';
 
 const mockInternalOperationResult = {

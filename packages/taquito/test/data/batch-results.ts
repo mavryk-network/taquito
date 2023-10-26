@@ -1,9 +1,9 @@
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 
 export const resultOriginations = [
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587775',
     gas_limit: '1570',
@@ -29,7 +29,7 @@ export const resultOriginations = [
   },
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587776',
     gas_limit: '1570',
@@ -71,7 +71,7 @@ export const successfulResult = [
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '1831',
         },
@@ -127,7 +127,7 @@ export const successfulResult = [
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '2991',
         },
@@ -194,7 +194,7 @@ export const successfulResult = [
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '2947',
         },
@@ -241,7 +241,7 @@ export const successfulResult = [
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '2897',
         },
@@ -267,7 +267,7 @@ export const successfulResult = [
 export const resultWithoutOrigination = [
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587775',
     gas_limit: '1570',
@@ -289,7 +289,7 @@ export const resultWithoutOrigination = [
   },
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587776',
     gas_limit: '1570',
@@ -314,7 +314,7 @@ export const resultWithoutOrigination = [
 export const resultSingleOrigination = [
   {
     kind: 'transaction',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '495',
     counter: '504878',
     gas_limit: '1551',
@@ -332,7 +332,7 @@ export const resultSingleOrigination = [
   },
   {
     kind: 'transaction',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '495',
     counter: '504879',
     gas_limit: '1551',
@@ -350,7 +350,7 @@ export const resultSingleOrigination = [
   },
   {
     kind: 'transaction',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '495',
     counter: '504880',
     gas_limit: '1551',
@@ -368,7 +368,7 @@ export const resultSingleOrigination = [
   },
   {
     kind: 'origination',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '496',
     counter: '504881',
     gas_limit: '1570',

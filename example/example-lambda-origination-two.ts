@@ -1,5 +1,5 @@
-import { InMemorySigner } from '@taquito/signer';
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
 import { fa2Contract } from '../integration-tests/data/fa2_contract';
 
 async function example() {

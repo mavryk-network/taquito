@@ -1,4 +1,4 @@
-import { BlockResponse, OperationContentsAndResult, OperationResultStatusEnum } from '@taquito/rpc';
+import { BlockResponse, OperationContentsAndResult, OperationResultStatusEnum } from '@mavrykdynamics/taquito-rpc';
 import { combineLatest, from, Observable, of, range, ReplaySubject } from 'rxjs';
 import {
   catchError,
@@ -15,11 +15,11 @@ import {
 } from 'rxjs/operators';
 import { Context } from '../context';
 import { Receipt, receiptFromOperation } from './receipt';
-import { validateOperation, ValidationResult } from '@taquito/utils';
+import { validateOperation, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { BlockIdentifier } from '../read-provider/interface';
 import { InvalidConfirmationCountError } from '../errors';
 import { ConfirmationUndefinedError, ObservableError } from './errors';
-import { InvalidOperationHashError } from '@taquito/core';
+import { InvalidOperationHashError } from '@mavrykdynamics/taquito-core';
 
 export type OperationStatus = 'pending' | 'unknown' | OperationResultStatusEnum;
 

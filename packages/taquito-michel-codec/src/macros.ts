@@ -1,4 +1,4 @@
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 import { Prim, Expr, IntLiteral } from './micheline';
 import { DefaultProtocol, Protocol, ProtocolOptions, ProtoInferiorTo } from './michelson-types';
 import { Tuple, NoArgs, ReqArgs, NoAnnots } from './utils';

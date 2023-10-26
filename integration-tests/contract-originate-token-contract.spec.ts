@@ -1,4 +1,4 @@
-import { ContractAbstraction, ContractProvider } from "@taquito/taquito";
+import { ContractAbstraction, ContractProvider } from "@mavrykdynamics/taquito";
 import { CONFIGS } from "./config";
 import { tokenCode, tokenInit } from "./data/tokens";
 

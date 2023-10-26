@@ -74,9 +74,9 @@ describe('validateChain', () => {
     expect(validateChain('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7sp')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateChain('tz1')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
-    expect(validateChain('tz2')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
-    expect(validateChain('tz3')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
+    expect(validateChain('mv1')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
+    expect(validateChain('mv2')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
+    expect(validateChain('mv3')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateChain('KT1')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateChain('test')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateChain('')).toEqual(ValidationResult.NO_PREFIX_MATCHED);

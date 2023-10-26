@@ -62,24 +62,24 @@ We are active and enthusiastic participants of the following community support c
 
 ## Project Organization
 
-Taquito is organized as a [monorepo](https://en.wikipedia.org/wiki/Monorepo), and is composed of several npm packages that are [published to npmjs.org](https://www.npmjs.com/package/@taquito/taquito) under the `@taquito` handle. Each package has its own README which can be found in the corresponding directory within `packages/`.
+Taquito is organized as a [monorepo](https://en.wikipedia.org/wiki/Monorepo), and is composed of several npm packages that are [published to npmjs.org](https://www.npmjs.com/package/@mavrykdynamics/taquito) under the `@taquito` handle. Each package has its own README which can be found in the corresponding directory within `packages/`.
 
 | High-Level Packages                                            | Responsibility                                               |
 | -------------------------------------------------------------- | ------------------------------------------------------------ |
-| [@taquito/taquito](packages/taquito)                           | [Facade](https://en.wikipedia.org/wiki/Facade_pattern) to lower-level, package-specific functionality  |
+| [@mavrykdynamics/taquito](packages/taquito)                           | [Facade](https://en.wikipedia.org/wiki/Facade_pattern) to lower-level, package-specific functionality  |
 
 | Low-Level Packages                                               | Responsibility                                                |
 | ---------------------------------------------------------------- | ------------------------------------------------------------- |
-| [@taquito/local-forging](packages/taquito-local-forging)         | Local "forging": serialization of Tezos operations as bytes   |
-| [@taquito/michelson-encoder](packages/taquito-michelson-encoder) | Creates JS abstractions of Smart Contracts                    |
-| [@taquito/michel-codec](packages/taquito-michel-codec)           | Converts Michelson between forms, expands Macros, etc         |
-| [@taquito/remote-signer](packages/taquito-remote-signer)         | Provides the facility to use a remote signer, such as https://signatory.io    |
-| [@taquito/rpc](packages/taquito-rpc)                             | RPC client library: every rpc endpoint has its own method     |
-| [@taquito/signer](packages/taquito-signer)                       | Provides functionality to sign data using tezos keys          |
-| [@taquito/utils](packages/taquito-utils)                         | Provides different encoding and decoding utilities            |
-| [@taquito/tzip12](packages/taquito-tzip12)                       | TZIP-12 allows retrieving NFT/token metadata                  |
-| [@taquito/tzip16](packages/taquito-tzip16)                       | TZIP-16 allows retrieving contract metadata and executing off-chain views |
-| [@taquito/beacon-wallet](packages/taquito-beacon-wallet)         | TZIP-10 implementation of a Wallet API                        |
+| [@mavrykdynamics/taquito-local-forging](packages/taquito-local-forging)         | Local "forging": serialization of Tezos operations as bytes   |
+| [@mavrykdynamics/taquito-michelson-encoder](packages/taquito-michelson-encoder) | Creates JS abstractions of Smart Contracts                    |
+| [@mavrykdynamics/taquito-michel-codec](packages/taquito-michel-codec)           | Converts Michelson between forms, expands Macros, etc         |
+| [@mavrykdynamics/taquito-remote-signer](packages/taquito-remote-signer)         | Provides the facility to use a remote signer, such as https://signatory.io    |
+| [@mavrykdynamics/taquito-rpc](packages/taquito-rpc)                             | RPC client library: every rpc endpoint has its own method     |
+| [@mavrykdynamics/taquito-signer](packages/taquito-signer)                       | Provides functionality to sign data using tezos keys          |
+| [@mavrykdynamics/taquito-utils](packages/taquito-utils)                         | Provides different encoding and decoding utilities            |
+| [@mavrykdynamics/taquito-tzip12](packages/taquito-tzip12)                       | TZIP-12 allows retrieving NFT/token metadata                  |
+| [@mavrykdynamics/taquito-tzip16](packages/taquito-tzip16)                       | TZIP-16 allows retrieving contract metadata and executing off-chain views |
+| [@mavrykdynamics/taquito-beacon-wallet](packages/taquito-beacon-wallet)         | TZIP-10 implementation of a Wallet API                        |
 
 ## API Documentation
 
@@ -190,7 +190,7 @@ You may wish to contribute to the live code examples, this explains how to do th
 To run the Taquito website in development mode locally, run the following commands from top-level:
 
 * Run `npm clean-install`
-* Run `npm -w @taquito/website start`
+* Run `npm -w @mavrykdynamics/taquito-website start`
 
 ## Contributions / Reporting Issues
 

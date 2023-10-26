@@ -1,8 +1,8 @@
 import { CONFIGS } from './config';
 import { ligoSample, ligoSampleMichelson } from './data/ligo-simple-contract';
 import { managerCode } from './data/manager_code';
-import { MANAGER_LAMBDA, OpKind } from '@taquito/taquito';
-import { OperationContentsAndResultTransaction } from '@taquito/rpc'
+import { MANAGER_LAMBDA, OpKind } from '@mavrykdynamics/taquito';
+import { OperationContentsAndResultTransaction } from '@mavrykdynamics/taquito-rpc'
 
 CONFIGS().forEach(({ lib, rpc, setup, knownContract, knownBaker, createAddress }) => {
     const Tezos = lib;

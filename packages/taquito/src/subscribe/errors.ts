@@ -1,4 +1,4 @@
-import { ParameterValidationError } from '@taquito/core';
+import { ParameterValidationError } from '@mavrykdynamics/taquito-core';
 import { FilterExpression } from '../taquito';
 
 /**

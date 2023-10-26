@@ -388,7 +388,7 @@
           "premises": [
             "Some ty2 :- instr :: pair ty2 ty1 : [] => pair ( list operation ) ty1 : []"
           ],
-          "conclusion": "ctx :- CREATE_CONTRACT { parameter ty1 ; storage ty2 ; code instr1 } :: option key_hash : mutez : ty2 : A => operation : address : A"
+          "conclusion": "ctx :- CREATE_CONTRACT { parameter ty1 ; storage ty2 ; code instr1 } :: option key_hash : mumav : ty2 : A => operation : address : A"
         }
       ],
       "semantics": [
@@ -568,7 +568,7 @@
         {
           "name": "t_instr_BALANCE",
           "premises": [],
-          "conclusion": "ctx :- BALANCE :: A => mutez : A"
+          "conclusion": "ctx :- BALANCE :: A => mumav : A"
         }
       ],
       "semantics": [
@@ -658,7 +658,7 @@
         {
           "name": "t_instr_AMOUNT",
           "premises": [],
-          "conclusion": "ctx :- AMOUNT :: A => mutez : A"
+          "conclusion": "ctx :- AMOUNT :: A => mumav : A"
         }
       ],
       "semantics": [
@@ -1953,7 +1953,7 @@
         {
           "name": "t_instr_TRANSFER_TOKENS",
           "premises": [],
-          "conclusion": "ctx :- TRANSFER_TOKENS :: ty : mutez : contract ty : A => operation : A"
+          "conclusion": "ctx :- TRANSFER_TOKENS :: ty : mumav : contract ty : A => operation : A"
         }
       ],
       "semantics": [
@@ -2017,9 +2017,9 @@
           "conclusion": "ctx :- ADD :: int : timestamp : A => timestamp : A"
         },
         {
-          "name": "t_instr_ADD__mutez_mutez_mutez",
+          "name": "t_instr_ADD__mumav_mumav_mumav",
           "premises": [],
-          "conclusion": "ctx :- ADD :: mutez : mutez : A => mutez : A"
+          "conclusion": "ctx :- ADD :: mumav : mumav : A => mumav : A"
         },
         {
           "name": "t_instr_ADD__g1",
@@ -2080,9 +2080,9 @@
           "conclusion": "ctx :- SUB :: timestamp : timestamp : A => int : A"
         },
         {
-          "name": "t_instr_SUB__mutez_mutez",
+          "name": "t_instr_SUB__mumav_mumav",
           "premises": [],
-          "conclusion": "ctx :- SUB :: mutez : mutez : A => mutez : A"
+          "conclusion": "ctx :- SUB :: mumav : mumav : A => mumav : A"
         }
       ],
       "semantics": [
@@ -2118,14 +2118,14 @@
           "conclusion": "ctx :- MUL :: int : int : A => int : A"
         },
         {
-          "name": "t_instr_MUL__mutez_nat",
+          "name": "t_instr_MUL__mumav_nat",
           "premises": [],
-          "conclusion": "ctx :- MUL :: mutez : nat : A => mutez : A"
+          "conclusion": "ctx :- MUL :: mumav : nat : A => mumav : A"
         },
         {
-          "name": "t_instr_MUL__nat_mutez",
+          "name": "t_instr_MUL__nat_mumav",
           "premises": [],
-          "conclusion": "ctx :- MUL :: nat : mutez : A => mutez : A"
+          "conclusion": "ctx :- MUL :: nat : mumav : A => mumav : A"
         },
         {
           "name": "t_instr_MUL__g1_fr",
@@ -2196,14 +2196,14 @@
           "conclusion": "ctx :- EDIV :: int : int : A => option ( pair int nat ) : A"
         },
         {
-          "name": "t_instr_EDIV__mutez_nat",
+          "name": "t_instr_EDIV__mumav_nat",
           "premises": [],
-          "conclusion": "ctx :- EDIV :: mutez : nat : A => option ( pair mutez mutez ) : A"
+          "conclusion": "ctx :- EDIV :: mumav : nat : A => option ( pair mumav mumav ) : A"
         },
         {
-          "name": "t_instr_EDIV__mutez_mutez",
+          "name": "t_instr_EDIV__mumav_mumav",
           "premises": [],
-          "conclusion": "ctx :- EDIV :: mutez : mutez : A => option ( pair nat mutez ) : A"
+          "conclusion": "ctx :- EDIV :: mumav : mumav : A => option ( pair nat mumav ) : A"
         }
       ],
       "semantics": [
@@ -2913,9 +2913,9 @@
         "XOR"
       ]
     },
-    "mutez": {
-      "ty": "mutez",
-      "ty_args": "mutez",
+    "mumav": {
+      "ty": "mumav",
+      "ty_args": "mumav",
       "related_ops": [
         "ADD",
         "AMOUNT",

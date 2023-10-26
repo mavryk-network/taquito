@@ -1,5 +1,5 @@
 import { CONFIGS } from './config';
-import { InvalidAmountError } from '@taquito/core';
+import { InvalidAmountError } from '@mavrykdynamics/taquito-core';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;

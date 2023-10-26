@@ -1,5 +1,5 @@
 import { CONFIGS } from "./config";
-import { MANAGER_LAMBDA } from "@taquito/taquito";
+import { MANAGER_LAMBDA } from "@mavrykdynamics/taquito";
 import { genericMultisig } from "./data/multisig";
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress, knownContract }) => {

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/http-utils
+ * @module @mavrykdynamics/taquito-http-utils
  */
 
 let fetch = globalThis?.fetch;

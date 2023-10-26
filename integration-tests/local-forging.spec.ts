@@ -1,7 +1,7 @@
 import { CONFIGS } from "./config";
 import { commonCases, nairobiCases } from './data/allTestsCases';
-import { LocalForger, ProtocolsHash } from '@taquito/local-forging'
-import { Protocols, TezosToolkit } from "@taquito/taquito";
+import { LocalForger, ProtocolsHash } from '@mavrykdynamics/taquito-local-forging'
+import { Protocols, TezosToolkit } from "@mavrykdynamics/taquito";
 
 CONFIGS().forEach(({ rpc, protocol }) => {
   const Tezos = new TezosToolkit(rpc);

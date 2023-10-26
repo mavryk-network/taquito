@@ -6,7 +6,7 @@ import {
   Token,
   SemanticEncoding,
 } from '../token';
-import { stripHexPrefix } from '@taquito/utils';
+import { stripHexPrefix } from '@mavrykdynamics/taquito-utils';
 
 /**
  *  @category Error

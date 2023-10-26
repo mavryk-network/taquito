@@ -11,7 +11,7 @@ import {
   OperationContentsAndResultTransferTicket,
   OperationContentsAndResultIncreasePaidStorage,
   OperationContentsAndResultUpdateConsensusKey,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { PreparedOperation } from '../src/prepare';
 
 const defaultTransferData = {

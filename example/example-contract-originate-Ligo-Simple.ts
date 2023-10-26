@@ -1,6 +1,6 @@
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 import { ligoSample } from '../integration-tests/data/ligo-simple-contract';
-import { InMemorySigner } from '@taquito/signer';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 async function example() {
   const provider = 'https://ghostnet.ecadinfra.com';

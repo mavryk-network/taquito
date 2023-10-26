@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/core",
+  "name": "@mavrykdynamics/taquito-core",
   "version": "17.5.2",
   "description": "Classes, interfaces, and types shared across Taquito packages",
   "keywords": [

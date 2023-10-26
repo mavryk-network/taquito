@@ -3,7 +3,7 @@ import {
   OperationContentsAndResultSmartRollupOriginate,
   OperationContentsSmartRollupOriginate,
   OpKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { Context } from '../context';
 import { Operation } from './operations';
 import {

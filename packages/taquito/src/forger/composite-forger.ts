@@ -1,4 +1,4 @@
-import { Forger, ForgeParams, ForgeResponse } from '@taquito/local-forging';
+import { Forger, ForgeParams, ForgeResponse } from '@mavrykdynamics/taquito-local-forging';
 import { UnspecifiedForgerError, ForgingMismatchError } from './errors';
 
 export class CompositeForger implements Forger {

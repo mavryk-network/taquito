@@ -22,7 +22,7 @@ await Tezos.contract.transfer({ to: contract.address, amount: 1 });
 In the following example, we transfer 0.5ꜩ from a `tz1aaYoabvj2DQtpHz74Z83fSNjY29asdBfZ` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 render(`Fetching a private key...`);

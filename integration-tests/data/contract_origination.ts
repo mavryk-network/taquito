@@ -1,4 +1,4 @@
-import { OperationContentsOrigination } from "@taquito/rpc"
+import { OperationContentsOrigination } from "@mavrykdynamics/taquito-rpc"
 
 export const rpcToForge = {
   "branch": "BLQ6JyEEzUNkA7WEDSAbyFYLoEK7RVcNcjbjrN5LrmqoUW4qmu3",

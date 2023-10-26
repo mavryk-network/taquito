@@ -6,7 +6,7 @@ import {
   OpKind,
   OperationContentsAndResultReveal,
   OperationContentsAndResultTransaction,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { ObservableError } from './errors';
 
 export class TransactionWalletOperation extends WalletOperation {

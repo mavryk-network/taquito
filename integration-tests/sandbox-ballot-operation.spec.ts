@@ -1,6 +1,6 @@
-import { VotingPeriodBlockResult } from '@taquito/rpc';
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { VotingPeriodBlockResult } from '@mavrykdynamics/taquito-rpc';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 import { CONFIGS, sleep } from './config';
 
 CONFIGS().forEach(async ({ lib, rpc, protocol, setup }) => {

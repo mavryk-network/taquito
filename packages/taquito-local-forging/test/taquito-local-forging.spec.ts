@@ -8,7 +8,7 @@ import {
 } from '../src/taquito-local-forging';
 import { commonCases } from '../../../integration-tests/data/allTestsCases';
 import { InvalidOperationSchemaError, UnsupportedOperationError } from '../src/errors';
-import { InvalidBlockHashError, InvalidOperationKindError } from '@taquito/core';
+import { InvalidBlockHashError, InvalidOperationKindError } from '@mavrykdynamics/taquito-core';
 import { schemaDecoder, SeedNonceRevelationSchema } from '../src/schema/operation';
 import { ProtoInferiorTo } from '../src/protocols';
 

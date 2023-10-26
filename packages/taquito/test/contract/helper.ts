@@ -603,7 +603,7 @@ export const multipleInternalTransfer = () => {
             { prim: 'NIL', args: [{ prim: 'operation' }] },
             {
               prim: 'PUSH',
-              args: [{ prim: 'key_hash' }, { string: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp' }],
+              args: [{ prim: 'key_hash' }, { string: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM' }],
             },
             { prim: 'IMPLICIT_ACCOUNT' },
             { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '50' }] },
@@ -612,7 +612,7 @@ export const multipleInternalTransfer = () => {
             { prim: 'CONS' },
             {
               prim: 'PUSH',
-              args: [{ prim: 'key_hash' }, { string: 'tz2UBGrEBKzzW6hjXjxxiQFJNg6WR2bm6GEN' }],
+              args: [{ prim: 'key_hash' }, { string: 'mv2bm7Juz5FAKvcGS1Zqcakz1LBVc92Xu2QJ' }],
             },
             { prim: 'IMPLICIT_ACCOUNT' },
             { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '50' }] },
@@ -635,7 +635,7 @@ export const multipleInternalTransfer = () => {
               source: 'KT1CaQ97jZnvA9KgNFSFoNfGXJXJgMrFvqkb',
               nonce: 1,
               amount: '50',
-              destination: 'tz2UBGrEBKzzW6hjXjxxiQFJNg6WR2bm6GEN',
+              destination: 'mv2bm7Juz5FAKvcGS1Zqcakz1LBVc92Xu2QJ',
               result: {
                 status: 'applied',
                 balance_updates: [
@@ -646,7 +646,7 @@ export const multipleInternalTransfer = () => {
                   },
                   {
                     kind: 'contract',
-                    contract: 'tz2UBGrEBKzzW6hjXjxxiQFJNg6WR2bm6GEN',
+                    contract: 'mv2bm7Juz5FAKvcGS1Zqcakz1LBVc92Xu2QJ',
                     change: '50',
                   },
                   {
@@ -664,7 +664,7 @@ export const multipleInternalTransfer = () => {
               source: 'KT1CaQ97jZnvA9KgNFSFoNfGXJXJgMrFvqkb',
               nonce: 0,
               amount: '50',
-              destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+              destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
               result: {
                 status: 'applied',
                 balance_updates: [
@@ -675,7 +675,7 @@ export const multipleInternalTransfer = () => {
                   },
                   {
                     kind: 'contract',
-                    contract: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+                    contract: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
                     change: '50',
                   },
                   {
@@ -1111,7 +1111,7 @@ export const transferWithAllocation = () => {
         gas_limit: '800000',
         storage_limit: '2000',
         amount: '1700000',
-        destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+        destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
         metadata: {
           balance_updates: [],
           operation_result: {
@@ -1124,7 +1124,7 @@ export const transferWithAllocation = () => {
               },
               {
                 kind: 'contract',
-                contract: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+                contract: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
                 change: '1700000',
               },
               {
@@ -1187,7 +1187,7 @@ export const registerGlobalConstantNoReveal = {
   contents: [
     {
       kind: 'register_global_constant',
-      source: 'tz2EAB6atB3w7tJPwYF43vymDShZtGLh8TRb',
+      source: 'mv2SL7ws3DUX2uBW6tTq9azXYKCo525tBR6L',
       fee: '0',
       counter: '8642842',
       gas_limit: '1040000',
@@ -1203,7 +1203,7 @@ export const registerGlobalConstantNoReveal = {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz2EAB6atB3w7tJPwYF43vymDShZtGLh8TRb',
+              contract: 'mv2SL7ws3DUX2uBW6tTq9azXYKCo525tBR6L',
               change: '-18250',
               origin: 'block',
             },
@@ -1223,7 +1223,7 @@ export const registerGlobalConstantWithReveal = {
   contents: [
     {
       kind: 'reveal',
-      source: 'tz2EAB6atB3w7tJPwYF43vymDShZtGLh8TRb',
+      source: 'mv2SL7ws3DUX2uBW6tTq9azXYKCo525tBR6L',
       fee: '1420',
       counter: '294312',
       gas_limit: '10600',
@@ -1231,7 +1231,7 @@ export const registerGlobalConstantWithReveal = {
       public_key: 'sppk7aqSksZan1AGXuKtCz9UBLZZ77e3ZWGpFxR7ig1Z17GneEhSSbH',
       metadata: {
         balance_updates: [
-          { kind: 'contract', contract: 'tz2EAB6atB3w7tJPwYF43vymDShZtGLh8TRb', change: '-1420' },
+          { kind: 'contract', contract: 'mv2SL7ws3DUX2uBW6tTq9azXYKCo525tBR6L', change: '-1420' },
           {
             kind: 'freezer',
             category: 'fees',
@@ -1284,7 +1284,7 @@ export const txRollupOriginateNoReveal = {
   contents: [
     {
       kind: 'tx_rollup_origination',
-      source: 'tz2Np59GwL7s4NapRiPmU48Nhz65q1kxVmks',
+      source: 'mv2fw5qc4PeBeqsK7DSLaXGkWhThzK32Pfu7',
       fee: '417',
       counter: '236200',
       gas_limit: '1521',
@@ -1294,7 +1294,7 @@ export const txRollupOriginateNoReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2Np59GwL7s4NapRiPmU48Nhz65q1kxVmks',
+            contract: 'mv2fw5qc4PeBeqsK7DSLaXGkWhThzK32Pfu7',
             change: '-417',
             origin: 'block',
           },
@@ -1310,7 +1310,7 @@ export const txRollupOriginateNoReveal = {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz2Np59GwL7s4NapRiPmU48Nhz65q1kxVmks',
+              contract: 'mv2fw5qc4PeBeqsK7DSLaXGkWhThzK32Pfu7',
               change: '-1000000',
               origin: 'block',
             },
@@ -1335,7 +1335,7 @@ export const txRollupOriginateWithReveal = {
   contents: [
     {
       kind: 'reveal',
-      source: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+      source: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
       fee: '374',
       counter: '236199',
       gas_limit: '1100',
@@ -1345,7 +1345,7 @@ export const txRollupOriginateWithReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+            contract: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
             change: '-374',
             origin: 'block',
           },
@@ -1364,7 +1364,7 @@ export const txRollupOriginateWithReveal = {
     },
     {
       kind: 'tx_rollup_origination',
-      source: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+      source: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
       fee: '481',
       counter: '236200',
       gas_limit: '1521',
@@ -1374,7 +1374,7 @@ export const txRollupOriginateWithReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+            contract: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
             change: '-481',
             origin: 'block',
           },
@@ -1390,7 +1390,7 @@ export const txRollupOriginateWithReveal = {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+              contract: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
               change: '-1000000',
               origin: 'block',
             },
@@ -1426,7 +1426,7 @@ export const txRollupSubmitBatchNoReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2MRqRjuMz7i7GjFcwTGE3HF3cbh9sQavXX',
+            contract: 'mv2Mh47Ufu4UD9bhBeXoQhoccB2rBuBSiU2x',
             change: '-580',
             origin: 'block',
           },
@@ -1454,7 +1454,7 @@ export const txRollupSubmitBatchWithReveal = {
   contents: [
     {
       kind: 'reveal',
-      source: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+      source: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
       fee: '374',
       counter: '236199',
       gas_limit: '1100',
@@ -1464,7 +1464,7 @@ export const txRollupSubmitBatchWithReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2SKhBYT6nADXviDrU2HK3nw2jDMfhRNv7P',
+            contract: 'mv2iwiFYQgENDzy5cEBKCY1ZYR2NkU9JNpm4',
             change: '-374',
             origin: 'block',
           },
@@ -1494,7 +1494,7 @@ export const txRollupSubmitBatchWithReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2MRqRjuMz7i7GjFcwTGE3HF3cbh9sQavXX',
+            contract: 'mv2Mh47Ufu4UD9bhBeXoQhoccB2rBuBSiU2x',
             change: '-580',
             origin: 'block',
           },

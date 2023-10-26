@@ -892,7 +892,7 @@ storage: {
 
 # Tzip-12 Contracts
 
-The @taquito/tzip12 package allows retrieving metadata associated with tokens of an FA2 contract. You can find more information about the TZIP-12 standard [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-12/tzip-12.md).
+The @mavrykdynamics/taquito-tzip12 package allows retrieving metadata associated with tokens of an FA2 contract. You can find more information about the TZIP-12 standard [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-12/tzip-12.md).
 
 A contract has an FA2 interface if it has entrypoints: transfer, balance_of, and update_operators
 
@@ -1015,7 +1015,7 @@ interfaces: TZIP-012
 
 # Tzip-16 Contracts
 
-The @taquito/tzip16 package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the MichelsonStorageView found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
+The @mavrykdynamics/taquito-tzip16 package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the MichelsonStorageView found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
 The `getMetadata` method returns an object which contains the URI, the metadata in JSON format, an optional SHA256 hash of the metadata and an optional integrity check result.
 
@@ -1469,7 +1469,7 @@ storage (sapling_state 8)
   <TabItem value="taquito">
 
 ```js
-import { SaplingStateValue } from @taquito/michelson-encoder
+import { SaplingStateValue } from @mavrykdynamics/taquito-michelson-encoder
 storage: SaplingStateValue
 ```
 

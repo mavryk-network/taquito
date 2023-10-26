@@ -2,7 +2,7 @@ import {
   OperationContentsAndResult,
   OperationContentsAndResultOrigination,
   OperationContentsOrigination,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { BigNumber } from 'bignumber.js';
 import { Context } from '../context';
 import { DefaultContractType } from '../contract/contract';

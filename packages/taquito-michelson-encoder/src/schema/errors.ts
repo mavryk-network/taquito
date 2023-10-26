@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { InvalidViewParameterError, TaquitoError } from '@taquito/core';
+import { InvalidViewParameterError, TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

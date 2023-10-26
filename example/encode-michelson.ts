@@ -1,4 +1,4 @@
-import { Parser } from '@taquito/michel-codec'
+import { Parser } from '@mavrykdynamics/taquito-michel-codec'
 
 const example = async () => {
 
@@ -6,7 +6,7 @@ const example = async () => {
     // Encode initial storage values to JSON that is acceptable to the Tezos RPC
     const ex1 = '(Pair {Elt "0" 0} 0)'
     const ex2 = `(Pair (Pair { Elt 1
-                  (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
+                  (Pair (Pair "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
                         0x0501000000026869) }
             10000000)
       (Pair 2 333))`;

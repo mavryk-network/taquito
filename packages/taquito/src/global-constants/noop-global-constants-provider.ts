@@ -1,4 +1,4 @@
-import { Expr } from '@taquito/michel-codec';
+import { Expr } from '@mavrykdynamics/taquito-michel-codec';
 import { UnconfiguredGlobalConstantsProviderError } from './errors';
 import { GlobalConstantHash, GlobalConstantsProvider } from './interface-global-constants-provider';
 

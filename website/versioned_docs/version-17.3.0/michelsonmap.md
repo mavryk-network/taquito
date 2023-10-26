@@ -24,7 +24,7 @@ This tutorial uses a [simple smart contract deployed on ghostnet](https://better
 This paragraph is a little reminder of how to use Taquito to fetch the storage of a smart contract:
 
 ```ts
-import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
+import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
 import { BigNumber } from 'bignumber.js';
 
 const contractAddress: string = 'KT1M5C76aSjpWXdoBvuzRdi3UJoC3jEzrSUW';
@@ -36,7 +36,7 @@ const storage: MichelsonMap<string, BigNumber> = await contract.storage();
 ```
 
 The setup code is pretty straightforward:  
-1- We import `TezosToolkit` and `MichelsonMap` from the `@taquito/taquito` package. We also import `BigNumber` from `bignumber.js` (Taquito installs the library) as TypeScript will need it for this particular example.  
+1- We import `TezosToolkit` and `MichelsonMap` from the `@mavrykdynamics/taquito` package. We also import `BigNumber` from `bignumber.js` (Taquito installs the library) as TypeScript will need it for this particular example.  
 2- We instantiate the `TezosToolkit` object with the RPC address.  
 3- We fetch the contract using `await Tezos.contract.at(contractAddress)`.  
 4- We extract the contract from the contract using the `storage` method on the `ContractAbstraction` object created one line above. We also type the `storage` variable with the `MichelsonMap` type, which requires 2 type arguments: the type for the key and the type for the value (the `address` is a string, and the `tez` is converted to a BigNumber by Taquito).

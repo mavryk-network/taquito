@@ -12,14 +12,14 @@ The Tezos blockchain is a fantastic tool, but it is self-contained. Except for t
 The first thing to do is to use the wallet API is to install it. You just need to install the Taquito package to use the wallet API:
 
 ```
-npm install @taquito/taquito
+npm install @mavrykdynamics/taquito
 
 ```
 
 or
 
 ```
-yarn add @taquito/taquito
+yarn add @mavrykdynamics/taquito
 
 ```
 
@@ -28,7 +28,7 @@ Make sure you have the latest version (`7.1.0` when this article was written, bu
 Once the package is downloaded, you can install the wallet of your choice. The wallet API supports different kinds of wallets. The _Beacon_ and _Temple_ wallets are available to use at the moment. You can install one or both wallets, depending on your requirements:
 
 ```
-npm install @taquito/beacon-wallet
+npm install @mavrykdynamics/taquito-beacon-wallet
 
 npm install @temple-wallet/dapp
 
@@ -43,12 +43,12 @@ After installing the Taquito package in your dapp project and the package contai
 To start, let's import the Tezos Toolkit from Taquito and create a new instance of the Tezos singleton:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://testnet-tezos.giganode.io');
 ```
 
-This object exposes different methods we are going to use to set up our wallet. TZIP-10 has become the official standard of communication and interaction between wallets and dapps, so let's start with the `@taquito/beacon-wallet` package that implements this standard!
+This object exposes different methods we are going to use to set up our wallet. TZIP-10 has become the official standard of communication and interaction between wallets and dapps, so let's start with the `@mavrykdynamics/taquito-beacon-wallet` package that implements this standard!
 
 ### - TZIP-10 wallet
 
@@ -57,7 +57,7 @@ The `BeaconWallet` is a package implementing the TZIP-10 standard that describes
 First, the `BeaconWallet` class must be imported:
 
 ```js
-import { BeaconWallet } from '@taquito/beacon-wallet';
+import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 ```
 
 Then, you can start initializing the wallet:
@@ -113,7 +113,7 @@ Tezos.setProvider({ wallet });
 Make sure you have the Beacon browser extension installed (the extension offers minimal features, the BeaconWallet works with any wallet implementing the TZIP-10 standard), the AirGap wallet on your phone, or any TZIP-10 ready wallet like Temple or Kukai.
 
 ```js live noInline wallet
-// import { BeaconWallet } from '@taquito/beacon-wallet';
+// import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 // const options = { name: 'exampleWallet' };
 // const wallet = new BeaconWallet(options);
 
@@ -387,7 +387,7 @@ const code = contract.script.code;
 If you get the contract code through this method, it will already be properly formatted for origination. If you have a `.tz` file, you can use the `michel-codec` package to encode it properly:
 
 ```js
-import { Parser } from '@taquito/michel-codec';
+import { Parser } from '@mavrykdynamics/taquito-michel-codec';
 const parser = new Parser();
 const parsedMichelson = parser.parseScript(michelsonCode);
 ```
@@ -488,11 +488,11 @@ If you use the Ligo programming language and the storage is a record, you can si
 
 ```
 
-In case of a map or a big map, you must import `MichelsonMap` from `@taquito/taquito` and use it to initialize the map:
+In case of a map or a big map, you must import `MichelsonMap` from `@mavrykdynamics/taquito` and use it to initialize the map:
 
 ```js
 
-import { MichelsonMap } from "@taquito/taquito";
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 
 {
   code: parsedMichelson,
@@ -508,7 +508,7 @@ You can even initialize your map/big map with key/value pairs if you wish:
 
 ```js
 
-import { MichelsonMap } from "@taquito/taquito";
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 
 {
   code: parsedMichelson,
@@ -557,7 +557,7 @@ Taquito makes interacting with smart contracts very easy! With only the smart co
 First, you need to import the Tezos singleton object or instantiate the Tezos toolkit and configure the RPC host you want to connect to:
 
 ```js
-import { Tezos } from '@taquito/taquito';
+import { Tezos } from '@mavrykdynamics/taquito';
 
 Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 ```
@@ -565,7 +565,7 @@ Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 _or_
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit();
 

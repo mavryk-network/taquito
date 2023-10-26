@@ -24,8 +24,8 @@ If you require the server-side signing of operations on the mainnet, we recommen
 If you configure Taquito this way, you will now be able to use every function that needs signing support.
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
@@ -39,8 +39,8 @@ The operation will be signed automatically using the signer (no prompt)
 The `fromSecretKey` method takes a secret that is base58 encoded as a parameter. Here are three examples with unencrypted private keys:
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
 InMemorySigner.fromSecretKey('edsk2rKA8YEExg9Zo2qNPiQnnYheF1DhqjLVmfKdxiFfu5GyGRZRnb')
@@ -56,8 +56,8 @@ InMemorySigner.fromSecretKey('edsk2rKA8YEExg9Zo2qNPiQnnYheF1DhqjLVmfKdxiFfu5GyGR
 ```
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
 InMemorySigner.fromSecretKey('spsk2Fiz7sGP5fNMJrokp6ynTa4bcFbsRhw58FHXbNf5ProDNFJ5Xq')
@@ -75,9 +75,9 @@ InMemorySigner.fromSecretKey('spsk2Fiz7sGP5fNMJrokp6ynTa4bcFbsRhw58FHXbNf5ProDNF
 When required, Taquito offers the `b58cencode` function allowing to encode the secret in base58. The parameters of the function are the secret, that can be a `hex string` or an `Uint8Array`, and the desired prefix. Here is an example with a `hex string`:
 
 ```js live noInline
-// import { b58cencode, prefix, Prefix } from '@taquito/utils';
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
+// import { b58cencode, prefix, Prefix } from '@mavrykdynamics/taquito-utils';
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
 const b58encodedSecret = b58cencode(
@@ -105,8 +105,8 @@ InMemorySigner.fromSecretKey(b58encodedSecret)
 If your private key is encrypted, you can specify a passphrase to decrypt it. Doing so will automatically decrypt the key and allow you to use the signer to sign transactions.
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.setProvider({
@@ -117,8 +117,8 @@ Tezos.setProvider({
 Here are three examples with encrypted private keys where the passphrase used is `test`:
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
 InMemorySigner.fromSecretKey(
@@ -137,8 +137,8 @@ InMemorySigner.fromSecretKey(
 ```
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
 InMemorySigner.fromSecretKey(
@@ -157,8 +157,8 @@ InMemorySigner.fromSecretKey(
 ```
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
 InMemorySigner.fromSecretKey(
@@ -186,8 +186,8 @@ derivation path MUST start with "44'/1729'/"
 With ed25519 default derivation path (Reminder Must be hardened with either h or ')
 
 ```js live noInline
-  // import { TezosToolkit } from '@taquito/taquito
-  // import { InMemorySigner } from '@taquito/signer'
+  // import { TezosToolkit } from '@mavrykdynamics/taquito
+  // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
   // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
   // ed25519 must have all hardened paths
@@ -210,8 +210,8 @@ With ed25519 default derivation path (Reminder Must be hardened with either h or
 With a non-default derivation path non-hardened with a tz2 address
 
 ```js live noInline
-  // import { TezosToolkit } from '@taquito/taquito
-  // import { InMemorySigner } from '@taquito/signer'
+  // import { TezosToolkit } from '@mavrykdynamics/taquito
+  // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
   // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
 
   const params = {
@@ -243,8 +243,8 @@ If you require to sign operations with many different keys, then implementing a 
 The `signerFactory` function example creates a new Tezos instance. Use the Tezos instance for signing, and discard it when complete.
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const signerFactory = async (rpcUrl: string, pk: string) => {
   const Tezos = new TezosToolkit(rpcUrl);

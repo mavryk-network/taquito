@@ -1,4 +1,4 @@
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
 import { COST_PER_BYTE } from '../constants';
 import { flattenOperationResult } from '../operations/errors';

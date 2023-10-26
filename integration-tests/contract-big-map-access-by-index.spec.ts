@@ -1,6 +1,6 @@
 import { CONFIGS } from "./config";
 import { tokenCode, tokenInit } from "./data/tokens";
-import { MichelsonMap, MichelCodecPacker } from "@taquito/taquito";
+import { MichelsonMap, MichelCodecPacker } from "@mavrykdynamics/taquito";
 
 CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
   const Tezos = lib;

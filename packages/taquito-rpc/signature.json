@@ -114,7 +114,7 @@
       "entry": "packageJson/v1alpha2",
       "value": {
         "packageJson": {
-          "name": "@taquito/rpc",
+          "name": "@mavrykdynamics/taquito-rpc",
           "version": "8.0.4-beta.0",
           "description": "Provides low level methods, and types to invoke RPC calls from a Nomadic Tezos RPC node",
           "keywords": [
@@ -169,7 +169,7 @@
               "js"
             ],
             "moduleNameMapper": {
-              "^@taquito/http-utils$": "<rootDir>/../taquito-http-utils/src/taquito-http-utils.ts"
+              "^@mavrykdynamics/taquito-http-utils$": "<rootDir>/../taquito-http-utils/src/taquito-http-utils.ts"
             },
             "coveragePathIgnorePatterns": [
               "/node_modules/",
@@ -180,7 +180,7 @@
             ]
           },
           "dependencies": {
-            "@taquito/http-utils": "^8.0.4-beta.0",
+            "@mavrykdynamics/taquito-http-utils": "^8.0.4-beta.0",
             "bignumber.js": "^9.0.1",
             "lodash": "^4.17.20"
           },

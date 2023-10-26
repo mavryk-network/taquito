@@ -6,10 +6,10 @@ import {
   MichelsonV1Expression,
   BallotVote,
   PvmKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { BlockIdentifier } from '../read-provider/interface';
 
-export { OpKind } from '@taquito/rpc';
+export { OpKind } from '@mavrykdynamics/taquito-rpc';
 
 export type withKind<T, K extends OpKind> = T & { kind: K };
 

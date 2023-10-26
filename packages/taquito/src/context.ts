@@ -1,6 +1,6 @@
-import { RpcClient, RpcClientInterface } from '@taquito/rpc';
+import { RpcClient, RpcClientInterface } from '@mavrykdynamics/taquito-rpc';
 import { Protocols } from './constants';
-import { Forger } from '@taquito/local-forging';
+import { Forger } from '@mavrykdynamics/taquito-local-forging';
 import { Injector } from './injector/interface';
 import { RpcInjector } from './injector/rpc-injector';
 import { Signer } from './signer/interface';

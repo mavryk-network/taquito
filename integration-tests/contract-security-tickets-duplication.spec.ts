@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 
 // TC-T-022: Duplicate ticket - duplicate transaction operation

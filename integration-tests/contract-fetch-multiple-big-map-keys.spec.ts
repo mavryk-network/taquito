@@ -1,6 +1,6 @@
 import { CONFIGS } from './config';
 import { tokenCode } from './data/tokens';
-import { MichelsonMap, BigMapAbstraction } from '@taquito/taquito';
+import { MichelsonMap, BigMapAbstraction } from '@mavrykdynamics/taquito';
 import BigNumber from 'bignumber.js';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {

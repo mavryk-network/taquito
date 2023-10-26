@@ -9,12 +9,12 @@ import {
   Prefix,
   invalidDetail,
   ValidationResult,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import toBuffer from 'typedarray-to-buffer';
-import { InvalidKeyError } from '@taquito/core';
+import { InvalidKeyError } from '@mavrykdynamics/taquito-core';
 
 /**
- * @description Provide signing logic for ed25519 curve based key (tz1)
+ * @description Provide signing logic for ed25519 curve based key (mv1)
  */
 export class Tz1 {
   private _key: Uint8Array;

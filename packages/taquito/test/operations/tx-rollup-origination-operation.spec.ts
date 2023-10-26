@@ -1,5 +1,5 @@
 import { ForgedBytes } from '../../src/operations/types';
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 import { RevealOperationBuilder, TxRollupOriginationOperationBuilder } from '../helpers';
 import { TxRollupOriginationOperation } from '../../src/operations/tx-rollup-origination-operation';
@@ -11,7 +11,7 @@ describe('TxRollupOriginationOperation', () => {
   const successfulResult = [
     {
       kind: 'tx_rollup_origination',
-      source: 'tz2Np59GwL7s4NapRiPmU48Nhz65q1kxVmks',
+      source: 'mv2fw5qc4PeBeqsK7DSLaXGkWhThzK32Pfu7',
       fee: '417',
       counter: '236200',
       gas_limit: '1521',
@@ -21,7 +21,7 @@ describe('TxRollupOriginationOperation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2Np59GwL7s4NapRiPmU48Nhz65q1kxVmks',
+            contract: 'mv2fw5qc4PeBeqsK7DSLaXGkWhThzK32Pfu7',
             change: '-417',
             origin: 'block',
           },
@@ -37,7 +37,7 @@ describe('TxRollupOriginationOperation', () => {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz2Np59GwL7s4NapRiPmU48Nhz65q1kxVmks',
+              contract: 'mv2fw5qc4PeBeqsK7DSLaXGkWhThzK32Pfu7',
               change: '-1000000',
               origin: 'block',
             },

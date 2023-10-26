@@ -1,4 +1,4 @@
-import { NetworkError } from '@taquito/core';
+import { NetworkError } from '@mavrykdynamics/taquito-core';
 import { STATUS_CODE } from './status_code';
 
 /**

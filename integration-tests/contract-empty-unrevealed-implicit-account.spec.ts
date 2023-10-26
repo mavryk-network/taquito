@@ -1,5 +1,5 @@
 import { CONFIGS } from "./config";
-import { DEFAULT_FEE } from "@taquito/taquito";
+import { DEFAULT_FEE } from "@mavrykdynamics/taquito";
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
   const Tezos = lib;

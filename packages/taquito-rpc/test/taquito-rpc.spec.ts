@@ -3508,7 +3508,7 @@ describe('RpcClient test', () => {
           delegate: 'mv1HNQJNNFKhzEsyX88jrRk4W7vCFE2sbucU',
           priority: 8,
           estimated_time: '2019-08-02T09:53:56Z',
-          consensus_key: 'tz1N4GvBKsfdBdtgbNeQQLv52L7YB4FBZtVf',
+          consensus_key: 'mv1AC57cGwywuXYZEuJeXyXadYDLvrTs91KE',
         },
       ]);
       const result = await client.getBakingRights({

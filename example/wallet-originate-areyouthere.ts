@@ -1,5 +1,5 @@
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 async function example() {
   const provider = 'https://ghostnet.ecadinfra.com';

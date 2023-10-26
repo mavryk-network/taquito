@@ -33,7 +33,7 @@ describe('LedgerSigner test', () => {
     );
   });
 
-  it('Should get public key and public key hash for default path and tz1 curve', async () => {
+  it('Should get public key and public key hash for default path and mv1 curve', async () => {
     const signer = new LedgerSigner(mockTransport);
     const mockpk = Buffer.from(
       '21026760ff228c2c16cbca18bb782a106e51c43a131776f5dfad30ecb5d5e43eccbd9000',
@@ -50,7 +50,7 @@ describe('LedgerSigner test', () => {
     expect(pkh).toEqual('mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq');
   });
 
-  it('Should get public key and public key hash for default path and tz2 curve', async () => {
+  it('Should get public key and public key hash for default path and mv2 curve', async () => {
     const signer = new LedgerSigner(
       mockTransport,
       "44'/1729'/0'/0'",
@@ -72,7 +72,7 @@ describe('LedgerSigner test', () => {
     expect(pkh).toEqual('mv2efHjyQ74JL9AwwWNDYEh3MpKxLLsjYRPz');
   });
 
-  it('Should get public key and public key hash for path which accounnt is 1 and tz3 curve', async () => {
+  it('Should get public key and public key hash for path which accounnt is 1 and mv3 curve', async () => {
     const signer = new LedgerSigner(mockTransport, "44'/1729'/1'/0'", false, DerivationType.P256);
     const mockpk = Buffer.from(
       '4104eac3db090c124a2d57623d8e743f4a2beef9e6f96e80b49a4755c525c6c80ee391d9d93595479ae1d0099ecc8f4d56ca0542516407ff9f386c48678de965b8809000',
@@ -106,7 +106,7 @@ describe('LedgerSigner test', () => {
     expect(pkh).toEqual('mv1UBmbdMNiCqdXrNhsqgLCFiSXUFEtMUHUc');
   });
 
-  it('Should sign operation for tz1', async () => {
+  it('Should sign operation for mv1', async () => {
     const signer = new LedgerSigner(mockTransport);
     const mocksig = Buffer.from(
       '35c1f3340121965a1350af2082af3c83d4338c23c254591ec7a12fef5d4e9fc2a63f7051508cc41255894fe511cfd11af827e8f8e6c3730c3dd0775aff33dc029000',
@@ -131,7 +131,7 @@ describe('LedgerSigner test', () => {
     });
   });
 
-  it('Should sign operation for tz2', async () => {
+  it('Should sign operation for mv2', async () => {
     const signer = new LedgerSigner(
       mockTransport,
       "44'/1729'/0'/0'",
@@ -161,7 +161,7 @@ describe('LedgerSigner test', () => {
     });
   });
 
-  it('Should sign operation for tz3', async () => {
+  it('Should sign operation for mv3', async () => {
     const signer = new LedgerSigner(mockTransport, "44'/1729'/0'/0'", false, DerivationType.P256);
     const mocksig = Buffer.from(
       '3144022005ccc37c4c434b39054a68d15f9f4d4d279699dd3a406cb235e0b3bf62a6ec1702204f72794ad3f06dd3ebb21b36b63eb44b98f5607e8751513741d73660b7952c399000',
@@ -186,7 +186,7 @@ describe('LedgerSigner test', () => {
     });
   });
 
-  it('Should sign Operation for tz1 bip32', async () => {
+  it('Should sign Operation for mv1 bip32', async () => {
     const signer = new LedgerSigner(
       mockTransport,
       "44'/1729'/1'/0'",

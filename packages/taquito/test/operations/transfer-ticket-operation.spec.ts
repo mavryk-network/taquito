@@ -5,7 +5,7 @@ import {
   OperationContentsAndResultTransferTicket,
   OperationContentsTransferTicket,
   OpKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 import { TransferTicketOperation } from '../../src/operations/transfer-ticket-operation';
 

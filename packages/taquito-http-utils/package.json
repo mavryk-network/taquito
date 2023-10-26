@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/http-utils",
+  "name": "@mavrykdynamics/taquito-http-utils",
   "version": "17.5.2",
   "description": "",
   "keywords": [
@@ -58,7 +58,7 @@
     ]
   },
   "dependencies": {
-    "@taquito/core": "^17.5.2",
+    "@mavrykdynamics/taquito-core": "^17.5.2",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {

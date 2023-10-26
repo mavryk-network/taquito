@@ -1,4 +1,4 @@
-import { DefaultGlobalConstantsProvider } from '@taquito/taquito';
+import { DefaultGlobalConstantsProvider } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 import { voteSampleGlobalConstants } from './data/vote_contract_global_constant_storage';
 

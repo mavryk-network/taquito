@@ -33,8 +33,8 @@ values={[
 This requires a signer to be configured, ie:
 
 ```
-import { importKey } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { importKey } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
 ```
@@ -43,8 +43,8 @@ importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
   <TabItem value="walletAPI">
 
 ```
-import {  BeaconWallet } from '@taquito/beacon-wallet';
-import { TezosToolkit } from '@taquito/taquito';
+import {  BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 const option = { name: "nameOfWallet", network: { type: 'jakartanet' }}
 const wallet = new BeaconWallet(option)
@@ -84,7 +84,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
 // const genericMultisigJSONfile = require('./generic.json')
@@ -113,7 +113,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
 // const genericMultisigJSONfile = require('./generic.json')
@@ -155,7 +155,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
 // const genericMultisigJSONfile = require('./generic.json')
@@ -180,7 +180,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
 // const genericMultisigJSONfile = require('./generic.json')
@@ -216,7 +216,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
 // const genericMultisigJSONfile = require('./generic.json')
@@ -253,7 +253,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
 // const genericMultisigJSONfile = require('./generic.json')

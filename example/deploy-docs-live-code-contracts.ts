@@ -9,8 +9,8 @@
 ///   Execute this script with
 ///     node -r ts-node/register deploy-docs-live-code-contracts.ts
 
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { tzip7Contract } from '../integration-tests/data/tzip_7_contract';
 import { contractMapPairKey } from './data/contractMapPairKey';
 import { contractIncrementing } from './data/contractIncrementing';
@@ -27,7 +27,7 @@ import {
 } from '../integration-tests/data/metadataViews';
 import { saplingLiveCodeContract } from './data/sapling_live_code_contract';
 import { contractMap8pairs } from './data/contractMap8pairs';
-import { char2Bytes } from '@taquito/utils';
+import { char2Bytes } from '@mavrykdynamics/taquito-utils';
 import { fa2Contract } from '../integration-tests/data/fa2_contract';
 import BigNumber from 'bignumber.js';
 

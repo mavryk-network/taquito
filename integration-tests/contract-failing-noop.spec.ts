@@ -1,7 +1,7 @@
-import { InMemorySigner } from "@taquito/signer";
+import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
 import { CONFIGS, defaultSecretKey, isSandbox } from "./config";
-import { OpKind, Protocols, TezosToolkit } from "@taquito/taquito";
-import { verifySignature } from "@taquito/utils";
+import { OpKind, Protocols, TezosToolkit } from "@mavrykdynamics/taquito";
+import { verifySignature } from "@mavrykdynamics/taquito-utils";
 
 CONFIGS().forEach(({ rpc, setup, protocol }) => {
 

@@ -1,7 +1,7 @@
-import { OperationContentsBallot, OperationContentsTransaction } from '@taquito/rpc';
-import { OpKind } from '@taquito/taquito';
+import { OperationContentsBallot, OperationContentsTransaction } from '@mavrykdynamics/taquito-rpc';
+import { OpKind } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
-import { LocalForger } from '@taquito/local-forging';
+import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 
 CONFIGS().forEach(({ lib, setup, protocol, createAddress }) => {
   const Tezos = lib;

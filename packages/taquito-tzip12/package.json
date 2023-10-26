@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/tzip12",
+  "name": "@mavrykdynamics/taquito-tzip12",
   "version": "17.5.2",
   "description": "Tzip12",
   "keywords": [
@@ -62,10 +62,10 @@
     ]
   },
   "dependencies": {
-    "@taquito/core": "^17.5.2",
-    "@taquito/michelson-encoder": "^17.5.2",
-    "@taquito/taquito": "^17.5.2",
-    "@taquito/tzip16": "^17.5.2"
+    "@mavrykdynamics/taquito-core": "^17.5.2",
+    "@mavrykdynamics/taquito-michelson-encoder": "^17.5.2",
+    "@mavrykdynamics/taquito": "^17.5.2",
+    "@mavrykdynamics/taquito-tzip16": "^17.5.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.40",

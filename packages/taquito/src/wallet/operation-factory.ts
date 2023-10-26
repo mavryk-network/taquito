@@ -1,4 +1,4 @@
-import { BlockResponse } from '@taquito/rpc';
+import { BlockResponse } from '@mavrykdynamics/taquito-rpc';
 import {
   BehaviorSubject,
   concat,

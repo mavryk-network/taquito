@@ -1,6 +1,6 @@
 import { CONFIGS } from './config';
-import { MichelsonMap } from '@taquito/taquito';
-import { tzip16, Tzip16Module, char2Bytes } from '@taquito/tzip16';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
+import { tzip16, Tzip16Module, char2Bytes } from '@mavrykdynamics/taquito-tzip16';
 import { contractCode, metadataViewsExample1, metadataViewsExample2 } from './data/metadataViews';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {

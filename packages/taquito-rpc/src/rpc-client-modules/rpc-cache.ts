@@ -53,13 +53,13 @@ import {
   OriginationProofParams,
   RPCSimulateOperationParam,
 } from '../types';
-import { InvalidAddressError, InvalidContractAddressError } from '@taquito/core';
+import { InvalidAddressError, InvalidContractAddressError } from '@mavrykdynamics/taquito-core';
 import {
   validateContractAddress,
   validateAddress,
   ValidationResult,
   invalidDetail,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 
 interface CachedDataInterface {
   [key: string]: {

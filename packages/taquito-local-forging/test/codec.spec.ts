@@ -18,7 +18,7 @@ import {
   UnsupportedPvmKindError,
 } from '../src/errors';
 import { bytesEncoder } from '../src/michelson/codec';
-import { InvalidHexStringError, InvalidPublicKeyError, InvalidKeyHashError } from '@taquito/core';
+import { InvalidHexStringError, InvalidPublicKeyError, InvalidKeyHashError } from '@mavrykdynamics/taquito-core';
 
 describe('Tests for Entrypoint functions and for encode and decoder error messages', () => {
   test('Entrypoint encoder', () => {

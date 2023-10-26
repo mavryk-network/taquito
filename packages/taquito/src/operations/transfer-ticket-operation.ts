@@ -3,7 +3,7 @@ import {
   OperationContentsAndResultTransferTicket,
   OperationContentsTransferTicket,
   OpKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { BigNumber } from 'bignumber.js';
 import { Context } from '../context';
 import { Operation } from '../operations';
@@ -16,9 +16,9 @@ import {
 
 /**
  *
- * @description Transfer tickets from a Tezos address (tz1, tz2 or tz3) to a smart contract address (KT1) (everything on layer 1 at this step)
+ * @description Transfer tickets from a Tezos address (mv1, mv2 or mv3) to a smart contract address (KT1) (everything on layer 1 at this step)
  *
- * @warn Currently only supports one L2 ticket holder transfer at once. ie. one collection of tickets owned by tz1, tz2 or tz3 to a smart contract.
+ * @warn Currently only supports one L2 ticket holder transfer at once. ie. one collection of tickets owned by mv1, mv2 or mv3 to a smart contract.
  */
 export class TransferTicketOperation
   extends Operation

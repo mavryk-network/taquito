@@ -1,4 +1,4 @@
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 import { CONFIGS, sleep } from "./config";
 
 CONFIGS().forEach(({ lib, rpc, protocol, setup, createAddress }) => {

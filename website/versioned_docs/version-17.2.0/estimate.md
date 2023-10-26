@@ -36,7 +36,7 @@ values={[
 <TabItem value="signer">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 const amount = 2;
@@ -61,7 +61,7 @@ Tezos.estimate
   <TabItem value="wallet">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 const amount = 2;
@@ -102,7 +102,7 @@ We have updated the estimate provider to have a `contractCall()` method.
 The `contractCall()` member method can now be used to estimate contract calls as such:
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 Tezos.contract
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
@@ -130,7 +130,7 @@ Tezos.contract
   <TabItem value="wallet">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 Tezos.wallet
@@ -171,7 +171,7 @@ values={[
 <TabItem value="signer">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 println(`Estimating the contract origination : `);
@@ -201,7 +201,7 @@ Tezos.estimate
 
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 println(`Estimating the contract origination : `);

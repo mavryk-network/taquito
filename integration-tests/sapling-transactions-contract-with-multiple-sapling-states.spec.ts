@@ -1,9 +1,9 @@
-import { ContractAbstraction, ContractProvider, RpcReadAdapter, SaplingStateAbstraction } from '@taquito/taquito';
+import { ContractAbstraction, ContractProvider, RpcReadAdapter, SaplingStateAbstraction } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
-import { InMemorySpendingKey, SaplingToolkit } from '@taquito/sapling';
+import { InMemorySpendingKey, SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
 import BigNumber from 'bignumber.js';
 import { saplingContractDoubleJProto } from './data/sapling_test_contracts';
-import { SaplingStateValue } from '@taquito/michelson-encoder';
+import { SaplingStateValue } from '@mavrykdynamics/taquito-michelson-encoder';
 
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {

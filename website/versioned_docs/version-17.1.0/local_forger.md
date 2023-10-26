@@ -13,7 +13,7 @@ One of the tools offered by Taquito is the local forging package, which allows y
 You will need to import the LocalForger class from Taquito to use the local forging package. You can do this by adding the following line to your code:
 
 ```
-import { LocalForger } from '@taquito/local-forging';
+import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 
 ```
 
@@ -22,7 +22,7 @@ import { LocalForger } from '@taquito/local-forging';
 Next, you must create a transaction you want to forge. You can do this using the Taquito library as you normally would. Here is an example of creating a transaction to transfer 1 XTZ from one address to another:
 
 ```
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const tezos = new TezosToolkit('<https://rpc.tezrpc.me>');
 const from = 'tz1abc...xyz';

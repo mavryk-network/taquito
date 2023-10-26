@@ -1,8 +1,8 @@
 import { CONFIGS, sleep } from './config';
-import { PollingSubscribeProvider, TezosToolkit } from '@taquito/taquito';
-import { localForger } from '@taquito/local-forging';
+import { PollingSubscribeProvider, TezosToolkit } from '@mavrykdynamics/taquito';
+import { localForger } from '@mavrykdynamics/taquito-local-forging';
 import { send } from 'process';
-import { validateAddress } from '@taquito/utils';
+import { validateAddress } from '@mavrykdynamics/taquito-utils';
 
 /* mainContract.jsligo: This is the source code for the main contract.
 If you need to change the main contract, you can change this, use the ligo compiler to compile it, and update both the Michelson code below and the jsligo here.

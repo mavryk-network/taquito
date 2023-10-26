@@ -1,4 +1,4 @@
-import { ParameterValidationError, UnsupportedActionError } from '@taquito/core';
+import { ParameterValidationError, UnsupportedActionError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

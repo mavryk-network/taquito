@@ -1,19 +1,19 @@
-import { ViewSchema } from '@taquito/michelson-encoder';
+import { ViewSchema } from '@mavrykdynamics/taquito-michelson-encoder';
 import {
   MichelsonV1Expression,
   MichelsonV1ExpressionExtended,
   RpcClientInterface,
   RPCRunCodeParam,
   RPCRunScriptViewParam,
-} from '@taquito/rpc';
-import { validateAddress, ValidationResult } from '@taquito/utils';
+} from '@mavrykdynamics/taquito-rpc';
+import { validateAddress, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { TzReadProvider } from '../../read-provider/interface';
 import {
   InvalidViewSimulationContext,
   ViewSimulationError,
   validateAndExtractFailwith,
 } from '../errors';
-import { InvalidViewParameterError } from '@taquito/core';
+import { InvalidViewParameterError } from '@mavrykdynamics/taquito-core';
 
 export interface ExecutionContextParams {
   source?: string;

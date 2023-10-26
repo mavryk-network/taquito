@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js';
 import { preparedOriginationOpWithReveal, preparedOriginationOpNoReveal } from './data';
 
 import { TransferTicketParams, OpKind } from '../../src/operations/types';
-import { PvmKind } from '@taquito/rpc';
+import { PvmKind } from '@mavrykdynamics/taquito-rpc';
 import { preparedTransactionMock } from '../helpers';
 import { PreparedOperation } from '../../src/prepare';
 

@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 import { securityWrongAnnotations } from './data/security-wrong-annotations-contract';
 

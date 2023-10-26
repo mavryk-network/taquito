@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount, afterUpdate } from "svelte";
   import { fly } from "svelte/transition";
-  import { TezosToolkit } from "@taquito/taquito";
-  import { BeaconWallet } from "@taquito/beacon-wallet";
+  import { TezosToolkit } from "@mavrykdynamics/taquito";
+  import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
   // import { BeaconEvent, defaultEventCallbacks } from "@mavrykdynamics/beacon-sdk";
   import type { BeaconEvent, type DAppClientOptions } from "@mavrykdynamics/beacon-sdk";
   import store from "../store";

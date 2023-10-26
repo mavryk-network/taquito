@@ -1,4 +1,4 @@
-import { PvmKind } from "@taquito/rpc";
+import { PvmKind } from "@mavrykdynamics/taquito-rpc";
 import { CONFIGS } from "./config";
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {

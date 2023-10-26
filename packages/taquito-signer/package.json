@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/signer",
+  "name": "@mavrykdynamics/taquito-signer",
   "version": "17.5.2",
   "description": "Provide signing functionality to be with taquito",
   "keywords": [
@@ -55,7 +55,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^@taquito/utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
+      "^@mavrykdynamics/taquito-utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -72,9 +72,9 @@
     "@stablelib/nacl": "^1.0.4",
     "@stablelib/pbkdf2": "^1.0.1",
     "@stablelib/sha512": "^1.0.1",
-    "@taquito/core": "^17.5.2",
-    "@taquito/taquito": "^17.5.2",
-    "@taquito/utils": "^17.5.2",
+    "@mavrykdynamics/taquito-core": "^17.5.2",
+    "@mavrykdynamics/taquito": "^17.5.2",
+    "@mavrykdynamics/taquito-utils": "^17.5.2",
     "@types/bn.js": "^5.1.2",
     "bip39": "3.1.0",
     "elliptic": "^6.5.4",

@@ -1,5 +1,5 @@
-import { ParameterValidationError } from '@taquito/core';
-import { ScriptedContracts } from '@taquito/rpc';
+import { ParameterValidationError } from '@mavrykdynamics/taquito-core';
+import { ScriptedContracts } from '@mavrykdynamics/taquito-rpc';
 /**
  *  @category Error
  *  @description Error that indicates invalid script format being useed or passed
