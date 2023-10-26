@@ -18,7 +18,7 @@ npm install @taquito/sapling
 
 **Retrieve a balance in the Sapling shielded pool**
 
-The returned balance is in mutez.
+The returned balance is in mumav.
 
 ```ts
 import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
@@ -73,7 +73,7 @@ const shieldedTx = await saplingToolkit.prepareShieldedTransaction([{
     to: paymentAddress,
     amount: 3,
     memo: 'test',
-    mutez: false // set to false by default
+    mumav: false // set to false by default
 }])
 
 // Inject the sapling transaction using the ContractAbstraction

@@ -252,13 +252,13 @@ describe('SaplingToolkit', () => {
     await expect(
       saplingToolkit.prepareShieldedTransaction([
         {
-          to: 'tz1awHvfqEVsmNpXtLsLoHcjLk9HaXkzHf7Z',
+          to: 'mv1M2LXcB7tVMhtTKUYwXadmfcgSMihEUVWB',
           amount: 8,
           memo: 'Taquito',
         },
       ])
     ).rejects.toThrowError(
-      `Invalid address "tz1awHvfqEVsmNpXtLsLoHcjLk9HaXkzHf7Z" with unsupported prefix expecting prefix zet1.`
+      `Invalid address "mv1M2LXcB7tVMhtTKUYwXadmfcgSMihEUVWB" with unsupported prefix expecting prefix zet1.`
     );
   });
 
