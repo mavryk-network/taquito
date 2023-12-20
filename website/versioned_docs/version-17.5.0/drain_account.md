@@ -16,7 +16,7 @@ Once we know the associated fees, we can calculate the maximum amount that needs
 Finally, we can do the transfer operation and use the maximum amount we just calculated as the `amount` parameter of the `transfer` function.
 
 :::note
-In the following example, we have not revealed the account that we want to empty. We need to keep in mind that there are fees related to a reveal operation. We are subtracting 374 mutez from the balance to cover reveal fees.
+In the following example, we have not revealed the account that we want to empty. We need to keep in mind that there are fees related to a reveal operation. We are subtracting 374 mumav from the balance to cover reveal fees.
 
 **If the account to drain has already been revealed, you must not subtract the reveal fee from the balance.**
 :::
@@ -38,7 +38,7 @@ Tezos.signer
                 .transfer({
                     to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                     amount: balance.toNumber() - DEFAULT_FEE.REVEAL, // Remove default reveal fee
-                    mutez: true
+                    mumav: true
                 })
                 .then((estimate) => {
                     const maxAmount = balance.minus(
@@ -47,15 +47,15 @@ Tezos.signer
                     println(
                         `The estimated fees related to the emptying operation are ${
                           estimate.suggestedFeeMutez
-                        } mutez.\nThe fees related to the reveal operation are ${
+                        } mumav.\nThe fees related to the reveal operation are ${
                           DEFAULT_FEE.REVEAL
-                        } mutez.\nConsidering those fees, the amount we need to send to empty the account is ${
+                        } mumav.\nConsidering those fees, the amount we need to send to empty the account is ${
                           maxAmount / 1000000
                         } ꜩ.`
                     );
                     return Tezos.contract.transfer({
                         to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
-                        mutez: true,
+                        mumav: true,
                         amount: maxAmount,
                         fee: estimate.suggestedFeeMutez,
                         gasLimit: estimate.gasLimit,
@@ -89,7 +89,7 @@ In the example, we estimate the transfer operation before doing it. The associat
 ```js live noInline
 // const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
 
-function transferImplicit(key, mutez) {
+function transferImplicit(key, mumav) {
   return [
     { prim: 'DROP' },
     { prim: 'NIL', args: [{ prim: 'operation' }] },
@@ -100,7 +100,7 @@ function transferImplicit(key, mutez) {
     { prim: 'IMPLICIT_ACCOUNT' },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${mutez}` }],
+      args: [{ prim: 'mumav' }, { int: `${mumav}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },
@@ -136,7 +136,7 @@ Tezos.signer
             .then((estimate) => {
               //Will be deducted from manager's address
               println(
-                `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMutez} mutez.`
+                `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMutez} mumav.`
               );
               return contract.methods
                 .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))

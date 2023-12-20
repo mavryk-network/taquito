@@ -50,7 +50,7 @@ code { # Stack manipulation
                      DIIP {SWAP};
                      DIP {SWAP};
                      SWAP;
-                     SUB_MUTEZ; ASSERT_SOME;
+                     SUB_MUMAV; ASSERT_SOME;
                      # As we transfer or shield token, an implicit account is not
                      # required. It is a good practice to verify.
                      # If an implicit account has been given, it might be an invalid

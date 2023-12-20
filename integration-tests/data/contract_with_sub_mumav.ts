@@ -1230,7 +1230,7 @@ export const submumavCode = [
                       prim: 'DIP',
                       args: [[{ prim: 'DIP', args: [[{ prim: 'DUP' }]] }, { prim: 'SWAP' }]],
                     },
-                    { prim: 'SUB_MUTEZ' },
+                    { prim: 'SUB_MUMAV' },
                     [
                       {
                         prim: 'IF_NONE',

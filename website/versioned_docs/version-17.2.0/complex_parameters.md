@@ -36,7 +36,7 @@ storage (pair
                                                          (signature %signature))))
                                                  (or
                                                    (or (string %string)
-                                                       (mutez %tez))
+                                                       (mumav %tez))
                                                    (timestamp %timestamp)))))
                               (pair (address %owner) (option %ttl nat)))
                             (option %validator nat))))
@@ -117,7 +117,7 @@ Here is the parameter of the function defined in Michelson :
                                    (or (bytes %bytes) (int %int)))
                                (or (or (key %key) (key_hash %key_hash))
                                    (or (nat %nat) (signature %signature))))
-                             (or (or (string %string) (mutez %tez))
+                             (or (or (string %string) (mumav %tez))
                                  (timestamp %timestamp)))))
           (pair (bytes %label) (address %owner)))
         (pair (bytes %parent) (option %ttl nat)))

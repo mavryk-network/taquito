@@ -58,7 +58,7 @@ If you prefer, you can also pass an argument to the `MichelsonMap` constructor t
 
 const newEmptyMapWithArg = new MichelsonMap({
   prim: 'map',
-  args: [{ prim: 'string' }, { prim: 'mutez' }],
+  args: [{ prim: 'string' }, { prim: 'mumav' }],
 });
 ```
 

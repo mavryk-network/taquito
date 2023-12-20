@@ -98,7 +98,7 @@ values={[
 <TabItem value="michelson">
 
 ```js
-storage (map address mutez);
+storage (map address mumav);
 ```
 
 </TabItem>
@@ -301,7 +301,7 @@ values={[
 ```js
 storage (pair
           (pair (address %theAddress)
-                (map %theMap (pair nat address) (pair (mutez %amount) (int %quantity))))
+                (map %theMap (pair nat address) (pair (mumav %amount) (int %quantity))))
           (int %theNumber));
 ```
 
@@ -373,7 +373,7 @@ storage (map
                 (pair nat
                       (pair string
                             (pair bytes
-                                  (pair mutez
+                                  (pair mumav
                                         (pair bool
                                               (pair key_hash (pair timestamp address))))))))
           int);
@@ -442,7 +442,7 @@ values={[
 <TabItem value="michelson">
 
 ```js
-storage (map nat (pair (nat %current_stock) (mutez %max_price)));
+storage (map nat (pair (nat %current_stock) (mumav %max_price)));
 ```
 
 </TabItem>
@@ -616,7 +616,7 @@ storage (pair
                                                                  (signature %signature))))
                                                          (or
                                                            (or (string %string)
-                                                               (mutez %tez))
+                                                               (mumav %tez))
                                                            (timestamp %timestamp)))))
                                       (pair (address %owner) (option %ttl nat)))
                                     (option %validator nat))))
@@ -904,7 +904,7 @@ This contract has an FA2 interface.
 
 - balance_of
 - mint
-- mutez_transfer
+- mumav_transfer
 - set_administrator
 - set_metadata
 - set_pause
@@ -1042,7 +1042,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1107,7 +1107,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1165,7 +1165,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1227,7 +1227,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>

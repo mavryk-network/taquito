@@ -44,14 +44,14 @@ const lambda = `{
     NIL operation ; 
     PUSH key_hash "${RECIPIENT_ADDRESS}" ; 
     IMPLICIT_ACCOUNT ; 
-    PUSH mutez ${AMOUNT} ; 
+    PUSH mumav ${AMOUNT} ; 
     UNIT ; 
     TRANSFER_TOKENS ; 
     CONS 
 }`;
 ```  
 
-First, we write the Michelson lambda that will be executed to transfer the tez, where `RECIPIENT_ADDRESS` is the public key hash of the recipient of the tez and `AMOUNT` is the amount of mutez to be sent.
+First, we write the Michelson lambda that will be executed to transfer the tez, where `RECIPIENT_ADDRESS` is the public key hash of the recipient of the tez and `AMOUNT` is the amount of mumav to be sent.
 
 The lambda for this particular use case is already offered by Taquito, so you don't have to write it every time, you can just import it:
 ```typescript
@@ -246,7 +246,7 @@ The first step is to write the Michelson lambda:
 const minTokensBought = 360000; // Should be calculated before every transaction
 const lambda = `{ 
     /* checks that the contract has enough balance */
-    PUSH mutez 50000000 ;
+    PUSH mumav 50000000 ;
     BALANCE ;
     COMPARE ;
     GE ;
@@ -270,7 +270,7 @@ const lambda = `{
                 }
                 {
                     SWAP ;
-                    PUSH mutez 50000000;
+                    PUSH mumav 50000000;
                     SWAP ;
                     TRANSFER_TOKENS ;
                     NIL operation ;

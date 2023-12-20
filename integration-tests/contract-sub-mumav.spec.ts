@@ -15,7 +15,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
           code: `{ parameter (or (or (mumav %decrement) (mumav %increment)) (mumav %reset)) ;
                storage mumav ;
                code { UNPAIR ;
-                      IF_LEFT { IF_LEFT { SWAP ; SUB_MUTEZ; ASSERT_SOME } { ADD } } { SWAP ; DROP } ;
+                      IF_LEFT { IF_LEFT { SWAP ; SUB_MUMAV; ASSERT_SOME } { ADD } } { SWAP ; DROP } ;
                       NIL operation ;
                       PAIR } }
                    `,

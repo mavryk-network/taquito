@@ -213,7 +213,7 @@ export const opMapping: { [key: string]: string } = {
   '90': 'VIEW',
   '91': 'view',
   '92': 'constant',
-  '93': 'SUB_MUTEZ',
+  '93': 'SUB_MUMAV',
   '94': 'tx_rollup_l2_address',
   '95': 'MIN_BLOCK_TIME',
   '96': 'sapling_transaction',

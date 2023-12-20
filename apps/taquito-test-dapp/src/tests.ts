@@ -194,19 +194,19 @@ const batchApiTest = async (Tezos: TezosToolkit): Promise<TestResult> => {
           kind: OpKind.TRANSACTION,
           to: "mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM",
           amount: 300000,
-          mutez: true
+          mumav: true
         },
         {
           kind: OpKind.TRANSACTION,
           to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv",
           amount: 300000,
-          mutez: true
+          mumav: true
         },
         {
           kind: OpKind.TRANSACTION,
           to: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
           amount: 300000,
-          mutez: true
+          mumav: true
         }
       ])
       .send();

@@ -1223,7 +1223,7 @@ function functionTypeInternal(
         );
       }
 
-      case 'SUB_MUTEZ': {
+      case 'SUB_MUMAV': {
         const _s = args(0, ['mumav'], ['mumav']);
         return [annotateVar({ prim: 'option', args: [{ prim: 'mumav' }] }), ...stack.slice(2)];
       }

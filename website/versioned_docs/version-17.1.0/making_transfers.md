@@ -60,9 +60,9 @@ A call to the KT1's smart contracts' `do` method is required to transfer tokens 
 
 > The examples following apply only to KT1 addresses migrated as part of the `Babylon/proto005` upgrade. Transfers involving _other_ types of smart-contracts depend on those contracts specifically.
 
-## Transfer 0.00005 (50 mutez) tokens from a KT1 address to a tz1 address
+## Transfer 0.00005 (50 mumav) tokens from a KT1 address to a tz1 address
 
-Sending 50 mutez from `kt1...` to `mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m`.
+Sending 50 mumav from `kt1...` to `mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m`.
 
 ### Example transfer from a KT1 to a tz1 address on Carthage/Proto006
 
@@ -76,7 +76,7 @@ await contract.methods
 Where `transferImplicit` is a function that returns the necessary Michelson lambda. It looks like this:
 
 ```js
-export const transferImplicit = (key: string, mutez: number) => {
+export const transferImplicit = (key: string, mumav: number) => {
   return [
     { prim: 'DROP' },
     { prim: 'NIL', args: [{ prim: 'operation' }] },
@@ -87,7 +87,7 @@ export const transferImplicit = (key: string, mutez: number) => {
     { prim: 'IMPLICIT_ACCOUNT' },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${mutez}` }],
+      args: [{ prim: 'mumav' }, { int: `${mumav}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },
@@ -96,9 +96,9 @@ export const transferImplicit = (key: string, mutez: number) => {
 };
 ```
 
-## Transfer 0.000001 (1 mutez) tokens from a KT1 address to a KT1 address
+## Transfer 0.000001 (1 mumav) tokens from a KT1 address to a KT1 address
 
-Sending 1 mutez to `KT1KLbEeEgW5h1QLkPuPvqdgurHx6v4hGyic` from `KT1...`
+Sending 1 mumav to `KT1KLbEeEgW5h1QLkPuPvqdgurHx6v4hGyic` from `KT1...`
 
 ### Example for Babylon/Proto005 or higher
 
@@ -129,7 +129,7 @@ export const transferToContract = (key: string, amount: number) => {
     ],
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${amount}` }],
+      args: [{ prim: 'mumav' }, { int: `${amount}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },

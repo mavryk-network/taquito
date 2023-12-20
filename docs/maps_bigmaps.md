@@ -262,11 +262,11 @@ Tezos.wallet
 
 Here we have the storage of our contract defined in Michelson.
 
-It has a `Map` with the annotated name `%theMap`. This `Map` uses a pair consisting of a natural number and an address as its key `(1, mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe)`. Its value is also a pair of values, consisting of an `int` (annotated as `%quantity`) and `mutez` (annotated as `%amount`).
+It has a `Map` with the annotated name `%theMap`. This `Map` uses a pair consisting of a natural number and an address as its key `(1, mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe)`. Its value is also a pair of values, consisting of an `int` (annotated as `%quantity`) and `mumav` (annotated as `%amount`).
 
 ```
 (pair (pair (address %theAddress)
-            (map %theMap (pair nat address) (pair (mutez %amount) (int %quantity))))
+            (map %theMap (pair nat address) (pair (mumav %amount) (int %quantity))))
       (int %theNumber))
 ```
 
@@ -462,7 +462,7 @@ The Michelson storage schema with a map using eight pairs as a key:
         (pair nat
             (pair string
                 (pair bytes
-                    (pair mutez
+                    (pair mumav
                         (pair bool
                             (pair key_hash
                                 (pair timestamp address)))))))) int)
@@ -488,7 +488,7 @@ storageMap.set(
     1: '2', // nat
     2: 'test', // string
     3: 'cafe', // bytes
-    4: '10', // mutez
+    4: '10', // mumav
     5: true, // bool
     6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
     7: '2019-09-06T15:08:29.000Z', // timestamp
@@ -503,7 +503,7 @@ storageMap.set(
     1: '20', // nat
     2: 'Hello', // string
     3: 'ffff', // bytes
-    4: '100', // mutez
+    4: '100', // mumav
     5: false, // bool
     6: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', // key_hash
     7: '2019-10-06T15:08:29.000Z', // timestamp
@@ -539,7 +539,7 @@ storageMap.set(
     1: '2', // nat
     2: 'test', // string
     3: 'cafe', // bytes
-    4: '10', // mutez
+    4: '10', // mumav
     5: true, // bool
     6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
     7: '2019-09-06T15:08:29.000Z', // timestamp
@@ -554,7 +554,7 @@ storageMap.set(
     1: '20', // nat
     2: 'Hello', // string
     3: 'ffff', // bytes
-    4: '100', // mutez
+    4: '100', // mumav
     5: false, // bool
     6: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', // key_hash
     7: '2019-10-06T15:08:29.000Z', // timestamp
@@ -611,7 +611,7 @@ Tezos.contract
       1: '2', // nat
       2: 'test', // string
       3: 'cafe', // bytes
-      4: '10', // mutez
+      4: '10', // mumav
       5: true, // bool
       6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
       7: '2019-09-06T15:08:29.000Z', // timestamp
@@ -637,7 +637,7 @@ Tezos.wallet
       1: '2', // nat
       2: 'test', // string
       3: 'cafe', // bytes
-      4: '10', // mutez
+      4: '10', // mumav
       5: true, // bool
       6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
       7: '2019-09-06T15:08:29.000Z', // timestamp

@@ -85,7 +85,7 @@ const noArgInstructionIDs: Record<MichelsonNoArgInstruction['prim'], true> = {
   XOR: true,
   RENAME: true,
   OPEN_CHEST: true,
-  SUB_MUTEZ: true,
+  SUB_MUMAV: true,
   MIN_BLOCK_TIME: true,
   BYTES: true,
   NAT: true,

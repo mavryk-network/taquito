@@ -68,7 +68,7 @@ type MichelsonNoArgInstructionID =
   | 'SOURCE'
   | 'SPLIT_TICKET'
   | 'SUB'
-  | 'SUB_MUTEZ'
+  | 'SUB_MUMAV'
   | 'SWAP'
   | 'TICKET'
   | 'TICKET_DEPRECATED'

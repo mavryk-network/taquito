@@ -205,7 +205,7 @@ const storageType =
 												{
 													prim: 'pair',
 													args: [
-														{ prim: 'pair', args: [ { prim: 'nat' }, { prim: 'mutez' } ] },
+														{ prim: 'pair', args: [ { prim: 'nat' }, { prim: 'mumav' } ] },
 														{
 															prim: 'pair',
 															args: [ { prim: 'nat' }, { prim: 'timestamp' } ]
@@ -224,7 +224,7 @@ const storageType =
 														{ prim: 'nat' },
 														{
 															prim: 'pair',
-															args: [ { prim: 'mutez' }, { prim: 'timestamp' } ]
+															args: [ { prim: 'mumav' }, { prim: 'timestamp' } ]
 														}
 													]
 												}

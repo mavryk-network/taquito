@@ -1215,7 +1215,7 @@ export const depositContractCode = [
                       prim: 'DIP',
                       args: [[{ prim: 'DIP', args: [[{ prim: 'DUP' }]] }, { prim: 'SWAP' }]],
                     },
-                    { prim: 'SUB_MUTEZ' },
+                    { prim: 'SUB_MUMAV' },
                     { prim: 'ASSERT_SOME' },
                     {
                       prim: 'DIP',

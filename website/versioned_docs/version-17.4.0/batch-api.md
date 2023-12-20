@@ -53,12 +53,12 @@ After concatenating the different methods to batch operations together, a single
 
 #### - The `withTransfer` method
 
-This method allows you to add a transfer of tez to the batched operations. It takes an object as a parameter with 4 properties. Two of them are mandatory: `to` indicates the recipient of the transfer and `amount` indicates the amount of tez to be transferred. Two other properties are optional: if `mutez` is set to `true`, the value specified in `amount` is considered to be in mutez. The `parameter` property takes an object where you can indicate an entrypoint and a value for the transfer.
+This method allows you to add a transfer of tez to the batched operations. It takes an object as a parameter with 4 properties. Two of them are mandatory: `to` indicates the recipient of the transfer and `amount` indicates the amount of tez to be transferred. Two other properties are optional: if `mumav` is set to `true`, the value specified in `amount` is considered to be in mumav. The `parameter` property takes an object where you can indicate an entrypoint and a value for the transfer.
 
 ```js
 const batch = await Tezos.wallet.batch()
   .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
-  .withTransfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 4000000, mutez: true })
+  .withTransfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 4000000, mumav: true })
   .withTransfer({ to: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 3 });
 ```
 
@@ -110,7 +110,7 @@ const batch = await Tezos.wallet.batch([
     kind: OpKind.TRANSACTION,
     to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     amount: 2000000,
-    mutez: true,
+    mumav: true,
   },
   {
     kind: OpKind.ORIGINATION,

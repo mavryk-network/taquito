@@ -11,7 +11,7 @@ The goal of this document is to acquaint yourself with the different values in t
 
 The storage of the LB contract is made of 5 values:
 - __tokenPool__: a value of type `nat` (i.e. a positive number) that represents the amount of tokens (in this case, tzBTC) held by the contract
-- __xtzPool__: a value of type `mutez` (i.e. an amount of tez) that represents the amount of XTZ held by the contract
+- __xtzPool__: a value of type `mumav` (i.e. an amount of tez) that represents the amount of XTZ held by the contract
 - __lqtTotal__: a value of type `nat` that represents the amount of liquidity tokens (or LB tokens) the contract holds. The LB token is an FA1.2 token that represents a pair consisting of XTZ and tzBTC provided to the contract as liquidity
 - __tokenAddress__: a value of type `address` (i.e. the address of an implicit account or a contract) that holds the address to the tzBTC contract
 - __lqtAddress__ : a value of type `address` that holds the address of the LB token
@@ -240,7 +240,7 @@ const batchOp = await Tezos.wallet
           )
           .toTransferParams(),
         amount: AMOUNT_IN_XTZ,
-        mutez: true
+        mumav: true
     },
     {
         kind: OpKind.TRANSACTION,

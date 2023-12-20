@@ -10,8 +10,8 @@ async function example() {
   try {
     console.log('Deploying Michelson Tutorial contract...');
     const op = await tezos.contract.originate({
-      code: `parameter (pair address mutez);
-      storage (map address mutez);
+      code: `parameter (pair address mumav);
+      storage (map address mumav);
       code { DUP ; CAR ; SWAP ; CDR ; SWAP ; DUP ; DUG 2 ; CDR ; DIG 2 ; CAR ; SWAP ; SOME ; SWAP ; UPDATE ; NIL operation ; PAIR }`,
       init: [{
         prim: 'Elt',

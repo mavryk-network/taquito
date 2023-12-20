@@ -358,7 +358,7 @@ interface SendParams {
   gasLimit?: number;
   amount: number;
   source?: string;
-  mutez?: boolean;
+  mumav?: boolean;
 }
 ```
 
@@ -372,7 +372,7 @@ If you choose to use the parameters, only one property is mandatory: the `amount
 
 - `source`: a string indicating the source of the transaction
 
-- `mutez`: if set to `true`, it indicates that the amount provided is in mutez
+- `mumav`: if set to `true`, it indicates that the amount provided is in mumav
 
 ### - Operation hash and confirmation
 
@@ -531,7 +531,7 @@ import { MichelsonMap } from "@mavrykdynamics/taquito";
 {
   code: parsedMichelson,
   storage: {
-    // ledger must be of type (map string int/nat/mutez) or (big_map string int/nat/mutez)
+    // ledger must be of type (map string int/nat/mumav) or (big_map string int/nat/mumav)
     ledger: MichelsonMap.fromLiteral({
       alice: 25,
       bob: 16
@@ -729,7 +729,7 @@ const op = await Tezos.wallet.setDelegate({ delegate: 'tz1...' }).send();
 await op.confirmation();
 ```
 
-Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mutez`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
+Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mumav`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
 
 ```js
 const op = await Tezos.wallet.transfer({ to: 'tz1...', amount: 2 }).send();

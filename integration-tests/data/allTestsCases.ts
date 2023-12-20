@@ -13,7 +13,7 @@ import { genericCode, genericStorage } from './generic_contract';
 import { tokenBigmapCode, tokenBigmapStorage } from './token_bigmap';
 import { noAnnotCode, noAnnotInit } from './token_without_annotation';
 import { voteInitSample, voteSample } from './vote-contract';
-import { submumavCode, submumavStorage } from './contract_with_sub_mutez';
+import { submumavCode, submumavStorage } from './contract_with_sub_mumav';
 import {
   storageContractWithConstant,
   codeContractWithConstant,
@@ -1187,7 +1187,7 @@ export const commonCases: TestCase[] = [
     },
   },
   {
-    name: `Origination of a contract that contains the instructions SUB_MUTEZ`,
+    name: `Origination of a contract that contains the instructions SUB_MUMAV`,
     operation: {
       branch: 'BMV9bffK5yjWCJgUJBsoTRifb4SsAYbkCVwVkKbJHffJYn7ePBL',
       contents: [

@@ -22,7 +22,7 @@ To do so, let's look at three examples of contract origination showing initial v
     (pair
         (pair (address %theAddress) (bool %theBool))
         (pair (nat %theNat) (int %theNumber)))
-    (mutez %theTez))
+    (mumav %theTez))
 ```
 
 We need to write the storage as a Javascript object and include the annotated names in it.
@@ -97,7 +97,7 @@ Tezos.wallet
     (pair
         (pair (address) (bool))
         (pair (nat) (int)))
-    (mutez))
+    (mumav))
 ```
 
 All properties in storage are accessible by the index corresponding to the order that the storage is defined.
@@ -121,7 +121,7 @@ Tezos.contract
       1: true, //bool
       2: '3', //nat
       3: '5', //int
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .then((originationOp) => {
@@ -147,7 +147,7 @@ Tezos.wallet
       1: true, //bool
       2: '3', //nat
       3: '5', //int
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .send()
@@ -172,7 +172,7 @@ Tezos.wallet
     (pair
         (pair (address) (bool))
         (pair (nat %theNat) (int %theNumber)))
-    (mutez))
+    (mumav))
 ```
 
 In the following example, only the elements in positions 2 and 3 have an annotation. We need to access these elements with their annotated name and the others with corresponding indexes.
@@ -198,7 +198,7 @@ Tezos.contract
       1: true, //bool
       theNat: '3',
       theNumber: '5',
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .then((originationOp) => {
@@ -225,7 +225,7 @@ Tezos.wallet
       1: true, //bool
       theNat: '3',
       theNumber: '5',
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .send()

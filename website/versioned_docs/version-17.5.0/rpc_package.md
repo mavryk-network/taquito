@@ -31,7 +31,7 @@ const balance = await client.getBalance('mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv');
 console.log('-- Balance:', balance.toNumber());
 ```
 
-The balance is returned as a `BigNumber` and must be converted to a number to output it. Please note that the returned value is in mutez (micro ꜩ), so if you need the balance in ꜩ, you can divide it by 1000000.
+The balance is returned as a `BigNumber` and must be converted to a number to output it. Please note that the returned value is in mumav (micro ꜩ), so if you need the balance in ꜩ, you can divide it by 1000000.
 
 ```js
 // gets head block

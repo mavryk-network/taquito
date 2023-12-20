@@ -43,7 +43,7 @@ async function example() {
                 to: 'zet14CMN2T4x1f8sgXeAGWQwczSf6SJ8bm8nyP2Tg7HJn2VmtPtB2nE2q7MMgdmMEwpGQ',
                 amount: 2,
                 memo: `tx ${i}`,
-                mutez: true
+                mumav: true
             }])
 
             const millis = Date.now() - start;

@@ -2,7 +2,7 @@ import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from './config';
 
 /**
- *  TC-004: Example of mumav underflow - showing that SUB_MUTEZ; ASSERT_SOME prevents underflow by catching and going to FAILWITH
+ *  TC-004: Example of mumav underflow - showing that SUB_MUMAV; ASSERT_SOME prevents underflow by catching and going to FAILWITH
  *  To see why the test fails with error message {\"prim\":\"Unit\"}, look at the Micheline form of the contract.
  *  If underflows are not prevented the contract is unusable. Any tokens locked in the contract will be irretrievable, etc.
  */
@@ -24,7 +24,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
             code { DROP ;
                    PUSH mumav 2 ;
                    PUSH mumav 1 ;
-                   SUB_MUTEZ ;
+                   SUB_MUMAV ;
                    ASSERT_SOME ;
                    NIL operation ;
                    PAIR } }`,

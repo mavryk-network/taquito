@@ -29,7 +29,7 @@ We have updated various dependencies to the latest version in this release. Plea
 
 ## Documentation
 - Updated website documentation to group sections by logical order instead of alphabetical #2665
-- Added detail for `getBalance()` method documentation that it returns balances in mutez #2495
+- Added detail for `getBalance()` method documentation that it returns balances in mumav #2495
 
 ## Internals
 - Minor typo fix on variable name in `RpcEstimateProvider` [PR#2669](https://github.com/ecadlabs/taquito/pull/2669)
@@ -1342,10 +1342,10 @@ new RpcClient('url', 'chain', new HttpBackend(50000));
 ## Summary
 ### Ithaca support
 - @mavrykdynamics/taquito-local-forging - Support forging and parsing of endorsement operation #1288
-- @mavrykdynamics/taquito-local-forging - Support for the new `SUB_MUTEZ` instruction #1292
+- @mavrykdynamics/taquito-local-forging - Support for the new `SUB_MUMAV` instruction #1292
 - @mavrykdynamics/taquito-rpc - Updated the `RpcClient` types based on the changes to the balance updates and the new type of operations #1255
 - @mavrykdynamics/taquito-rpc - Updated signature of the `getEndorsingRights` and `getBakingRights` methods #1256
-- @mavrykdynamics/taquito-michel-codec - Support for the `SUB_MUTEZ` instruction and the `Map` instruction applied to an optional type #1291
+- @mavrykdynamics/taquito-michel-codec - Support for the `SUB_MUMAV` instruction and the `Map` instruction applied to an optional type #1291
 - Updated Taquito website live code examples to use ithacanet #1441
 
 ### New feature
@@ -1396,11 +1396,11 @@ Example of an endorsement before Ithaca:
 }
 ```
 
-## @mavrykdynamics/taquito-local-forging - Support for the new instruction `SUB_MUTEZ`
+## @mavrykdynamics/taquito-local-forging - Support for the new instruction `SUB_MUMAV`
 
-We added support to forge and parse operations containing the new `SUB_MUTEZ` instruction in the `Localforger` class.
+We added support to forge and parse operations containing the new `SUB_MUMAV` instruction in the `Localforger` class.
 
-> [SUB_MUTEZ] is similar to the mutez case of the SUB instruction but its return type is option mutez instead of mutez. This allows subtracting mutez values without failing in case of underflow.
+> [SUB_MUMAV] is similar to the mumav case of the SUB instruction but its return type is option mumav instead of mumav. This allows subtracting mumav values without failing in case of underflow.
 
 *source: https://tezos.gitlab.io/protocols/012ithaca.html#michelson*
 
@@ -1487,9 +1487,9 @@ Response example for hangzhounet:
       }...
 ]
 ```
-## @mavrykdynamics/taquito-michel-codec - Support for the `SUB_MUTEZ` instruction and the `MAP` instruction applied to an optional type
+## @mavrykdynamics/taquito-michel-codec - Support for the `SUB_MUMAV` instruction and the `MAP` instruction applied to an optional type
 
-`@taquitp/michel-codec` is responsible, among others, to validate Michelson code to ensure its correctness. The package now supports the new `SUB_MUTEZ` instruction and the `MAP` instruction applied to values of optional type.
+`@taquitp/michel-codec` is responsible, among others, to validate Michelson code to ensure its correctness. The package now supports the new `SUB_MUMAV` instruction and the `MAP` instruction applied to values of optional type.
 
 ## @mavrykdynamics/taquito - Introduction of a "Read" interface
 
@@ -2499,7 +2499,7 @@ The prefixSig property returned by the sign method of the LedgerSigner class was
 
 ## Sorting of numeric values
 
-The numerics values (nat, int, and mutez) were not sorted properly by the Michelson Encoder, causing the following RPC Errors: unordered_map_literal or unordered_set_literal. For example, the RPC expects maps to be sorted by ascending keys values. The values were ordered as strings by the Michelson Encoder instead of number, resulting in wrong ordering for the RPC.
+The numerics values (nat, int, and mumav) were not sorted properly by the Michelson Encoder, causing the following RPC Errors: unordered_map_literal or unordered_set_literal. For example, the RPC expects maps to be sorted by ascending keys values. The values were ordered as strings by the Michelson Encoder instead of number, resulting in wrong ordering for the RPC.
 
 ## Documentation Additions and Improvements
 
@@ -2998,7 +2998,7 @@ New documentation covering how to interact with Smart Contracts using Taquito [h
 * Fix for handling of Zarith numbers as reported by Doyensec's security audit [https://github.com/ecadlabs/taquito/issues/264](https://github.com/ecadlabs/taquito/issues/264)
 * Validate entrypoint name length as reported by Doyensec's security audit [https://github.com/ecadlabs/taquito/issues/265](https://github.com/ecadlabs/taquito/issues/265)
 * Improve [multi-sig integration test](https://github.com/ecadlabs/taquito/blob/f3a19c4682ba5af2073e72c5d06734860596f455/integration-tests/multisig-contract-scenario.spec.ts) example
-* Add the mutez option in send method for Smart contract abstraction #255
+* Add the mumav option in send method for Smart contract abstraction #255
 
 ### CDN Bundle
 
@@ -3216,4 +3216,4 @@ Documentation:
 - fix(tezos-ts): Mutez conversion was flipped in transfer function …
 - Merge pull request #61 from ecadlabs/add-constants-for-default-gas-fee …
 - Merge pull request #63 from ecadlabs/michelson-encoder-tokens-improve… …
-- Merge pull request #62 from ecadlabs/fix-flipped-mutez-conversion …
+- Merge pull request #62 from ecadlabs/fix-flipped-mumav-conversion …

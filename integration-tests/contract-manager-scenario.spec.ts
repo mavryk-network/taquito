@@ -32,7 +32,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract }) => {
     it('should be able to transfer from contract to implicit accounts', async () => {
       // Transfer from contract (kt1_alice) to implicit account (tz1)
       // We pass a lambda function to the kt1_alice contracts `do` entrypoint. The lambda code causes the contract to transfer
-      // the specified number (50) of mutez to the target address.
+      // the specified number (50) of mumav to the target address.
       const op = await contract.methods.do(MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 5)).send({ amount: 0 });
       await op.confirmation();
       expect(op.status).toEqual('applied');
