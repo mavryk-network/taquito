@@ -514,7 +514,7 @@ const signer = InMemorySigner.fromMnemonic({ mnemonic, password, derivationPath:
 - Fixed broken link in the Wallet doc #1865
 
 ### Others
-- `@taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.3.0: https://github.com/airgap-it/beacon-sdk/releases/tag/v3.3.0
+- `@mavrykdynamics-taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.3.0: https://github.com/airgap-it/beacon-sdk/releases/tag/v3.3.0
 
 ### Internals
 - Speed up build with nx #2013
@@ -665,7 +665,7 @@ Note for the users of the lower level APIs: injecting more than one manager oper
 - Added more Manager_lambda scenarios to contract multisig integration tests #1724
 
 ### Others
-- `@taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
+- `@mavrykdynamics-taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
 - `@mavrykdynamics/taquito-local-forging` - Pure JS implementation #441
 
 
@@ -794,7 +794,7 @@ The execution of the on-chain views previously relied on the `helpers/scripts/ru
 
 We added a feedback component at the bottom of each documentation page. We encourage you to provide feedback. It will help us evaluate which pages are the most helpful and which could benefit from improvement.
 
-## `@taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
+## `@mavrykdynamics-taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
 
 We are now using the beacon-dapp's `getDAppClientInstance` method instead of the `new DAppClient`. This new method ensures that only one instance is created. The same cached instance is returned if called multiple times.
 
@@ -1030,7 +1030,7 @@ new RpcClient('url', 'chain', new HttpBackend(50000));
 
 # Taquito v12.0.1-beta
 
-`@taquito-rpc` - Added support for missing properties related to Ithaca protocol in `OperationBalanceUpdatesItem` interface: `participation`, `revelation`, `committer`.
+`@mavrykdynamics-taquito-rpc` - Added support for missing properties related to Ithaca protocol in `OperationBalanceUpdatesItem` interface: `participation`, `revelation`, `committer`.
 
 # Taquito v12.0.0-beta
 

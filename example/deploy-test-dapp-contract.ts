@@ -1,5 +1,5 @@
-import { TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer'
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 import { code, storage } from './data/test-dapp-contract';
 
 // update the targeted rpc url before running

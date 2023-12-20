@@ -10,7 +10,7 @@ This section serves as a guide to get the operation hash without injecting it in
 
 There might come a time when you, the developer, would like to grab the operation hash without injecting it into the blockchain.
 
-To accomplish that, we have a utility function called `encodeOpHash()` in the `@taquito/utils` package. This function takes in the signed operation bytes in the form of a `string`, and outputs the operation hash of said transaction without injecting it.
+To accomplish that, we have a utility function called `encodeOpHash()` in the `@mavrykdynamics/taquito-utils` package. This function takes in the signed operation bytes in the form of a `string`, and outputs the operation hash of said transaction without injecting it.
 
 ### Usage example
 
@@ -18,9 +18,9 @@ Here is a simple example on getting the operation hash of a transaction (transfe
 
 ```js
 
-// import { TezosToolkit } from '@taquito/taquito';
-// import { encodeOpHash } from '@taquito/utils';
-// import { LocalForger } from '@taquito/local-forging';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { encodeOpHash } from '@mavrykdynamics/taquito-utils';
+// import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 
 // const Tezos = new TezosToolkit('RPC_ENDPOINT');
 

@@ -62,7 +62,7 @@ We are active and enthusiastic participants of the following community support c
 
 ## Project Organization
 
-Taquito is organized as a [monorepo](https://en.wikipedia.org/wiki/Monorepo), and is composed of several npm packages that are [published to npmjs.org](https://www.npmjs.com/package/@mavrykdynamics/taquito) under the `@taquito` handle. Each package has its own README which can be found in the corresponding directory within `packages/`.
+Taquito is organized as a [monorepo](https://en.wikipedia.org/wiki/Monorepo), and is composed of several npm packages that are [published to npmjs.org](https://www.npmjs.com/package/@mavrykdynamics/taquito) under the `@mavrykdynamics` handle. Each package has its own README which can be found in the corresponding directory within `packages/`.
 
 | High-Level Packages                                            | Responsibility                                               |
 | -------------------------------------------------------------- | ------------------------------------------------------------ |

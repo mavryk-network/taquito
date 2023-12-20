@@ -135,15 +135,15 @@ const defaultConfig = ({
 
 const nairobinetEphemeral: Config =
   defaultConfig({
-    networkName: 'NAIROBINET',
-    protocol: Protocols.PtNairobi,
-    defaultRpc: 'http://ecad-nairobinet-full.i.tez.ie:8732',
+    networkName: 'BASENET',
+    protocol: Protocols.PtAtLasL,
+    defaultRpc: 'https://basenet-baking-node.mavryk.network',
     knownContracts: knownContractsPtNairobi,
     signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/nairobinet')
   });
 
 const nairobinetSecretKey: Config =
-  { ...nairobinetEphemeral, ...{ signerConfig: defaultSecretKey },  ...{ defaultRpc: 'http://ecad-nairobinet-full:8732' } };
+  { ...nairobinetEphemeral, ...{ signerConfig: defaultSecretKey },  ...{ defaultRpc: 'https://basenet-baking-node.mavryk.network' } };
 
 const ghostnetEphemeral: Config =
   defaultConfig({

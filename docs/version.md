@@ -12,10 +12,10 @@ We are not expecting any breaking changes, but if there are any issues that you 
 ## Summary
 
 ### New Features
-- `@taquito/taquito` - Expose and publicly `smartContractAbstractionSemantic` #2534
+- `@mavrykdynamics/taquito` - Expose and publicly `smartContractAbstractionSemantic` #2534
 
 ### Improvement
-- `@taquito/http-utils` - Removed `Axios` as a dependency of Taquito in favour of `fetch`/`node-fetch` #2461
+- `@mavrykdynamics/taquito-http-utils` - Removed `Axios` as a dependency of Taquito in favour of `fetch`/`node-fetch` #2461
 ### Documentation
 - Updated RPC nodes on the website [PR#2732](https://github.com/ecadlabs/taquito/pull/2732
 - Updated Michelson encoder documentation to reference `generateSchema` instead of the outdated `extractSchema` #2630
@@ -27,7 +27,7 @@ We are not expecting any breaking changes, but if there are any issues that you 
 - Updated integration tests to increase speed and reliability #2741
 
 
-## `@taquito/http-utils` - Removed `Axios` in favour of `fetch`
+## `@mavrykdynamics/taquito-http-utils` - Removed `Axios` in favour of `fetch`
 The `taquito/http-utils` is responsible for handling all HTTP incoming and outgoing HTTP requests in Taquito. It utilized `Axios` as a main dependency to handle requests coming in and out of Taquito.
 
 Now that browsers and Node have supported `fetch` natively, it makes more sense for us to move towards it.
@@ -255,8 +255,8 @@ Further improved error classes
 
 ### Improvement
  Improved error classes for the following packages:
-  - `@taquito-sapling` #2568
-  - `@taquito-michel-codec` #2568
+  - `@mavrykdynamics-taquito-sapling` #2568
+  - `@mavrykdynamics-taquito-michel-codec` #2568
 
 ### Documentation
  - Updated local forger documentation #2571
@@ -851,7 +851,7 @@ const signer = InMemorySigner.fromMnemonic({ mnemonic, password, derivationPath:
 - Fixed broken link in the Wallet doc #1865
 
 ### Others
-- `@taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.3.0: https://github.com/airgap-it/beacon-sdk/releases/tag/v3.3.0
+- `@mavrykdynamics-taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.3.0: https://github.com/airgap-it/beacon-sdk/releases/tag/v3.3.0
 
 ### Internals
 - Speed up build with nx #2013
@@ -1002,7 +1002,7 @@ Note for the users of the lower level APIs: injecting more than one manager oper
 - Added more Manager_lambda scenarios to contract multisig integration tests #1724
 
 ### Others
-- `@taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
+- `@mavrykdynamics-taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
 - `@mavrykdynamics/taquito-local-forging` - Pure JS implementation #441
 
 
@@ -1131,7 +1131,7 @@ The execution of the on-chain views previously relied on the `helpers/scripts/ru
 
 We added a feedback component at the bottom of each documentation page. We encourage you to provide feedback. It will help us evaluate which pages are the most helpful and which could benefit from improvement.
 
-## `@taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
+## `@mavrykdynamics-taquito-beacon-wallet` - Updated `@airgap/beacon-dapp` to version 3.1.4
 
 We are now using the beacon-dapp's `getDAppClientInstance` method instead of the `new DAppClient`. This new method ensures that only one instance is created. The same cached instance is returned if called multiple times.
 
@@ -1367,7 +1367,7 @@ new RpcClient('url', 'chain', new HttpBackend(50000));
 
 # Taquito v12.0.1-beta
 
-`@taquito-rpc` - Added support for missing properties related to Ithaca protocol in `OperationBalanceUpdatesItem` interface: `participation`, `revelation`, `committer`.
+`@mavrykdynamics-taquito-rpc` - Added support for missing properties related to Ithaca protocol in `OperationBalanceUpdatesItem` interface: `participation`, `revelation`, `committer`.
 
 # Taquito v12.0.0-beta
 
