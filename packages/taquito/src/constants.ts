@@ -65,7 +65,8 @@ export const protocols = {
   '015': [Protocols.PtLimaPtL],
   '016': [Protocols.PtMumbai2], // mumbai v2
   '017': [Protocols.PtNairobi],
-  '018': [Protocols.ProtoALpha],
+  '019': [Protocols.PtAtLasL],
+  '020': [Protocols.ProtoALpha],
 };
 
 export enum ChainIds {
@@ -84,6 +85,7 @@ export enum ChainIds {
   MUMBAINET = 'NetXQw6nWSnrJ5t',
   MUMBAINET2 = 'NetXgbcrNtXD2yA',
   NAIROBINET = 'NetXyuzvDo2Ugzb',
+  BASENET = 'NetXJMfAoC7pZSW',
 }
 
 export const getRevealGasLimit = (address: string) =>
