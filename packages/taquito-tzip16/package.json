@@ -61,11 +61,11 @@
     ]
   },
   "dependencies": {
+    "@mavrykdynamics/taquito": "^17.5.2",
     "@mavrykdynamics/taquito-core": "^17.5.2",
     "@mavrykdynamics/taquito-http-utils": "^17.5.2",
     "@mavrykdynamics/taquito-michelson-encoder": "^17.5.2",
     "@mavrykdynamics/taquito-rpc": "^17.5.2",
-    "@mavrykdynamics/taquito": "^17.5.2",
     "@mavrykdynamics/taquito-utils": "^17.5.2",
     "bignumber.js": "^9.1.2",
     "crypto-js": "^4.2.0"

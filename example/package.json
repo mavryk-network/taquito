@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@ledgerhq/hw-transport-node-hid": "^6.27.21",
+    "@mavrykdynamics/taquito": "^17.5.2",
     "@mavrykdynamics/taquito-ledger-signer": "^17.5.2",
     "@mavrykdynamics/taquito-local-forging": "^17.5.2",
     "@mavrykdynamics/taquito-michel-codec": "^17.5.2",
@@ -49,7 +50,6 @@
     "@mavrykdynamics/taquito-rpc": "^17.5.2",
     "@mavrykdynamics/taquito-sapling": "^17.5.2",
     "@mavrykdynamics/taquito-signer": "^17.5.2",
-    "@mavrykdynamics/taquito": "^17.5.2",
     "@mavrykdynamics/taquito-tzip16": "^17.5.2",
     "@mavrykdynamics/taquito-utils": "^17.5.2",
     "bignumber.js": "^9.1.2"

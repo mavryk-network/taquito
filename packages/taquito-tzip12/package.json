@@ -62,9 +62,9 @@
     ]
   },
   "dependencies": {
+    "@mavrykdynamics/taquito": "^17.5.2",
     "@mavrykdynamics/taquito-core": "^17.5.2",
     "@mavrykdynamics/taquito-michelson-encoder": "^17.5.2",
-    "@mavrykdynamics/taquito": "^17.5.2",
     "@mavrykdynamics/taquito-tzip16": "^17.5.2"
   },
   "devDependencies": {

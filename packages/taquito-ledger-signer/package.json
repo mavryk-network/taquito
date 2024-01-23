@@ -58,10 +58,10 @@
   },
   "dependencies": {
     "@ledgerhq/hw-transport": "^6.28.8",
-    "@stablelib/blake2b": "^1.0.1",
-    "@mavrykdynamics/taquito-core": "^17.5.2",
     "@mavrykdynamics/taquito": "^17.5.2",
+    "@mavrykdynamics/taquito-core": "^17.5.2",
     "@mavrykdynamics/taquito-utils": "^17.5.2",
+    "@stablelib/blake2b": "^1.0.1",
     "buffer": "^6.0.3"
   },
   "devDependencies": {
