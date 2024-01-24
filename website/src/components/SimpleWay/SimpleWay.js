@@ -5,7 +5,7 @@ import StartNowButton from '../StartNowButton/StartNowButton';
 
 const FeatureList = [
   {
-    title: 'Looking for a simple way to work with Tezos?',
+    title: 'Looking for a simple way to work with Mavryk?',
     ways: [
       {
         text: 'Tired of figuring out what is needed to make that RPC work?',

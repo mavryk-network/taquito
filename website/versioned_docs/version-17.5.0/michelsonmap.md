@@ -89,14 +89,14 @@ const size: number = storage.size; // number of elements in the map
 Sometimes, you don't want to do anything with the values in a map, but you want to verify whether a key appears in the map, you can then use the `has` method and pass it the key you are looking for:
 
 ```ts
-const key: string = 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6';
+const key: string = 'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5';
 const existsInMap: boolean = storage.has(key); // true or false
 ```
 
 After that, you can fetch the value associated with the key you are looking for with the `get` method:
 
 ```ts
-const key: string = 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6';
+const key: string = 'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5';
 const valueInTez: BigNumber = storage.get(key); // value as a big number
 const value: number = valueInTez.toNumber(); // returns 789000000
 ```
@@ -117,8 +117,8 @@ The code above will output:
 
 ```ts
 [
-  { address: 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6', amount: 789 },
-  { address: 'tz1R2oNqANNy2vZhnZBJc8iMEqW79t85Fv7L', amount: 912 },
+  { address: 'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5', amount: 789 },
+  { address: 'mv1PBJ3GVEmNbN5RVJ2yX193VzLphpcoh4xC', amount: 912 },
   { address: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 123 },
   { address: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 456 },
 ];
@@ -152,8 +152,8 @@ This example will output the following array containing all the keys of the map:
 
 ```ts
 [
-  'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6',
-  'tz1R2oNqANNy2vZhnZBJc8iMEqW79t85Fv7L',
+  'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5',
+  'mv1PBJ3GVEmNbN5RVJ2yX193VzLphpcoh4xC',
   'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
   'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU',
 ];
@@ -185,7 +185,7 @@ First, you can use the `set` method to add a new value to an instance of `Michel
 ```ts
 console.log(`previous size => ${storage.size} elements`); // 4 elements
 
-storage.set('tz1TfRXkAxbQ2BFqKV2dF4kE17yZ5BmJqSAP', new BigNumber(345));
+storage.set('mv1DqnZutBehnWcvzGVFPAakA88taaTTbZzG', new BigNumber(345));
 
 console.log(`new size => ${storage.size} elements \n`); // 5 elements
 ```
@@ -199,7 +199,7 @@ You can also delete one of the entries of the map with the `delete` method:
 ```ts
 console.log(`delete: previous size => ${storage.size} elements`); // 5 elements
 
-storage.delete('tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6');
+storage.delete('mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5');
 
 console.log(`delete: new size => ${storage.size} elements \n`); // 4 elements
 ```

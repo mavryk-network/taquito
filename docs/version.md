@@ -290,7 +290,7 @@ basedOnBlock: 'genesis',
 
 ```
 const Tezos = new TezosToolkit(rpcUrl)
-let account ='tz1...'
+let account ='mv1...'
 let counter = Number((await Tezos.rpc.getContract(account, {block: 'head'})).counter)
 const op = {
   chain_id: await Tezos.rpc.getChainId(),
@@ -548,7 +548,7 @@ const forgedBytes = await forger.forge(params);
     - `smart_rollup_originate`,
     - `smart_rollup_add_messages`,
     - `smart_rollup_execute_outbox_message`
-- `@mavrykdynamics/taquito-local-forging` updated validation to allow tz4 addresses #2350
+- `@mavrykdynamics/taquito-local-forging` updated validation to allow mv4 addresses #2350
 - `@mavrykdynamics/taquito-rpc` support Mumbai operation types in the RPC package #2307
 - `@mavrykdynamics/taquito-rpc` added Mumbai protocol constants in the RPC package #2375
 - `@mavrykdynamics/taquito-rpc` removed `consumed_gas` property in `update_consensus_key` return type in the RPC package #2273
@@ -818,7 +818,7 @@ await op.confirmation();
 ```
 
 ## `@mavrykdynamics/taquito-signer` - Added new method `fromMnemonic`
-Users can now create an `InMemorySigner` instance using the `fromMnemonic` method for a tz1, tz2, or tz3 address: ed25519, secp256k1, or p256 respectively.
+Users can now create an `InMemorySigner` instance using the `fromMnemonic` method for a mv1, mv2, or mv3 address: ed25519, secp256k1, or p256 respectively.
 
 ```typescript
 const mnemonic = 'author crumble medal dose ribbon permit ankle sport final hood shadow vessel horn hawk enter zebra prefer devote captain during fly found despair business'
@@ -1212,8 +1212,8 @@ Added support to forge and unforge the new operation kinds `transfer_ticket`, `t
 
 ## `@mavrykdynamics/taquito-michelson-encoder` - Added support for the the new type`tx_rollup_l2_address`
 
-We created a new class `TxRollupL2AddressToken` in the michelson-encoder to support the new Michelson type `tx_rollup_l2_address`. This type is used to identify accounts on transaction rollups' ledgers. Those accounts are prefixed with `tz4`.
-The `TxRollupL2AddressToken` class allows users of Taquito to pass `tz4` addresses in storage or smart contract entry points using the Taquito JS abstraction.
+We created a new class `TxRollupL2AddressToken` in the michelson-encoder to support the new Michelson type `tx_rollup_l2_address`. This type is used to identify accounts on transaction rollups' ledgers. Those accounts are prefixed with `mv4`.
+The `TxRollupL2AddressToken` class allows users of Taquito to pass `mv4` addresses in storage or smart contract entry points using the Taquito JS abstraction.
 
 ## `@mavrykdynamics/taquito-michel-codec` - Added support for the new type`tx_rollup_l2_address` and the new instruction `MIN_BLOCK_TIME`
 
@@ -1468,7 +1468,7 @@ Response example for ithacanet:
         "level": 182721,
         "delegates": [
           {
-            "delegate": "tz1WhVphATKAtZmDswYGTPWRjPEGvgNT8CFW",
+            "delegate": "mv1MGVpZQHxfYiW7L9qHQrNtjp5CHPocn2cj",
             "first_slot": 2694,
             "endorsing_power": 2
           },
@@ -1482,7 +1482,7 @@ Response example for hangzhounet:
 [
       {
         "level": 619478,
-        "delegate": "tz3c6J47hHmwuasew7Y3HMZzmy7ymDgd6cfy",
+        "delegate": "mv3RzaexXyiYTs9xAtyV2ge8BknEFsMRNKTE",
         "slots": [
           5,
           79
@@ -2137,7 +2137,7 @@ It is now possible to `undelegate` by executing a new setDelegate operation and 
 ```ts
 // const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-await Tezos.contract.setDelegate({ source: 'tz1_source'});
+await Tezos.contract.setDelegate({ source: 'mv1_source'});
 ```
 
 ## @mavrykdynamics/taquito - Property status doesn't exist on a batched transaction for the wallet API
@@ -2251,8 +2251,8 @@ Tezos.contract
     code: contractCode,
     storage: [
         {
-          from: "tz1...",
-          to: "tz1..."
+          from: "mv1...",
+          to: "mv1..."
         }
     ],
   })
@@ -2305,8 +2305,8 @@ println(JSON.stringify(extractSchema, null, 2));
 Based on the information returned by the `ExtractSchema` method, the storage can be writen as follow:
 ```typescript=
 const bigMap = new MichelsonMap();
-bigMap.set('tz1...', { // address
-        0: 'tz1...', // address
+bigMap.set('mv1...', { // address
+        0: 'mv1...', // address
         1:10 // nat
     });
 
@@ -2529,7 +2529,7 @@ Tezos.setProvider({ config: { shouldObservableSubscriptionRetry: true, observabl
 
 ## prefixSig
 
-The prefixSig property returned by the sign method of the LedgerSigner class was using SIG prefix. The correct prefix is now returned (e.g. EDSIG for tz1, SPSIG for tz2, and P2SIG for tz3).
+The prefixSig property returned by the sign method of the LedgerSigner class was using SIG prefix. The correct prefix is now returned (e.g. EDSIG for mv1, SPSIG for mv2, and P2SIG for mv3).
 
 ## Sorting of numeric values
 
@@ -3247,7 +3247,7 @@ Documentation:
 - chore(examples): Add example for smart contract interaction
 - feat(michelson-encoder): Better support for various tokens …
 - refactor(tezos-ts): Add constant for default fee, gas and storage limit
-- fix(tezos-ts): Mutez conversion was flipped in transfer function …
+- fix(tezos-ts): Mumav conversion was flipped in transfer function …
 - Merge pull request #61 from ecadlabs/add-constants-for-default-gas-fee …
 - Merge pull request #63 from ecadlabs/michelson-encoder-tokens-improve… …
 - Merge pull request #62 from ecadlabs/fix-flipped-mumav-conversion …

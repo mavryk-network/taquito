@@ -63,7 +63,7 @@ The constructor of the `LedgerSigner` class can take three other parameters. If 
 - prompt: **default is true**  
   If true, you will be asked on your Ledger device to send your public key for validation.
 - derivationType: **default is DerivationType.ED25519**  
-  It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (tz1), DerivationType.SECP256K1 (tz2) or DerivationType.P256 (tz3).
+  It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (mv1), DerivationType.SECP256K1 (mv2) or DerivationType.P256 (mv3).
 
 ```js
 import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
@@ -109,7 +109,7 @@ values={[
 const amount = 0.5;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-console.log(`Transfering ${amount} ꜩ to ${address}...`);
+console.log(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
@@ -127,7 +127,7 @@ Tezos.contract
 const amount = 0.5;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-console.log(`Transfering ${amount} ꜩ to ${address}...`);
+console.log(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.wallet
   .transfer({ to: address, amount: amount })
   .send()
@@ -230,7 +230,7 @@ function getAddressInfo(transport, index) {
           `The public key hash related to the derivation path having the index ${index} is ${pkh}.`
         );
         if (getPublicKey) {
-          println(`The balance is ${balance.toNumber() / 1000000} ꜩ.\n`);
+          println(`The balance is ${balance.toNumber() / 1000000} ṁ.\n`);
         } else {
           println('This account is not revealed.\n');
         }

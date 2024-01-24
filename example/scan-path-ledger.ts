@@ -20,7 +20,7 @@ async function example() {
         const getPublicKey = await tezos.rpc.getManagerKey(pkh)
         console.log(`The public key hash related to the derivation path having the account ${index} is ${pkh}.`)
         if (getPublicKey) {
-            console.log(`The balance is ${balance.toNumber() / 1000000} ꜩ.\n`)
+            console.log(`The balance is ${balance.toNumber() / 1000000} ṁ.\n`)
         } else {
             console.log('This account is not revealed.\n')
         }

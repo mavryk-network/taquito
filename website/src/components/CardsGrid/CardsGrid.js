@@ -16,7 +16,7 @@ const FeatureList = [
         icon: require('../../../static/img/briefcase.svg').default,
         title: 'Easy to use',
         description:
-          "Taquito's abstractions are simple to understand and use. Working with Tezos contracts feels like working with JavaScript objects.",
+          "Taquito's abstractions are simple to understand and use. Working with Mavryk contracts feels like working with JavaScript objects.",
       },
       {
         icon: require('../../../static/img/key.svg').default,
@@ -34,7 +34,7 @@ const FeatureList = [
         icon: require('../../../static/img/credit_card.svg').default,
         title: 'Well Supported',
         description:
-          'Taquito has a well-documented API, runs continuous integration tests against the Tezos Node and a set of Beacon wallets.',
+          'Taquito has a well-documented API, runs continuous integration tests against the Mavryk Node and a set of Beacon wallets.',
       },
     ],
   },

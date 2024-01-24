@@ -61,7 +61,7 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 
 Tezos.tz
   .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
-  .then((balance) => println(`${balance.toNumber() / 1000000} ꜩ`))
+  .then((balance) => println(`${balance.toNumber() / 1000000} ṁ`))
   .catch((error) => println(JSON.stringify(error)));
 ```
 
@@ -104,7 +104,7 @@ values={[
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Transfering ${amount} ꜩ to ${address}...`);
+println(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
@@ -122,7 +122,7 @@ Tezos.contract
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Transfering ${amount} ꜩ to ${address}...`);
+println(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.wallet
   .transfer({ to: address, amount: amount })
   .send()

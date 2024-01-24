@@ -5,7 +5,7 @@ import StartNowButton from '../StartNowButton/StartNowButton';
 
 const FeatureList = [
   {
-    title: 'Start Simple With Taquito',
+    title: 'Start Simple With Mavryk-Taquito',
     description: 'Just a few simple steps and you are set to start building your own app.',
     link: {
       title: 'Start Now',
@@ -26,7 +26,7 @@ const FeatureList = [
       {
         icon: require('../../../static/img/app.svg').default,
         title: 'Build your App',
-        description: 'Use Taquito to connect your app to the Tezos blockchain.',
+        description: 'Use Taquito to connect your app to the Mavryk blockchain.',
       },
     ],
   },

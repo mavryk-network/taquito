@@ -86,7 +86,7 @@ const transfer_params = [
                     amount: 22222
                 },
                 {
-                    to_: "tz1Me1MGhK7taay748h4gPnX2cXvbgL6xsYL",
+                    to_: "mv1PTZDARX9rTGpLHNeRgftJaWFiyhc7CwYw",
                     token_id: 0,
                     amount: 333333
                 }
@@ -128,7 +128,7 @@ This means that the entrypoint takes a pair annotated as `%balance_of`. On the l
 const balance_params = {
   request: [
     {
-      owner: 'tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq',
+      owner: 'mv19hrERfz4Drj6TXg79DF1ZXZDPwq5igZW7',
       token_id: '0'
     }
   ],
@@ -174,7 +174,7 @@ const operator_params = [
     {
         remove_operator: {
             owner: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
-            operator: "tz1Me1MGhK7taay748h4gPnX2cXvbgL6xsYL",
+            operator: "mv1PTZDARX9rTGpLHNeRgftJaWFiyhc7CwYw",
             token_id: 2
         }
     }

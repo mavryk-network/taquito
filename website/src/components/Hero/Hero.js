@@ -7,10 +7,10 @@ import '../../../static/slick/slick-theme.css';
 
 const FeatureList = [
   {
-    title: 'Developing on Tezos can be delicious!',
+    title: 'Developing on Mavryk can be delicious!',
     description: (
       <>
-        Use our popular Taquito TypeScript library to develop your Tezos blockchain apps faster and
+        Use our popular Taquito TypeScript library to develop your Mavryk blockchain apps faster and
         easier
       </>
     ),

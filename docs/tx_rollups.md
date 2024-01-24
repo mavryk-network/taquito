@@ -16,9 +16,9 @@ TORU currently supports the transferring of funds in the form of [tickets](https
 Taquito currently supports **layer-1** operations that facilitate deposits and withdrawals to and from the rollup node.
 
 ## Deposits
-To be able to interact or transfer funds on layer-2, you will first need to deposit an amount to an existing layer-2 (tz4) address. 
+To be able to interact or transfer funds on layer-2, you will first need to deposit an amount to an existing layer-2 (mv4) address. 
 
-Depositing tickets from layer-1 to layer-2 can be done via a smart contract that facilitates the transfer to a tz4 address in a specified rollup node.
+Depositing tickets from layer-1 to layer-2 can be done via a smart contract that facilitates the transfer to a mv4 address in a specified rollup node.
 
 An example of such contract can be found [here](https://tezos.gitlab.io/alpha/transaction_rollups.html?highlight=transaction%20rollups#depositing-assets-on-a-rollup)
 
@@ -31,7 +31,7 @@ const deposit = Tezos.contract.at(SMART_CONTRACT_ADDRESS);
 const op = await deposit.methods.default(
     'foobar',
     '15',
-    'tz4Jxn8MpRndqWUzkuZbQKmE3aNWJzYsSEso',
+    'mv4jH8pKvNGjbN2M7zKw1ArMqVoTjW9UtmGU',
     'txr1c9XcfmiLSWeqDPamPytns2ZXvwgYA7EpA'
 );
 
@@ -43,7 +43,7 @@ console.log(op.operationResults);
 The `default` entrypoint takes in 4 arguments:
 - `foobar` is the ticket string
 - `15` is the quantity of a ticket string
-- `tz4Jxn8MpRndqWUzkuZbQKmE3aNWJzYsSEso` is the layer-2 address that will be the deposit recipient
+- `mv4jH8pKvNGjbN2M7zKw1ArMqVoTjW9UtmGU` is the layer-2 address that will be the deposit recipient
 - `txr1c9XcfmiLSWeqDPamPytns2ZXvwgYA7EpA` is the rollup node id 
 
 If the deposit is successful, you will be returned an operation hash that can be accessed via `op.hash`
@@ -51,7 +51,7 @@ If the deposit is successful, you will be returned an operation hash that can be
 You also might want to look at `op.operationResults` to retrieve the `ticket_hash`. A ticket hash should look something like this: `exprtz9FgfdzufUADVsvP8Gj8d8PZr9RsBEjZ5GQKM8Kp5cKWww7di`
 
 ## Transfer
-The exchange of assets in the form of tickets can be done from a layer-2 (`tz4`) address to another layer-2 address. Not to be confused with the `transfer_ticket` operation, this layer-2 operation will not be supported in Taquito. This may change in the future with SCORU (Smart Contract Optimistic Rollups).
+The exchange of assets in the form of tickets can be done from a layer-2 (`mv4`) address to another layer-2 address. Not to be confused with the `transfer_ticket` operation, this layer-2 operation will not be supported in Taquito. This may change in the future with SCORU (Smart Contract Optimistic Rollups).
 
 For instructions on how to conduct a transfer in layer-2 using the rollup client, refer to this [documentation](https://tezos.gitlab.io/alpha/transaction_rollups.html?highlight=transaction%20rollups#exchanging-assets-inside-a-rollup) by Nomadic Labs.
 
@@ -65,7 +65,7 @@ tezos-tx-rollup-client-alpha withdraw ${qty} of ${ticket_hash} from ${l2_src} to
 
 - `${qty}` is the quantity of a ticket string that you would like to withdraw
 - `${ticket_hash}` is the ticket hash that was returned by a deposit 
-- `${l2_src}` is the BLS pair of keys generated with `tezos-client bls gen key`; or in other words, the tz4 address that holds the tickets 
+- `${l2_src}` is the BLS pair of keys generated with `tezos-client bls gen key`; or in other words, the mv4 address that holds the tickets 
 - `${l1_dst}` is the layer-1 address you would like to withdraw the tickets to
 
 After a successful withdrawal, your assets will exist back in layer-1 in the form of tickets after the [finality period](#Glossary) ends. 

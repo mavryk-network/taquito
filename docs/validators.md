@@ -16,7 +16,7 @@ Taquito provides functions that allow us to see if an address, a chain, a key ha
 
 #### The `validateAddress` function
 
-This function can be used to validate implicit addresses (tz1, tz2, tz3) and originated addresses (KT1).
+This function can be used to validate implicit addresses (mv1, mv2, mv3) and originated addresses (KT1).
 
 In the following example, the function is first called with a valid public key hash (pkh). It is then called with the same pkh where one character differs (e.g. 'p' instead of 'P'), which results in an invalid checksum.
 
@@ -29,14 +29,14 @@ const validation = validateAddress(pkh);
 println(`Calling the validateAddress function with ${pkh} returns ${validation}.`);
 
 //invalid checksum
-const invalidPkh = 'tz1L9r8mWmRpndRhuvMCWESLGSVeFzQ9NAWx';
+const invalidPkh = 'mv1NRLktBobVVU4Sy4Ab26DLTUAhUtxsWUHf';
 const invalidValidation = validateAddress(invalidPkh);
 println(`Calling the validateAddress function with ${invalidPkh} returns ${invalidValidation}.`);
 ```
 
 #### The `validateKeyHash` function
 
-This function is used to validate implicit addresses (tz1, tz2, tz3).
+This function is used to validate implicit addresses (mv1, mv2, mv3).
 
 Here is a valid example with a pkh and an invalid one where the prefix is missing :
 

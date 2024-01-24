@@ -100,12 +100,12 @@ import { TezosToolkit } from "@taquito/taquito";
 
 var tezosToolkit = new TezosToolkit("https://ghostnet.ecadinfra.com");
 
-tezosToolkit.tz.getBalance("tz1YvE7Sfo92ueEPEdZceNWd5MWNeMNSt16L").then(balance => {
+tezosToolkit.tz.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
     console.log(balance.toNumber());
 });
 ```
 
-Running `npx ts-node index.ts` should now show the balance of the specified address. This balance is in units of Mutez (micro Tez). Tez is the currency of Tezos, its code is `XTZ`, and the symbol is `ꜩ`. 1 Tez is 1,000,000 Mutez.
+Running `npx ts-node index.ts` should now show the balance of the specified address. This balance is in units of Mumav (micro Mav). Mav is the currency of Mavryk, its code is `MVRK`, and the symbol is `ṁ`. 1 Mav is 1,000,000 Mumav.
 
 Congratulations! You have just interacted with the Tezos blockchain using Taquito. In the next section, we will establish a high-level understanding of the blockchain, Tezos, dApps, and Taquito. If you are already familiar with these concepts, you can skip to [Sending a Transfer operation to the blockchain using Taquito](#sending-operations).
 
@@ -208,7 +208,7 @@ async function main() {
 
     tezosToolkit.setProvider({ signer });
 
-    const op = await tezosToolkit.contract.transfer({ to: 'tz1YvE7Sfo92ueEPEdZceNWd5MWNeMNSt16L', amount: 1 });
+    const op = await tezosToolkit.contract.transfer({ to: 'mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr', amount: 1 });
     await op.confirmation();
 
     console.log(op.hash);
@@ -217,7 +217,7 @@ async function main() {
 main().catch(console.error);
 ```
 
-Now, if you run your code, you should be able to see the address of the signer (`tz2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) and the hash of the operation in the terminal.
+Now, if you run your code, you should be able to see the address of the signer (`mv2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) and the hash of the operation in the terminal.
 
 What is happening here? Let's break it down:
 
@@ -234,7 +234,7 @@ What is happening here? Let's break it down:
 1. We print the hash of the operation.
 
 For the purpose of this section, I have created a new address and funded it on testnet. You are sharing the same secret key with everyone else going through this tutorial. So don't use this address for anything important. Also, there are two possible reasons why you might not be able to send the operation:
-1. Other people testing the code have consumed all the ꜩ in the address, so your operation will fail because of insufficient funds. You can head over to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) and send some ꜩ to the address for free. Or you can get free Testnet Tez right from your terminal: `npx @oxheadalpha/get-tez <your-address> --amount 100 --network ghostnet`
+1. Other people testing the code have consumed all the ṁ in the address, so your operation will fail because of insufficient funds. You can head over to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) and send some ṁ to the address for free. Or you can get free Testnet Tez right from your terminal: `npx @oxheadalpha/get-tez <your-address> --amount 100 --network ghostnet`
 1. Another person is sending an operation from this address at the same time as you. One address can only send one operation to each block. This is very improbable, but at least you know someone else is going through this tutorial at the same time as you. 😄
 
 <details>
@@ -249,7 +249,7 @@ For the purpose of this section, I have created a new address and funded it on t
     octez-client -E https://ghostnet.ecadinfra.com gen keys mysamplekey -s secp256k1
     octez-client -E https://ghostnet.ecadinfra.com show address mysamplekey -S
   ```
-  The new address you just created has a balance of zero. For the testnet, You can go to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) and send some ꜩ to it for free. On mainnet, you need to buy actual Tez on an exchange.
+  The new address you just created has a balance of zero. For the testnet, You can go to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
 </details>
 
 Congratulations! You have just sent an operation to the Tezos blockchain using Taquito.
@@ -258,7 +258,7 @@ Congratulations! You have just sent an operation to the Tezos blockchain using T
 
 In this section, we will interact with a smart contract using Taquito. We will mint an NFT on [objkt.com](https://objkt.com) NFT marketplace.
 
-Well, objk.com is the production service. We will use the testnet one: [ghostnet.objkt.com](https://ghostnet.objkt.com/), because to mint NFT on it, you only need ghostnet ꜩ, which is free. Also, because I want to put my test secret key here, and I don't like to share my mainnet secret key with actual ꜩ in it with everyone.
+Well, objk.com is the production service. We will use the testnet one: [ghostnet.objkt.com](https://ghostnet.objkt.com/), because to mint NFT on it, you only need ghostnet ṁ, which is free. Also, because I want to put my test secret key here, and I don't like to share my mainnet secret key with actual ṁ in it with everyone.
 
 The concepts you learn here are not limited to objkt.com or NFTs. You can use the same concepts to interact with any smart contract on the Tezos blockchain.
 
@@ -266,7 +266,7 @@ Most dApps interact with smart contracts. You can think of a smart contract as a
 
 In Tezos, smart contracts are written using one of the high-level languages (like Ligo), and compiled to Michelson. Then the contract is originated (deployed) to the blockchain. During origination, an address prefixed with `KT1` is created for the contract. You can then interact with the smart contract by sending operations to this address.
 
-In objkt.com, any user can create a number of collections and then mint NFTs in any of these collections. I have already created a collection and made our test address (`tz2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) an operator of the collection. So, this user can now mint NFTs in this collection. Check out the collection [here](https://ghostnet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv), and note the number of tokens in it.
+In objkt.com, any user can create a number of collections and then mint NFTs in any of these collections. I have already created a collection and made our test address (`mv2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) an operator of the collection. So, this user can now mint NFTs in this collection. Check out the collection [here](https://ghostnet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv), and note the number of tokens in it.
 
 Open the file `index.ts` and change the `main` function to the following:
 
@@ -282,7 +282,7 @@ async function main() {
         collection_id: 71947,
         editions: 1,
         metadata_cid: '697066733a2f2f516d52325672336775713467594d45366268676b47474a34714656647652786867766e47516d7a6672346d364635',
-        target: 'tz2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n'
+        target: 'mv2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n'
     }).send();
 
     await op.confirmation();
@@ -375,9 +375,9 @@ sequenceDiagram
 
 Alternatively, in a slightly different flow, the wallet sends the signed operation to the dApp, and dApp sends it to the blockchain. From the user's point of view, both flows look the same.
 
-## Creating a simple dApp that transfers ꜩ from the user's wallet to another address
+## Creating a simple dApp that transfers ṁ from the user's wallet to another address
 
-We will start by creating a simple dApp that transfers ꜩ from the user's wallet to another address. This will help us understand the flow of events in a dApp and the role of Taquito and Beacon SDK in the process.
+We will start by creating a simple dApp that transfers ṁ from the user's wallet to another address. This will help us understand the flow of events in a dApp and the role of Taquito and Beacon SDK in the process.
 
 ### creating the React app
 
@@ -406,7 +406,7 @@ git commit -m "initial commit"
 
 ### adding Taquito and Beacon SDK to the React app
 
-In the next step, we add Taquito and Beacon SDK to the React app, and create a minimal UI to connect to the wallet and transfer ꜩ.
+In the next step, we add Taquito and Beacon SDK to the React app, and create a minimal UI to connect to the wallet and transfer ṁ.
 
 ```bash
 npm i @taquito/taquito @taquito/beacon-wallet
@@ -522,9 +522,9 @@ export default ConnectButton;
 
 ```
 
-### Transferring ꜩ from the user's wallet to another address
+### Transferring ṁ from the user's wallet to another address
 
-After you connect to the wallet, you can send operations to the blockchain. In this step, we will create a simple UI to transfer ꜩ from the user's wallet to another address.
+After you connect to the wallet, you can send operations to the blockchain. In this step, we will create a simple UI to transfer ṁ from the user's wallet to another address.
 
 Create a new file `src/components/Transfer.tsx` and add the following code:
 
@@ -546,7 +546,7 @@ const Transfer = ({
       setLoading(true);
       try {
         const op = await Tezos.wallet
-          .transfer({ to: recipient, amount: parseInt(amount), mutez: true })
+          .transfer({ to: recipient, amount: parseInt(amount), mumav: true })
           .send();
         await op.confirmation();
       } catch (error) {
@@ -651,9 +651,9 @@ Also, make the following modification to the file `index.html`:
 
 Make sure that the command `npm run dev` is still running in the terminal, and that there are no build errors.
 
-Now, you should be able to see the "Connect Wallet" button in the browser. Clicking on it opens the wallet selection modal. You can choose your favorite wallet and connect to it. After this, you need to visit your wallet to approve the connection. After that, you should be able to see the "Send" button. You can enter an address and an amount (in Mutez, notice the `mutez: true` in `Transfer.tsx`) and click on the "Send" button to send ꜩ to the address.
+Now, you should be able to see the "Connect Wallet" button in the browser. Clicking on it opens the wallet selection modal. You can choose your favorite wallet and connect to it. After this, you need to visit your wallet to approve the connection. After that, you should be able to see the "Send" button. You can enter an address and an amount (in Mumav, notice the `mumav: true` in `Transfer.tsx`) and click on the "Send" button to send ṁ to the address.
 
-If you have not set up a wallet before, clicking on the Kukai wallet opens a page that asks you to create a new wallet. Remember to visit the [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) to fund your wallet with some ꜩ. If you want to use that wallet for real ꜩ, you need to back up the mnemonic phrase. But remember that the mnemonic phrase is a secret. Anyone who has access to it can steal your ꜩ.
+If you have not set up a wallet before, clicking on the Kukai wallet opens a page that asks you to create a new wallet. Remember to visit the [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) to fund your wallet with some ṁ. If you want to use that wallet for real ṁ, you need to back up the mnemonic phrase. But remember that the mnemonic phrase is a secret. Anyone who has access to it can steal your ṁ.
 
 ## Closing thoughts
 

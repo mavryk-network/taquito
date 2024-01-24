@@ -257,9 +257,9 @@ function subscribeToAllEvents(wallet: BeaconWallet) {
       </span>
       <span>
         {#if $store.userBalance}
-          {formatTokenAmount($store.userBalance / 10 ** 6)} ꜩ
+          {formatTokenAmount($store.userBalance / 10 ** 6)} ṁ
         {:else}
-          0 ꜩ
+          0 ṁ
         {/if}
       </span>
     </button>
@@ -270,7 +270,7 @@ function subscribeToAllEvents(wallet: BeaconWallet) {
           <div>Address: {shortenHash($store.userAddress)}</div>
           <div>
             {#if $store.userBalance}
-              Balance: {formatTokenAmount($store.userBalance / 10 ** 6)} ꜩ
+              Balance: {formatTokenAmount($store.userBalance / 10 ** 6)} ṁ
             {/if}
           </div>
           <div>

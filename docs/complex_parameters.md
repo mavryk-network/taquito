@@ -81,7 +81,7 @@ recordsBigMap.set(
 //%validators
 const validatorsMap = new MichelsonMap();
 //key is a nat, value is an address
-validatorsMap.set('1', 'tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP')
+validatorsMap.set('1', 'mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD')
 
 importKey(Tezos, secretKey)
 .then(() => {

@@ -19,3 +19,6 @@ integration-tests/jest-stare
 **/saplingOutputParams*
 **/saplingSpendParams*
 apps/**/node_modules
+
+# Local Netlify folder
+.netlify

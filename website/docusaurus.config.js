@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = {
   title: 'Taquito',
-  tagline: 'A TypeScript library suite for development on the Tezos blockchain.',
+  tagline: 'A TypeScript library suite for development on the Mavryk blockchain.',
   favicon: 'img/favicon.svg',
   url: 'https://tezostaquito.io',
   baseUrl: '/',
@@ -26,7 +26,7 @@ module.exports = {
   customFields: {
     repoUrl: 'https://github.com/ecadlabs/taquito',
     description:
-      'A TypeScript library suite made available as a set of npm packages aiming to make building on top of Tezos easier and more enjoyable.',
+      'A TypeScript library suite made available as a set of npm packages aiming to make building on top of Mavryk easier and more enjoyable.',
   },
   themes: [require.resolve('@docusaurus/theme-live-codeblock'), '@docusaurus/theme-mermaid'],
   themeConfig: {
@@ -154,7 +154,7 @@ module.exports = {
             {
               html: `
 									<p class='footerDescription'>
-									Developing On Tezos Can Be Delicious!
+									Developing On Mavryk Can Be Delicious!
 									</p>
 								  `,
             },

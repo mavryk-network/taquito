@@ -5,7 +5,7 @@ author: Roxane Letourneau
 
 This section shows how to transfer all tokens from one account (implicit or originated) to another so that the source account balance is zero.
 
-## Draining implicit accounts (tz1, tz2, tz3)
+## Draining implicit accounts (mv1, mv2, mv3)
 
 We want to "empty" an implicit account by sending all of its tokens to another account. It can be tricky to empty a tezos account because the system must subtract the gas fee from the account balance.
 
@@ -32,7 +32,7 @@ Tezos.signer
             println(
                 `The account we want to drain is ${address}.\nIts initial balance is ${
                   balance.toNumber() / 1000000
-                  } ꜩ.`
+                  } ṁ.`
             );
             return Tezos.estimate
                 .transfer({
@@ -51,7 +51,7 @@ Tezos.signer
                           DEFAULT_FEE.REVEAL
                         } mumav.\nConsidering those fees, the amount we need to send to empty the account is ${
                           maxAmount / 1000000
-                        } ꜩ.`
+                        } ṁ.`
                     );
                     return Tezos.contract.transfer({
                         to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
@@ -71,7 +71,7 @@ Tezos.signer
                     return Tezos.tz.getBalance(address);
                 })
                 .then((finalBalance) => {
-                    println(`The balance is now ${finalBalance.toNumber() / 1000000} ꜩ.`);
+                    println(`The balance is now ${finalBalance.toNumber() / 1000000} ṁ.`);
                 });
         });
     })
@@ -80,7 +80,7 @@ Tezos.signer
 
 ## Draining originated accounts (KT1)
 
-In the following example, we first originate a contract with a starting balance of 8 ꜩ. Then, we transfer all of its tokens to an implicit account.
+In the following example, we first originate a contract with a starting balance of 8 ṁ. Then, we transfer all of its tokens to an implicit account.
 
 The contract we originate is a `manager contract.` It has a `do` method taking a lambda function as a parameter. We call the smart contract by passing a function called `transferImplicit` to its `do` method to transfer its tokens to the implicit address. More information on transfers involving originated KT1 addresses can be found [here](https://tezostaquito.io/docs/making_transfers#transfers-involving-originated-kt1-addresses).
 
@@ -126,7 +126,7 @@ Tezos.signer
       .then((contract) => {
         println(`Origination completed.`);
         Tezos.tz.getBalance(contract.address).then((balance) => {
-          println(`The balance of the contract is ${balance.toNumber() / 1000000} ꜩ.`);
+          println(`The balance of the contract is ${balance.toNumber() / 1000000} ṁ.`);
           const estimateOp = contract.methods
             .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
             .toTransferParams({});
@@ -151,7 +151,7 @@ Tezos.signer
               return Tezos.tz.getBalance(contract.address);
             })
             .then((finalBalance) => {
-              println(`The balance is now ${finalBalance.toNumber() / 1000000} ꜩ.`);
+              println(`The balance is now ${finalBalance.toNumber() / 1000000} ṁ.`);
             });
         });
       });

@@ -39,7 +39,7 @@ const fetchTezosDomainFromAddress = async (address: string): Promise<string> => 
 - the `reverse_records` bigmap is nested inside the `store` property
 - the domain name is stored as bytes, so you can use the `bytes2Char` function from `@mavrykdynamics/taquito-utils` to decode it as a string.
 
-If we call the `fetchTezosDomainFromAddress` function with `tz1aauXT4uM8ZB3ouu5JrAenEMQdqfvDUSNH`, it will return `taquito.tez`.
+If we call the `fetchTezosDomainFromAddress` function with `mv1TfAvXWDtT4Q8sVrqiLzLEhpa9fjteEKgK`, it will return `taquito.tez`.
 
 ## Looking up a Tezos domain
 

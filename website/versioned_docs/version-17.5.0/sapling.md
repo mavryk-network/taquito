@@ -138,7 +138,7 @@ saplingToolkit.getSaplingTransactionViewer()
 
 ## How to prepare a shielded transaction?
 
-A shielded transaction allows sending tokens from a Tezos account (tz1, tz2, tz3) to a Sapling address (zet). The `prepareShieldedTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send tez to multiple addresses at once if needed.
+A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3) to a Sapling address (zet). The `prepareShieldedTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send tez to multiple addresses at once if needed.
 
 The `ParametersSaplingTransaction` is an object made of:
 - a `to` property, which is the destination address (zet)
@@ -217,7 +217,7 @@ The `ParametersSaplingTransaction` is an object made of:
 The `prepareSaplingTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done.
 
 :::note
-A user should not use their own implicit account (tz1, tz2, tz3) to submit a Sapling transaction but rather have a third party inject it.
+A user should not use their own implicit account (mv1, mv2, mv3) to submit a Sapling transaction but rather have a third party inject it.
 :::
 
 Here is an example of how to prepare and inject a Sapling transaction using Taquito:
@@ -269,10 +269,10 @@ saplingToolkit.prepareSaplingTransaction([{
 
 ## How to prepare an unshielded transaction?
 
-An unshielded transaction allows sending tokens from an address (zet) to a Tezos address (tz1, tz2, tz3). The `prepareUnshieldedTransaction` method of the `SaplingToolkit` takes a single `ParametersUnshieldedTransaction`.
+An unshielded transaction allows sending tokens from an address (zet) to a Tezos address (mv1, mv2, mv3). The `prepareUnshieldedTransaction` method of the `SaplingToolkit` takes a single `ParametersUnshieldedTransaction`.
 
 The `ParametersUnshieldedTransaction` is an object made of:
-- a `to` property, which is the destination  account (tz1, tz2, tz3)
+- a `to` property, which is the destination  account (mv1, mv2, mv3)
 - an `amount` property, which is the amount to shield in tez by default
 - an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
 
@@ -304,7 +304,7 @@ const saplingToolkit = new SaplingToolkit(
 
 println(`Preparing the unshielded transaction...`);
 saplingToolkit.prepareUnshieldedTransaction({
-    to: 'tz1hDFKpVkT7jzYncaLma4vxh4Gg6JNqvdtB',
+    to: 'mv18baiUGRL5QHEKmJuPbj37KXayZQVrohbE',
     amount: 20,
     mumav: true // set to false by default
 })

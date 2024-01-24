@@ -187,7 +187,7 @@ storage (pair
 ```js
 const allowances = new MichelsonMap();
     const ledger = new MichelsonMap();
-    ledger.set('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP', { allowances, balance: '100' });
+    ledger.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances, balance: '100' });
 
     const opknownBigMapContract = await tezos.contract.originate({
       code: knownBigMapContract,
@@ -695,7 +695,7 @@ storage (pair
 ```js
 const allowances = new MichelsonMap();
 const ledger = new MichelsonMap();
-ledger.set('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP', { allowances, balance: '100' });
+ledger.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances, balance: '100' });
 
 const opknownBigMapContract = await tezos.contract.originate({
   code: knownBigMapContract,

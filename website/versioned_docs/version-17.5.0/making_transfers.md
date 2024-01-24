@@ -11,7 +11,7 @@ When the `Babylon/proto005` protocol amendment came into effect, it changed how 
 
 The Taquito [integration tests](https://github.com/ecadlabs/taquito/blob/master/integration-tests/contract-manager-scenario.spec.ts) can be useful to see how this works.
 
-## Transfer from an implicit tz1 address to a tz1 address
+## Transfer from an implicit mv1 address to a mv1 address
 
 This is the simplest token transfer scenario
 
@@ -19,7 +19,7 @@ This is the simplest token transfer scenario
 await Tezos.contract.transfer({ to: contract.address, amount: 1 });
 ```
 
-In the following example, we transfer 0.5ꜩ from a `tz1aaYoabvj2DQtpHz74Z83fSNjY29asdBfZ` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
+In the following example, we transfer 0.5ṁ from a `mv1PYMQXgRiJBMsrEaM9Yre4JyvcLVbUr8pv` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
 
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
@@ -39,7 +39,7 @@ fetch('https://keygen.ecadinfra.com/ghostnet/', {
     const amount = 0.5;
     const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-    render(`Transfering ${amount} ꜩ to ${address}...`);
+    render(`Transfering ${amount} ṁ to ${address}...`);
     return Tezos.contract.transfer({ to: address, amount: amount });
   })
   .then((op) => {
@@ -60,11 +60,11 @@ A call to the KT1's smart contracts' `do` method is required to transfer tokens 
 
 > The examples following apply only to KT1 addresses migrated as part of the `Babylon/proto005` upgrade. Transfers involving _other_ types of smart-contracts depend on those contracts specifically.
 
-## Transfer 0.00005 (50 mumav) tokens from a KT1 address to a tz1 address
+## Transfer 0.00005 (50 mumav) tokens from a KT1 address to a mv1 address
 
 Sending 50 mumav from `kt1...` to `mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m`.
 
-### Example transfer from a KT1 to a tz1 address on Carthage/Proto006
+### Example transfer from a KT1 to a mv1 address on Carthage/Proto006
 
 ```js
 const contract = await Tezos.contract.at('kt1...');

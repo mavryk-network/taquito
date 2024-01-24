@@ -13,7 +13,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
 
     });
 
-    mondaynet('Verify that Transactions of 0ꜩ towards a contract without code are forbidden', async () => {
+    mondaynet('Verify that Transactions of 0ṁ towards a contract without code are forbidden', async () => {
       try {
         const op = await Tezos.contract.originate({
           code: `{ parameter address ;

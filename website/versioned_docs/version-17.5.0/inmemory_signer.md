@@ -207,7 +207,7 @@ With ed25519 default derivation path (Reminder Must be hardened with either h or
     .catch(err => println(err))
 ```
 
-With a non-default derivation path non-hardened with a tz2 address
+With a non-default derivation path non-hardened with a mv2 address
 
 ```js live noInline
   // import { TezosToolkit } from '@mavrykdynamics/taquito

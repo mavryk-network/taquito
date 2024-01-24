@@ -498,7 +498,7 @@ If you use the Ligo programming language and the storage is a record, you can si
 {
   code: parsedMichelson,
   storage: {
-    owner: "tz1...",
+    owner: "mv1...",
     counter: 2,
     paused: false
   }
@@ -516,7 +516,7 @@ import { MichelsonMap } from "@mavrykdynamics/taquito";
   code: parsedMichelson,
   storage: {
     ledger: new MichelsonMap(),
-    owner: "tz1..."
+    owner: "mv1..."
   }
 }
 
@@ -536,7 +536,7 @@ import { MichelsonMap } from "@mavrykdynamics/taquito";
       alice: 25,
       bob: 16
     }),
-    owner: "tz1..."
+    owner: "mv1..."
   }
 }
 
@@ -653,7 +653,7 @@ const op = await Tezos.wallet
   .batch([
     {
       kind: 'transaction',
-      to: 'tz1...',
+      to: 'mv1...',
       amount: 2,
     },
     {
@@ -673,7 +673,7 @@ or
 ```js
 const batch = Tezos.wallet
   .batch()
-  .withTransfer({ to: 'tz1...', amount: 2 })
+  .withTransfer({ to: 'mv1...', amount: 2 })
   .withOrigination({
     balance: '1',
     code: code,
@@ -724,7 +724,7 @@ await op.confirmation();
 The `setDelegate` method takes an object as a parameter with a `delegate` property set to the address you want to set as a delegate:
 
 ```js
-const op = await Tezos.wallet.setDelegate({ delegate: 'tz1...' }).send();
+const op = await Tezos.wallet.setDelegate({ delegate: 'mv1...' }).send();
 
 await op.confirmation();
 ```
@@ -732,7 +732,7 @@ await op.confirmation();
 Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mumav`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
 
 ```js
-const op = await Tezos.wallet.transfer({ to: 'tz1...', amount: 2 }).send();
+const op = await Tezos.wallet.transfer({ to: 'mv1...', amount: 2 }).send();
 
 await op.confirmation();
 ```

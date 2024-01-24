@@ -411,7 +411,7 @@ Here is an example of `encodeObject`:
 ```js live noInline
 const parameterSchema = new ParameterSchema({"prim":"pair","args":[{"prim":"address","annots":[":spender"]},{"prim":"nat","annots":[":value"]}],"annots":["%approve"]});
 const michelsonData = parameterSchema.EncodeObject({
-    spender: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    spender: 'mv1EnD2M4ATv38QrCqx2CbLpC5AKgHqDwdxa',
     value: '12'
 })
 println(JSON.stringify(michelsonData, null, 2));
