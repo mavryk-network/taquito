@@ -100,7 +100,7 @@ const batch = await Tezos.wallet.batch()
 
 #### - The `array of transactions` method
 
-If you prefer having an array that contains objects with the different transactions you want to emit, you can use the `with` method. It allows you to group transactions as objects instead of concatenating function calls. The object you use expects the same properties as the parameter of the corresponding method with an additional `kind` property that indicates the kind of transaction you want to emit (a handy `opKind` enum is [exported from the Taquito package](https://github.com/ecadlabs/taquito/blob/master/packages/taquito-rpc/src/opkind.ts) with the valid values for the `kind` property).
+If you prefer having an array that contains objects with the different transactions you want to emit, you can use the `with` method. It allows you to group transactions as objects instead of concatenating function calls. The object you use expects the same properties as the parameter of the corresponding method with an additional `kind` property that indicates the kind of transaction you want to emit (a handy `opKind` enum is [exported from the Taquito package](https://github.com/mavryk-network/mavryk-taquito/blob/master/packages/taquito-rpc/src/opkind.ts) with the valid values for the `kind` property).
 
 ```js
 import { OpKind } from '@mavrykdynamics/taquito';
@@ -151,5 +151,5 @@ In addition to that, only a single account can sign batched operations.
 
 ## References
 
-- [Integration tests](https://github.com/ecadlabs/taquito/blob/master/integration-tests/batch-api.spec.ts)
-- [Documentation](https://tezostaquito.io/typedoc/classes/_taquito_taquito.walletoperationbatch.html)
+- [Integration tests](https://github.com/mavryk-network/mavryk-taquito/blob/master/integration-tests/batch-api.spec.ts)
+- [Documentation](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.walletoperationbatch.html)

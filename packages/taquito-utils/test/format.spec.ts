@@ -25,8 +25,8 @@ describe('Format', () => {
 
 });
 
-describe('tezostaquito.io example signing formatting', () => {
-  it('Should be valid bytes tezostaquito example https://tezostaquito.io/docs/next/signing#generating-a-signature-with-beacon-sdk with proper padding for bytes length', () => {
+describe('taquito.mavryk.org example signing formatting', () => {
+  it('Should be valid bytes tezostaquito example https://taquito.mavryk.org/docs/next/signing#generating-a-signature-with-beacon-sdk with proper padding for bytes length', () => {
     const formattedInput: string = [
       'Tezos Signed Message:',
       'some url',

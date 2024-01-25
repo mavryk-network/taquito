@@ -190,6 +190,6 @@ Tezos.wallet
   </TabItem>
 </Tabs>
 
-[boilerplate]: https://github.com/ecadlabs/taquito-boilerplate
+[boilerplate]: https://github.com/mavryk-network/mavryk-taquito-boilerplate
 [smart_contract_source]: https://ide.ligolang.org/p/2sVshnZ_Aat5pIuUypIBsQ
 [smart_contract_on_better_call_dev]: https://better-call.dev/ghostnet/KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7/operations

@@ -578,8 +578,8 @@ async function originateTzip16Storage() {
       description: 'A metadata test',
       version: '0.1',
       license: 'MIT',
-      authors: ['Taquito <https://tezostaquito.io/>'],
-      homepage: 'https://tezostaquito.io/',
+      authors: ['Taquito <https://taquito.mavryk.org/>'],
+      homepage: 'https://taquito.mavryk.org/',
     };
 
     const metadataBigMap = new MichelsonMap();

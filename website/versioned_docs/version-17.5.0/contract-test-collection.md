@@ -81,7 +81,7 @@ storage: 1;
 
 ## MichelsonMapContract
 
-The contract supports a [Michelson Tutorial](https://tezostaquito.io/docs/michelsonmap). It has a default endpoint that takes a pair of an address and an amount of tez.
+The contract supports a [Michelson Tutorial](https://taquito.mavryk.org/docs/michelsonmap). It has a default endpoint that takes a pair of an address and an amount of tez.
 
 - [See the full tutorial](https://claudebarde.medium.com/?p=8d8be9930662)
 
@@ -760,7 +760,7 @@ const op = await tezos.contract.originate({
 
 # On Chain Views Contracts
 
-Views are meant to be called by a contract using the Michelson Instruction View followed by the view name and its result type. See [TaquitoDocs](https://tezostaquito.io/docs/on_chain_views) for more details.
+Views are meant to be called by a contract using the Michelson Instruction View followed by the view name and its result type. See [TaquitoDocs](https://taquito.mavryk.org/docs/on_chain_views) for more details.
 
 ## ContractCallFib
 
@@ -1054,8 +1054,8 @@ const metadataJSON = {
   description: 'A metadata test',
   version: '0.1',
   license: 'MIT',
-  authors: ['Taquito <https://tezostaquito.io/>'],
-  homepage: 'https://tezostaquito.io/',
+  authors: ['Taquito <https://taquito.mavryk.org/>'],
+  homepage: 'https://taquito.mavryk.org/',
 };
 
 const metadataBigMap = new MichelsonMap();
@@ -1082,7 +1082,7 @@ description: A metadata test
 version: 0.1
 license: MIT
 authors: Taquito
-homepage: https://tezostaquito.io/
+homepage: https://taquito.mavryk.org/
 ```
 
 </TabItem>
@@ -1140,7 +1140,7 @@ name: Taquito test with valid metadata
 description: This is metadata test for Taquito integration tests with the Ligo Taco shop contract modified to include metadata in storage
 version: 7.1.0-beta.0
 license: MIT
-homepage: https://github.com/ecadlabs/taquito
+homepage: https://github.com/mavryk-network/mavryk-taquito
 ```
 
 </TabItem>
@@ -1202,7 +1202,7 @@ name: Taquito test with valid metadata
 description: This is metadata test for Taquito integration tests with the Ligo Taco shop contract modified to include metadata in storage
 version: 7.1.0-beta.0
 license: MIT
-homepage: https://github.com/ecadlabs/taquito
+homepage: https://github.com/mavryk-network/mavryk-taquito
 ```
 
 </TabItem>
@@ -1259,7 +1259,7 @@ name: Taquito test with valid metadata
 description: This is metadata test for Taquito integration tests with the Ligo Taco shop contract modified to include metadata in storage
 version: 7.1.0-beta.0
 license: MIT
-homepage: https://github.com/ecadlabs/taquitoj
+homepage: https://github.com/mavryk-network/mavryk-taquitoj
 ```
 
 </TabItem>
@@ -1377,7 +1377,7 @@ const contract = await Tezos.wallet.at('KT1B4WtE3MSEjGKnucRL5xhqnXCEX1QkLGPx');
 
 This line creates a contract abstraction with multiple methods named after the contract entrypoints. For example, if you have a `transfer` entrypoint in your contract, you will also have a `.transfer()` method in the `contract` object. Each method accepts parameters required by the contract entrypoint.
 
-For more details see [Taquito Wallet API doc](https://tezostaquito.io/docs/wallet_API)
+For more details see [Taquito Wallet API doc](https://taquito.mavryk.org/docs/wallet_API)
 
 #### Entrypoints:
 

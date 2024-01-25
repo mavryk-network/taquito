@@ -118,4 +118,4 @@ It produces a list of operations with a single operation in it created by the `T
 
 ## Information
 
-[Link to the MANAGER_LAMBDA code](https://github.com/ecadlabs/taquito/blob/8933ca696822a727e36c3591f866043d9c3ee239/packages/taquito/src/contract/manager-lambda.ts)
+[Link to the MANAGER_LAMBDA code](https://github.com/mavryk-network/mavryk-taquito/blob/8933ca696822a727e36c3591f866043d9c3ee239/packages/taquito/src/contract/manager-lambda.ts)

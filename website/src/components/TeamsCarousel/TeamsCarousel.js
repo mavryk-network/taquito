@@ -164,9 +164,9 @@ function Feature({ images, title }) {
 export default function TeamsCarousel() {
   return (
     <section className={styles.features}>
-      <div className={styles.container}>
+      {/* <div className={styles.container}>
         <Feature {...FeatureList[0]} />
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -11,7 +11,7 @@ Currently the only available bundle is for the `@mavrykdynamics/taquito-local-fo
 The bundle wraps functions in the `@mavrykdynamics/taquito-local-forging` package into a single variable called `taquito_local_forging`
 
 ## Instructions on using the bundle
-To use the JS bundle for your project, download the zip file under `Assets` from your preferred Taquito [release](https://github.com/ecadlabs/taquito/releases).
+To use the JS bundle for your project, download the zip file under `Assets` from your preferred Taquito [release](https://github.com/mavryk-network/mavryk-taquito/releases).
 
 After that, simply copy the `.js` file and the `.map.js` file into your project.
 

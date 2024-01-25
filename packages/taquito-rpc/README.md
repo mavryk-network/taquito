@@ -1,6 +1,6 @@
 # Taquito RPC package
-*Documentation can be found [here](https://tezostaquito.io/docs/rpc_package)*  
-*TypeDoc style documentation is available on-line [here](https://tezostaquito.io/typedoc/modules/_taquito_rpc.html)*
+*Documentation can be found [here](https://taquito.mavryk.org/docs/rpc_package)*  
+*TypeDoc style documentation is available on-line [here](https://taquito.mavryk.org/typedoc/modules/_taquito_rpc.html)*
 
 `@mavrykdynamics/taquito-rpc` is an npm package that provides low-level methods and types to invoke RPC calls from a Nomadic Tezos RPC node.
 
