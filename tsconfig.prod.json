@@ -17,6 +17,9 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "tslib" : ["./node_modules/nx/node_modules/tslib/tslib.d.ts"]
+    }
   }
 }
