@@ -59,7 +59,7 @@ const dataMap = new MichelsonMap();
 //key is a string, we choose a boolean for the value
 dataMap.set('Hello', { bool : true })
 
-//%records 
+//%records
 const recordsBigMap = new MichelsonMap();
 recordsBigMap.set(
     'FFFF', //key of the bigMap %records is in bytes
@@ -102,7 +102,7 @@ importKey(Tezos, secretKey)
 
 ## Calling the function of a contract having a complex object as a parameter
 
-The contract contains a function named `set_child_record`. The parameter of the function is composed of nested pairs regrouping different datatypes (address, `map`, `bytes` and `nat`). Two of its arguments, the `address %address` and the `nat %ttl`, are optional. The `map %data` uses a `string` as its key. The user needs to choose the value of the `map` between different proposed types. 
+The contract contains a function named `set_child_record`. The parameter of the function is composed of nested pairs regrouping different datatypes (address, `map`, `bytes` and `nat`). Two of its arguments, the `address %address` and the `nat %ttl`, are optional. The `map %data` uses a `string` as its key. The user needs to choose the value of the `map` between different proposed types.
 
 Here is the parameter of the function defined in Michelson :
 
@@ -156,7 +156,7 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
-  
+
     return myContract.methods.set_child_record(
       'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address(optional)
       dataMap, //data
@@ -164,7 +164,7 @@ importKey(Tezos, secretKey)
       'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
       'FFFF', //parent
       '10' //ttl(optional)
-    ).send(); 
+    ).send();
 }).then(op => {
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
@@ -178,7 +178,7 @@ The `address %address` and the `nat %ttl` of the `set_child_record` function are
 
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com')
+// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
@@ -187,7 +187,7 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { nat : '3' })
-  
+
     return myContract.methods.set_child_record(
       null, //address(optional)
       dataMap, //data
@@ -195,7 +195,7 @@ importKey(Tezos, secretKey)
       'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
       'FFFF', //parent
       undefined //ttl(optional)
-    ).send(); 
+    ).send();
 }).then(op => {
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);

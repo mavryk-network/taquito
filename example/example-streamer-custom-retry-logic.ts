@@ -20,6 +20,10 @@ async function example() {
       ) as any
   }));
 
+  const bakerAttestationFilter = {
+    and: [{ source: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m' }, { kind: 'attestation' }]
+  }
+
   const bakerEndorsementFilter = {
     and: [{ source: 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG' }, { kind: 'endorsement' }]
   }
@@ -29,7 +33,7 @@ async function example() {
   }
 
   tezos.stream.subscribeOperation({
-    or: [bakerEndorsementFilter, bakerDelegation]
+    or: [bakerAttestationFilter, bakerEndorsementFilter, bakerDelegation]
   })
 }
 

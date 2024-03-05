@@ -24,7 +24,7 @@ The returned balance is in mumav.
 import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://jakartanet.ecadinfra.com/');
+const tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
 
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
@@ -33,8 +33,8 @@ const inMemorySpendingKey = await InMemorySpendingKey.fromMnemonic('YOUR_MNEMONI
 const readProvider = new RpcReadAdapter(tezos.rpc);
 
 const saplingToolkit = new SaplingToolkit(
-    { saplingSigner: inMemorySpendingKey }, 
-    { contractAddress: saplingContract.address, memoSize: 8 }, 
+    { saplingSigner: inMemorySpendingKey },
+    { contractAddress: saplingContract.address, memoSize: 8 },
     readProvider
 )
 
@@ -50,7 +50,7 @@ A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3
 import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://jakartanet.ecadinfra.com/');
+const tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
 // set up your signer on the TezosToolkit as usual
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
@@ -59,8 +59,8 @@ const inMemorySpendingKey = await InMemorySpendingKey.fromMnemonic('YOUR_MNEMONI
 const readProvider = new RpcReadAdapter(tezos.rpc);
 
 const saplingToolkit = new SaplingToolkit(
-    { saplingSigner: inMemorySpendingKey }, 
-    { contractAddress: saplingContract.address, memoSize: 8 }, 
+    { saplingSigner: inMemorySpendingKey },
+    { contractAddress: saplingContract.address, memoSize: 8 },
     readProvider
 )
 

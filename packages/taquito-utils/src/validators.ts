@@ -62,7 +62,7 @@ function validatePrefixedValue(value: string, prefixes: Prefix[]) {
 }
 
 const implicitPrefix = [Prefix.MV1, Prefix.MV2, Prefix.MV3, Prefix.MV4];
-const contractPrefix = [Prefix.KT1, Prefix.TXR1];
+const contractPrefix = [Prefix.KT1];
 const signaturePrefix = [Prefix.EDSIG, Prefix.P2SIG, Prefix.SPSIG, Prefix.SIG];
 const pkPrefix = [Prefix.EDPK, Prefix.SPPK, Prefix.P2PK, Prefix.BLPK];
 const operationPrefix = [Prefix.O];

@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito-http-utils",
-  "version": "17.5.2",
+  "version": "19.0.2",
   "description": "",
   "keywords": [
     "tezos"
@@ -58,7 +58,7 @@
     ]
   },
   "dependencies": {
-    "@mavrykdynamics/taquito-core": "^17.5.2",
+    "@mavrykdynamics/taquito-core": "^19.0.2",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {

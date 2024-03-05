@@ -11,7 +11,7 @@ import { CONFIGS } from './config';
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
   const Tezos = lib;
-  const mondaynet = protocol === Protocols.ProtoALpha ? test : test.skip;
+  const weeklynet = protocol === Protocols.ProtoALpha ? test : test.skip;
   const address = 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg';
 
   describe(`Test contracts using: ${rpc}`, () => {
@@ -19,7 +19,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       await setup(true);
     });
 
-    mondaynet('Reentrance attack test', async () => {
+    weeklynet('Reentrance attack test', async () => {
       const vestingContractOp = await Tezos.contract.originate({
         balance: '8',
         code: `{ parameter

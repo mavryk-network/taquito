@@ -37,7 +37,6 @@
     "@mavrykdynamics/taquito-michelson-encoder": "file:../packages/taquito-michelson-encoder",
     "@mavrykdynamics/taquito-remote-signer": "file:../packages/taquito-remote-signer",
     "@mavrykdynamics/taquito-rpc": "file:../packages/taquito-rpc",
-    "@mavrykdynamics/taquito-sapling": "file:../packages/taquito-sapling",
     "@mavrykdynamics/taquito-signer": "file:../packages/taquito-signer",
     "@mavrykdynamics/taquito": "file:../packages/taquito",
     "@mavrykdynamics/taquito-tzip12": "file:../packages/taquito-tzip12",
@@ -88,5 +87,5 @@
       "last 1 safari version"
     ]
   },
-  "version": "17.5.2"
+  "version": "19.0.2"
 }

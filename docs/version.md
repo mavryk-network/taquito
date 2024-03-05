@@ -2,6 +2,51 @@
 title: Versions
 author: Jev Bjorsell
 ---
+# Taquito v19.0.2
+
+### Bug Fixes
+- `@taquito/local-forging` - Added the correct constants for staking/unstaking in the forger [PR#2824](https://github.com/ecadlabs/taquito/pull/2824)
+
+
+# Taquito v19.0.1
+
+### Dependency updates
+- Updated Beacon version to v4.1.2 [PR#2811](https://github.com/ecadlabs/taquito/pull/2811)
+
+### Documentation
+- Removed Sapling live code examples from the website due to large bundle sizes, static code examples will still exist [PR#2810](https://github.com/ecadlabs/taquito/pull/2810)
+
+# Taquito v19.0.0
+
+:::info
+You might have noticed that we jumped versions from v17.5.0 to v19.0.0 (no v18). We do this as an effort to be in parallel with the current Octez version. 
+- Oxford - v18
+- Oxford2 - v19
+
+Taquito v19 supports Oxford2, and not the previously named Oxford protocol.
+:::
+
+**Potential Breaking Changes**:
+Oxford2 comes with quite a few breaking changes, please make sure to update your projects accordingly.
+
+Oxford2 changes:
+- Removed transactional rollups (tx rollup) references in Taquito #2650
+- Removed origination proof from smart rollups #2597
+- Updated all references of `endorsement` into `attestation` for Oxford2 #2599
+- `@taquito/rpc` - Updated RPC types for Oxford2 compatibility #2596
+
+
+## Summary
+
+### New Features
+- `@taquito/local-forging` - Added new property `whitelist` in smart rollup origination operation #2776
+
+
+### Documentation
+
+### Internals
+
+
 # Taquito 17.5.0
 
 **Important Note:**
