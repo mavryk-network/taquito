@@ -96,7 +96,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const aliceBalanceRight = await aliceTxViewerRight.getBalance();
       const inputsAliceRight = await aliceTxViewerRight.getIncomingAndOutgoingTransactions();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalanceLeft).toEqual(new BigNumber(3000000));
       expect(inputsAliceLeft).toEqual({
         incoming: [

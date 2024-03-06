@@ -117,7 +117,7 @@ CONFIGS().forEach(
             ],
             annots: ['%ledger'],
           });
-          const { key, type } = schema.EncodeBigMapKey('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP');
+          const { key, type } = schema.EncodeBigMapKey('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD');
           const { packed } = await rpcClient.packData({ data: key, type });
           const contract = await Tezos.contract.at(knownBigMapContract);
           const storage: any = await contract.storage();
@@ -388,7 +388,7 @@ CONFIGS().forEach(
             entrypoint: 'getBalance',
             chain_id: chainId,
             input: {
-              string: 'tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP'
+              string: 'mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD'
             }
           };
 

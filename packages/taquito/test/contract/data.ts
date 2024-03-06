@@ -353,7 +353,7 @@ export const originateResults = {
   counter: 0,
 };
 
-export const originateResultsMutezTrue = {
+export const originateResultsMumavTrue = {
   opbytes: 'test',
   opOb: {
     branch: 'test',

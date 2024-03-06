@@ -186,7 +186,7 @@ const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
 // the deadline value is arbitrary and can be changed
 const deadline = new Date(Date.now() + 60000).toISOString();
 const minTokensBought = xtzToTokenTokenOutput({
-    xtzIn: xtzAmountInMutez,
+    xtzIn: xtzAmountInMumav,
     xtzPool,
     tokenPool
   }).toNumber();

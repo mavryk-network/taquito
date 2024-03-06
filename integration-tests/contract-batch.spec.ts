@@ -195,15 +195,15 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract, createAddress }
       ])
 
       const batch = Tezos.contract.batch()
-        .withContractCall(contract.methodsObject.do(MANAGER_LAMBDA.transferImplicit("mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m", 5)), { fee: estimateOp[0].suggestedFeeMutez, gasLimit: estimateOp[0].gasLimit, storageLimit: estimateOp[0].storageLimit })
-        .withContractCall(contract.methods.do(MANAGER_LAMBDA.setDelegate(knownBaker)), { fee: estimateOp[1].suggestedFeeMutez, gasLimit: estimateOp[1].gasLimit, storageLimit: estimateOp[1].storageLimit })
-        .withContractCall(contract.methods.do(MANAGER_LAMBDA.removeDelegate()), { fee: estimateOp[2].suggestedFeeMutez, gasLimit: estimateOp[2].gasLimit, storageLimit: estimateOp[2].storageLimit })
+        .withContractCall(contract.methodsObject.do(MANAGER_LAMBDA.transferImplicit("mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m", 5)), { fee: estimateOp[0].suggestedFeeMumav, gasLimit: estimateOp[0].gasLimit, storageLimit: estimateOp[0].storageLimit })
+        .withContractCall(contract.methods.do(MANAGER_LAMBDA.setDelegate(knownBaker)), { fee: estimateOp[1].suggestedFeeMumav, gasLimit: estimateOp[1].gasLimit, storageLimit: estimateOp[1].storageLimit })
+        .withContractCall(contract.methods.do(MANAGER_LAMBDA.removeDelegate()), { fee: estimateOp[2].suggestedFeeMumav, gasLimit: estimateOp[2].gasLimit, storageLimit: estimateOp[2].storageLimit })
       const batchOp = await batch.send();
 
       await batchOp.confirmation();
 
       // The sum of fee is slightly different from estimates above due to the size of the operation length varying slightly when forged (default value of estimates have higher values than actual estimates, making the variable length smaller than initially estimated)
-      expect(batchOp.fee).toEqual(estimateOp[0].suggestedFeeMutez + estimateOp[1].suggestedFeeMutez + estimateOp[2].suggestedFeeMutez);
+      expect(batchOp.fee).toEqual(estimateOp[0].suggestedFeeMumav + estimateOp[1].suggestedFeeMumav + estimateOp[2].suggestedFeeMumav);
       expect(batchOp.gasLimit).toEqual(estimateOp[0].gasLimit + estimateOp[1].gasLimit + estimateOp[2].gasLimit)
       expect(batchOp.storageLimit).toEqual(estimateOp[0].storageLimit + estimateOp[1].storageLimit + estimateOp[2].storageLimit)
     })

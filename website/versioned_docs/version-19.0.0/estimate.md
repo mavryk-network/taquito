@@ -11,23 +11,23 @@ Taquito's estimate method can be used to estimate fees, gas, and storage associa
 
 The `Estimate` object has the following properties:
 
-[`burnFeeMutez`]: The number of Mutez that will be burned for the storage of the operation. Returns a number.
+[`burnFeeMumav`]: The number of Mumav that will be burned for the storage of the operation. Returns a number.
 
 [`gasLimit`]: The limit on the amount of gas a given operation can consume. Returns a number.
 
-[`minimalFeeMutez`]: Minimum fees for the operation according to baker defaults. Returns a number.
+[`minimalFeeMumav`]: Minimum fees for the operation according to baker defaults. Returns a number.
 
 [`storageLimit`]: The limit on the amount of storage an operation can use. Returns a number.
 
-[`suggestedFeeMutez:`]: The suggested fee for the operation includes minimal fees and a small buffer. Returns a number.
+[`suggestedFeeMumav:`]: The suggested fee for the operation includes minimal fees and a small buffer. Returns a number.
 
-[`totalCost`]: The sum of `minimalFeeMutez` + `burnFeeMutez`. Returns a number.
+[`totalCost`]: The sum of `minimalFeeMumav` + `burnFeeMumav`. Returns a number.
 
-[`usingBaseFeeMutez`]: Fees according to your specified base fee will ensure that at least minimum fees are used.
+[`usingBaseFeeMumav`]: Fees according to your specified base fee will ensure that at least minimum fees are used.
 
 ### Estimate a transfer operation
 
-The following example shows an estimate of the fees associated with transferring 2ꜩ to `tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY` address. The configuration of the signer is to use a throw-away private key for demonstration purposes.
+The following example shows an estimate of the fees associated with transferring 2ṁ to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc` address. The configuration of the signer is to use a throw-away private key for demonstration purposes.
 
 <Tabs
 defaultValue="signer"
@@ -42,19 +42,19 @@ values={[
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Estimating the transfer of ${amount} ꜩ to ${address} : `);
+println(`Estimating the transfer of ${amount} ṁ to ${address} : `);
 Tezos.estimate
   .transfer({ to: address, amount: amount })
   .then((est) => {
-    println(`burnFeeMutez : ${est.burnFeeMutez}, 
+    println(`burnFeeMumav : ${est.burnFeeMumav}, 
     gasLimit : ${est.gasLimit}, 
-    minimalFeeMutez : ${est.minimalFeeMutez}, 
+    minimalFeeMumav : ${est.minimalFeeMumav}, 
     storageLimit : ${est.storageLimit}, 
-    suggestedFeeMutez : ${est.suggestedFeeMutez}, 
+    suggestedFeeMumav : ${est.suggestedFeeMumav}, 
     totalCost : ${est.totalCost}, 
-    usingBaseFeeMutez : ${est.usingBaseFeeMutez}`);
+    usingBaseFeeMumav : ${est.usingBaseFeeMumav}`);
   })
   .catch((error) => console.table(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -67,19 +67,19 @@ Tezos.estimate
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Estimating the transfer of ${amount} ꜩ to ${address} : `);
+println(`Estimating the transfer of ${amount} ṁ to ${address} : `);
 Tezos.estimate
   .transfer({ to: address, amount: amount })
   .then((est) => {
-    println(`burnFeeMutez : ${est.burnFeeMutez}, 
+    println(`burnFeeMumav : ${est.burnFeeMumav}, 
     gasLimit : ${est.gasLimit}, 
-    minimalFeeMutez : ${est.minimalFeeMutez}, 
+    minimalFeeMumav : ${est.minimalFeeMumav}, 
     storageLimit : ${est.storageLimit}, 
-    suggestedFeeMutez : ${est.suggestedFeeMutez}, 
+    suggestedFeeMumav : ${est.suggestedFeeMumav}, 
     totalCost : ${est.totalCost}, 
-    usingBaseFeeMutez : ${est.usingBaseFeeMutez}`);
+    usingBaseFeeMumav : ${est.usingBaseFeeMumav}`);
   })
   .catch((error) => console.table(`Error: ${JSON.stringify(error, null, 2)}`));
 ``` 
@@ -116,13 +116,13 @@ Tezos.contract
     return Tezos.estimate.contractCall(op);
   })
   .then((estimate) => {
-    println(`burnFeeMutez : ${estimate.burnFeeMutez}, 
+    println(`burnFeeMumav : ${estimate.burnFeeMumav}, 
     gasLimit : ${estimate.gasLimit}, 
-    minimalFeeMutez : ${estimate.minimalFeeMutez}, 
+    minimalFeeMumav : ${estimate.minimalFeeMumav}, 
     storageLimit : ${estimate.storageLimit}, 
-    suggestedFeeMutez : ${estimate.suggestedFeeMutez}, 
+    suggestedFeeMumav : ${estimate.suggestedFeeMumav}, 
     totalCost : ${estimate.totalCost}, 
-    usingBaseFeeMutez : ${estimate.usingBaseFeeMutez}`);
+    usingBaseFeeMumav : ${estimate.usingBaseFeeMumav}`);
   })
   .catch((error) => console.table(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -145,13 +145,13 @@ Tezos.wallet
     return Tezos.estimate.contractCall(op);
   })
   .then((estimate) => {
-    println(`burnFeeMutez : ${estimate.burnFeeMutez}, 
+    println(`burnFeeMumav : ${estimate.burnFeeMumav}, 
     gasLimit : ${estimate.gasLimit}, 
-    minimalFeeMutez : ${estimate.minimalFeeMutez}, 
+    minimalFeeMumav : ${estimate.minimalFeeMumav}, 
     storageLimit : ${estimate.storageLimit}, 
-    suggestedFeeMutez : ${estimate.suggestedFeeMutez}, 
+    suggestedFeeMumav : ${estimate.suggestedFeeMumav}, 
     totalCost : ${estimate.totalCost}, 
-    usingBaseFeeMutez : ${estimate.usingBaseFeeMutez}`);
+    usingBaseFeeMumav : ${estimate.usingBaseFeeMumav}`);
   })
   .catch((error) => console.table(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -187,13 +187,13 @@ Tezos.estimate
     },
   })
   .then((originationOp) => {
-    println(`burnFeeMutez : ${originationOp.burnFeeMutez},
+    println(`burnFeeMumav : ${originationOp.burnFeeMumav},
     gasLimit : ${originationOp.gasLimit},
-    minimalFeeMutez : ${originationOp.minimalFeeMutez},
+    minimalFeeMumav : ${originationOp.minimalFeeMumav},
     storageLimit : ${originationOp.storageLimit},
-    suggestedFeeMutez : ${originationOp.suggestedFeeMutez},
+    suggestedFeeMumav : ${originationOp.suggestedFeeMumav},
     totalCost : ${originationOp.totalCost},
-    usingBaseFeeMutez : ${originationOp.usingBaseFeeMutez}`);
+    usingBaseFeeMumav : ${originationOp.usingBaseFeeMumav}`);
   })
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -217,13 +217,13 @@ Tezos.estimate
     },
   })
   .then((originationOp) => {
-    println(`burnFeeMutez : ${originationOp.burnFeeMutez},
+    println(`burnFeeMumav : ${originationOp.burnFeeMumav},
     gasLimit : ${originationOp.gasLimit},
-    minimalFeeMutez : ${originationOp.minimalFeeMutez},
+    minimalFeeMumav : ${originationOp.minimalFeeMumav},
     storageLimit : ${originationOp.storageLimit},
-    suggestedFeeMutez : ${originationOp.suggestedFeeMutez},
+    suggestedFeeMumav : ${originationOp.suggestedFeeMumav},
     totalCost : ${originationOp.totalCost},
-    usingBaseFeeMutez : ${originationOp.usingBaseFeeMutez}`);
+    usingBaseFeeMumav : ${originationOp.usingBaseFeeMumav}`);
   })
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```  

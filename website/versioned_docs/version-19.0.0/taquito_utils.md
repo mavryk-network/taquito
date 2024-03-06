@@ -6,7 +6,7 @@ author: Davis Sawali & Roxane Letourneau
 ## Description
 The `@taquito/utils` package provides developers with utility functions in Taquito.
 
-You can find a full list of available utility functions in Taquito [here](https://tezostaquito.io/typedoc/modules/_taquito_utils.html)
+You can find a full list of available utility functions in Taquito [here](https://taquito.mavryk.org/typedoc/modules/_taquito_utils.html)
 
 ## Usage Example
 To use the functions, simply import the function you need as such:
@@ -33,7 +33,7 @@ Taquito provides functions that allow us to see if an address, a chain, a key ha
 
 #### The `validateAddress` function
 
-This function can be used to validate implicit addresses (tz1, tz2, tz3) and originated addresses (KT1).
+This function can be used to validate implicit addresses (mv1, mv2, mv3) and originated addresses (KT1).
 
 In the following example, the function is first called with a valid public key hash (pkh). It is then called with the same pkh where one character differs (e.g. 'p' instead of 'P'), which results in an invalid checksum.
 
@@ -41,19 +41,19 @@ In the following example, the function is first called with a valid public key h
 import { validateAddress } from '@taquito/utils';
 
 //valid
-const pkh = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const pkh = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 const validation = validateAddress(pkh);
 println(`Calling the validateAddress function with ${pkh} returns ${validation}.`);
 
 //invalid checksum
-const invalidPkh = 'tz1L9r8mWmRpndRhuvMCWESLGSVeFzQ9NAWx';
+const invalidPkh = 'mv1NRLktBobVVU4Sy4Ab26DLTUAhUtxsWUHf';
 const invalidValidation = validateAddress(invalidPkh);
 println(`Calling the validateAddress function with ${invalidPkh} returns ${invalidValidation}.`);
 ```
 
 #### The `validateKeyHash` function
 
-This function is used to validate implicit addresses (tz1, tz2, tz3).
+This function is used to validate implicit addresses (mv1, mv2, mv3).
 
 Here is a valid example with a pkh and an invalid one where the prefix is missing :
 
@@ -61,7 +61,7 @@ Here is a valid example with a pkh and an invalid one where the prefix is missin
 import { validateKeyHash } from '@taquito/utils';
 
 //valid
-const keyHash = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const keyHash = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 const validation = validateKeyHash(keyHash);
 println(`Calling the validateKeyHash function with ${keyHash} returns ${validation}.`);
 
@@ -119,7 +119,7 @@ const validation = validatePublicKey(publicKey);
 println(`Calling the validatePublicKey function with ${publicKey} returns ${validation}.`);
 
 //invalid prefix
-const value = 'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx';
+const value = 'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH';
 const invalidValidation = validatePublicKey(value);
 println(`Calling the validatePublicKey function with ${value} returns ${invalidValidation}.`);
 ```

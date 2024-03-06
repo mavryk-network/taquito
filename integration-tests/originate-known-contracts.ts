@@ -9,7 +9,7 @@ import { knownBigMapContract } from './data/knownBigMapContract';
 import { knownContract } from './data/knownContract';
 import * as fs from 'fs/promises';
 
-const MUTEZ_UNIT = new BigNumber(1000000);
+const MUMAV_UNIT = new BigNumber(1000000);
 
 CONFIGS().forEach(({ lib, setup, protocol }) => {
   const tezos = lib;
@@ -89,7 +89,7 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     // KnownBigMapContract
     const allowancesBigMap = new MichelsonMap();
     const ledgerBigMap = new MichelsonMap();
-    ledgerBigMap.set('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP', { allowances: allowancesBigMap, balance: '100' });
+    ledgerBigMap.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances: allowancesBigMap, balance: '100' });
     await originateKnownContract('bigMapContract', tezos, {
       code: knownBigMapContract,
       storage: {
@@ -179,10 +179,10 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     console.log(`
 ################################################################################
 Public Key Hash : ${keyPkh}
-Initial Balance : ${keyInitialBalance.dividedBy(MUTEZ_UNIT)} XTZ
-Final Balance   : ${(await tezos.tz.getBalance(keyPkh)).dividedBy(MUTEZ_UNIT)} XTZ
+Initial Balance : ${keyInitialBalance.dividedBy(MUMAV_UNIT)} XTZ
+Final Balance   : ${(await tezos.tz.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
 
-Total XTZ Spent : ${keyInitialBalance.minus(await tezos.tz.getBalance(keyPkh)).dividedBy(MUTEZ_UNIT)} XTZ
+Total XTZ Spent : ${keyInitialBalance.minus(await tezos.tz.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
 `)
   })();
 

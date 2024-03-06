@@ -232,16 +232,16 @@ export class SaplingToolkit {
 
     txParams.forEach((param) => {
       validateDestination(param.to);
-      const amountMutez = param.mumav
+      const amountMumav = param.mumav
         ? param.amount.toString()
         : format('mv', 'mumav', param.amount).toString();
-      totalAmount = totalAmount.plus(new BigNumber(amountMutez));
+      totalAmount = totalAmount.plus(new BigNumber(amountMumav));
       const memo = param.memo ?? DEFAULT_MEMO;
       if (memo.length > this.#memoSize) {
         throw new InvalidMemo(memo, `expecting length to be less than ${this.#memoSize}`);
       }
 
-      formatedParams.push({ to: param.to, amount: amountMutez, memo });
+      formatedParams.push({ to: param.to, amount: amountMumav, memo });
     });
 
     return { formatedParams, totalAmount };
@@ -321,7 +321,7 @@ export class SaplingToolkit {
     return saplingContractId;
   }
 
-  private async selectInputsToSpend(amountMutez: BigNumber): Promise<ChosenSpendableInputs> {
+  private async selectInputsToSpend(amountMumav: BigNumber): Promise<ChosenSpendableInputs> {
     const saplingTxViewer = await this.getSaplingTransactionViewer();
 
     const { incoming } = await saplingTxViewer.getIncomingAndOutgoingTransactionsRaw();
@@ -330,7 +330,7 @@ export class SaplingToolkit {
     let sumSelectedInputs = new BigNumber(0);
 
     incoming.forEach((input) => {
-      if (!input.isSpent && sumSelectedInputs.isLessThan(amountMutez)) {
+      if (!input.isSpent && sumSelectedInputs.isLessThan(amountMumav)) {
         const txAmount = convertValueToBigNumber(input.value);
         sumSelectedInputs = sumSelectedInputs.plus(txAmount);
         const { isSpent: _isSpent, ...rest } = input;
@@ -338,8 +338,8 @@ export class SaplingToolkit {
       }
     });
 
-    if (sumSelectedInputs.isLessThan(new BigNumber(amountMutez))) {
-      throw new InsufficientBalance(sumSelectedInputs.toString(), amountMutez.toString());
+    if (sumSelectedInputs.isLessThan(new BigNumber(amountMumav))) {
+      throw new InsufficientBalance(sumSelectedInputs.toString(), amountMumav.toString());
     }
     return { inputsToSpend, sumSelectedInputs };
   }

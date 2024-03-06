@@ -263,7 +263,7 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
         smart_rollup_riscv_pvm_enable: false,
         smart_rollup_stake_amount: '10000000000',
         smart_rollup_timeout_period_in_blocks: 500,
-        testnet_dictator: 'tz1Xf8zdT3DbAX9cHw3c3CXh79rc4nK4gCe8',
+        testnet_dictator: 'mv1TQVEqbq743rV4f3z4XG8cGX6vk9DniVUP',
         vdf_difficulty: new BigNumber(10000000000),
         zk_rollup_enable: false,
         zk_rollup_max_ticket_payload_size: 2048,

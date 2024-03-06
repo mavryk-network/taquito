@@ -9,7 +9,7 @@ This section shows how to transfer all tokens from one account (implicit or orig
 
 We want to "empty" an implicit account by sending all of its tokens to another account. It can be tricky to empty a tezos account because the system must subtract the gas fee from the account balance.
 
-To do so, we first need to estimate the fees related to this operation. The `estimate` property of the `TezosToolkit` provides access to operation estimation utilities. Calling the `transfer` method will return an instance of the `Estimate` class and its `suggestedFeeMutez` property will allow us to know the fee associated with the operation.
+To do so, we first need to estimate the fees related to this operation. The `estimate` property of the `TezosToolkit` provides access to operation estimation utilities. Calling the `transfer` method will return an instance of the `Estimate` class and its `suggestedFeeMumav` property will allow us to know the fee associated with the operation.
 
 Once we know the associated fees, we can calculate the maximum amount that needs to send to drain the account by subtracting these fees from the account balance.
 
@@ -42,11 +42,11 @@ Tezos.signer
                 })
                 .then((estimate) => {
                     const maxAmount = balance.minus(
-                      estimate.suggestedFeeMutez + DEFAULT_FEE.REVEAL
+                      estimate.suggestedFeeMumav + DEFAULT_FEE.REVEAL
                     ).toNumber();
                     println(
                         `The estimated fees related to the emptying operation are ${
-                          estimate.suggestedFeeMutez
+                          estimate.suggestedFeeMumav
                         } mumav.\nThe fees related to the reveal operation are ${
                           DEFAULT_FEE.REVEAL
                         } mumav.\nConsidering those fees, the amount we need to send to empty the account is ${
@@ -57,7 +57,7 @@ Tezos.signer
                         to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                         mumav: true,
                         amount: maxAmount,
-                        fee: estimate.suggestedFeeMutez,
+                        fee: estimate.suggestedFeeMumav,
                         gasLimit: estimate.gasLimit,
                         storageLimit: 0
                     });
@@ -136,7 +136,7 @@ Tezos.signer
             .then((estimate) => {
               //Will be deducted from manager's address
               println(
-                `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMutez} mumav.`
+                `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMumav} mumav.`
               );
               return contract.methods
                 .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))

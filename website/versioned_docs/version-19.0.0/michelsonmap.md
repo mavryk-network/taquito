@@ -8,7 +8,7 @@ One of the most attractive smart contract features is storing a substantial amou
 
 Unlike big maps, all the values in a map are deserialized, allowing developers to access all of them at once. While maps become more expensive to use when the number of key/value pairs increases, they are well-suited for smaller databases because of Michelson's extra features (like mapping or folding) and Taquito offer on maps.
 
-Taquito reads maps in the storage of smart contracts and translates them into an [instance of the `MichelsonMap` class](https://tezostaquito.io/typedoc/classes/_taquito_taquito.michelsonmap.html). The class and its instances expose different features that give developers much flexibility to use Michelson maps in their dapps. These features fall into four groups:
+Taquito reads maps in the storage of smart contracts and translates them into an [instance of the `MichelsonMap` class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.michelsonmap.html). The class and its instances expose different features that give developers much flexibility to use Michelson maps in their dapps. These features fall into four groups:
 
 - _The instantiation_: there are three different ways of creating a new `MichelsonMap` in Taquito
 - _The general methods_: they give you information about the map, for example, its size or the elements it contains
@@ -58,7 +58,7 @@ If you prefer, you can also pass an argument to the `MichelsonMap` constructor t
 
 const newEmptyMapWithArg = new MichelsonMap({
   prim: 'map',
-  args: [{ prim: 'string' }, { prim: 'mutez' }],
+  args: [{ prim: 'string' }, { prim: 'mumav' }],
 });
 ```
 
@@ -66,7 +66,7 @@ Finally, you can also pass some values you want to create the instance with and 
 
 ```ts
 const newMapfromLiteral = MichelsonMap.fromLiteral({
-  tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb: new BigNumber(123),
+  mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv: new BigNumber(123),
 });
 ```
 
@@ -89,14 +89,14 @@ const size: number = storage.size; // number of elements in the map
 Sometimes, you don't want to do anything with the values in a map, but you want to verify whether a key appears in the map, you can then use the `has` method and pass it the key you are looking for:
 
 ```ts
-const key: string = 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6';
+const key: string = 'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5';
 const existsInMap: boolean = storage.has(key); // true or false
 ```
 
 After that, you can fetch the value associated with the key you are looking for with the `get` method:
 
 ```ts
-const key: string = 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6';
+const key: string = 'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5';
 const valueInTez: BigNumber = storage.get(key); // value as a big number
 const value: number = valueInTez.toNumber(); // returns 789000000
 ```
@@ -117,10 +117,10 @@ The code above will output:
 
 ```ts
 [
-  { address: 'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6', amount: 789 },
-  { address: 'tz1R2oNqANNy2vZhnZBJc8iMEqW79t85Fv7L', amount: 912 },
-  { address: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', amount: 123 },
-  { address: 'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6', amount: 456 },
+  { address: 'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5', amount: 789 },
+  { address: 'mv1PBJ3GVEmNbN5RVJ2yX193VzLphpcoh4xC', amount: 912 },
+  { address: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 123 },
+  { address: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 456 },
 ];
 ```
 
@@ -152,10 +152,10 @@ This example will output the following array containing all the keys of the map:
 
 ```ts
 [
-  'tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6',
-  'tz1R2oNqANNy2vZhnZBJc8iMEqW79t85Fv7L',
-  'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
-  'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6',
+  'mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5',
+  'mv1PBJ3GVEmNbN5RVJ2yX193VzLphpcoh4xC',
+  'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
+  'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU',
 ];
 ```
 
@@ -185,7 +185,7 @@ First, you can use the `set` method to add a new value to an instance of `Michel
 ```ts
 console.log(`previous size => ${storage.size} elements`); // 4 elements
 
-storage.set('tz1TfRXkAxbQ2BFqKV2dF4kE17yZ5BmJqSAP', new BigNumber(345));
+storage.set('mv1DqnZutBehnWcvzGVFPAakA88taaTTbZzG', new BigNumber(345));
 
 console.log(`new size => ${storage.size} elements \n`); // 5 elements
 ```
@@ -199,7 +199,7 @@ You can also delete one of the entries of the map with the `delete` method:
 ```ts
 console.log(`delete: previous size => ${storage.size} elements`); // 5 elements
 
-storage.delete('tz1MnmtP4uAcgMpeZN6JtyziXeFqqwQG6yn6');
+storage.delete('mv1LxvgqJ7VRdLyYEdcWeYVxr7byoU9FRnQ5');
 
 console.log(`delete: new size => ${storage.size} elements \n`); // 4 elements
 ```
@@ -215,6 +215,6 @@ console.log(`clear: new size => ${storage.size} element`); // 0 element
 
 ## To go further
 
-If you want to know more about `MichelsonMap` and some advanced usages (for example, how to use pairs as the map keys), you can learn in the [advanced tutorial](https://tezostaquito.io/docs/maps_bigmaps) available in the Taquito documentation.
+If you want to know more about `MichelsonMap` and some advanced usages (for example, how to use pairs as the map keys), you can learn in the [advanced tutorial](https://taquito.mavryk.org/docs/maps_bigmaps) available in the Taquito documentation.
 
 *April 2021, Taquito version 8.1.0*

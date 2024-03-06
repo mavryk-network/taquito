@@ -29,7 +29,7 @@ Below is a quick example of how to use the `transaction` operation via the Contr
 import { TezosToolkit } from '@taquito/taquito';
 
 const Tezos = new TezosToolkit('RPC address here');
-const op = await Tezos.contract.transfer({ to: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', amount: 100 });
+const op = await Tezos.contract.transfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 100 });
 await op.confirmation();
 ```
 
@@ -87,7 +87,7 @@ await op2.confirmation();
  * Error Message that was returned by the node (before Kathmandu):
  * "Error while applying operation opWH2nEcmmzUwK4T6agHg3bn9GDR7fW1ynqWL58AVRAb7aZFciD:
  * branch refused (Error:
- * Counter 1122148 already used for contract tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb (expected 1122149))"
+ * Counter 1122148 already used for contract mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv (expected 1122149))"
  */
 ``` 
 

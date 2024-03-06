@@ -1,9 +1,9 @@
-import { MutezToken, MutezValidationError } from '../../src/tokens/comparable/mumav';
+import { MumavToken, MumavValidationError } from '../../src/tokens/comparable/mumav';
 
-describe('Mutez token', () => {
-  let token: MutezToken;
+describe('Mumav token', () => {
+  let token: MumavToken;
   beforeEach(() => {
-    token = new MutezToken({ prim: 'mumav', args: [], annots: [] }, 0, null as any);
+    token = new MumavToken({ prim: 'mumav', args: [], annots: [] }, 0, null as any);
   });
 
   describe('EncodeObject', () => {
@@ -13,9 +13,9 @@ describe('Mutez token', () => {
     });
 
     it('Should throw a validation error when value is not a number', () => {
-      expect(() => token.EncodeObject('test')).toThrowError(MutezValidationError);
-      expect(() => token.EncodeObject([])).toThrowError(MutezValidationError);
-      expect(() => token.EncodeObject({})).toThrowError(MutezValidationError);
+      expect(() => token.EncodeObject('test')).toThrowError(MumavValidationError);
+      expect(() => token.EncodeObject([])).toThrowError(MumavValidationError);
+      expect(() => token.EncodeObject({})).toThrowError(MumavValidationError);
     });
   });
 
@@ -26,10 +26,10 @@ describe('Mutez token', () => {
     });
 
     it('Should throw a validation error when value is not a number', () => {
-      expect(() => token.Encode(['test'])).toThrowError(MutezValidationError);
+      expect(() => token.Encode(['test'])).toThrowError(MumavValidationError);
       expect(() => token.Encode(['test'])).toThrowError('Value is not a number: test');
-      expect(() => token.Encode([])).toThrowError(MutezValidationError);
-      expect(() => token.Encode([{}])).toThrowError(MutezValidationError);
+      expect(() => token.Encode([])).toThrowError(MumavValidationError);
+      expect(() => token.Encode([{}])).toThrowError(MumavValidationError);
     });
   });
 
@@ -37,13 +37,13 @@ describe('Mutez token', () => {
   it('accepts a number as parameter', () => {
       expect(token.ToBigMapKey(10000000)).toEqual({
         key: { int: '10000000' },
-        type: { prim: MutezToken.prim },
+        type: { prim: MumavToken.prim },
       });
     });
   it('accepts a string as parameter', () => {
       expect(token.ToBigMapKey('10000000')).toEqual({
         key: { int: '10000000' },
-        type: { prim: MutezToken.prim },
+        type: { prim: MumavToken.prim },
       });    
     });
   });

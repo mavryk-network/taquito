@@ -122,7 +122,7 @@ CONFIGS().forEach(({ lib, setup, protocol, createAddress }) => {
       const preparedTransfer = await Tezos.prepare.transaction({
         amount: 1,
         to: pkh,
-        fee: estimates.suggestedFeeMutez,
+        fee: estimates.suggestedFeeMumav,
         storageLimit: estimates.storageLimit,
         gasLimit: estimates.gasLimit
       });

@@ -75,15 +75,15 @@ export class RPCEstimateProvider extends Provider implements EstimationProvider 
         milligasLimit: totalMilligas || 0,
         storageLimit: Number(totalStorage || 0),
         opSize: size,
-        minimalFeePerStorageByteMutez: costPerByte.toNumber(),
+        minimalFeePerStorageByteMumav: costPerByte.toNumber(),
       };
     } else {
       return {
         milligasLimit: 0,
         storageLimit: 0,
         opSize: size,
-        minimalFeePerStorageByteMutez: costPerByte.toNumber(),
-        baseFeeMutez: 0,
+        minimalFeePerStorageByteMumav: costPerByte.toNumber(),
+        baseFeeMumav: 0,
       };
     }
   }

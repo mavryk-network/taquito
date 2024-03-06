@@ -14,7 +14,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     });
 
     it(
-      'originates a contract with SUB MUTEZ and sends base layer tokens when calling contract methods',
+      'originates a contract with SUB MUMAV and sends base layer tokens when calling contract methods',
       async () => {
         const op = await Tezos.contract.originate({
           balance: '0',
@@ -29,11 +29,11 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         let balance = await Tezos.tz.getBalance(contract.address);
         expect(balance.toString()).toEqual('1000000');
 
-        const operationMutez = await contract.methods
+        const operationMumav = await contract.methods
           .deposit(null)
           .send({ amount: 1, mumav: true } as any);
-        await operationMutez.confirmation();
-        expect(operationMutez.status).toEqual('applied');
+        await operationMumav.confirmation();
+        expect(operationMumav.status).toEqual('applied');
         balance = await Tezos.tz.getBalance(contract.address);
         expect(balance.toString()).toEqual('1000001');
       }

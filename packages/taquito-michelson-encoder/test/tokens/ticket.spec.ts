@@ -14,7 +14,7 @@ describe('Ticket token', () => {
   let tokenTicketInt: TicketToken;
   let tokenTicketKey: TicketToken;
   let tokenTicketKeyHash: TicketToken;
-  let tokenTicketMutez: TicketToken;
+  let tokenTicketMumav: TicketToken;
   // let tokenTicketNever: TicketToken;
   let tokenTicketOption: TicketToken;
   let tokenTicketOr: TicketToken;
@@ -54,7 +54,7 @@ describe('Ticket token', () => {
       { prim: 'ticket', args: [{ prim: 'key_hash' }] },
       0
     ) as TicketToken;
-    tokenTicketMutez = createToken(
+    tokenTicketMumav = createToken(
       { prim: 'ticket', args: [{ prim: 'mumav' }], annots: ['%test'] },
       0
     ) as TicketToken;
@@ -113,7 +113,7 @@ describe('Ticket token', () => {
       expect(() =>
         tokenTicketKeyHash.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketError);
-      expect(() => tokenTicketMutez.EncodeObject(1000000)).toThrowError(EncodeTicketError);
+      expect(() => tokenTicketMumav.EncodeObject(1000000)).toThrowError(EncodeTicketError);
       expect(() =>
         tokenTicketOption.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketError);
@@ -153,7 +153,7 @@ describe('Ticket token', () => {
       expect(() =>
         tokenTicketKeyHash.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketError);
-      expect(() => tokenTicketMutez.Encode([1000000])).toThrowError(EncodeTicketError);
+      expect(() => tokenTicketMumav.Encode([1000000])).toThrowError(EncodeTicketError);
       expect(() => tokenTicketOption.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])).toThrowError(
         EncodeTicketError
       );
@@ -318,7 +318,7 @@ describe('Ticket token', () => {
 
     it('Should execute on readTicketType with ticket of type mumav', () => {
       expect(
-        tokenTicketMutez.Execute({
+        tokenTicketMumav.Execute({
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },

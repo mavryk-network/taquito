@@ -11,7 +11,7 @@ When the `Babylon/proto005` protocol amendment came into effect, it changed how 
 
 The Taquito [integration tests](https://github.com/ecadlabs/taquito/blob/master/integration-tests/contract-manager-scenario.spec.ts) can be useful to see how this works.
 
-## Transfer from an implicit tz1 address to a tz1 address
+## Transfer from an implicit mv1 address to a mv1 address
 
 This is the simplest token transfer scenario
 
@@ -19,7 +19,7 @@ This is the simplest token transfer scenario
 await Tezos.contract.transfer({ to: contract.address, amount: 1 });
 ```
 
-In the following example, we transfer 0.5ꜩ from a `tz1aaYoabvj2DQtpHz74Z83fSNjY29asdBfZ` address that signs the operation to `tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY`.
+In the following example, we transfer 0.5ṁ from a `mv1PYMQXgRiJBMsrEaM9Yre4JyvcLVbUr8pv` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
 
 ```js live noInline
 // import { TezosToolkit } from '@taquito/taquito';
@@ -37,9 +37,9 @@ fetch('https://keygen.ecadinfra.com/ghostnet/', {
   })
   .then(() => {
     const amount = 0.5;
-    const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+    const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-    render(`Transfering ${amount} ꜩ to ${address}...`);
+    render(`Transfering ${amount} ṁ to ${address}...`);
     return Tezos.contract.transfer({ to: address, amount: amount });
   })
   .then((op) => {
@@ -60,23 +60,23 @@ A call to the KT1's smart contracts' `do` method is required to transfer tokens 
 
 > The examples following apply only to KT1 addresses migrated as part of the `Babylon/proto005` upgrade. Transfers involving _other_ types of smart-contracts depend on those contracts specifically.
 
-## Transfer 0.00005 (50 mutez) tokens from a KT1 address to a tz1 address
+## Transfer 0.00005 (50 mumav) tokens from a KT1 address to a mv1 address
 
-Sending 50 mutez from `kt1...` to `tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh`.
+Sending 50 mumav from `kt1...` to `mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m`.
 
-### Example transfer from a KT1 to a tz1 address on Carthage/Proto006
+### Example transfer from a KT1 to a mv1 address on Carthage/Proto006
 
 ```js
 const contract = await Tezos.contract.at('kt1...');
 await contract.methods
-  .do(transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 50))
+  .do(transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 50))
   .send({ amount: 0 });
 ```
 
 Where `transferImplicit` is a function that returns the necessary Michelson lambda. It looks like this:
 
 ```js
-export const transferImplicit = (key: string, mutez: number) => {
+export const transferImplicit = (key: string, mumav: number) => {
   return [
     { prim: 'DROP' },
     { prim: 'NIL', args: [{ prim: 'operation' }] },
@@ -87,7 +87,7 @@ export const transferImplicit = (key: string, mutez: number) => {
     { prim: 'IMPLICIT_ACCOUNT' },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${mutez}` }],
+      args: [{ prim: 'mumav' }, { int: `${mumav}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },
@@ -96,9 +96,9 @@ export const transferImplicit = (key: string, mutez: number) => {
 };
 ```
 
-## Transfer 0.000001 (1 mutez) tokens from a KT1 address to a KT1 address
+## Transfer 0.000001 (1 mumav) tokens from a KT1 address to a KT1 address
 
-Sending 1 mutez to `KT1KLbEeEgW5h1QLkPuPvqdgurHx6v4hGyic` from `KT1...`
+Sending 1 mumav to `KT1KLbEeEgW5h1QLkPuPvqdgurHx6v4hGyic` from `KT1...`
 
 ### Example for Babylon/Proto005 or higher
 
@@ -129,7 +129,7 @@ export const transferToContract = (key: string, amount: number) => {
     ],
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${amount}` }],
+      args: [{ prim: 'mumav' }, { int: `${amount}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },

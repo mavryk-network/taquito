@@ -26,7 +26,7 @@ Here is a simple example on getting the operation hash of a transaction (transfe
 
 const preparedTransfer = await Tezos.prepare.transaction({
   amount: 1,
-  to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+  to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
 
 

@@ -37,7 +37,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       // The createTransferOperation function returns RPCTransferOperation where we include the estimated fees 
       const rpcTransferOperation = await createTransferOperation({
         ...transferParams,
-        fee: estimate.suggestedFeeMutez,
+        fee: estimate.suggestedFeeMumav,
         gasLimit: estimate.gasLimit,
         storageLimit: estimate.storageLimit
       });

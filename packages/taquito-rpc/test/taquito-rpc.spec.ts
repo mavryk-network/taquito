@@ -3380,7 +3380,7 @@ describe('RpcClient test', () => {
                   kind: 'freezer',
                   category: 'deposits',
                   staker: {
-                    baker: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+                    baker: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
                   },
                   change: '266662',
                   origin: 'block',
@@ -3438,7 +3438,7 @@ describe('RpcClient test', () => {
                   kind: 'freezer',
                   category: 'deposits',
                   staker: {
-                    baker: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+                    baker: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
                   },
                   change: '266667',
                   origin: 'block',

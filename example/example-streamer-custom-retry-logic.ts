@@ -21,7 +21,7 @@ async function example() {
   }));
 
   const bakerAttestationFilter = {
-    and: [{ source: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m' }, { kind: 'attestation' }]
+    and: [{ source: 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG' }, { kind: 'attestation' }]
   }
 
   const bakerEndorsementFilter = {

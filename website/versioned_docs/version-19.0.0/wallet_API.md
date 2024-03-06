@@ -62,7 +62,7 @@ Then, you can start initializing the wallet:
 ```js
 const options = {
   name: 'MyAwesomeDapp',
-  iconUrl: 'https://tezostaquito.io/img/favicon.svg',
+  iconUrl: 'https://taquito.mavryk.org/img/favicon.svg',
   network: { type: 'ghostnet' },
   eventHandlers: {
     PERMISSION_REQUEST_SUCCESS: {
@@ -235,7 +235,7 @@ Although it is possible to transfer tokens directly from the wallets, Taquito ca
 
 ```js live noInline wallet
 Tezos.wallet
-  .transfer({ to: 'tz1NhNv9g7rtcjyNsH8Zqu79giY5aTqDDrzB', amount: 0.2 })
+  .transfer({ to: 'mv1JnsMA5ArZr926mKNzQf4TeTpibVWfpEx3', amount: 0.2 })
   .send()
   .then((op) => {
     println(`Hash: ${op.opHash}`);
@@ -253,7 +253,7 @@ Tezos.wallet
   });
 ```
 
-The `transfer` method takes an object with only two required properties: the `to` property that indicates the recipient of the transaction and the `amount` property for the number of tokens that should be sent. Unlike the Contract API, the transfer must be _sent_ by using the `.send` method, which returns a promise that will resolve with an instance of the [**TransactionWalletOperation class**](https://tezostaquito.io/typedoc/classes/_taquito_taquito.transactionwalletoperation.html). This instance holds, among others, the transaction hash under the `opHash` property. You can then call the `.confirmation()` method and pass as a parameter the number of confirmations you want to wait (one by default). Once confirmed, the returned promise is resolved to an object with a `complete` property set to true if the operation has been confirmed.
+The `transfer` method takes an object with only two required properties: the `to` property that indicates the recipient of the transaction and the `amount` property for the number of tokens that should be sent. Unlike the Contract API, the transfer must be _sent_ by using the `.send` method, which returns a promise that will resolve with an instance of the [**TransactionWalletOperation class**](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.transactionwalletoperation.html). This instance holds, among others, the transaction hash under the `opHash` property. You can then call the `.confirmation()` method and pass as a parameter the number of confirmations you want to wait (one by default). Once confirmed, the returned promise is resolved to an object with a `complete` property set to true if the operation has been confirmed.
 
 ### - Transfer to smart contracts
 
@@ -318,7 +318,7 @@ In the case of multiple arguments (for example if the entrypoint expects a pair)
 Tezos.wallet
   .at('KT1SHiNUNmqBFGNysX9pmh1DC2tQ5pGmRagC')
   .then((contract) =>
-    contract.methods.addName('tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', 'Alice').send()
+    contract.methods.addName('mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', 'Alice').send()
   )
   .then((op) => {
     println(`Hash: ${op.opHash}`);
@@ -358,7 +358,7 @@ interface SendParams {
   gasLimit?: number;
   amount: number;
   source?: string;
-  mutez?: boolean;
+  mumav?: boolean;
 }
 ```
 
@@ -372,11 +372,11 @@ If you choose to use the parameters, only one property is mandatory: the `amount
 
 - `source`: a string indicating the source of the transaction
 
-- `mutez`: if set to `true`, it indicates that the amount provided is in mutez
+- `mumav`: if set to `true`, it indicates that the amount provided is in mumav
 
 ### - Operation hash and confirmation
 
-The `.send()` method returns an instance of the [`TransactionWalletOperation`](https://tezostaquito.io/typedoc/classes/_taquito_taquito.transactionwalletoperation.html) class with different properties and methods you can use to gather information about the transaction. Among them, there are two properties and one method that you will use most of the time when using Taquito:
+The `.send()` method returns an instance of the [`TransactionWalletOperation`](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.transactionwalletoperation.html) class with different properties and methods you can use to gather information about the transaction. Among them, there are two properties and one method that you will use most of the time when using Taquito:
 
 1. `.opHash`: this property holds the hash of the current transaction. It can be useful for debugging purposes or checking the status of the transaction in a block explorer.
 
@@ -498,7 +498,7 @@ If you use the Ligo programming language and the storage is a record, you can si
 {
   code: parsedMichelson,
   storage: {
-    owner: "tz1...",
+    owner: "mv1...",
     counter: 2,
     paused: false
   }
@@ -516,7 +516,7 @@ import { MichelsonMap } from "@taquito/taquito";
   code: parsedMichelson,
   storage: {
     ledger: new MichelsonMap(),
-    owner: "tz1..."
+    owner: "mv1..."
   }
 }
 
@@ -531,12 +531,12 @@ import { MichelsonMap } from "@taquito/taquito";
 {
   code: parsedMichelson,
   storage: {
-    // ledger must be of type (map string int/nat/mutez) or (big_map string int/nat/mutez)
+    // ledger must be of type (map string int/nat/mumav) or (big_map string int/nat/mumav)
     ledger: MichelsonMap.fromLiteral({
       alice: 25,
       bob: 16
     }),
-    owner: "tz1..."
+    owner: "mv1..."
   }
 }
 
@@ -600,7 +600,7 @@ This returns the contract abstraction that you can now use to interact with the 
 
 ### - Contract properties and methods
 
-Now, let's observe the contract abstraction that we obtained. It's an instance of the [ContractAbstraction class](https://tezostaquito.io/typedoc/classes/_taquito_taquito.contractabstraction.html) with different properties and methods:
+Now, let's observe the contract abstraction that we obtained. It's an instance of the [ContractAbstraction class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.contractabstraction.html) with different properties and methods:
 
 _Properties:_
 
@@ -618,11 +618,11 @@ _Methods:_
 
 1. `bigMap`: a promise that takes a key from the big map in the storage as a parameter and returns the value associated with that key.
 
-2. `storage`: a promise that returns a representation of the storage value(s). The storage is represented as an object whose keys are the name of the values. `map` and `big map` values are returned as an instance of the [BigMapAbstraction](https://tezostaquito.io/typedoc/classes/_taquito_taquito.bigmapabstraction.html) while numeric values are returned as BigNumber.
+2. `storage`: a promise that returns a representation of the storage value(s). The storage is represented as an object whose keys are the name of the values. `map` and `big map` values are returned as an instance of the [BigMapAbstraction](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.bigmapabstraction.html) while numeric values are returned as BigNumber.
 
 ## The Wallet instance
 
-The Tezos singleton object exposes a _wallet_ property in the same fashion it exposes the _contract_ property to which you may be used. This property is an instance of the [Wallet class](https://tezostaquito.io/typedoc/classes/_taquito_taquito.wallet.html) with a few useful methods you want to check out. It becomes available as soon as you set up a wallet by calling `Tezos.setProvider({wallet})` or `Tezos.setWalletProvider(wallet)`. Here is a list of the methods and a basic description of their function before seeing some examples:
+The Tezos singleton object exposes a _wallet_ property in the same fashion it exposes the _contract_ property to which you may be used. This property is an instance of the [Wallet class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.wallet.html) with a few useful methods you want to check out. It becomes available as soon as you set up a wallet by calling `Tezos.setProvider({wallet})` or `Tezos.setWalletProvider(wallet)`. Here is a list of the methods and a basic description of their function before seeing some examples:
 
 1. `at`: creates a smart contract abstraction for the address specified
 
@@ -653,7 +653,7 @@ const op = await Tezos.wallet
   .batch([
     {
       kind: 'transaction',
-      to: 'tz1...',
+      to: 'mv1...',
       amount: 2,
     },
     {
@@ -673,7 +673,7 @@ or
 ```js
 const batch = Tezos.wallet
   .batch()
-  .withTransfer({ to: 'tz1...', amount: 2 })
+  .withTransfer({ to: 'mv1...', amount: 2 })
   .withOrigination({
     balance: '1',
     code: code,
@@ -724,15 +724,15 @@ await op.confirmation();
 The `setDelegate` method takes an object as a parameter with a `delegate` property set to the address you want to set as a delegate:
 
 ```js
-const op = await Tezos.wallet.setDelegate({ delegate: 'tz1...' }).send();
+const op = await Tezos.wallet.setDelegate({ delegate: 'mv1...' }).send();
 
 await op.confirmation();
 ```
 
-Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mutez`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
+Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mumav`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
 
 ```js
-const op = await Tezos.wallet.transfer({ to: 'tz1...', amount: 2 }).send();
+const op = await Tezos.wallet.transfer({ to: 'mv1...', amount: 2 }).send();
 
 await op.confirmation();
 ```

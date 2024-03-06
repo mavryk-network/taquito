@@ -33,14 +33,14 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
             });
 
             // // Emptying the account
-            const totalFees = estimate.suggestedFeeMutez + estimate.burnFeeMutez;
+            const totalFees = estimate.suggestedFeeMumav + estimate.burnFeeMumav;
             const maxAmount = balance.minus(totalFees).toNumber();
 
             const opTransfer = await sender.contract.transfer({
                 to: receiver_pkh,
                 mumav: true,
                 amount: maxAmount,
-                fee: estimate.suggestedFeeMutez,
+                fee: estimate.suggestedFeeMumav,
                 gasLimit: estimate.gasLimit,
                 storageLimit: estimate.storageLimit
             });

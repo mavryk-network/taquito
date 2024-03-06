@@ -17,7 +17,7 @@ import { OrToken } from './or';
 import { ContractToken } from './contract';
 
 import { ListToken } from './list';
-import { MutezToken } from './comparable/mumav';
+import { MumavToken } from './comparable/mumav';
 import { BytesToken } from './comparable/bytes';
 import { OptionToken } from './option';
 import { TimestampToken } from './comparable/timestamp';
@@ -54,7 +54,7 @@ export const tokens = [
   OrToken,
   ContractToken,
   ListToken,
-  MutezToken,
+  MumavToken,
   BytesToken,
   OptionToken,
   TimestampToken,

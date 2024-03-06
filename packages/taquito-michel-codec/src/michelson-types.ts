@@ -205,7 +205,7 @@ export type MichelsonTypeInt = Type0<'int'>;
 export type MichelsonTypeNat = Type0<'nat'>;
 export type MichelsonTypeString = Type0<'string'>;
 export type MichelsonTypeBytes = Type0<'bytes'>;
-export type MichelsonTypeMutez = Type0<'mumav'>;
+export type MichelsonTypeMumav = Type0<'mumav'>;
 export type MichelsonTypeBool = Type0<'bool'>;
 export type MichelsonTypeKeyHash = Type0<'key_hash'>;
 export type MichelsonTypeTimestamp = Type0<'timestamp'>;
@@ -251,7 +251,7 @@ export type MichelsonType<T extends MichelsonTypeID = MichelsonTypeID> = T exten
   : T extends 'bytes'
   ? MichelsonTypeBytes
   : T extends 'mumav'
-  ? MichelsonTypeMutez
+  ? MichelsonTypeMumav
   : T extends 'bool'
   ? MichelsonTypeBool
   : T extends 'key_hash'

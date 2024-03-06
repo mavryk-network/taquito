@@ -10,16 +10,16 @@ import { BaseTokenSchema } from '../../schema/types';
 
 /**
  *  @category Error
- *  @description Error that indicates a failure happening when parsing encoding/executing Mutez
+ *  @description Error that indicates a failure happening when parsing encoding/executing Mumav
  */
-export class MutezValidationError extends TokenValidationError {
-  name = 'MutezValidationError';
-  constructor(public value: any, public token: MutezToken, message: string) {
+export class MumavValidationError extends TokenValidationError {
+  name = 'MumavValidationError';
+  constructor(public value: any, public token: MumavToken, message: string) {
     super(value, token, message);
   }
 }
 
-export class MutezToken extends ComparableToken {
+export class MumavToken extends ComparableToken {
   static prim: 'mumav' = 'mumav' as const;
 
   constructor(
@@ -39,28 +39,28 @@ export class MutezToken extends ComparableToken {
    *
    */
   public ExtractSchema() {
-    return MutezToken.prim;
+    return MumavToken.prim;
   }
 
   generateSchema(): BaseTokenSchema {
     return {
-      __michelsonType: MutezToken.prim,
-      schema: MutezToken.prim,
+      __michelsonType: MumavToken.prim,
+      schema: MumavToken.prim,
     };
   }
 
   /**
-   * @throws {@link MutezValidationError}
+   * @throws {@link MumavValidationError}
    */
   private validate(val: any) {
     const bigNumber = new BigNumber(val);
     if (bigNumber.isNaN()) {
-      throw new MutezValidationError(val, this, `Value is not a number: ${val}`);
+      throw new MumavValidationError(val, this, `Value is not a number: ${val}`);
     }
   }
 
   /**
-   * @throws {@link MutezValidationError}
+   * @throws {@link MumavValidationError}
    */
   public Encode(args: any[]): any {
     const val = args.pop();
@@ -71,13 +71,13 @@ export class MutezToken extends ComparableToken {
   }
 
   /**
-   * @throws {@link MutezValidationError}
+   * @throws {@link MumavValidationError}
    */
   public EncodeObject(val: any, semantic?: SemanticEncoding): any {
     this.validate(val);
 
-    if (semantic && semantic[MutezToken.prim]) {
-      return semantic[MutezToken.prim](val);
+    if (semantic && semantic[MumavToken.prim]) {
+      return semantic[MumavToken.prim](val);
     }
 
     return { int: String(val).toString() };
@@ -86,7 +86,7 @@ export class MutezToken extends ComparableToken {
   public ToBigMapKey(val: string | number) {
     return {
       key: { int: String(val) },
-      type: { prim: MutezToken.prim },
+      type: { prim: MumavToken.prim },
     };
   }
 
@@ -105,7 +105,7 @@ export class MutezToken extends ComparableToken {
   }
 
   findAndReturnTokens(tokenToFind: string, tokens: Token[]) {
-    if (MutezToken.prim === tokenToFind) {
+    if (MumavToken.prim === tokenToFind) {
       tokens.push(this);
     }
     return tokens;

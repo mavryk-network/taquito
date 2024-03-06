@@ -2451,10 +2451,10 @@ export const attestationRights = [
     level: 151187,
     delegates: [
       {
-        delegate: 'tz3Q1fwk1vh3zm5LqyUV9e2wZBdaEXcovh2r',
+        delegate: 'mv3Wtqz9MLBqMYPidDPbrpg2trdbJtarXMpT',
         first_slot: 79,
         attestation_power: 326,
-        consensus_key: 'tz3Q1fwk1vh3zm5LqyUV9e2wZBdaEXcovh2r',
+        consensus_key: 'mv3Wtqz9MLBqMYPidDPbrpg2trdbJtarXMpT',
       },
     ],
   },

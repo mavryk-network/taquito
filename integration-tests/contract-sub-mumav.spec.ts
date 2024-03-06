@@ -9,7 +9,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     });
 
     it(
-      'originate a contract with SUB MUTEZ',
+      'originate a contract with SUB MUMAV',
       async () => {
         const op = await Tezos.contract.originate({
           code: `{ parameter (or (or (mumav %decrement) (mumav %increment)) (mumav %reset)) ;

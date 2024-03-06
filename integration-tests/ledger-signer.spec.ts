@@ -60,7 +60,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
     });
 
     describe('Verify retrieving the public key from the Ledger', () => {
-      it('Verify that Ledger will provide correct public key and public key hash for tz1 curve and default path', async () => {
+      it('Verify that Ledger will provide correct public key and public key hash for mv1 curve and default path', async () => {
         const signer = new LedgerSigner(
           transport,
           "44'/1729'/0'/0'",
@@ -77,7 +77,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
         );
       });
 
-      it('Verify that Ledger will provide correct public key and public key hash for tz2 curve and default path', async () => {
+      it('Verify that Ledger will provide correct public key and public key hash for mv2 curve and default path', async () => {
         const signer = new LedgerSigner(
           transport,
           "44'/1729'/0'/0'",
@@ -94,7 +94,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
         );
       });
 
-      it('Verify that that Ledger will provide correct public key and public key hash for tz3 curve and path having 1 as account value', async () => {
+      it('Verify that that Ledger will provide correct public key and public key hash for mv3 curve and path having 1 as account value', async () => {
         const signer = new LedgerSigner(
           transport,
           "44'/1729'/1'/0'",
@@ -198,7 +198,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
         const pkh = await Tezos.signer.publicKeyHash();
 
         expect(pk).toEqual('edpkujVjFVJtb9Z1D7jpSpPMrKzdTRZSRT8E3L26T42vvA6VSv7jND');
-        expect(pkh).toEqual('tz1UpizQ6AGjMeCZCLpuyuL4BSzoUC4XD1QE');
+        expect(pkh).toEqual('mv1HCCHzQXa5vuynLfPmDj25LTrn2aa5iF2v');
 
       })
     })

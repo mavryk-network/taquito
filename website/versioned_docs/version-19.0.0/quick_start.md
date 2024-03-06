@@ -60,8 +60,8 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 // const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
 
 Tezos.tz
-  .getBalance('tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY')
-  .then((balance) => println(`${balance.toNumber() / 1000000} ꜩ`))
+  .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
+  .then((balance) => println(`${balance.toNumber() / 1000000} ṁ`))
   .catch((error) => println(JSON.stringify(error)));
 ```
 
@@ -102,9 +102,9 @@ values={[
 
 ```js live noInline
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Transfering ${amount} ꜩ to ${address}...`);
+println(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
@@ -120,9 +120,9 @@ Tezos.contract
 
 ```js live noInline wallet
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Transfering ${amount} ꜩ to ${address}...`);
+println(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.wallet
   .transfer({ to: address, amount: amount })
   .send()

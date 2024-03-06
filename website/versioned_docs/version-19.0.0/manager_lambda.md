@@ -64,7 +64,7 @@ It produces a list of operations with a single operation in it created by the `S
 The method:
 
 ```typescript
-MANAGER_LAMBDA.transferImplicit(key: string, mutez: number)
+MANAGER_LAMBDA.transferImplicit(key: string, mumav: number)
 ```
 
 The Michelson output:
@@ -74,7 +74,7 @@ DROP ;
 NIL operation ;
 PUSH key_hash <recipient-address> ;
 IMPLICIT_ACCOUNT ;
-PUSH mutez <amount-to-transfer> ;
+PUSH mumav <amount-to-transfer> ;
 UNIT ;
 TRANSFER_TOKENS ;
 CONS ;
@@ -105,7 +105,7 @@ IF_NONE
         FAILWITH ;
     }
     {
-        PUSH mutez <amount-to-transfer> ;
+        PUSH mumav <amount-to-transfer> ;
         UNIT ;
         TRANSFER_TOKENS ;
         CONS ;

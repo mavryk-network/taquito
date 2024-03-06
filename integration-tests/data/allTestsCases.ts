@@ -76,7 +76,7 @@ export const oxfordCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -110,13 +110,13 @@ export const oxfordCases: TestCase[] = [
       branch: 'BLzyjjHKEKMULtvkpSHxuZxx6ei6fpntH2BTkYZiLgs8zLVstvX',
       contents: [{
         kind: OpKind.TRANSACTION,
-        source: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+        source: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
         fee: "0",
         counter: "407",
         gas_limit: "1040000",
         storage_limit: "60000",
         amount: "1000000000",
-        destination: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+        destination: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
         parameters:
           { entrypoint: "stake", value: { prim: "Unit" } }
       }]
@@ -129,13 +129,13 @@ export const oxfordCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.TRANSACTION,
-          source: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          source: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           fee: "689",
           counter: "408",
           gas_limit: "4250",
           storage_limit: "0",
           amount: "99999999999000000",
-          destination: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          destination: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           parameters:
             { entrypoint: "unstake", value: { prim: "Unit" } }
         }],
@@ -148,13 +148,13 @@ export const oxfordCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.TRANSACTION,
-          source: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          source: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           fee: "409",
           counter: "409",
           gas_limit: "1529",
           storage_limit: "0",
           amount: "0",
-          destination: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          destination: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           parameters:
           {
             entrypoint: "finalize_unstake",
@@ -170,13 +170,13 @@ export const oxfordCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.TRANSACTION,
-          source: "tz1X1TKpLiZuPEo2YVvDiqQ47Zp9a797ejkp",
+          source: "mv1HG5nx3uM9FyWhazFpeos8v6oYGoVsBXfS",
           fee: "351",
           counter: "391",
           gas_limit: "791",
           storage_limit: "0",
           amount: "0",
-          destination: "tz1X1TKpLiZuPEo2YVvDiqQ47Zp9a797ejkp",
+          destination: "mv1HG5nx3uM9FyWhazFpeos8v6oYGoVsBXfS",
           parameters:
           {
             entrypoint: "set_delegate_parameters",
@@ -256,7 +256,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -273,7 +273,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10'
@@ -302,7 +302,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -319,7 +319,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10'

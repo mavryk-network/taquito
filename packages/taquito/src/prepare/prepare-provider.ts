@@ -962,7 +962,7 @@ export class PrepareProvider extends Provider implements PreparationProvider {
         if (isOpWithFee(op)) {
           const e = estimates.shift();
           const limits = mergeLimits(op, {
-            fee: e!.suggestedFeeMutez,
+            fee: e!.suggestedFeeMumav,
             storageLimit: e!.storageLimit,
             gasLimit: e!.gasLimit,
           });

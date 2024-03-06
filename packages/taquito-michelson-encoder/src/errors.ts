@@ -13,7 +13,7 @@ export { AddressValidationError } from './tokens/comparable/address';
 export { BytesValidationError } from './tokens/comparable/bytes';
 export { IntValidationError } from './tokens/comparable/int';
 export { KeyHashValidationError } from './tokens/comparable/key_hash';
-export { MutezValidationError } from './tokens/comparable/mumav';
+export { MumavValidationError } from './tokens/comparable/mumav';
 export { NatValidationError } from './tokens/comparable/nat';
 
 export { EncodeTicketError } from './tokens/ticket';

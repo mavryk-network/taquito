@@ -29,7 +29,7 @@ async function example() {
         totalSupply: BigNumber;
       } = await contract.storage();
 
-      const bigMapKey = await contractStorage.ledger.get('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP');
+      const bigMapKey = await contractStorage.ledger.get('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD');
       console.log(bigMapKey);
 
 

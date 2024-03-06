@@ -7,7 +7,7 @@ import {
   ligoSample,
   miInit,
   originateResults,
-  originateResultsMutezTrue,
+  originateResultsMumavTrue,
   revealOp,
   originateResultsEstimate,
 } from './data';
@@ -252,7 +252,7 @@ describe('RpcContractProvider test', () => {
       });
       const res = JSON.parse(JSON.stringify(result.raw)); // Strip symbols
 
-      expect(res).toEqual(originateResultsMutezTrue);
+      expect(res).toEqual(originateResultsMumavTrue);
     });
 
     it('estimate when no fees are specified', async () => {
@@ -403,7 +403,7 @@ describe('RpcContractProvider test', () => {
               amount: '2000000',
               counter: '2',
               destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
-              fee: estimate.suggestedFeeMutez.toString(),
+              fee: estimate.suggestedFeeMumav.toString(),
               gas_limit: estimate.gasLimit.toString(),
               kind: 'transaction',
               source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
@@ -780,7 +780,7 @@ describe('RpcContractProvider test', () => {
               counter: '2',
               destination: 'KT1SUT2TBFPCknkBxLqM5eJZKoYVY6mB26Fg',
               entrypoint: 'default',
-              fee: estimate.suggestedFeeMutez.toString(),
+              fee: estimate.suggestedFeeMumav.toString(),
               gas_limit: estimate.gasLimit.toString(),
               kind: 'transfer_ticket',
               source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
@@ -1194,7 +1194,7 @@ describe('RpcContractProvider test', () => {
             {
               kind: 'update_consensus_key',
               source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
-              fee: estimate.suggestedFeeMutez.toString(),
+              fee: estimate.suggestedFeeMumav.toString(),
               gas_limit: estimate.gasLimit.toString(),
               storage_limit: estimate.storageLimit.toString(),
               counter: '1',
@@ -1224,7 +1224,7 @@ describe('RpcContractProvider test', () => {
             {
               kind: 'update_consensus_key',
               source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
-              fee: estimate.suggestedFeeMutez.toString(),
+              fee: estimate.suggestedFeeMumav.toString(),
               gas_limit: estimate.gasLimit.toString(),
               storage_limit: estimate.storageLimit.toString(),
               pk: 'edpkti5K5JbdLpp2dCqiTLoLQqs5wqzeVhfHVnNhsSCuoU8zdHYoY7',

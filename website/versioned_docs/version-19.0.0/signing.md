@@ -151,7 +151,7 @@ Taquito also offers the possibility to sign Michelson code. This feature can be 
 // const Tezos = new TezosToolkit(NODE_RPC_URL);
 
 const data = `(Pair (Pair { Elt 1
-                  (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx")
+                  (Pair (Pair "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH")
                         0x0501000000026869) }
             10000000)
       (Pair 2 333))`;

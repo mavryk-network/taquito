@@ -17,7 +17,7 @@ describe('Ticket_deprecated token', () => {
   let tokenTicketDeprecatedInt: TicketDeprecatedToken;
   let tokenTicketDeprecatedKey: TicketDeprecatedToken;
   let tokenTicketDeprecatedKeyHash: TicketDeprecatedToken;
-  let tokenTicketDeprecatedMutez: TicketDeprecatedToken;
+  let tokenTicketDeprecatedMumav: TicketDeprecatedToken;
   // let tokenTicketDeprecatedNever: TicketDeprecatedToken;
   let tokenTicketDeprecatedOption: TicketDeprecatedToken;
   let tokenTicketDeprecatedOr: TicketDeprecatedToken;
@@ -63,7 +63,7 @@ describe('Ticket_deprecated token', () => {
       { prim: 'ticket_deprecated', args: [{ prim: 'key_hash' }] },
       0
     ) as TicketDeprecatedToken;
-    tokenTicketDeprecatedMutez = createToken(
+    tokenTicketDeprecatedMumav = createToken(
       { prim: 'ticket_deprecated', args: [{ prim: 'mumav' }], annots: ['%test'] },
       0
     ) as TicketDeprecatedToken;
@@ -143,7 +143,7 @@ describe('Ticket_deprecated token', () => {
       expect(() =>
         tokenTicketDeprecatedKeyHash.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketDeprecatedError);
-      expect(() => tokenTicketDeprecatedMutez.EncodeObject(1000000)).toThrowError(
+      expect(() => tokenTicketDeprecatedMumav.EncodeObject(1000000)).toThrowError(
         EncodeTicketDeprecatedError
       );
       expect(() =>
@@ -205,7 +205,7 @@ describe('Ticket_deprecated token', () => {
       expect(() =>
         tokenTicketDeprecatedKeyHash.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketDeprecatedError);
-      expect(() => tokenTicketDeprecatedMutez.Encode([1000000])).toThrowError(
+      expect(() => tokenTicketDeprecatedMumav.Encode([1000000])).toThrowError(
         EncodeTicketDeprecatedError
       );
       expect(() =>
@@ -382,7 +382,7 @@ describe('Ticket_deprecated token', () => {
 
     it('Should execute on readTicketType with ticket of type mumav', () => {
       expect(
-        tokenTicketDeprecatedMutez.Execute({
+        tokenTicketDeprecatedMumav.Execute({
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },

@@ -77,7 +77,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const aliceTxViewer = await aliceSaplingToolkit.getSaplingTransactionViewer();
       const aliceBalance = await aliceTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalance).toEqual(new BigNumber(3000000));
 
       const inputsAlice = await aliceTxViewer.getIncomingAndOutgoingTransactions();
@@ -130,7 +130,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const aliceTxViewer = await aliceSaplingToolkit.getSaplingTransactionViewer();
       const aliceBalance = await aliceTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalance).toEqual(new BigNumber(1000000));
 
       const inputsAlice = await aliceTxViewer.getIncomingAndOutgoingTransactions();
@@ -168,7 +168,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const bobTxViewer = await bobSaplingToolkit.getSaplingTransactionViewer();
       const bobBalance = await bobTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(bobBalance).toEqual(new BigNumber(2000000));
 
       const inputsBob = await bobTxViewer.getIncomingAndOutgoingTransactions();
