@@ -1114,7 +1114,7 @@ function functionTypeInternal(
 
       case 'FAILWITH': {
         const s = args(0, null)[0];
-        if (!ProtoInferiorTo(proto, Protocol.PtEdo2Zk)) {
+        if (!ProtoInferiorTo(proto, Protocol.PtAtLas)) {
           ensurePackableType(s);
         }
         return { failed: s, level: 0 };
@@ -1200,7 +1200,7 @@ function functionTypeInternal(
       }
 
       case 'SUB': {
-        const s = ProtoInferiorTo(proto, Protocol.PsiThaCa)
+        const s = ProtoInferiorTo(proto, Protocol.PtAtLas)
           ? args(0, ['nat', 'int', 'timestamp', 'mumav'], ['nat', 'int', 'timestamp', 'mumav'])
           : args(0, ['nat', 'int', 'timestamp'], ['nat', 'int', 'timestamp']);
 
@@ -1864,7 +1864,7 @@ function functionTypeInternal(
       case 'TICKET': {
         const s = args(0, null, ['nat'])[0];
         ensureComparableType(s);
-        if (ProtoInferiorTo(proto, Protocol.PtLimaPtL)) {
+        if (ProtoInferiorTo(proto, Protocol.PtAtLas)) {
           return [
             annotate({ prim: 'ticket', args: [s] }, instructionAnn({ t: 1, v: 1 })),
             ...stack.slice(2),
@@ -1986,7 +1986,7 @@ function functionTypeInternal(
             `${instruction.prim}: sapling memo size mismatch: ${s[0].args[0].int} != ${s[1].args[0].int}`
           );
         }
-        return ProtoInferiorTo(proto, Protocol.PtJakarta)
+        return ProtoInferiorTo(proto, Protocol.PtAtLas)
           ? [
               annotateVar({
                 prim: 'option',

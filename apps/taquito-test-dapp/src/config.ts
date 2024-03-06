@@ -1,12 +1,12 @@
 import { NetworkType } from "@mavrykdynamics/beacon-sdk";
 
-export type SupportedNetworks = NetworkType.OXFORDNET | NetworkType.GHOSTNET | NetworkType.MAINNET | NetworkType.CUSTOM;
+export type SupportedNetworks = NetworkType.ATLASNET | NetworkType.BASENET | NetworkType.MAINNET | NetworkType.CUSTOM;
 
 const rpcUrls: Record<SupportedNetworks, string> = {
-  [NetworkType.MAINNET]: "https://mainnet.ecadinfra.com",
-  [NetworkType.GHOSTNET]: "https://ghostnet.ecadinfra.com/",
-  [NetworkType.OXFORDNET]: "https://oxfordnet.ecadinfra.com/",
-  [NetworkType.CUSTOM]: "https://ghostnet.ecadinfra.com/",
+  [NetworkType.MAINNET]: "https://rpc.mavryk.network/mainnet",
+  [NetworkType.BASENET]: "https://ghrpc.mavryk.network/basenet",
+  [NetworkType.ATLASNET]: "https://rpc.mavryk.network/atlasnet",
+  [NetworkType.CUSTOM]: "https://rpc.mavryk.network/basenet",
 };
 
 export const getRpcUrl = (networkType: SupportedNetworks): string => {
@@ -16,11 +16,11 @@ export const getRpcUrl = (networkType: SupportedNetworks): string => {
 export const getTzKtUrl = (networkType: SupportedNetworks): string | undefined => {
   switch (networkType) {
     case NetworkType.MAINNET:
-      return "https://tzkt.io";
-    case NetworkType.GHOSTNET:
-      return "https://ghostnet.tzkt.io";
-    case NetworkType.OXFORDNET:
-      return "https://oxfordnet.tzkt.io";
+      return "https://api.mavryk.network/mainnet";
+    case NetworkType.BASENET:
+      return "https://api.mavryk.network/basenet";
+    case NetworkType.ATLASNET:
+      return "https://api.mavryk.network/atlasnet";
     case NetworkType.CUSTOM:
       return undefined;
   }
@@ -28,11 +28,11 @@ export const getTzKtUrl = (networkType: SupportedNetworks): string | undefined =
 
 export const defaultMatrixNode = "beacon-node-1.sky.papers.tech";
 
-export const defaultNetworkType = NetworkType.GHOSTNET;
+export const defaultNetworkType = NetworkType.BASENET;
 
 // new protocol updated rpc url in example/data/test-dapp-contract.ts and npm -w example run example:deploy-dapp
 export const contractAddress = {
   mainnet: "KT1ShtH2zCrKMuWGRejEd6RAcnePwxBQeMAN",
-  ghostnet: "KT1QKmcNBcfzVTXG2kBcE6XqXtEuYYUzMcT5",
-  oxfordnet: "KT1GYx1KDhMQt2GJEztRh8EyYxJUPM6fnAMM",
+  basenet: "KT1QKmcNBcfzVTXG2kBcE6XqXtEuYYUzMcT5",
+  atlasnet: "KT1GYx1KDhMQt2GJEztRh8EyYxJUPM6fnAMM",
 };

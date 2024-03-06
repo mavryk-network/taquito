@@ -75,7 +75,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -90,7 +90,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -123,7 +123,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -137,7 +137,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -167,7 +167,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -188,7 +188,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -231,7 +231,7 @@ values={[
 In the following example, a contract's `set_child_record` method will be called by passing the arguments using the flattened representation. The `methods` member of the `ContractAbstraction` class allows doing so. First, it is possible to obtain details about the signature of the `set_child_record` entry point by using the `getSignature` method as follow:
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
   .at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
@@ -252,7 +252,7 @@ The preceding example returns an array which contains the different possible sig
 
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
 // import { importKey } from '@taquito/signer';
 
 importKey(Tezos, secretKey)
@@ -285,7 +285,7 @@ importKey(Tezos, secretKey)
 In the following example, a contract's `set_child_record` method will be called by passing the parameter in an object format. The `methodsObject` member of the `ContractAbstraction` class allows doing so. First, it is possible to obtain details about the signature of the `set_child_record` entry point by using the `getSignature` method as follow:
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
   .at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
@@ -306,7 +306,7 @@ The preceding example returns an object giving indication on how to structure th
 
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
 // import { importKey } from '@taquito/signer';
 
 importKey(Tezos, secretKey)

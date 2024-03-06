@@ -7,12 +7,12 @@ import {
 
 CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   const Tezos = lib;
-  const oxfordnet = (networkType == NetworkType.TESTNET && protocol === Protocols.ProxfordY) ? test : test.skip;
+  const atlasnet = (networkType == NetworkType.TESTNET && protocol === Protocols.PtAtLas) ? test : test.skip;
   const weeklynet = (networkType == NetworkType.TESTNET && protocol === Protocols.ProtoALpha) ? test : test.skip;
   describe('Test fetching constants for all protocols on Mainnet', () => {
     const rpcUrl = 'https://mainnet.ecadinfra.com/';
     Tezos.setRpcProvider(rpcUrl);
-    it(`successfully fetches Proto18(oxford2) constants at head`, async () => {
+    it(`successfully fetches Proto18(atlas) constants at head`, async () => {
       const constants: ConstantsResponseProto018 = await Tezos.rpc.getConstants();
       expect(constants).toEqual({
         adaptive_issuance_activation_vote_enable: false,
@@ -142,7 +142,7 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   });
 
   describe(`Fetch constants for testnet`, () => {
-    oxfordnet(`successfully fetches all constants for oxfordnet using ${rpc}`, async () => {
+    atlasnet(`successfully fetches all constants for atlasnet using ${rpc}`, async () => {
       Tezos.setRpcProvider(rpc);
       const constants: ConstantsResponseProto018 = await Tezos.rpc.getConstants();
       expect(constants).toEqual({

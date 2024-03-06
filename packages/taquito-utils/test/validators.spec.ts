@@ -241,34 +241,7 @@ describe('validateOperation', () => {
 
 describe('validateProtocol', () => {
   it('Validate Protocol Hash properly', () => {
-    expect(validateProtocol('Pt24m4xiPbLDhVgVfABUjirbmda3yohdN82Sp9FeuAXJ4eV9otd')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsBABY5HQTSkA4297zNHfsZNKtxULfL18y95qb3m53QJiXGmrbU')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsBabyM1eUXZseaJdmXFApDSBqj8YBfwELoxZHHW77EMcAbbwAS')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsDELPH1Kxsxt8f9eWbxQeRxkjfbxoqM52jvs5Y5fBxWWh4ifpo')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsFLorenaUUuikDWvMDr6fGBRG8kt3e3D3fHoXK1j1BFRxeSH4i')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PtGRANADsDU8R9daYKAgWnQYAJ64omN1o3KMGVCykShA97vQbvV')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PtHangz2aRngywmSRGGvrcTyMbbdpWdpFKuS4uMWxg2RaH9i1qx')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsiThaCaT47Zboaw71QWScM8sXeMM7bbQFncK9FLqYc6EKdpjVP')).toEqual(
+    expect(validateProtocol('PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2')).toEqual(
       ValidationResult.VALID
     );
     expect(validateProtocol('ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK')).toEqual(

@@ -18,7 +18,7 @@ describe('Taquito local forger', () => {
 
   it('should take the protocol hash from context.proto if it is defined', async () => {
     const context = new Context(mockRpcClient as any);
-    context.proto = Protocols.PtHangz2;
+    context.proto = Protocols.PtAtLas;
     const forger = new TaquitoLocalForger(context);
 
     // When calling the forge method, an instance of LocalForger is created

@@ -4,7 +4,7 @@ import { char2Bytes } from '@mavrykdynamics/taquito-utils';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 async function example() {
-  const provider = 'https://ghostnet.ecadinfra.com';
+  const provider = 'https://rpc.mavryk,network/basenet';
   const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
   const tezos = new TezosToolkit(provider);
   tezos.setSignerProvider(signer);

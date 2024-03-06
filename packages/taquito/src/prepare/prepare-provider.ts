@@ -238,7 +238,7 @@ export class PrepareProvider extends Provider implements PreparationProvider {
           };
           if (cops.source.toLowerCase().startsWith('kt1')) {
             throw new DeprecationError(
-              `KT1 addresses are not supported as source since ${Protocols.PsBabyM1}`
+              `KT1 addresses are not supported as source since ${Protocols.PtAtLas}`
             );
           }
           return cops;

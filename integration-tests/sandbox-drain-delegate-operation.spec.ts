@@ -3,7 +3,7 @@ import { CONFIGS, sleep } from "./config";
 
 CONFIGS().forEach(({ lib, rpc, protocol, setup, createAddress }) => {
   const Tezos = lib;
-  const flextesanet = rpc === 'http://localhost:20000' ? test : test.skip;
+  const flexmasanet = rpc === 'http://localhost:20000' ? test : test.skip;
 
   describe(`Test Drain Delegate in ${protocol}`, () => {
     let Delegate: TezosToolkit;
@@ -39,7 +39,7 @@ CONFIGS().forEach(({ lib, rpc, protocol, setup, createAddress }) => {
         console.log(JSON.stringify(e));
       }
     })
-    flextesanet('Should be able to inject drain_delegate operation', async () => {
+    flexmasanet('Should be able to inject drain_delegate operation', async () => {
       expect((await Delegate.rpc.getBalance(delegatePkh)).toNumber()).toBeGreaterThan(0);
       let destinationBalanceBefore = (await Destination.rpc.getBalance(destinationPkh)).toNumber();
 

@@ -839,7 +839,7 @@ describe('RpcContractProvider test', () => {
       const estimate = new Estimate(1000, 1000, 180, 1000);
       mockEstimate.setDelegate.mockResolvedValue(estimate);
       mockRpcClient.getBlockMetadata.mockResolvedValue({
-        next_protocol: Protocols.PsBabyM1,
+        next_protocol: Protocols.PtAtLas,
       });
       let error;
       try {

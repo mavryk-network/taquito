@@ -39,13 +39,7 @@ import {
   RPCSimulateOperationParam,
 } from '../src/types';
 import {
-  blockIthacanetResponse,
-  blockKathmandunetResponse,
-  blockLimanetResponse,
   blockWeeklynetResponse,
-  delegatesIthacanetResponse,
-  delegatesKathmandunetResponse,
-  votingInfoKathmandunetResponse,
   ticketUpdatesResponse,
   ticketBalancesResponse,
   smartRollupOriginateResponse,
@@ -329,63 +323,6 @@ describe('RpcClient test', () => {
         deactivated: false,
         grace_period: 59,
         voting_power: new BigNumber(729),
-      });
-    });
-
-    it('should parse the response properly, proto12', async () => {
-      httpBackend.createRequest.mockResolvedValue(delegatesIthacanetResponse);
-      const response = await client.getDelegates(contractAddress);
-
-      expect(response).toEqual({
-        full_balance: new BigNumber('1198951292321'),
-        current_frozen_deposits: new BigNumber('120167343864'),
-        frozen_deposits: new BigNumber('120167343864'),
-        staking_balance: new BigNumber('1203308804406'),
-        delegated_contracts: ['mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'],
-        delegated_balance: new BigNumber('4357512085'),
-        deactivated: false,
-        grace_period: 37,
-        voting_power: new BigNumber(199),
-      });
-    });
-
-    it('should parse the response properly, proto14', async () => {
-      httpBackend.createRequest.mockResolvedValue(delegatesKathmandunetResponse);
-      const response = await client.getDelegates(contractAddress);
-
-      expect(response).toEqual({
-        full_balance: new BigNumber('965532868030'),
-        current_frozen_deposits: new BigNumber('96350095609'),
-        frozen_deposits: new BigNumber('96350095609'),
-        staking_balance: new BigNumber('970221941952'),
-        delegated_contracts: ['mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'],
-        delegated_balance: new BigNumber('4689073922'),
-        deactivated: false,
-        grace_period: 42,
-        voting_power: new BigNumber(968128693450),
-        remaining_proposals: 20,
-      });
-    });
-  });
-
-  describe('getVotingInfo', () => {
-    it('should query the right url', async () => {
-      httpBackend.createRequest.mockResolvedValue(votingInfoKathmandunetResponse);
-      await client.getVotingInfo(contractAddress);
-
-      expect(httpBackend.createRequest.mock.calls[0][0]).toEqual({
-        method: 'GET',
-        url: `root/chains/test/blocks/head/context/delegates/${contractAddress}/voting_info`,
-      });
-    });
-
-    it('should parse the response properly', async () => {
-      httpBackend.createRequest.mockResolvedValue(votingInfoKathmandunetResponse);
-      const response = await client.getVotingInfo(contractAddress);
-
-      expect(response).toEqual({
-        voting_power: '1054404383333',
-        remaining_proposals: 20,
       });
     });
   });
@@ -1445,7 +1382,7 @@ describe('RpcClient test', () => {
     it('should query the right url and property for operation', async () => {
       httpBackend.createRequest.mockReturnValue(
         Promise.resolve({
-          protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
+          protocol: 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
           chain_id: 'NetXSgo1ZT2DRUG',
           hash: 'BKjqpGqKggVrYbkBmBUYjLx8QdCUxBLaVGr1GWKho4ziBo1KQFX',
           header: {
@@ -1463,8 +1400,8 @@ describe('RpcClient test', () => {
               'sigkj5nVVW6Zq7F9dEstPs5o2s1vTnUfwhsWi3UnmwrjYVwN9gfmXUBArzSLeXEUNQBM4KUYSg385i1ajR9TugSkM2swFzQp',
           },
           metadata: {
-            protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
-            next_protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
+            protocol: 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
+            next_protocol: 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
             test_chain_status: {
               status: 'not_running',
             },
@@ -1542,7 +1479,7 @@ describe('RpcClient test', () => {
           operations: [
             [
               {
-                protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
+                protocol: 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
                 chain_id: 'NetXSgo1ZT2DRUG',
                 hash: 'onefqcSYA5FNfNW68ghLqQajxnM9cZ3vvdNaTDR1Mhv34LBAhaG',
                 branch: 'BMF7j462upRKLRWEdmFYTCMK3kuEfbQdR2Apo7noc1ZwzPZi2ji',
@@ -2375,7 +2312,7 @@ describe('RpcClient test', () => {
     it('should query the right url and properties (lazy_storage_diff of kind sapling_state) in transaction operation result, proto 8', async () => {
       httpBackend.createRequest.mockReturnValue(
         Promise.resolve({
-          protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
+          protocol: 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
           chain_id: 'NetXSgo1ZT2DRUG',
           hash: 'BL463rWSReHJRLkwUPdGSS6fDqvJwAVPeaZGTBhEkFbYecAR9Ks',
           header: {},
@@ -2386,7 +2323,7 @@ describe('RpcClient test', () => {
             [],
             [
               {
-                protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
+                protocol: 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
                 chain_id: 'NetXSgo1ZT2DRUG',
                 hash: 'onhF4PVPmPDJjrRfiFf1Tg1wBM4SjQuk5h2Ucx84f42CfAeQtVe',
                 branch: 'BKkgRGNt4kw7EDZvWXQjYVzCQvMsZYkpUSweepc9HZumQ3qSdnv',
@@ -2732,108 +2669,6 @@ describe('RpcClient test', () => {
       expect(content.metadata.internal_operation_results).toBeUndefined();
     });
 
-    it('should use enum to represent property category in balance_updates, proto 12', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockIthacanetResponse));
-
-      const response = await client.getBlock();
-
-      // To avoid dealing with the space in the property name returned by the RPC
-      expect(response.metadata.balance_updates![0].category).toBeDefined();
-      expect(response.metadata.balance_updates![0].category).toEqual(
-        METADATA_BALANCE_UPDATES_CATEGORY.BLOCK_FEES
-      );
-      expect(response.metadata.balance_updates![1].category).toBeDefined();
-      expect(response.metadata.balance_updates![1].category).toEqual(
-        METADATA_BALANCE_UPDATES_CATEGORY.BAKING_REWARDS
-      );
-      expect(response.metadata.balance_updates![3].category).toBeDefined();
-      expect(response.metadata.balance_updates![3].category).toEqual(
-        METADATA_BALANCE_UPDATES_CATEGORY.BAKING_BONUSES
-      );
-    });
-
-    it('should fetch a block and access new properties in header, proto 12', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockIthacanetResponse));
-
-      const response = await client.getBlock();
-
-      expect(response.header.payload_hash).toBeDefined();
-      expect(response.header.payload_hash).toEqual(
-        'vh28CE8X2KKMvt5S4aGzPdMq5FpcfVRSoeyU3D3TUdVyk9zucR31'
-      );
-      expect(response.header.payload_round).toBeDefined();
-      expect(response.header.payload_round).toEqual(0);
-      expect(response.header.liquidity_baking_escape_vote).toBeDefined();
-      expect(response.header.liquidity_baking_escape_vote).toBeFalsy();
-    });
-
-    it('should fetch a block and access new properties in metadata, proto 12', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockIthacanetResponse));
-
-      const response = await client.getBlock();
-
-      expect(response.metadata.proposer).toBeDefined();
-      expect(response.metadata.proposer).toEqual('mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq');
-      expect(response.metadata.balance_updates![0].category).toBeDefined();
-    });
-
-    it('should access new properties of the operation type endorsement, proto 12', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockIthacanetResponse));
-
-      const response = await client.getBlock();
-
-      expect(response.operations[0][0].contents[0].kind).toEqual(OpKind.ENDORSEMENT);
-      const contentEndorsement = response.operations[0][0]
-        .contents[0] as OperationContentsAndResultEndorsement;
-      expect(contentEndorsement.slot).toBeDefined();
-      expect(contentEndorsement.slot).toEqual(0);
-      expect(contentEndorsement.round).toBeDefined();
-      expect(contentEndorsement.round).toEqual(0);
-      expect(contentEndorsement.block_payload_hash).toBeDefined();
-      expect(contentEndorsement.block_payload_hash).toEqual(
-        'vh2SkkaBZp19oyMUmTTXy5Q33hKKWZSAzXa7Tz2F6mtyeAgXsHC6'
-      );
-
-      expect(contentEndorsement.metadata.balance_updates).toEqual([]);
-      expect(contentEndorsement.metadata.endorsement_power).toBeDefined();
-      expect(contentEndorsement.metadata.endorsement_power).toEqual(206);
-    });
-
-    it('should access new properties of the operation type set_deposits_limit, proto 12', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockIthacanetResponse));
-
-      const response = await client.getBlock();
-
-      expect(response.operations[3][0].contents[0].kind).toEqual(OpKind.SET_DEPOSITS_LIMIT);
-      const content = response.operations[3][0]
-        .contents[0] as OperationContentsAndResultSetDepositsLimit;
-      expect(content.source).toEqual('mv2WjrtMR7h9izSEi5TF4BVFfK2hnV9pMoWm');
-      expect(content.fee).toEqual('1500');
-      expect(content.counter).toEqual('146662');
-      expect(content.gas_limit).toEqual('1000');
-      expect(content.storage_limit).toEqual('10000');
-      expect(content.limit).toBeDefined();
-      expect(content.limit).toEqual('3');
-      expect(content.metadata.balance_updates![0].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![0].contract).toBeDefined();
-      expect(content.metadata.balance_updates![0].contract).toEqual(
-        'mv2WjrtMR7h9izSEi5TF4BVFfK2hnV9pMoWm'
-      );
-      expect(content.metadata.balance_updates![0].change).toBeDefined();
-      expect(content.metadata.balance_updates![0].change).toEqual('-1500');
-      expect(content.metadata.balance_updates![0].origin).toBeDefined();
-      expect(content.metadata.balance_updates![0].origin).toEqual('block');
-      expect(content.metadata.balance_updates![0].category).toBeUndefined();
-      expect(content.metadata.balance_updates![0].delegate).toBeUndefined();
-      expect(content.metadata.balance_updates![0].cycle).toBeUndefined();
-
-      expect(content.metadata.operation_result.status).toEqual('applied');
-      expect(content.metadata.operation_result.consumed_gas).toBeDefined();
-      expect(content.metadata.operation_result.consumed_gas).toEqual('1000');
-      expect(content.metadata.operation_result.consumed_milligas).toBeDefined();
-      expect(content.metadata.operation_result.consumed_milligas).toEqual('1000000');
-    });
-
     it('should be able to access the properties of operation type transfer_ticket, proto14', async () => {
       httpBackend.createRequest.mockReturnValue(Promise.resolve(blockWeeklynetResponse));
       const response = await client.getBlock();
@@ -2870,163 +2705,6 @@ describe('RpcClient test', () => {
       expect(content.metadata.operation_result.balance_updates).toBeDefined();
       expect(content.metadata.operation_result.consumed_milligas).toEqual('2122881');
       expect(content.metadata.operation_result.paid_storage_size_diff).toEqual('66');
-    });
-
-    it('should be able to access the properties of operation type increase_paid_storage, proto14', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockKathmandunetResponse));
-
-      const response = await client.getBlock();
-      const content = response.operations[3][0]
-        .contents[0] as OperationContentsAndResultIncreasePaidStorage;
-
-      expect(content.kind).toEqual(OpKind.INCREASE_PAID_STORAGE);
-      expect(content.source).toEqual('mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2');
-      expect(content.fee).toEqual('349');
-      expect(content.counter).toEqual('108123');
-      expect(content.gas_limit).toEqual('1000');
-      expect(content.storage_limit).toEqual('0');
-      expect(content.amount).toEqual('2');
-      expect(content.destination).toEqual('KT1Vjr5PFC2Qm5XbSQZ8MdFZLgYMzwG5WZNh');
-
-      expect(content.metadata.balance_updates).toBeDefined();
-
-      expect(content.metadata.balance_updates![0].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![0].contract).toEqual(
-        'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2'
-      );
-      expect(content.metadata.balance_updates![0].change).toEqual('-349');
-      expect(content.metadata.balance_updates![1].origin).toEqual('block');
-
-      expect(content.metadata.balance_updates![1].kind).toEqual('accumulator');
-      expect(content.metadata.balance_updates![1].category).toEqual('block fees');
-      expect(content.metadata.balance_updates![1].change).toEqual('349');
-      expect(content.metadata.balance_updates![1].origin).toEqual('block');
-
-      expect(content.metadata.operation_result.status).toEqual('applied');
-      expect(content.metadata.operation_result.balance_updates).toBeDefined();
-      expect(content.metadata.operation_result.consumed_milligas).toEqual('1000000');
-    });
-
-    it('should be able to access the properties of internal operation type event, proto14', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockKathmandunetResponse));
-
-      const response = await client.getBlock();
-      const content = response.operations[3][1]
-        .contents[0] as OperationContentsAndResultTransaction;
-
-      expect(content.metadata.internal_operation_results).toBeDefined();
-      expect(content.metadata.internal_operation_results![0].kind).toEqual(OpKind.EVENT);
-      expect(content.metadata.internal_operation_results![0].source).toEqual(
-        'KT1D7mKRckD2ZoWGcGtUvBpDxb48WxpnLu1Q'
-      );
-      expect(content.metadata.internal_operation_results![0].nonce).toEqual(0);
-
-      expect(content.metadata.internal_operation_results![0].amount).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].destination).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].parameters).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].public_key).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].balance).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].delegate).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].value).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].limit).toBeUndefined();
-      expect(content.metadata.internal_operation_results![0].script).toBeUndefined();
-
-      expect(content.metadata.internal_operation_results![0].type).toBeDefined();
-      expect(content.metadata.internal_operation_results![0].type).toEqual({
-        prim: 'or',
-        args: [{ prim: 'nat' }, { prim: 'string' }],
-      });
-      expect(content.metadata.internal_operation_results![0].tag).toBeDefined();
-      expect(content.metadata.internal_operation_results![0].tag).toEqual('event');
-      expect(content.metadata.internal_operation_results![0].payload).toBeDefined();
-      expect(content.metadata.internal_operation_results![0].payload).toEqual({
-        prim: 'Left',
-        args: [{ int: '10' }],
-      });
-      expect(content.metadata.internal_operation_results![0].result).toBeDefined();
-
-      const internalResult = content.metadata.internal_operation_results![0]
-        .result as OperationResultEvent;
-      expect(internalResult.status).toEqual('applied');
-      expect(internalResult.consumed_milligas).toBeDefined();
-      expect(internalResult.consumed_milligas).toEqual('1000000');
-      expect(internalResult.errors).toBeUndefined();
-    });
-
-    it('should be able to access the properties of operation type drain_delegate, proto15', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockLimanetResponse));
-
-      const response = await client.getBlock();
-      const content = response.operations[3][0]
-        .contents[1] as OperationContentsAndResultDrainDelegate;
-
-      expect(content.kind).toEqual(OpKind.DRAIN_DELEGATE);
-      expect(content.consensus_key).toEqual('mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq');
-      expect(content.delegate).toEqual('mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr');
-      expect(content.destination).toEqual('mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq');
-
-      expect(content.metadata.balance_updates).toBeDefined();
-
-      expect(content.metadata.balance_updates![0].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![0].contract).toEqual(
-        'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr'
-      );
-      expect(content.metadata.balance_updates![0].change).toEqual('-15525772494');
-      expect(content.metadata.balance_updates![0].origin).toEqual('block');
-
-      expect(content.metadata.balance_updates![1].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![1].contract).toEqual(
-        'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq'
-      );
-      expect(content.metadata.balance_updates![1].change).toEqual('15525772494');
-      expect(content.metadata.balance_updates![1].origin).toEqual('block');
-
-      expect(content.metadata.balance_updates![2].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![2].contract).toEqual(
-        'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr'
-      );
-      expect(content.metadata.balance_updates![2].change).toEqual('-156825984');
-      expect(content.metadata.balance_updates![2].origin).toEqual('block');
-
-      expect(content.metadata.balance_updates![3].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![3].contract).toEqual(
-        'mv1S3xzu9KfHfebbXDsT9ynfLrCM6QrMaEeL'
-      );
-      expect(content.metadata.balance_updates![3].change).toEqual('156825984');
-      expect(content.metadata.balance_updates![3].origin).toEqual('block');
-    });
-
-    it('should be able to access the properties of operation type update_consensus_key, proto15', async () => {
-      httpBackend.createRequest.mockReturnValue(Promise.resolve(blockLimanetResponse));
-
-      const response = await client.getBlock();
-      const content = response.operations[3][0]
-        .contents[0] as OperationContentsAndResultUpdateConsensusKey;
-
-      expect(content.kind).toEqual(OpKind.UPDATE_CONSENSUS_KEY);
-      expect(content.source).toEqual('mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr');
-      expect(content.fee).toEqual('369');
-      expect(content.counter).toEqual('19043');
-      expect(content.gas_limit).toEqual('1100');
-      expect(content.storage_limit).toEqual('0');
-      expect(content.pk).toEqual('edpkti5K5JbdLpp2dCqiTLoLQqs5wqzeVhfHVnNhsSCuoU8zdHYoY7');
-
-      expect(content.metadata.balance_updates).toBeDefined();
-
-      expect(content.metadata.balance_updates![0].kind).toEqual('contract');
-      expect(content.metadata.balance_updates![0].contract).toEqual(
-        'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr'
-      );
-      expect(content.metadata.balance_updates![0].change).toEqual('-369');
-      expect(content.metadata.balance_updates![0].origin).toEqual('block');
-
-      expect(content.metadata.balance_updates![1].kind).toEqual('accumulator');
-      expect(content.metadata.balance_updates![1].category).toEqual('block fees');
-      expect(content.metadata.balance_updates![1].change).toEqual('369');
-      expect(content.metadata.balance_updates![1].origin).toEqual('block');
-
-      expect(content.metadata.operation_result.status).toEqual('applied');
-      expect(content.metadata.operation_result.consumed_milligas).toEqual('1000000');
     });
     it('should contain ticket_updates for transactions updating ticket storage', async () => {
       httpBackend.createRequest.mockReturnValue(Promise.resolve(ticketUpdatesResponse));
@@ -3608,8 +3286,8 @@ describe('RpcClient test', () => {
       const url = 'https://mainnet.ecadinfra.com/';
       const rpcUrlMainnet = new RpcClient(url).getRpcUrl();
       expect(rpcUrlMainnet).toEqual('https://mainnet.ecadinfra.com/');
-      const rpcUrlCarthagenet = new RpcClient('https://ghostnet.ecadinfra.com').getRpcUrl();
-      expect(rpcUrlCarthagenet).toEqual('https://ghostnet.ecadinfra.com');
+      const rpcUrlCarthagenet = new RpcClient('https://rpc.mavryk,network/basenet').getRpcUrl();
+      expect(rpcUrlCarthagenet).toEqual('https://rpc.mavryk,network/basenet');
     });
   });
 

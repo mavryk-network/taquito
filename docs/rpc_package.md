@@ -18,7 +18,7 @@ Methods in the RPC package map one-to-one to the corresponding Tezos RPC API end
 
 import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
-const client = new RpcClient(' https://ghostnet.ecadinfra.com/', 'NetXLH1uAxK7CCh');
+const client = new RpcClient(' https://rpc.mavryk,network/basenet/', 'NetXLH1uAxK7CCh');
 ```
 
 The `RpcClient` constructor takes the URL of the node you want to use and the chain ID.

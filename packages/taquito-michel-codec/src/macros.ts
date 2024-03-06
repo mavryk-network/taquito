@@ -385,7 +385,7 @@ export function expandMacros(ex: Prim, opt?: ProtocolOptions): Expr {
 
   // UNPAPPAIIR macro
   if (unpairRe.test(ex.prim)) {
-    if (ProtoInferiorTo(proto, Protocol.PtEdo2Zk) && assertArgs(ex, 0)) {
+    if (ProtoInferiorTo(proto, Protocol.PtAtLas) && assertArgs(ex, 0)) {
       const { r } = parsePairUnpairExpr(ex, ex.prim.slice(3), ex.annots || [], (l, r, top) => [
         top,
         ...(r || []),
@@ -558,7 +558,7 @@ export function expandMacros(ex: Prim, opt?: ProtocolOptions): Expr {
     while (ex.prim[1 + n] === 'U') {
       n++;
     }
-    if (ProtoInferiorTo(proto, Protocol.PtEdo2Zk)) {
+    if (ProtoInferiorTo(proto, Protocol.PtAtLas)) {
       if (n === 1) {
         if (ex.args === undefined) {
           return ex; // skip

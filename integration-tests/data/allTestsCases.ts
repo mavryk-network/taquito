@@ -49,7 +49,7 @@ interface TestCase {
   expected?: object;
 }
 
-export const oxfordCases: TestCase[] = [
+export const atlasCases: TestCase[] = [
   {
     name: 'Origination of a contract that contains the types chest, chest_key and the instruction OPEN_CHEST',
     operation: {

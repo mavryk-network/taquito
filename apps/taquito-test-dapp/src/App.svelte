@@ -12,8 +12,8 @@
 
   let browser = "";
   let availableNetworks = [
-    { value: "ghostnet", label: "Ghostnet", group: "current testnets" },
-    { value: "oxfordnet", label: "Oxfordnet", group: "current testnets" },
+    { value: "basenet", label: "Basenet", group: "current testnets" },
+    { value: "atlasnet", label: "Atlasnet", group: "current testnets" },
     { value: "mainnet", label: "Mainnet", group: "mainnet" },
     { value: "dailynet", label: "Dailynet", group: "other testnets" },
     { value: "weeklynet", label: "Weeklynet", group: "other testnets" },
@@ -36,11 +36,11 @@
       case "mainnet":
         store.updateNetworkType(NetworkType.MAINNET);
         break;
-      case "ghostnet":
-        store.updateNetworkType(NetworkType.GHOSTNET);
+      case "basenet":
+        store.updateNetworkType(NetworkType.BASENET);
         break;
-      case "oxfordnet":
-        store.updateNetworkType(NetworkType.OXFORDNET);
+      case "atlasnet":
+        store.updateNetworkType(NetworkType.ATLASNET);
         break;
       case "custom":
         //TODO: input custom RPC URL
@@ -68,7 +68,7 @@
         if (!getRpcUrl(NetworkType.CUSTOM)) {
           // TODO: This logic does not seem right
           // in case the user did not provide any custom network URL
-          store.updateTezos(new TezosToolkit(getRpcUrl(NetworkType.GHOSTNET)));
+          store.updateTezos(new TezosToolkit(getRpcUrl(NetworkType.BASENET)));
         }
         break;
     }

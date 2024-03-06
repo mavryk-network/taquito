@@ -106,7 +106,7 @@ describe('registerProviderDecorator', () => {
 
     // The decorator 2 is a function that receives a context as parameter, replaces the proto on it and returns the context
     const setNewProto = (context: Context) => {
-      context.proto = Protocols.PtGRANADs;
+      context.proto = Protocols.PtAtLas;
       return context;
     };
     context.registerProviderDecorator(setNewProto);
@@ -115,6 +115,6 @@ describe('registerProviderDecorator', () => {
     expect(context.rpc.getRpcUrl()).toEqual('url1');
     expect(context.withExtensions().rpc.getRpcUrl()).toEqual('url2');
     expect(context.proto).toBeUndefined();
-    expect(context.withExtensions().proto).toEqual(Protocols.PtGRANADs);
+    expect(context.withExtensions().proto).toEqual(Protocols.PtAtLas);
   });
 });

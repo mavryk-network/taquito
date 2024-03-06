@@ -52,7 +52,7 @@ An annotation identifies every argument. Therefore we can ignore optional values
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
 // import { importKey } from '@taquito/signer';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 //%data
 const dataMap = new MichelsonMap();
@@ -129,7 +129,7 @@ The way to write the parameter when calling the function of a contract with Taqu
 
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
 // import { importKey } from '@taquito/signer';
 
 importKey(Tezos, secretKey)
@@ -147,7 +147,7 @@ importKey(Tezos, secretKey)
 
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
 // import { importKey } from '@taquito/signer';
 
 importKey(Tezos, secretKey)
@@ -169,7 +169,7 @@ importKey(Tezos, secretKey)
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
 }).then(hash => {
-    println(`Operation injected: https://better-call.dev/ghostnet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
+    println(`Operation injected: https://better-call.dev/basenet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
 #### Call the set_child_record function when optional arguments are null
@@ -178,7 +178,7 @@ The `address %address` and the `nat %ttl` of the `set_child_record` function are
 
 ```js live noInline
 // import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
 // import { importKey } from '@taquito/signer';
 
 importKey(Tezos, secretKey)
@@ -200,6 +200,6 @@ importKey(Tezos, secretKey)
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
 }).then(hash => {
-    println(`Operation injected: https://better-call.dev/ghostnet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
+    println(`Operation injected: https://better-call.dev/basenet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```

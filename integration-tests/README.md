@@ -1,14 +1,14 @@
 # Taquito Integration Tests
 
 
-The `taquito/integration-tests` directory contains the integration test suite for Taquito. These tests are executed against live Tezos testnets, ensuring a comprehensive evaluation of various Taquito use cases.
+The `taquito/integration-tests` directory contains the integration test suite for Taquito. These tests are executed against live Mavryk testnets, ensuring a comprehensive evaluation of various Taquito use cases.
 
-The tests may also be run using Flextesa. This is useful for testing new features not in current test nets and for testing features around governance that benefit from shortened block processing times. As well Flextesa tests offer a secondary confirmation of the test net results.
+The tests may also be run using Flexmasa. This is useful for testing new features not in current test nets and for testing features around governance that benefit from shortened block processing times. As well Flexmasa tests offer a secondary confirmation of the test net results.
 
 Internally Taquito is tested with tests running in parallel. This is achieved using an application that generates new keys and funds them as needed per test.
 The application is not publicly available. External users, therefore, must run the Taquito Integration Tests in sequence, one test at a time.
 
-## Running Integration Tests Against a Tezos Testnet
+## Running Integration Tests Against a Mavryk Testnet
 
 
 To run tests in this environment, make sure you have:
@@ -33,11 +33,11 @@ npm run test # This runs all tests against all pre-configured testnets
 ### Running all tests against a specific testnet
 
 
-Depending on the current Tezos upgrade cycle, multiple testnet networks may be configured in the Taquito integration tests. To target a specific testnet, use environment variables found in `taquito/integration-tests/config.ts` (see the Configuration section below):
+Depending on the current Mavryk upgrade cycle, multiple testnet networks may be configured in the Taquito integration tests. To target a specific testnet, use environment variables found in `taquito/integration-tests/config.ts` (see the Configuration section below):
 
 
 ```
-OXFORDNET=true npm run test
+ATLASNET=true npm run test
 ```
 
 ## Configuration
@@ -52,7 +52,7 @@ If different testnets are configured in the `config.ts` file, you can run tests 
 
 
 ```
-npm run test:oxfordnet contract-with-bigmap-init.spec.ts
+npm run test:atlasnet contract-with-bigmap-init.spec.ts
 ```
 
 
@@ -60,7 +60,7 @@ Or for a specific test within a test file:
 
 
 ```
-npm run test:oxfordnet -- -t "Verify contract.originate for a contract and call deposit method with unit param"
+npm run test:atlasnet -- -t "Verify contract.originate for a contract and call deposit method with unit param"
 ```
 
 
@@ -70,7 +70,7 @@ npm run test:oxfordnet -- -t "Verify contract.originate for a contract and call 
 To run tests against a node that is not pre-configured in Taquito, use:
 
 
-`export TEZOS_RPC_OXFORDNET='http://localhost:8732'`.
+`export TEZOS_RPC_ATLASNET='http://localhost:8732'`.
 
 ## Using a Secret Key Instead of the Keygen API
 
@@ -79,7 +79,7 @@ By default, the integration tests use an ephemeral key managed by the Keygen API
 
 
 ```
-npm run test:oxfordnet-secret-key contract-with-bigmap-init.spec.ts
+npm run test:atlasnet-secret-key contract-with-bigmap-init.spec.ts
 ```
 
 
@@ -100,7 +100,7 @@ If running the test with a configured secret key, ensure that the account balanc
 To review the graphical report of the test run, open the index.html file in ~/taquito/integration-tests/jest-stare after each test run.
 
 
-## Taquito Integration Tests with Flextesa
+## Taquito Integration Tests with Flexmasa
 
 
 > **Be sure to use a working NVM! such as lts/gallium or lts/hydrogen**
@@ -126,66 +126,66 @@ from the top level. This will export the following environment variables:
 
 
 ```sh
-RUN_OXFORDNET_WITH_SECRET_KEY=true
+RUN_ATLASNET_WITH_SECRET_KEY=true
 SECRET_KEY=edsk3RFgDiCt7tWB2oe96w1eRw72iYiiqZPLu9nnEY23MYRp2d8Kkx
-TEZOS_RPC_OXFORDNET=http://localhost:20000
+TEZOS_RPC_ATLASNET=http://localhost:20000
 POLLING_INTERVAL_MILLISECONDS=100
 RPC_CACHE_MILLISECONDS=0
 TEZOS_BAKER=mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv
 ```
 
 
-### 2. Start a Flextesa sandbox to run a local Oxford testnet
+### 2. Start a Flexmasa sandbox to run a local Atlasnet testnet
 
 
-Start the docker container, which encapsulates the flextesa_sandbox:
-
-
-```sh
-docker run --rm --name flextesa_sandbox --detach -p 20000:20000 oxheadalpha/flextesa:latest oxfordbox start
-```
-
-
-The default block time is 5 seconds. If we want to simulate Oxford block times, we could use
+Start the docker container, which encapsulates the flexmasa_sandbox:
 
 
 ```sh
-docker run --rm --name flextesa_sandbox --detach -e block_time=8 -p 20000:20000 oxheadalpha/flextesa:latest oxfordbox start
+docker run --rm --name flexmasa_sandbox --detach -p 20000:20000 registry.gitlab.com/mavryk-network/flexmasa:latest atlasbox start
 ```
 
 
-The idea behind Flextesa is to be able to use block times of 1 second. However, the tests as presently written do not always support that rate.
+The default block time is 5 seconds. If we want to simulate Atlas block times, we could use
 
 
-Flextesa is the "Flexible Tezos Sandbox" and effectively enables you to run a local emulation of the blockchain. Please find [more information about Flextesa here](https://tezos.gitlab.io/flextesa/). Several options are available for controlling block timings.
+```sh
+docker run --rm --name flexmasa_sandbox --detach -e block_time=8 -p 20000:20000 registry.gitlab.com/mavryk-network/flexmasa:latest atlasbox start
+```
+
+
+The idea behind Flexmasa is to be able to use block times of 1 second. However, the tests as presently written do not always support that rate.
+
+
+Flexmasa is the "Flexible Mavryk Sandbox" and effectively enables you to run a local emulation of the blockchain. Please find [more information about Flexmasa here](https://tezos.gitlab.io/flexmasa/). Several options are available for controlling block timings.
 
 
 ### 3. Run the integration tests
 *Note: It is no longer necessary to `cd` into the `integration-tests/` directory*
 
 
-To run the integration tests, use the command `npm run integration-tests`. The integration test suite will execute all tests against the current Tezos protocol (Oxford) sandbox and typically also against the previous and next protocol testnets. You can find specific test targets in the `scripts` property in the `integration-tests/package.json` file.
+To run the integration tests, use the command `npm run integration-tests`. The integration test suite will execute all tests against the current Mavryk protocol (Atlas) sandbox and typically also against the previous and next protocol testnets. You can find specific test targets in the `scripts` property in the `integration-tests/package.json` file.
 
 
 Remember that the first time you run the integration tests, `docker` will download the required image, which might take some time.
 
 
-Before running the tests, make sure the file `~/taquito/integration-tests/known-contracts-ProxfordY.ts` includes the following:
+Before running the tests, make sure the file `~/taquito/integration-tests/known-contracts-PtAtLas.ts` includes the following:
 
 
 ```bash
-export const knownContractProxfordY = "KT1GrzF7DSNc7LrLmS7RNaLrBQqyYHyoMzwR";
-export const knownBigMapContractProxfordY = "KT1Twd6GBBqHEFhzvBDEn4JiUopttq2WjdnF";
-export const knownTzip12BigMapOffChainContractProxfordY = "KT1WZUqEKZ4TMW75FKpqod4HwB4ts7wbnsFh";
-export const knownSaplingContractProxfordY = "KT1VNnD8NWx9ep2gxsHbzrmahrWsKpZb3xGY";
-export const knownOnChainViewContractAddressProxfordY = "KT19eNryXTuVgH6s6cUc1a5LyjSamdBw4JXo";
+export const knownContractPtAtLas = "KT1GrzF7DSNc7LrLmS7RNaLrBQqyYHyoMzwR";
+export const knownBigMapContractPtAtLas = "KT1Twd6GBBqHEFhzvBDEn4JiUopttq2WjdnF";
+export const knownTzip12BigMapOffChainContractPtAtLas = "KT1WZUqEKZ4TMW75FKpqod4HwB4ts7wbnsFh";
+export const knownSaplingContractPtAtLas = "KT1VNnD8NWx9ep2gxsHbzrmahrWsKpZb3xGY";
+export const knownOnChainViewContractAddressPtAtLas = "KT19eNryXTuVgH6s6cUc1a5LyjSamdBw4JXo";
 ```
 
 
 These contracts will be originated when the tests are first run, but the file will be emptied afterward. You'll need to repopulate it if you want to rerun the tests.
 
 
-Next, set the required environment variables for the Flextesa run:
+Next, set the required environment variables for the Flexmasa run:
 
 
 ```bash
@@ -193,11 +193,11 @@ source integration-tests/sandbox-env.sh
 ```
 
 
-When running Flextesa tests, you must pass the Jest config `--runInBand`, as they only have one baking account, and tests must run sequentially.
+When running Flexmasa tests, you must pass the Jest config `--runInBand`, as they only have one baking account, and tests must run sequentially.
 
 
 ```bash
-npm -w integration-tests run test:originate-known-contracts && npm -w integration-tests run test:oxfordnet-secret-key --runInBand
+npm -w integration-tests run test:originate-known-contracts && npm -w integration-tests run test:atlasnet-secret-key --runInBand
 ```
 
 
@@ -205,7 +205,7 @@ If you're running the tests for a second time in the same session, you don't nee
 
 
 ```bash
-npm -w --runInBand integration-tests run test:oxfordnet-secret-key
+npm -w --runInBand integration-tests run test:atlasnet-secret-key
 ```
 
 
@@ -213,7 +213,7 @@ Some tests might fail due to test data discrepancies, such as changes in RPC end
 
 
 ```bash
-npm -w integration-tests run test:oxfordnet-secret-key -- --runInBand --testPathIgnorePatterns='ledger-signer-failing-tests.spec.ts|ledger-signer.spec.ts|contract-estimation-tests.spec.ts|rpc-get-protocol-constants.spec.ts|'
+npm -w integration-tests run test:atlasnet-secret-key -- --runInBand --testPathIgnorePatterns='ledger-signer-failing-tests.spec.ts|ledger-signer.spec.ts|contract-estimation-tests.spec.ts|rpc-get-protocol-constants.spec.ts|'
 ```
 
 
@@ -221,7 +221,7 @@ You can also avoid slow-running tests. For example, if you want not to run the `
 
 
 ```bash
-npm -w integration-tests run test:oxfordnet-secret-key -- --runInBand --testPathIgnorePatterns='ledger-signer-failing-tests.spec.ts|ledger-signer.spec.ts|contract-estimation-tests.spec.ts|rpc-get-protocol-constants.spec.ts|sapling-batched-transactions.spec.ts| sapling-transactions-contract-with-multiple-sapling-states.spec.ts|sapling-transactions-contract-with-single-state.spec.ts|sapling-transactions-proof-using-proving-key.spec.ts'
+npm -w integration-tests run test:atlasnet-secret-key -- --runInBand --testPathIgnorePatterns='ledger-signer-failing-tests.spec.ts|ledger-signer.spec.ts|contract-estimation-tests.spec.ts|rpc-get-protocol-constants.spec.ts|sapling-batched-transactions.spec.ts| sapling-transactions-contract-with-multiple-sapling-states.spec.ts|sapling-transactions-contract-with-single-state.spec.ts|sapling-transactions-proof-using-proving-key.spec.ts'
 ```
 
 
@@ -231,7 +231,7 @@ Upon successfully starting the tests with contract origination, you should see t
 ```bash
 integration-tests@16.1.2 test:originate-known-contracts
 node -r ts-node/register originate-known-contracts.ts
-ProxfordYmVfjWnRcgjWH36fW6PArwqykTFzotUxRs6gmTcZDuH
+PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2
 knownContract address: KT1CX4Qbkfy4N9fgRD5L7RPZW9ByydfKxh5t
 ::set-output name=knownContractAddress::KT1CX4Qbkfy4N9fgRD5L7RPZW9Byv2ycodEBUxHWoRkWHFBht
 knownBigMapContract address: KT1NN9wjEDzrpcXynvA1L97Y5JCT7ebyjPNj
@@ -248,35 +248,35 @@ Initial Balance : 90856887.13687 XTZ
 Final Balance : 90856909.589235 XTZ
 Total XTZ Spent : -22.452365 XTZ
 
-> integration-tests@16.1.2 test:oxfordnet-secret-key
-> RUN_OXFORDNET_WITH_SECRET_KEY=true jest --runInBand
+> integration-tests@16.1.2 test:atlasnet-secret-key
+> RUN_ATLASNET_WITH_SECRET_KEY=true jest --runInBand
 RUNS  ./contract-manager-scenario.spec.ts
 PASS  ./contract-manager-scenario.spec.ts (6.167 s)
 ```
 
-## Testing Baking and Governance Operations with Flextesa
+## Testing Baking and Governance Operations with Flexmasa
 
-We provide a shell script `integration-tests/sandbox-bakers.sh` for setting up and running a mini net of bakers with Flextesa.
+We provide a shell script `integration-tests/sandbox-bakers.sh` for setting up and running a mini net of bakers with Flexmasa.
 The default values for the sandbox include
   - blocks_per_voting_period=12
   - extra_dummy_proposals_batch_size=2
   - extra_dummy_proposals_batch_level=2,4
   - number_of_bootstrap_accounts=2
 
-Before running the script, make sure the file `~/taquito/integration-tests/known-contracts-ProxfordY.ts` is populated. Stop the `baking-sandbox` docker process before running the script again.
+Before running the script, make sure the file `~/taquito/integration-tests/known-contracts-PtAtLas.ts` is populated. Stop the `baking-sandbox` docker process before running the script again.
 
 To run this script, save it as `integration-tests/sandbox-bakers.sh` and execute it with the required arguments:
 
 ```bash
 chmod +x sandbox-bakers.sh
-./sandbox-bakers.sh <flextesa_docker_image> <protocol> <testnet> <testnet_uppercase>
+./sandbox-bakers.sh <flexmasa_docker_image> <protocol> <testnet> <testnet_uppercase>
 ```
 for example,
 ```bash
-./sandbox-bakers.sh oxheadalpha/flextesa:20230313 Oxford oxfordnet OXFORDNET
+./sandbox-bakers.sh registry.gitlab.com/mavryk-network/flexmasa:20230313 Atlas atlasnet ATLASNET
 ```
 
-Create an alias to make interacting with the flextesa node easier
+Create an alias to make interacting with the flexmasa node easier
 ```bash!
 alias tcli='docker exec baking-sandbox octez-client'
 ```
@@ -301,14 +301,14 @@ tcli bake for alice
 ```
 You should see something like:
 ```bash!
-May 11 20:14:39.014 - 017-ProxfordY.baker.transitions: received new head BLr6cAaj2oM2ibakFp8zZMNEbpcSAZ94WhzeV57njD7NrnaYrZU at
-May 11 20:14:39.014 - 017-ProxfordY.baker.transitions:   level 1152, round 0
+May 11 20:14:39.014 - 017-PtAtLas.baker.transitions: received new head BLr6cAaj2oM2ibakFp8zZMNEbpcSAZ94WhzeV57njD7NrnaYrZU at
+May 11 20:14:39.014 - 017-PtAtLas.baker.transitions:   level 1152, round 0
 Block BLCjrRGMJxZEBoZaxafUHcTCNBnmGzRfX2Qf5qru2XtAhiNEsun (1153) injected
 ```
 
 ## The Keygen API
 
-The Keygen API in Taquito is specifically designed for testing purposes. It allows developers to generate and manage key pairs (public and private keys) for Tezos accounts during the testing phase of their applications. This is useful for simulating various scenarios, such as transactions, smart contract interactions, and other on-chain operations, without the need to use real Tezos accounts or real funds.
+The Keygen API in Taquito is specifically designed for testing purposes. It allows developers to generate and manage key pairs (public and private keys) for Mavryk accounts during the testing phase of their applications. This is useful for simulating various scenarios, such as transactions, smart contract interactions, and other on-chain operations, without the need to use real Mavryk accounts or real funds.
 
 This tool is employed internally for Taquito Integration tests within the Continuous Integration and Continuous Delivery (CI/CD) system.
 

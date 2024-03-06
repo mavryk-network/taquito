@@ -24,7 +24,7 @@ describe('OnChainView test on K protocol', () => {
       getStorage: jest.fn(),
     };
 
-    mockRpcClient.getProtocols.mockResolvedValue({ protocol: Protocols.PtKathman });
+    mockRpcClient.getProtocols.mockResolvedValue({ protocol: Protocols.PtAtLas });
 
     mockRpcClient.getChainId.mockResolvedValue('test_chain_id');
 

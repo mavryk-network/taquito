@@ -4,7 +4,7 @@ import { ProtoGreaterOrEqual } from "@taquito/michel-codec";
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
   const Tezos = lib;
-  const oxfordAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.ProxfordY) ? test : test.skip;
+  const atlasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtAtLas) ? test : test.skip;
 
   describe(`Test contract origination with timelock types (chest or chest_key) in storage and retrieve its value through contract api: ${rpc}`, () => {
     const chestValue = 'deafa2a781dee4a1cea296d1d5fef8c5cffad5d4a7fecdebc8ecde8afad580e5d9fdaa98cfeb91a3bb8cc8e5fae79ce3ebf9baf3af9b94bdefc9fbf68ac8bcbbc09c99b6e6b8b9fec8bdb5949af5bf85b5d8d5fbe8e8d1c0cdcebee792a1f8d0f1fbabe8bda590f1938a9cdc8fe3a29fbba3c1b3e7bcbc9aedb58dde9388a7dee5a4c9d8cd989fdcd285afcfa780ebc7cdd78099fbf8b4d8f58083b782bf83fcacbc9f86adfedbc983e08b8fcbc0cb89f7a0ccd1a0bfc1dfc0d3b58a98ffb7a5a8f794ad8bc8dfc9bac3f6c9b2e1cd80cfc1e398df898ed6a0ca928f81cadeb3a8c694e29fc79c92ddbed28584dd9bbafb89c9dedabb8fb68c98dda19ac0f681ffa2a7c1da84b0fbe6a0b6ce82a7df908c9add859bbad6b3cec0c0aba0bab8de9480a8a00132511a7cc4b258bf58089548b44d9fbed4b6434ca39fd51100000014464ee1937269169dc3f93983f7bbe25b8a6915d7';
@@ -30,7 +30,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       await opChestKey.confirmation()
     })
 
-    oxfordAndAlpha('Verify contract.originate for a contract with chest in storage', async () => {
+    atlasAndAlpha('Verify contract.originate for a contract with chest in storage', async () => {
       expect(opChest.hash).toBeDefined();
       expect(opChest.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY)
       const contract = await opChest.contract();
@@ -39,7 +39,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       expect(storage).toEqual(chestValue);
     });
 
-    oxfordAndAlpha('Verify contract.originate for a contract with chest_key in storage', async () => {
+    atlasAndAlpha('Verify contract.originate for a contract with chest_key in storage', async () => {
       expect(opChestKey.hash).toBeDefined();
       expect(opChestKey.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY)
       const contract = await opChestKey.contract();

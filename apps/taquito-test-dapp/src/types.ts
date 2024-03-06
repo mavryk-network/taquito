@@ -30,7 +30,7 @@ export type TezosAccountAddress = `tz${"1" | "2" | "3"}${string}`;
 //   GRANADANET = "granadanet",
 //   HANGZHOUNET = "hangzhounet",
 //   ITHACANET = "ithacanet",
-//   GHOSTNET = "ghostnet",
+//   BASENET = "basenet",
 //   JAKARTANET = "jakartanet",
 //   CUSTOM = "custom"
 // }

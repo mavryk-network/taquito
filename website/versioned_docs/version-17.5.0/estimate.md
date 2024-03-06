@@ -39,7 +39,7 @@ values={[
 
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
@@ -64,7 +64,7 @@ Tezos.estimate
 
 ```js live noInline wallet
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
@@ -105,7 +105,7 @@ The `contractCall()` member method can now be used to estimate contract calls as
     
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 Tezos.contract
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
@@ -133,7 +133,7 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
       
 Tezos.wallet
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
@@ -174,7 +174,7 @@ values={[
 
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 println(`Estimating the contract origination : `);
 Tezos.estimate
@@ -204,7 +204,7 @@ Tezos.estimate
 
 ```js live noInline wallet
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 println(`Estimating the contract origination : `);
 Tezos.estimate

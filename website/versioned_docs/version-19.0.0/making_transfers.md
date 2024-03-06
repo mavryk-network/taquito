@@ -23,10 +23,10 @@ In the following example, we transfer 0.5ṁ from a `mv1PYMQXgRiJBMsrEaM9Yre4Jyv
 
 ```js live noInline
 // import { TezosToolkit } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 render(`Fetching a private key...`);
-fetch('https://keygen.ecadinfra.com/ghostnet/', {
+fetch('https://keygen.ecadinfra.com/basenet/', {
   method: 'POST',
   headers: { Authorization: 'Bearer taquito-example' },
 })

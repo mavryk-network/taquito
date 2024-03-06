@@ -98,7 +98,7 @@ Now, open the file `index.ts` and replace the code with the following:
 ```ts
 import { TezosToolkit } from "@mavrykdynamics/taquito";
 
-var tezosToolkit = new TezosToolkit("https://ghostnet.ecadinfra.com");
+var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
 
 tezosToolkit.tz.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
     console.log(balance.toNumber());
@@ -160,7 +160,7 @@ Because Tezos is designed to evolve, it is now much more than what it was when i
 
 Different versions of Tezos protocol are named after historic cities. At the time of this writing, we are in the "Nairobi" era. But the next protocol "Oxford" is being implemented and will be voted on soon, then the next one would be a city that starts with "P". 🤔 I wonder what will happen after we reach Z. 🤷
 
-The "mainnet" is the actual Tezos Blockchain. However, there are several "testnets" that are used for testing. One of them is named "ghostnet", and it evolves to the new protocol much earlier than the mainnet, so that the ecosystem has enough time to implement and test the new protocol's features.
+The "mainnet" is the actual Tezos Blockchain. However, there are several "testnets" that are used for testing. One of them is named "basenet", and it evolves to the new protocol much earlier than the mainnet, so that the ecosystem has enough time to implement and test the new protocol's features.
 
 ## What is a dApp?
 
@@ -198,7 +198,7 @@ import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
 import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 async function main() {
-    var tezosToolkit = new TezosToolkit("https://ghostnet.ecadinfra.com");
+    var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
 
     // WARNING: DO NOT DO THIS IN PRODUCTION, KEEP YOUR SECRETS SAFE
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
@@ -234,7 +234,7 @@ What is happening here? Let's break it down:
 1. We print the hash of the operation.
 
 For the purpose of this section, I have created a new address and funded it on testnet. You are sharing the same secret key with everyone else going through this tutorial. So don't use this address for anything important. Also, there are two possible reasons why you might not be able to send the operation:
-1. Other people testing the code have consumed all the ṁ in the address, so your operation will fail because of insufficient funds. You can head over to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) and send some ṁ to the address for free. Or you can get free Testnet Tez right from your terminal: `npx @oxheadalpha/get-tez <your-address> --amount 100 --network ghostnet`
+1. Other people testing the code have consumed all the ṁ in the address, so your operation will fail because of insufficient funds. You can head over to [basenet faucet](https://basenet-faucet.mavryk.network/) and send some ṁ to the address for free. Or you can get free Testnet Mav right from your terminal: `npx @mavrykdynamics/get-mav <your-address> --amount 100 --network basenet`
 1. Another person is sending an operation from this address at the same time as you. One address can only send one operation to each block. This is very improbable, but at least you know someone else is going through this tutorial at the same time as you. 😄
 
 <details>
@@ -246,10 +246,10 @@ For the purpose of this section, I have created a new address and funded it on t
     docker run --pull always -it --entrypoint sh docker.io/tezos/tezos:latest
 
     # now you are inside the docker container
-    octez-client -E https://ghostnet.ecadinfra.com gen keys mysamplekey -s secp256k1
-    octez-client -E https://ghostnet.ecadinfra.com show address mysamplekey -S
+    octez-client -E https://rpc.mavryk,network/basenet gen keys mysamplekey -s secp256k1
+    octez-client -E https://rpc.mavryk,network/basenet show address mysamplekey -S
   ```
-  The new address you just created has a balance of zero. For the testnet, You can go to [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
+  The new address you just created has a balance of zero. For the testnet, You can go to [basenet faucet](https://basenet-faucet.mavryk.network/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
 </details>
 
 Congratulations! You have just sent an operation to the Tezos blockchain using Taquito.
@@ -258,7 +258,7 @@ Congratulations! You have just sent an operation to the Tezos blockchain using T
 
 In this section, we will interact with a smart contract using Taquito. We will mint an NFT on [objkt.com](https://objkt.com) NFT marketplace.
 
-Well, objk.com is the production service. We will use the testnet one: [ghostnet.objkt.com](https://ghostnet.objkt.com/), because to mint NFT on it, you only need ghostnet ṁ, which is free. Also, because I want to put my test secret key here, and I don't like to share my mainnet secret key with actual ṁ in it with everyone.
+Well, objk.com is the production service. We will use the testnet one: [basenet.objkt.com](https://basenet.objkt.com/), because to mint NFT on it, you only need basenet ṁ, which is free. Also, because I want to put my test secret key here, and I don't like to share my mainnet secret key with actual ṁ in it with everyone.
 
 The concepts you learn here are not limited to objkt.com or NFTs. You can use the same concepts to interact with any smart contract on the Tezos blockchain.
 
@@ -266,13 +266,13 @@ Most dApps interact with smart contracts. You can think of a smart contract as a
 
 In Tezos, smart contracts are written using one of the high-level languages (like Ligo), and compiled to Michelson. Then the contract is originated (deployed) to the blockchain. During origination, an address prefixed with `KT1` is created for the contract. You can then interact with the smart contract by sending operations to this address.
 
-In objkt.com, any user can create a number of collections and then mint NFTs in any of these collections. I have already created a collection and made our test address (`mv2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) an operator of the collection. So, this user can now mint NFTs in this collection. Check out the collection [here](https://ghostnet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv), and note the number of tokens in it.
+In objkt.com, any user can create a number of collections and then mint NFTs in any of these collections. I have already created a collection and made our test address (`mv2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) an operator of the collection. So, this user can now mint NFTs in this collection. Check out the collection [here](https://basenet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv), and note the number of tokens in it.
 
 Open the file `index.ts` and change the `main` function to the following:
 
 ```ts
 async function main() {
-    var tezosToolkit = new TezosToolkit("https://ghostnet.ecadinfra.com");
+    var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
 
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
     tezosToolkit.setProvider({ signer });
@@ -298,7 +298,7 @@ What happens here? Let's break it down:
 1- We wait for the confirmation and print the hash as before.
 
 Now, if you run your code, you should be able to see the hash of the operation in the terminal.
-After about a minute, you should be able to see the new NFT in the collection from [this link](https://ghostnet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv). Because everyone following this tutorial is minting NFTs with the same metadata, all the NFTs in this collection will look the same. However, the number of tokens in the collection should increase by one.
+After about a minute, you should be able to see the new NFT in the collection from [this link](https://basenet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv). Because everyone following this tutorial is minting NFTs with the same metadata, all the NFTs in this collection will look the same. However, the number of tokens in the collection should increase by one.
 
 Congratulations! You have just interacted with a smart contract using Taquito. Additionally, you programmatically minted an NFT.
 
@@ -431,7 +431,7 @@ import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 
 const App = () => {
   const [Tezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://ghostnet.ecadinfra.com")
+    new TezosToolkit("https://rpc.mavryk,network/basenet")
   );
   const [wallet, setWallet] = useState<BeaconWallet | undefined>(undefined);
   const [userAddress, setUserAddress] = useState<string | undefined>(undefined);
@@ -484,8 +484,8 @@ const ConnectButton = ({
     try {
       await wallet!.requestPermissions({
         network: {
-          type: NetworkType.GHOSTNET,
-          rpcUrl: "https://ghostnet.ecadinfra.com",
+          type: NetworkType.BASENET,
+          rpcUrl: "https://rpc.mavryk,network/basenet",
         },
       });
       const userAddress = await wallet!.getPKH();
@@ -499,7 +499,7 @@ const ConnectButton = ({
     (async () => {
       const wallet = new BeaconWallet({
         name: "My dApp",
-        preferredNetwork: NetworkType.GHOSTNET,
+        preferredNetwork: NetworkType.BASENET,
         disableDefaultEvents: false,
       });
       Tezos.setWalletProvider(wallet);
@@ -653,7 +653,7 @@ Make sure that the command `npm run dev` is still running in the terminal, and t
 
 Now, you should be able to see the "Connect Wallet" button in the browser. Clicking on it opens the wallet selection modal. You can choose your favorite wallet and connect to it. After this, you need to visit your wallet to approve the connection. After that, you should be able to see the "Send" button. You can enter an address and an amount (in Mumav, notice the `mumav: true` in `Transfer.tsx`) and click on the "Send" button to send ṁ to the address.
 
-If you have not set up a wallet before, clicking on the Kukai wallet opens a page that asks you to create a new wallet. Remember to visit the [ghostnet faucet](https://faucet.ghostnet.teztnets.xyz/) to fund your wallet with some ṁ. If you want to use that wallet for real ṁ, you need to back up the mnemonic phrase. But remember that the mnemonic phrase is a secret. Anyone who has access to it can steal your ṁ.
+If you have not set up a wallet before, clicking on the Kukai wallet opens a page that asks you to create a new wallet. Remember to visit the [basenet faucet](https://basenet-faucet.mavryk.network/) to fund your wallet with some ṁ. If you want to use that wallet for real ṁ, you need to back up the mnemonic phrase. But remember that the mnemonic phrase is a secret. Anyone who has access to it can steal your ṁ.
 
 ## Closing thoughts
 
