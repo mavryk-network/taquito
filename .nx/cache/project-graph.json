@@ -1,0 +1,2295 @@
+{
+  "nodes": {
+    "pack-test-tool": {
+      "name": "pack-test-tool",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-michel-codec/pack-test-tool",
+        "targets": {},
+        "sourceRoot": "packages/taquito-michel-codec/pack-test-tool",
+        "name": "pack-test-tool",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-contracts-library": {
+      "name": "@mavrykdynamics/taquito-contracts-library",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-contracts-library",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-contracts-library",
+        "name": "@mavrykdynamics/taquito-contracts-library",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-michelson-encoder": {
+      "name": "@mavrykdynamics/taquito-michelson-encoder",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-michelson-encoder",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-michelson-encoder",
+        "name": "@mavrykdynamics/taquito-michelson-encoder",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-beacon-wallet": {
+      "name": "@mavrykdynamics/taquito-beacon-wallet",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-beacon-wallet",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "build-webpack": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build-webpack"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-beacon-wallet",
+        "name": "@mavrykdynamics/taquito-beacon-wallet",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-ledger-signer": {
+      "name": "@mavrykdynamics/taquito-ledger-signer",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-ledger-signer",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-ledger-signer",
+        "name": "@mavrykdynamics/taquito-ledger-signer",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-local-forging": {
+      "name": "@mavrykdynamics/taquito-local-forging",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-local-forging",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "build-webpack": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build-webpack"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-local-forging",
+        "name": "@mavrykdynamics/taquito-local-forging",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-remote-signer": {
+      "name": "@mavrykdynamics/taquito-remote-signer",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-remote-signer",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-remote-signer",
+        "name": "@mavrykdynamics/taquito-remote-signer",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-michel-codec": {
+      "name": "@mavrykdynamics/taquito-michel-codec",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-michel-codec",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-michel-codec",
+        "name": "@mavrykdynamics/taquito-michel-codec",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-http-utils": {
+      "name": "@mavrykdynamics/taquito-http-utils",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-http-utils",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-http-utils",
+        "name": "@mavrykdynamics/taquito-http-utils",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-timelock": {
+      "name": "@mavrykdynamics/taquito-timelock",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-timelock",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-timelock",
+        "name": "@mavrykdynamics/taquito-timelock",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-sapling": {
+      "name": "@mavrykdynamics/taquito-sapling",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-sapling",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "postinstall": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "postinstall"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-sapling",
+        "name": "@mavrykdynamics/taquito-sapling",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-signer": {
+      "name": "@mavrykdynamics/taquito-signer",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-signer",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-signer",
+        "name": "@mavrykdynamics/taquito-signer",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-tzip12": {
+      "name": "@mavrykdynamics/taquito-tzip12",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-tzip12",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-tzip12",
+        "name": "@mavrykdynamics/taquito-tzip12",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-tzip16": {
+      "name": "@mavrykdynamics/taquito-tzip16",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-tzip16",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-tzip16",
+        "name": "@mavrykdynamics/taquito-tzip16",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-utils": {
+      "name": "@mavrykdynamics/taquito-utils",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-utils",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-utils",
+        "name": "@mavrykdynamics/taquito-utils",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "taquito-test-dapp-vite": {
+      "name": "taquito-test-dapp-vite",
+      "type": "lib",
+      "data": {
+        "root": "apps/taquito-test-dapp",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "dev": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "dev"
+            },
+            "configurations": {}
+          },
+          "preview": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "preview"
+            },
+            "configurations": {}
+          },
+          "check": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "check"
+            },
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "apps/taquito-test-dapp",
+        "name": "taquito-test-dapp-vite",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-core": {
+      "name": "@mavrykdynamics/taquito-core",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-core",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-core",
+        "name": "@mavrykdynamics/taquito-core",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-rpc": {
+      "name": "@mavrykdynamics/taquito-rpc",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito-rpc",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito-rpc",
+        "name": "@mavrykdynamics/taquito-rpc",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "integration-tests": {
+      "name": "integration-tests",
+      "type": "lib",
+      "data": {
+        "root": "integration-tests",
+        "targets": {
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:secret-key": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:secret-key"
+            },
+            "configurations": {}
+          },
+          "test:atlasnet": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:atlasnet"
+            },
+            "configurations": {}
+          },
+          "test:atlasnet-secret-key": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:atlasnet-secret-key"
+            },
+            "configurations": {}
+          },
+          "test:weeklynet": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:weeklynet"
+            },
+            "configurations": {}
+          },
+          "test:weeklynet-secret-key": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:weeklynet-secret-key"
+            },
+            "configurations": {}
+          },
+          "test:basenet": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:basenet"
+            },
+            "configurations": {}
+          },
+          "test:basenet-secret-key": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:basenet-secret-key"
+            },
+            "configurations": {}
+          },
+          "originate-known-contracts": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "originate-known-contracts"
+            },
+            "configurations": {}
+          },
+          "originate-known-contracts-and-run-test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "originate-known-contracts-and-run-test"
+            },
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "integration-tests",
+        "name": "integration-tests",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito": {
+      "name": "@mavrykdynamics/taquito",
+      "type": "lib",
+      "data": {
+        "root": "packages/taquito",
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build"
+            },
+            "configurations": {}
+          },
+          "test": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test"
+            },
+            "configurations": {}
+          },
+          "test:watch": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:watch"
+            },
+            "configurations": {}
+          },
+          "test:prod": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "test:prod"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "lint"
+            },
+            "configurations": {}
+          },
+          "precommit": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "precommit"
+            },
+            "configurations": {}
+          },
+          "prebuild": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "prebuild"
+            },
+            "configurations": {}
+          },
+          "version-stamp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "version-stamp"
+            },
+            "configurations": {}
+          },
+          "build:release": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:release"
+            },
+            "configurations": {}
+          },
+          "build:web": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:web"
+            },
+            "configurations": {}
+          },
+          "start": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "start"
+            },
+            "configurations": {}
+          },
+          "postinstall": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "postinstall"
+            },
+            "configurations": {}
+          },
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "packages/taquito",
+        "name": "@mavrykdynamics/taquito",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    },
+    "@mavrykdynamics/taquito-example": {
+      "name": "@mavrykdynamics/taquito-example",
+      "type": "lib",
+      "data": {
+        "root": "example",
+        "targets": {
+          "example": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example"
+            },
+            "configurations": {}
+          },
+          "example:activation": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:activation"
+            },
+            "configurations": {}
+          },
+          "example:at": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:at"
+            },
+            "configurations": {}
+          },
+          "example:smart-contract": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:smart-contract"
+            },
+            "configurations": {}
+          },
+          "example:map-values": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:map-values"
+            },
+            "configurations": {}
+          },
+          "example:origination": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:origination"
+            },
+            "configurations": {}
+          },
+          "example:origination2": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:origination2"
+            },
+            "configurations": {}
+          },
+          "example:origination3": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:origination3"
+            },
+            "configurations": {}
+          },
+          "example:origination4": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:origination4"
+            },
+            "configurations": {}
+          },
+          "example:lambda": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:lambda"
+            },
+            "configurations": {}
+          },
+          "example:lambda2": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:lambda2"
+            },
+            "configurations": {}
+          },
+          "example:pretty-print": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:pretty-print"
+            },
+            "configurations": {}
+          },
+          "example:encode-michelson": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:encode-michelson"
+            },
+            "configurations": {}
+          },
+          "example:rpc-vs-local-pack-parallel": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:rpc-vs-local-pack-parallel"
+            },
+            "configurations": {}
+          },
+          "example:rpc-vs-local-pack-sequential": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:rpc-vs-local-pack-sequential"
+            },
+            "configurations": {}
+          },
+          "example:bigmap-keys-pair": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:bigmap-keys-pair"
+            },
+            "configurations": {}
+          },
+          "example:bigmap-keys-deep-pair": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:bigmap-keys-deep-pair"
+            },
+            "configurations": {}
+          },
+          "example:deploy-dapp": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:deploy-dapp"
+            },
+            "configurations": {}
+          },
+          "example:deploy-docs": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:deploy-docs"
+            },
+            "configurations": {}
+          },
+          "example:deploy-integration": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:deploy-integration"
+            },
+            "configurations": {}
+          },
+          "example:wallet-are-you-there": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:wallet-are-you-there"
+            },
+            "configurations": {}
+          },
+          "example:wallet-contract-transfer": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:wallet-contract-transfer"
+            },
+            "configurations": {}
+          },
+          "example:tzip-12-big-map-off-chain": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-12-big-map-off-chain"
+            },
+            "configurations": {}
+          },
+          "example:tzip-12-big-map-token-metadata": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-12-big-map-token-metadata"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-https": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-https"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-ipfs": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-ipfs"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-chain-one": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-chain-one"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-chain-two": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-chain-two"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-sha256": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-sha256"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-storage": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-storage"
+            },
+            "configurations": {}
+          },
+          "example:tzip-16-contract": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:tzip-16-contract"
+            },
+            "configurations": {}
+          },
+          "example:streamer": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:streamer"
+            },
+            "configurations": {}
+          },
+          "example:streamer-custom": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:streamer-custom"
+            },
+            "configurations": {}
+          },
+          "example:streamer-block-time": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:streamer-block-time"
+            },
+            "configurations": {}
+          },
+          "example:scan-path-ledger": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "example:scan-path-ledger"
+            },
+            "configurations": {}
+          }
+        },
+        "sourceRoot": "example",
+        "name": "@mavrykdynamics/taquito-example",
+        "projectType": "library",
+        "implicitDependencies": [],
+        "tags": []
+      }
+    }
+  },
+  "externalNodes": {},
+  "dependencies": {
+    "pack-test-tool": [
+      {
+        "source": "pack-test-tool",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-contracts-library": [
+      {
+        "source": "@mavrykdynamics/taquito-contracts-library",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-contracts-library",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-contracts-library",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-contracts-library",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-michelson-encoder": [
+      {
+        "source": "@mavrykdynamics/taquito-michelson-encoder",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-michelson-encoder",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-michelson-encoder",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-beacon-wallet": [
+      {
+        "source": "@mavrykdynamics/taquito-beacon-wallet",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-beacon-wallet",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-ledger-signer": [
+      {
+        "source": "@mavrykdynamics/taquito-ledger-signer",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-ledger-signer",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-ledger-signer",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-local-forging": [
+      {
+        "source": "@mavrykdynamics/taquito-local-forging",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-local-forging",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-local-forging",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-remote-signer": [
+      {
+        "source": "@mavrykdynamics/taquito-remote-signer",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-remote-signer",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-remote-signer",
+        "target": "@mavrykdynamics/taquito-http-utils",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-remote-signer",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-michel-codec": [
+      {
+        "source": "@mavrykdynamics/taquito-michel-codec",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-http-utils": [
+      {
+        "source": "@mavrykdynamics/taquito-http-utils",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-timelock": [
+      {
+        "source": "@mavrykdynamics/taquito-timelock",
+        "target": "@mavrykdynamics/taquito-signer",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-timelock",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-timelock",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-sapling": [
+      {
+        "source": "@mavrykdynamics/taquito-sapling",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-sapling",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-sapling",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-sapling",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-signer": [
+      {
+        "source": "@mavrykdynamics/taquito-signer",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-signer",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-signer",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-tzip12": [
+      {
+        "source": "@mavrykdynamics/taquito-tzip12",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip12",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip12",
+        "target": "@mavrykdynamics/taquito-michelson-encoder",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip12",
+        "target": "@mavrykdynamics/taquito-tzip16",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-tzip16": [
+      {
+        "source": "@mavrykdynamics/taquito-tzip16",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip16",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip16",
+        "target": "@mavrykdynamics/taquito-http-utils",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip16",
+        "target": "@mavrykdynamics/taquito-michelson-encoder",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip16",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-tzip16",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-utils": [
+      {
+        "source": "@mavrykdynamics/taquito-utils",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      }
+    ],
+    "taquito-test-dapp-vite": [
+      {
+        "source": "taquito-test-dapp-vite",
+        "target": "@mavrykdynamics/taquito-beacon-wallet",
+        "type": "static"
+      },
+      {
+        "source": "taquito-test-dapp-vite",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "taquito-test-dapp-vite",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "taquito-test-dapp-vite",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-core": [],
+    "@mavrykdynamics/taquito-rpc": [
+      {
+        "source": "@mavrykdynamics/taquito-rpc",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-rpc",
+        "target": "@mavrykdynamics/taquito-http-utils",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-rpc",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "integration-tests": [
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-contracts-library",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-http-utils",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-local-forging",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-michel-codec",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-michelson-encoder",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-remote-signer",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-sapling",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-signer",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-tzip12",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-tzip16",
+        "type": "static"
+      },
+      {
+        "source": "integration-tests",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito": [
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-core",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-http-utils",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-local-forging",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-michel-codec",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-michelson-encoder",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ],
+    "@mavrykdynamics/taquito-example": [
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-ledger-signer",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-local-forging",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-michel-codec",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-michelson-encoder",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-rpc",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-sapling",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-signer",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-tzip16",
+        "type": "static"
+      },
+      {
+        "source": "@mavrykdynamics/taquito-example",
+        "target": "@mavrykdynamics/taquito-utils",
+        "type": "static"
+      }
+    ]
+  },
+  "version": "6.0"
+}
