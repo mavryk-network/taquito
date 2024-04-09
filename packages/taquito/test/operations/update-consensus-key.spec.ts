@@ -1,7 +1,6 @@
-import { ForgedBytes } from '../../src/operations/types';
+import { ForgedBytes, UpdateConsensusKeyOperation } from '@mavrykdynamics/taquito';
 import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
-import { UpdateConsensusKeyOperation } from '../../src/operations/update-consensus-key-operation';
 import { UpdateConsensusKeyOperationBuilder } from '../helpers';
 
 describe('Update Consensus Key operation', () => {

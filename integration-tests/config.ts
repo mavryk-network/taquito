@@ -146,7 +146,7 @@ const basenetEphemeral: Config =
     protocol: Protocols.PtAtLas,
     defaultRpc: 'https://rpc.mavryk.network/basenet',
     knownContracts: knownContractsPtBasenet,
-    signerConfig: defaultEphemeralConfig('http://key-gen-1.i.tez.ie:3010/mondaynet')
+    signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/ghostnet')
   });
 
 const basenetSecretKey: Config =

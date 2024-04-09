@@ -193,7 +193,7 @@ inMemorySpendingKey.getSaplingViewingKeyProvider()
     .then((saplingContract) => {
         println(`Injecting the Sapling transaction using the ContractAbstraction...`);
         // The amount MUST be specified in the send method to transfer the 3 tez to the shielded pool
-        return saplingContract.methods.default([shieldedTx]).send({ amount: 3 });
+        return saplingContract.methodsObject.default([shieldedTx]).send({ amount: 3 });
     })
     .then((op) => {
         println(`Waiting for ${op.hash} to be confirmed...`);
@@ -256,7 +256,7 @@ saplingToolkit.prepareSaplingTransaction([{
     Tezos.contract.at(saplingContractAddress)
     .then((saplingContract) => {
         println(`Injecting the Sapling transaction using the ContractAbstraction...`);
-        return saplingContract.methods.default([saplingTx]).send();
+        return saplingContract.methodsObject.default([saplingTx]).send();
     })
     .then((op) => {
         println(`Waiting for ${op.hash} to be confirmed...`);
@@ -313,7 +313,7 @@ saplingToolkit.prepareUnshieldedTransaction({
     Tezos.contract.at(saplingContractAddress)
     .then((saplingContract) => {
         println(`Injecting the Sapling transaction using the ContractAbstraction...`);
-        return saplingContract.methods.default([unshieldedTx]).send();
+        return saplingContract.methodsObject.default([unshieldedTx]).send();
     })
     .then((op) => {
         println(`Waiting for ${op.hash} to be confirmed...`);

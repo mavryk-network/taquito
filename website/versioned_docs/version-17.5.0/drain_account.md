@@ -127,7 +127,7 @@ Tezos.signer
         println(`Origination completed.`);
         Tezos.tz.getBalance(contract.address).then((balance) => {
           println(`The balance of the contract is ${balance.toNumber() / 1000000} ṁ.`);
-          const estimateOp = contract.methods
+          const estimateOp = contract.methodsObject
             .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
             .toTransferParams({});
           println(`Waiting for the estimation of the smart contract call...`);
@@ -138,7 +138,7 @@ Tezos.signer
               println(
                 `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMumav} mumav.`
               );
-              return contract.methods
+              return contract.methodsObject
                 .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
                 .send({ amount: 0 });
             })

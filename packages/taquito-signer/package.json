@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito-signer",
-  "version": "19.0.2",
+  "version": "19.1.0",
   "description": "Provide signing functionality to be with taquito",
   "keywords": [
     "tezos",
@@ -66,9 +66,9 @@
     ]
   },
   "dependencies": {
-    "@mavrykdynamics/taquito": "^19.0.2",
-    "@mavrykdynamics/taquito-core": "^19.0.2",
-    "@mavrykdynamics/taquito-utils": "^19.0.2",
+    "@mavrykdynamics/taquito": "^19.1.0",
+    "@mavrykdynamics/taquito-core": "^19.1.0",
+    "@mavrykdynamics/taquito-utils": "^19.1.0",
     "@stablelib/blake2b": "^1.0.1",
     "@stablelib/ed25519": "^1.0.3",
     "@stablelib/hmac": "^1.0.1",
@@ -108,7 +108,7 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "ts-toolbelt": "^9.6.0",
-    "typedoc": "^0.25.2",
+    "typedoc": "^0.25.8",
     "typescript": "~5.2.2"
   },
   "gitHead": "551e35aeff7d6dcde1c72284238c0ed3c3aae77e"

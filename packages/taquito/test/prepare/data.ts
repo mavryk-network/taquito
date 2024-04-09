@@ -6,10 +6,10 @@ export const preparedOriginationOpWithReveal = {
     contents: [
       {
         kind: 'reveal',
-        fee: '374',
+        fee: '331',
         public_key: 'test_pub_key',
         source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
-        gas_limit: '1100',
+        gas_limit: '625',
         storage_limit: '0',
         counter: '1',
       },

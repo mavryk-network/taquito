@@ -138,7 +138,13 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
-    let inspect = myContract.methods.set_child_record('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', dataMap, 'EEEE', 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', 'FFFF', '10').toTransferParams();
+    let inspect = myContract.methodsObject.set_child_record({
+      address: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
+      data: dataMap,
+      label: 'EEEE',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+      parent: 'FFFF',
+      ttl: { Some: '10' }}).toTransferParams();
     println(JSON.stringify(inspect, null, 2))
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -157,14 +163,14 @@ importKey(Tezos, secretKey)
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
 
-    return myContract.methods.set_child_record(
-      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address(optional)
-      dataMap, //data
-      'EEEE', //label
-      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
-      'FFFF', //parent
-      '10' //ttl(optional)
-    ).send();
+    return myContract.methodsObject.set_child_record({
+      address: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
+      data: dataMap,
+      label: 'EEEE',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+      parent: 'FFFF',
+      ttl: { Some: '10' }
+    }).send();
 }).then(op => {
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
@@ -188,14 +194,14 @@ importKey(Tezos, secretKey)
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { nat : '3' })
 
-    return myContract.methods.set_child_record(
-      null, //address(optional)
-      dataMap, //data
-      'EEEE', //label
-      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
-      'FFFF', //parent
-      undefined //ttl(optional)
-    ).send();
+    return myContract.methodsObject.set_child_record({
+      address: null,
+      data: dataMap,
+      label: 'EEEE',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+      parent: 'FFFF',
+      ttl: null
+    }).send();
 }).then(op => {
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);

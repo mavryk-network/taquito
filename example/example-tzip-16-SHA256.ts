@@ -1,6 +1,6 @@
 import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
 import { tacoContractTzip16 } from "../integration-tests/data/modified-taco-contract"
-import { char2Bytes } from '@mavrykdynamics/taquito-utils';
+import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 async function example() {
@@ -15,7 +15,7 @@ async function example() {
     const urlPercentEncoded = encodeURIComponent('//storage.googleapis.com/tzip-16/taco-shop-metadata.json');
     const metadataSha256 = '0x7e99ecf3a4490e3044ccdf319898d77380a2fc20aae36b6e40327d678399d17b';
     const url = 'sha256://' + metadataSha256 + '/https:' + urlPercentEncoded;
-    const bytesUrl = char2Bytes(url);
+    const bytesUrl = stringToBytes(url);
 
     const metadataBigMap = new MichelsonMap();
     metadataBigMap.set("", bytesUrl);

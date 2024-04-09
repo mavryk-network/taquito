@@ -23,7 +23,7 @@ In the following example, we have not revealed the account that we want to empty
 
 ```js live noInline
 // const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
-// import { DEFAULT_FEE } from "@mavrykdynamics/taquito";
+// import { getRevealFee } from "@mavrykdynamics/taquito";
 
 Tezos.signer
     .publicKeyHash()
@@ -37,19 +37,19 @@ Tezos.signer
             return Tezos.estimate
                 .transfer({
                     to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
-                    amount: balance.toNumber() - DEFAULT_FEE.REVEAL, // Remove default reveal fee
-                    mumav: true
+                    amount: balance.toNumber() - getRevealFee(address), // Remove default reveal fee
+                    mutez: true
                 })
                 .then((estimate) => {
                     const maxAmount = balance.minus(
-                      estimate.suggestedFeeMumav + DEFAULT_FEE.REVEAL
+                      estimate.suggestedFeeMutez + getRevealFee(address)
                     ).toNumber();
                     println(
                         `The estimated fees related to the emptying operation are ${
-                          estimate.suggestedFeeMumav
-                        } mumav.\nThe fees related to the reveal operation are ${
-                          DEFAULT_FEE.REVEAL
-                        } mumav.\nConsidering those fees, the amount we need to send to empty the account is ${
+                          estimate.suggestedFeeMutez
+                        } mutez.\nThe fees related to the reveal operation are ${
+                          getRevealFee(address)
+                        } mutez.\nConsidering those fees, the amount we need to send to empty the account is ${
                           maxAmount / 1000000
                         } ṁ.`
                     );
@@ -126,8 +126,8 @@ Tezos.signer
       .then((contract) => {
         println(`Origination completed.`);
         Tezos.tz.getBalance(contract.address).then((balance) => {
-          println(`The balance of the contract is ${balance.toNumber() / 1000000} ṁ.`);
-          const estimateOp = contract.methods
+          println(`The balance of the contract is ${balance.toNumber() / 1000000} ꜩ.`);
+          const estimateOp = contract.methodsObject
             .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
             .toTransferParams({});
           println(`Waiting for the estimation of the smart contract call...`);
@@ -138,7 +138,7 @@ Tezos.signer
               println(
                 `The estimated fees related to the emptying operation are ${estimate.suggestedFeeMumav} mumav.`
               );
-              return contract.methods
+              return contract.methodsObject
                 .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
                 .send({ amount: 0 });
             })

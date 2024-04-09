@@ -59,7 +59,7 @@ const dataMap = new MichelsonMap();
 //key is a string, we choose a boolean for the value
 dataMap.set('Hello', { bool : true })
 
-//%records 
+//%records
 const recordsBigMap = new MichelsonMap();
 recordsBigMap.set(
     'FFFF', //key of the bigMap %records is in bytes
@@ -102,7 +102,7 @@ importKey(Tezos, secretKey)
 
 ## Calling the function of a contract having a complex object as a parameter
 
-The contract contains a function named `set_child_record`. The parameter of the function is composed of nested pairs regrouping different datatypes (address, `map`, `bytes` and `nat`). Two of its arguments, the `address %address` and the `nat %ttl`, are optional. The `map %data` uses a `string` as its key. The user needs to choose the value of the `map` between different proposed types. 
+The contract contains a function named `set_child_record`. The parameter of the function is composed of nested pairs regrouping different datatypes (address, `map`, `bytes` and `nat`). Two of its arguments, the `address %address` and the `nat %ttl`, are optional. The `map %data` uses a `string` as its key. The user needs to choose the value of the `map` between different proposed types.
 
 Here is the parameter of the function defined in Michelson :
 
@@ -138,7 +138,13 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
-    let inspect = myContract.methods.set_child_record('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', dataMap, 'EEEE', 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', 'FFFF', '10').toTransferParams(); 
+    let inspect = myContract.methodsObject.set_child_record({
+      address: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
+      data: dataMap,
+      label: 'EEEE',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+      parent: 'FFFF',
+      ttl: { Some: '10' }}).toTransferParams();
     println(JSON.stringify(inspect, null, 2))
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
@@ -156,15 +162,15 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
-  
-    return myContract.methods.set_child_record(
-      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address(optional)
-      dataMap, //data
-      'EEEE', //label
-      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
-      'FFFF', //parent
-      '10' //ttl(optional)
-    ).send(); 
+
+    return myContract.methodsObject.set_child_record({
+      address: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
+      data: dataMap,
+      label: 'EEEE',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+      parent: 'FFFF',
+      ttl: { Some: '10' }
+    }).send();
 }).then(op => {
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
@@ -187,15 +193,15 @@ importKey(Tezos, secretKey)
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { nat : '3' })
-  
-    return myContract.methods.set_child_record(
-      null, //address(optional)
-      dataMap, //data
-      'EEEE', //label
-      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //owner
-      'FFFF', //parent
-      undefined //ttl(optional)
-    ).send(); 
+
+    return myContract.methodsObject.set_child_record({
+      address: null,
+      data: dataMap,
+      label: 'EEEE',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+      parent: 'FFFF',
+      ttl: null
+    }).send();
 }).then(op => {
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);

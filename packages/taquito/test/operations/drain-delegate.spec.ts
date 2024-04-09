@@ -1,10 +1,9 @@
-import { DrainDelegateOperation } from '../../src/operations';
+import { DrainDelegateOperation, ForgedBytes } from '@mavrykdynamics/taquito';
 import {
   OperationContentsAndResult,
   OpKind,
   OperationContentsAndResultDrainDelegate,
 } from '@mavrykdynamics/taquito-rpc';
-import { ForgedBytes } from '../../src/operations/types';
 import { defaultConfigConfirmation } from '../../src/context';
 
 describe('DrainDelegate operation', () => {

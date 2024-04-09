@@ -186,8 +186,8 @@ After forging a signature, you may want to send it to a contract so it can use i
 
 ```js
 const contract = await Tezos.wallet.at(CONTRACT_ADDRESS);
-const op = await contract.methods
-  .check_signature(public_key, signature, payloadBytes)
+const op = await contract.methodsObject
+  .check_signature({public_key, signature, payloadBytes})
   .send();
 await op.confirmation();
 ```

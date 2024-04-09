@@ -6,7 +6,7 @@ import {
   ContractProvider,
   Wallet,
 } from '@mavrykdynamics/taquito';
-import { bytes2Char } from '@mavrykdynamics/taquito-utils';
+import { bytesToString } from '@mavrykdynamics/taquito-utils';
 import { MetadataEnvelope, MetadataProviderInterface } from './metadata-provider';
 import {
   BigMapContractMetadataNotFoundError,
@@ -78,7 +78,7 @@ export class Tzip16ContractAbstraction {
       const uri = await this.getUriOrFail();
       this._metadataEnvelope = await this._metadataProvider.provideMetadata(
         this.constractAbstraction,
-        bytes2Char(uri),
+        bytesToString(uri),
         this.context
       );
     }

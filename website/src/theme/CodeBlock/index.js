@@ -58,7 +58,7 @@ export default ({
 
   useEffect(() => {
     async function getDependencies() {
-      const { TezosToolkit, MichelsonMap, compose, DEFAULT_FEE, RpcReadAdapter } = await import('@mavrykdynamics/taquito');
+      const { TezosToolkit, MichelsonMap, compose, getRevealFee, RpcReadAdapter, UnitValue } = await import('@mavrykdynamics/taquito');
       const { verifySignature } = await import('@mavrykdynamics/taquito-utils');
       const {
         validateAddress,
@@ -121,7 +121,7 @@ export default ({
         compose,
         Schema,
         ParameterSchema,
-        DEFAULT_FEE,
+        getRevealFee,
         verifySignature,
         Parser,
         packDataBytes,
@@ -131,6 +131,7 @@ export default ({
         ECDSA,
         Path,
         generateSecretKey,
+        UnitValue
       });
     }
     if (!dependencies) {
@@ -142,7 +143,8 @@ export default ({
 
     return (
       <Playground
-        scope={{ ...React,
+        scope={{
+          ...React,
           Tezos: dependencies?.Tezos,
           wallet: dependencies?.wallet,
           importKey: dependencies?.importKey,
@@ -172,7 +174,7 @@ export default ({
           compose: dependencies?.compose,
           Schema: dependencies?.Schema,
           ParameterSchema: dependencies?.ParameterSchema,
-          DEFAULT_FEE: dependencies?.DEFAULT_FEE,
+          getRevealFee: dependencies?.getRevealFee,
           verifySignature: dependencies?.verifySignature,
           Parser: dependencies?.Parser,
           packDataBytes: dependencies?.packDataBytes,
@@ -184,6 +186,7 @@ export default ({
           ECDSA: dependencies?.ECDSA,
           Path: dependencies?.Path,
           generateSecretKey: dependencies?.generateSecretKey,
+          UnitValue: dependencies?.UnitValue,
          }}
         code={children.trim()}
         theme={prism.theme || defaultTheme}

@@ -1,6 +1,5 @@
-import { ForgedBytes } from '../../src/operations/types';
+import { ForgedBytes, TransactionOperation } from '@mavrykdynamics/taquito';
 import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
-import { TransactionOperation } from '../../src/operations/transaction-operation';
 import { defaultConfigConfirmation } from '../../src/context';
 import { TransferOperationBuilder, RevealOperationBuilder } from '../helpers';
 

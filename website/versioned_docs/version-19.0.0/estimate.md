@@ -60,7 +60,7 @@ Tezos.estimate
 ```
 
 </TabItem>
-  <TabItem value="wallet"> 
+  <TabItem value="wallet">
 
 ```js live noInline wallet
 // import { TezosToolkit } from '@taquito/taquito';
@@ -82,7 +82,7 @@ Tezos.estimate
     usingBaseFeeMumav : ${est.usingBaseFeeMumav}`);
   })
   .catch((error) => console.table(`Error: ${JSON.stringify(error, null, 2)}`));
-``` 
+```
 
   </TabItem>
 </Tabs>
@@ -90,7 +90,7 @@ Tezos.estimate
 
 ### Estimate a smart contract call
 
-This example will demonstrate how to estimate the fees related to calling a smart contract. 
+This example will demonstrate how to estimate the fees related to calling a smart contract.
 
 <Tabs
 defaultValue="signer"
@@ -102,14 +102,14 @@ values={[
 
 We have updated the estimate provider to have a `contractCall()` method.
 The `contractCall()` member method can now be used to estimate contract calls as such:
-    
+
 ```js live noInline
 // import { TezosToolkit } from '@taquito/taquito';
 // const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 Tezos.contract
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
-    return contract.methods.increment(7);
+    return contract.methodsObject.increment(7);
   })
   .then((op) => {
     println(`Estimating the smart contract call: `);
@@ -129,7 +129,7 @@ Tezos.contract
 
 
 </TabItem>
-  <TabItem value="wallet"> 
+  <TabItem value="wallet">
 
 ```js live noInline wallet
 // import { TezosToolkit } from '@taquito/taquito';
@@ -138,7 +138,7 @@ Tezos.contract
 Tezos.wallet
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
-    return contract.methods.increment(7);
+    return contract.methodsObject.increment(7);
   })
   .then((op) => {
     println(`Estimating the smart contract call: `);
@@ -199,7 +199,7 @@ Tezos.estimate
 ```
 
 </TabItem>
-  <TabItem value="wallet"> 
+  <TabItem value="wallet">
 
 
 ```js live noInline wallet
@@ -226,7 +226,7 @@ Tezos.estimate
     usingBaseFeeMumav : ${originationOp.usingBaseFeeMumav}`);
   })
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
-```  
+```
 
   </TabItem>
 </Tabs>
