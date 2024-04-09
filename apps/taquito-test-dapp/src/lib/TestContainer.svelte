@@ -3,7 +3,7 @@
   import store from "../store";
   import type { TestSettings, TestResult } from "../types";
   import { shortenHash } from "../utils";
-  import { NetworkType } from "@mavrykdynamics/beacon-sdk";
+  import { NetworkType } from "@mavrykdynamics/beacon-types";
   import { getTzKtUrl } from "../config";
 
   let test: TestSettings | undefined;

@@ -2,6 +2,27 @@
 title: Versions
 author: Jev Bjorsell
 ---
+# Taquito v19.2.0
+
+**Breaking Changes**: (if applicable)
+
+## Summary
+
+### New Features
+- `@mavrykdynamics/taquito-timelock`- A new package for Timelocks have been introduced #2843. Users will now be able to create Chests, unlock Chests, and utilize Chests. For more information, please refer to this [document](https://taquito.io/docs/next/timelock)
+- `@mavrykdynamics/taquito-beacon-wallet` - the `beacon-wallet` package is now bundled in a `.zip` file for [PR#2860](https://github.com/ecadlabs/taquito/pull/2860)
+
+### Documentation
+- UX improvements to search funtionality on the Taquito website #2858
+- Simplify tutorial for building dApps [PR#2852](https://github.com/ecadlabs/taquito/pull/2852)
+- Updated several documentation blobs on the Taquito website [PR#2860](https://github.com/ecadlabs/taquito/pull/2860)
+- Fixed several live code examples in the Taquito website [PR#2877](https://github.com/ecadlabs/taquito/pull/2877)
+- Changed Taquito documentation website domain from `tezostaquito.io` to `taquito.io` [PR#2876](https://github.com/ecadlabs/taquito/pull/2876)
+
+### Internals
+- Re-added Flextesa test scripts run `drain_delegate` and `ballot` operations' integration test against a Nairobi sandbox #2851
+- Updated Airgap's Beacon package to version 4.2.1. For more information on the release, click [here](https://github.com/airgap-it/beacon-sdk/releases/tag/v4.2.1) [PR#2874](https://github.com/ecadlabs/taquito/pull/2874)
+- Changed website build command for CloudFlare [PR#2804](https://github.com/ecadlabs/taquito/pull/2804)
 
 # Taquito v19.1.0
 
@@ -1517,7 +1538,7 @@ The new categories of balance updates are `legacy_rewards`, `block fees`, `legac
 
 The new origin for balance update is `simulation`.
 
-For more information on the balance update changes, refer to http://tezos.gitlab.io/protocols/tenderbake.html#metadata
+For more information on the balance update changes, refer to https://tezos.gitlab.io/protocols/tenderbake.html#metadata
 
 ## @mavrykdynamics/taquito-rpc - Updated signature of the `getEndorsingRights` and `getBakingRights` methods
 
@@ -2841,8 +2862,6 @@ The `@mavrykdynamics/taquito-michel-codec` package now validates/type checks you
 ### Beacon V2
 
 The Taquito wallet API now supports Beacon V2. This update is the product of close collaboration between AirGap, Kukai, Temple, and Taquito. The updated TZIP-10/Beacon experience is smoother than before, and users who have more than one Tezos wallet are accommodated.
-
-The new behaviour can be seen in action here: https://cloney.taquito.mavryk.org/, with actual implementation from the dApp side available here: https://github.com/ecadlabs/george-cloney
 
 ### Docs
 

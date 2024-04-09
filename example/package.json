@@ -1,7 +1,7 @@
 {
   "name": "@mavrykdynamics/taquito-example",
   "private": true,
-  "version": "19.1.0",
+  "version": "19.2.0",
   "scripts": {
     "example": "node -r ts-node/register --preserve-symlinks example-node.ts",
     "example:activation": "node -r ts-node/register --preserve-symlinks example-activate.ts",
@@ -42,16 +42,16 @@
   },
   "dependencies": {
     "@ledgerhq/hw-transport-node-hid": "^6.27.21",
-    "@mavrykdynamics/taquito": "^19.1.0",
-    "@mavrykdynamics/taquito-ledger-signer": "^19.1.0",
-    "@mavrykdynamics/taquito-local-forging": "^19.1.0",
-    "@mavrykdynamics/taquito-michel-codec": "^19.1.0",
-    "@mavrykdynamics/taquito-michelson-encoder": "^19.1.0",
-    "@mavrykdynamics/taquito-rpc": "^19.1.0",
-    "@mavrykdynamics/taquito-sapling": "^19.1.0",
-    "@mavrykdynamics/taquito-signer": "^19.1.0",
-    "@mavrykdynamics/taquito-tzip16": "^19.1.0",
-    "@mavrykdynamics/taquito-utils": "^19.1.0",
+    "@mavrykdynamics/taquito": "^19.2.0",
+    "@mavrykdynamics/taquito-ledger-signer": "^19.2.0",
+    "@mavrykdynamics/taquito-local-forging": "^19.2.0",
+    "@mavrykdynamics/taquito-michel-codec": "^19.2.0",
+    "@mavrykdynamics/taquito-michelson-encoder": "^19.2.0",
+    "@mavrykdynamics/taquito-rpc": "^19.2.0",
+    "@mavrykdynamics/taquito-sapling": "^19.2.0",
+    "@mavrykdynamics/taquito-signer": "^19.2.0",
+    "@mavrykdynamics/taquito-tzip16": "^19.2.0",
+    "@mavrykdynamics/taquito-utils": "^19.2.0",
     "bignumber.js": "^9.1.2"
   },
   "devDependencies": {

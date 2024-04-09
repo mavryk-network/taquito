@@ -81,7 +81,7 @@ storage: 1;
 
 ## MichelsonMapContract
 
-The contract supports a [Michelson Tutorial](https://taquito.mavryk.org/docs/michelsonmap). It has a default endpoint that takes a pair of an address and an amount of tez.
+The contract supports a [Michelson Tutorial](https://taquito.mavryk.org/docs/michelsonmap). It has a default endpoint that takes a pair of an address and an amount of mav.
 
 - [See the full tutorial](https://claudebarde.medium.com/?p=8d8be9930662)
 

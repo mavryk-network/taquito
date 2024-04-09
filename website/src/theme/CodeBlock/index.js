@@ -71,13 +71,17 @@ export default ({
         validateProtocol,
         validateOperation,
         b58cencode,
+        bytes2Char,
+        char2Bytes,
+        bytesToString,
+        stringToBytes,
         prefix,
         Prefix
       } = await import('@mavrykdynamics/taquito-utils');
       const { BeaconWallet } = await import('@mavrykdynamics/taquito-beacon-wallet');
       const { InMemorySigner, importKey, Path, ECDSA, Ed25519, generateSecretKey } = await import('@mavrykdynamics/taquito-signer');
       const { LedgerSigner, DerivationType } = await import('@mavrykdynamics/taquito-ledger-signer');
-      const { Tzip16Module, tzip16, bytes2Char, MichelsonStorageView } = await import('@mavrykdynamics/taquito-tzip16')
+      const { Tzip16Module, tzip16, MichelsonStorageView } = await import('@mavrykdynamics/taquito-tzip16')
       const { Tzip12Module, tzip12 } = await import("@mavrykdynamics/taquito-tzip12");
       const { Schema, ParameterSchema } = await import("@mavrykdynamics/taquito-michelson-encoder");
       const { Parser, packDataBytes } = await import('@mavrykdynamics/taquito-michel-codec');
@@ -88,7 +92,7 @@ export default ({
       if (typeof window !== 'undefined') {
         // solve localStorage is not defined Error when building server
         // can use localStorage on the browser, not on the server
-        wallet = new BeaconWallet({ name:"exampleWallet", network: { type: 'basenet'}});
+        wallet = new BeaconWallet({ name:"exampleWallet", network: { type: 'basenet'}, enableMetrics: true, });
       }      
       const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet/');
       setDependencies({
@@ -113,6 +117,9 @@ export default ({
         Tzip16Module,
         tzip16,
         bytes2Char,
+        char2Bytes,
+        bytesToString,
+        stringToBytes,
         MichelsonStorageView,
         Tzip12Module,
         tzip12,
@@ -166,6 +173,9 @@ export default ({
           Tzip16Module: dependencies?.Tzip16Module,
           tzip16: dependencies?.tzip16,
           bytes2Char: dependencies?.bytes2Char,
+          char2Bytes: dependencies?.char2Bytes,
+          bytesToString: dependencies?.bytesToString,
+          stringToBytes: dependencies?.stringToBytes,
           MichelsonStorageView: dependencies?.MichelsonStorageView,
           Tzip12Module: dependencies?.Tzip12Module,
           tzip12: dependencies?.tzip12,

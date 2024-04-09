@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito",
-  "version": "19.1.0",
+  "version": "19.2.0",
   "description": "High level functionality that builds upon the other packages in the Tezos Typescript Library Suite.",
   "keywords": [
     "tezos",
@@ -78,12 +78,12 @@
   },
   "dependencies": {
     "@mavrykdynamics/taquito-core": "^19.1.0",
-    "@mavrykdynamics/taquito-http-utils": "^19.1.0",
-    "@mavrykdynamics/taquito-local-forging": "^19.1.0",
-    "@mavrykdynamics/taquito-michel-codec": "^19.1.0",
-    "@mavrykdynamics/taquito-michelson-encoder": "^19.1.0",
-    "@mavrykdynamics/taquito-rpc": "^19.1.0",
-    "@mavrykdynamics/taquito-utils": "^19.1.0",
+    "@mavrykdynamics/taquito-http-utils": "^19.2.0",
+    "@mavrykdynamics/taquito-local-forging": "^19.2.0",
+    "@mavrykdynamics/taquito-michel-codec": "^19.2.0",
+    "@mavrykdynamics/taquito-michelson-encoder": "^19.2.0",
+    "@mavrykdynamics/taquito-rpc": "^19.2.0",
+    "@mavrykdynamics/taquito-utils": "^19.2.0",
     "bignumber.js": "^9.1.2",
     "rxjs": "^7.8.1"
   },

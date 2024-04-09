@@ -79,7 +79,7 @@ describe('inmemory-signer', () => {
     }).toThrow('Invalid checksum');
   });
 
-  it('Tz1 64 bytes', async () => {
+  it('Mv1 64 bytes', async () => {
     const signer = new InMemorySigner(
       'edskS3DtVSbWbPD1yviMGebjYwWJtruMjDcfAZsH9uba22EzKeYhmQkkraFosFETmEMfFNVcDYQ5QbFerj9ozDKroXZ6mb5oxV'
     );
@@ -96,7 +96,7 @@ describe('inmemory-signer', () => {
     );
   });
 
-  it('Tz1 32 bytes', async () => {
+  it('Mv1 32 bytes', async () => {
     const signer = new InMemorySigner('edsk4TjJWEszkHKono7XMnepVqwi37FrpbVt1KCsifJeAGimxheShG');
     expect(await signer.publicKey()).toEqual(
       'edpkuhmrbunxumoiVdQuxBZUPMmwkPt7yLtY5Qnua3VJVTLWr3vXXa'

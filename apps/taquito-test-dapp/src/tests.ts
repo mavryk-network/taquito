@@ -9,7 +9,7 @@ import {
 import type { ContractProvider } from "@mavrykdynamics/taquito";
 import type { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 import { stringToBytes, verifySignature } from "@mavrykdynamics/taquito-utils";
-import { SigningType, type RequestSignPayloadInput } from "@mavrykdynamics/beacon-sdk";
+import { SigningType, type RequestSignPayloadInput } from "@mavrykdynamics/beacon-types";
 import { get } from "svelte/store";
 import type { TestSettings, TestResult } from "./types";
 import store from "./store";

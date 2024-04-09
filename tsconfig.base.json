@@ -60,6 +60,9 @@
       "@mavrykdynamics/taquito": [
         "taquito/src/taquito.ts"
       ],
+      "@mavrykdynamics/taquito-timelock": [
+        "taquito-timelock/src/taquito-timelock.ts"
+      ],
       "@mavrykdynamics/taquito-tzip12": [
         "taquito-tzip12/src/taquito-tzip12.ts"
       ],

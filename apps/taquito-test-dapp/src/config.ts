@@ -1,4 +1,4 @@
-import { NetworkType } from "@mavrykdynamics/beacon-sdk";
+import { NetworkType } from "@mavrykdynamics/beacon-types";
 
 export type SupportedNetworks = NetworkType.ATLASNET | NetworkType.BASENET | NetworkType.MAINNET | NetworkType.CUSTOM;
 

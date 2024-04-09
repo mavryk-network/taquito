@@ -45,8 +45,8 @@ importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
 ```
 import {  BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 import { TezosToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
-const option = { name: "nameOfWallet", network: { type: 'basenet' }}
+const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+const option = { name: "nameOfWallet", network: { type: 'ghostnet' }, enableMetrics: true}
 const wallet = new BeaconWallet(option)
 await wallet.requestPermissions()
 Tezos.setWalletProvider(wallet)

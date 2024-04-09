@@ -127,8 +127,8 @@ const sidebars = {
       collapsed: false,
       collapsible: false,
       items: [
-        'signing', 
-        'inmemory_signer', 
+        'signing',
+        'inmemory_signer',
         'ledger_signer'
       ],
     },
@@ -142,6 +142,7 @@ const sidebars = {
         'rpc_package',
         'michelson_encoder',
         'contracts-library',
+        'timelock',
         'taquito_utils',
         {
           type: 'category',
@@ -192,7 +193,7 @@ const sidebars = {
       collapsed: false,
       collapsible: false,
       items: [
-        'mobile_bundle',
+        'package_bundle',
         'dapp_template',
         'dapp_prelaunch',
 
