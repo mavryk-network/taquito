@@ -33,7 +33,7 @@ const STUB_SIGNATURE =
   'edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg';
 
 export class RPCEstimateProvider extends Provider implements EstimationProvider {
-  private readonly OP_SIZE_REVEAL = 324; // injecting size tz1=320, tz2=322, tz3=322, tz4=420(not supported)
+  private readonly OP_SIZE_REVEAL = 324; // injecting size mv1=320, mv2=322, mv3=322, mv4=420(not supported)
   private readonly MILLIGAS_BUFFER = 100 * 1000; // 100 buffer depends on operation kind
   private readonly STORAGE_BUFFER = 20; // according to octez-client
 

@@ -52,21 +52,21 @@ describe('encodeAddress', () => {
     );
   });
 
-  it('should encode address properly when the bytes have a 0x prefix (tz3)', () => {
+  it('should encode address properly when the bytes have a 0x prefix (mv1)', () => {
     expect(encodeAddress('0x0000e96b9f8b19af9c7ffa0c0480e1977b295850961f')).toEqual(
-      'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'
+      'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'
     );
   });
 
-  it('should encode address properly when the bytes have a 0x prefix (tz3)', () => {
+  it('should encode address properly when the bytes have a 0x prefix (mv2)', () => {
     expect(encodeAddress('0x0001907d6a7e9f084df840d6e67ffa8db5464f87d4d1')).toEqual(
-      'tz2MVED1t9Jery77Bwm1m5YhUx8Wp5KWWRQe'
+      'mv2ZCJViVoKBu7hmUMMHLDiqukczdQVfb71b'
     );
   });
 
-  it('should encode address properly when the bytes have a 0x prefix (tz3)', () => {
+  it('should encode address properly when the bytes have a 0x prefix (mv3)', () => {
     expect(encodeAddress('0x00022165a26786121eff8203bed56ffaf85d6bb25e42')).toEqual(
-      'tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1'
+      'mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina'
     );
   });
 });

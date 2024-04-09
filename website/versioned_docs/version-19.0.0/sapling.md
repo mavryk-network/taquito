@@ -33,7 +33,7 @@ Here is an example on how to retrieve addresses: [InMemoryViewingKey](./sapling_
 
 # Sapling toolkit
 
-The `@taquito/sapling` package provides a `SaplingToolkit` class that surfaces all of the Sapling capabilities, allowing it to read from a Sapling state and prepare transactions.
+The `@mavrykdynamics/taquito-sapling` package provides a `SaplingToolkit` class that surfaces all of the Sapling capabilities, allowing it to read from a Sapling state and prepare transactions.
 
 The constructor of the `SaplingToolkit` takes the following properties:
 - the first parameter is an object containing:
@@ -49,9 +49,9 @@ The constructor of the `SaplingToolkit` takes the following properties:
 Here is an example of how to instantiate a `SaplingToolkit`:
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const tezos = new TezosToolkit('https://rpc.mavryk,network/basenet/');
 const readProvider = new RpcReadAdapter(new RpcClient('https://YOUR_PREFERRED_RPC_URL'));
@@ -77,9 +77,9 @@ Note that the balance is represented in mumav.
 The balance can be retrieved as follows:
 
 ```js
-import { RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+import { RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 // Alice spending key
 const aliceSk = 'sask27SLmU9herddHz4qFJBLMjWYMbJF8RtS579w9ej9mfCYK7VUdyCJPHK8AzW9zMsopGZEkYeNjAY7Zz1bkM7CGu8eKLzrjBLTMC5wWJDhxiK91ahA29rhDRsHdJDV2u2jFwb2MNUix8JW7sAkAqYVaJpCehTBPgRQ1KqKwqqUaNmuD8kazd4Q8MCWmgbWs21Yuomdqyi9FLigjRp7oY4m5adaVU19Nj1AHvsMY2tePeU2L';
@@ -110,9 +110,9 @@ The `SaplingTransactionViewer` class exposes a method called `getIncomingAndOutg
 Example:
 
 ```js
-import { RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+import { RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 // Alice spending key
 const aliceSk = 'sask27SLmU9herddHz4qFJBLMjWYMbJF8RtS579w9ej9mfCYK7VUdyCJPHK8AzW9zMsopGZEkYeNjAY7Zz1bkM7CGu8eKLzrjBLTMC5wWJDhxiK91ahA29rhDRsHdJDV2u2jFwb2MNUix8JW7sAkAqYVaJpCehTBPgRQ1KqKwqqUaNmuD8kazd4Q8MCWmgbWs21Yuomdqyi9FLigjRp7oY4m5adaVU19Nj1AHvsMY2tePeU2L';
@@ -151,9 +151,9 @@ The `prepareShieldedTransaction` method returns the crafted Sapling transaction 
 Here is an example of how to prepare and inject a shielded transaction using Taquito:
 
 ```js
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-// import { RpcClient } from '@taquito/rpc';
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+// import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
 const rpcUrl = 'https://rpc.mavryk,network/basenet/';
@@ -223,9 +223,9 @@ A user should not use their own implicit account (mv1, mv2, mv3) to submit a Sap
 Here is an example of how to prepare and inject a Sapling transaction using Taquito:
 
 ```js
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-// import { RpcClient } from '@taquito/rpc';
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+// import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
 const rpcUrl = 'https://rpc.mavryk,network/basenet/';
@@ -281,9 +281,9 @@ The `prepareUnshieldedTransaction` method returns the crafted Sapling transactio
 Here is an example of how to prepare and inject an unshielded transaction using Taquito:
 
 ```js
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-// import { RpcClient } from '@taquito/rpc';
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+// import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
 const rpcUrl = 'https://rpc.mavryk,network/basenet/';
@@ -337,9 +337,9 @@ The constructor of the `SaplingTransactionViewer` takes the following properties
 Here is an example of how to instantiate a `SaplingTransactionViewer`:
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { InMemoryViewingKey } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { InMemoryViewingKey } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const readProvider = new RpcReadAdapter(new RpcClient('https://YOUR_PREFERRED_RPC_URL'));
 const tezos = new TezosToolkit('https://rpc.mavryk,network/basenet/');

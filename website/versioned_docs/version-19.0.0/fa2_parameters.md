@@ -20,7 +20,7 @@ Because the *transfer* and *update_operators* entrypoints require complex Michel
 Once you have the address of the contract you want to update, calling the `transfer` or the `update_operators` entrypoint follows the same steps as with any other contract:
 
 ```typescript
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 const Tezos = await new TezosTooolkit(RPC_URL);
 const contract = await Tezos.wallet.at(FA2_CONTRACT_ADDRESS);
@@ -187,7 +187,7 @@ Just like a transfer operation, it is possible to add and remove multiple operat
 It can sometimes be useful or more practical to set an operator before sending a transfer transaction. If your dapp is built on a contract that will handle users' transfer operations on their behalf, it can be more convenient for your users to approve your contract and let it transfer their tokens in one click. In this case, you can use the Batch API to first approve the contract and then call an entrypoint of the contract that will transfer the user's tokens on his behalf:
 
 ```typescript
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 const Tezos = await new TezosToolkit(RPC_URL);
 const dappContract = await Tezos.wallet.at(DAPP_CONTRACT_ADDRESS);

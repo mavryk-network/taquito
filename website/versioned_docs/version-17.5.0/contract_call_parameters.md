@@ -21,7 +21,7 @@ You will find below tables that match some of the most common values that smart 
 | mumav          | 500000                     | 50000 / 50_000                  |
 | timestamp      | "2022-12-19T15:53:26.055Z" | "2022-12-19T15:53:26.055Z"      |
 
-> Note: you can import `UnitValue` from `@taquito/taquito` and `@taquito/michelson-encoder`
+> Note: you can import `UnitValue` from `@mavrykdynamics/taquito` and `@mavrykdynamics/taquito-michelson-encoder`
 > Note: if you want to pass the current timestamp to a contract entrypoint, you can use `new Date().toISOString()` which will output the right format.
 
 ## Option

@@ -36,23 +36,23 @@ storage (pair
                                                          (signature %signature))))
                                                  (or
                                                    (or (string %string)
-                                                       (mutez %tez))
+                                                       (mumav %tez))
                                                    (timestamp %timestamp)))))
                               (pair (address %owner) (option %ttl nat)))
                             (option %validator nat))))
           (map %validators nat address));
 ```
 
-In this example, we originate the contract with initial values in the storage. We use the `MichelsonMap` class' of Taquito to initialize [the maps and the bigMap](https://tezostaquito.io/docs/maps_bigmaps).
+In this example, we originate the contract with initial values in the storage. We use the `MichelsonMap` class' of Taquito to initialize [the maps and the bigMap](https://taquito.mavryk.org/docs/maps_bigmaps). 
 
 As described above, the `map %data` uses a value that we chose between different types. When using Taquito, we need to surround the chosen argument with curly braces. In the current example, we initialize the value in the `map %data` to the boolean true: `{ bool: true }`.
 
 An annotation identifies every argument. Therefore we can ignore optional values if they are not needed. In the first entry of the `bigMap %records` of this example, we do not specify values for the `address %address` or the `nat %ttl` or the `nat %validator` but we define one for the `nat %validator` of the second entry of the bigmap.
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// import { importKey } from '@taquito/signer';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// import { importKey } from '@mavrykdynamics/taquito-signer';
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 //%data
 const dataMap = new MichelsonMap();
@@ -65,7 +65,7 @@ recordsBigMap.set(
     'FFFF', //key of the bigMap %records is in bytes
     { //address %address is optional,
       data : dataMap,
-      owner : 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       //nat %ttl is optional
       //nat %validator is optional
     })
@@ -73,7 +73,7 @@ recordsBigMap.set(
     'AAAA', //key of the bigMap %records is in bytes
     { //address %address is optional
       data : dataMap,
-      owner : 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       //nat %ttl is optional
       validator : '1' //nat %validator is optional
     })
@@ -81,15 +81,15 @@ recordsBigMap.set(
 //%validators
 const validatorsMap = new MichelsonMap();
 //key is a nat, value is an address
-validatorsMap.set('1', 'tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP')
+validatorsMap.set('1', 'mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD')
 
 importKey(Tezos, secretKey)
 .then(() => {
   return Tezos.contract.originate({
     code : contractJson,
     storage : {
-      owner : 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
-      records: recordsBigMap,
+      owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
+      records: recordsBigMap, 
       validators : validatorsMap
     }})
 }).then((contractOriginated) => {
@@ -117,7 +117,7 @@ Here is the parameter of the function defined in Michelson :
                                    (or (bytes %bytes) (int %int)))
                                (or (or (key %key) (key_hash %key_hash))
                                    (or (nat %nat) (signature %signature))))
-                             (or (or (string %string) (mutez %tez))
+                             (or (or (string %string) (mumav %tez))
                                  (timestamp %timestamp)))))
           (pair (bytes %label) (address %owner)))
         (pair (bytes %parent) (option %ttl nat)))
@@ -128,9 +128,9 @@ The way to write the parameter when calling the function of a contract with Taqu
 #### Inspect parameter
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
-// import { importKey } from '@taquito/signer';
+// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
+// import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
 .then(signer => {
@@ -139,10 +139,10 @@ importKey(Tezos, secretKey)
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
     let inspect = myContract.methodsObject.set_child_record({
-      address: { Some: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr' },
+      address: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
       data: dataMap,
       label: 'EEEE',
-      owner: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       parent: 'FFFF',
       ttl: { Some: '10' }}).toTransferParams();
     println(JSON.stringify(inspect, null, 2))
@@ -152,9 +152,9 @@ importKey(Tezos, secretKey)
 #### Call the set_child_record function when all the arguments are defined
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
-// import { importKey } from '@taquito/signer';
+// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
+// import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
 .then(signer => {
@@ -164,10 +164,10 @@ importKey(Tezos, secretKey)
     dataMap.set("Hello World", { bool : true })
 
     return myContract.methodsObject.set_child_record({
-      address: { Some: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr' },
+      address: { Some: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo' },
       data: dataMap,
       label: 'EEEE',
-      owner: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       parent: 'FFFF',
       ttl: { Some: '10' }
     }).send();
@@ -175,7 +175,7 @@ importKey(Tezos, secretKey)
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
 }).then(hash => {
-    println(`Operation injected: https://better-call.dev/ghostnet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
+    println(`Operation injected: https://better-call.dev/basenet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
 #### Call the set_child_record function when optional arguments are null
@@ -183,9 +183,9 @@ importKey(Tezos, secretKey)
 The `address %address` and the `nat %ttl` of the `set_child_record` function are optional. If we want one or both to be null, we must specify the value of the argument as `null` or `undefined`.
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
-// import { importKey } from '@taquito/signer';
+// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet')
+// import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
 .then(signer => {
@@ -198,7 +198,7 @@ importKey(Tezos, secretKey)
       address: null,
       data: dataMap,
       label: 'EEEE',
-      owner: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      owner: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       parent: 'FFFF',
       ttl: null
     }).send();
@@ -206,6 +206,6 @@ importKey(Tezos, secretKey)
     println(`Waiting for ${op.hash} to be confirmed...`);
     return op.confirmation(1).then(() => op.hash);
 }).then(hash => {
-    println(`Operation injected: https://better-call.dev/ghostnet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
+    println(`Operation injected: https://better-call.dev/basenet/KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN/operations`);
 }).catch(error => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```

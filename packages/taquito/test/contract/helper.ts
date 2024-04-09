@@ -1570,7 +1570,7 @@ export const smartRollupExecuteOutboxMessageNoReveal = {
   contents: [
     {
       kind: 'smart_rollup_execute_outbox_message',
-      source: 'tz1adKm6kWEkiejZ9WYpuHvBCgUewtCxpqRF',
+      source: 'mv1KPkmkC2vMBf5DE9fARbRuAPhqdovWqRQ4',
       fee: '1618',
       counter: '13',
       gas_limit: '6485',
@@ -1583,7 +1583,7 @@ export const smartRollupExecuteOutboxMessageNoReveal = {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1adKm6kWEkiejZ9WYpuHvBCgUewtCxpqRF',
+            contract: 'mv1KPkmkC2vMBf5DE9fARbRuAPhqdovWqRQ4',
             change: '-1618',
             origin: 'block',
           },
@@ -1599,7 +1599,7 @@ export const smartRollupExecuteOutboxMessageNoReveal = {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz1adKm6kWEkiejZ9WYpuHvBCgUewtCxpqRF',
+              contract: 'mv1KPkmkC2vMBf5DE9fARbRuAPhqdovWqRQ4',
               change: '-1250',
               origin: 'block',
             },
@@ -1635,7 +1635,7 @@ export const smartRollupExecuteOutboxMessageNoReveal = {
               balance_updates: [
                 {
                   kind: 'contract',
-                  contract: 'tz1adKm6kWEkiejZ9WYpuHvBCgUewtCxpqRF',
+                  contract: 'mv1KPkmkC2vMBf5DE9fARbRuAPhqdovWqRQ4',
                   change: '-2750',
                   origin: 'block',
                 },

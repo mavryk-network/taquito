@@ -21,7 +21,7 @@ import {
   smartContractAddressDecoder,
   smartRollupAddressDecoder,
   smartRollupCommitmentHashDecoder,
-  tz1Decoder,
+  mv1Decoder,
   valueParameterDecoder,
   zarithDecoder,
 } from './codec';
@@ -60,7 +60,7 @@ export type Decoder = (val: Uint8ArrayConsumer) => string | number | object | un
 export const decoders: { [key: string]: Decoder } = {
   [CODEC.SECRET]: (val) => toHexString(val.consume(20)),
   [CODEC.RAW]: (val) => toHexString(val.consume(32)),
-  [CODEC.MV1]: tz1Decoder,
+  [CODEC.MV1]: mv1Decoder,
   [CODEC.BRANCH]: branchDecoder,
   [CODEC.ZARITH]: zarithDecoder,
   [CODEC.PUBLIC_KEY]: publicKeyDecoder,

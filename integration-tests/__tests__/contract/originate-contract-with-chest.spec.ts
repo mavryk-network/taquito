@@ -1,6 +1,6 @@
-import { DefaultContractType, OriginationOperation, Protocols } from "@taquito/taquito";
+import { DefaultContractType, OriginationOperation, Protocols } from "@mavrykdynamics/taquito";
 import { CONFIGS } from "../../config";
-import { ProtoGreaterOrEqual } from "@taquito/michel-codec";
+import { ProtoGreaterOrEqual } from "@mavrykdynamics/taquito-michel-codec";
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
   const Tezos = lib;

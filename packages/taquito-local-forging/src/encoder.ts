@@ -21,7 +21,7 @@ import {
   smartContractAddressEncoder,
   smartRollupAddressEncoder,
   smartRollupCommitmentHashEncoder,
-  tz1Encoder,
+  mv1Encoder,
   valueParameterEncoder,
   zarithEncoder,
 } from './codec';
@@ -58,7 +58,7 @@ export type Encoder<T> = (val: T) => string;
 export const encoders: { [key: string]: Encoder<any> } = {
   [CODEC.SECRET]: (val: string) => val,
   [CODEC.RAW]: (val: string) => val,
-  [CODEC.MV1]: tz1Encoder,
+  [CODEC.MV1]: mv1Encoder,
   [CODEC.BRANCH]: branchEncoder,
   [CODEC.ZARITH]: zarithEncoder,
   [CODEC.PUBLIC_KEY]: publicKeyEncoder,

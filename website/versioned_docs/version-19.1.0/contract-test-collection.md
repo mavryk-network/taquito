@@ -81,7 +81,7 @@ storage: 1;
 
 ## MichelsonMapContract
 
-The contract supports a [Michelson Tutorial](https://tezostaquito.io/docs/michelsonmap). It has a default endpoint that takes a pair of an address and an amount of tez.
+The contract supports a [Michelson Tutorial](https://taquito.mavryk.org/docs/michelsonmap). It has a default endpoint that takes a pair of an address and an amount of tez.
 
 - [See the full tutorial](https://claudebarde.medium.com/?p=8d8be9930662)
 
@@ -98,7 +98,7 @@ values={[
 <TabItem value="michelson">
 
 ```js
-storage (map address mutez);
+storage (map address mumav);
 ```
 
 </TabItem>
@@ -148,7 +148,7 @@ storage (pair (nat %stored_counter) (pair (nat %threshold) (list %keys key)));
 
 # Lambda Contracts
 
-Taquito internally contains a list of lambda contracts. Thus, there is no need to deploy a lambda contract if you are using Mainnet, Ghostnet or another testnet. Taquito will detect the current network and use the appropriate lambda contract.
+Taquito internally contains a list of lambda contracts. Thus, there is no need to deploy a lambda contract if you are using Mainnet, Basenet or another testnet. Taquito will detect the current network and use the appropriate lambda contract.
 
 Lambda views are introduced in [Tzip4](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-4/tzip-4.md#view-entrypoints).
 
@@ -187,13 +187,13 @@ storage (pair
 ```js
 const allowances = new MichelsonMap();
     const ledger = new MichelsonMap();
-    ledger.set('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP', { allowances, balance: '100' });
+    ledger.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances, balance: '100' });
 
     const opknownBigMapContract = await tezos.contract.originate({
       code: knownBigMapContract,
       storage: {
         ledger,
-        owner: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        owner: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         totalSupply: '100',
       },
     });   }
@@ -239,12 +239,12 @@ storage (pair
 
 ```js
 const bigMapLedger = new MichelsonMap();
-bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
-  allowances: ['tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY'],
+bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
+  allowances: ['mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc'],
   balance: '50',
 });
-bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
-  allowances: ['tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'],
+bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
+  allowances: ['mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi'],
   balance: '50',
 });
 
@@ -301,7 +301,7 @@ values={[
 ```js
 storage (pair
           (pair (address %theAddress)
-                (map %theMap (pair nat address) (pair (mutez %amount) (int %quantity))))
+                (map %theMap (pair nat address) (pair (mumav %amount) (int %quantity))))
           (int %theNumber));
 ```
 
@@ -350,7 +350,7 @@ const op = await tezos.contract.originate({
 This contract has a single default entrypoint that takes unit and produces a map:
 
 ```js
-Pair 10 (Pair 20 (Pair "Hello" (Pair 0xffff (Pair 100 (Pair False (Pair "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx" (Pair 1570374509 "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx")))))))
+Pair 10 (Pair 20 (Pair "Hello" (Pair 0xffff (Pair 100 (Pair False (Pair "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe" (Pair 1570374509 "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")))))))
 ```
 
 The get method of the MichelsonMap class accesses values of the map for a specified key.
@@ -373,7 +373,7 @@ storage (map
                 (pair nat
                       (pair string
                             (pair bytes
-                                  (pair mutez
+                                  (pair mumav
                                         (pair bool
                                               (pair key_hash (pair timestamp address))))))))
           int);
@@ -442,7 +442,7 @@ values={[
 <TabItem value="michelson">
 
 ```js
-storage (map nat (pair (nat %current_stock) (mutez %max_price)));
+storage (map nat (pair (nat %current_stock) (mumav %max_price)));
 ```
 
 </TabItem>
@@ -492,7 +492,7 @@ Tezos.contract
         //When called on a map, the get method returns the value directly
         const valueMap = myStorage['themap'].get({
           0: '1', //nat
-          1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+          1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
         });
         println(`The value associated with the specified key of the map is ${valueMap}.`);
         return myContract.storage();
@@ -502,7 +502,7 @@ Tezos.contract
         //When called on a bigMap, the get method returns a promise
         return myStorage['thebigmap'].get({
           0: '10', //nat
-          1: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address
+          1: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address
         });
       })
       .then((valueBigMap) => {
@@ -616,7 +616,7 @@ storage (pair
                                                                  (signature %signature))))
                                                          (or
                                                            (or (string %string)
-                                                               (mutez %tez))
+                                                               (mumav %tez))
                                                            (timestamp %timestamp)))))
                                       (pair (address %owner) (option %ttl nat)))
                                     (option %validator nat))))
@@ -695,13 +695,13 @@ storage (pair
 ```js
 const allowances = new MichelsonMap();
 const ledger = new MichelsonMap();
-ledger.set('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP', { allowances, balance: '100' });
+ledger.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances, balance: '100' });
 
 const opknownBigMapContract = await tezos.contract.originate({
   code: knownBigMapContract,
   storage: {
     ledger,
-    owner: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+    owner: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
     paused: true,
     totalSupply: '100',
   },
@@ -760,7 +760,7 @@ const op = await tezos.contract.originate({
 
 # On Chain Views Contracts
 
-Views are meant to be called by a contract using the Michelson Instruction View followed by the view name and its result type. See [TaquitoDocs](https://tezostaquito.io/docs/on_chain_views) for more details.
+Views are meant to be called by a contract using the Michelson Instruction View followed by the view name and its result type. See [TaquitoDocs](https://taquito.mavryk.org/docs/on_chain_views) for more details.
 
 ## ContractCallFib
 
@@ -892,7 +892,7 @@ storage: {
 
 # Tzip-12 Contracts
 
-The @taquito/tzip12 package allows retrieving metadata associated with tokens of an FA2 contract. You can find more information about the TZIP-12 standard [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-12/tzip-12.md).
+The @mavrykdynamics/taquito-tzip12 package allows retrieving metadata associated with tokens of an FA2 contract. You can find more information about the TZIP-12 standard [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-12/tzip-12.md).
 
 A contract has an FA2 interface if it has entrypoints: transfer, balance_of, and update_operators
 
@@ -904,7 +904,7 @@ This contract has an FA2 interface.
 
 - balance_of
 - mint
-- mutez_transfer
+- mumav_transfer
 - set_administrator
 - set_metadata
 - set_pause
@@ -1015,7 +1015,7 @@ interfaces: TZIP-012
 
 # Tzip-16 Contracts
 
-The @taquito/tzip16 package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the MichelsonStorageView found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
+The @mavrykdynamics/taquito-tzip16 package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the MichelsonStorageView found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
 The `getMetadata` method returns an object which contains the URI, the metadata in JSON format, an optional SHA256 hash of the metadata and an optional integrity check result.
 
@@ -1042,7 +1042,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1054,8 +1054,8 @@ const metadataJSON = {
   description: 'A metadata test',
   version: '0.1',
   license: 'MIT',
-  authors: ['Taquito <https://tezostaquito.io/>'],
-  homepage: 'https://tezostaquito.io/',
+  authors: ['Taquito <https://taquito.mavryk.org/>'],
+  homepage: 'https://taquito.mavryk.org/',
 };
 
 const metadataBigMap = new MichelsonMap();
@@ -1082,7 +1082,7 @@ description: A metadata test
 version: 0.1
 license: MIT
 authors: Taquito
-homepage: https://tezostaquito.io/
+homepage: https://taquito.mavryk.org/
 ```
 
 </TabItem>
@@ -1107,7 +1107,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1140,7 +1140,7 @@ name: Taquito test with valid metadata
 description: This is metadata test for Taquito integration tests with the Ligo Taco shop contract modified to include metadata in storage
 version: 7.1.0-beta.0
 license: MIT
-homepage: https://github.com/ecadlabs/taquito
+homepage: https://github.com/mavryk-network/mavryk-taquito
 ```
 
 </TabItem>
@@ -1165,7 +1165,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1202,7 +1202,7 @@ name: Taquito test with valid metadata
 description: This is metadata test for Taquito integration tests with the Ligo Taco shop contract modified to include metadata in storage
 version: 7.1.0-beta.0
 license: MIT
-homepage: https://github.com/ecadlabs/taquito
+homepage: https://github.com/mavryk-network/mavryk-taquito
 ```
 
 </TabItem>
@@ -1227,7 +1227,7 @@ values={[
 
 ```js
 storage (pair (big_map %metadata string bytes)
-              (map %taco_shop_storage nat (pair (nat %current_stock) (mutez %max_price))));
+              (map %taco_shop_storage nat (pair (nat %current_stock) (mumav %max_price))));
 ```
 
 </TabItem>
@@ -1259,7 +1259,7 @@ name: Taquito test with valid metadata
 description: This is metadata test for Taquito integration tests with the Ligo Taco shop contract modified to include metadata in storage
 version: 7.1.0-beta.0
 license: MIT
-homepage: https://github.com/ecadlabs/taquitoj
+homepage: https://github.com/mavryk-network/mavryk-taquitoj
 ```
 
 </TabItem>
@@ -1377,7 +1377,7 @@ const contract = await Tezos.wallet.at('KT1B4WtE3MSEjGKnucRL5xhqnXCEX1QkLGPx');
 
 This line creates a contract abstraction with multiple methods named after the contract entrypoints. For example, if you have a `transfer` entrypoint in your contract, you will also have a `.transfer()` method in the `contract` object. Each method accepts parameters required by the contract entrypoint.
 
-For more details see [Taquito Wallet API doc](https://tezostaquito.io/docs/wallet_API)
+For more details see [Taquito Wallet API doc](https://taquito.mavryk.org/docs/wallet_API)
 
 #### Entrypoints:
 
@@ -1469,7 +1469,7 @@ storage (sapling_state 8)
   <TabItem value="taquito">
 
 ```js
-import { SaplingStateValue } from @taquito/michelson-encoder
+import { SaplingStateValue } from @mavrykdynamics/taquito-michelson-encoder
 storage: SaplingStateValue
 ```
 

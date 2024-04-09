@@ -3,22 +3,13 @@ import {
   ContractAbstraction,
   Wallet,
   MichelsonMap,
-<<<<<<< HEAD
-  OpKind
+  OpKind,
+  UnitValue
 } from "@mavrykdynamics/taquito";
 import type { ContractProvider } from "@mavrykdynamics/taquito";
 import type { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
-import { char2Bytes, verifySignature } from "@mavrykdynamics/taquito-utils";
+import { stringToBytes, verifySignature } from "@mavrykdynamics/taquito-utils";
 import { SigningType, type RequestSignPayloadInput } from "@mavrykdynamics/beacon-sdk";
-=======
-  OpKind,
-  UnitValue
-} from "@taquito/taquito";
-import type { ContractProvider } from "@taquito/taquito";
-import type { BeaconWallet } from "@taquito/beacon-wallet";
-import { stringToBytes, verifySignature } from "@taquito/utils";
-import { SigningType, type RequestSignPayloadInput } from "@airgap/beacon-sdk";
->>>>>>> 19.1.0
 import { get } from "svelte/store";
 import type { TestSettings, TestResult } from "./types";
 import store from "./store";

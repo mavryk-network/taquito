@@ -5,7 +5,7 @@ author: Roxane Letourneau
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Learn how to:
 
@@ -39,8 +39,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
-// import { TezosToolkit } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
@@ -68,8 +68,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
-// import { TezosToolkit } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
@@ -108,7 +108,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Tezos.contract
   .originate({
@@ -133,7 +133,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Tezos.wallet
   .originate({
@@ -262,11 +262,11 @@ Tezos.wallet
 
 Here we have the storage of our contract defined in Michelson.
 
-It has a `Map` with the annotated name `%theMap`. This `Map` uses a pair consisting of a natural number and an address as its key `(1, tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx)`. Its value is also a pair of values, consisting of an `int` (annotated as `%quantity`) and `mutez` (annotated as `%amount`).
+It has a `Map` with the annotated name `%theMap`. This `Map` uses a pair consisting of a natural number and an address as its key `(1, mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe)`. Its value is also a pair of values, consisting of an `int` (annotated as `%quantity`) and `mumav` (annotated as `%amount`).
 
 ```
 (pair (pair (address %theAddress)
-            (map %theMap (pair nat address) (pair (mutez %amount) (int %quantity))))
+            (map %theMap (pair nat address) (pair (mumav %amount) (int %quantity))))
       (int %theNumber))
 ```
 
@@ -283,7 +283,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 //First entry of the map
@@ -291,7 +291,7 @@ storageMap.set(
   {
     // Pair as Key
     0: '1', //nat
-    1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+    1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
   },
   { quantity: '10', amount: '100' }
 );
@@ -301,7 +301,7 @@ storageMap.set(
   {
     // Pair as Key
     0: '2', //nat
-    1: 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY', //address
+    1: 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc', //address
   },
   { quantity: '20', amount: '200' }
 );
@@ -310,7 +310,7 @@ storageMap.set(
 storageMap.set(
   {
     0: '3', //nat
-    1: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', //address
+    1: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', //address
   },
   { quantity: '30', amount: '300' }
 );
@@ -320,7 +320,7 @@ Tezos.contract
   .originate({
     code: contractMapPairKey,
     storage: {
-      theAddress: 'tz1NAozDvi5e7frVq9cUaC3uXQQannemB8Jw',
+      theAddress: 'mv1KTJozfW7fHNjtLkeViQ5a864TU7TVdxbe',
       theMap: storageMap,
       theNumber: 10,
     },
@@ -339,7 +339,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 //First entry of the map
@@ -347,7 +347,7 @@ storageMap.set(
   {
     // Pair as Key
     0: '1', //nat
-    1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+    1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
   },
   { quantity: '10', amount: '100' }
 );
@@ -357,7 +357,7 @@ storageMap.set(
   {
     // Pair as Key
     0: '2', //nat
-    1: 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY', //address
+    1: 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc', //address
   },
   { quantity: '20', amount: '200' }
 );
@@ -366,7 +366,7 @@ storageMap.set(
 storageMap.set(
   {
     0: '3', //nat
-    1: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', //address
+    1: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', //address
   },
   { quantity: '30', amount: '300' }
 );
@@ -376,7 +376,7 @@ Tezos.wallet
   .originate({
     code: contractMapPairKey,
     storage: {
-      theAddress: 'tz1NAozDvi5e7frVq9cUaC3uXQQannemB8Jw',
+      theAddress: 'mv1KTJozfW7fHNjtLkeViQ5a864TU7TVdxbe',
       theMap: storageMap,
       theNumber: 10,
     },
@@ -420,7 +420,7 @@ Tezos.contract
   .then((myStorage) => {
     const value = myStorage['theMap'].get({
       0: '2', //nat
-      1: 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY', //address
+      1: 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc', //address
     });
     println(`Values associated with this key : amount : ${value[Object.keys(value)[0]]}, quantity :
     ${value[Object.keys(value)[1]]}`);
@@ -440,7 +440,7 @@ Tezos.wallet
   .then((myStorage) => {
     const value = myStorage['theMap'].get({
       0: '2', //nat
-      1: 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY', //address
+      1: 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc', //address
     });
     println(`Values associated with this key : amount : ${value[Object.keys(value)[0]]}, quantity :
     ${value[Object.keys(value)[1]]}`);
@@ -462,7 +462,7 @@ The Michelson storage schema with a map using eight pairs as a key:
         (pair nat
             (pair string
                 (pair bytes
-                    (pair mutez
+                    (pair mumav
                         (pair bool
                             (pair key_hash
                                 (pair timestamp address)))))))) int)
@@ -488,11 +488,11 @@ storageMap.set(
     1: '2', // nat
     2: 'test', // string
     3: 'cafe', // bytes
-    4: '10', // mutez
+    4: '10', // mumav
     5: true, // bool
-    6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // key_hash
+    6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
     7: '2019-09-06T15:08:29.000Z', // timestamp
-    8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // address
+    8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // address
   },
   100
 );
@@ -503,11 +503,11 @@ storageMap.set(
     1: '20', // nat
     2: 'Hello', // string
     3: 'ffff', // bytes
-    4: '100', // mutez
+    4: '100', // mumav
     5: false, // bool
-    6: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', // key_hash
+    6: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', // key_hash
     7: '2019-10-06T15:08:29.000Z', // timestamp
-    8: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', // address
+    8: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', // address
   },
   1000
 );
@@ -539,11 +539,11 @@ storageMap.set(
     1: '2', // nat
     2: 'test', // string
     3: 'cafe', // bytes
-    4: '10', // mutez
+    4: '10', // mumav
     5: true, // bool
-    6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // key_hash
+    6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
     7: '2019-09-06T15:08:29.000Z', // timestamp
-    8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // address
+    8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // address
   },
   100
 );
@@ -554,11 +554,11 @@ storageMap.set(
     1: '20', // nat
     2: 'Hello', // string
     3: 'ffff', // bytes
-    4: '100', // mutez
+    4: '100', // mumav
     5: false, // bool
-    6: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', // key_hash
+    6: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', // key_hash
     7: '2019-10-06T15:08:29.000Z', // timestamp
-    8: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', // address
+    8: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', // address
   },
   1000
 );
@@ -611,11 +611,11 @@ Tezos.contract
       1: '2', // nat
       2: 'test', // string
       3: 'cafe', // bytes
-      4: '10', // mutez
+      4: '10', // mumav
       5: true, // bool
-      6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // key_hash
+      6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
       7: '2019-09-06T15:08:29.000Z', // timestamp
-      8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // address
+      8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // address
     });
     println(`The value associated to this key is ${value}.`);
   })
@@ -637,11 +637,11 @@ Tezos.wallet
       1: '2', // nat
       2: 'test', // string
       3: 'cafe', // bytes
-      4: '10', // mutez
+      4: '10', // mumav
       5: true, // bool
-      6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // key_hash
+      6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // key_hash
       7: '2019-09-06T15:08:29.000Z', // timestamp
-      8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', // address
+      8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', // address
     });
     println(`The value associated to this key is ${value}.`);
   })
@@ -674,20 +674,20 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 storageMap.set(
   {
     0: '1', //nat
-    1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+    1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
   },
   10
 );
 storageMap.set(
   {
     0: '2', //nat
-    1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+    1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
   },
   20
 );
@@ -696,14 +696,14 @@ const storageBigMap = new MichelsonMap();
 storageBigMap.set(
   {
     0: '10', //nat
-    1: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address
+    1: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address
   },
   100
 );
 storageBigMap.set(
   {
     0: '20', //nat
-    1: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address
+    1: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address
   },
   200
 );
@@ -730,20 +730,20 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 storageMap.set(
   {
     0: '1', //nat
-    1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+    1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
   },
   10
 );
 storageMap.set(
   {
     0: '2', //nat
-    1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+    1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
   },
   20
 );
@@ -752,14 +752,14 @@ const storageBigMap = new MichelsonMap();
 storageBigMap.set(
   {
     0: '10', //nat
-    1: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address
+    1: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address
   },
   100
 );
 storageBigMap.set(
   {
     0: '20', //nat
-    1: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address
+    1: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address
   },
   200
 );
@@ -808,7 +808,7 @@ Tezos.contract
         //When called on a map, the get method returns the value directly
         const valueMap = myStorage['themap'].get({
           0: '1', //nat
-          1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+          1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
         });
         println(`The value associated with the specified key of the map is ${valueMap}.`);
         return myContract.storage();
@@ -818,7 +818,7 @@ Tezos.contract
         //When called on a bigMap, the get method returns a promise
         return myStorage['thebigmap'].get({
           0: '10', //nat
-          1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+          1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
         });
       })
       .then((valueBigMap) => {
@@ -841,7 +841,7 @@ Tezos.wallet
         //When called on a map, the get method returns the value directly
         const valueMap = myStorage['themap'].get({
           0: '1', //nat
-          1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+          1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
         });
         println(`The value associated with the specified key of the map is ${valueMap}.`);
         return myContract.storage();
@@ -851,7 +851,7 @@ Tezos.wallet
         //When called on a bigMap, the get method returns a promise
         return myStorage['thebigmap'].get({
           0: '10', //nat
-          1: 'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx', //address
+          1: 'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe', //address
         });
       })
       .then((valueBigMap) => {
@@ -872,13 +872,13 @@ Now, Taquito allows you to pack the required data locally to fetch values from a
 
 Implementing this feature is a very easy 2 step process:
 
-1. Importing the `MichelCodecPacker` class from `@taquito/taquito`
+1. Importing the `MichelCodecPacker` class from `@mavrykdynamics/taquito`
 2. Creating an instance of the `MichelCodecPacker` class and passing it to the `setPackerProvider` method of the `TezosToolkit` instance.
 
 Here is an example:
 
 ```js
-import { MichelCodecPacker } from '@taquito/taquito';
+import { MichelCodecPacker } from '@mavrykdynamics/taquito';
 const Tezos = new TezosToolkit(RPC_URL);
 Tezos.setPackerProvider(new MichelCodecPacker());
 ```
@@ -891,7 +891,7 @@ It is possible to fetch multiple big map values using Taquito with one call usin
 
 The method takes an `array` of keys to query as a parameter and an optional block level and returns a `MichelsonMap` containing the keys and their value in a well-formatted JSON object format. The accepted types for the keys are `string`, `number` or `object` (the last one is used when the type of the keys in the big map is a Michelson `pair`).
 
-In the following example, we will fetch 4 big map values at once. The Michelson type of the big map key is an `address` and the type of its value is a `pair` made of a `nat` and a `map`. We see in the example that the address `tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn` is not a key of the big map, so its value is set to `undefined` in the returned MichelsonMap.
+In the following example, we will fetch 4 big map values at once. The Michelson type of the big map key is an `address` and the type of its value is a `pair` made of a `nat` and a `map`. We see in the example that the address `mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW` is not a key of the big map, so its value is set to `undefined` in the returned MichelsonMap.
 
 <Tabs
 defaultValue="contractAPI"
@@ -902,8 +902,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')
@@ -914,10 +914,10 @@ Tezos.contract
   .then((storage) => {
     println('Fetching the big map values...\n');
     return storage['0'].getMultipleValues([
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
-      'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY',
-      'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
-      'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
+      'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc',
+      'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
+      'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
     ]);
   })
   .then((values) => {
@@ -932,8 +932,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.wallet
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')
@@ -944,10 +944,10 @@ Tezos.wallet
   .then((storage) => {
     println('Fetching the big map values...\n');
     return storage['0'].getMultipleValues([
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
-      'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY',
-      'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
-      'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
+      'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc',
+      'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
+      'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
     ]);
   })
   .then((values) => {

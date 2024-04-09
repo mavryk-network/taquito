@@ -5,7 +5,7 @@ author: Roxane Letourneau
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Learn how to:
 
@@ -39,8 +39,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
-// import { TezosToolkit } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
@@ -68,8 +68,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
-// import { TezosToolkit } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
@@ -108,7 +108,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Tezos.contract
   .originate({
@@ -133,7 +133,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Tezos.wallet
   .originate({
@@ -283,7 +283,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 //First entry of the map
@@ -339,7 +339,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 //First entry of the map
@@ -674,7 +674,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 storageMap.set(
@@ -730,7 +730,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-import { MichelsonMap } from '@taquito/taquito';
+import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 const storageMap = new MichelsonMap();
 storageMap.set(
@@ -872,13 +872,13 @@ Now, Taquito allows you to pack the required data locally to fetch values from a
 
 Implementing this feature is a very easy 2 step process:
 
-1. Importing the `MichelCodecPacker` class from `@taquito/taquito`
+1. Importing the `MichelCodecPacker` class from `@mavrykdynamics/taquito`
 2. Creating an instance of the `MichelCodecPacker` class and passing it to the `setPackerProvider` method of the `TezosToolkit` instance.
 
 Here is an example:
 
 ```js
-import { MichelCodecPacker } from '@taquito/taquito';
+import { MichelCodecPacker } from '@mavrykdynamics/taquito';
 const Tezos = new TezosToolkit(RPC_URL);
 Tezos.setPackerProvider(new MichelCodecPacker());
 ```
@@ -902,7 +902,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.contract
@@ -932,7 +932,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 
 Tezos.wallet

@@ -43,7 +43,7 @@ export const prefixDecoder = (pre: Prefix) => (str: Uint8ArrayConsumer) => {
   return b58cencode(val, prefixMap[pre]);
 };
 
-export const tz1Decoder = prefixDecoder(Prefix.MV1);
+export const mv1Decoder = prefixDecoder(Prefix.MV1);
 export const branchDecoder = prefixDecoder(Prefix.B);
 export const publicKeyHashDecoder = (val: Uint8ArrayConsumer) => {
   const prefix = val.consume(1);
@@ -70,7 +70,7 @@ export const publicKeyHashesDecoder = (val: Uint8ArrayConsumer) => {
 };
 
 export const branchEncoder = prefixEncoder(Prefix.B);
-export const tz1Encoder = prefixEncoder(Prefix.MV1);
+export const mv1Encoder = prefixEncoder(Prefix.MV1);
 
 export const boolEncoder = (bool: unknown): string => (bool ? 'ff' : '00');
 

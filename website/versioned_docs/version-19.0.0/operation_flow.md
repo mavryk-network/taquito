@@ -13,10 +13,10 @@ Taquito makes injecting operations into the Tezos blockchain very simple. This c
 Taquito Contract API provides a simple way to interact with the Tezos blockchain. It provides methods and abstractions to prepare, forge, sign, and send operations to the Tezos blockchain, as well as interact with smart contracts.
 
 ### Installing the Contract API
-The Contract API is part of the `@taquito/taquito` package. To install it, run the following command:
+The Contract API is part of the `@mavrykdynamics/taquito` package. To install it, run the following command:
 
 ```
-npm install @taquito/taquito
+npm install @mavrykdynamics/taquito
 
 ```
 
@@ -26,7 +26,7 @@ The Contract API is exposed through the `contract` property of the `TezosToolkit
 Below is a quick example of how to use the `transaction` operation via the Contract API.
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('RPC address here');
 const op = await Tezos.contract.transfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 100 });
@@ -37,14 +37,14 @@ await op.confirmation();
 Aside from the Contract API, Taquito provides the ability for our users to interact with the Tezos blockchain via the Wallet API. The Wallet API is functionally similar to the Contract API, but it delegates several actions to the wallet (i.e. signing operations).
 
 ### Installing the Wallet API
-The Wallet API is part of the `@taquito/taquito` package, so the installation method is the exact same as the Contract API in the section above.
+The Wallet API is part of the `@mavrykdynamics/taquito` package, so the installation method is the exact same as the Contract API in the section above.
 
-Once you have installed the `@taquito/taquito` package into your project, however, you will need to install additional packages to use the Wallet API.
+Once you have installed the `@mavrykdynamics/taquito` package into your project, however, you will need to install additional packages to use the Wallet API.
 
 We work closely with the Beacon team to provide a seamless integration with the Beacon wallet. To install the Beacon wallet, run the following command:
 
 ```
-npm install @taquito/beacon-wallet
+npm install @mavrykdynamics/taquito-beacon-wallet
 
 ```
 
@@ -107,7 +107,7 @@ We provide a level of independence and customizability if you choose to do so, w
 
 ### Preparing a Transaction Operation
 ```typescript
-import { TezosToolkit } from '@taquito/taquito'
+import { TezosToolkit } from '@mavrykdynamics/taquito'
 const Tezos = new TezosToolkit(RPC_URL);
 
 // The PrepareProvider returns a 'PreparedOperation' type object
@@ -125,7 +125,7 @@ const forgeable = await Tezos.prepare.toForge(prepared);
 ### Forging the Transaction Operation
 ```typescript
 // Import the LocalForger
-import { LocalForger } from '@taquito/local-forging';
+import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 
 
 const forger = new LocalForger();

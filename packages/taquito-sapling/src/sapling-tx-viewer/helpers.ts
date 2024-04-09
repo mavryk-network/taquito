@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { b58cencode, bytes2Char, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
-=======
-import { b58cencode, bytesToString, Prefix, prefix } from '@taquito/utils';
->>>>>>> 19.1.0
+import { b58cencode, bytesToString, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
 import BigNumber from 'bignumber.js';
 import { Input } from '../types';
 

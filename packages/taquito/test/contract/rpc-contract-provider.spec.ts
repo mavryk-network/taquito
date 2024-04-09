@@ -1571,7 +1571,7 @@ describe('RpcContractProvider test', () => {
 
   describe('smartRollupExecuteOutboxMessage', () => {
     it('should produce a smartRollupExecuteOutboxMessage op without reveal', async () => {
-      mockRpcClient.getManagerKey.mockReturnValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+      mockRpcClient.getManagerKey.mockReturnValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
       mockEstimate.reveal.mockResolvedValue(undefined);
       const estimate = new Estimate(6385000, 36, 769, 250);
       mockEstimate.smartRollupExecuteOutboxMessage.mockResolvedValue(estimate);
@@ -1591,7 +1591,7 @@ describe('RpcContractProvider test', () => {
           contents: [
             {
               kind: 'smart_rollup_execute_outbox_message',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '1528',
               gas_limit: '6385',
               storage_limit: '36',
@@ -1625,10 +1625,10 @@ describe('RpcContractProvider test', () => {
         opOb: {
           branch: 'test',
           contents: [
-            revealOp('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'),
+            revealOp('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'),
             {
               kind: 'smart_rollup_execute_outbox_message',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '1528',
               gas_limit: '6385',
               storage_limit: '36',
@@ -1647,7 +1647,7 @@ describe('RpcContractProvider test', () => {
     });
 
     it('should produce a smartRollupExecuteOutboxMessage op with overridden estimate values', async () => {
-      mockRpcClient.getManagerKey.mockReturnValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+      mockRpcClient.getManagerKey.mockReturnValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
       mockEstimate.reveal.mockResolvedValue(undefined);
       const estimate = new Estimate(6385000, 36, 769, 250);
       mockEstimate.smartRollupExecuteOutboxMessage.mockResolvedValue(estimate);
@@ -1670,7 +1670,7 @@ describe('RpcContractProvider test', () => {
           contents: [
             {
               kind: 'smart_rollup_execute_outbox_message',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '2000',
               gas_limit: '10000',
               storage_limit: '100',

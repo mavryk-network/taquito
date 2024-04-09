@@ -35,7 +35,7 @@ values={[
 
 ```js
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 
 const transport = await TransportWebHID.create();
 const ledgerSigner = new LedgerSigner(transport);
@@ -46,7 +46,7 @@ const ledgerSigner = new LedgerSigner(transport);
 
 ```js
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid';
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 
 const transport = await TransportNodeHid.create();
 const ledgerSigner = new LedgerSigner(transport);
@@ -66,7 +66,7 @@ The constructor of the `LedgerSigner` class can take three other parameters. If 
   It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (mv1), DerivationType.SECP256K1 (mv2) or DerivationType.P256 (mv3).
 
 ```js
-import { LedgerSigner, DerivationType, HDPathTemplate } from '@taquito/ledger-signer';
+import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
 
 const ledgerSigner = new LedgerSigner(
   transport, //required
@@ -79,9 +79,9 @@ const ledgerSigner = new LedgerSigner(
 ## Usage
 
 ```js
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid';
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
@@ -196,8 +196,8 @@ Having your Ledger device connected to your computer and the `Tezos Wallet App` 
 _Note that this example is not intended to be a complete example of paths scanning but only a rough outline of what it is possible to do._
 
 ```js live noInline
-//import { LedgerSigner, DerivationType, HDPathTemplate } from '@taquito/ledger-signer';
-//import { TezosToolkit } from '@taquito/taquito';
+//import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
+//import { TezosToolkit } from '@mavrykdynamics/taquito';
 // import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 //const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
 

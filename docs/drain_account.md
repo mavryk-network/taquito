@@ -38,18 +38,18 @@ Tezos.signer
                 .transfer({
                     to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                     amount: balance.toNumber() - getRevealFee(address), // Remove default reveal fee
-                    mutez: true
+                    mumav: true
                 })
                 .then((estimate) => {
                     const maxAmount = balance.minus(
-                      estimate.suggestedFeeMutez + getRevealFee(address)
+                      estimate.suggestedFeeMumav + getRevealFee(address)
                     ).toNumber();
                     println(
                         `The estimated fees related to the emptying operation are ${
-                          estimate.suggestedFeeMutez
-                        } mutez.\nThe fees related to the reveal operation are ${
+                          estimate.suggestedFeeMumav
+                        } mumav.\nThe fees related to the reveal operation are ${
                           getRevealFee(address)
-                        } mutez.\nConsidering those fees, the amount we need to send to empty the account is ${
+                        } mumav.\nConsidering those fees, the amount we need to send to empty the account is ${
                           maxAmount / 1000000
                         } ṁ.`
                     );

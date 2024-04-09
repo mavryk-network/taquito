@@ -1,4 +1,4 @@
-import { ForgedBytes, TransferTicketOperation } from '@taquito/taquito';
+import { ForgedBytes, TransferTicketOperation } from '@mavrykdynamics/taquito';
 import {
   METADATA_BALANCE_UPDATES_CATEGORY,
   OperationContentsAndResult,

@@ -67,7 +67,7 @@
     ]
   },
   "dependencies": {
-    "@mavrykdynamics/beacon-dapp": "4.2.1",
+    "@mavrykdynamics/beacon-dapp": "4.1.2",
     "@mavrykdynamics/taquito": "^19.1.0",
     "@mavrykdynamics/taquito-core": "^19.1.0"
   },

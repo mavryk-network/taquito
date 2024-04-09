@@ -6,7 +6,7 @@ author: Roxane Letourneau
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `@taquito/tzip16` package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the `MichelsonStorageView` found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tzip/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
+The `@mavrykdynamics/taquito-tzip16` package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the `MichelsonStorageView` found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tzip/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
 ## How to use the tzip16 package
 
@@ -25,8 +25,8 @@ values={[
 The constructor of the `Tzip16Module` takes an optional `MetadataProvider` as a parameter. When none is passed, the default `MetadataProvider` of Taquito is instantiated and the default handlers (`HttpHandler`, `IpfsHandler`, and `TezosStorageHandler`) are used.
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
-import { Tzip16Module } from '@taquito/tzip16';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { Tzip16Module } from '@mavrykdynamics/taquito-tzip16';
 
 const Tezos = new TezosToolkit('rpcUrl');
 Tezos.addExtension(new Tzip16Module());
@@ -38,7 +38,7 @@ Tezos.addExtension(new Tzip16Module());
 In some cases, we may want to use a customized metadata provider. The constructor of the `Tzip16Module` class takes an optional metadata provider as a parameter. This allows to inject a custom metadata provider with custom protocol handlers if desired. For example, if we want to use a different IPFS gateway than the default one, which is `ipfs.io`, or if we want to use a different HTTP handler to support authentication or custom headers. Here is an example:
 
 ```js
-import { Handler, IpfsHttpHandler, TezosStorageHandler, MetadataProvider } from '@taquito/tzip16';
+import { Handler, IpfsHttpHandler, TezosStorageHandler, MetadataProvider } from '@mavrykdynamics/taquito-tzip16';
 
 const Tezos = new TezosToolkit('rpcUrl');
 
@@ -93,8 +93,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -117,8 +117,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -151,8 +151,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -174,8 +174,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -207,8 +207,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -231,8 +231,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -265,8 +265,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -289,8 +289,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -355,8 +355,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16, bytes2Char } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16, bytes2Char } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -384,8 +384,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16, bytes2Char } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16, bytes2Char } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -425,8 +425,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -456,8 +456,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Tzip16Module, tzip16 } from "@taquito/tzip16";
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Tzip16Module, tzip16 } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
@@ -499,8 +499,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { MichelsonStorageView } from "@taquito/tzip16";
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { MichelsonStorageView } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 const contractAddress = 'KT1CVoo3PxuvH3BuBpNTYRDafAQ7aRTfj8bd';
@@ -536,8 +536,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { MichelsonStorageView } from "@taquito/tzip16";
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { MichelsonStorageView } from "@mavrykdynamics/taquito-tzip16";
 // const Tezos = new TezosToolkit('rpc_url');
 
 const contractAddress = 'KT1CVoo3PxuvH3BuBpNTYRDafAQ7aRTfj8bd';

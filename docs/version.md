@@ -6,23 +6,23 @@ author: Jev Bjorsell
 # Taquito v19.1.0
 
 **Potential Breaking Changes**: 
-- `@taquito/rpc` - replaced `OperationBalanceUpdatesItem` in favour of `OperationMetadataBalanceUpdates` #2817 #2827
-- `@taquito/taquito` - Several optimizations made to fees and estimation in Taquito #2532
+- `@mavrykdynamics/taquito-rpc` - replaced `OperationBalanceUpdatesItem` in favour of `OperationMetadataBalanceUpdates` #2817 #2827
+- `@mavrykdynamics/taquito` - Several optimizations made to fees and estimation in Taquito #2532
     - removed `DEFAULT_GAS_LIMIT`, `DEFAULT_STORAGE_LIMIT`, `DEFAULT_FEE` in favour of `getRevealFee`, more details 
     - Added a small buffer to `gasLimit` (varying depending on operations)
-    - Reduced `suggestedFeeMutez` buffer from 100 to 20 per op
+    - Reduced `suggestedFeeMumav` buffer from 100 to 20 per op
     - Refined `gasLimit` and `storageLimit` according to `simulate_operation` results from the octez-client
 
 ## Summary
 
 ### New Features
-- `@taquito/taquito` - Added smart rollup execute outbox message operation #2321 (please note that this feature is not fully tested due to some parts requiring the use of `octez-client`)
-`@taquito/beacon-wallet` - added beacon-wallet bundle script to output a `.zip` bundle for browser only environments #2744 
+- `@mavrykdynamics/taquito` - Added smart rollup execute outbox message operation #2321 (please note that this feature is not fully tested due to some parts requiring the use of `octez-client`)
+`@mavrykdynamics/taquito-beacon-wallet` - added beacon-wallet bundle script to output a `.zip` bundle for browser only environments #2744 
 
 ### Improvement
-- `@taquito/michelson-encoder` - replaced references of `[['unit']]` to be `UnitValue` instead [PR#2813](https://github.com/ecadlabs/taquito/pull/2813)
-- `@taquito/taquito` - added 20 storageLimit buffer to prevent `storage_exhausted` error #2854 
-- `@taquito/taquito` - removed the storageLimit cap mechanism #2855 
+- `@mavrykdynamics/taquito-michelson-encoder` - replaced references of `[['unit']]` to be `UnitValue` instead [PR#2813](https://github.com/ecadlabs/taquito/pull/2813)
+- `@mavrykdynamics/taquito` - added 20 storageLimit buffer to prevent `storage_exhausted` error #2854 
+- `@mavrykdynamics/taquito` - removed the storageLimit cap mechanism #2855 
 
 ### Documentation
 - Added michel-codec to Typedoc documentation #2806
@@ -30,8 +30,8 @@ author: Jev Bjorsell
 - Removed `giganode` references from Taquito documentation [PR#2813](https://github.com/ecadlabs/taquito/pull/2813)
 
 ### Deprecation
-- `@taquito/utils` - Deprecated several util methods and updated their names into something more representative. Slight improvements to existing util methods #2372 #2274 
-- `@taquito/taquito` - Deprecated `methods` in favour of `methodsObject`. `methodsObject`'s syntax is more consistent with storage params, supports all Michelson data types, and will be maintained going forward #2813
+- `@mavrykdynamics/taquito-utils` - Deprecated several util methods and updated their names into something more representative. Slight improvements to existing util methods #2372 #2274 
+- `@mavrykdynamics/taquito` - Deprecated `methods` in favour of `methodsObject`. `methodsObject`'s syntax is more consistent with storage params, supports all Michelson data types, and will be maintained going forward #2813
 
 ### Internals
 - Updated various dependencies in Taquito website and the Test DApp (Sass, Firebase, Algoliasearch, Dotenv) [PR#2834](https://github.com/ecadlabs/taquito/pull/2834)
@@ -44,7 +44,7 @@ author: Jev Bjorsell
 # Taquito v19.0.2
 
 ### Bug Fixes
-- `@taquito/local-forging` - Added the correct constants for staking/unstaking in the forger [PR#2824](https://github.com/ecadlabs/taquito/pull/2824)
+- `@mavrykdynamics/taquito-local-forging` - Added the correct constants for staking/unstaking in the forger [PR#2824](https://github.com/ecadlabs/taquito/pull/2824)
 
 
 # Taquito v19.0.1
@@ -60,7 +60,7 @@ author: Jev Bjorsell
 ## Summary
 
 ### New Features
-- `@taquito/local-forging` - Added new property `whitelist` in smart rollup origination operation #2776
+- `@mavrykdynamics/taquito-local-forging` - Added new property `whitelist` in smart rollup origination operation #2776
 
 
 ### Documentation

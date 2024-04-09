@@ -1130,7 +1130,7 @@ describe('PrepareProvider test', () => {
           contents: [
             {
               kind: 'smart_rollup_execute_outbox_message',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',
@@ -1165,14 +1165,14 @@ describe('PrepareProvider test', () => {
               kind: 'reveal',
               fee: '331',
               public_key: 'test_pub_key',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               gas_limit: '625',
               storage_limit: '0',
               counter: '1',
             },
             {
               kind: 'smart_rollup_execute_outbox_message',
-              source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+              source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
               fee: '0',
               gas_limit: '1040000',
               storage_limit: '60000',

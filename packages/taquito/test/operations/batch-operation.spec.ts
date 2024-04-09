@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ForgedBytes, BatchOperation } from '@taquito/taquito';
+import { ForgedBytes, BatchOperation } from '@mavrykdynamics/taquito';
 import { defaultConfigConfirmation } from '../../src/context';
 import {
   RevealOperationBuilder,

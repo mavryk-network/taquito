@@ -14,10 +14,10 @@ A signature is a string generally based58 encoded for better readability that st
 
 ## Generating a signature with the InMemorySigner
 
-The `@taquito/signer` package exposes a quick and simple way to generate a signature. All you need to do is to create a new instance of the `InMemorySigner` and call the `sign` method on it:
+The `@mavrykdynamics/taquito-signer` package exposes a quick and simple way to generate a signature. All you need to do is to create a new instance of the `InMemorySigner` and call the `sign` method on it:
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 const signer = new InMemorySigner(YOUR_PRIVATE_KEY);
 const bytes = STRING_OF_BYTES;
@@ -48,10 +48,10 @@ const formattedInput: string = [
 ].join(' ');
 ```
 
-After formatting the string properly, you can convert it into bytes, for example, with the `char2Bytes` function of the `@taquito/utils` package:
+After formatting the string properly, you can convert it into bytes, for example, with the `char2Bytes` function of the `@mavrykdynamics/taquito-utils` package:
 
 ```js
-import { char2Bytes } from '@taquito/utils';
+import { char2Bytes } from '@mavrykdynamics/taquito-utils';
 
 const bytes = char2Bytes(formattedInput);
 const bytesLength = (bytes.length / 2).toString(16);
@@ -90,7 +90,7 @@ The wallet will return an object with a `signature` property that holds our sign
 Here is the full code to sign data with a wallet:
 
 ```ts
-import { char2Bytes } from '@taquito/utils';
+import { char2Bytes } from '@mavrykdynamics/taquito-utils';
 import { RequestSignPayloadInput, SigningType } from '@airgap/beacon-sdk';
 
 // The data to format
@@ -132,7 +132,7 @@ const { signature } = signedPayload;
 To verify that the previously generated signature has actually been signed by a wallet, you can use the `veryfySignature` method from the Taquito utils. Here is an example where we check if the payload has been signed by the client wallet, using their public key:
 
 ```js
-import { verifySignature } from '@taquito/utils';
+import { verifySignature } from '@mavrykdynamics/taquito-utils';
 
 const isVerified = verifySignature(
   payloadBytes,
@@ -146,8 +146,8 @@ const isVerified = verifySignature(
 Taquito also offers the possibility to sign Michelson code. This feature can be useful, for example, if you need to send a lambda to a contract to be executed but want to restrict the number of users who can submit a lambda by verifiying the signer's address. The signing of Michelson code requires the use of the `michel-codec` package:
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// import { Parser, packDataBytes, MichelsonData, MichelsonType } from '@taquito/michel-codec';
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { Parser, packDataBytes, MichelsonData, MichelsonType } from '@mavrykdynamics/taquito-michel-codec';
 // const Tezos = new TezosToolkit(NODE_RPC_URL);
 
 const data = `(Pair (Pair { Elt 1
@@ -173,11 +173,11 @@ Tezos.signer
 
 First, you provide the Michelson code to be signed as a string along with its type.
 Then, you create a new instance of the `michel-codec` parser and call the `parseMichelineExpression` on it to get the JSON representation of the Michelson code and type.
-Once done, you can pack the data using the `packDataBytes` function available in the `@taquito/michel-codec` package.
+Once done, you can pack the data using the `packDataBytes` function available in the `@mavrykdynamics/taquito-michel-codec` package.
 To finish, use one of the methods presented above to sign the packed data (with the `InMemorySigner` like in this example or with the Beacon SDK).
 
 :::caution
-In the previous example, the data is packed locally in Taquito using the `packDataBytes` function of the `@taquito/michel-codec` package instead of the RPC. You should always verify the packed bytes before signing or requesting that they be signed when using the RPC to pack. This precaution helps protect you and your applications users from RPC nodes that have been compromised. A node that is operated by a bad actor, or compromised by a bad actor could return a fully formed operation that does not correspond to the input provided to the RPC endpoint.
+In the previous example, the data is packed locally in Taquito using the `packDataBytes` function of the `@mavrykdynamics/taquito-michel-codec` package instead of the RPC. You should always verify the packed bytes before signing or requesting that they be signed when using the RPC to pack. This precaution helps protect you and your applications users from RPC nodes that have been compromised. A node that is operated by a bad actor, or compromised by a bad actor could return a fully formed operation that does not correspond to the input provided to the RPC endpoint.
 :::
 
 ## Sending the signature to a smart contract

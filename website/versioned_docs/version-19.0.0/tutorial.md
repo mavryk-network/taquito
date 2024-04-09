@@ -90,13 +90,13 @@ Now, we can start using Taquito to interact with the Tezos blockchain.
 Run the following command to install Taquito:
 
 ```bash
-npm i @taquito/taquito
+npm i @mavrykdynamics/taquito
 ```
 
 Now, open the file `index.ts` and replace the code with the following:
 
 ```ts
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
 
@@ -188,14 +188,14 @@ In the next step, we will simply store the private key in the source code. This 
 Taquito provides an "In Memory Signer" functionality. Use the following command to add that to your project:
 
 ```bash
-npm i @taquito/signer
+npm i @mavrykdynamics/taquito-signer
 ```
 
 Open the file `index.ts` and replace the code with the following:
 
 ```ts
-import { InMemorySigner } from "@taquito/signer";
-import { TezosToolkit } from "@taquito/taquito";
+import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 async function main() {
     var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
@@ -409,7 +409,7 @@ git commit -m "initial commit"
 In the next step, we add Taquito and Beacon SDK to the React app, and create a minimal UI to connect to the wallet and transfer ṁ.
 
 ```bash
-npm i @taquito/taquito @taquito/beacon-wallet
+npm i @mavrykdynamics/taquito @mavrykdynamics/taquito-beacon-wallet
 ```
 
 Open the file `index.html` and make the following changes:
@@ -423,11 +423,11 @@ Open the file `src/App.tsx` and replace the content with the following code:
 
 ```tsx
 import { useState } from "react";
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
 import Transfer from "./components/Transfer";
-import { BeaconWallet } from "@taquito/beacon-wallet";
+import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 
 const App = () => {
   const [Tezos] = useState<TezosToolkit>(
@@ -461,8 +461,8 @@ Create a new file `src/components/ConnectWallet.tsx` and add the following code:
 
 ```tsx
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { TezosToolkit } from "@taquito/taquito";
-import { BeaconWallet } from "@taquito/beacon-wallet";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 import {
   NetworkType,
 } from "@airgap/beacon-dapp";
@@ -530,7 +530,7 @@ Create a new file `src/components/Transfer.tsx` and add the following code:
 
 ```tsx
 import { useState } from "react";
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 const Transfer = ({
   Tezos,

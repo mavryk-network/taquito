@@ -88,13 +88,13 @@ export const getRevealFee = (address: string) =>
 
 export const getRevealFeeInternal = (address: string) => {
   switch (address.substring(0, 3)) {
-    case 'tz1':
+    case 'mv1':
       return REVEAL_FEE.TZ1;
-    case 'tz2':
+    case 'mv2':
       return REVEAL_FEE.TZ2;
-    case 'tz3':
+    case 'mv3':
       return REVEAL_FEE.TZ3;
-    case 'tz4':
+    case 'mv4':
       return REVEAL_FEE.TZ4;
     default:
       throw new Error(`Cannot estimate reveal fee for ${address}`);
