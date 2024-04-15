@@ -60,7 +60,7 @@ on:
 #         message: 'A new deploy preview is available on Netlify at https://${{ env.short_sha }}--tezostaquito.netlify.app'
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' || github.run_number }}
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.ref != 'refs/heads/master' || github.run_number }}
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
 jobs:
@@ -79,26 +79,25 @@ jobs:
       working-directory: website
       env:
         NODE_OPTIONS: "--max_old_space_size=4096"
-        ALGOLIA_APPLICATION_ID: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && 'example' || secrets.ALGOLIA_APPLICATION_ID }}
-        ALGOLIA_SEARCH_API_KEY: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && 'example' || secrets.ALGOLIA_SEARCH_API_KEY }}
-        ALGOLIA_UPDATE_API_KEY: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && 'example' || secrets.ALGOLIA_UPDATE_API_KEY }}
-        FIREBASE_AUTH_DOMAIN: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_AUTH_DOMAIN || secrets.FIREBASE_AUTH_DOMAIN_PROD }}
-        FIREBASE_API_KEY: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_API_KEY || secrets.FIREBASE_API_KEY_PROD }}
-        FIREBASE_PROJECT_ID: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_PROJECT_ID || secrets.FIREBASE_PROJECT_ID_PROD }}
-        FIREBASE_STORAGE_BUCKET: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_STORAGE_BUCKET || secrets.FIREBASE_STORAGE_BUCKET_PROD }}
-        FIREBASE_MESSAGING_SENDER_ID: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_MESSAGING_SENDER_ID || secrets.FIREBASE_MESSAGING_SENDER_ID_PROD }}
-        FIREBASE_APP_ID: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_APP_ID || secrets.FIREBASE_APP_ID_PROD }}
-        FIREBASE_MEASUREMENT_ID: ${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && secrets.FIREBASE_MEASUREMENT_ID || secrets.FIREBASE_MEASUREMENT_ID_PROD }}
+        ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+        ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
+        ALGOLIA_UPDATE_API_KEY: ${{ secrets.ALGOLIA_UPDATE_API_KEY }}
+        FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+        FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+        FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+        FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+        FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+        FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
     - run: npm run build-docs
     - run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-    - run: npm run netlify:${{ github.ref != 'refs/heads/mavryk-protocol-refactoring' && 'preview' || 'publish' }}
+    - run: npm run netlify:publish
       working-directory: website
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
     - name: Update Algolia Index
-      if: github.ref == 'refs/heads/mavryk-protocol-refactoring'
       run: |
         docker run --rm -e "CONFIG=$(cat ./website/config.json | jq -r tostring)" \
           -e API_KEY=${{secrets.ALGOLIA_UPDATE_API_KEY}} \
