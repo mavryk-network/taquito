@@ -377,7 +377,7 @@ export type MichelsonReturnType = MichelsonType[] | MichelsonTypeFailed;
 
 export enum Protocol {
   Ps9mPmXa = 'Ps9mPmXaRzmzk35gbAYNCAw6UXdE2qoABTHbN2oEEc1qM7CwT9P',
-  PtAtLas = 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
+  PtAtLas = 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
   ProtoALpha = 'ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK', // temporary protocol hash
 }
 
@@ -387,7 +387,7 @@ export type ProtocolID = `${Protocol}`;
 
 const protoLevel: Record<ProtocolID, number> = {
   Ps9mPmXaRzmzk35gbAYNCAw6UXdE2qoABTHbN2oEEc1qM7CwT9P: 0,
-  PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2: 19,
+  PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp: 19,
   ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK: 20,
 };
 

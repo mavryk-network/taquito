@@ -32,12 +32,12 @@ author: Jev Bjorsell
     - removed `DEFAULT_GAS_LIMIT`, `DEFAULT_STORAGE_LIMIT`, `DEFAULT_FEE` in favour of `getRevealFee`, more details 
     - Added a small buffer to `gasLimit` (varying depending on operations)
     - Reduced `suggestedFeeMumav` buffer from 100 to 20 per op
-    - Refined `gasLimit` and `storageLimit` according to `simulate_operation` results from the octez-client
+    - Refined `gasLimit` and `storageLimit` according to `simulate_operation` results from the mavkit-client
 
 ## Summary
 
 ### New Features
-- `@mavrykdynamics/taquito` - Added smart rollup execute outbox message operation #2321 (please note that this feature is not fully tested due to some parts requiring the use of `octez-client`)
+- `@mavrykdynamics/taquito` - Added smart rollup execute outbox message operation #2321 (please note that this feature is not fully tested due to some parts requiring the use of `mavkit-client`)
 `@mavrykdynamics/taquito-beacon-wallet` - added beacon-wallet bundle script to output a `.zip` bundle for browser only environments #2744 
 
 ### Improvement

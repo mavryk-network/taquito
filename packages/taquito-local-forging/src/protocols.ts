@@ -1,10 +1,10 @@
 export enum ProtocolsHash {
-  PtAtLas = 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
+  PtAtLas = 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
   ProtoALpha = 'ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK',
 }
 
 const protoLevel: Record<ProtocolsHash, number> = {
-  PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2: 19,
+  PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp: 19,
   ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK: 20,
 };
 

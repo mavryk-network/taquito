@@ -246,8 +246,8 @@ For the purpose of this section, I have created a new address and funded it on t
     docker run --pull always -it --entrypoint sh docker.io/tezos/tezos:latest
 
     # now you are inside the docker container
-    octez-client -E https://rpc.mavryk,network/basenet gen keys mysamplekey -s secp256k1
-    octez-client -E https://rpc.mavryk,network/basenet show address mysamplekey -S
+    mavkit-client -E https://rpc.mavryk,network/basenet gen keys mysamplekey -s secp256k1
+    mavkit-client -E https://rpc.mavryk,network/basenet show address mysamplekey -S
   ```
   The new address you just created has a balance of zero. For the testnet, You can go to [basenet faucet](https://basenet-faucet.mavryk.network/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
 </details>

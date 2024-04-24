@@ -241,7 +241,7 @@ describe('validateOperation', () => {
 
 describe('validateProtocol', () => {
   it('Validate Protocol Hash properly', () => {
-    expect(validateProtocol('PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2')).toEqual(
+    expect(validateProtocol('PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp')).toEqual(
       ValidationResult.VALID
     );
     expect(validateProtocol('ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK')).toEqual(

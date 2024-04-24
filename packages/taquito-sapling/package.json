@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito-sapling",
-  "version": "19.2.0",
+  "version": "19.2.1",
   "description": "Allows reading and preparing sapling transactions",
   "keywords": [
     "tezos",
@@ -66,10 +66,10 @@
   },
   "dependencies": {
     "@airgap/sapling-wasm": "0.0.9",
-    "@mavrykdynamics/taquito": "^19.2.0",
+    "@mavrykdynamics/taquito": "^19.2.1",
     "@mavrykdynamics/taquito-core": "^19.1.0",
-    "@mavrykdynamics/taquito-rpc": "^19.2.0",
-    "@mavrykdynamics/taquito-utils": "^19.2.0",
+    "@mavrykdynamics/taquito-rpc": "^19.2.1",
+    "@mavrykdynamics/taquito-utils": "^19.2.1",
     "@stablelib/nacl": "^1.0.4",
     "@stablelib/random": "^1.0.2",
     "bignumber.js": "^9.1.2",

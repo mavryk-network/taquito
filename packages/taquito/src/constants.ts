@@ -28,21 +28,21 @@ export const DEFAULT_STORAGE_LIMIT = {
   TRANSFER: 257,
   REVEAL: 0,
 };
-// value is based on octez-client reveal operation gasLimit of each address type
+// value is based on mavkit-client reveal operation gasLimit of each address type
 const REVEAL_GAS_LIMIT = {
   TZ1: 169,
   TZ2: 155,
   TZ3: 445,
   TZ4: 1674,
 };
-// value is based on octez-client reveal operation fee of each address type
+// value is based on mavkit-client reveal operation fee of each address type
 const REVEAL_FEE = {
   TZ1: 276,
   TZ2: 276,
   TZ3: 305,
   TZ4: 477,
 };
-// value is based on octez-client reveal operation storageLimit of all address type
+// value is based on mavkit-client reveal operation storageLimit of all address type
 export const REVEAL_STORAGE_LIMIT = 0;
 // protocol constants
 export const ORIGINATION_SIZE = 257;
@@ -50,7 +50,7 @@ export const ORIGINATION_SIZE = 257;
 export const COST_PER_BYTE = 250;
 
 export enum Protocols {
-  PtAtLas = 'PtAtLasjh71tv2N8SDMtjajR42wTSAd9xFTvXvhDuYfRJPRLSL2',
+  PtAtLas = 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
   ProtoALpha = 'ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK',
 }
 
