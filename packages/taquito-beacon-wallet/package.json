@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito-beacon-wallet",
-  "version": "19.2.1",
+  "version": "19.2.2",
   "description": "Beacon wallet provider",
   "keywords": [
     "tezos",
@@ -67,9 +67,9 @@
     ]
   },
   "dependencies": {
-    "@mavrykdynamics/beacon-dapp": "^4.2.1",
+    "@mavrykdynamics/beacon-dapp": "^4.2.2",
     "@mavrykdynamics/taquito-core": "^19.1.0",
-    "@mavrykdynamics/taquito": "^19.2.1"
+    "@mavrykdynamics/taquito": "^19.2.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.40",

@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito-michel-codec",
-  "version": "19.2.1",
+  "version": "19.2.2",
   "description": "Michelson parser/validator/formatter",
   "keywords": [
     "tezos",

@@ -1,6 +1,6 @@
 {
   "name": "@mavrykdynamics/taquito-rpc",
-  "version": "19.2.1",
+  "version": "19.2.2",
   "description": "Provides low level methods, and types to invoke RPC calls from a Nomadic Tezos RPC node",
   "keywords": [
     "tezos",
@@ -67,8 +67,8 @@
   },
   "dependencies": {
     "@mavrykdynamics/taquito-core": "^19.1.0",
-    "@mavrykdynamics/taquito-http-utils": "^19.2.1",
-    "@mavrykdynamics/taquito-utils": "^19.2.1",
+    "@mavrykdynamics/taquito-http-utils": "^19.2.2",
+    "@mavrykdynamics/taquito-utils": "^19.2.2",
     "bignumber.js": "^9.1.2"
   },
   "devDependencies": {
