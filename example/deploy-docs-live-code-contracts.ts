@@ -583,7 +583,7 @@ async function originateTzip16Storage() {
     };
 
     const metadataBigMap = new MichelsonMap();
-    metadataBigMap.set('', stringToBytes('tezos-storage:here'));
+    metadataBigMap.set('', stringToBytes('mavryk-storage:here'));
     metadataBigMap.set('here', stringToBytes(JSON.stringify(metadataJSON)));
 
     const tacoShopStorageMap = new MichelsonMap();
@@ -695,7 +695,7 @@ async function originateTzip16OnChainJSON() {
   tezos.setSignerProvider(signer);
   try {
     const metadataBigMAp = new MichelsonMap();
-    metadataBigMAp.set('', stringToBytes('tezos-storage:here'));
+    metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
     metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample1)));
 
     const op = await tezos.contract.originate({
@@ -718,7 +718,7 @@ async function originateTzip16OnChainMultiply() {
   tezos.setSignerProvider(signer);
   try {
     const metadataBigMAp = new MichelsonMap();
-    metadataBigMAp.set('', stringToBytes('tezos-storage:here'));
+    metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
     metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample2)));
 
     const op = await tezos.contract.originate({

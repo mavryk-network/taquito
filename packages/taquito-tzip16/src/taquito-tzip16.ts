@@ -3,7 +3,7 @@
  * @module @mavrykdynamics/taquito-tzip16
  */
 export * from './handlers/http-handler';
-export * from './handlers/tezos-storage-handler';
+export * from './handlers/mavryk-storage-handler';
 export * from './handlers/ipfs-handler';
 export * from './composer';
 export * from './metadata-interface';

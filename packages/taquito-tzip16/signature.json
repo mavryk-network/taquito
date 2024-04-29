@@ -45,7 +45,7 @@
             "sha512": "ef833745ad2b44ea14b32f728ab12e695bfbc71cf87129e94c73c454a8a45b9a372dbad002db05979a1536fe36e3fe1bcf541c010a403045d0b046744ad809dd"
           },
           {
-            "path": "dist/lib/handlers/tezos-storage-handler.js",
+            "path": "dist/lib/handlers/mavryk-storage-handler.js",
             "sha512": "1d685491a2bb79304923178c724b8ec6c79edadefc7add1b82b720bad14dbdce79ed2f82620d66deded9f0b1d6186805896c4a0d17acc097ee0fa10e5a75dd48"
           },
           {
@@ -121,7 +121,7 @@
             "sha512": "3b47d08593b427c8aab343dbb9f1b17206471139b65ae9294f42a706b48dbec0cc6d2a1454101726d8686ab932f79caeaf0aa4cefb5817a7cf6daf20e1cab00b"
           },
           {
-            "path": "dist/lib/handlers/tezos-storage-handler.js.map",
+            "path": "dist/lib/handlers/mavryk-storage-handler.js.map",
             "sha512": "80ca62f6caaf58dab54570d0002cf41ab7d647b19f1bcb604edab0ab0bdc417795c1cd3067221c7b9d5e4551d54c589a47c6521355b20a1788c4b9973f9dae38"
           },
           {
@@ -237,15 +237,15 @@
             "sha512": "a27096e1a66412b1046c4a399a61f1143edd09b42d5d29fbb71aa504ed0eb5c05823eb4eaa006a7a258b6ea1c5e93763718f17cbf163796b70bf5c78c23702c5"
           },
           {
-            "path": "dist/types/handlers/tezos-storage-handler.d.ts",
+            "path": "dist/types/handlers/mavryk-storage-handler.d.ts",
             "sha512": "1fd579ca16060a9312fb2c41fa168a7d0756555ecdb1a0a669a2ffed0739878a1862e50b7b6ebf09141190080859ce3d06ab0a1f0881a07247d5aa8d6d009ecb"
           },
           {
-            "path": "test/handlers/tezos-storage-handler.spec.ts",
+            "path": "test/handlers/mavryk-storage-handler.spec.ts",
             "sha512": "de95d165109e32cb7346d7257221fbd73b3e7b7996e41156a1d2972250382512ac71eb0ea1f1227c23e00820e0450bc17e9e1d18505e20e9a9a4f61a3443e1c4"
           },
           {
-            "path": "src/handlers/tezos-storage-handler.ts",
+            "path": "src/handlers/mavryk-storage-handler.ts",
             "sha512": "7df5908cbc9bff1f35f7aa51a8d09db8422c948a72cee8a00c67ab08396bdd8a31ae8c4270f371252f3353804e7eb7877fd85d1899a730474a8549f833b021b1"
           },
           {

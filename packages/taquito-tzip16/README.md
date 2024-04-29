@@ -8,7 +8,7 @@
 
 Contract metadata gathers valuable information about the contract that is not directly used for its operation. According to TZIP-016, a contract with metadata must include in its storage a big_map named `%metadata` of the following type: `(big_map %metadata string bytes)`. The big_map must have an empty string as a key where its value is a byte-encoded URI representing the metadata location. Contract metadata can be located on-chain or off-chain (web services or IPFS). Please refer to the following link for complete documentation on [TZIP-016](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
-When using the `@mavrykdynamics/taquito-tzip16` package, developers can retrieve metadata of a contract based on its address. The underlying steps performed by Taquito are to find the URI in the contract storage, decode it, extract the metadata depending on the protocol (tezos-storage, HTTP(S) or IPFS), perform an integrity check if the URI contains a sha256 hash, and return the metadata to the user.
+When using the `@mavrykdynamics/taquito-tzip16` package, developers can retrieve metadata of a contract based on its address. The underlying steps performed by Taquito are to find the URI in the contract storage, decode it, extract the metadata depending on the protocol (mavryk-storage, HTTP(S) or IPFS), perform an integrity check if the URI contains a sha256 hash, and return the metadata to the user.
 
 Another functionality of the `@mavrykdynamics/taquito-tzip16` package allows executing off-chain views. If a contract contains views in its metadata, Taquito builds an ordinary JavaScript object with methods corresponding to the views name.
 

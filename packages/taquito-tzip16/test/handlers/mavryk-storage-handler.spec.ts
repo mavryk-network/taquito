@@ -1,4 +1,4 @@
-import { TezosStorageHandler } from '../../src/handlers/tezos-storage-handler';
+import { TezosStorageHandler } from '../../src/handlers/mavryk-storage-handler';
 import {
   InvalidContractMetadataTypeError,
   InvalidUriError,
@@ -6,7 +6,7 @@ import {
   ContractMetadataNotFoundError,
 } from '../../src/errors';
 
-describe('Parse Tezos storage URI test', () => {
+describe('Parse Mavryk storage URI test', () => {
   const tezosStorageHandler = new TezosStorageHandler();
 
   it('Should extract smart contract address, network and path from the URI properly', () => {
@@ -52,7 +52,7 @@ describe('Parse Tezos storage URI test', () => {
   });
 });
 
-describe('Tzip16 tezos storage handler test', () => {
+describe('Tzip16 mavryk storage handler test', () => {
   const mockContractAbstraction: any = {};
   let mockReadProvider: {
     getScript: jest.Mock<any, any>;
@@ -109,7 +109,7 @@ describe('Tzip16 tezos storage handler test', () => {
 
     const tzip16Uri = {
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: '//KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here',
     };
     const metadata = await tezosStorageHandler.getMetadata(
@@ -126,7 +126,7 @@ describe('Tzip16 tezos storage handler test', () => {
   it('Should fail with InvalidUriError when the URI is invalid', async () => {
     const tzip16Uri = {
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: 'hello/world', // invalid
     };
     try {
@@ -148,7 +148,7 @@ describe('Tzip16 tezos storage handler test', () => {
 
     const tzip16Uri = {
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: '//KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here',
     };
     try {
@@ -163,7 +163,7 @@ describe('Tzip16 tezos storage handler test', () => {
 
     const tzip16Uri = {
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: '//KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here',
     };
     try {
@@ -182,7 +182,7 @@ describe('Tzip16 tezos storage handler test', () => {
 
     const tzip16Uri = {
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: '//KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here',
     };
     try {

@@ -24,7 +24,7 @@ async function example() {
     };
 
     const metadataBigMap = new MichelsonMap();
-    metadataBigMap.set("", stringToBytes('tezos-storage:here'));
+    metadataBigMap.set("", stringToBytes('mavryk-storage:here'));
     metadataBigMap.set("here", stringToBytes(JSON.stringify(metadataJSON)))
 
     // Ligo Taco shop contract modified to include metadata in storage

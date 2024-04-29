@@ -146,16 +146,16 @@ describe('String/Bytes conversions', () => {
   });
 
   it('Test2: Should convert a string of char (utf-8) to a string of bytes, and convert it back to the same string of char', () => {
-    const charString = 'tezos-storage:contents';
-    const bytes = '74657a6f732d73746f726167653a636f6e74656e7473';
+    const charString = 'mavryk-storage:contents';
+    const bytes = '6d617672796b2d73746f726167653a636f6e74656e7473';
 
     expect(stringToBytes(charString)).toEqual(bytes);
     expect(bytesToString(bytes)).toEqual(charString);
   });
 
   it('Test3: Should convert a string of char (utf-8) to a string of bytes, and convert it back to the same string of char', () => {
-    const charString = 'tezos-storage:here';
-    const bytes = '74657a6f732d73746f726167653a68657265';
+    const charString = 'mavryk-storage:here';
+    const bytes = '6d617672796b2d73746f726167653a68657265';
 
     expect(stringToBytes(charString)).toEqual(bytes);
     expect(bytesToString(bytes)).toEqual(charString);

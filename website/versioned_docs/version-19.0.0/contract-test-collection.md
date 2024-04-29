@@ -1015,7 +1015,7 @@ interfaces: TZIP-012
 
 # Tzip-16 Contracts
 
-The @mavrykdynamics/taquito-tzip16 package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the MichelsonStorageView found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
+The @mavrykdynamics/taquito-tzip16 package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (mavryk-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the MichelsonStorageView found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
 The `getMetadata` method returns an object which contains the URI, the metadata in JSON format, an optional SHA256 hash of the metadata and an optional integrity check result.
 
@@ -1059,7 +1059,7 @@ const metadataJSON = {
 };
 
 const metadataBigMap = new MichelsonMap();
-metadataBigMap.set('', stringToBytes('tezos-storage:here'));
+metadataBigMap.set('', stringToBytes('mavryk-storage:here'));
 metadataBigMap.set('here', stringToBytes(JSON.stringify(metadataJSON)));
 
 const tacoShopStorageMap = new MichelsonMap();
@@ -1291,7 +1291,7 @@ storage (pair nat (big_map %metadata string bytes));
 
 ```js
 const metadataBigMAp = new MichelsonMap();
-metadataBigMAp.set('', stringToBytes('tezos-storage:here'));
+metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
 metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample1)));
 
 const op = await tezos.contract.originate({
@@ -1340,7 +1340,7 @@ storage (pair nat (big_map %metadata string bytes));
 
 ```js
 const metadataBigMAp = new MichelsonMap();
-metadataBigMAp.set('', stringToBytes('tezos-storage:here'));
+metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
 metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample2)));
 
 const op = await tezos.contract.originate({

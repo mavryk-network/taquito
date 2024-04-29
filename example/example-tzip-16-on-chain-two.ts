@@ -13,7 +13,7 @@ async function example() {
     console.log('Deploying Tzip16OffChainTwo contract...');
 
     const metadataBigMAp = new MichelsonMap();
-    metadataBigMAp.set("", stringToBytes('tezos-storage:here'));
+    metadataBigMAp.set("", stringToBytes('mavryk-storage:here'));
     metadataBigMAp.set("here", stringToBytes(JSON.stringify(metadataViewsExample2)))
 
     const op = await tezos.contract.originate({

@@ -1,4 +1,4 @@
-import { BigMapId } from './handlers/tezos-storage-handler';
+import { BigMapId } from './handlers/mavryk-storage-handler';
 import {
   BigMapAbstraction,
   Context,

@@ -18,7 +18,7 @@ const typeOfValueToFind = {
 export type BigMapId = { int: string };
 
 export class TezosStorageHandler implements Handler {
-  private readonly TEZOS_STORAGE_REGEX = /^(?:\/\/(KT1\w{33})(?:\.(.+))?\/)?([\w|%]+)$/;
+  private readonly MAVRYK_STORAGE_REGEX = /^(?:\/\/(KT1\w{33})(?:\.(.+))?\/)?([\w|%]+)$/;
 
   async getMetadata(
     contractAbstraction: ContractAbstraction<ContractProvider | Wallet>,
@@ -27,7 +27,7 @@ export class TezosStorageHandler implements Handler {
   ) {
     const parsedTezosStorageUri = this.parseTezosStorageUri(location);
     if (!parsedTezosStorageUri) {
-      throw new InvalidUriError(`tezos-storage:${location}`);
+      throw new InvalidUriError(`mavryk-storage:${location}`);
     }
     const script = await context.readProvider.getScript(
       parsedTezosStorageUri.contractAddress || contractAbstraction.address,
@@ -64,10 +64,10 @@ export class TezosStorageHandler implements Handler {
   /**
    * @description Extract the smart contract address, the network and the path pointing to the metadata from the uri
    * @returns an object which contains the properties allowing to find where the metadata are located or it returns undefined if the uri is not valid
-   * @param tezosStorageURI URI (without the tezos-storage prefix)
+   * @param tezosStorageURI URI (without the mavryk-storage prefix)
    */
   private parseTezosStorageUri(tezosStorageURI: string) {
-    const extractor = this.TEZOS_STORAGE_REGEX.exec(tezosStorageURI);
+    const extractor = this.MAVRYK_STORAGE_REGEX.exec(tezosStorageURI);
     if (!extractor) return;
     return {
       contractAddress: extractor[1],

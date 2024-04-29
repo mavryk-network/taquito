@@ -36,7 +36,7 @@ export interface Tzip16Uri {
  * @description: Metadata Provider
  */
 export class MetadataProvider implements MetadataProviderInterface {
-  private readonly PROTOCOL_REGEX = /(?:sha256:\/\/0x(.*)\/)?(https?|ipfs|tezos-storage):(.*)/;
+  private readonly PROTOCOL_REGEX = /(?:sha256:\/\/0x(.*)\/)?(https?|ipfs|mavryk-storage):(.*)/;
 
   constructor(private handlers: Map<string, Handler>) {}
 

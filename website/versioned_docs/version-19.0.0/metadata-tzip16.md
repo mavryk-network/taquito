@@ -6,7 +6,7 @@ author: Roxane Letourneau
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `@mavrykdynamics/taquito-tzip16` package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (tezos-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the `MichelsonStorageView` found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tzip/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
+The `@mavrykdynamics/taquito-tzip16` package allows retrieving metadata associated with a smart contract. These metadata can be stored on-chain (mavryk-storage) or off-chain (HTTP(S) or IPFS). The package also provides a way to execute the `MichelsonStorageView` found in the metadata. More information about the TZIP-16 standard can be found [here](https://gitlab.com/tzip/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
 ## How to use the tzip16 package
 
@@ -47,7 +47,7 @@ const customHandler = new Map<string, Handler>([
   ['ipfs', new IpfsHttpHandler('gateway.ipfs.io')], // Constructor of IpfsHttpHandler takes an optional gateway
   ['http', 'customHttpHandler'], // Custom HTTP(S) handler
   ['https', 'customHttpHandler'],
-  ['tezos-storage', new TezosStorageHandler()],
+  ['mavryk-storage', new TezosStorageHandler()],
 ]);
 
 const customMetadataProvider = new MetadataProvider(customHandler);
@@ -82,7 +82,7 @@ The `getMetadata` method returns an object which contains the URI, the metadata 
 
 A sequence diagram can be found [here](./tzip16-sequence-diagram#get-the-metadata).
 
-#### Tezos-storage example
+#### Mavryk-storage example
 
 <Tabs
 defaultValue="contractAPI"

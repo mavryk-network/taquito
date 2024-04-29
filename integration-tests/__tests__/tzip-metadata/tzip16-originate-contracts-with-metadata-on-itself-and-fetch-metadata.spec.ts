@@ -28,7 +28,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       };
 
       const metadataBigMap = new MichelsonMap();
-      metadataBigMap.set("", stringToBytes('tezos-storage:here'));
+      metadataBigMap.set("", stringToBytes('mavryk-storage:here'));
       metadataBigMap.set("here", stringToBytes(JSON.stringify(metadataJSON)))
 
       // Ligo Taco shop contract modified to include metadata in storage
@@ -54,7 +54,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const contract = await Tezos.wallet.at(contractAddress, tzip16);
       const metadata = await contract.tzip16().getMetadata();
 
-      expect(metadata.uri).toEqual('tezos-storage:here');
+      expect(metadata.uri).toEqual('mavryk-storage:here');
       expect(metadata.integrityCheckResult).toBeUndefined();
       expect(metadata.sha256Hash).toBeUndefined();
       expect(metadata.metadata).toEqual({
@@ -84,7 +84,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     it('Verify contract.originate for a contract having metadata inside another contract same network', async () => {
 
       const metadataBigMap = new MichelsonMap();
-      metadataBigMap.set("", stringToBytes(`tezos-storage://${contractAddress}/here`));
+      metadataBigMap.set("", stringToBytes(`mavryk-storage://${contractAddress}/here`));
 
       const tacoShopStorageMap = new MichelsonMap();
 
@@ -106,7 +106,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const contract = await Tezos.wallet.at(contractMetadataInAnotherContract, tzip16);
       const metadata = await contract.tzip16().getMetadata();
 
-      expect(metadata.uri).toEqual(`tezos-storage://${contractAddress}/here`);
+      expect(metadata.uri).toEqual(`mavryk-storage://${contractAddress}/here`);
       expect(metadata.integrityCheckResult).toBeUndefined();
       expect(metadata.sha256Hash).toBeUndefined();
       expect(metadata.metadata).toEqual({
