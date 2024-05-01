@@ -16,7 +16,7 @@ export const getRpcUrl = (networkType: SupportedNetworks): string => {
 export const getTzKtUrl = (networkType: SupportedNetworks): string | undefined => {
   switch (networkType) {
     case NetworkType.MAINNET:
-      return "https://mainnet.api.mavryk.network";
+      return "https://api.mavryk.network";
     case NetworkType.BASENET:
       return "https://basenet.api.mavryk.network";
     case NetworkType.ATLASNET:
