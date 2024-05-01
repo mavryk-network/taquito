@@ -3,7 +3,7 @@ import { RpcClient } from '../packages/taquito-rpc/src/taquito-rpc';
 import { castToString } from '../packages/taquito-rpc/src/utils/utils';
 import BigNumber from 'bignumber.js';
 
-const provider = 'https://rpc.mavryk,network/basenet';
+const provider = 'https://basenet.rpc.mavryk.network';
 
 const client = new RpcClient(provider);
 

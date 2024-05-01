@@ -6,7 +6,7 @@ import { fa2TokenFactory } from '../integration-tests/data/fa2-token-factory';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const nodeCrypto = require('crypto');
 
-const provider = 'https://rpc.mavryk,network/basenet';
+const provider = 'https://basenet.rpc.mavryk.network';
 
 async function createAddress() {
   const tezos = new TezosToolkit(provider)

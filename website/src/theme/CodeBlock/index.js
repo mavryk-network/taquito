@@ -94,7 +94,7 @@ export default ({
         // can use localStorage on the browser, not on the server
         wallet = new BeaconWallet({ name:"exampleWallet", network: { type: 'basenet'}, enableMetrics: true, });
       }      
-      const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet/');
+      const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
       setDependencies({
         Tezos,
         wallet,

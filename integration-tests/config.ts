@@ -132,25 +132,25 @@ const atlasnetEphemeral: Config =
   defaultConfig({
     networkName: 'ATLASNET',
     protocol: Protocols.PtAtLas,
-    defaultRpc: 'https://rpc.mavryk.network/atlasnet',
+    defaultRpc: 'https://atlasnet.rpc.mavryk.network',
     knownContracts: knownContractsPtAtLas,
     signerConfig: defaultEphemeralConfig('http://key-gen-1.i.tez.ie:3010/mondaynet')
   });
 
 const atlasnetSecretKey: Config =
-  { ...atlasnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://rpc.mavryk.network/atlasnet' } };
+  { ...atlasnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://atlasnet.rpc.mavryk.network' } };
 
 const basenetEphemeral: Config =
   defaultConfig({
     networkName: 'BASENET',
     protocol: Protocols.PtAtLas,
-    defaultRpc: 'https://rpc.mavryk.network/basenet',
+    defaultRpc: 'https://basenet.rpc.mavryk.network',
     knownContracts: knownContractsPtBasenet,
     signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/ghostnet')
   });
 
 const basenetSecretKey: Config =
-  { ...basenetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://rpc.mavryk.network/basenet' } };
+  { ...basenetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://basenet.rpc.mavryk.network' } };
 
 const weeklynetEphemeral: Config =
   defaultConfig({

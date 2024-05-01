@@ -36,7 +36,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .originate({
@@ -62,7 +62,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .originate({
@@ -111,7 +111,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .originate({
@@ -137,7 +137,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .originate({
@@ -188,7 +188,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .originate({
@@ -215,7 +215,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .originate({

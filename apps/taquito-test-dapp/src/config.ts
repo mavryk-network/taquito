@@ -3,10 +3,10 @@ import { NetworkType } from "@mavrykdynamics/beacon-types";
 export type SupportedNetworks = NetworkType.ATLASNET | NetworkType.BASENET | NetworkType.MAINNET | NetworkType.CUSTOM;
 
 const rpcUrls: Record<SupportedNetworks, string> = {
-  [NetworkType.MAINNET]: "https://rpc.mavryk.network/mainnet",
-  [NetworkType.BASENET]: "https://ghrpc.mavryk.network/basenet",
-  [NetworkType.ATLASNET]: "https://rpc.mavryk.network/atlasnet",
-  [NetworkType.CUSTOM]: "https://rpc.mavryk.network/basenet",
+  [NetworkType.MAINNET]: "https://mainnet.rpc.mavryk.network",
+  [NetworkType.BASENET]: "https://basenet.rpc.mavryk.network",
+  [NetworkType.ATLASNET]: "https://atlasnet.rpc.mavryk.network",
+  [NetworkType.CUSTOM]: "https://atlasnet.rpc.mavryk.network",
 };
 
 export const getRpcUrl = (networkType: SupportedNetworks): string => {
@@ -16,11 +16,11 @@ export const getRpcUrl = (networkType: SupportedNetworks): string => {
 export const getTzKtUrl = (networkType: SupportedNetworks): string | undefined => {
   switch (networkType) {
     case NetworkType.MAINNET:
-      return "https://api.mavryk.network/mainnet";
+      return "https://mainnet.api.mavryk.network";
     case NetworkType.BASENET:
-      return "https://api.mavryk.network/basenet";
+      return "https://basenet.api.mavryk.network";
     case NetworkType.ATLASNET:
-      return "https://api.mavryk.network/atlasnet";
+      return "https://atlasnet.api.mavryk.network";
     case NetworkType.CUSTOM:
       return undefined;
   }

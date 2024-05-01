@@ -5,7 +5,7 @@ import { b58cencode, stringToBytes, Prefix, prefix } from '@mavrykdynamics/taqui
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const nodeCrypto = require('crypto');
 
-const provider = 'https://rpc.mavryk,network/basenet';
+const provider = 'https://basenet.rpc.mavryk.network';
 
 async function createAddress() {
   const tezos = new TezosToolkit(provider)

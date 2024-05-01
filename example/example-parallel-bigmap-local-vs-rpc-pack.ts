@@ -1,7 +1,7 @@
 import { BigMapAbstraction, TezosToolkit, MichelCodecPacker } from '@mavrykdynamics/taquito';
 import BigNumber from 'bignumber.js';
 
-const rpc = 'https://rpc.mavryk,network/basenet';
+const rpc = 'https://basenet.rpc.mavryk.network';
 const numberOfValueToFetch = 410; // max 410
 const repeat = 1; // How many time we want to fetch all the keys
 

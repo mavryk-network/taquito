@@ -903,7 +903,7 @@ values={[
 
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')
@@ -933,7 +933,7 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')

@@ -98,7 +98,7 @@ Now, open the file `index.ts` and replace the code with the following:
 ```ts
 import { TezosToolkit } from "@mavrykdynamics/taquito";
 
-var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
+var tezosToolkit = new TezosToolkit("https://basenet.rpc.mavryk.network");
 
 tezosToolkit.tz.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
     console.log(balance.toNumber());
@@ -198,7 +198,7 @@ import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
 import { TezosToolkit } from "@mavrykdynamics/taquito";
 
 async function main() {
-    var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
+    var tezosToolkit = new TezosToolkit("https://basenet.rpc.mavryk.network");
 
     // WARNING: DO NOT DO THIS IN PRODUCTION, KEEP YOUR SECRETS SAFE
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
@@ -234,7 +234,7 @@ What is happening here? Let's break it down:
 1. We print the hash of the operation.
 
 For the purpose of this section, I have created a new address and funded it on testnet. You are sharing the same secret key with everyone else going through this tutorial. So don't use this address for anything important. Also, there are two possible reasons why you might not be able to send the operation:
-1. Other people testing the code have consumed all the ṁ in the address, so your operation will fail because of insufficient funds. You can head over to [basenet faucet](https://basenet-faucet.mavryk.network/) and send some ṁ to the address for free. Or you can get free Testnet Mav right from your terminal: `npx @mavrykdynamics/get-mav <your-address> --amount 100 --network basenet`
+1. Other people testing the code have consumed all the ṁ in the address, so your operation will fail because of insufficient funds. You can head over to [basenet faucet](https://basenet.faucet.mavryk.network/) and send some ṁ to the address for free. Or you can get free Testnet Mav right from your terminal: `npx @mavrykdynamics/get-mav <your-address> --amount 100 --network basenet`
 1. Another person is sending an operation from this address at the same time as you. One address can only send one operation to each block. This is very improbable, but at least you know someone else is going through this tutorial at the same time as you. 😄
 
 <details>
@@ -246,10 +246,10 @@ For the purpose of this section, I have created a new address and funded it on t
     docker run --pull always -it --entrypoint sh docker.io/tezos/tezos:latest
 
     # now you are inside the docker container
-    mavkit-client -E https://rpc.mavryk,network/basenet gen keys mysamplekey -s secp256k1
-    mavkit-client -E https://rpc.mavryk,network/basenet show address mysamplekey -S
+    mavkit-client -E https://basenet.rpc.mavryk.network gen keys mysamplekey -s secp256k1
+    mavkit-client -E https://basenet.rpc.mavryk.network show address mysamplekey -S
   ```
-  The new address you just created has a balance of zero. For the testnet, You can go to [basenet faucet](https://basenet-faucet.mavryk.network/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
+  The new address you just created has a balance of zero. For the testnet, You can go to [basenet faucet](https://basenet.faucet.mavryk.network/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
 </details>
 
 Congratulations! You have just sent an operation to the Tezos blockchain using Taquito.
@@ -272,7 +272,7 @@ Open the file `index.ts` and change the `main` function to the following:
 
 ```ts
 async function main() {
-    var tezosToolkit = new TezosToolkit("https://rpc.mavryk,network/basenet");
+    var tezosToolkit = new TezosToolkit("https://basenet.rpc.mavryk.network");
 
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
     tezosToolkit.setProvider({ signer });
@@ -431,7 +431,7 @@ import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 
 const App = () => {
   const [Tezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://rpc.mavryk,network/basenet")
+    new TezosToolkit("https://basenet.rpc.mavryk.network")
   );
   const [wallet, setWallet] = useState<BeaconWallet | undefined>(undefined);
   const [userAddress, setUserAddress] = useState<string | undefined>(undefined);
@@ -485,7 +485,7 @@ const ConnectButton = ({
       await wallet!.requestPermissions({
         network: {
           type: NetworkType.BASENET,
-          rpcUrl: "https://rpc.mavryk,network/basenet",
+          rpcUrl: "https://basenet.rpc.mavryk.network",
         },
       });
       const userAddress = await wallet!.getPKH();
@@ -623,7 +623,7 @@ Make sure that the command `npm run dev` is still running in the terminal, and t
 
 Now, you should be able to see the "Connect Wallet" button in the browser. Clicking on it opens the wallet selection modal. You can choose your favorite wallet and connect to it. After this, you need to visit your wallet to approve the connection. After that, you should be able to see the "Send" button. You can enter an address and an amount (in Mumav, notice the `mumav: true` in `Transfer.tsx`) and click on the "Send" button to send ṁ to the address.
 
-If you have not set up a wallet before, clicking on the Kukai wallet opens a page that asks you to create a new wallet. Remember to visit the [basenet faucet](https://basenet-faucet.mavryk.network/) to fund your wallet with some ṁ. If you want to use that wallet for real ṁ, you need to back up the mnemonic phrase. But remember that the mnemonic phrase is a secret. Anyone who has access to it can steal your ṁ.
+If you have not set up a wallet before, clicking on the Kukai wallet opens a page that asks you to create a new wallet. Remember to visit the [basenet faucet](https://basenet.faucet.mavryk.network/) to fund your wallet with some ṁ. If you want to use that wallet for real ṁ, you need to back up the mnemonic phrase. But remember that the mnemonic phrase is a secret. Anyone who has access to it can steal your ṁ.
 
 ## Closing thoughts
 

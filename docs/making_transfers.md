@@ -23,7 +23,7 @@ In the following example, we transfer 0.5ṁ from a `mv1PYMQXgRiJBMsrEaM9Yre4Jyv
 
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 render(`Fetching a private key...`);
 fetch('https://keygen.ecadinfra.com/basenet/', {

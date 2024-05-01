@@ -1,7 +1,7 @@
 import { TezosToolkit } from '@mavrykdynamics/taquito';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
-const provider = 'https://rpc.mavryk,network/basenet';
+const provider = 'https://basenet.rpc.mavryk.network';
 
 async function example() {
   const tezos = new TezosToolkit(provider);

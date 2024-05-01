@@ -23,9 +23,9 @@ values={[
 
 | Provider         | Net          | URL                                      | Header                                                                          |
 |------------------|--------------|------------------------------------------|---------------------------------------------------------------------------------|
-| Mavryk Dynamics        | Mainnet      | https://rpc.mavryk.network/mainnet            | [Check](https://rpc.mavryk.network/mainnet/chains/main/blocks/head/header)           |
-| Mavryk Dynamics        | Basenet     | https://rpc.mavryk.network/basenet           | [Check](https://rpc.mavryk.network/basenet/chains/main/blocks/head/header)          |
-| Mavryk Dynamics        | Atlasnet    | https://rpc.mavryk.network/atlasnet          | [Check](https://rpc.mavryk.network/atlasnet/chains/main/blocks/head/header)         |
+| Mavryk Dynamics        | Mainnet      | https://mainnet.rpc.mavryk.network            | [Check](https://mainnet.rpc.mavryk.network/chains/main/blocks/head/header)           |
+| Mavryk Dynamics        | Basenet     | https://basenet.rpc.mavryk.network           | [Check](https://basenet.rpc.mavryk.network/chains/main/blocks/head/header)          |
+| Mavryk Dynamics        | Atlasnet    | https://atlasnet.rpc.mavryk.network          | [Check](https://atlasnet.rpc.mavryk.network/chains/main/blocks/head/header)         |
 
 *If you are aware of a public node missing from our list or our information is inaccurate, please help us by submitting an issue or pull request on our GitHub page.*
 </TabItem>

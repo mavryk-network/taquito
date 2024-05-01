@@ -199,7 +199,7 @@ _Note that this example is not intended to be a complete example of paths scanni
 //import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
 //import { TezosToolkit } from '@mavrykdynamics/taquito';
 // import TransportWebHID from "@ledgerhq/hw-transport-webhid";
-//const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+//const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 TransportWebHID.create().then((transport) => {
   for (let index = 0, p = Promise.resolve(); index < 10; index++) {

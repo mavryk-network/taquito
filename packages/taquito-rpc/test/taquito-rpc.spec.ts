@@ -3281,8 +3281,8 @@ describe('RpcClient test', () => {
       const url = 'https://mainnet.ecadinfra.com/';
       const rpcUrlMainnet = new RpcClient(url).getRpcUrl();
       expect(rpcUrlMainnet).toEqual('https://mainnet.ecadinfra.com/');
-      const rpcUrlCarthagenet = new RpcClient('https://rpc.mavryk,network/basenet').getRpcUrl();
-      expect(rpcUrlCarthagenet).toEqual('https://rpc.mavryk,network/basenet');
+      const rpcUrlCarthagenet = new RpcClient('https://basenet.rpc.mavryk.network').getRpcUrl();
+      expect(rpcUrlCarthagenet).toEqual('https://basenet.rpc.mavryk.network');
     });
   });
 

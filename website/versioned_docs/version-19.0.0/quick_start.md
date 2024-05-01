@@ -57,7 +57,7 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 
 ```js live noInline
 // import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://rpc.mavryk,network/basenet');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.tz
   .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')

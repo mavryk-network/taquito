@@ -24,7 +24,7 @@ The returned balance is in mumav.
 import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://rpc.mavryk,network/basenet/');
+const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
 
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
@@ -50,7 +50,7 @@ A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3
 import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://rpc.mavryk,network/basenet/');
+const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
 // set up your signer on the TezosToolkit as usual
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
