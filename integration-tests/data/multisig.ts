@@ -67,7 +67,7 @@ export const genericMultisig = [ { "prim": "parameter",
               { "prim": "PAIR" } ],
             [ { "prim": "PUSH",
                 "args":
-                  [ { "prim": "mutez" },
+                  [ { "prim": "mumav" },
                     { "int": "0" } ] },
               { "prim": "AMOUNT" },
               [ [ { "prim": "COMPARE" },

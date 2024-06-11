@@ -9,7 +9,7 @@ const testStorage = {
       prim: 'Pair',
       args: [
         {
-          string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
         { prim: 'None' },
       ],
@@ -18,7 +18,7 @@ const testStorage = {
       prim: 'Pair',
       args: [
         {
-          string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
         { prim: 'None' },
       ],
@@ -31,11 +31,11 @@ describe('Exchange contract test', () => {
     const schema = new Schema(storage.args[0] as any);
     expect(schema.Execute(testStorage)).toEqual({
       mgr1: {
-        addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         key: null,
       },
       mgr2: {
-        addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         key: null,
       },
     });
@@ -46,12 +46,12 @@ describe('Exchange contract test', () => {
     expect(
       schema.Encode({
         mgr1: {
-          addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           key: null,
         },
         mgr2: {
-          addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-          key: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+          key: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
       })
     ).toEqual({
@@ -59,7 +59,7 @@ describe('Exchange contract test', () => {
         {
           args: [
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
             {
               prim: 'None',
@@ -70,12 +70,12 @@ describe('Exchange contract test', () => {
         {
           args: [
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
             {
               args: [
                 {
-                  string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+                  string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
                 },
               ],
               prim: 'Some',
@@ -93,11 +93,11 @@ describe('Exchange contract test', () => {
     expect(
       schema.Encode({
         mgr1: {
-          addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
         mgr2: {
-          addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-          key: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+          key: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         },
       })
     ).toEqual({
@@ -105,7 +105,7 @@ describe('Exchange contract test', () => {
         {
           args: [
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
             {
               prim: 'None',
@@ -116,12 +116,12 @@ describe('Exchange contract test', () => {
         {
           args: [
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
             {
               args: [
                 {
-                  string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+                  string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
                 },
               ],
               prim: 'Some',
@@ -146,9 +146,9 @@ describe('Exchange contract test', () => {
 
   it('Test execute parameter', () => {
     const schema = new ParameterSchema(parameter.args[0]);
-    expect(schema.Encode('tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay')).toEqual({
+    expect(schema.Encode('mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX')).toEqual({
       prim: 'Some',
-      args: [{ string: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay' }],
+      args: [{ string: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX' }],
     });
   });
 

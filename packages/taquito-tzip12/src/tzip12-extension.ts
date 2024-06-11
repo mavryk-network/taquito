@@ -1,5 +1,5 @@
-import { Context, Extension } from "@taquito/taquito";
-import { DEFAULT_HANDLERS, MetadataProviderInterface, MetadataProvider } from '@taquito/tzip16'
+import { Context, Extension } from "@mavrykdynamics/taquito";
+import { DEFAULT_HANDLERS, MetadataProviderInterface, MetadataProvider } from '@mavrykdynamics/taquito-tzip16'
 
 // The same default metadataProvider is used for tzip16 and tzip12
 export class Tzip12Module implements Extension {

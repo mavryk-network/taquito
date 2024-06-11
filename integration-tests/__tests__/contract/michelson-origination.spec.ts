@@ -1,4 +1,4 @@
-import { InvalidBalanceError, MichelCodecParser, NoopParser, Context, InvalidCodeParameter } from '@taquito/taquito';
+import { InvalidBalanceError, MichelCodecParser, NoopParser, Context, InvalidCodeParameter } from '@mavrykdynamics/taquito';
 import { CONFIGS } from "../../config";
 import { idMichelsonCode, idInitData } from "../../data/id-contract"
 

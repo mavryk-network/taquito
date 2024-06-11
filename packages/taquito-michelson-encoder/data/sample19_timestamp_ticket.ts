@@ -54,7 +54,7 @@ export const rpcContractResponse = {
 								args: [
 									{
 										prim: 'big_map',
-										args: [ { prim: 'address' }, { prim: 'mutez' } ],
+										args: [ { prim: 'address' }, { prim: 'mumav' } ],
 										annots: [ '%winners' ]
 									},
 									{
@@ -62,14 +62,14 @@ export const rpcContractResponse = {
 										args: [ { prim: 'address' }, { prim: 'nat' } ],
 										annots: [ '%bets' ]
 									},
-									{ prim: 'mutez', annots: [ '%current_pot' ] },
+									{ prim: 'mumav', annots: [ '%current_pot' ] },
 									{ prim: 'timestamp', annots: [ '%opened_at' ] },
 									{
 										prim: 'pair',
 										args: [
 											{ prim: 'string', annots: [ '%pool_type' ] },
-											{ prim: 'mutez', annots: [ '%entrance_fee' ] },
-											{ prim: 'mutez', annots: [ '%minimum_bet' ] },
+											{ prim: 'mumav', annots: [ '%entrance_fee' ] },
+											{ prim: 'mumav', annots: [ '%minimum_bet' ] },
 											{ prim: 'int', annots: [ '%open_period' ] },
 											{ prim: 'int', annots: [ '%validation_delay' ] },
 											{ prim: 'int', annots: [ '%ticket_validity' ] },
@@ -106,7 +106,7 @@ export const rpcContractResponse = {
 										{
 											prim: 'pair',
 											args: [
-												{ prim: 'big_map', args: [ { prim: 'address' }, { prim: 'mutez' } ] },
+												{ prim: 'big_map', args: [ { prim: 'address' }, { prim: 'mumav' } ] },
 												{
 													prim: 'pair',
 													args: [
@@ -114,7 +114,7 @@ export const rpcContractResponse = {
 														{
 															prim: 'pair',
 															args: [
-																{ prim: 'mutez' },
+																{ prim: 'mumav' },
 																{
 																	prim: 'pair',
 																	args: [
@@ -129,13 +129,13 @@ export const rpcContractResponse = {
 																						{
 																							prim: 'pair',
 																							args: [
-																								{ prim: 'mutez' },
+																								{ prim: 'mumav' },
 																								{
 																									prim: 'pair',
 																									args: [
 																										{
 																											prim:
-																												'mutez'
+																												'mumav'
 																										},
 																										{
 																											prim:
@@ -298,7 +298,7 @@ export const rpcContractResponse = {
 											[]
 										]
 									},
-									{ prim: 'PUSH', args: [ { prim: 'mutez' }, { int: '0' } ] },
+									{ prim: 'PUSH', args: [ { prim: 'mumav' }, { int: '0' } ] },
 									{ prim: 'DIG', args: [ { int: '2' } ] },
 									{ prim: 'DIG', args: [ { int: '3' } ] },
 									{ prim: 'CDR' },
@@ -2400,7 +2400,7 @@ export const rpcContractResponse = {
 																									args: [
 																										{
 																											prim:
-																												'mutez'
+																												'mumav'
 																										},
 																										{ int: '0' }
 																									]
@@ -2661,8 +2661,8 @@ export const rpcContractResponse = {
 						},
 						{ prim: 'None' },
 						{ prim: 'False' },
-						{ string: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb' },
-						{ string: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb' }
+						{ string: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv' },
+						{ string: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv' }
 					]
 				},
 				{ int: '24060' }

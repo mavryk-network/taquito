@@ -1,4 +1,4 @@
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 import { TicketTokenSchema } from '../schema/types';
 import { IntToken } from './comparable/int';
 import { ContractToken } from './contract';

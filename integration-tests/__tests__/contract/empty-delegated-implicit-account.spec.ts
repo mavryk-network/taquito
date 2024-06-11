@@ -23,10 +23,10 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress, knownBaker }) => {
       // Emptying the account
       // The max amount that can be sent now is the total balance minus the fees (no need for reveal fees)
       const balance = await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())
-      const maxAmount = balance.minus(estimate.suggestedFeeMutez).toNumber();
+      const maxAmount = balance.minus(estimate.suggestedFeeMumav).toNumber();
       expect.assertions(1)
       try {
-        await LocalTez.contract.transfer({ to: await Tezos.signer.publicKeyHash(), mutez: true, amount: maxAmount, fee: estimate.suggestedFeeMutez, gasLimit: estimate.gasLimit, storageLimit: 0 })
+        await LocalTez.contract.transfer({ to: await Tezos.signer.publicKeyHash(), mumav: true, amount: maxAmount, fee: estimate.suggestedFeeMumav, gasLimit: estimate.gasLimit, storageLimit: 0 })
       } catch (ex: any) {
         expect(ex.message).toMatch('empty_implicit_delegated_contract')
       }

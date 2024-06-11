@@ -25,4 +25,4 @@ Below is a list of different tutorials about Taquito written on various platform
 - **[SmartPy lecture about Taquito](https://training.blockmatics.io/courses/tezos-smartpy-developer-course/lectures/13126359)**  
   Introduction to Taquito within SmartPy dapp developer course
 
-If you want to add a link to this page, please do not hesitate to [open an issue](https://github.com/ecadlabs/taquito/issues) with the missing resource.
+If you want to add a link to this page, please do not hesitate to [open an issue](https://github.com/mavryk-network/mavryk-taquito/issues) with the missing resource.

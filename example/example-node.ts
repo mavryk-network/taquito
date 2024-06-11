@@ -3,7 +3,7 @@ import { RpcClient } from '../packages/taquito-rpc/src/taquito-rpc';
 import { castToString } from '../packages/taquito-rpc/src/utils/utils';
 import BigNumber from 'bignumber.js';
 
-const provider = 'https://ghostnet.ecadinfra.com';
+const provider = 'https://basenet.rpc.mavryk.network';
 
 const client = new RpcClient(provider);
 
@@ -17,8 +17,8 @@ async function example() {
     console.log(storage);
 
     console.log('Getting balance...');
-    const balance = await tezos.tz.getBalance('tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys');
-    console.log(`${balance.toNumber() / 1000000} ꜩ`)
+    const balance = await tezos.tz.getBalance('mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg');
+    console.log(`${balance.toNumber() / 1000000} ṁ`)
 
     console.log('Getting big map key...');
 
@@ -29,7 +29,7 @@ async function example() {
         totalSupply: BigNumber;
       } = await contract.storage();
 
-      const bigMapKey = await contractStorage.ledger.get('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP');
+      const bigMapKey = await contractStorage.ledger.get('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD');
       console.log(bigMapKey);
 
 

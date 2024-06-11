@@ -40,7 +40,7 @@ export const ticketCodeProto14 = [
 							{ prim: 'TICKET' },
 							{ prim: 'NIL', args: [{ prim: 'operation' }] },
 							{ prim: 'SELF', annots: ['%run'] },
-							{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+							{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 							{ prim: 'DIG', args: [{ int: '3' }] },
 							{ prim: 'TRANSFER_TOKENS' },
 							{ prim: 'CONS' }
@@ -182,7 +182,7 @@ export const ticketCode2Proto14 = [
 		args: [
 			[
 				{ prim: 'AMOUNT' },
-				{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+				{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 				[
 					[{ prim: 'COMPARE' }, { prim: 'EQ' }],
 					{ prim: 'IF', args: [[], [[{ prim: 'UNIT' }, { prim: 'FAILWITH' }]]] }
@@ -268,7 +268,7 @@ export const ticketCode2Proto14 = [
 							{ prim: 'DIG', args: [{ int: '2' }] },
 							{ prim: 'PAIR' },
 							{ prim: 'SWAP' },
-							{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+							{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 							{ prim: 'DIG', args: [{ int: '3' }] },
 							{ prim: 'TRANSFER_TOKENS' },
 							{ prim: 'NIL', args: [{ prim: 'operation' }] },
@@ -481,7 +481,7 @@ export const ticketCode3Proto14 = [
 															]
 														]
 													},
-													{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '1' }] },
+													{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '1' }] },
 													{ prim: 'DIG', args: [{ int: '4' }] },
 													{ prim: 'DUP' },
 													{ prim: 'DUG', args: [{ int: '5' }] },
@@ -602,7 +602,7 @@ export const ticketCode3Proto14 = [
 																			{
 																				prim: 'PUSH',
 																				args: [
-																					{ prim: 'mutez' },
+																					{ prim: 'mumav' },
 																					{ int: '0' }
 																				]
 																			},
@@ -729,7 +729,7 @@ export const ticketCode3Proto14 = [
 																{ prim: 'DIG', args: [{ int: '2' }] },
 																{
 																	prim: 'PUSH',
-																	args: [{ prim: 'mutez' }, { int: '0' }]
+																	args: [{ prim: 'mumav' }, { int: '0' }]
 																},
 																{ prim: 'DIG', args: [{ int: '2' }] },
 																{ prim: 'TRANSFER_TOKENS' },
@@ -1337,7 +1337,7 @@ export const ticketCode4Proto14 = [
 		prim: 'code',
 		args: [
 			[
-				{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+				{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 				{ prim: 'AMOUNT' },
 				{ prim: 'COMPARE' },
 				{ prim: 'EQ' },
@@ -1428,7 +1428,7 @@ export const ticketCode4Proto14 = [
 																{ prim: 'CAR' },
 																{
 																	prim: 'PUSH',
-																	args: [{ prim: 'mutez' }, { int: '0' }]
+																	args: [{ prim: 'mumav' }, { int: '0' }]
 																},
 																{ prim: 'DIG', args: [{ int: '2' }] },
 																{ prim: 'DIG', args: [{ int: '4' }] },
@@ -1667,7 +1667,7 @@ export const ticketCode4Proto14 = [
 									[
 										{ prim: 'DIG', args: [{ int: '2' }] },
 										{ prim: 'CAR' },
-										{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+										{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 										{ prim: 'DIG', args: [{ int: '2' }] },
 										{ prim: 'TRANSFER_TOKENS' },
 										{ prim: 'DIG', args: [{ int: '3' }] },

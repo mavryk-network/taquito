@@ -3,7 +3,7 @@
   import store from "../store";
   import type { TestSettings, TestResult } from "../types";
   import { shortenHash } from "../utils";
-  import { NetworkType } from "@airgap/beacon-types";
+  import { NetworkType } from "@mavrykdynamics/beacon-types";
   import { getTzKtUrl } from "../config";
 
   let test: TestSettings | undefined;
@@ -262,7 +262,7 @@
     {:else if test && test.inputType === "sapling"}
       <h3 class="test-title">{test.name}</h3>
       {#await $store.wallet.getPKH() then pkh}
-        {#if pkh === "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb"}
+        {#if pkh === "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv"}
           <div class="test-description">{test.description}</div>
           <div class="input-sapling">
             <div class="test-run">

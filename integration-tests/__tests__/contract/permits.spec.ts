@@ -1,14 +1,14 @@
 import { CONFIGS } from '../../config';
-import { MichelsonMap, MichelCodecPacker, TezosToolkit } from '@taquito/taquito';
+import { MichelsonMap, MichelCodecPacker, TezosToolkit } from '@mavrykdynamics/taquito';
 import { permit_admin_42_expiry } from '../../data/permit_admin_42_expiry';
 import { permit_admin_42_set } from '../../data/permit_admin_42_set';
 import { permit_fa12_smartpy } from '../../data/permit_fa12_smartpy';
-import { buf2hex, stringToBytes, hex2buf } from '@taquito/utils';
-import { tzip16, Tzip16Module } from '@taquito/tzip16';
-import { packDataBytes } from "@taquito/michel-codec"
+import { buf2hex, stringToBytes, hex2buf } from '@mavrykdynamics/taquito-utils';
+import { tzip16, Tzip16Module } from '@mavrykdynamics/taquito-tzip16';
+import { packDataBytes } from "@mavrykdynamics/taquito-michel-codec"
 
 const blake = require('blakejs');
-const bob_address = 'tz1Xk7HkSwHv6dTEgR7E2WC2yFj4cyyuj2Gh';
+const bob_address = 'mv1JzsKuzj5RFo68zyW6TG7aHx6p5gzoNuuU';
 
 const create_bytes_to_sign = async (Tezos: TezosToolkit, contractAddress: string, methodHash: string) => {
   const chainId = await Tezos.rpc.getChainId();

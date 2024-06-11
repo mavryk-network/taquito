@@ -1,19 +1,19 @@
-import { ViewSchema } from '@taquito/michelson-encoder';
+import { ViewSchema } from '@mavrykdynamics/taquito-michelson-encoder';
 import {
   MichelsonV1Expression,
   MichelsonV1ExpressionExtended,
   RpcClientInterface,
   RPCRunCodeParam,
   RPCRunScriptViewParam,
-} from '@taquito/rpc';
-import { validateAddress, ValidationResult } from '@taquito/utils';
+} from '@mavrykdynamics/taquito-rpc';
+import { validateAddress, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { TzReadProvider } from '../../read-provider/interface';
 import {
   InvalidViewSimulationContext,
   ViewSimulationError,
   validateAndExtractFailwith,
 } from '../errors';
-import { InvalidViewParameterError } from '@taquito/core';
+import { InvalidViewParameterError } from '@mavrykdynamics/taquito-core';
 
 export interface ExecutionContextParams {
   source?: string;
@@ -97,10 +97,10 @@ export class OnChainView {
    * @description Loops through the view's instructions and replace BALANCE, SENDER, SELF_ADDRESS and AMOUNT with Michelson expressions that match the current context, if applicable.
    *
    * Certain specific instructions have different semantics in view:
-   * BALANCE represents the current amount of mutez held by the contract where view is;
+   * BALANCE represents the current amount of mumav held by the contract where view is;
    * SENDER represents the contract which is the caller of view;
    * SELF_ADDRESS represents the contract where view is;
-   * AMOUNT is always 0 mutez.
+   * AMOUNT is always 0 mumav.
    *
    */
   private adaptViewCodeToContext(
@@ -109,12 +109,12 @@ export class OnChainView {
     contractBalance: string
   ) {
     const instructionsToReplace = {
-      BALANCE: [{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: contractBalance }] }],
+      BALANCE: [{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: contractBalance }] }],
       SENDER: [{ prim: 'PUSH', args: [{ prim: 'address' }, { string: viewCaller }] }],
       SELF_ADDRESS: [
         { prim: 'PUSH', args: [{ prim: 'address' }, { string: this._contractAddress }] },
       ],
-      AMOUNT: [{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] }],
+      AMOUNT: [{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] }],
     };
 
     instructions.forEach((inst: any, i: number) => {

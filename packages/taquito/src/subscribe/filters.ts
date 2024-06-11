@@ -9,7 +9,7 @@ import {
   OperationContent,
 } from './interface';
 
-import { InternalOperationResult } from '@taquito/rpc';
+import { InternalOperationResult } from '@mavrykdynamics/taquito-rpc';
 
 import { InvalidFilterExpressionError } from './errors';
 

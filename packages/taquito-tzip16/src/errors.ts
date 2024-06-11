@@ -1,6 +1,6 @@
-import { ParameterValidationError, TaquitoError, TezosToolkitConfigError } from '@taquito/core';
+import { ParameterValidationError, TaquitoError, TezosToolkitConfigError } from '@mavrykdynamics/taquito-core';
 
-export { InvalidViewParameterError } from '@taquito/core';
+export { InvalidViewParameterError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

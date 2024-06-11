@@ -44,7 +44,7 @@ export const contractOnChainViews = `{ view "add" nat nat { UNPAIR ; ADD } ;
             { CAR }
             { DUP ; CDR ; SWAP ; VIEW "succ" nat ; { IF_NONE { { UNIT ; FAILWITH } } {} } } } ;
   view "step_constants" unit
-        (pair (pair mutez mutez) (pair (pair address address) address))
+        (pair (pair mumav mumav) (pair (pair address address) address))
         { DROP ; SOURCE ; SENDER ; SELF_ADDRESS ; PAIR ; PAIR ; BALANCE ; AMOUNT ; PAIR ; PAIR } ;
   view "succ" (pair nat address) nat
         { CAR ;

@@ -25,7 +25,7 @@ export const contractMap8pairs = [
                             {
                               prim: 'pair',
                               args: [
-                                { prim: 'mutez' },
+                                { prim: 'mumav' },
                                 {
                                   prim: 'pair',
                                   args: [

@@ -1,6 +1,6 @@
 import { CONFIGS } from "../../config";
-import { tzip16, Tzip16Module, stringToBytes } from '@taquito/tzip16';
-import { MichelsonMap } from "@taquito/taquito";
+import { tzip16, Tzip16Module, stringToBytes } from '@mavrykdynamics/taquito-tzip16';
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 import { fa2ContractTzip16 } from "../../data/fa2_contract_with_metadata";
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {

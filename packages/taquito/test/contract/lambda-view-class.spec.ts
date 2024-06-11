@@ -70,8 +70,8 @@ describe('LambdaView test', () => {
       new LambdaView(lambdaContract, viewContract, 'getAllowance', {
         prim: 'Pair',
         args: [
-          { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-          { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+          { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+          { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
         ],
       })
     ).toBeInstanceOf(LambdaView);
@@ -85,13 +85,13 @@ describe('LambdaView test', () => {
     const lambda = new LambdaView(lambdaContract, viewContract, 'getAllowance', {
       prim: 'Pair',
       args: [
-        { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-        { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+        { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+        { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
       ],
     });
 
     expect(lambda.voidLambda).toEqual([
-      { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+      { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
       { prim: 'NONE', args: [{ prim: 'key_hash' }] },
       {
         prim: 'CREATE_CONTRACT',
@@ -159,10 +159,10 @@ describe('LambdaView test', () => {
                               prim: 'Pair',
                               args: [
                                 {
-                                  string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1',
+                                  string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3',
                                 },
                                 {
-                                  string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE',
+                                  string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra',
                                 },
                               ],
                             },
@@ -226,7 +226,7 @@ describe('LambdaView test', () => {
                               },
                               {
                                 prim: 'PUSH',
-                                args: [{ prim: 'mutez' }, { int: '0' }],
+                                args: [{ prim: 'mumav' }, { int: '0' }],
                               },
                             ],
                           ],
@@ -286,7 +286,7 @@ describe('LambdaView test', () => {
                       [{ prim: 'DIP', args: [[{ prim: 'DROP' }]] }],
                     ],
                   },
-                  { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                  { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                 ],
               ],
             },
@@ -325,8 +325,8 @@ describe('LambdaView test', () => {
         new LambdaView(lambdaContract, viewContract, 'getAllowance', {
           prim: 'Pair',
           args: [
-            { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-            { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+            { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+            { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
           ],
         })
     ).toThrow(`Expected {'prim': 'pair', ..} but found {'prim': nat, ..}`);
@@ -353,8 +353,8 @@ describe('LambdaView test', () => {
         new LambdaView(lambdaContract, viewContract, 'getAllowance', {
           prim: 'Pair',
           args: [
-            { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-            { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+            { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+            { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
           ],
         })
     ).toThrowError(/Expected an Array of length 2, but found:/);
@@ -380,8 +380,8 @@ describe('LambdaView test', () => {
         new LambdaView(lambdaContract, viewContract, 'getAllowance', {
           prim: 'Pair',
           args: [
-            { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-            { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+            { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+            { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
           ],
         })
     ).toThrowError(/Expected a {prim: 'contract', ...}, but found:/);
@@ -407,8 +407,8 @@ describe('LambdaView test', () => {
         new LambdaView(lambdaContract, viewContract, 'getAllowance', {
           prim: 'Pair',
           args: [
-            { string: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1' },
-            { string: 'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE' },
+            { string: 'mv1EqiZXQdpKYZzDQCaGXPz3BNmGjFiPrqp3' },
+            { string: 'mv1W9WUWpdHfgSYwV9hksndfxJYGAQqhLZra' },
           ],
         })
     ).toThrowError(/Expected a single argument to 'contract', but found:/);

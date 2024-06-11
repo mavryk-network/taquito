@@ -1,7 +1,7 @@
 import { CONFIGS } from "../config";
-import { TezosToolkit } from "@taquito/taquito";
-import { MichelsonType, MichelsonData, ProtocolID, packDataBytes } from "@taquito/michel-codec";
-import { MichelsonV1Expression } from "@taquito/rpc";
+import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MichelsonType, MichelsonData, ProtocolID, packDataBytes } from "@mavrykdynamics/taquito-michel-codec";
+import { MichelsonV1Expression } from "@mavrykdynamics/taquito-rpc";
 import fs from "fs";
 import path from "path";
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 export const rpcContractResponse = {
-  manager: 'tz1LBEKXaxQbd5Gtzbc1ATCwc3pppu81aWGc',
+  manager: 'mv1BgHZsvYpqxwduk1EKr8XyhcPrWJPh22Gi',
   balance: '5468344480',
   spendable: false,
   delegate: { setable: true },
@@ -20,7 +20,7 @@ export const rpcContractResponse = {
                   {
                     prim: 'or',
                     args: [
-                      { prim: 'mutez', annots: ['%_Liq_entry_withdraw'] },
+                      { prim: 'mumav', annots: ['%_Liq_entry_withdraw'] },
                       {
                         prim: 'or',
                         args: [
@@ -28,12 +28,12 @@ export const rpcContractResponse = {
                           {
                             prim: 'pair',
                             args: [
-                              { prim: 'mutez', annots: ['%sellP'] },
+                              { prim: 'mumav', annots: ['%sellP'] },
                               {
                                 prim: 'pair',
                                 args: [
-                                  { prim: 'mutez', annots: ['%buyP'] },
-                                  { prim: 'mutez', annots: ['%extraBalance'] }
+                                  { prim: 'mumav', annots: ['%buyP'] },
+                                  { prim: 'mumav', annots: ['%extraBalance'] }
                                 ]
                               }
                             ],
@@ -80,7 +80,7 @@ export const rpcContractResponse = {
                               {
                                 prim: 'pair',
                                 args: [
-                                  { prim: 'mutez', annots: ['%inBaker'] },
+                                  { prim: 'mumav', annots: ['%inBaker'] },
                                   {
                                     prim: 'pair',
                                     args: [
@@ -89,11 +89,11 @@ export const rpcContractResponse = {
                                         prim: 'pair',
                                         args: [
                                           {
-                                            prim: 'mutez',
+                                            prim: 'mumav',
                                             annots: ['%buyPrice']
                                           },
                                           {
-                                            prim: 'mutez',
+                                            prim: 'mumav',
                                             annots: ['%sellPrice']
                                           }
                                         ]
@@ -848,11 +848,11 @@ export const rpcContractResponse = {
                         ],
                         {
                           prim: 'PUSH',
-                          args: [{ prim: 'mutez' }, { int: '1000000000000' }]
+                          args: [{ prim: 'mumav' }, { int: '1000000000000' }]
                         },
                         {
                           prim: 'PUSH',
-                          args: [{ prim: 'mutez' }, { int: '1000000' }]
+                          args: [{ prim: 'mumav' }, { int: '1000000' }]
                         },
                         [
                           {
@@ -907,7 +907,7 @@ export const rpcContractResponse = {
                               { prim: 'SENDER', annots: ['@addr'] },
                               {
                                 prim: 'PUSH',
-                                args: [{ prim: 'mutez' }, { int: '0' }]
+                                args: [{ prim: 'mumav' }, { int: '0' }]
                               },
                               { prim: 'AMOUNT', annots: ['@txAmount'] },
                               { prim: 'COMPARE' },
@@ -2365,7 +2365,7 @@ export const rpcContractResponse = {
                                   },
                                   {
                                     string:
-                                      'tz1LBEKXaxQbd5Gtzbc1ATCwc3pppu81aWGc'
+                                      'mv1BgHZsvYpqxwduk1EKr8XyhcPrWJPh22Gi'
                                   }
                                 ],
                                 annots: ['@dest']
@@ -3799,147 +3799,147 @@ export const rpcContractResponse = {
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1LBAWdvnHjqxNNyYJhy9eBcaj3mE3cjhNQ' },
+              { string: 'mv18GyRj14j8aRPnRZf6qsidgmXVpHQ3oLUg' },
               { int: '700000000' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1LWXJ1rZKCBeQzqtPriNiFpKU5gWo2u8zT' },
+              { string: 'mv192p5n47e1xLAU1gCvqppJ9ocEoWmxfGPX' },
               { int: '11220754689' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1NNf9KDcPa6iSi64gy1na5msfjcv3XWJs2' },
+              { string: 'mv1A16ciHyoBFfyuzrHYFMnY1yaVxtxU7xAj' },
               { int: '37742509148' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1QXuUweuLrxC3LmDMoPxmpT19ijhPTc1bt' },
+              { string: 'mv1ATHraCJgsY5zX4MGwJE9kb85thH4LsXNk' },
               { int: '9967227' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1R6ZvSYDHYCqeK3NckyjN9z1H5rHVc1xr9' },
+              { string: 'mv1BQ1Erpjr6qoiBdDAcNgTimQbzLTqHfNnG' },
               { int: '20856441766' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1S6yEw9hZKcNkWnoVnyjQ5Qfakt3kdYLE9' },
+              { string: 'mv1CRV1gMfLHXpKipM9QcrTPC7L3G3BVZPPR' },
               { int: '0' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1TowqAmCuYzkeZ98xyacN2SnKnzJM6ssVE' },
+              { string: 'mv1CY4wPitTaRcPSN3NinGGZCmMtDNp5yQRx' },
               { int: '26757313041' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1VLcYgQsvarbcWCPfUw1Fcz27jVrB2zYBr' },
+              { string: 'mv1Cc7nFGeWcfWxYgZt2WVtZh3V89TXpAuFE' },
               { int: '995650005' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1WTcM46fg6fN5fdbhz1LgX2GbqyKTczzR7' },
+              { string: 'mv1CtpceMygpvoZQSGStUerXeiAAnFo4HGsp' },
               { int: '1043871972' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1WzAsDfPhpTA75h37pCbN2jC9JPYyhUuc2' },
+              { string: 'mv1DpU3eYVuCyy6tuSfobV7ihYFpkn38e1ft' },
               { int: '21165644772' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1amzJBBjgMaUfpEoX4npYQuXqdb4fvuBpr' },
+              { string: 'mv1JGyN2TETyAVh1W5FL3Mixkem3vz2cLmau' },
               { int: '14268243108' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1b22ii76LksTJm7JTi6wtCYEXFa82FdwaH' },
+              { string: 'mv1JaYY9BZebGfk1YWpCnF7bmQzaToGbuidq' },
               { int: '4193732' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1bPGEnW2wGjpyceJdUSpDHFShGddPysAHE' },
+              { string: 'mv1KFwZ1MNComx9raqkppLpzrr2KkBRBzs9U' },
               { int: '49644981635' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1bxHfbJyEFaHzeiCfpmtwUoGtLE6VT94HC' },
+              { string: 'mv1LCBwSi37Z3z2zWQ5g8gYiWRZArovS8wd2' },
               { int: '5581647542' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1cf4tBruBKA7keMHiHqivsz4oDcBBGSVDm' },
+              { string: 'mv1Mj1W7Zq5zWSd1rEUgXzYczeJkQq352LY1' },
               { int: '1902576' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1cxjPRxvdYoLCUzfcJthAkdnTAunA2Dm5U' },
+              { string: 'mv1N4ngAtojxqoLYQxXLSZUPpT7UPKDRdnYd' },
               { int: '8417961239' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1d8x5yMzMQRVjpuSZUUBgJtqRGMzbunvQP' },
+              { string: 'mv1RzK5y7K2G8pLUaGuWryWpBdHMPVdyyTxF' },
               { int: '17437358995' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1eDP1gCVMZkukT4dxetSJMZJHmkTMBY2mL' },
+              { string: 'mv1UTrNZgCeeAtoeHSKJm5jWCyHyHMQpHPRS' },
               { int: '2498000000' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1eSmgHg4Xoy2RJy2owdjGsYzj5eKxaoKYr' },
+              { string: 'mv1UaCfudbmaiTHnaHLVeHYnabY68LoY3hUQ' },
               { int: '35524185304' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1ee26q3xzbsZF4AMkzysR8CxK8eZiLRzKF' },
+              { string: 'mv1VqZ1LMRoCcz57G33kR6omy98SXgzqgZTc' },
               { int: '48718359' }
             ]
           },
           {
             prim: 'Elt',
             args: [
-              { string: 'tz1i8p76UJXw2WJt2o2puAbrt2c36DohjuzW' },
+              { string: 'mv1Wna9N4TRV5ySbukftWsq6zgZF8rJhzvxV' },
               { int: '123799839' }
             ]
           },
@@ -4122,7 +4122,7 @@ export const rpcContractResponse = {
                               prim: 'Pair',
                               args: [
                                 {
-                                  string: 'tz1LBEKXaxQbd5Gtzbc1ATCwc3pppu81aWGc'
+                                  string: 'mv1BgHZsvYpqxwduk1EKr8XyhcPrWJPh22Gi'
                                 },
                                 {
                                   prim: 'Pair',

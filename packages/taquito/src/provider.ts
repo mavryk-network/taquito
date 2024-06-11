@@ -3,7 +3,7 @@ import {
   RPCRunOperationParam,
   RPCSimulateOperationParam,
   RpcClientInterface,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { Context } from './context';
 import { ForgedBytes, ParamsWithKind, RPCOperation, isOpRequireReveal } from './operations/types';
 import {
@@ -23,8 +23,8 @@ import {
   createSmartRollupOriginateOperation,
   createSmartRollupExecuteOutboxMessageOperation,
 } from './contract/prepare';
-import { OpKind } from '@taquito/rpc';
-import { InvalidOperationKindError } from '@taquito/utils';
+import { OpKind } from '@mavrykdynamics/taquito-rpc';
+import { InvalidOperationKindError } from '@mavrykdynamics/taquito-utils';
 import { PreparedOperation } from './prepare';
 import { Estimate } from './estimate';
 
@@ -76,7 +76,7 @@ export abstract class Provider {
 
     if (fee === undefined || gasLimit === undefined || storageLimit === undefined) {
       const estimation = await estimator({ fee, gasLimit, storageLimit, ...(rest as any) });
-      calculatedFee ??= estimation.suggestedFeeMutez;
+      calculatedFee ??= estimation.suggestedFeeMumav;
       calculatedGas ??= estimation.gasLimit;
       calculatedStorage ??= estimation.storageLimit;
     }

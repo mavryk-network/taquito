@@ -1,13 +1,13 @@
-const MINIMAL_FEE_MUTEZ = 100;
-const MINIMAL_FEE_PER_BYTE_MUTEZ = 1;
-const MINIMAL_FEE_PER_GAS_MUTEZ = 0.1;
+const MINIMAL_FEE_MUMAV = 100;
+const MINIMAL_FEE_PER_BYTE_MUMAV = 1;
+const MINIMAL_FEE_PER_GAS_MUMAV = 0.1;
 
 export interface EstimateProperties {
   milligasLimit: number;
   storageLimit: number;
   opSize: number;
-  minimalFeePerStorageByteMutez: number;
-  baseFeeMutez?: number;
+  minimalFeePerStorageByteMumav: number;
+  baseFeeMumav?: number;
 }
 
 /**
@@ -18,12 +18,12 @@ export interface EstimateProperties {
  * // Assuming that provider and signer are already configured...
  *
  * const amount = 2;
- * const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+ * const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
  *
  * // Estimate gasLimit, storageLimit and fees for a transfer operation
  * const est = await Tezos.estimate.transfer({ to: address, amount: amount })
- * console.log(est.burnFeeMutez, est.gasLimit, est.minimalFeeMutez, est.storageLimit,
- *  est.suggestedFeeMutez, est.totalCost, est.usingBaseFeeMutez)
+ * console.log(est.burnFeeMumav, est.gasLimit, est.minimalFeeMumav, est.storageLimit,
+ *  est.suggestedFeeMumav, est.totalCost, est.usingBaseFeeMumav)
  *
  * ```
  *
@@ -40,8 +40,8 @@ export interface EstimateProperties {
  *     keys: ['edpkuLxx9PQD8fZ45eUzrK3BhfDZJHhBuK4Zi49DcEGANwd2rpX82t']
  *   }
  * })
- * console.log(est.burnFeeMutez, est.gasLimit, est.minimalFeeMutez, est.storageLimit,
- *   est.suggestedFeeMutez, est.totalCost, est.usingBaseFeeMutez)
+ * console.log(est.burnFeeMumav, est.gasLimit, est.minimalFeeMumav, est.storageLimit,
+ *   est.suggestedFeeMumav, est.totalCost, est.usingBaseFeeMumav)
  *
  * ```
  */
@@ -51,18 +51,18 @@ export class Estimate {
     private readonly _milligasLimit: number | string,
     private readonly _storageLimit: number | string,
     public readonly opSize: number | string,
-    private readonly minimalFeePerStorageByteMutez: number | string,
+    private readonly minimalFeePerStorageByteMumav: number | string,
     /**
-     * @description Base fee in mutez (1 mutez = 1e10−6 tez)
+     * @description Base fee in mumav (1 mumav = 1e10−6 tez)
      */
-    private readonly baseFeeMutez: number | string = MINIMAL_FEE_MUTEZ
+    private readonly baseFeeMumav: number | string = MINIMAL_FEE_MUMAV
   ) {}
 
   /**
-   * @description The number of Mutez that will be burned for the storage of the [operation](https://tezos.gitlab.io/user/glossary.html#operations). (Storage + Allocation fees)
+   * @description The number of Mumav that will be burned for the storage of the [operation](https://tezos.gitlab.io/user/glossary.html#operations). (Storage + Allocation fees)
    */
-  get burnFeeMutez() {
-    return this.roundUp(Number(this.storageLimit) * Number(this.minimalFeePerStorageByteMutez));
+  get burnFeeMumav() {
+    return this.roundUp(Number(this.storageLimit) * Number(this.minimalFeePerStorageByteMumav));
   }
 
   /**
@@ -79,44 +79,44 @@ export class Estimate {
     return this.roundUp(Number(this._milligasLimit) / 1000);
   }
 
-  private get operationFeeMutez() {
+  private get operationFeeMumav() {
     return (
-      this.gasLimit * MINIMAL_FEE_PER_GAS_MUTEZ + Number(this.opSize) * MINIMAL_FEE_PER_BYTE_MUTEZ
+      this.gasLimit * MINIMAL_FEE_PER_GAS_MUMAV + Number(this.opSize) * MINIMAL_FEE_PER_BYTE_MUMAV
     );
   }
 
-  private roundUp(nanotez: number) {
-    return Math.ceil(Number(nanotez));
+  private roundUp(nanomav: number) {
+    return Math.ceil(Number(nanomav));
   }
 
   /**
    * @description Minimum fees for the [operation](https://tezos.gitlab.io/user/glossary.html#operations) according to [baker](https://tezos.gitlab.io/user/glossary.html#baker) defaults.
    */
-  get minimalFeeMutez() {
-    return this.roundUp(this.operationFeeMutez + MINIMAL_FEE_MUTEZ);
+  get minimalFeeMumav() {
+    return this.roundUp(this.operationFeeMumav + MINIMAL_FEE_MUMAV);
   }
 
   /**
    * @description The suggested fee for the operation which includes minimal fees and a small buffer.
    */
-  get suggestedFeeMutez() {
-    return this.roundUp(this.operationFeeMutez + MINIMAL_FEE_MUTEZ * 1.2);
+  get suggestedFeeMumav() {
+    return this.roundUp(this.operationFeeMumav + MINIMAL_FEE_MUMAV * 1.2);
   }
 
   /**
    * @description Fees according to your specified base fee will ensure that at least minimum fees are used.
    */
-  get usingBaseFeeMutez() {
+  get usingBaseFeeMumav() {
     return (
-      Math.max(Number(this.baseFeeMutez), MINIMAL_FEE_MUTEZ) + this.roundUp(this.operationFeeMutez)
+      Math.max(Number(this.baseFeeMumav), MINIMAL_FEE_MUMAV) + this.roundUp(this.operationFeeMumav)
     );
   }
 
   /**
-   * @description The sum of `minimalFeeMutez` + `burnFeeMutez`.
+   * @description The sum of `minimalFeeMumav` + `burnFeeMumav`.
    */
   get totalCost() {
-    return this.minimalFeeMutez + this.burnFeeMutez;
+    return this.minimalFeeMumav + this.burnFeeMumav;
   }
 
   /**
@@ -131,27 +131,27 @@ export class Estimate {
     let milligasLimit = 0;
     let storageLimit = 0;
     let opSize = 0;
-    let minimalFeePerStorageByteMutez = 0;
-    let baseFeeMutez: number | undefined;
+    let minimalFeePerStorageByteMumav = 0;
+    let baseFeeMumav: number | undefined;
 
     estimateProperties.forEach((estimate) => {
       milligasLimit += estimate.milligasLimit;
       storageLimit += estimate.storageLimit;
       opSize += estimate.opSize;
-      minimalFeePerStorageByteMutez = Math.max(
-        estimate.minimalFeePerStorageByteMutez,
-        minimalFeePerStorageByteMutez
+      minimalFeePerStorageByteMumav = Math.max(
+        estimate.minimalFeePerStorageByteMumav,
+        minimalFeePerStorageByteMumav
       );
-      if (estimate.baseFeeMutez) {
-        baseFeeMutez = baseFeeMutez ? baseFeeMutez + estimate.baseFeeMutez : estimate.baseFeeMutez;
+      if (estimate.baseFeeMumav) {
+        baseFeeMumav = baseFeeMumav ? baseFeeMumav + estimate.baseFeeMumav : estimate.baseFeeMumav;
       }
     });
     return new Estimate(
       milligasLimit,
       storageLimit,
       opSize,
-      minimalFeePerStorageByteMutez,
-      baseFeeMutez
+      minimalFeePerStorageByteMumav,
+      baseFeeMumav
     );
   }
 
@@ -162,8 +162,8 @@ export class Estimate {
           x.milligasLimit,
           x.storageLimit,
           x.opSize,
-          x.minimalFeePerStorageByteMutez,
-          x.baseFeeMutez
+          x.minimalFeePerStorageByteMumav,
+          x.baseFeeMumav
         )
     );
   }

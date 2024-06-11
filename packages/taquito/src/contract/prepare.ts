@@ -1,6 +1,6 @@
-import { Schema } from '@taquito/michelson-encoder';
-import { OpKind, MichelsonV1Expression } from '@taquito/rpc';
-import { Prim, Expr } from '@taquito/michel-codec';
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
+import { OpKind, MichelsonV1Expression } from '@mavrykdynamics/taquito-rpc';
+import { Prim, Expr } from '@mavrykdynamics/taquito-michel-codec';
 import {
   OriginateParams,
   RPCOriginationOperation,
@@ -35,7 +35,7 @@ import {
   RPCActivateOperation,
 } from '../operations/types';
 import { getRevealGasLimit } from '../constants';
-import { format } from '@taquito/utils';
+import { format } from '@mavrykdynamics/taquito-utils';
 import {
   InvalidCodeParameter,
   InvalidInitParameter,
@@ -60,7 +60,7 @@ export const createOriginationOperation = async ({
   fee,
   gasLimit,
   storageLimit,
-  mutez = false,
+  mumav = false,
 }: OriginateParams) => {
   if (storage !== undefined && init !== undefined) {
     throw new OriginationParameterError(
@@ -102,7 +102,7 @@ export const createOriginationOperation = async ({
     fee,
     gas_limit: gasLimit,
     storage_limit: storageLimit,
-    balance: mutez ? balance.toString() : format('tz', 'mutez', balance).toString(),
+    balance: mumav ? balance.toString() : format('mv', 'mumav', balance).toString(),
     script,
   } as RPCOriginationOperation;
 
@@ -119,14 +119,14 @@ export const createTransferOperation = async ({
   fee,
   gasLimit,
   storageLimit,
-  mutez = false,
+  mumav = false,
 }: TransferParams) => {
   return {
     kind: OpKind.TRANSACTION,
     fee,
     gas_limit: gasLimit,
     storage_limit: storageLimit,
-    amount: mutez ? amount.toString() : format('tz', 'mutez', amount).toString(),
+    amount: mumav ? amount.toString() : format('mv', 'mumav', amount).toString(),
     destination: to,
     parameters: parameter,
   } as RPCTransferOperation;

@@ -1,6 +1,6 @@
 import { CONFIGS } from '../../config';
 import { managerCode } from '../../data/manager_code';
-import { DefaultContractType, MANAGER_LAMBDA, OriginationOperation } from '@taquito/taquito';
+import { DefaultContractType, MANAGER_LAMBDA, OriginationOperation } from '@mavrykdynamics/taquito';
 
 CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract }) => {
   const Tezos = lib;
@@ -22,7 +22,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract }) => {
     });
 
     it('should be able to transfer from implicit to originated contracts', async () => {
-      // Transfer from implicit account (tz1) to contract (kt1_alice)
+      // Transfer from implicit account (mv1) to contract (kt1_alice)
       // A regular transfer operation is made. No smart contract calls required for this scenario.
       const op = await Tezos.contract.transfer({ to: contract.address, amount: 1 });
       await op.confirmation();
@@ -30,10 +30,10 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract }) => {
     });
 
     it('should be able to transfer from contract to implicit accounts', async () => {
-      // Transfer from contract (kt1_alice) to implicit account (tz1)
+      // Transfer from contract (kt1_alice) to implicit account (mv1)
       // We pass a lambda function to the kt1_alice contracts `do` entrypoint. The lambda code causes the contract to transfer
-      // the specified number (50) of mutez to the target address.
-      const op = await contract.methods.do(MANAGER_LAMBDA.transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 5)).send({ amount: 0 });
+      // the specified number (50) of mumav to the target address.
+      const op = await contract.methods.do(MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 5)).send({ amount: 0 });
       await op.confirmation();
       expect(op.status).toEqual('applied');
     });
@@ -65,7 +65,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, knownContract }) => {
 
     it('should throw an error when trying to transfer amount higher than balance', async () => {
       try {
-        const op = await contract.methods.do(MANAGER_LAMBDA.transferImplicit('tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh', 50 * 1000000)).send({ amount: 0 });
+        const op = await contract.methods.do(MANAGER_LAMBDA.transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 50 * 1000000)).send({ amount: 0 });
         await op.confirmation();
       } catch (ex: any) {
         expect(ex.message).toContain('tez.subtraction_underflow')

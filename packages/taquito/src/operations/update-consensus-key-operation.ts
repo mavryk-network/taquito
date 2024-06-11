@@ -2,7 +2,7 @@ import {
   OperationContentsAndResult,
   OperationContentsAndResultUpdateConsensusKey,
   OperationContentsUpdateConsensusKey,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { Context } from '../context';
 import { Operation } from './operations';
 import {

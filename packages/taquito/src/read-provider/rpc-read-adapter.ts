@@ -5,7 +5,7 @@ import {
   RpcClientInterface,
   SaplingDiffResponse,
   ScriptedContracts,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
 import { BigMapQuery, BlockIdentifier, SaplingStateQuery, TzReadProvider } from './interface';
 
@@ -19,7 +19,7 @@ export class RpcReadAdapter implements TzReadProvider {
    * @description Access the balance of a contract.
    * @param address address from which we want to retrieve the balance
    * @param block from which we want to retrieve the balance
-   * @returns the balance in mutez
+   * @returns the balance in mumav
    */
   async getBalance(address: string, block: BlockIdentifier): Promise<BigNumber> {
     return this.rpc.getBalance(address, { block: String(block) });

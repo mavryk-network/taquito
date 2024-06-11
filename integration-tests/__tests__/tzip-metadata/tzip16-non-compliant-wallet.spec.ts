@@ -1,5 +1,5 @@
 import { CONFIGS } from "../../config";
-import { tzip16, Tzip16Module, BigMapContractMetadataNotFoundError } from '@taquito/tzip16';
+import { tzip16, Tzip16Module, BigMapContractMetadataNotFoundError } from '@mavrykdynamics/taquito-tzip16';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;

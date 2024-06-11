@@ -1,5 +1,5 @@
-import { HttpBackend } from "@taquito/http-utils";
-import { ContractAbstraction, ContractProvider, Wallet, Context } from "@taquito/taquito";
+import { HttpBackend } from "@mavrykdynamics/taquito-http-utils";
+import { ContractAbstraction, ContractProvider, Wallet, Context } from "@mavrykdynamics/taquito";
 import { Handler, Tzip16Uri } from "../metadata-provider";
 
 export class HttpHandler implements Handler {

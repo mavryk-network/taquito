@@ -1,4 +1,4 @@
-import { PollingSubscribeProvider, TezosToolkit } from '@taquito/taquito';
+import { PollingSubscribeProvider, TezosToolkit } from '@mavrykdynamics/taquito';
 import { delay, retryWhen, tap, scan } from 'rxjs/operators';
 
 async function example() {
@@ -21,15 +21,15 @@ async function example() {
   }));
 
   const bakerAttestationFilter = {
-    and: [{ source: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m' }, { kind: 'attestation' }]
+    and: [{ source: 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG' }, { kind: 'attestation' }]
   }
 
   const bakerEndorsementFilter = {
-    and: [{ source: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m' }, { kind: 'endorsement' }]
+    and: [{ source: 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG' }, { kind: 'endorsement' }]
   }
 
   const bakerDelegation = {
-    and: [{ destination: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m' }, { kind: 'delegation' }]
+    and: [{ destination: 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG' }, { kind: 'delegation' }]
   }
 
   tezos.stream.subscribeOperation({

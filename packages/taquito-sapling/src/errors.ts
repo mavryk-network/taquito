@@ -1,4 +1,4 @@
-import { ParameterValidationError, TaquitoError } from '@taquito/core';
+import { ParameterValidationError, TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error
@@ -57,7 +57,7 @@ export class InsufficientBalance extends TaquitoError {
   constructor(public readonly realBalance: string, public readonly amountToSpend: string) {
     super();
     this.name = 'InsufficientBalance';
-    this.message = `Unable to spend "${amountToSpend}" mutez while the balance is only ${realBalance} mutez.`;
+    this.message = `Unable to spend "${amountToSpend}" mumav while the balance is only ${realBalance} mumav.`;
   }
 }
 

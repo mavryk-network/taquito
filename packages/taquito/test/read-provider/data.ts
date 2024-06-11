@@ -373,7 +373,7 @@ export const blockResponse = {
         max_size: 524288,
       },
     ],
-    baker: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+    baker: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
     level_info: {
       level: 545281,
       level_position: 545280,
@@ -396,14 +396,14 @@ export const blockResponse = {
     balance_updates: [
       {
         kind: 'contract',
-        contract: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+        contract: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
         change: '-640000000',
         origin: 'block',
       },
       {
         kind: 'freezer',
         category: 'deposits',
-        delegate: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+        delegate: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
         cycle: 133,
         change: '640000000',
         origin: 'block',
@@ -411,7 +411,7 @@ export const blockResponse = {
       {
         kind: 'freezer',
         category: 'rewards',
-        delegate: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+        delegate: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
         cycle: 133,
         change: '19765625',
         origin: 'block',
@@ -444,14 +444,14 @@ export const blockResponse = {
               balance_updates: [
                 {
                   kind: 'contract',
-                  contract: 'tz1edUYGqBtteStneTGDBrQWTFmq9cnEELiW',
+                  contract: 'mv1H1GWSjHBYnW9nhVByoJaf75cvyDvoAxZc',
                   change: '-7500000',
                   origin: 'block',
                 },
                 {
                   kind: 'freezer',
                   category: 'deposits',
-                  delegate: 'tz1edUYGqBtteStneTGDBrQWTFmq9cnEELiW',
+                  delegate: 'mv1H1GWSjHBYnW9nhVByoJaf75cvyDvoAxZc',
                   cycle: 133,
                   change: '7500000',
                   origin: 'block',
@@ -459,13 +459,13 @@ export const blockResponse = {
                 {
                   kind: 'freezer',
                   category: 'rewards',
-                  delegate: 'tz1edUYGqBtteStneTGDBrQWTFmq9cnEELiW',
+                  delegate: 'mv1H1GWSjHBYnW9nhVByoJaf75cvyDvoAxZc',
                   cycle: 133,
                   change: '234375',
                   origin: 'block',
                 },
               ],
-              delegate: 'tz1edUYGqBtteStneTGDBrQWTFmq9cnEELiW',
+              delegate: 'mv1H1GWSjHBYnW9nhVByoJaf75cvyDvoAxZc',
               slots: [71, 131, 225],
             },
           },
@@ -483,25 +483,25 @@ export const blockResponse = {
         contents: [
           {
             kind: 'transaction',
-            source: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+            source: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
             fee: '403',
             counter: '43409',
             gas_limit: '1520',
             storage_limit: '277',
             amount: '100',
-            destination: 'tz1X5QfLiPrc9fYhbyaeaRa4ZEV52axzG7Tt',
+            destination: 'mv1Viai3vWWWtXHxBaAYgF56RGoRBJ1YjEbY',
             metadata: {
               balance_updates: [
                 {
                   kind: 'contract',
-                  contract: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+                  contract: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
                   change: '-403',
                   origin: 'block',
                 },
                 {
                   kind: 'freezer',
                   category: 'fees',
-                  delegate: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+                  delegate: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
                   cycle: 133,
                   change: '403',
                   origin: 'block',
@@ -512,19 +512,19 @@ export const blockResponse = {
                 balance_updates: [
                   {
                     kind: 'contract',
-                    contract: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+                    contract: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
                     change: '-100',
                     origin: 'block',
                   },
                   {
                     kind: 'contract',
-                    contract: 'tz1X5QfLiPrc9fYhbyaeaRa4ZEV52axzG7Tt',
+                    contract: 'mv1Viai3vWWWtXHxBaAYgF56RGoRBJ1YjEbY',
                     change: '100',
                     origin: 'block',
                   },
                   {
                     kind: 'contract',
-                    contract: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+                    contract: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
                     change: '-64250',
                     origin: 'block',
                   },
@@ -537,25 +537,25 @@ export const blockResponse = {
           },
           {
             kind: 'transaction',
-            source: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+            source: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
             fee: '308',
             counter: '43410',
             gas_limit: '1520',
             storage_limit: '277',
             amount: '200',
-            destination: 'tz1WfY3TuM9EPZZyqYMjHHTXHnM1r9LvBiX9',
+            destination: 'mv1SGqwbyUotjyCznd6Di6jHXsrzenSYvT5N',
             metadata: {
               balance_updates: [
                 {
                   kind: 'contract',
-                  contract: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+                  contract: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
                   change: '-308',
                   origin: 'block',
                 },
                 {
                   kind: 'freezer',
                   category: 'fees',
-                  delegate: 'tz1foXHgRzdYdaLgX6XhpZGxbBv42LZ6ubvE',
+                  delegate: 'mv1WiQugSyz2CQoES3gBxbDhdJLymsF7Mk1n',
                   cycle: 133,
                   change: '308',
                   origin: 'block',
@@ -566,19 +566,19 @@ export const blockResponse = {
                 balance_updates: [
                   {
                     kind: 'contract',
-                    contract: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+                    contract: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
                     change: '-200',
                     origin: 'block',
                   },
                   {
                     kind: 'contract',
-                    contract: 'tz1WfY3TuM9EPZZyqYMjHHTXHnM1r9LvBiX9',
+                    contract: 'mv1SGqwbyUotjyCznd6Di6jHXsrzenSYvT5N',
                     change: '200',
                     origin: 'block',
                   },
                   {
                     kind: 'contract',
-                    contract: 'tz1Nbp1gNPMzn9MB9ZhBnfsajsaQBLYScdd5',
+                    contract: 'mv1GJRE8J5YKRfT3zVSmH3mdVd7diRLRbLx5',
                     change: '-64250',
                     origin: 'block',
                   },

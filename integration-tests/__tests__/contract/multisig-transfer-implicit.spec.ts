@@ -1,5 +1,5 @@
 import { CONFIGS } from "../../config";
-import { MANAGER_LAMBDA } from "@taquito/taquito";
+import { MANAGER_LAMBDA } from "@mavrykdynamics/taquito";
 import { genericMultisig } from "../../data/multisig";
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
@@ -53,7 +53,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
             { "int": "0" },
             {
               prim: 'Left',
-              args: [MANAGER_LAMBDA.transferImplicit("tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh", 500)]
+              args: [MANAGER_LAMBDA.transferImplicit("mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m", 500)]
             }
           ]
         } as any,
@@ -116,7 +116,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
         // Sub function
         'operation',
         // Action
-        MANAGER_LAMBDA.transferImplicit("tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh", 500),
+        MANAGER_LAMBDA.transferImplicit("mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m", 500),
         // Signature list
         [signature1.prefixSig, signature2.prefixSig, null]
       ).send()

@@ -1,5 +1,5 @@
 import { TokenSchema } from './../schema/types';
-import { encodeAddress, validateAddress, ValidationResult } from '@taquito/utils';
+import { encodeAddress, validateAddress, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { ContractTokenSchema } from '../schema/types';
 import { SemanticEncoding, Token, TokenFactory, TokenValidationError } from './token';
 
@@ -33,7 +33,7 @@ export class ContractToken extends Token {
    * @throws {@link ContractValidationError}
    */
   private validate(value: any) {
-    // tz1,tz2 and tz3 seems to be valid contract values (for Unit contract)
+    // mv1,mv2 and mv3 seems to be valid contract values (for Unit contract)
     if (validateAddress(value) !== ValidationResult.VALID) {
       throw new ContractValidationError(
         value,

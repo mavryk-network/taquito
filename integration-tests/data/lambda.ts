@@ -1,4 +1,4 @@
-export const transferImplicit2 = (key: string, key2: string, mutez: number) => {
+export const transferImplicit2 = (key: string, key2: string, mumav: number) => {
   return [
     { prim: 'DROP' },
     { prim: 'NIL', args: [{ prim: 'operation' }] },
@@ -9,7 +9,7 @@ export const transferImplicit2 = (key: string, key2: string, mutez: number) => {
     { prim: 'IMPLICIT_ACCOUNT' },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${mutez}` }],
+      args: [{ prim: 'mumav' }, { int: `${mumav}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },
@@ -21,7 +21,7 @@ export const transferImplicit2 = (key: string, key2: string, mutez: number) => {
     { prim: 'IMPLICIT_ACCOUNT' },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${mutez}` }],
+      args: [{ prim: 'mumav' }, { int: `${mumav}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },

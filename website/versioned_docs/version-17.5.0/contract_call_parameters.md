@@ -9,6 +9,10 @@ You will find below tables that match some of the most common values that smart 
 
 > You can find the tests used to check these values [in this GitHub repo](https://github.com/claudebarde/taquito-contract-call-params)
 
+:::note
+Since Taquito version 16.2.0, we introduced syntax support for nested options in `methodsObject` but not `methods` due to the limitation of the flattened form. We recommend users migrate to using `methodsObject` as its syntax is consistent with storage parameters, supports all Michelson data types, and is continually maintained.
+:::
+
 ## Primitive types
 
 | Michelson type | Michelson value            | Taquito `methods & methodObject`|
@@ -18,10 +22,10 @@ You will find below tables that match some of the most common values that smart 
 | int            | 6                          | 6                               |
 | nat            | 7                          | 7                               |
 | string         | "Tezos"                    | "Tezos"                         |
-| mutez          | 500000                     | 50000 / 50_000                  |
+| mumav          | 500000                     | 50000 / 50_000                  |
 | timestamp      | "2022-12-19T15:53:26.055Z" | "2022-12-19T15:53:26.055Z"      |
 
-> Note: you can import `UnitValue` from `@taquito/taquito` and `@taquito/michelson-encoder`
+> Note: you can import `UnitValue` from `@mavrykdynamics/taquito` and `@mavrykdynamics/taquito-michelson-encoder`
 > Note: if you want to pass the current timestamp to a contract entrypoint, you can use `new Date().toISOString()` which will output the right format.
 
 ## Option
@@ -68,15 +72,15 @@ In a list, `pair` and `union` values are always represented as objects: a `pair`
 | pair int nat                                                           | Pair 6 7                                                             | 6, 7                   | { 0: 6, 1: 7 }                                           |
 | pair %this (int nat)                                                   | Pair 6 7                                                             | 6, 7                   | { 0: 6, 1: 7 }                                           |
 | pair (int %one) (nat %two)                                             | Pair 6 7                                                             | 6, 7                   | { "one": 6, "two": 7 }                                   |
-| pair (pair int nat) (pair string mutez)                                | Pair (Pair 6 7) (Pair "Tezos" 500000)                                | 6, 7, "Tezos", 50_0000 | { 0: 6, 1: 7, 2: "Tezos", 3: 50_000 }                    |
-| pair (pair (int %one) (nat %two)) (pair (string %three) (mutez %four)) | Pair (Pair (6 %one) (7 %two)) (Pair ("Tezos" %three) (500000 %four)) | 6, 7, "Tezos", 50_0000 | { "one": 6, "two": 7, "three": "Tezos", "four": 50_000 } |
+| pair (pair int nat) (pair string mumav)                                | Pair (Pair 6 7) (Pair "Tezos" 500000)                                | 6, 7, "Tezos", 50_0000 | { 0: 6, 1: 7, 2: "Tezos", 3: 50_000 }                    |
+| pair (pair (int %one) (nat %two)) (pair (string %three) (mumav %four)) | Pair (Pair (6 %one) (7 %two)) (Pair ("Tezos" %three) (500000 %four)) | 6, 7, "Tezos", 50_0000 | { "one": 6, "two": 7, "three": "Tezos", "four": 50_000 } |
 
 The `methodsObject` method always takes a single object to represent the pair to be passed, while `methods` requires the pair fields to be spread. If annotations are present, they are used to identify the pair fielda in the corresponding properties of the JS object.
 
 
 ## Map and big_map
 
-See the [documentation about creating and updating maps and big_maps](https://taquito.io/docs/michelsonmap/)
+See the [documentation about creating and updating maps and big_maps](https://taquito.mavryk.org/docs/michelsonmap/)
 
 ## Bypassing the Michelson Encoder
 Users can bypass the `michelson-encoder` and `ContractAbstraction` by directly passing JSON Michelson in a `transfer` call. This eliminates the need to fetch and create a JS/TS contract abstraction using `tezos.wallet.at` or `tezos.contract.at` and also removes the requirement to create a local contract instance for interaction. As a result, the conversion of entrypoint parameters to the JSON Michelson format using the michelson-encoder is no longer necessary as used in the ContractAbstraction entrypoints as listed prior for `methods` and `methodsObject`.

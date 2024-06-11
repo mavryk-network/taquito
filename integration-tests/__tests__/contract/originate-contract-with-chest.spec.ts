@@ -1,12 +1,12 @@
-import { DefaultContractType, OriginationOperation, Protocols } from "@taquito/taquito";
+import { DefaultContractType, OriginationOperation, Protocols } from "@mavrykdynamics/taquito";
 import { CONFIGS } from "../../config";
-import { ProtoGreaterOrEqual } from "@taquito/michel-codec";
-import { buf2hex } from "@taquito/utils";
-import { Chest } from '@taquito/timelock';
+import { ProtoGreaterOrEqual } from "@mavrykdynamics/taquito-michel-codec";
+import { buf2hex } from "@mavrykdynamics/taquito-utils";
+import { Chest } from '@mavrykdynamics/taquito-timelock';
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
   const Tezos = lib;
-  const oxfordAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.ProxfordY) ? test : test.skip;
+  const atlasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtAtLas) ? test : test.skip;
 
   describe(`Test contract origination with timelock types (chest or chest_key) in storage and retrieve its value through contract api: ${rpc}`, () => {
     const { chest, key } = Chest.newChestAndKey(new TextEncoder().encode('test'), 1000);
@@ -31,7 +31,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       await opChestKey.confirmation()
     })
 
-    oxfordAndAlpha('Verify contract.originate for a contract with chest in storage', async () => {
+    atlasAndAlpha('Verify contract.originate for a contract with chest in storage', async () => {
       expect(opChest.hash).toBeDefined();
       expect(opChest.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY)
       const contract = await opChest.contract();
@@ -40,7 +40,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       expect(storage).toEqual(buf2hex(chest.encode()));
     });
 
-    oxfordAndAlpha('Verify contract.originate for a contract with chest_key in storage', async () => {
+    atlasAndAlpha('Verify contract.originate for a contract with chest_key in storage', async () => {
       expect(opChestKey.hash).toBeDefined();
       expect(opChestKey.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY)
       const contract = await opChestKey.contract();

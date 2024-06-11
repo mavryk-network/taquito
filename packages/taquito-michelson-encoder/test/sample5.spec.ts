@@ -11,8 +11,8 @@ describe('Schema test', () => {
     expect(storage).toEqual({
       '0': expectMichelsonMap(),
       totalSupply: new BigNumber('1000'),
-      approver: { Some: 'tz1g3oS1UPgWFFpxrc2pEn4sgV3ky1Z6Qaz2' },
-      centralBank: 'tz1g3oS1UPgWFFpxrc2pEn4sgV3ky1Z6Qaz2',
+      approver: { Some: 'mv1U68kfyTneQYZUKgk5gjN2rfvmSvcRBBWA' },
+      centralBank: 'mv1U68kfyTneQYZUKgk5gjN2rfvmSvcRBBWA',
     });
   });
 
@@ -21,8 +21,8 @@ describe('Schema test', () => {
     const result = schema.Encode({
       '0': new MichelsonMap(),
       totalSupply: new BigNumber('1000'),
-      approver: 'tz1g3oS1UPgWFFpxrc2pEn4sgV3ky1Z6Qaz2',
-      centralBank: 'tz1g3oS1UPgWFFpxrc2pEn4sgV3ky1Z6Qaz2',
+      approver: 'mv1U68kfyTneQYZUKgk5gjN2rfvmSvcRBBWA',
+      centralBank: 'mv1U68kfyTneQYZUKgk5gjN2rfvmSvcRBBWA',
     });
     expect(result).toEqual({
       args: [[], rpcContractResponse5.script.storage.args[1]],

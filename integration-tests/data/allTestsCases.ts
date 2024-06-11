@@ -1,4 +1,4 @@
-import { opMapping, ForgeParams } from '@taquito/local-forging';
+import { opMapping, ForgeParams } from '@mavrykdynamics/taquito-local-forging';
 import {
   rpcContractResponse,
   rpcContractResponse2,
@@ -13,13 +13,13 @@ import { genericCode, genericStorage } from './generic_contract';
 import { tokenBigmapCode, tokenBigmapStorage } from './token_bigmap';
 import { noAnnotCode, noAnnotInit } from './token_without_annotation';
 import { voteInitSample, voteSample } from './vote-contract';
-import { submutezCode, submutezStorage } from './contract_with_sub_mutez';
+import { submumavCode, submumavStorage } from './contract_with_sub_mumav';
 import {
   storageContractWithConstant,
   codeContractWithConstant,
 } from './contract_with_constant';
 import { codeViewsTopLevel, storageViewsTopLevel } from './contract_views_top_level';
-import { MichelsonV1Expression, OpKind, PvmKind } from '@taquito/rpc';
+import { MichelsonV1Expression, OpKind, PvmKind } from '@mavrykdynamics/taquito-rpc';
 import { emitCode } from './code_with_emit';
 import { lambdaRecCode } from './code_with_lambda_rec';
 import { timelockCode, timelockStorage, timelockExpected } from './timelock-flip-contract';
@@ -49,7 +49,7 @@ interface TestCase {
   expected?: object;
 }
 
-export const oxfordCases: TestCase[] = [
+export const atlasCases: TestCase[] = [
   {
     name: 'Origination of a contract that contains the types chest, chest_key and the instruction OPEN_CHEST',
     operation: {
@@ -58,7 +58,7 @@ export const oxfordCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -76,7 +76,7 @@ export const oxfordCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -110,13 +110,13 @@ export const oxfordCases: TestCase[] = [
       branch: 'BLzyjjHKEKMULtvkpSHxuZxx6ei6fpntH2BTkYZiLgs8zLVstvX',
       contents: [{
         kind: OpKind.TRANSACTION,
-        source: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+        source: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
         fee: "0",
         counter: "407",
         gas_limit: "1040000",
         storage_limit: "60000",
         amount: "1000000000",
-        destination: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+        destination: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
         parameters:
           { entrypoint: "stake", value: { prim: "Unit" } }
       }]
@@ -129,13 +129,13 @@ export const oxfordCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.TRANSACTION,
-          source: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          source: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           fee: "689",
           counter: "408",
           gas_limit: "4250",
           storage_limit: "0",
           amount: "99999999999000000",
-          destination: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          destination: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           parameters:
             { entrypoint: "unstake", value: { prim: "Unit" } }
         }],
@@ -148,13 +148,13 @@ export const oxfordCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.TRANSACTION,
-          source: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          source: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           fee: "409",
           counter: "409",
           gas_limit: "1529",
           storage_limit: "0",
           amount: "0",
-          destination: "tz1eDDguimfor6kkt96Ri4pBeEZXEzvuyjQX",
+          destination: "mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf",
           parameters:
           {
             entrypoint: "finalize_unstake",
@@ -170,13 +170,13 @@ export const oxfordCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.TRANSACTION,
-          source: "tz1X1TKpLiZuPEo2YVvDiqQ47Zp9a797ejkp",
+          source: "mv1HG5nx3uM9FyWhazFpeos8v6oYGoVsBXfS",
           fee: "351",
           counter: "391",
           gas_limit: "791",
           storage_limit: "0",
           amount: "0",
-          destination: "tz1X1TKpLiZuPEo2YVvDiqQ47Zp9a797ejkp",
+          destination: "mv1HG5nx3uM9FyWhazFpeos8v6oYGoVsBXfS",
           parameters:
           {
             entrypoint: "set_delegate_parameters",
@@ -205,9 +205,9 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.DELEGATION,
-          delegate: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          delegate: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -223,7 +223,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.REVEAL,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           public_key: 'edpkvS5QFv7KRGfa3b87gg9DBpxSm3NpSwnjhUjNBQrRUUR66F7C9g',
           fee: '10000',
           gas_limit: '10',
@@ -239,7 +239,7 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.BALLOT,
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           period: -300,
           ballot: 'yay',
           proposal: 'PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb',
@@ -256,7 +256,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -273,7 +273,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10'
@@ -302,7 +302,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -319,7 +319,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.SET_DEPOSITS_LIMIT,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10'
@@ -334,7 +334,7 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.PROPOSALS,
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           period: 25550,
           proposals: [
             'PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb',
@@ -352,11 +352,11 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -370,7 +370,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -378,7 +378,7 @@ export const commonCases: TestCase[] = [
             entrypoint: 'do',
             value: { bytes: '0202' },
           },
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -392,7 +392,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -400,7 +400,7 @@ export const commonCases: TestCase[] = [
             entrypoint: 'default',
             value: { prim: 'Pair', args: [{ int: '2' }, { string: 'hello' }] },
           },
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -414,7 +414,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -422,7 +422,7 @@ export const commonCases: TestCase[] = [
             entrypoint: 'Tps0RV2UISBvTV6m2z16VnfCVnN5dzX',
             value: { prim: 'Pair', args: [{ int: '2' }, { string: 'hello' }] },
           },
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -436,7 +436,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -444,7 +444,7 @@ export const commonCases: TestCase[] = [
             entrypoint: 'entrypoint©Ͻ',
             value: { string: 'Copyright ©Ͻ' },
           },
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -458,7 +458,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -477,7 +477,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -495,13 +495,13 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           parameters: {
             entrypoint: 'set_delegate',
-            value: { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+            value: { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
           },
           destination: 'KT1JHqHQdHSgWBKo6H4UfG8dw3JnZSyjGkHA',
           amount: '1000',
@@ -517,13 +517,13 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           parameters: {
             entrypoint: 'remove_delegate',
-            value: { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+            value: { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
           },
           destination: 'KT1JHqHQdHSgWBKo6H4UfG8dw3JnZSyjGkHA',
           amount: '1000',
@@ -539,13 +539,13 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           parameters: {
             entrypoint: 'root',
-            value: { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+            value: { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
           },
           destination: 'KT1JHqHQdHSgWBKo6H4UfG8dw3JnZSyjGkHA',
           amount: '1000',
@@ -561,13 +561,13 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           parameters: {
             entrypoint: 'do',
-            value: { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+            value: { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
           },
           destination: 'KT1JHqHQdHSgWBKo6H4UfG8dw3JnZSyjGkHA',
           amount: '1000',
@@ -583,7 +583,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -605,7 +605,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -633,7 +633,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -645,7 +645,7 @@ export const commonCases: TestCase[] = [
               annots: ['%test'],
             },
           },
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -659,7 +659,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSACTION,
           counter: '392495',
-          source: 'tz1UeT3VS8LuAkvB66tjQTTDP1LFf3DEC4uA',
+          source: 'mv1FzJkrBSzkRzBtLmSswBBHyTfSyGgiTJNb',
           fee: '7267',
           gas_limit: '66341',
           storage_limit: '538',
@@ -671,7 +671,7 @@ export const commonCases: TestCase[] = [
               prim: 'Pair',
               args: [
                 {
-                  string: 'tz1UeT3VS8LuAkvB66tjQTTDP1LFf3DEC4uA',
+                  string: 'mv1FzJkrBSzkRzBtLmSswBBHyTfSyGgiTJNb',
                 },
                 {
                   prim: 'Pair',
@@ -827,7 +827,7 @@ export const commonCases: TestCase[] = [
         {
           kind: 'transaction',
           counter: '392495',
-          source: 'tz1UeT3VS8LuAkvB66tjQTTDP1LFf3DEC4uA',
+          source: 'mv1FzJkrBSzkRzBtLmSswBBHyTfSyGgiTJNb',
           fee: '7267',
           gas_limit: '66341',
           storage_limit: '538',
@@ -839,7 +839,7 @@ export const commonCases: TestCase[] = [
               prim: 'Pair',
               args: [
                 {
-                  string: 'tz1UeT3VS8LuAkvB66tjQTTDP1LFf3DEC4uA',
+                  string: 'mv1FzJkrBSzkRzBtLmSswBBHyTfSyGgiTJNb',
                 },
                 {
                   prim: 'Pair',
@@ -999,7 +999,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1021,7 +1021,7 @@ export const commonCases: TestCase[] = [
           {
             kind: OpKind.ORIGINATION,
             counter: '1',
-            source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+            source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             fee: '10000',
             gas_limit: '10',
             storage_limit: '10',
@@ -1043,7 +1043,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1064,14 +1064,14 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           balance: '0',
           script: {
             code: noAnnotCode,
-            storage: noAnnotInit('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'),
+            storage: noAnnotInit('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'),
           },
         },
       ],
@@ -1085,7 +1085,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.REVEAL,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           public_key: 'edpkvS5QFv7KRGfa3b87gg9DBpxSm3NpSwnjhUjNBQrRUUR66F7C9g',
           fee: '10000',
           gas_limit: '10',
@@ -1094,20 +1094,20 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           balance: '0',
           script: {
             code: noAnnotCode,
-            storage: noAnnotInit('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'),
+            storage: noAnnotInit('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'),
           },
         },
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1119,17 +1119,17 @@ export const commonCases: TestCase[] = [
               annots: ['%test'],
             },
           },
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
         {
           kind: OpKind.TRANSACTION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
-          destination: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          destination: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: '1000',
         },
       ],
@@ -1143,7 +1143,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1164,7 +1164,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1185,7 +1185,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1206,7 +1206,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1227,7 +1227,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1248,7 +1248,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1269,7 +1269,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1290,7 +1290,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           counter: '7423375',
-          source: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+          source: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
           fee: '372',
           gas_limit: '1330',
           storage_limit: '93',
@@ -1317,7 +1317,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '7423380',
-          source: 'tz1TJGsZxvr6aBGUqfQVxufesTtA7QGi696D',
+          source: 'mv1EV8Hm7HAei1U8utZsUGe2GgUUjDXrdrxF',
           fee: '670',
           gas_limit: '2360',
           storage_limit: '481',
@@ -1338,7 +1338,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '8642842',
-          source: 'tz2J1jtUzAj4CdYKCh78ubARBiotbGKceXfb',
+          source: 'mv2QmeiBv4pKaCRnpjyYa82UKoCjLbi2z1ub',
           fee: '1104',
           gas_limit: '1565',
           storage_limit: '872',
@@ -1352,21 +1352,21 @@ export const commonCases: TestCase[] = [
     },
   },
   {
-    name: `Origination of a contract that contains the instructions SUB_MUTEZ`,
+    name: `Origination of a contract that contains the instructions SUB_MUMAV`,
     operation: {
       branch: 'BMV9bffK5yjWCJgUJBsoTRifb4SsAYbkCVwVkKbJHffJYn7ePBL',
       contents: [
         {
           kind: OpKind.ORIGINATION,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
           balance: '0',
           script: {
-            code: submutezCode,
-            storage: submutezStorage,
+            code: submumavCode,
+            storage: submumavStorage,
           },
         },
       ],
@@ -1380,7 +1380,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.TRANSFER_TICKET,
           counter: '1',
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           fee: '10000',
           gas_limit: '10',
           storage_limit: '10',
@@ -1405,7 +1405,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '94141',
-          source: 'tz2WH1zahKo2KiS1gcHBhNFTURPfW1Vk7qpE',
+          source: 'mv2ZThhALJ4bi77xbUmqqYhwd2nfKyPtA1eD',
           fee: '603',
           gas_limit: '1526',
           storage_limit: '377',
@@ -1428,7 +1428,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.INCREASE_PAID_STORAGE,
           counter: '1',
-          source: 'tz2WH1zahKo2KiS1gcHBhNFTURPfW1Vk7qpE',
+          source: 'mv2ZThhALJ4bi77xbUmqqYhwd2nfKyPtA1eD',
           fee: '100',
           gas_limit: '10000',
           storage_limit: '10',
@@ -1446,7 +1446,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '94141',
-          source: 'tz2WH1zahKo2KiS1gcHBhNFTURPfW1Vk7qpE',
+          source: 'mv2ZThhALJ4bi77xbUmqqYhwd2nfKyPtA1eD',
           fee: '603',
           gas_limit: '1526',
           storage_limit: '377',
@@ -1467,7 +1467,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.UPDATE_CONSENSUS_KEY,
           counter: '1',
-          source: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+          source: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
           fee: '100',
           gas_limit: '10000',
           storage_limit: '10',
@@ -1483,9 +1483,9 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.DRAIN_DELEGATE,
-          consensus_key: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-          delegate: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
-          destination: 'tz1KvJCU5cNdz5RAS3diEtdRvS9wfhRC7Cwj',
+          consensus_key: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+          delegate: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
+          destination: 'mv194tkdxpwcxPy541ePRJdECnzqbvwZWJZq',
         },
       ],
     },
@@ -1498,7 +1498,7 @@ export const commonCases: TestCase[] = [
         {
           kind: OpKind.ORIGINATION,
           counter: '94141',
-          source: 'tz2WH1zahKo2KiS1gcHBhNFTURPfW1Vk7qpE',
+          source: 'mv2ZThhALJ4bi77xbUmqqYhwd2nfKyPtA1eD',
           fee: '603',
           gas_limit: '1526',
           storage_limit: '377',
@@ -1520,7 +1520,7 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.SMART_ROLLUP_ORIGINATE,
-          source: 'tz1h5DrMhmdrGMpb3qkykU1RmCWoTYAkFJPu',
+          source: 'mv1VL9W4HVHirpWwzKFUfPe9H6MqFtr3DRv5',
           fee: '1496',
           counter: '3969',
           gas_limit: '2849',
@@ -1542,7 +1542,7 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.SMART_ROLLUP_ADD_MESSAGES,
-          source: 'tz1h5DrMhmdrGMpb3qkykU1RmCWoTYAkFJPu',
+          source: 'mv1VL9W4HVHirpWwzKFUfPe9H6MqFtr3DRv5',
           fee: '1496',
           counter: '3969',
           gas_limit: '2849',
@@ -1563,7 +1563,7 @@ export const commonCases: TestCase[] = [
       contents: [
         {
           kind: OpKind.SMART_ROLLUP_EXECUTE_OUTBOX_MESSAGE,
-          source: 'tz1adKm6kWEkiejZ9WYpuHvBCgUewtCxpqRF',
+          source: 'mv1KPkmkC2vMBf5DE9fARbRuAPhqdovWqRQ4',
           fee: '1618',
           counter: '13',
           gas_limit: '6485',

@@ -1,9 +1,9 @@
-import { InMemorySigner } from '@taquito/signer';
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
 import { fa2Contract } from '../integration-tests/data/fa2_contract';
 
 async function example() {
-  const provider = 'https://ghostnet.ecadinfra.com';
+  const provider = 'https://basenet.rpc.mavryk.network';
     const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
     const tezos = new TezosToolkit(provider);
     tezos.setSignerProvider(signer);
@@ -12,12 +12,12 @@ async function example() {
     console.log('Deploying LambdaTwo contract...');
 
     const bigMapLedger = new MichelsonMap();
-    bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
-      allowances: ['tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY'],
+    bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
+      allowances: ['mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc'],
       balance: '50'
     });
-    bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
-      allowances: ['tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'],
+    bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
+      allowances: ['mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi'],
       balance: '50',
     });
 

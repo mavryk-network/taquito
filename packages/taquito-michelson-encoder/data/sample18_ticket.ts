@@ -116,7 +116,7 @@ export const rpcContractResponse = {
         prim: 'code',
         args: [
           [
-            { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+            { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
             { prim: 'AMOUNT' },
             { prim: 'COMPARE' },
             { prim: 'EQ' },
@@ -207,7 +207,7 @@ export const rpcContractResponse = {
                                     { prim: 'CAR' },
                                     {
                                       prim: 'PUSH',
-                                      args: [{ prim: 'mutez' }, { int: '0' }]
+                                      args: [{ prim: 'mumav' }, { int: '0' }]
                                     },
                                     { prim: 'DIG', args: [{ int: '2' }] },
                                     { prim: 'DIG', args: [{ int: '4' }] },
@@ -455,7 +455,7 @@ export const rpcContractResponse = {
                       [
                         { prim: 'DIG', args: [{ int: '2' }] },
                         { prim: 'CAR' },
-                        { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                        { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                         { prim: 'DIG', args: [{ int: '2' }] },
                         { prim: 'TRANSFER_TOKENS' },
                         { prim: 'DIG', args: [{ int: '3' }] },
@@ -481,7 +481,7 @@ export const rpcContractResponse = {
     ],
     storage: {
       prim: 'Pair',
-      args: [{ string: 'tz1bwfmSYqrhUTAoybGdhWBBefsbuhNdcC2Y' }, { int: '142' }, { int: '2' }, { int: '143' }]
+      args: [{ string: 'mv1GBmu3deZ7gvgMTE7dgfz2y8FA22znzH7u' }, { int: '142' }, { int: '2' }, { int: '143' }]
     }
   }
 };

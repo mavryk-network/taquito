@@ -19,7 +19,7 @@ above excerpt, taken from [here](https://docs.tezos.com/smart-contracts/data-typ
 
 ### Creating a chest
 ```
-import { Chest } from '@taquito/timelock'
+import { Chest } from '@mavrykdynamics/taquito-timelock'
 
 const time = 10000;
 const payload = new TextEncoder().encode('message');
@@ -31,7 +31,7 @@ const keyBytes = key.encode();
 
 ### Create a chest from an existing Timelock
 ```
-import { Chest, Timelock } from '@taquito/timelock';
+import { Chest, Timelock } from '@mavrykdynamics/taquito-timelock';
 
 // ...
 const time = 10000;
@@ -44,7 +44,7 @@ const keyBytes = key.encode();
 
 ### Opening a chest
 ```
-import { Chest, ChestKey} from '@taquito/timelock';
+import { Chest, ChestKey} from '@mavrykdynamics/taquito-timelock';
 
 //...
 const time = 10000;

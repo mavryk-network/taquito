@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Generate Flextesa bootstrap accounts
-flextesa_docker_image="${1}"
+# Generate Flexmasa bootstrap accounts
+flexmasa_docker_image="${1}"
 
 # Set environment variables
 export RUN_"${testnet_uppercase}"_WITH_SECRET_KEY=true
@@ -9,19 +9,19 @@ export SECRET_KEY="${secret_key}"
 export TEZOS_RPC_"${testnet_uppercase}"="http://localhost:20000"
 export POLLING_INTERVAL_MILLISECONDS=100
 export RPC_CACHE_MILLISECONDS=0
-export TEZOS_BAKER=tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb
+export TEZOS_BAKER=mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv
 
-alice=$(docker run --rm "${flextesa_docker_image}" flextesa key alice)
-bob=$(docker run --rm "${flextesa_docker_image}" flextesa key bob)
-charlie=$(docker run --rm "${flextesa_docker_image}" flextesa key charlie)
-dave=$(docker run --rm "${flextesa_docker_image}" flextesa key dave)
+alice=$(docker run --rm "${flexmasa_docker_image}" flexmasa key alice)
+bob=$(docker run --rm "${flexmasa_docker_image}" flexmasa key bob)
+charlie=$(docker run --rm "${flexmasa_docker_image}" flexmasa key charlie)
+dave=$(docker run --rm "${flexmasa_docker_image}" flexmasa key dave)
 
 export "alice=${alice}"
 export "bob=${bob}"
 export "charlie=${charlie}"
 export "dave=${dave}"
 
-# Provision Flextesa container
+# Provision Flexmasa container
 protocol="${2}"
 testnet="${3}"
 testnet_uppercase="${4}"
@@ -32,8 +32,8 @@ docker run \
   --name baking-sandbox \
   --detach \
   -p 20000:20000 \
-  "${flextesa_docker_image}" \
-  flextesa mini-net \
+  "${flexmasa_docker_image}" \
+  flexmasa mini-net \
   --root /tmp/mini-box --size 1 \
   --set-history-mode N000:archive \
   --number-of-b 1 \

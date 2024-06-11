@@ -1,9 +1,9 @@
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { tokenCode } from '../integration-tests/data/tokens';
 
 async function example() {
-  const provider = 'https://ghostnet.ecadinfra.com';
+  const provider = 'https://basenet.rpc.mavryk.network';
     const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
     const tezos = new TezosToolkit(provider);
     tezos.setSignerProvider(signer);
@@ -15,9 +15,9 @@ async function example() {
 
             const bigMapInit = new MichelsonMap();
             bigMapInit.set(signer, { 0: '1', 1: new MichelsonMap() });
-            bigMapInit.set('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', { 0: '2', 1: new MichelsonMap() });
-            bigMapInit.set('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD', { 0: '3', 1: new MichelsonMap() });
-            bigMapInit.set('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2', { 0: '4', 1: new MichelsonMap() });
+            bigMapInit.set('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', { 0: '2', 1: new MichelsonMap() });
+            bigMapInit.set('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ', { 0: '3', 1: new MichelsonMap() });
+            bigMapInit.set('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5', { 0: '4', 1: new MichelsonMap() });
             // Deploy a contract with a big map
             const op = await tezos.contract.originate({
                 code: tokenCode,

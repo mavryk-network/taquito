@@ -1,7 +1,7 @@
 import { Decoder } from '../decoder';
 import { Uint8ArrayConsumer } from '../uint8array-consumer';
 import { CODEC, kindMapping, kindMappingReverse } from '../constants';
-import { InvalidOperationKindError } from '@taquito/core';
+import { InvalidOperationKindError } from '@mavrykdynamics/taquito-core';
 import {
   OperationDecodingError,
   OperationEncodingError,
@@ -14,7 +14,7 @@ export const ManagerOperationSchema = {
 };
 
 export const ActivationSchema = {
-  pkh: CODEC.TZ1,
+  pkh: CODEC.MV1,
   secret: CODEC.SECRET,
 };
 

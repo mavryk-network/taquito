@@ -693,7 +693,7 @@ export const fa2TokenFactory = [
                                                                 { prim: 'CAR' },
                                                                 {
                                                                     prim: 'PUSH',
-                                                                    args: [{ prim: 'mutez' }, { int: '0' }]
+                                                                    args: [{ prim: 'mumav' }, { int: '0' }]
                                                                 },
                                                                 { prim: 'DIG', args: [{ int: '2' }] },
                                                                 { prim: 'TRANSFER_TOKENS' },
@@ -1126,7 +1126,7 @@ export const fa2TokenFactory = [
                                                                 { prim: 'SWAP' },
                                                                 {
                                                                     prim: 'PUSH',
-                                                                    args: [{ prim: 'mutez' }, { int: '0' }]
+                                                                    args: [{ prim: 'mumav' }, { int: '0' }]
                                                                 },
                                                                 { prim: 'DIG', args: [{ int: '2' }] },
                                                                 { prim: 'TRANSFER_TOKENS' },
@@ -1144,7 +1144,7 @@ export const fa2TokenFactory = [
                                                                 },
                                                                 {
                                                                     prim: 'PUSH',
-                                                                    args: [{ prim: 'mutez' }, { int: '0' }]
+                                                                    args: [{ prim: 'mumav' }, { int: '0' }]
                                                                 },
                                                                 { prim: 'AMOUNT' },
                                                                 { prim: 'COMPARE' },
@@ -1184,7 +1184,7 @@ export const fa2TokenFactory = [
                                                                                         {
                                                                                             prim: 'PUSH',
                                                                                             args: [
-                                                                                                { prim: 'mutez' },
+                                                                                                { prim: 'mumav' },
                                                                                                 { int: '1' }
                                                                                             ]
                                                                                         },
@@ -1218,7 +1218,7 @@ export const fa2TokenFactory = [
                                                                                         {
                                                                                             prim: 'PUSH',
                                                                                             args: [
-                                                                                                { prim: 'mutez' },
+                                                                                                { prim: 'mumav' },
                                                                                                 { int: '1' }
                                                                                             ]
                                                                                         },
@@ -1276,7 +1276,7 @@ export const fa2TokenFactory = [
                                                                                         {
                                                                                             prim: 'PUSH',
                                                                                             args: [
-                                                                                                { prim: 'mutez' },
+                                                                                                { prim: 'mumav' },
                                                                                                 { int: '1' }
                                                                                             ]
                                                                                         },
@@ -3297,7 +3297,7 @@ export const fa2TokenFactory = [
                                                                             {
                                                                                 prim: 'PUSH',
                                                                                 args: [
-                                                                                    { prim: 'mutez' },
+                                                                                    { prim: 'mumav' },
                                                                                     { int: '0' }
                                                                                 ]
                                                                             },
@@ -3467,7 +3467,7 @@ export const fa2TokenFactory = [
                                                                 },
                                                                 {
                                                                     prim: 'PUSH',
-                                                                    args: [{ prim: 'mutez' }, { int: '1' }]
+                                                                    args: [{ prim: 'mumav' }, { int: '1' }]
                                                                 },
                                                                 { prim: 'DIG', args: [{ int: '4' }] },
                                                                 { prim: 'DUP' },
@@ -3579,7 +3579,7 @@ export const fa2TokenFactory = [
                                                             [
                                                                 {
                                                                     prim: 'PUSH',
-                                                                    args: [{ prim: 'mutez' }, { int: '0' }]
+                                                                    args: [{ prim: 'mumav' }, { int: '0' }]
                                                                 },
                                                                 { prim: 'SELF' },
                                                                 { prim: 'ADDRESS' },

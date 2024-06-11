@@ -1,4 +1,4 @@
-import { BlockResponse } from '@taquito/rpc';
+import { BlockResponse } from '@mavrykdynamics/taquito-rpc';
 import { TestScheduler } from 'rxjs/testing';
 import { Context } from '../../src/context';
 import { createIncreasePaidStorageOperation } from '../../src/contract';
@@ -17,7 +17,7 @@ describe('WalletOperation', () => {
       operations: [
         {
           kind: 'increase_paid_storage',
-          source: 'tz2R5pfZ3LKopsjcoJqoKQJ7PExN9ucmDzbb',
+          source: 'mv2VswSUYz7tbwmrQU1GxuviYh6x9UjYwDTt',
           fee: '397',
           counter: '134341',
           gas_limit: '1100',
@@ -28,7 +28,7 @@ describe('WalletOperation', () => {
             balance_updates: [
               {
                 kind: 'contract',
-                contract: 'tz2R5pfZ3LKopsjcoJqoKQJ7PExN9ucmDzbb',
+                contract: 'mv2VswSUYz7tbwmrQU1GxuviYh6x9UjYwDTt',
                 change: '-397',
                 origin: 'block',
               },
@@ -44,7 +44,7 @@ describe('WalletOperation', () => {
               balance_updates: [
                 {
                   kind: 'contract',
-                  contract: 'tz2R5pfZ3LKopsjcoJqoKQJ7PExN9ucmDzbb',
+                  contract: 'mv2VswSUYz7tbwmrQU1GxuviYh6x9UjYwDTt',
                   change: '-250',
                   origin: 'block',
                 },
@@ -80,7 +80,7 @@ describe('WalletOperation', () => {
       },
     };
     mockContext.walletProvider.mapIncreasePaidStorageWalletParams.mockResolvedValue({
-      source: 'tz2WyYB6AfhX3vHozXgo8kUK443Znv6Fv8D3',
+      source: 'mv2QpEDggBtATh9P2UuDqqYEZPiHVDs6KQEL',
       amount: 1,
       destination: 'KT1P1w5D61s69zfYNubLzonUkgC7zEkXTbY7',
       fee: 397,
@@ -92,7 +92,7 @@ describe('WalletOperation', () => {
     );
 
     mockContext.operationFactory.createIncreasePaidStorageOperation.mockResolvedValue({
-      source: 'tz2WyYB6AfhX3vHozXgo8kUK443Znv6Fv8D3',
+      source: 'mv2QpEDggBtATh9P2UuDqqYEZPiHVDs6KQEL',
       amount: 1,
       destination: 'KT1P1w5D61s69zfYNubLzonUkgC7zEkXTbY7',
       fee: 397,
@@ -104,14 +104,14 @@ describe('WalletOperation', () => {
   describe('increasePaidStorage format to operation reqs', () => {
     it('should return format for operation to be sent', async () => {
       const op = await createIncreasePaidStorageOperation({
-        source: 'tz2WyYB6AfhX3vHozXgo8kUK443Znv6Fv8D3',
+        source: 'mv2QpEDggBtATh9P2UuDqqYEZPiHVDs6KQEL',
         amount: 1,
         destination: 'KT1P1w5D61s69zfYNubLzonUkgC7zEkXTbY7',
         fee: 397,
         gasLimit: 1100,
         storageLimit: 0,
       });
-      expect(op.source).toEqual('tz2WyYB6AfhX3vHozXgo8kUK443Znv6Fv8D3');
+      expect(op.source).toEqual('mv2QpEDggBtATh9P2UuDqqYEZPiHVDs6KQEL');
       expect(op.amount).toEqual(1);
       expect(op.destination).toEqual('KT1P1w5D61s69zfYNubLzonUkgC7zEkXTbY7');
       expect(op.fee).toEqual(397);
@@ -149,7 +149,7 @@ describe('WalletOperation', () => {
         .increasePaidStorage({ amount: 1, destination: 'KT1P1w5D61s69zfYNubLzonUkgC7zEkXTbY7' })
         .send();
       expect(op).toEqual({
-        source: 'tz2WyYB6AfhX3vHozXgo8kUK443Znv6Fv8D3',
+        source: 'mv2QpEDggBtATh9P2UuDqqYEZPiHVDs6KQEL',
         amount: 1,
         destination: 'KT1P1w5D61s69zfYNubLzonUkgC7zEkXTbY7',
         fee: 397,

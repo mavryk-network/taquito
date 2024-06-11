@@ -68,7 +68,7 @@ type MichelsonNoArgInstructionID =
   | 'SOURCE'
   | 'SPLIT_TICKET'
   | 'SUB'
-  | 'SUB_MUTEZ'
+  | 'SUB_MUMAV'
   | 'SWAP'
   | 'TICKET'
   | 'TICKET_DEPRECATED'
@@ -158,7 +158,7 @@ export type MichelsonSimpleComparableTypeID =
   | 'int'
   | 'bytes'
   | 'bool'
-  | 'mutez'
+  | 'mumav'
   | 'key_hash'
   | 'address'
   | 'timestamp'
@@ -205,7 +205,7 @@ export type MichelsonTypeInt = Type0<'int'>;
 export type MichelsonTypeNat = Type0<'nat'>;
 export type MichelsonTypeString = Type0<'string'>;
 export type MichelsonTypeBytes = Type0<'bytes'>;
-export type MichelsonTypeMutez = Type0<'mutez'>;
+export type MichelsonTypeMumav = Type0<'mumav'>;
 export type MichelsonTypeBool = Type0<'bool'>;
 export type MichelsonTypeKeyHash = Type0<'key_hash'>;
 export type MichelsonTypeTimestamp = Type0<'timestamp'>;
@@ -250,8 +250,8 @@ export type MichelsonType<T extends MichelsonTypeID = MichelsonTypeID> = T exten
   ? MichelsonTypeString
   : T extends 'bytes'
   ? MichelsonTypeBytes
-  : T extends 'mutez'
-  ? MichelsonTypeMutez
+  : T extends 'mumav'
+  ? MichelsonTypeMumav
   : T extends 'bool'
   ? MichelsonTypeBool
   : T extends 'key_hash'
@@ -377,63 +377,17 @@ export type MichelsonReturnType = MichelsonType[] | MichelsonTypeFailed;
 
 export enum Protocol {
   Ps9mPmXa = 'Ps9mPmXaRzmzk35gbAYNCAw6UXdE2qoABTHbN2oEEc1qM7CwT9P',
-  PtCJ7pwo = 'PtCJ7pwoxe8JasnHY8YonnLYjcVHmhiARPJvqcC6VfHT5s8k8sY',
-  PsYLVpVv = 'PsYLVpVvgbLhAhoqAkMFUo6gudkJ9weNXhUYCiLDzcUpFpkk8Wt',
-  PsddFKi3 = 'PsddFKi32cMJ2qPjf43Qv5GDWLDPZb3T3bF6fLKiF5HtvHNU7aP',
-  Pt24m4xi = 'Pt24m4xiPbLDhVgVfABUjirbmda3yohdN82Sp9FeuAXJ4eV9otd',
-  PsBABY5H = 'PsBABY5HQTSkA4297zNHfsZNKtxULfL18y95qb3m53QJiXGmrbU',
-  PsBabyM1 = 'PsBabyM1eUXZseaJdmXFApDSBqj8YBfwELoxZHHW77EMcAbbwAS',
-  PsCARTHA = 'PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb',
-  PsDELPH1 = 'PsDELPH1Kxsxt8f9eWbxQeRxkjfbxoqM52jvs5Y5fBxWWh4ifpo',
-  PtEdoTez = 'PtEdoTezd3RHSC31mpxxo1npxFjoWWcFgQtxapi51Z8TLu6v6Uq',
-  PtEdo2Zk = 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
-  PsFLorena = 'PsFLorenaUUuikDWvMDr6fGBRG8kt3e3D3fHoXK1j1BFRxeSH4i',
-  PtGRANADs = 'PtGRANADsDU8R9daYKAgWnQYAJ64omN1o3KMGVCykShA97vQbvV',
-  PtHangzH = 'PtHangzHogokSuiMHemCuowEavgYTP8J5qQ9fQS793MHYFpCY3r',
-  PtHangz2 = 'PtHangz2aRngywmSRGGvrcTyMbbdpWdpFKuS4uMWxg2RaH9i1qx',
-  PsiThaCa = 'PsiThaCaT47Zboaw71QWScM8sXeMM7bbQFncK9FLqYc6EKdpjVP',
-  Psithaca2 = 'Psithaca2MLRFYargivpo7YvUr7wUDqyxrdhC5CQq78mRvimz6A',
-  PtJakarta = 'PtJakartaiDz69SfDDLXJSiuZqTSeSKRDbKVZC8MNzJnvRjvnGw',
-  PtJakart2 = 'PtJakart2xVj7pYXJBXrqHgd82rdkLey5ZeeGwDgPp9rhQUbSqY',
-  PtKathman = 'PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg',
-  PtLimaPtL = 'PtLimaPtLMwfNinJi9rCfDPWea8dFgTZ1MeJ9f1m2SRic6ayiwW',
-  PtMumbaii = 'PtMumbaiiFFEGbew1rRjzSPyzRbA51Tm3RVZL5suHPxSZYDhCEc',
-  PtMumbai2 = 'PtMumbai2TmsJHNGRkD8v8YDbtao7BLUC3wjASn1inAKLFCjaH1',
-  PtNairobi = 'PtNairobiyssHuh87hEhfVBGCVrK3WnS8Z2FT4ymB5tAa4r1nQf',
-  ProxfordY = 'ProxfordYmVfjWnRcgjWH36fW6PArwqykTFzotUxRs6gmTcZDuH',
+  PtAtLas = 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
   ProtoALpha = 'ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK', // temporary protocol hash
 }
 
-export const DefaultProtocol = Protocol.Psithaca2;
+export const DefaultProtocol = Protocol.PtAtLas;
 
 export type ProtocolID = `${Protocol}`;
 
 const protoLevel: Record<ProtocolID, number> = {
   Ps9mPmXaRzmzk35gbAYNCAw6UXdE2qoABTHbN2oEEc1qM7CwT9P: 0,
-  PtCJ7pwoxe8JasnHY8YonnLYjcVHmhiARPJvqcC6VfHT5s8k8sY: 1,
-  PsYLVpVvgbLhAhoqAkMFUo6gudkJ9weNXhUYCiLDzcUpFpkk8Wt: 2,
-  PsddFKi32cMJ2qPjf43Qv5GDWLDPZb3T3bF6fLKiF5HtvHNU7aP: 3,
-  Pt24m4xiPbLDhVgVfABUjirbmda3yohdN82Sp9FeuAXJ4eV9otd: 4,
-  PsBABY5HQTSkA4297zNHfsZNKtxULfL18y95qb3m53QJiXGmrbU: 5,
-  PsBabyM1eUXZseaJdmXFApDSBqj8YBfwELoxZHHW77EMcAbbwAS: 5,
-  PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb: 6,
-  PsDELPH1Kxsxt8f9eWbxQeRxkjfbxoqM52jvs5Y5fBxWWh4ifpo: 7,
-  PtEdoTezd3RHSC31mpxxo1npxFjoWWcFgQtxapi51Z8TLu6v6Uq: 8,
-  PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA: 8,
-  PsFLorenaUUuikDWvMDr6fGBRG8kt3e3D3fHoXK1j1BFRxeSH4i: 9,
-  PtGRANADsDU8R9daYKAgWnQYAJ64omN1o3KMGVCykShA97vQbvV: 10,
-  PtHangzHogokSuiMHemCuowEavgYTP8J5qQ9fQS793MHYFpCY3r: 11,
-  PtHangz2aRngywmSRGGvrcTyMbbdpWdpFKuS4uMWxg2RaH9i1qx: 11,
-  PsiThaCaT47Zboaw71QWScM8sXeMM7bbQFncK9FLqYc6EKdpjVP: 12,
-  Psithaca2MLRFYargivpo7YvUr7wUDqyxrdhC5CQq78mRvimz6A: 12,
-  PtJakartaiDz69SfDDLXJSiuZqTSeSKRDbKVZC8MNzJnvRjvnGw: 13,
-  PtJakart2xVj7pYXJBXrqHgd82rdkLey5ZeeGwDgPp9rhQUbSqY: 13,
-  PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg: 14,
-  PtLimaPtLMwfNinJi9rCfDPWea8dFgTZ1MeJ9f1m2SRic6ayiwW: 15,
-  PtMumbaiiFFEGbew1rRjzSPyzRbA51Tm3RVZL5suHPxSZYDhCEc: 16,
-  PtMumbai2TmsJHNGRkD8v8YDbtao7BLUC3wjASn1inAKLFCjaH1: 16,
-  PtNairobiyssHuh87hEhfVBGCVrK3WnS8Z2FT4ymB5tAa4r1nQf: 17,
-  ProxfordYmVfjWnRcgjWH36fW6PArwqykTFzotUxRs6gmTcZDuH: 19,
+  PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp: 19,
   ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK: 20,
 };
 

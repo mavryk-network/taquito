@@ -1,6 +1,6 @@
 import { CONFIGS } from '../../config';
 import { storageContract } from '../../data/storage-contract';
-import { MichelsonMap, BigMapAbstraction, MichelCodecPacker } from '@taquito/taquito';
+import { MichelsonMap, BigMapAbstraction, MichelCodecPacker } from '@mavrykdynamics/taquito';
 import { tokenBigmapCode } from '../../data/token_bigmap';
 import { tokenCode, tokenInit } from '../../data/tokens';
 import BigNumber from 'bignumber.js';
@@ -22,10 +22,10 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
         code: storageContract,
         storage: {
           map1: MichelsonMap.fromLiteral({
-            tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD: 1,
+            mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ: 1,
             KT1CDEg2oY3VfMa1neB7hK5LoVMButvivKYv: 2,
-            tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2: 2,
-            tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS: 3,
+            mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5: 2,
+            mv1Ly8iGNbSg8hSNd632hnGf5xKzoGE67MTp: 3,
           }),
           map2: MichelsonMap.fromLiteral({
             '12': 3,
@@ -82,9 +82,9 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
 
         const bigMapInit = new MichelsonMap();
         bigMapInit.set(signer, { 0: '1', 1: new MichelsonMap() });
-        bigMapInit.set('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', { 0: '2', 1: new MichelsonMap() });
-        bigMapInit.set('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD', { 0: '3', 1: new MichelsonMap() });
-        bigMapInit.set('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2', { 0: '4', 1: new MichelsonMap() });
+        bigMapInit.set('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', { 0: '2', 1: new MichelsonMap() });
+        bigMapInit.set('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ', { 0: '3', 1: new MichelsonMap() });
+        bigMapInit.set('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5', { 0: '4', 1: new MichelsonMap() });
         // Deploy a contract with a big map
         const op = await Tezos.contract.originate({
           code: tokenCode,
@@ -117,32 +117,32 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
 
         // Fetch multiples keys
         const bigMapValues = await bigMap.getMultipleValues<BigMapVal>([
-          'tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1',
-          'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
-          'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
-          'tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2',
+          'mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina',
+          'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
+          'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
+          'mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5',
         ]);
-        expect(bigMapValues.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['0'].toString()).toEqual(
+        expect(bigMapValues.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['0'].toString()).toEqual(
           '2'
         );
-        expect(bigMapValues.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['1']).toEqual(
+        expect(bigMapValues.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['1']).toEqual(
           expect.objectContaining(new MichelsonMap())
         );
 
-        expect(bigMapValues.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['0'].toString()).toEqual(
+        expect(bigMapValues.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['0'].toString()).toEqual(
           '3'
         );
-        expect(bigMapValues.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['1']).toEqual(
+        expect(bigMapValues.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['1']).toEqual(
           expect.objectContaining(new MichelsonMap())
         );
 
-        expect(bigMapValues.has('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toBeTruthy();
-        expect(bigMapValues.get('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toBeUndefined();
+        expect(bigMapValues.has('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toBeTruthy();
+        expect(bigMapValues.get('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toBeUndefined();
 
-        expect(bigMapValues.get('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2')!['0'].toString()).toEqual(
+        expect(bigMapValues.get('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5')!['0'].toString()).toEqual(
           '4'
         );
-        expect(bigMapValues.get('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2')!['1']).toEqual(
+        expect(bigMapValues.get('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5')!['1']).toEqual(
           expect.objectContaining(new MichelsonMap())
         );
 
@@ -151,20 +151,20 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
 
         // Fetch multiples keys
         const bigMapValuesWithLevel = await bigMap.getMultipleValues<BigMapVal>(
-          ['tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD'],
+          ['mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ'],
           header.level
         );
         expect(
-          bigMapValuesWithLevel.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['0'].toString()
+          bigMapValuesWithLevel.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['0'].toString()
         ).toEqual('2');
-        expect(bigMapValuesWithLevel.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['1']).toEqual(
+        expect(bigMapValuesWithLevel.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['1']).toEqual(
           expect.objectContaining(new MichelsonMap())
         );
 
         expect(
-          bigMapValuesWithLevel.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['0'].toString()
+          bigMapValuesWithLevel.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['0'].toString()
         ).toEqual('3');
-        expect(bigMapValuesWithLevel.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['1']).toEqual(
+        expect(bigMapValuesWithLevel.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['1']).toEqual(
           expect.objectContaining(new MichelsonMap())
         );
 
@@ -209,7 +209,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
     it('Return undefined when BigMap key is not found', async () => {
       const myContract = await Tezos.contract.at(knownBigMapContract);
       const contractStorage: any = await myContract.storage();
-      const value = await contractStorage.ledger.get('tz1NortRftucvAkD1J58L32EhSVrQEWJCEnB');
+      const value = await contractStorage.ledger.get('mv19g9pKpuXGNKHv9unEpUHY1UBiAfhzX1dj');
       expect(value).toBeUndefined();
     });
 
@@ -242,9 +242,9 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract }) => {
       const signer = await Tezos.signer.publicKeyHash();
       const objLitAsMichelsonMap = {
         [signer]: { 0: '1', 1: {} },
-        'tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1': { 0: '2', 1: {} },
-        'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD': { 0: '3', 1: {} },
-        'tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2': { 0: '4', 1: {} },
+        'mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina': { 0: '2', 1: {} },
+        'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ': { 0: '3', 1: {} },
+        'mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5': { 0: '4', 1: {} },
       }
       const op = await Tezos.contract.originate({
         code: tokenCode,

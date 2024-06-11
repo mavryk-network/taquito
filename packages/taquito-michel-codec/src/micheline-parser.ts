@@ -12,7 +12,7 @@ import {
 import { expandMacros } from './macros';
 import { ProtocolOptions } from './michelson-types';
 import { expandGlobalConstants } from './global-constants';
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error
@@ -106,7 +106,7 @@ export interface ParserOptions extends ProtocolOptions {
  * Encode a Michelson expression for initial storage of a smart contract
  * ```
  * const src = `(Pair (Pair { Elt 1
- *                (Pair (Pair "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN" "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx")
+ *                (Pair (Pair "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
  *                      0x0501000000026869) }
  *          10000000)
  *    (Pair 2 333))`;

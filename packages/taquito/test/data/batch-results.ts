@@ -1,9 +1,9 @@
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 
 export const resultOriginations = [
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587775',
     gas_limit: '1570',
@@ -29,7 +29,7 @@ export const resultOriginations = [
   },
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587776',
     gas_limit: '1570',
@@ -58,7 +58,7 @@ export const resultOriginations = [
 export const successfulResult = [
   {
     kind: 'transaction',
-    source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+    source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
     fee: '1831',
     counter: '121636',
     gas_limit: '15385',
@@ -67,11 +67,11 @@ export const successfulResult = [
     destination: 'KT1UMZuZRzgS9iZGC2LTQad6PHPaF3fmSo4p',
     metadata: {
       balance_updates: [
-        { kind: 'contract', contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys', change: '-1831' },
+        { kind: 'contract', contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg', change: '-1831' },
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '1831',
         },
@@ -82,7 +82,7 @@ export const successfulResult = [
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+            contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
             change: '-1000000',
           },
           {
@@ -98,7 +98,7 @@ export const successfulResult = [
   },
   {
     kind: 'transaction',
-    source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+    source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
     fee: '2991',
     counter: '121637',
     gas_limit: '26260',
@@ -112,10 +112,10 @@ export const successfulResult = [
         { prim: 'NIL', args: [{ prim: 'operation' }] },
         {
           prim: 'PUSH',
-          args: [{ prim: 'key_hash' }, { string: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh' }],
+          args: [{ prim: 'key_hash' }, { string: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m' }],
         },
         { prim: 'IMPLICIT_ACCOUNT' },
-        { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '50' }] },
+        { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '50' }] },
         { prim: 'UNIT' },
         { prim: 'TRANSFER_TOKENS' },
         { prim: 'CONS' },
@@ -123,11 +123,11 @@ export const successfulResult = [
     },
     metadata: {
       balance_updates: [
-        { kind: 'contract', contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys', change: '-2991' },
+        { kind: 'contract', contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg', change: '-2991' },
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '2991',
         },
@@ -144,7 +144,7 @@ export const successfulResult = [
           source: 'KT1UMZuZRzgS9iZGC2LTQad6PHPaF3fmSo4p',
           nonce: 0,
           amount: '50',
-          destination: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
+          destination: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
           result: {
             status: 'applied',
             balance_updates: [
@@ -155,7 +155,7 @@ export const successfulResult = [
               },
               {
                 kind: 'contract',
-                contract: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
+                contract: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
                 change: '50',
               },
             ],
@@ -167,7 +167,7 @@ export const successfulResult = [
   },
   {
     kind: 'transaction',
-    source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+    source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
     fee: '2947',
     counter: '121638',
     gas_limit: '25894',
@@ -181,7 +181,7 @@ export const successfulResult = [
         { prim: 'NIL', args: [{ prim: 'operation' }] },
         {
           prim: 'PUSH',
-          args: [{ prim: 'key_hash' }, { string: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9' }],
+          args: [{ prim: 'key_hash' }, { string: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq' }],
         },
         { prim: 'SOME' },
         { prim: 'SET_DELEGATE' },
@@ -190,11 +190,11 @@ export const successfulResult = [
     },
     metadata: {
       balance_updates: [
-        { kind: 'contract', contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys', change: '-2947' },
+        { kind: 'contract', contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg', change: '-2947' },
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '2947',
         },
@@ -210,7 +210,7 @@ export const successfulResult = [
           kind: 'delegation',
           source: 'KT1UMZuZRzgS9iZGC2LTQad6PHPaF3fmSo4p',
           nonce: 1,
-          delegate: 'tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9',
+          delegate: 'mv1Lz9L2svVx3p9kEaHseLVvkcM3jTJHfFWq',
           result: { status: 'applied', consumed_milligas: '10000000' },
         },
       ],
@@ -218,7 +218,7 @@ export const successfulResult = [
   },
   {
     kind: 'transaction',
-    source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+    source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
     fee: '2897',
     counter: '121639',
     gas_limit: '25822',
@@ -237,11 +237,11 @@ export const successfulResult = [
     },
     metadata: {
       balance_updates: [
-        { kind: 'contract', contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys', change: '-2897' },
+        { kind: 'contract', contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg', change: '-2897' },
         {
           kind: 'freezer',
           category: 'fees',
-          delegate: 'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
+          delegate: 'mv1CSUcVn1mpn8GKw9uWwAD44YeknDWTBhPQ',
           cycle: 55,
           change: '2897',
         },
@@ -267,7 +267,7 @@ export const successfulResult = [
 export const resultWithoutOrigination = [
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587775',
     gas_limit: '1570',
@@ -289,7 +289,7 @@ export const resultWithoutOrigination = [
   },
   {
     kind: 'origination',
-    source: 'tz2Gqo2mHThaY3ymDpEE223i25jW7pAVtEyH',
+    source: 'mv2iDQevDLRrRkCLYMEbg8M7E4ofso8eS442',
     fee: '723',
     counter: '587776',
     gas_limit: '1570',
@@ -314,13 +314,13 @@ export const resultWithoutOrigination = [
 export const resultSingleOrigination = [
   {
     kind: 'transaction',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '495',
     counter: '504878',
     gas_limit: '1551',
     storage_limit: '0',
     amount: '20000',
-    destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     metadata: {
       balance_updates: [],
       operation_result: {
@@ -332,13 +332,13 @@ export const resultSingleOrigination = [
   },
   {
     kind: 'transaction',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '495',
     counter: '504879',
     gas_limit: '1551',
     storage_limit: '0',
     amount: '20000',
-    destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     metadata: {
       balance_updates: [],
       operation_result: {
@@ -350,13 +350,13 @@ export const resultSingleOrigination = [
   },
   {
     kind: 'transaction',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '495',
     counter: '504880',
     gas_limit: '1551',
     storage_limit: '0',
     amount: '20000',
-    destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     metadata: {
       balance_updates: [],
       operation_result: {
@@ -368,7 +368,7 @@ export const resultSingleOrigination = [
   },
   {
     kind: 'origination',
-    source: 'tz2Ayd83C7j9tSfpNDSRMVvic2Hj3ingjrY2',
+    source: 'mv2ZKdCtU99F2eQf4J9xkNRmiseqEgc8uLxD',
     fee: '496',
     counter: '504881',
     gas_limit: '1570',

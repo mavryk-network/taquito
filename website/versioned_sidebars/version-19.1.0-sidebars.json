@@ -126,6 +126,7 @@
         "rpc_package",
         "michelson_encoder",
         "contracts-library",
+        "timelock",
         "taquito_utils",
         {
           "type": "category",
@@ -217,7 +218,7 @@
     {
       "type": "link",
       "label": "TypeDoc Reference",
-      "href": "https://taquito.io/typedoc"
+      "href": "https://taquito.mavryk.org/typedoc"
     }
   ]
 }

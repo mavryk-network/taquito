@@ -1,4 +1,4 @@
-import { OpKind } from '@taquito/taquito';
+import { OpKind } from '@mavrykdynamics/taquito';
 import { CONFIGS, SignerType } from '../../../config';
 
 CONFIGS().forEach(({ lib, rpc, setup, knownBaker, signerConfig }) => {
@@ -13,7 +13,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, signerConfig }) => {
                 const batchOpEstimate = await Tezos.estimate
                     .batch([
                         { kind: OpKind.DELEGATION, source: await Tezos.signer.publicKeyHash(), delegate: knownBaker },
-                        { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 },
+                        { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 },
                     ])
 
                 expect(batchOpEstimate.length).toEqual(3);
@@ -39,7 +39,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBaker, signerConfig }) => {
                 const batchOpEstimate = await Tezos.estimate
                     .batch([
                         { kind: OpKind.DELEGATION, source: pkh, delegate: knownBaker },
-                        { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 },
+                        { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 },
                     ])
 
                 expect(batchOpEstimate.length).toEqual(2);

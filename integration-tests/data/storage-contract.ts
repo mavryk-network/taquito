@@ -54,7 +54,7 @@ export const storageContract = [{ "prim": "parameter", "args": [{ "prim": "unit"
                 {
                   "prim": "map",
                   "args":
-                    [{ "prim": "mutez" }, { "prim": "nat" }],
+                    [{ "prim": "mumav" }, { "prim": "nat" }],
                   "annots": ["%map6"]
                 }]
             },

@@ -1,6 +1,6 @@
 {
-  "name": "@taquito/beacon-wallet",
-  "version": "19.2.0",
+  "name": "@mavrykdynamics/taquito-beacon-wallet",
+  "version": "19.2.3",
   "description": "Beacon wallet provider",
   "keywords": [
     "tezos",
@@ -56,7 +56,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^@taquito/taquito$": "<rootDir>/../taquito/src/taquito.ts"
+      "^@mavrykdynamics/taquito$": "<rootDir>/../taquito/src/taquito.ts"
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -67,9 +67,9 @@
     ]
   },
   "dependencies": {
-    "@airgap/beacon-dapp": "^4.2.1",
-    "@taquito/core": "^19.1.0",
-    "@taquito/taquito": "^19.2.0"
+    "@mavrykdynamics/beacon-dapp": "^4.2.2",
+    "@mavrykdynamics/taquito-core": "^19.1.0",
+    "@mavrykdynamics/taquito": "^19.2.3"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.40",

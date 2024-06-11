@@ -66,7 +66,7 @@ Tezos.contract
 Tezos.contract
   .at('KT1MhfAnNbg2oACFBP4VDU5bNY5MZUXdeDWs')
   .then((contract) => {
-    return contract.views.getBalance('tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5').read();
+    return contract.views.getBalance('mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV').read();
   })
   .then((response) => {
     println(response);
@@ -81,7 +81,7 @@ Tezos.contract
   .at('KT1Ccr6ZMeB1mp9yJAqJTHK7F4xoFV9uc11T')
   .then((contract) => {
     return contract.views
-      .balance_of([{ owner: 'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', token_id: '0' }])
+      .balance_of([{ owner: 'mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', token_id: '0' }])
       .read();
   })
   .then((response) => {
@@ -94,7 +94,7 @@ Tezos.contract
 Tezos.contract
   .at('KT1MhfAnNbg2oACFBP4VDU5bNY5MZUXdeDWs')
   .then((contract) => {
-    return contract.views.getBalance('tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5').read();
+    return contract.views.getBalance('mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV').read();
   })
   .then((response) => {
     println(JSON.stringify(response, null, 2));

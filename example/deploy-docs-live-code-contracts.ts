@@ -1,5 +1,5 @@
 /// How to use:
-///   Ensure the Testfunder account tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys has at least 2k tokens
+///   Ensure the Testfunder account mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg has at least 2k tokens
 ///   for the testnet in use. The script will first check if addresses used in the script are funded,
 ///   and top them up if needed. The script will then originate each contract needed for Live Code
 ///   examples in Taquito Docs and produce a JSON file with each Contract Identifier and its PKH.
@@ -9,8 +9,8 @@
 ///   Execute this script with
 ///     node -r ts-node/register deploy-docs-live-code-contracts.ts
 
-import { MichelsonMap, TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { tzip7Contract } from '../integration-tests/data/tzip_7_contract';
 import { contractMapPairKey } from './data/contractMapPairKey';
 import { contractIncrementing } from './data/contractIncrementing';
@@ -27,12 +27,12 @@ import {
 } from '../integration-tests/data/metadataViews';
 import { saplingLiveCodeContract } from './data/sapling_live_code_contract';
 import { contractMap8pairs } from './data/contractMap8pairs';
-import { stringToBytes } from '@taquito/utils';
+import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import { fa2Contract } from '../integration-tests/data/fa2_contract';
 import BigNumber from 'bignumber.js';
 
 
-const provider = 'https://ghostnet.ecadinfra.com/';
+const provider = 'https://basenet.rpc.mavryk.network/';
 export const signer = new InMemorySigner(
   'edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca'
 );
@@ -43,21 +43,21 @@ const contract_catalogue = new Map();
 
 const users: Array<string> = [
   //live code examples
-  'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
-  'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
-  'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY',
-  'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
-  'tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx',
-  'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
-  'tz1L9r8mWmRPndRhuvMCWESLGSVeFzQ9NAWx',
-  'tz1NhNv9g7rtcjyNsH8Zqu79giY5aTqDDrzB',
-  'tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE',
-  'tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq',
-  'tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1',
+  'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
+  'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
+  'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc',
+  'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
+  'mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe',
+  'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
+  'mv1ENbzDhD32LEfMzqsH3PC6SUv2y62tJCrH',
+  'mv1JnsMA5ArZr926mKNzQf4TeTpibVWfpEx3',
+  'mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi',
+  'mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx',
+  'mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF',
   //integration tests
-  'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
-  'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh',
-  'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+  'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
+  'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m',
+  'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
 ];
 
 const user_addresses = new Map();
@@ -257,12 +257,12 @@ async function originateLambda2() {
   tezos.setSignerProvider(signer);
   try {
     const bigMapLedger = new MichelsonMap();
-    bigMapLedger.set('tz1c1X8vD4pKV9TgV1cyosR7qdnkc8FTEyM1', {
-      allowances: ['tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY'],
+    bigMapLedger.set('mv1PSUDXfWMnxcofp84crVhQzZk4EX78toYF', {
+      allowances: ['mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc'],
       balance: '50'
     });
-    bigMapLedger.set('tz1XTyqBn4xi9tkRDutpRyQwHxfF8ar4i4Wq', {
-      allowances: ['tz1Nu949TjA4zzJ1iobz76fHPZbWUraRVrCE'],
+    bigMapLedger.set('mv1SYCrLhPXMoDeB2eh4FRwiSW5weQBDu4tx', {
+      allowances: ['mv1HDistHPoEHEN2dAPZXmxyiBCZAqufraBi'],
       balance: '50',
     });
 
@@ -578,12 +578,12 @@ async function originateTzip16Storage() {
       description: 'A metadata test',
       version: '0.1',
       license: 'MIT',
-      authors: ['Taquito <https://taquito.io/>'],
-      homepage: 'https://taquito.io/',
+      authors: ['Taquito <https://taquito.mavryk.org/>'],
+      homepage: 'https://taquito.mavryk.org/',
     };
 
     const metadataBigMap = new MichelsonMap();
-    metadataBigMap.set('', stringToBytes('tezos-storage:here'));
+    metadataBigMap.set('', stringToBytes('mavryk-storage:here'));
     metadataBigMap.set('here', stringToBytes(JSON.stringify(metadataJSON)));
 
     const tacoShopStorageMap = new MichelsonMap();
@@ -695,7 +695,7 @@ async function originateTzip16OnChainJSON() {
   tezos.setSignerProvider(signer);
   try {
     const metadataBigMAp = new MichelsonMap();
-    metadataBigMAp.set('', stringToBytes('tezos-storage:here'));
+    metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
     metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample1)));
 
     const op = await tezos.contract.originate({
@@ -718,7 +718,7 @@ async function originateTzip16OnChainMultiply() {
   tezos.setSignerProvider(signer);
   try {
     const metadataBigMAp = new MichelsonMap();
-    metadataBigMAp.set('', stringToBytes('tezos-storage:here'));
+    metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
     metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample2)));
 
     const op = await tezos.contract.originate({
@@ -744,7 +744,7 @@ async function originateWalletOriginateContractTransfer() {
       balance: '0',
       code: `parameter unit;
       storage int;
-      code { PUSH address "tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr" ;
+      code { PUSH address "mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo" ;
              CONTRACT unit ;
              IF_NONE { PUSH string "Not a contract" ; FAILWITH } { DUP ; DIP { DROP } } ;
              DUP ;
@@ -1045,13 +1045,13 @@ async function originateMichelsonMap() {
   try {
     console.log('Deploying Michelson Tutorial contract...');
     const op = await tezos.contract.originate({
-      code: `parameter (pair address mutez);
-      storage (map address mutez);
+      code: `parameter (pair address mumav);
+      storage (map address mumav);
       code { DUP ; CAR ; SWAP ; CDR ; SWAP ; DUP ; DUG 2 ; CDR ; DIG 2 ; CAR ; SWAP ; SOME ; SWAP ; UPDATE ; NIL operation ; PAIR }`,
       init: [
         {
           prim: 'Elt',
-          args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '0' }],
+          args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '0' }],
         },
       ],
     });

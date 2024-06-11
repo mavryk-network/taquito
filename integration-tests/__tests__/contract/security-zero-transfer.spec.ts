@@ -1,5 +1,5 @@
 import { CONFIGS } from '../../config';
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 
 // TC-007 - A 0tez transaction to an implicit account should fail.
 
@@ -13,7 +13,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
 
     });
 
-    weeklynet('Verify that Transactions of 0ꜩ towards a contract without code are forbidden', async () => {
+    weeklynet('Verify that Transactions of 0ṁ towards a contract without code are forbidden', async () => {
       try {
         const op = await Tezos.contract.originate({
           code: `{ parameter address ;
@@ -21,7 +21,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                       code { UNPAIR ;
                              CONTRACT unit ;
                              IF_NONE { PUSH string "none" ; FAILWITH } {} ;
-                             PUSH mutez 0 ;
+                             PUSH mumav 0 ;
                              UNIT ;
                              TRANSFER_TOKENS ;
                              SWAP ;

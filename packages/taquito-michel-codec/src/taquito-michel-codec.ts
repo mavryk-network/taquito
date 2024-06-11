@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/michel-codec
+ * @module @mavrykdynamics/taquito-michel-codec
  */
 export * from './micheline';
 export * from './micheline-parser';

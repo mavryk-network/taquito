@@ -1,8 +1,8 @@
 /**
  * @packageDocumentation
- * @module @taquito/remote-signer
+ * @module @mavrykdynamics/taquito-remote-signer
  */
-import { HttpBackend, HttpResponseError, STATUS_CODE } from '@taquito/http-utils';
+import { HttpBackend, HttpResponseError, STATUS_CODE } from '@mavrykdynamics/taquito-http-utils';
 import {
   b58cdecode,
   b58cencode,
@@ -15,7 +15,7 @@ import {
   validateKeyHash,
   ValidationResult,
   invalidDetail,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import { hash } from '@stablelib/blake2b';
 import toBuffer from 'typedarray-to-buffer';
 import {
@@ -24,13 +24,13 @@ import {
   PublicKeyVerificationError,
   SignatureVerificationError,
 } from './errors';
-import { Signer } from '@taquito/taquito';
+import { Signer } from '@mavrykdynamics/taquito';
 import {
   InvalidSignatureError,
   InvalidKeyHashError,
   ProhibitedActionError,
   PublicKeyNotFoundError,
-} from '@taquito/core';
+} from '@mavrykdynamics/taquito-core';
 
 interface PublicKeyResponse {
   public_key: string;
@@ -52,19 +52,19 @@ const pref = {
   ed: {
     pk: prefix['edpk'],
     sk: prefix['edsk'],
-    pkh: prefix.tz1,
+    pkh: prefix.mv1,
     sig: prefix.edsig,
   },
   p2: {
     pk: prefix['p2pk'],
     sk: prefix['p2sk'],
-    pkh: prefix.tz3,
+    pkh: prefix.mv3,
     sig: prefix.p2sig,
   },
   sp: {
     pk: prefix['sppk'],
     sk: prefix['spsk'],
-    pkh: prefix.tz2,
+    pkh: prefix.mv2,
     sig: prefix.spsig,
   },
 };

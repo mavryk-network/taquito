@@ -3,7 +3,7 @@ import {
   MichelsonData,
   MichelsonContractStorage,
   MichelsonType,
-} from '@taquito/michel-codec';
+} from '@mavrykdynamics/taquito-michel-codec';
 import { REVEAL_STORAGE_LIMIT, getRevealFee, getRevealGasLimit } from '../../src/constants';
 
 const scriptSample = {
@@ -40,7 +40,7 @@ const scriptSample = {
             prim: 'PUSH',
             args: [
               {
-                prim: 'mutez',
+                prim: 'mumav',
               },
               {
                 int: '1000000',
@@ -313,7 +313,7 @@ const scriptSample = {
         int: '0',
       },
       {
-        string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
       },
     ],
   },
@@ -334,7 +334,7 @@ export const originateResults = {
   opOb: {
     branch: 'test',
     contents: [
-      revealOp('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'),
+      revealOp('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'),
       {
         kind: 'origination',
         fee: '10000',
@@ -343,7 +343,7 @@ export const originateResults = {
         balance: '200000000',
         script: scriptSample,
         delegate: 'test_delegate',
-        source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         counter: '2',
       },
     ],
@@ -353,12 +353,12 @@ export const originateResults = {
   counter: 0,
 };
 
-export const originateResultsMutezTrue = {
+export const originateResultsMumavTrue = {
   opbytes: 'test',
   opOb: {
     branch: 'test',
     contents: [
-      revealOp('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'),
+      revealOp('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'),
       {
         kind: 'origination',
         fee: '10000',
@@ -367,7 +367,7 @@ export const originateResultsMutezTrue = {
         balance: '200',
         script: scriptSample,
         delegate: 'test_delegate',
-        source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         counter: '2',
       },
     ],
@@ -382,7 +382,7 @@ export const originateResultsEstimate = {
   opOb: {
     branch: 'test',
     contents: [
-      revealOp('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM'),
+      revealOp('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q'),
       {
         kind: 'origination',
         fee: '301',
@@ -391,7 +391,7 @@ export const originateResultsEstimate = {
         balance: '200000000',
         script: scriptSample,
         delegate: 'test_delegate',
-        source: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        source: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         counter: '2',
       },
     ],
@@ -408,7 +408,7 @@ export const sampleStorage: MichelsonData = {
     {
       prim: 'Pair',
       args: [
-        { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+        { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
         { prim: 'Pair', args: [{ prim: 'False' }, { int: '200' }] },
       ],
     },
@@ -461,7 +461,7 @@ export const sampleBigMapValue: MichelsonData = {
     [
       {
         prim: 'Elt',
-        args: [{ bytes: '000035e993d8c7aaa42b5e3ccd86a33390ececc73abd' }, { int: '100' }],
+        args: [{ bytes: '0000a147d3fdd7df7eac61a24ea9ee4aac730ad3ab17' }, { int: '100' }],
       },
       {
         prim: 'Elt',
@@ -480,7 +480,7 @@ code {
        # (pair parameter storage) : []
 
        # make sure that the participant has contributed at least 1 tez
-       PUSH mutez 1000000;
+       PUSH mumav 1000000;
        AMOUNT;
        IFCMPGE {} { PUSH string "You did not provide enough tez."; FAILWITH; };
 
@@ -534,7 +534,7 @@ export const miSample: MichelsonContract = [
       [
         {
           prim: 'PUSH',
-          args: [{ prim: 'mutez' }, { int: '1000000' }],
+          args: [{ prim: 'mumav' }, { int: '1000000' }],
         },
         { prim: 'AMOUNT' },
         [
@@ -676,7 +676,7 @@ export const miSample: MichelsonContract = [
   },
 ];
 
-export const miInit = '(Pair 0 "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn")';
+export const miInit = '(Pair 0 "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW")';
 
 export const miStorage: MichelsonData = {
   prim: 'Pair',
@@ -685,7 +685,7 @@ export const miStorage: MichelsonData = {
       int: '0',
     },
     {
-      string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+      string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
     },
   ],
 };

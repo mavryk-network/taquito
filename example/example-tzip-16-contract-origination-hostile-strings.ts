@@ -1,11 +1,11 @@
-import { TezosToolkit } from '@taquito/taquito';
-import { stringToBytes } from '@taquito/utils';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import { tacoContractTzip16 } from "../integration-tests/data/modified-taco-contract"
-import { MichelsonMap } from "@taquito/taquito";
-import { InMemorySigner } from '@taquito/signer';
+import { MichelsonMap } from "@mavrykdynamics/taquito";
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 async function example() {
-  const provider = 'https://ghostnet.ecadinfra.com';
+  const provider = 'https://basenet.rpc.mavryk.network';
   const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
   const tezos = new TezosToolkit(provider);
   tezos.setSignerProvider(signer);
@@ -33,7 +33,7 @@ async function example() {
     };
 
     const metadataBigMAp = new MichelsonMap();
-    metadataBigMAp.set("", stringToBytes('tezos-storage:here'));
+    metadataBigMAp.set("", stringToBytes('mavryk-storage:here'));
     metadataBigMAp.set("here", stringToBytes(JSON.stringify(metadataJSON)))
 
     const tacoShopStorageMap = new MichelsonMap();

@@ -1,8 +1,8 @@
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 async function example() {
-  const provider = 'https://ghostnet.ecadinfra.com';
+  const provider = 'https://basenet.rpc.mavryk.network';
     const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
     const tezos = new TezosToolkit(provider);
     tezos.setSignerProvider(signer);
@@ -10,12 +10,12 @@ async function example() {
   try {
     console.log('Deploying Michelson Tutorial contract...');
     const op = await tezos.contract.originate({
-      code: `parameter (pair address mutez);
-      storage (map address mutez);
+      code: `parameter (pair address mumav);
+      storage (map address mumav);
       code { DUP ; CAR ; SWAP ; CDR ; SWAP ; DUP ; DUG 2 ; CDR ; DIG 2 ; CAR ; SWAP ; SOME ; SWAP ; UPDATE ; NIL operation ; PAIR }`,
       init: [{
         prim: 'Elt',
-        args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '0' }],
+        args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '0' }],
       }],
     });
 

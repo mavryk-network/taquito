@@ -33,7 +33,7 @@ Here is an example on how to retrieve addresses: [InMemoryViewingKey](./sapling_
 
 # Sapling toolkit
 
-The `@taquito/sapling` package provides a `SaplingToolkit` class that surfaces all of the Sapling capabilities, allowing it to read from a Sapling state and prepare transactions.
+The `@mavrykdynamics/taquito-sapling` package provides a `SaplingToolkit` class that surfaces all of the Sapling capabilities, allowing it to read from a Sapling state and prepare transactions.
 
 The constructor of the `SaplingToolkit` takes the following properties:
 - the first parameter is an object containing:
@@ -49,11 +49,11 @@ The constructor of the `SaplingToolkit` takes the following properties:
 Here is an example of how to instantiate a `SaplingToolkit`:
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
-const tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
+const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
 const readProvider = new RpcReadAdapter(new RpcClient('https://YOUR_PREFERRED_RPC_URL'));
 const saplingContract = await tezos.contract.at('KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf');
 
@@ -72,21 +72,21 @@ When calling the `getSaplingTransactionViewer` method of the `SaplingToolkit` cl
 
 For each entry in the shielded pool, the `SaplingTransactionViewer` class will try to decrypt them using the viewing key as if it were the receiver. If a ciphertext is successfully decrypted, the configured account was the receiver of the output. The `SaplingTransactionViewer` will find which inputs were not spent by computing their nullifier. If an input is spent, its nullifier will be in the Sapling state. If the nullifier is not present, the input has not been spent, and its value will be considered in the calculated balance.
 
-Note that the balance is represented in mutez.
+Note that the balance is represented in mumav.
 
 The balance can be retrieved as follows:
 
-```js
-import { RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+```js live noInline
+import { RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 // Alice spending key
 const aliceSk = 'sask27SLmU9herddHz4qFJBLMjWYMbJF8RtS579w9ej9mfCYK7VUdyCJPHK8AzW9zMsopGZEkYeNjAY7Zz1bkM7CGu8eKLzrjBLTMC5wWJDhxiK91ahA29rhDRsHdJDV2u2jFwb2MNUix8JW7sAkAqYVaJpCehTBPgRQ1KqKwqqUaNmuD8kazd4Q8MCWmgbWs21Yuomdqyi9FLigjRp7oY4m5adaVU19Nj1AHvsMY2tePeU2L';
 
 const inMemorySpendingKey = new InMemorySpendingKey(aliceSk);
 
-const readProvider = new RpcReadAdapter(new RpcClient('https://ghostnet.ecadinfra.com/'));
+const readProvider = new RpcReadAdapter(new RpcClient('https://basenet.rpc.mavryk.network/'));
 
 const saplingToolkit = new SaplingToolkit(
     { saplingSigner: inMemorySpendingKey },
@@ -99,27 +99,27 @@ saplingToolkit.getSaplingTransactionViewer()
     println(`Fetching Alice balance in the shielded pool...`);
     return txViewer.getBalance();
   })
-  .then((balance) => println(`Alice's balance is ${balance.toString()} mutez`))
+  .then((balance) => println(`Alice's balance is ${balance.toString()} mumav`))
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
 ```
 
 ## How to retrieve my transaction history?
 
-The `SaplingTransactionViewer` class exposes a method called `getIncomingAndOutgoingTransactions` which allows decrypting the transactions received and sent based on the viewing key. Information like the value in mutez, the memo or the payment address can be retrieved as well as if the input is spent for the incoming ones.
+The `SaplingTransactionViewer` class exposes a method called `getIncomingAndOutgoingTransactions` which allows decrypting the transactions received and sent based on the viewing key. Information like the value in mumav, the memo or the payment address can be retrieved as well as if the input is spent for the incoming ones.
 
 Example:
 
-```js
-import { RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+```js live noInline
+import { RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 // Alice spending key
 const aliceSk = 'sask27SLmU9herddHz4qFJBLMjWYMbJF8RtS579w9ej9mfCYK7VUdyCJPHK8AzW9zMsopGZEkYeNjAY7Zz1bkM7CGu8eKLzrjBLTMC5wWJDhxiK91ahA29rhDRsHdJDV2u2jFwb2MNUix8JW7sAkAqYVaJpCehTBPgRQ1KqKwqqUaNmuD8kazd4Q8MCWmgbWs21Yuomdqyi9FLigjRp7oY4m5adaVU19Nj1AHvsMY2tePeU2L';
 
 const inMemorySpendingKey = new InMemorySpendingKey(aliceSk);
 
-const readProvider = new RpcReadAdapter(new RpcClient('https://ghostnet.ecadinfra.com/'));
+const readProvider = new RpcReadAdapter(new RpcClient('https://basenet.rpc.mavryk.network/'));
 
 const saplingToolkit = new SaplingToolkit(
     { saplingSigner: inMemorySpendingKey },
@@ -138,25 +138,25 @@ saplingToolkit.getSaplingTransactionViewer()
 
 ## How to prepare a shielded transaction?
 
-A shielded transaction allows sending tokens from a Tezos account (tz1, tz2, tz3) to a Sapling address (zet). The `prepareShieldedTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send tez to multiple addresses at once if needed.
+A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3) to a Sapling address (zet). The `prepareShieldedTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send tez to multiple addresses at once if needed.
 
 The `ParametersSaplingTransaction` is an object made of:
 - a `to` property, which is the destination address (zet)
 - an `amount` property, which is the amount to shield in tez by default
 - an optional `memo` that cannot be longer than the specified memo size
-- an optional `mutez` property that must be set to true if the specified amount is in mutez rather than tez
+- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
 
 The `prepareShieldedTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done. Note that in a case of a shielded transaction, the shielded amount must be sent along when calling the smart contract to transfer the tez to the shielded pool, or it will result in an error.
 
 Here is an example of how to prepare and inject a shielded transaction using Taquito:
 
-```js
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-// import { RpcClient } from '@taquito/rpc';
+```js live noInline
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+// import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
-const rpcUrl = 'https://ghostnet.ecadinfra.com/';
+const rpcUrl = 'https://basenet.rpc.mavryk.network/';
 const readProvider = new RpcReadAdapter(new RpcClient(rpcUrl));
 // const Tezos = new TezosToolkit(rpcUrl);
 // Note: you need to set up your signer on the TezosToolkit as usual
@@ -184,7 +184,7 @@ inMemorySpendingKey.getSaplingViewingKeyProvider()
         to: paymentAddress.address,
         amount: 3,
         memo: 'test',
-        mutez: false // set to false by default
+        mumav: false // set to false by default
     }]);
   })
   .then((shieldedTx) => {
@@ -212,23 +212,23 @@ The `ParametersSaplingTransaction` is an object made of:
 - a `to` property, which is the destination address (zet)
 - an `amount` property, which is the amount to shield in tez by default
 - an optional `memo` that cannot be longer than the specified memo size
-- an optional `mutez` property that must be set to true if the specified amount is in mutez rather than tez
+- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
 
 The `prepareSaplingTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done.
 
 :::note
-A user should not use their own implicit account (tz1, tz2, tz3) to submit a Sapling transaction but rather have a third party inject it.
+A user should not use their own implicit account (mv1, mv2, mv3) to submit a Sapling transaction but rather have a third party inject it.
 :::
 
 Here is an example of how to prepare and inject a Sapling transaction using Taquito:
 
-```js
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-// import { RpcClient } from '@taquito/rpc';
+```js live noInline
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+// import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
-const rpcUrl = 'https://ghostnet.ecadinfra.com/';
+const rpcUrl = 'https://basenet.rpc.mavryk.network/';
 const readProvider = new RpcReadAdapter(new RpcClient(rpcUrl));
 // const Tezos = new TezosToolkit(rpcUrl);
 // Note: you need to set up your signer on the TezosToolkit as usual
@@ -249,7 +249,7 @@ saplingToolkit.prepareSaplingTransaction([{
     to: 'zet14CMN2T4x1f8sgXeAGWQwczSf6SJ8bm8nyP2Tg7HJn2VmtPtB2nE2q7MMgdmMEwpGQ',
     amount: 3,
     memo: 'test',
-    mutez: false // set to false by default
+    mumav: false // set to false by default
 }])
 .then((saplingTx) => {
     println(`The sapling transaction parameter is: ${saplingTx}`);
@@ -269,24 +269,24 @@ saplingToolkit.prepareSaplingTransaction([{
 
 ## How to prepare an unshielded transaction?
 
-An unshielded transaction allows sending tokens from an address (zet) to a Tezos address (tz1, tz2, tz3). The `prepareUnshieldedTransaction` method of the `SaplingToolkit` takes a single `ParametersUnshieldedTransaction`.
+An unshielded transaction allows sending tokens from an address (zet) to a Tezos address (mv1, mv2, mv3). The `prepareUnshieldedTransaction` method of the `SaplingToolkit` takes a single `ParametersUnshieldedTransaction`.
 
 The `ParametersUnshieldedTransaction` is an object made of:
-- a `to` property, which is the destination  account (tz1, tz2, tz3)
+- a `to` property, which is the destination  account (mv1, mv2, mv3)
 - an `amount` property, which is the amount to shield in tez by default
-- an optional `mutez` property that must be set to true if the specified amount is in mutez rather than tez
+- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
 
 The `prepareUnshieldedTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done to retrieve the tokens from the pool.
 
 Here is an example of how to prepare and inject an unshielded transaction using Taquito:
 
-```js
-// import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-// import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
-// import { RpcClient } from '@taquito/rpc';
+```js live noInline
+// import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+// import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
+// import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
-const rpcUrl = 'https://ghostnet.ecadinfra.com/';
+const rpcUrl = 'https://basenet.rpc.mavryk.network/';
 const readProvider = new RpcReadAdapter(new RpcClient(rpcUrl));
 // const Tezos = new TezosToolkit(rpcUrl);
 // Note: you need to set up your signer on the TezosToolkit as usual
@@ -304,9 +304,9 @@ const saplingToolkit = new SaplingToolkit(
 
 println(`Preparing the unshielded transaction...`);
 saplingToolkit.prepareUnshieldedTransaction({
-    to: 'tz1hDFKpVkT7jzYncaLma4vxh4Gg6JNqvdtB',
+    to: 'mv18baiUGRL5QHEKmJuPbj37KXayZQVrohbE',
     amount: 20,
-    mutez: true // set to false by default
+    mumav: true // set to false by default
 })
 .then((unshieldedTx) => {
     println(`The sapling transaction parameter is: ${unshieldedTx}`);
@@ -337,12 +337,12 @@ The constructor of the `SaplingTransactionViewer` takes the following properties
 Here is an example of how to instantiate a `SaplingTransactionViewer`:
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { InMemoryViewingKey } from '@taquito/sapling';
-import { RpcClient } from '@taquito/rpc';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { InMemoryViewingKey } from '@mavrykdynamics/taquito-sapling';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const readProvider = new RpcReadAdapter(new RpcClient('https://YOUR_PREFERRED_RPC_URL'));
-const tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
+const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
 
 const saplingContract = await tezos.contract.at('KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf');
 

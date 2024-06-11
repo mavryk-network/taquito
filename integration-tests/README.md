@@ -1,14 +1,14 @@
 # Taquito Integration Tests
 
 
-The `taquito/integration-tests` directory contains the integration test suite for Taquito. These tests are executed against live Tezos testnets, ensuring a comprehensive evaluation of various Taquito use cases.
+The `taquito/integration-tests` directory contains the integration test suite for Taquito. These tests are executed against live Mavryk testnets, ensuring a comprehensive evaluation of various Taquito use cases.
 
-The tests may also be run using Flextesa. This is useful for testing new features not in current test nets and for testing features around governance that benefit from shortened block processing times. As well Flextesa tests offer a secondary confirmation of the test net results.
+The tests may also be run using Flexmasa. This is useful for testing new features not in current test nets and for testing features around governance that benefit from shortened block processing times. As well Flexmasa tests offer a secondary confirmation of the test net results.
 
 Internally Taquito is tested with tests running in parallel. This is achieved using an application that generates new keys and funds them as needed per test.
 The application is not publicly available. External users, therefore, must run the Taquito Integration Tests in sequence, one test at a time.
 
-## Running Integration Tests Against a Tezos Testnet
+## Running Integration Tests Against a Mavryk Testnet
 
 
 To run tests in this environment, make sure you have:
@@ -33,11 +33,11 @@ npm run test # This runs all tests against all pre-configured testnets
 ### Running all tests against a specific testnet
 
 
-Depending on the current Tezos upgrade cycle, multiple testnet networks may be configured in the Taquito integration tests. To target a specific testnet, use environment variables found in `taquito/integration-tests/config.ts` (see the Configuration section below):
+Depending on the current Mavryk upgrade cycle, multiple testnet networks may be configured in the Taquito integration tests. To target a specific testnet, use environment variables found in `taquito/integration-tests/config.ts` (see the Configuration section below):
 
 
 ```
-OXFORDNET=true npm run test
+ATLASNET=true npm run test
 ```
 
 ## Configuration
@@ -52,7 +52,7 @@ If different testnets are configured in the `config.ts` file, you can run tests 
 
 
 ```
-npm run test:oxfordnet contract-with-bigmap-init.spec.ts
+npm run test:atlasnet contract-with-bigmap-init.spec.ts
 ```
 
 
@@ -60,7 +60,7 @@ Or for a specific test within a test file:
 
 
 ```
-npm run test:oxfordnet -- -t "Verify contract.originate for a contract and call deposit method with unit param"
+npm run test:atlasnet -- -t "Verify contract.originate for a contract and call deposit method with unit param"
 ```
 
 
@@ -70,7 +70,7 @@ npm run test:oxfordnet -- -t "Verify contract.originate for a contract and call 
 To run tests against a node that is not pre-configured in Taquito, use:
 
 
-`export TEZOS_RPC_OXFORDNET='http://localhost:8732'`.
+`export TEZOS_RPC_ATLASNET='http://localhost:8732'`.
 
 ## Using a Secret Key Instead of the Keygen API
 
@@ -79,7 +79,7 @@ By default, the integration tests use an ephemeral key managed by the Keygen API
 
 
 ```
-npm run test:oxfordnet-secret-key contract-with-bigmap-init.spec.ts
+npm run test:atlasnet-secret-key contract-with-bigmap-init.spec.ts
 ```
 
 
@@ -100,7 +100,7 @@ If running the test with a configured secret key, ensure that the account balanc
 To review the graphical report of the test run, open the index.html file in ~/taquito/integration-tests/jest-stare after each test run.
 
 
-## Taquito Integration Tests with Flextesa
+## Taquito Integration Tests with Flexmasa
 
 :::warning
 Due to the discontinuation of Flextesa support from Protocol Oxford onwards, we unfortunately will not be testing against sandboxes anymore. 
@@ -110,7 +110,7 @@ The only sandbox tests we're running points to the latest Nairobibox to specific
 
 ## The Keygen API
 
-The Keygen API in Taquito is specifically designed for testing purposes. It allows developers to generate and manage key pairs (public and private keys) for Tezos accounts during the testing phase of their applications. This is useful for simulating various scenarios, such as transactions, smart contract interactions, and other on-chain operations, without the need to use real Tezos accounts or real funds.
+The Keygen API in Taquito is specifically designed for testing purposes. It allows developers to generate and manage key pairs (public and private keys) for Mavryk accounts during the testing phase of their applications. This is useful for simulating various scenarios, such as transactions, smart contract interactions, and other on-chain operations, without the need to use real Mavryk accounts or real funds.
 
 This tool is employed internally for Taquito Integration tests within the Continuous Integration and Continuous Delivery (CI/CD) system.
 

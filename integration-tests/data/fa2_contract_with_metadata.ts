@@ -1546,7 +1546,7 @@ export const fa2ContractTzip16 = `{
                                     FAILWITH
                                 }
                                 {
-                                    PUSH mutez 0;
+                                    PUSH mumav 0;
                                     DIG 3;
                                     CDR;
                                     TRANSFER_TOKENS;
@@ -1561,7 +1561,7 @@ export const fa2ContractTzip16 = `{
             DIG 13;
             CDR;
             PUSH string "XTZ_RECEIVED";
-            PUSH mutez 0;
+            PUSH mumav 0;
             AMOUNT;
             COMPARE;
             NEQ;
@@ -1882,7 +1882,7 @@ export const fa2ContractTzip16 = `{
                                                             DROP;
                                                             DIG 2;
                                                             CDR;
-                                                            PUSH mutez 0;
+                                                            PUSH mumav 0;
                                                             DIG 2;
                                                             TRANSFER_TOKENS;
                                                             SWAP;
@@ -1901,7 +1901,7 @@ export const fa2ContractTzip16 = `{
                                                             NIL operation;
                                                             DIG 3;
                                                             CAR;
-                                                            PUSH mutez 0;
+                                                            PUSH mumav 0;
                                                             DIG 4;
                                                             CDR;
                                                             CAR;
@@ -2091,7 +2091,7 @@ export const fa2ContractTzip16 = `{
                                                                                 {
                                                                                     NIL operation;
                                                                                     SWAP;
-                                                                                    PUSH mutez 0;
+                                                                                    PUSH mumav 0;
                                                                                     DIG 3;
                                                                                     CDR;
                                                                                     MAP

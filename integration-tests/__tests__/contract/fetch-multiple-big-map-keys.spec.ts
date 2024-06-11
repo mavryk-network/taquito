@@ -1,6 +1,6 @@
 import { CONFIGS } from '../../config';
 import { tokenCode } from '../../data/tokens';
-import { MichelsonMap, BigMapAbstraction } from '@taquito/taquito';
+import { MichelsonMap, BigMapAbstraction } from '@mavrykdynamics/taquito';
 import BigNumber from 'bignumber.js';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
@@ -19,9 +19,9 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
             const bigMapInit = new MichelsonMap();
             bigMapInit.set(signer, { 0: '1', 1: new MichelsonMap() });
-            bigMapInit.set('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', { 0: '2', 1: new MichelsonMap() });
-            bigMapInit.set('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD', { 0: '3', 1: new MichelsonMap() });
-            bigMapInit.set('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2', { 0: '4', 1: new MichelsonMap() });
+            bigMapInit.set('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', { 0: '2', 1: new MichelsonMap() });
+            bigMapInit.set('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ', { 0: '3', 1: new MichelsonMap() });
+            bigMapInit.set('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5', { 0: '4', 1: new MichelsonMap() });
             // Deploy a contract with a big map
             const op = await Tezos.contract.originate({
                 code: tokenCode,
@@ -53,30 +53,30 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
             const bigMap = storage['0'];
 
             // Fetch multiples keys
-            const bigMapValues = await bigMap.getMultipleValues<BigMapVal>(['tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD', 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn', 'tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2']);
-            expect(bigMapValues.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['0'].toString()).toEqual('2');
-            expect(bigMapValues.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
+            const bigMapValues = await bigMap.getMultipleValues<BigMapVal>(['mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ', 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW', 'mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5']);
+            expect(bigMapValues.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['0'].toString()).toEqual('2');
+            expect(bigMapValues.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
 
-            expect(bigMapValues.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['0'].toString()).toEqual('3');
-            expect(bigMapValues.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
+            expect(bigMapValues.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['0'].toString()).toEqual('3');
+            expect(bigMapValues.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
 
-            expect(bigMapValues.has('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toBeTruthy();
-            expect(bigMapValues.get('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toBeUndefined();
+            expect(bigMapValues.has('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toBeTruthy();
+            expect(bigMapValues.get('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toBeUndefined();
 
-            expect(bigMapValues.get('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2')!['0'].toString()).toEqual('4');
-            expect(bigMapValues.get('tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
+            expect(bigMapValues.get('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5')!['0'].toString()).toEqual('4');
+            expect(bigMapValues.get('mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
 
 
             // Specify a level
             const { header } = await Tezos.rpc.getBlock();
 
             // Fetch multiples keys
-            const bigMapValuesWithLevel = await bigMap.getMultipleValues<BigMapVal>(['tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1', 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD'], header.level);
-            expect(bigMapValuesWithLevel.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['0'].toString()).toEqual('2');
-            expect(bigMapValuesWithLevel.get('tz3PNdfg3Fc8hH4m9iSs7bHgDgugsufJnBZ1')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
+            const bigMapValuesWithLevel = await bigMap.getMultipleValues<BigMapVal>(['mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina', 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ'], header.level);
+            expect(bigMapValuesWithLevel.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['0'].toString()).toEqual('2');
+            expect(bigMapValuesWithLevel.get('mv3Bk6yGMcuVGYqzJ31iMQyhNhmfSJAJJina')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
 
-            expect(bigMapValuesWithLevel.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['0'].toString()).toEqual('3');
-            expect(bigMapValuesWithLevel.get('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
+            expect(bigMapValuesWithLevel.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['0'].toString()).toEqual('3');
+            expect(bigMapValuesWithLevel.get('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ')!['1']).toEqual(expect.objectContaining(new MichelsonMap()));
 
         });
     });

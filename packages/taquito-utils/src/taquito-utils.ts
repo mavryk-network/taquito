@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/utils
+ * @module @mavrykdynamics/taquito-utils
  */
 
 /*
@@ -17,7 +17,7 @@ import blake from 'blakejs';
 import bs58check from 'bs58check';
 import { ValueConversionError } from './errors';
 import BigNumber from 'bignumber.js';
-import { InvalidHexStringError } from '@taquito/core';
+import { InvalidHexStringError } from '@mavrykdynamics/taquito-core';
 export * from './validators';
 export { VERSION } from './version';
 
@@ -86,9 +86,9 @@ export function b58decode(payload: string) {
   const buf = bs58check.decode(payload);
 
   const prefixMap = {
-    [prefix.tz1.toString()]: '0000',
-    [prefix.tz2.toString()]: '0001',
-    [prefix.tz3.toString()]: '0002',
+    [prefix.mv1.toString()]: '0000',
+    [prefix.mv2.toString()]: '0001',
+    [prefix.mv3.toString()]: '0002',
   };
 
   const pref = prefixMap[new Uint8Array(buf.slice(0, 3)).toString()];
@@ -111,7 +111,7 @@ export function b58decode(payload: string) {
 export function b58decodeL2Address(payload: string) {
   const buf = bs58check.decode(payload);
 
-  // tz4 address currently
+  // mv4 address currently
   return buf2hex(buf.slice(3, 42));
 }
 
@@ -119,15 +119,15 @@ export function b58decodeL2Address(payload: string) {
  *
  * @description Base58 encode an address using predefined prefix
  *
- * @param value Address to base58 encode (tz1, tz2, tz3 or KT1)
+ * @param value Address to base58 encode (mv1, mv2, mv3 or KT1)
  * @deprecated use encodeAddress instead, same functionality with a more descriptive name
  */
 export function encodePubKey(value: string) {
   if (value.substring(0, 2) === '00') {
     const pref: { [key: string]: Uint8Array } = {
-      '0000': prefix.tz1,
-      '0001': prefix.tz2,
-      '0002': prefix.tz3,
+      '0000': prefix.mv1,
+      '0001': prefix.mv2,
+      '0002': prefix.mv3,
     };
 
     return b58cencode(value.substring(4), pref[value.substring(0, 4)]);
@@ -137,9 +137,9 @@ export function encodePubKey(value: string) {
 
 /**
  *
- * @description Base58 encode an address using predefined prefix (tz1, tz2, tz3, or KT1 without annotation)
+ * @description Base58 encode an address using predefined prefix (mv1, mv2, mv3, or KT1 without annotation)
  *
- * @param value Address to base58 encode (tz1, tz2, tz3 or KT1). Supports value with or without '0x' prefix
+ * @param value Address to base58 encode (mv1, mv2, mv3 or KT1). Supports value with or without '0x' prefix
  */
 export function encodeAddress(value: string) {
   if (value.substring(0, 2) === '0x') {
@@ -148,9 +148,9 @@ export function encodeAddress(value: string) {
 
   if (value.substring(0, 2) === '00') {
     const pref: { [key: string]: Uint8Array } = {
-      '0000': prefix.tz1,
-      '0001': prefix.tz2,
-      '0002': prefix.tz3,
+      '0000': prefix.mv1,
+      '0001': prefix.mv2,
+      '0002': prefix.mv3,
     };
 
     return b58cencode(value.substring(4), pref[value.substring(0, 4)]);
@@ -160,11 +160,11 @@ export function encodeAddress(value: string) {
 /**
  *
  * @description Base58 encode an address without predefined prefix
- * @param value Address to base58 encode (tz4) hex dec
+ * @param value Address to base58 encode (mv4) hex dec
  * @returns return address
  */
 export function encodeL2Address(value: string) {
-  return b58cencode(value, prefix.tz4);
+  return b58cencode(value, prefix.mv4);
 }
 /**
  *
@@ -193,9 +193,9 @@ export function encodeKey(value: string) {
 export function encodeKeyHash(value: string) {
   if (value[0] === '0') {
     const pref: { [key: string]: Uint8Array } = {
-      '00': new Uint8Array([6, 161, 159]),
-      '01': new Uint8Array([6, 161, 161]),
-      '02': new Uint8Array([6, 161, 164]),
+      '00': new Uint8Array([5, 186, 196]),
+      '01': new Uint8Array([5, 186, 199]),
+      '02': new Uint8Array([5, 186, 201]),
     };
 
     return b58cencode(value.substring(2), pref[value.substring(0, 2)]);
@@ -328,20 +328,20 @@ export const getPkhfromPk = (publicKey: string): string => {
 
   switch (keyPrefix) {
     case Prefix.EDPK:
-      encodingPrefix = prefix[Prefix.TZ1];
-      prefixLen = prefixLength[Prefix.TZ1];
+      encodingPrefix = prefix[Prefix.MV1];
+      prefixLen = prefixLength[Prefix.MV1];
       break;
     case Prefix.SPPK:
-      encodingPrefix = prefix[Prefix.TZ2];
-      prefixLen = prefixLength[Prefix.TZ2];
+      encodingPrefix = prefix[Prefix.MV2];
+      prefixLen = prefixLength[Prefix.MV2];
       break;
     case Prefix.P2PK:
-      encodingPrefix = prefix[Prefix.TZ3];
-      prefixLen = prefixLength[Prefix.TZ3];
+      encodingPrefix = prefix[Prefix.MV3];
+      prefixLen = prefixLength[Prefix.MV3];
       break;
     case Prefix.BLPK:
-      encodingPrefix = prefix[Prefix.TZ4];
-      prefixLen = prefixLength[Prefix.TZ4];
+      encodingPrefix = prefix[Prefix.MV4];
+      prefixLen = prefixLength[Prefix.MV4];
   }
 
   const hashed = hash(decoded, prefixLen);

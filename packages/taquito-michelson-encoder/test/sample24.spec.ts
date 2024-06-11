@@ -70,7 +70,7 @@ describe('Schema test', () => {
       active: true,
       artist_map: expectMichelsonMap({
         Arria: {
-          address: 'tz1NcYGUWUrcriX5nWmHN6daCDKHQdMUSUDp',
+          address: 'mv1XHKwxFaB8HiqDtKrqUSokZwK8gDU7eQMc',
           tier1_index: new BigNumber(0),
           tier1_metadata_path:
             '68747470733a2f2f676f6f676c652e636f6d2f6d657461646174615f64656661756c742f',
@@ -85,7 +85,7 @@ describe('Schema test', () => {
           tier3_total_supply: new BigNumber(100),
         },
         'Arria Stark': {
-          address: 'tz1NcYGUWUrcriX5nWmHN6daCDKHQdMUSUDp',
+          address: 'mv1XHKwxFaB8HiqDtKrqUSokZwK8gDU7eQMc',
           tier1_index: new BigNumber(1),
           tier1_metadata_path:
             '697066733a2f2f7a646a37576b507672784c3756786957626a425035726673685074417a58775a373775765a686653416f484465623369772f',
@@ -100,7 +100,7 @@ describe('Schema test', () => {
           tier3_total_supply: new BigNumber(100),
         },
         Lojay: {
-          address: 'tz1cVm8jzr5MN6oH21p54HuWCi69qYzjo7MN',
+          address: 'mv1NJ3BSFYZqAuDV24txVdYPoTK6mmXW48vP',
           tier1_index: new BigNumber(1),
           tier1_metadata_path:
             '697066733a2f2f7a646a37576b507672784c3756786957626a425035726673685074417a58775a373775765a686653416f484465623369772f',
@@ -117,7 +117,7 @@ describe('Schema test', () => {
       }),
       fa2: 'KT18hLaKKTfizp7BEiQLH32uroU68mCcX6Ru',
       joko_id: new BigNumber('15'),
-      manager: 'tz1bnmFGgKfrRfHLNABQpWh14CjsTKmrFNog',
+      manager: 'mv1Daxuv5cvCaCF3T3RmuszbdWYYA8KMhxEF',
       max_mint: new BigNumber('5'),
       max_per_address: expectMichelsonMap({
         Arria: { tier3: { int: '104919' } },
@@ -125,8 +125,8 @@ describe('Schema test', () => {
       }),
       metadata: '104761',
       pixel_artist_map: expectMichelsonMap({
-        Charlie: 'tz1bnmFGgKfrRfHLNABQpWh14CjsTKmrFNog',
-        Sutu: 'tz1hWvP1HXRAmBWQU4ewYUeNNrEdz2sUKDNJ',
+        Charlie: 'mv1Daxuv5cvCaCF3T3RmuszbdWYYA8KMhxEF',
+        Sutu: 'mv1CW4WWhKM2x1jiAdRc1Qqd2yZxT5hHmodv',
       }),
       price: new BigNumber('10000000'),
       tier2_royalties: expectMichelsonMap({

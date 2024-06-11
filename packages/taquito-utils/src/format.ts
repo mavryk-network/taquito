@@ -3,23 +3,23 @@ import BigNumber from 'bignumber.js';
 const TZ_DECIMALS = 6;
 const MTZ_DECIMALS = 3;
 
-type Format = 'tz' | 'mtz' | 'mutez';
+type Format = 'mv' | 'mmv' | 'mumav';
 
 function getDecimal(format: Format) {
   switch (format) {
-    case 'tz':
+    case 'mv':
       return TZ_DECIMALS;
-    case 'mtz':
+    case 'mmv':
       return MTZ_DECIMALS;
-    case 'mutez':
+    case 'mumav':
     default:
       return 0;
   }
 }
 
 export function format(
-  from: Format = 'mutez',
-  to: Format = 'mutez',
+  from: Format = 'mumav',
+  to: Format = 'mumav',
   amount: number | string | BigNumber
 ) {
   const bigNum = new BigNumber(amount);

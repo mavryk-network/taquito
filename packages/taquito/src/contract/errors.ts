@@ -1,6 +1,6 @@
-import { ParameterValidationError, RpcError } from '@taquito/core';
-import { HttpResponseError } from '@taquito/http-utils';
-import { MichelsonV1Expression } from '@taquito/rpc';
+import { ParameterValidationError, RpcError } from '@mavrykdynamics/taquito-core';
+import { HttpResponseError } from '@mavrykdynamics/taquito-http-utils';
+import { MichelsonV1Expression } from '@mavrykdynamics/taquito-rpc';
 
 /**
  *  @category Error

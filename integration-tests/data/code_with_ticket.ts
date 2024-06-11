@@ -58,7 +58,7 @@ export const ticketCode = [
 							],
 							{ prim: 'NIL', args: [{ prim: 'operation' }] },
 							{ prim: 'SELF', annots: ['%run'] },
-							{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+							{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 							{ prim: 'DIG', args: [{ int: '3' }] },
 							{ prim: 'TRANSFER_TOKENS' },
 							{ prim: 'CONS' }

@@ -1,4 +1,4 @@
-import { OperationContents } from '@taquito/rpc';
+import { OperationContents } from '@mavrykdynamics/taquito-rpc';
 
 export interface ForgeParams {
   branch: string;

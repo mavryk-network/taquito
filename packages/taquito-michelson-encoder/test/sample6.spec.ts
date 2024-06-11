@@ -30,8 +30,8 @@ describe('Schema test', () => {
       },
       vesting: {
         vesting_quantities: {
-          vested_balance: 'mutez',
-          vesting_increment: 'mutez',
+          vested_balance: 'mumav',
+          vesting_increment: 'mumav',
         },
         vesting_schedule: {
           next_payout: 'timestamp',
@@ -100,12 +100,12 @@ describe('Schema test', () => {
               __michelsonType: 'pair',
               schema: {
                 vested_balance: {
-                  __michelsonType: 'mutez',
-                  schema: 'mutez',
+                  __michelsonType: 'mumav',
+                  schema: 'mumav',
                 },
                 vesting_increment: {
-                  __michelsonType: 'mutez',
-                  schema: 'mutez',
+                  __michelsonType: 'mumav',
+                  schema: 'mumav',
                 },
               },
             },
@@ -216,7 +216,7 @@ describe('Schema test', () => {
           },
         },
         pour_info: {
-          pour_dest: 'tz3WMqdzXqRWXwyvj5Hp2H7QEepaUuS7vd9K',
+          pour_dest: 'mv3V4zLbrZc6grWr2BnCvP8P7QdyWputqnTy',
           pour_authorizer: 'edpkv4vUwGVVYnmmuafbEirXrXhT1bzcuJ2xQ3SHfeUVUr56YwgipC',
         },
       })
@@ -228,7 +228,7 @@ describe('Schema test', () => {
     expect(schema.ExtractSchema()).toEqual({
       Pour: {
         Some: {
-          pour_amount: 'mutez',
+          pour_amount: 'mumav',
           pour_auth: 'signature',
         },
       },
@@ -254,7 +254,7 @@ describe('Schema test', () => {
           },
           Transfer: {
             dest: 'contract',
-            transfer_amount: 'mutez',
+            transfer_amount: 'mumav',
           },
         },
         signatures: {
@@ -274,8 +274,8 @@ describe('Schema test', () => {
             __michelsonType: 'pair',
             schema: {
               pour_amount: {
-                __michelsonType: 'mutez',
-                schema: 'mutez',
+                __michelsonType: 'mumav',
+                schema: 'mumav',
               },
               pour_auth: {
                 __michelsonType: 'signature',
@@ -359,8 +359,8 @@ describe('Schema test', () => {
                       },
                     },
                     transfer_amount: {
-                      __michelsonType: 'mutez',
-                      schema: 'mutez',
+                      __michelsonType: 'mumav',
+                      schema: 'mumav',
                     },
                   },
                 },
@@ -385,7 +385,7 @@ describe('Schema test', () => {
     });
 
     const signatures = schema.ExtractSignatures();
-    expect(signatures).toContainEqual(['Pour', 'signature', 'mutez']);
+    expect(signatures).toContainEqual(['Pour', 'signature', 'mumav']);
     expect(signatures).toContainEqual([
       'Action',
       'Set_delegate',
@@ -512,7 +512,7 @@ describe('Schema test', () => {
       },
       pour_info: {
         Some: {
-          pour_dest: 'tz3WMqdzXqRWXwyvj5Hp2H7QEepaUuS7vd9K',
+          pour_dest: 'mv3V4zLbrZc6grWr2BnCvP8P7QdyWputqnTy',
           pour_authorizer: 'edpkv4vUwGVVYnmmuafbEirXrXhT1bzcuJ2xQ3SHfeUVUr56YwgipC',
         },
       },

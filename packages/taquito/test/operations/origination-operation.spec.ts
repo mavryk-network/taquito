@@ -1,6 +1,6 @@
 import { defaultConfigConfirmation } from '../../src/context';
-import { OriginationOperation, ForgedBytes } from '@taquito/taquito';
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { OriginationOperation, ForgedBytes } from '@mavrykdynamics/taquito';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { OriginationOperationBuilder, RevealOperationBuilder } from '../helpers';
 import { PollingSubscribeProvider } from '../../src/subscribe/polling-subcribe-provider';
 
@@ -11,7 +11,7 @@ describe('Origination operation', () => {
   const successfulResult = [
     {
       kind: 'origination',
-      source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+      source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
       fee: '30000',
       counter: '1121110',
       gas_limit: '90000',
@@ -22,13 +22,13 @@ describe('Origination operation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+            contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
             change: '-30000',
           },
           {
             kind: 'freezer',
             category: 'fees',
-            delegate: 'tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU',
+            delegate: 'mv1KW7xEYBiZvfTc2xVcL7KD82s48uKG5sLi',
             cycle: 325,
             change: '30000',
           },
@@ -38,17 +38,17 @@ describe('Origination operation', () => {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+              contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
               change: '-62000',
             },
             {
               kind: 'contract',
-              contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+              contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
               change: '-257000',
             },
             {
               kind: 'contract',
-              contract: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+              contract: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
               change: '-1000000',
             },
             {

@@ -23,9 +23,9 @@ import {
   smartRollupOriginateWithReveal,
   smartRollupExecuteOutboxMessageNoReveal,
 } from '../contract/helper';
-import { OpKind, PvmKind } from '@taquito/rpc';
+import { OpKind, PvmKind } from '@mavrykdynamics/taquito-rpc';
 import { TransferTicketParams } from '../../src/operations/types';
-import { InvalidAddressError } from '@taquito/utils';
+import { InvalidAddressError } from '@mavrykdynamics/taquito-utils';
 import { ContractAbstraction } from '../../src/contract';
 import { genericMultisig } from '../../../../integration-tests/data/multisig';
 import { RpcContractProvider } from '../../src/contract/rpc-contract-provider';
@@ -121,7 +121,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     mockSigner.sign.mockResolvedValue({ sbytes: 'test', prefixSig: 'test_sig' });
     mockSigner.publicKey.mockResolvedValue('test_pub_key');
-    mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+    mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
     context = new Context(mockRpcClient as any, mockSigner as any);
     context.forger = mockForger;
     estimateProvider = new RPCEstimateProvider(context);
@@ -185,13 +185,13 @@ describe('RPCEstimateProvider test signer', () => {
       // Simulate real op size
       mockForger.forge.mockResolvedValue(new Array(297).fill('aa').join(''));
       const estimate = await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
       });
       expect(estimate).toMatchObject({
         gasLimit: 40928,
         storageLimit: 654,
-        suggestedFeeMutez: 4413,
+        suggestedFeeMumav: 4413,
       });
     });
 
@@ -200,13 +200,13 @@ describe('RPCEstimateProvider test signer', () => {
       // Simulate real op size
       mockForger.forge.mockResolvedValue(new Array(297).fill('aa').join(''));
       const estimate = await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
       });
       expect(estimate).toMatchObject({
         gasLimit: 40928,
         storageLimit: 654,
-        suggestedFeeMutez: 4575,
+        suggestedFeeMumav: 4575,
       });
     });
 
@@ -222,7 +222,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 36875,
         storageLimit: 534,
-        suggestedFeeMutez: 3996,
+        suggestedFeeMumav: 3996,
       });
     });
 
@@ -232,13 +232,13 @@ describe('RPCEstimateProvider test signer', () => {
       // Simulate real op size
       mockForger.forge.mockResolvedValue(new Array(149).fill('aa').join(''));
       const estimate = await estimateProvider.setDelegate({
-        source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         delegate: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
       });
       expect(estimate).toMatchObject({
         gasLimit: 10000,
         storageLimit: 0,
-        suggestedFeeMutez: 1172,
+        suggestedFeeMumav: 1172,
       });
     });
 
@@ -254,7 +254,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 17932,
         storageLimit: 591,
-        suggestedFeeMutez: 2262,
+        suggestedFeeMumav: 2262,
       });
     });
 
@@ -270,7 +270,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 26260,
         storageLimit: 0,
-        suggestedFeeMutez: 2875,
+        suggestedFeeMumav: 2875,
       });
     });
 
@@ -286,7 +286,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 10207,
         storageLimit: 0,
-        suggestedFeeMutez: 1197,
+        suggestedFeeMumav: 1197,
       });
     });
 
@@ -302,7 +302,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 10207,
         storageLimit: 277,
-        suggestedFeeMutez: 1197,
+        suggestedFeeMumav: 1197,
       });
     });
 
@@ -338,7 +338,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClientSimulateOperation();
       mockRpcClient.getBalance.mockResolvedValue(new BigNumber('800000000'));
       await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
       });
       expect(mockRpcClient.simulateOperation).toHaveBeenCalledWith(
@@ -360,7 +360,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClientSimulateOperation();
       mockRpcClient.getBalance.mockResolvedValue(new BigNumber('1100'));
       await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
         storageLimit: 200,
       });
@@ -383,7 +383,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClientSimulateOperation();
       mockRpcClient.getBalance.mockResolvedValue(new BigNumber('10000000000'));
       await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
         gasLimit: 200,
       });
@@ -406,7 +406,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClientSimulateOperation();
       mockRpcClient.getBalance.mockResolvedValue(new BigNumber('10000000000'));
       await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
         fee: 10000,
       });
@@ -427,7 +427,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     it('should return parsed error from RPC result', async () => {
       const params = {
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
         fee: 10000,
         gasLimit: 10600,
@@ -440,7 +440,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClient.getBlockMetadata.mockResolvedValue({ next_protocol: 'test_proto' });
       mockSigner.sign.mockResolvedValue({ sbytes: 'test', prefixSig: 'test_sig' });
       mockSigner.publicKey.mockResolvedValue('test_pub_key');
-      mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+      mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
       await expect(estimateProvider.transfer(params)).rejects.toMatchObject({
         id: 'proto.006-PsCARTHA.michelson_v1.script_rejected',
         message: 'test',
@@ -449,7 +449,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     it('should return parsed error from RPC result', async () => {
       const params = {
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
         fee: 10000,
         gasLimit: 10600,
@@ -463,7 +463,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClient.getManagerKey.mockResolvedValue('test');
       mockRpcClient.getBlockMetadata.mockResolvedValue({ next_protocol: 'test_proto' });
       mockSigner.publicKey.mockResolvedValue('test_pub_key');
-      mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+      mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
       await expect(estimateProvider.transfer(params)).rejects.toMatchObject({
         id: 'proto.006-PsCARTHA.contract.balance_too_low',
         message: '(temporary) proto.006-PsCARTHA.contract.balance_too_low',
@@ -472,7 +472,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     it('should return internal error when received from preapply', async () => {
       const params = {
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
         fee: 10000,
         gasLimit: 10600,
@@ -486,7 +486,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClient.getManagerKey.mockResolvedValue('test');
       mockRpcClient.getBlockMetadata.mockResolvedValue({ next_protocol: 'test_proto' });
       mockSigner.publicKey.mockResolvedValue('test_pub_key');
-      mockSigner.publicKeyHash.mockResolvedValue('tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM');
+      mockSigner.publicKeyHash.mockResolvedValue('mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q');
       await expect(estimateProvider.transfer(params)).rejects.toMatchObject({
         id: 'proto.005-PsBabyM1.gas_exhausted.operation',
         message: '(temporary) proto.005-PsBabyM1.gas_exhausted.operation',
@@ -499,7 +499,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClient.simulateOperation.mockResolvedValue(TransferTicketNoReveal);
 
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+        source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
         fee: 804,
         gasLimit: 5009,
         storageLimit: 130,
@@ -538,7 +538,7 @@ describe('RPCEstimateProvider test signer', () => {
       mockRpcClient.simulateOperation.mockReturnValue(TransferTicketWithReveal);
 
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+        source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
         fee: 804,
         gasLimit: 5009,
         storageLimit: 130,
@@ -560,7 +560,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     it('should throw an error with invalid source', async () => {
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHG',
+        source: 'mv1liedxUBr81QxVfSh9pvHTstddKpuuaVkA',
         fee: 804,
         gasLimit: 5009,
         storageLimit: 130,
@@ -579,7 +579,7 @@ describe('RPCEstimateProvider test signer', () => {
 
     it('should throw an error with invalid destination', async () => {
       const params: TransferTicketParams = {
-        source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+        source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
         fee: 804,
         gasLimit: 5009,
         storageLimit: 130,
@@ -603,13 +603,13 @@ describe('RPCEstimateProvider test signer', () => {
         contents: [
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+            destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -618,13 +618,13 @@ describe('RPCEstimateProvider test signer', () => {
           },
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -635,8 +635,8 @@ describe('RPCEstimateProvider test signer', () => {
         ],
       });
       const estimate = await estimateProvider.batch([
-        { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           value: {
@@ -658,7 +658,7 @@ describe('RPCEstimateProvider test signer', () => {
         contents: [
           {
             kind: 'reveal',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '1420',
             counter: '294312',
             gas_limit: '10600',
@@ -671,13 +671,13 @@ describe('RPCEstimateProvider test signer', () => {
           registerGlobalConstantNoReveal.contents[0],
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+            destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -686,13 +686,13 @@ describe('RPCEstimateProvider test signer', () => {
           },
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -709,32 +709,32 @@ describe('RPCEstimateProvider test signer', () => {
             args: [{ int: '998' }, { int: '999' }],
           },
         },
-        { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
       ]);
       expect(estimate.length).toEqual(4);
 
       expect(estimate[0]).toMatchObject({
         gasLimit: 1000,
         storageLimit: 0,
-        suggestedFeeMutez: 382,
+        suggestedFeeMumav: 382,
       });
       expect(estimate[1]).toMatchObject({
         gasLimit: 1330,
         storageLimit: 93,
-        suggestedFeeMutez: 350,
+        suggestedFeeMumav: 350,
       });
-      expect(estimate[2].suggestedFeeMutez).toEqual(317);
-      expect(estimate[3].suggestedFeeMutez).toEqual(317);
+      expect(estimate[2].suggestedFeeMumav).toEqual(317);
+      expect(estimate[3].suggestedFeeMumav).toEqual(317);
       expect(estimate[2]).toMatchObject({
         gasLimit: 1000,
         storageLimit: 0,
-        suggestedFeeMutez: 317,
+        suggestedFeeMumav: 317,
       });
       expect(estimate[3]).toMatchObject({
         gasLimit: 1000,
         storageLimit: 0,
-        suggestedFeeMutez: 317,
+        suggestedFeeMumav: 317,
       });
     });
 
@@ -846,13 +846,13 @@ describe('RPCEstimateProvider test signer', () => {
         contents: [
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+            destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -861,13 +861,13 @@ describe('RPCEstimateProvider test signer', () => {
           },
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -878,8 +878,8 @@ describe('RPCEstimateProvider test signer', () => {
         ],
       });
       const estimate = await estimateProvider.batch([
-        { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           value: {
@@ -907,7 +907,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 1330,
         storageLimit: 93,
-        suggestedFeeMutez: 320,
+        suggestedFeeMumav: 320,
       });
     });
 
@@ -923,7 +923,7 @@ describe('RPCEstimateProvider test signer', () => {
       expect(estimate).toMatchObject({
         gasLimit: 1330,
         storageLimit: 93,
-        suggestedFeeMutez: 158,
+        suggestedFeeMumav: 158,
       });
     });
 
@@ -1219,13 +1219,13 @@ describe('RPCEstimateProvider test wallet', () => {
       // Simulate real op size
       mockForger.forge.mockResolvedValue(new Array(297).fill('aa').join(''));
       const estimate = await estimateProvider.transfer({
-        to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         amount: 2,
       });
       expect(estimate).toMatchObject({
         gasLimit: 40928,
         storageLimit: 654,
-        suggestedFeeMutez: 4575,
+        suggestedFeeMumav: 4575,
       });
     });
 
@@ -1233,7 +1233,7 @@ describe('RPCEstimateProvider test wallet', () => {
       mockRpcClient.getManagerKey.mockResolvedValue(null);
       try {
         await estimateProvider.transfer({
-          to: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           amount: 2,
         });
       } catch (e: any) {
@@ -1258,13 +1258,13 @@ describe('RPCEstimateProvider test wallet', () => {
       // Simulate real op size
       mockForger.forge.mockResolvedValue(new Array(149).fill('aa').join(''));
       const estimate = await estimateProvider.setDelegate({
-        source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         delegate: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
       });
       expect(estimate).toMatchObject({
         gasLimit: 10000,
         storageLimit: 0,
-        suggestedFeeMutez: 1334,
+        suggestedFeeMumav: 1334,
       });
     });
 
@@ -1272,7 +1272,7 @@ describe('RPCEstimateProvider test wallet', () => {
       mockRpcClient.getManagerKey.mockResolvedValue(null);
       try {
         await estimateProvider.setDelegate({
-          source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+          source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
           delegate: 'KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D',
         });
       } catch (e: any) {
@@ -1300,7 +1300,7 @@ describe('RPCEstimateProvider test wallet', () => {
       expect(estimate).toMatchObject({
         gasLimit: 10000,
         storageLimit: 0,
-        suggestedFeeMutez: 1334,
+        suggestedFeeMumav: 1334,
       });
     });
 
@@ -1320,13 +1320,13 @@ describe('RPCEstimateProvider test wallet', () => {
         contents: [
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+            destination: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -1335,13 +1335,13 @@ describe('RPCEstimateProvider test wallet', () => {
           },
           {
             kind: 'transaction',
-            source: 'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
+            source: 'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
             fee: '0',
             counter: '294313',
             gas_limit: '800000',
             storage_limit: '2000',
             amount: '1700000',
-            destination: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp',
+            destination: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM',
             metadata: {
               operation_result: {
                 consumed_milligas: 1000000,
@@ -1352,8 +1352,8 @@ describe('RPCEstimateProvider test wallet', () => {
         ],
       });
       const estimate = await estimateProvider.batch([
-        { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 },
-        { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
+        { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         {
           kind: OpKind.REGISTER_GLOBAL_CONSTANT,
           value: {
@@ -1379,8 +1379,8 @@ describe('RPCEstimateProvider test wallet', () => {
               args: [{ int: '998' }, { int: '999' }],
             },
           },
-          { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 },
-          { kind: OpKind.TRANSACTION, to: 'tz3hRZUScFCcEVhdDjXWoyekbgd1Gatga6mp', amount: 2 },
+          { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 },
+          { kind: OpKind.TRANSACTION, to: 'mv3M3j7FF7vC4ziHngheaspdZEMeGozZhieM', amount: 2 },
         ]);
       } catch (e: any) {
         expect(e.message).toContain('Public key not found of this address');
@@ -1400,7 +1400,7 @@ describe('RPCEstimateProvider test wallet', () => {
       expect(estimate).toMatchObject({
         gasLimit: 1330,
         storageLimit: 93,
-        suggestedFeeMutez: 320,
+        suggestedFeeMumav: 320,
       });
     });
 
@@ -1440,7 +1440,7 @@ describe('RPCEstimateProvider test wallet', () => {
 
       expect(estimate.gasLimit).toEqual(1100);
       expect(estimate.storageLimit).toEqual(0);
-      expect(estimate.suggestedFeeMutez).toEqual(297);
+      expect(estimate.suggestedFeeMumav).toEqual(297);
     });
   });
 
@@ -1455,7 +1455,7 @@ describe('RPCEstimateProvider test wallet', () => {
 
       expect(estimate.gasLimit).toEqual(1103);
       expect(estimate.storageLimit).toEqual(0);
-      expect(estimate.suggestedFeeMutez).toEqual(298);
+      expect(estimate.suggestedFeeMumav).toEqual(298);
     });
 
     it('should return an error if account is unrevealed', async () => {
@@ -1494,13 +1494,13 @@ describe('RPCEstimateProvider test wallet', () => {
       });
       expect(estimate.gasLimit).toEqual(3849);
       expect(estimate.storageLimit).toEqual(6572);
-      expect(estimate.suggestedFeeMutez).toEqual(734);
+      expect(estimate.suggestedFeeMumav).toEqual(734);
 
       expect(estimate).toMatchObject({
         gasLimit: 3849,
         storageLimit: 6572,
-        suggestedFeeMutez: 734,
-        minimalFeeMutez: 714,
+        suggestedFeeMumav: 734,
+        minimalFeeMumav: 714,
       });
     });
   });
@@ -1518,7 +1518,7 @@ describe('RPCEstimateProvider test wallet', () => {
       expect(estimate).toMatchObject({
         gasLimit: 6385,
         storageLimit: 36,
-        suggestedFeeMutez: 826,
+        suggestedFeeMumav: 826,
       });
     });
 

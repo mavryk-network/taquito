@@ -89,8 +89,8 @@ describe('Global constant token', () => {
     it('Should throw a GlobalConstantEncodingError', () => {
       try {
         token.EncodeObject({
-          addr: 'tz1bBbsnP1grg8RR53o3xFkmjaKmpe18qJqi',
-          key: 'tz1bBbsnP1grg8RR53o3xFkmjaKmpe18qJqi',
+          addr: 'mv1REzMPdviS7gpEKJvJu8wrJNU6jgsooASg',
+          key: 'mv1REzMPdviS7gpEKJvJu8wrJNU6jgsooASg',
         });
       } catch (e: any) {
         expect(e).toBeInstanceOf(GlobalConstantEncodingError);
@@ -104,12 +104,12 @@ describe('Global constant token', () => {
       try {
         pairTokenWithConstant.EncodeObject({
           mgr1: {
-            addr: 'tz1bBbsnP1grg8RR53o3xFkmjaKmpe18qJqi',
+            addr: 'mv1REzMPdviS7gpEKJvJu8wrJNU6jgsooASg',
             key: null,
           },
           mgr2: {
-            addr: 'tz1bBbsnP1grg8RR53o3xFkmjaKmpe18qJqi',
-            key: 'tz1bBbsnP1grg8RR53o3xFkmjaKmpe18qJqi',
+            addr: 'mv1REzMPdviS7gpEKJvJu8wrJNU6jgsooASg',
+            key: 'mv1REzMPdviS7gpEKJvJu8wrJNU6jgsooASg',
           },
         });
       } catch (e: any) {

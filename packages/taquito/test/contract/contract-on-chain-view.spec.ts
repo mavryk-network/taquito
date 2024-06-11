@@ -1,11 +1,11 @@
-import { ViewSchema } from '@taquito/michelson-encoder';
+import { ViewSchema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { OnChainView } from '../../src/contract/contract-methods/contract-on-chain-view';
 import BigNumber from 'bignumber.js';
 import { InvalidViewSimulationContext, ViewSimulationError } from '../../src/contract';
-import { HttpResponseError, STATUS_CODE } from '@taquito/http-utils';
+import { HttpResponseError, STATUS_CODE } from '@mavrykdynamics/taquito-http-utils';
 import { RpcReadAdapter } from '../../src/read-provider/rpc-read-adapter';
 import { Protocols } from '../../src/constants';
-import { InvalidViewParameterError } from '@taquito/core';
+import { InvalidViewParameterError } from '@mavrykdynamics/taquito-core';
 
 describe('OnChainView test on K protocol', () => {
   let view: OnChainView;
@@ -24,7 +24,7 @@ describe('OnChainView test on K protocol', () => {
       getStorage: jest.fn(),
     };
 
-    mockRpcClient.getProtocols.mockResolvedValue({ protocol: Protocols.PtKathman });
+    mockRpcClient.getProtocols.mockResolvedValue({ protocol: Protocols.PtAtLas });
 
     mockRpcClient.getChainId.mockResolvedValue('test_chain_id');
 

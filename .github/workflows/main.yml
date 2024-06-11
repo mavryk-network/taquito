@@ -43,8 +43,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - testnet: oxfordnet
-            testnet_uppercase: OXFORDNET
+          - testnet: atlasnet
+            testnet_uppercase: ATLASNET
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -63,16 +63,16 @@ jobs:
         # Ternary operator workaround
         TEZOS_RPC_${{ matrix.testnet_uppercase }}: ${{ github.event.pull_request.head.repo.fork && format('https://{0}.ecadinfra.com', matrix.testnet) || null }}
 
-  integration-tests-flextesa:
+  integration-tests-flexmasa:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
       matrix:
         include:
-          - protocol: Nairobi
-            testnet: nairobinet
-            testnet_uppercase: NAIROBINET
-            flextesa_docker_image: oxheadalpha/flextesa:20230607
+          - protocol: Atlas
+            testnet: atlasnet
+            testnet_uppercase: ATLASNET
+            flexmasa_docker_image: oxheadalpha/flexmasa:20230607
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -80,25 +80,25 @@ jobs:
         node-version: lts/hydrogen
 
     ## The 4 Bootstrap Accounts (alias, pk, pkh, sk)
-    # alice,edpkvGfYw3LyB1UcCahKQk4rF2tvbMUk8GFiTuMjL75uGXrpvKXhjn,tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb,unencrypted:edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq
-    # bob,edpkurPsQ8eUApnLUJ9ZPDvu98E8VNj4KtJa1aZr16Cr5ow5VHKnz4,tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6,unencrypted:edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt
-    # charlie,edpkuvMuRuZ6ZbAquJH1XxBFfUmuBFz1zp9ENEqjCVgLp3NcY3Ww9M,tz1RDVcKmFcqzvTpJirvg4JaUVgZbjtnRT26,unencrypted:edsk3RgWvbKKA1atEUcaGwivge7QtckHkTL9nQJUXQKY5r8WKp4pF4
-    # donald,edpkvXGp1BMZxHkwg3mKnWfJYS6HTJ5JtufD8YXxLtH8UKqLZkZVun,tz1eSWp4B9s1qhtNMMNXAkaf2oqCnDHd2iAm,unencrypted:edsk3S8mG2sSBmSRbikAcZVLCz4SrCq4DjmsQRic6MGktqNFijfrS2
-    - name: Generate Flextesa bootstrap accounts
+    # # alice,edpkvGfYw3LyB1UcCahKQk4rF2tvbMUk8GFiTuMjL75uGXrpvKXhjn,mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv,unencrypted:edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq
+    # # bob,edpkurPsQ8eUApnLUJ9ZPDvu98E8VNj4KtJa1aZr16Cr5ow5VHKnz4,mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU,unencrypted:edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt
+    # # charlie,edpkuvMuRuZ6ZbAquJH1XxBFfUmuBFz1zp9ENEqjCVgLp3NcY3Ww9M,mv1Daxuv5cvCaCF3T3RmuszbdWYYA8KMhxEF,unencrypted:edsk3RgWvbKKA1atEUcaGwivge7QtckHkTL9nQJUXQKY5r8WKp4pF4
+    # # donald,edpkvXGp1BMZxHkwg3mKnWfJYS6HTJ5JtufD8YXxLtH8UKqLZkZVun,mv1Soz7eVXANQyfbVfwNQaGgBphBLbnYy5RZ,unencrypted:edsk3S8mG2sSBmSRbikAcZVLCz4SrCq4DjmsQRic6MGktqNFijfrS2
+    - name: Generate Flexmasa bootstrap accounts
       run: |-
-        echo "alice=$(docker run --rm ${{ matrix.flextesa_docker_image }} flextesa key alice)" >> $GITHUB_ENV
-        echo "bob=$(docker run --rm ${{ matrix.flextesa_docker_image }} flextesa key bob)" >> $GITHUB_ENV
-        echo "charlie=$(docker run --rm ${{ matrix.flextesa_docker_image }} flextesa key charlie)" >> $GITHUB_ENV
-        echo "donald=$(docker run --rm ${{ matrix.flextesa_docker_image }} flextesa key donald)" >> $GITHUB_ENV
-    - name: Provision Flextesa ${{ matrix.protocol }} container
+        echo "alice=$(docker run --rm ${{ matrix.flexmasa_docker_image }} flexmasa key alice)" >> $GITHUB_ENV
+        echo "bob=$(docker run --rm ${{ matrix.flexmasa_docker_image }} flexmasa key bob)" >> $GITHUB_ENV
+        echo "charlie=$(docker run --rm ${{ matrix.flexmasa_docker_image }} flexmasa key charlie)" >> $GITHUB_ENV
+        echo "donald=$(docker run --rm ${{ matrix.flexmasa_docker_image }} flexmasa key donald)" >> $GITHUB_ENV
+    - name: Provision Flexmasa ${{ matrix.protocol }} container
       run: |-
         docker run \
         --rm \
         --name my-sandbox \
         --detach \
         -p 20000:20000 \
-        ${{ matrix.flextesa_docker_image }} \
-        flextesa mini-net \
+        ${{ matrix.flexmasa_docker_image }} \
+        flexmasa mini-net \
           --root /tmp/mini-box --size 1 \
           --set-history-mode N000:archive \
           --number-of-b 1 \
@@ -122,4 +122,4 @@ jobs:
         TEZOS_RPC_${{ matrix.testnet_uppercase }}: http://localhost:20000
         POLLING_INTERVAL_MILLISECONDS: 100
         RPC_CACHE_MILLISECONDS: 0
-        TEZOS_BAKER: tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb
+        TEZOS_BAKER: mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv

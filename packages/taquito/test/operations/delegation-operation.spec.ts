@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { defaultConfigConfirmation } from '../../src/context';
-import { DelegateOperation, ForgedBytes } from '@taquito/taquito';
+import { DelegateOperation, ForgedBytes } from '@mavrykdynamics/taquito';
 import { RevealOperationBuilder, DelegationOperationBuilder } from '../helpers';
 
 describe('Delegation operation', () => {

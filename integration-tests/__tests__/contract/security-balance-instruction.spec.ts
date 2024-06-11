@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
 
 // TC-008: Obtained balance of a smart contract using the BALANCE instruction does not change during the execution of the entrypoint's own code.
@@ -17,7 +17,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       const opTezTransferA = await Tezos.contract.originate({
         balance: '0.00001',
         code: `        { parameter (option address) ;
-            storage (pair (mutez %at_end) (mutez %at_start)) ;
+            storage (pair (mumav %at_end) (mumav %at_start)) ;
             code { UNPAIR ;
                    SWAP ;
                    BALANCE ;
@@ -29,7 +29,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                      { NIL operation }
                      { CONTRACT (option address) ;
                        IF_NONE { PUSH string "none" ; FAILWITH } {} ;
-                       PUSH mutez 5 ;
+                       PUSH mumav 5 ;
                        NONE address ;
                        TRANSFER_TOKENS ;
                        NIL operation ;
@@ -56,7 +56,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
 
       const opTezTransferB = await Tezos.contract.originate({
         code: `        { parameter (option address) ;
-             storage (pair (mutez %at_end) (mutez %at_start)) ;
+             storage (pair (mumav %at_end) (mumav %at_start)) ;
              code { UNPAIR ;
                     SWAP ;
                     BALANCE ;
@@ -68,7 +68,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                       { NIL operation }
                       { CONTRACT (option address) ;
                         IF_NONE { PUSH string "none" ; FAILWITH } {} ;
-                        PUSH mutez 5 ;
+                        PUSH mumav 5 ;
                         NONE address ;
                         TRANSFER_TOKENS ;
                         NIL operation ;

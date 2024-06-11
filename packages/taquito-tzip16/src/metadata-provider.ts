@@ -1,4 +1,4 @@
-import { ContractAbstraction, ContractProvider, Wallet, Context } from '@taquito/taquito';
+import { ContractAbstraction, ContractProvider, Wallet, Context } from '@mavrykdynamics/taquito';
 import { MetadataInterface } from './metadata-interface';
 import { MetadataContext } from './tzip16-contract-abstraction';
 import { InvalidContractMetadataError, InvalidUriError, ProtocolNotSupportedError } from './errors';
@@ -36,7 +36,7 @@ export interface Tzip16Uri {
  * @description: Metadata Provider
  */
 export class MetadataProvider implements MetadataProviderInterface {
-  private readonly PROTOCOL_REGEX = /(?:sha256:\/\/0x(.*)\/)?(https?|ipfs|tezos-storage):(.*)/;
+  private readonly PROTOCOL_REGEX = /(?:sha256:\/\/0x(.*)\/)?(https?|ipfs|mavryk-storage):(.*)/;
 
   constructor(private handlers: Map<string, Handler>) {}
 

@@ -30,7 +30,7 @@ A `registerGlobalConstant` method is available on the `ContractProvider` class. 
 
 *Note that an expression can only be registered once and will result in an error from the node if trying to register the same constant multiple times.*
 
-*Note that the conversion between Micheline and its JSON format can be achieved using the `@taquito/michel-codec` if needed.*
+*Note that the conversion between Micheline and its JSON format can be achieved using the `@mavrykdynamics/taquito-michel-codec` if needed.*
 
 **Here is a simple example:**
 
@@ -125,7 +125,7 @@ It is also possible to register global constants using the batch API.
 Here is an example using the `withRegisterGlobalConstant` method: 
 
 ```ts
-import { OpKind } from '@taquito/taquito';
+import { OpKind } from '@mavrykdynamics/taquito';
 
 const batchOp = await Tezos.contract.batch()
 .withRegisterGlobalConstant({
@@ -147,7 +147,7 @@ await batchOp.confirmation();
 Here is an example without using the `withRegisterGlobalConstant` method: 
 
 ```ts
-import { OpKind } from '@taquito/taquito';
+import { OpKind } from '@mavrykdynamics/taquito';
 
 const batchOp = await Tezos.contract.batch([
     {
@@ -173,7 +173,7 @@ Instead of using the `DefaultGlobalConstantsProvider`, a user can inject a custo
 
 **Here is a complete example:**
 ```ts
-import { TezosToolkit, DefaultGlobalConstantsProvider } from '@taquito/taquito';
+import { TezosToolkit, DefaultGlobalConstantsProvider } from '@mavrykdynamics/taquito';
 
 // create an instance of the `DefaultGlobalConstantsProvider`, load the global constants used in the contract, inject the instance on the TezosToolkit
 const expression = { "prim": "int" }

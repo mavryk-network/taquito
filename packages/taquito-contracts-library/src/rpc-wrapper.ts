@@ -50,7 +50,7 @@ import {
   PendingOperationsV2,
   PendingOperationsQueryArguments,
   RPCSimulateOperationParam,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { ContractsLibrary } from './taquito-contracts-library';
 
 /**

@@ -58,7 +58,7 @@ export const rpcContractResponse = {
 									{ prim: 'CAR' },
 									{ prim: 'DUP' },
 									{ prim: 'ABS' },
-									{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '1' }] },
+									{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '1' }] },
 									{ prim: 'MUL' },
 									{ prim: 'PUSH', args: [{ prim: 'int' }, { int: '0' }] },
 									{ prim: 'DIG', args: [{ int: '2' }] },
@@ -183,7 +183,7 @@ export const rpcContractResponse2 = {
 					{
 						prim: 'pair',
 						args: [
-							{ prim: 'mutez', annots: ['%balance'] },
+							{ prim: 'mumav', annots: ['%balance'] },
 							{ prim: 'sapling_state', args: [{ int: '8' }], annots: ['%ledger1'] },
 							{ prim: 'sapling_state', args: [{ int: '8' }], annots: ['%ledger2'] }
 						]
@@ -253,7 +253,7 @@ export const rpcContractResponse3 = {
 										args: [
 											[
 												{ prim: 'ABS' },
-												{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '1' }] },
+												{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '1' }] },
 												{ prim: 'MUL' }
 											]
 										]
@@ -339,7 +339,7 @@ export const rpcContractResponse3 = {
 							prim: 'DIP',
 							args: [
 								[
-									{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+									{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 									[
 										[{ prim: 'COMPARE' }, { prim: 'EQ' }],
 										{ prim: 'IF', args: [[], [[{ prim: 'UNIT' }, { prim: 'FAILWITH' }]]] }
@@ -556,7 +556,7 @@ export const rpcContractResponse6 = {
 						[{ prim: 'IF_NONE', args: [[[{ prim: 'UNIT' }, { prim: 'FAILWITH' }]], []] }],
 						{ prim: 'UNPAIR' },
 						{ prim: 'DROP' },
-						{ prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+						{ prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
 						{ prim: 'SWAP' },
 						{ prim: 'RIGHT', args: [{ prim: 'sapling_transaction', args: [{ int: '8' }] }] },
 						{ prim: 'TRANSFER_TOKENS' },
@@ -694,19 +694,19 @@ export const example9 = {
 							{ prim: 'sapling_state', args: [{ int: '8' }] },
 							{ prim: 'int', annots: ['%test'] },
 							{ prim: 'int', annots: ['%test2'] },
-							{ prim: 'mutez', annots: ['%test3'] },
+							{ prim: 'mumav', annots: ['%test3'] },
 							{ prim: 'nat', annots: ['%test4'] },
 							{ prim: 'int', annots: ['%test5'] },
 							{ prim: 'int', annots: ['%test6'] },
-							{ prim: 'mutez', annots: ['%test7'] },
+							{ prim: 'mumav', annots: ['%test7'] },
 							{ prim: 'nat', annots: ['%test8'] },
 							{ prim: 'int', annots: ['%test9'] },
 							{ prim: 'int', annots: ['%test10'] },
-							{ prim: 'mutez', annots: ['%test11'] },
+							{ prim: 'mumav', annots: ['%test11'] },
 							{ prim: 'nat', annots: ['%test12'] },
 							{ prim: 'int', annots: ['%test13'] },
 							{ prim: 'int', annots: ['%test14'] },
-							{ prim: 'mutez', annots: ['%test15'] },
+							{ prim: 'mumav', annots: ['%test15'] },
 							{ prim: 'nat', annots: ['%test16'] }
 						],
 						annots: ['%combPairAnnot']
@@ -741,19 +741,19 @@ export const example10 = {
 							{ prim: 'sapling_state', args: [{ int: '8' }] },
 							{ prim: 'int' },
 							{ prim: 'int' },
-							{ prim: 'mutez' },
+							{ prim: 'mumav' },
 							{ prim: 'nat' },
 							{ prim: 'int' },
 							{ prim: 'int' },
-							{ prim: 'mutez' },
+							{ prim: 'mumav' },
 							{ prim: 'nat' },
 							{ prim: 'int' },
 							{ prim: 'int' },
-							{ prim: 'mutez' },
+							{ prim: 'mumav' },
 							{ prim: 'nat' },
 							{ prim: 'int'},
 							{ prim: 'int'},
-							{ prim: 'mutez' },
+							{ prim: 'mumav' },
 							{ prim: 'nat'}
 						]
 					}

@@ -1,6 +1,6 @@
 {
-  "name": "@taquito/michelson-encoder",
-  "version": "19.2.0",
+  "name": "@mavrykdynamics/taquito-michelson-encoder",
+  "version": "19.2.3",
   "description": "converts michelson data and types into convenient JS/TS objects",
   "keywords": [
     "tezos",
@@ -56,7 +56,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^@taquito/utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
+      "^@mavrykdynamics/taquito-utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -67,9 +67,9 @@
     ]
   },
   "dependencies": {
-    "@taquito/core": "^19.1.0",
-    "@taquito/rpc": "^19.2.0",
-    "@taquito/utils": "^19.2.0",
+    "@mavrykdynamics/taquito-core": "^19.1.0",
+    "@mavrykdynamics/taquito-rpc": "^19.2.3",
+    "@mavrykdynamics/taquito-utils": "^19.2.3",
     "bignumber.js": "^9.1.2",
     "fast-json-stable-stringify": "^2.1.0"
   },

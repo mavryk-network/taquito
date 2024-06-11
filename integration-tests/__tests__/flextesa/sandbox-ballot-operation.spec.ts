@@ -1,22 +1,22 @@
-import { VotingPeriodBlockResult } from '@taquito/rpc';
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { VotingPeriodBlockResult } from '@mavrykdynamics/taquito-rpc';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 import { CONFIGS, isSandbox, sleep } from '../../config';
 
 CONFIGS().forEach(async ({ lib, rpc, protocol, setup }) => {
-  const flextesanet = isSandbox({ rpc }) ? test : test.skip;
+  const flexmasanet = isSandbox({ rpc }) ? test : test.skip;
   let blocksPerVotingPeriod: number;
   let blockTime: number;
   let currentPeriod: VotingPeriodBlockResult;
 
-  // Our ci flextesa script have 3 bakers Alice, Bob and Charlie (.github/workflows/main.yml)
+  // Our ci flexmasa script have 3 bakers Alice, Bob and Charlie (.github/workflows/main.yml)
   const Alice = lib; // Alice's secret key is passed through the command to run test is configured by integration-tests/config.ts
   const Bob = new TezosToolkit(rpc);
   Bob.setSignerProvider(new InMemorySigner('edsk3RFfvaFaxbHx8BMtEW1rKQcPtDML3LXjNqMNLCzC3wLC1bWbAt'));
   const Charlie = new TezosToolkit(rpc);
   Charlie.setSignerProvider(new InMemorySigner('edsk3RgWvbKKA1atEUcaGwivge7QtckHkTL9nQJUXQKY5r8WKp4pF4'));
 
-  describe(`Test Proposal and Ballot operation in ${protocol.substring(0, 8)} with flextesa`, () => {
+  describe(`Test Proposal and Ballot operation in ${protocol.substring(0, 8)} with flexmasa`, () => {
     beforeAll(async () => {
       await setup();
       let constants = await Alice.rpc.getConstants();
@@ -24,7 +24,7 @@ CONFIGS().forEach(async ({ lib, rpc, protocol, setup }) => {
       blockTime = constants.minimal_block_delay!.toNumber();
     });
 
-    flextesanet('Should be able to inject proposal operation in proposal period', async () => {
+    flexmasanet('Should be able to inject proposal operation in proposal period', async () => {
 
       // double check if it's proposal period so that we can inject proposal operation
       currentPeriod = await Alice.rpc.getCurrentPeriod();
@@ -52,7 +52,7 @@ CONFIGS().forEach(async ({ lib, rpc, protocol, setup }) => {
       }
     });
 
-    flextesanet('Should be able to inject ballot operation in exploration period', async () => {
+    flexmasanet('Should be able to inject ballot operation in exploration period', async () => {
       // if it's still proposal period make the test sleep to get into exploration period to inject ballot operation
       currentPeriod = await Alice.rpc.getCurrentPeriod();
       if (currentPeriod.voting_period.kind === 'proposal') {

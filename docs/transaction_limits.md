@@ -26,15 +26,15 @@ To set the fees using `Tezos.estimate`:
 ```typescript
 const contract = await Tezos.wallet.at('contractAddress');
 
-const estimateOp = await contract.methodsObject.simple_param(5).toTransferParams({});
-const { gasLimit,
-        storageLimit,
-        suggestedFeeMutez } = await Tezos.estimate.transfer(estimateOp);
-
+const estimateOp = await contract.methods.simple_param(5).toTransferParams({});
+const { gasLimit, 
+        storageLimit, 
+        suggestedFeeMumav } = await Tezos.estimate.transfer(estimateOp);
+        
 const op = await contract.methodsObject.simple_param(5).send({
       storageLimit: storageLimit,
       gasLimit: gasLimit,
-      fee: suggestedFeeMutez
+      fee: suggestedFeeMumav
     });
 ```
 

@@ -4,7 +4,7 @@ import {
   OperationContentsAndResultOrigination,
   OperationContentsAndResultReveal,
   OpKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { Observable } from 'rxjs';
 import { BATCH_KINDS } from '../batch/rpc-batch-provider';
 import { Context } from '../context';

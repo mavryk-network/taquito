@@ -1,16 +1,16 @@
-import { Protocols } from "@taquito/taquito";
+import { Protocols } from "@mavrykdynamics/taquito";
 import { CONFIGS, NetworkType } from "../../config";
 import BigNumber from 'bignumber.js';
-import { ConstantsResponseProto019 } from '@taquito/rpc';
+import { ConstantsResponseProto019 } from '@mavrykdynamics/taquito-rpc';
 
 CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   const Tezos = lib;
-  const oxfordnet = (networkType == NetworkType.TESTNET && protocol === Protocols.ProxfordY) ? test : test.skip;
+  const atlasnet = (networkType == NetworkType.TESTNET && protocol === Protocols.PtAtLas) ? test : test.skip;
   const weeklynet = (networkType == NetworkType.TESTNET && protocol === Protocols.ProtoALpha) ? test : test.skip;
   describe('Test fetching constants for all protocols on Mainnet', () => {
     const rpcUrl = 'https://mainnet.ecadinfra.com/';
     Tezos.setRpcProvider(rpcUrl);
-    it(`successfully fetches Proto19(oxford2) constants at head`, async () => {
+    it(`successfully fetches Proto19(atlas) constants at head`, async () => {
       const constants: ConstantsResponseProto019 = await Tezos.rpc.getConstants();
       expect(constants).toEqual({
         adaptive_issuance_activation_vote_enable: false,
@@ -140,7 +140,7 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   });
 
   describe(`Fetch constants for testnet`, () => {
-    oxfordnet(`successfully fetches all constants for oxfordnet using ${rpc}`, async () => {
+    atlasnet(`successfully fetches all constants for atlasnet using ${rpc}`, async () => {
       Tezos.setRpcProvider(rpc);
       const constants: ConstantsResponseProto019 = await Tezos.rpc.getConstants();
       expect(constants).toEqual({
@@ -261,7 +261,7 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
         smart_rollup_riscv_pvm_enable: false,
         smart_rollup_stake_amount: '10000000000',
         smart_rollup_timeout_period_in_blocks: 500,
-        testnet_dictator: 'tz1Xf8zdT3DbAX9cHw3c3CXh79rc4nK4gCe8',
+        testnet_dictator: 'mv1TQVEqbq743rV4f3z4XG8cGX6vk9DniVUP',
         vdf_difficulty: new BigNumber(10000000000),
         zk_rollup_enable: false,
         zk_rollup_max_ticket_payload_size: 2048,

@@ -1,12 +1,12 @@
-import { BigMapId } from './handlers/tezos-storage-handler';
+import { BigMapId } from './handlers/mavryk-storage-handler';
 import {
   BigMapAbstraction,
   Context,
   ContractAbstraction,
   ContractProvider,
   Wallet,
-} from '@taquito/taquito';
-import { bytesToString } from '@taquito/utils';
+} from '@mavrykdynamics/taquito';
+import { bytesToString } from '@mavrykdynamics/taquito-utils';
 import { MetadataEnvelope, MetadataProviderInterface } from './metadata-provider';
 import {
   BigMapContractMetadataNotFoundError,
@@ -14,7 +14,7 @@ import {
   UriNotFoundError,
 } from './errors';
 import BigNumber from 'bignumber.js';
-import { Schema } from '@taquito/michelson-encoder';
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { ViewFactory } from './viewKind/viewFactory';
 import { View } from './viewKind/interface';
 import { ViewDefinition } from './metadata-interface';

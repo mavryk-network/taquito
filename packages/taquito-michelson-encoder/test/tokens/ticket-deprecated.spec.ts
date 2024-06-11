@@ -17,7 +17,7 @@ describe('Ticket_deprecated token', () => {
   let tokenTicketDeprecatedInt: TicketDeprecatedToken;
   let tokenTicketDeprecatedKey: TicketDeprecatedToken;
   let tokenTicketDeprecatedKeyHash: TicketDeprecatedToken;
-  let tokenTicketDeprecatedMutez: TicketDeprecatedToken;
+  let tokenTicketDeprecatedMumav: TicketDeprecatedToken;
   // let tokenTicketDeprecatedNever: TicketDeprecatedToken;
   let tokenTicketDeprecatedOption: TicketDeprecatedToken;
   let tokenTicketDeprecatedOr: TicketDeprecatedToken;
@@ -63,8 +63,8 @@ describe('Ticket_deprecated token', () => {
       { prim: 'ticket_deprecated', args: [{ prim: 'key_hash' }] },
       0
     ) as TicketDeprecatedToken;
-    tokenTicketDeprecatedMutez = createToken(
-      { prim: 'ticket_deprecated', args: [{ prim: 'mutez' }], annots: ['%test'] },
+    tokenTicketDeprecatedMumav = createToken(
+      { prim: 'ticket_deprecated', args: [{ prim: 'mumav' }], annots: ['%test'] },
       0
     ) as TicketDeprecatedToken;
     tokenTicketDeprecatedOption = createToken(
@@ -121,7 +121,7 @@ describe('Ticket_deprecated token', () => {
         EncodeTicketDeprecatedError
       );
       expect(() =>
-        tokenTicketDeprecatedAddress.EncodeObject('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')
+        tokenTicketDeprecatedAddress.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketDeprecatedError);
       expect(() => tokenTicketDeprecatedBool.EncodeObject(true)).toThrowError(
         EncodeTicketDeprecatedError
@@ -141,13 +141,13 @@ describe('Ticket_deprecated token', () => {
         )
       ).toThrowError(EncodeTicketDeprecatedError);
       expect(() =>
-        tokenTicketDeprecatedKeyHash.EncodeObject('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')
+        tokenTicketDeprecatedKeyHash.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketDeprecatedError);
-      expect(() => tokenTicketDeprecatedMutez.EncodeObject(1000000)).toThrowError(
+      expect(() => tokenTicketDeprecatedMumav.EncodeObject(1000000)).toThrowError(
         EncodeTicketDeprecatedError
       );
       expect(() =>
-        tokenTicketDeprecatedOption.EncodeObject('tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu')
+        tokenTicketDeprecatedOption.EncodeObject('mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM')
       ).toThrowError(EncodeTicketDeprecatedError);
       expect(() => tokenTicketDeprecatedOption.EncodeObject(null)).toThrowError(
         EncodeTicketDeprecatedError
@@ -187,7 +187,7 @@ describe('Ticket_deprecated token', () => {
         EncodeTicketDeprecatedError
       );
       expect(() =>
-        tokenTicketDeprecatedAddress.Encode(['tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'])
+        tokenTicketDeprecatedAddress.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketDeprecatedError);
       expect(() => tokenTicketDeprecatedBool.Encode([true])).toThrowError(
         EncodeTicketDeprecatedError
@@ -203,13 +203,13 @@ describe('Ticket_deprecated token', () => {
         tokenTicketDeprecatedKey.Encode(['edpkuRkcStobJ569XFxmE6edyRQQzMmtf4ZnmPkTPfSQnt6P3Nym2V'])
       ).toThrowError(EncodeTicketDeprecatedError);
       expect(() =>
-        tokenTicketDeprecatedKeyHash.Encode(['tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'])
+        tokenTicketDeprecatedKeyHash.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketDeprecatedError);
-      expect(() => tokenTicketDeprecatedMutez.Encode([1000000])).toThrowError(
+      expect(() => tokenTicketDeprecatedMumav.Encode([1000000])).toThrowError(
         EncodeTicketDeprecatedError
       );
       expect(() =>
-        tokenTicketDeprecatedOption.Encode(['tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'])
+        tokenTicketDeprecatedOption.Encode(['mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'])
       ).toThrowError(EncodeTicketDeprecatedError);
       expect(() => tokenTicketDeprecatedOption.Encode([null])).toThrowError(
         EncodeTicketDeprecatedError
@@ -271,13 +271,13 @@ describe('Ticket_deprecated token', () => {
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
-            { string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' },
+            { string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' },
             { int: '2' },
           ],
         })
       ).toEqual({
         ticketer: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw',
-        value: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        value: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         amount: new BigNumber('2'),
       });
     });
@@ -369,20 +369,20 @@ describe('Ticket_deprecated token', () => {
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
-            { string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' },
+            { string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' },
             { int: '2' },
           ],
         })
       ).toEqual({
         ticketer: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw',
-        value: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+        value: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
         amount: new BigNumber('2'),
       });
     });
 
-    it('Should execute on readTicketType with ticket of type mutez', () => {
+    it('Should execute on readTicketType with ticket of type mumav', () => {
       expect(
-        tokenTicketDeprecatedMutez.Execute({
+        tokenTicketDeprecatedMumav.Execute({
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
@@ -403,13 +403,13 @@ describe('Ticket_deprecated token', () => {
           prim: 'Pair',
           args: [
             { string: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw' },
-            { prim: 'Some', args: [{ string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' }] },
+            { prim: 'Some', args: [{ string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' }] },
             { int: '2' },
           ],
         })
       ).toEqual({
         ticketer: 'KT1PVuv7af4VkPsZVZ8oZz9GSSdGnGBCbFWw',
-        value: { Some: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' },
+        value: { Some: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' },
         amount: new BigNumber('2'),
       });
     });

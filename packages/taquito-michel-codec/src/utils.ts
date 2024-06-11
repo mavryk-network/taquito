@@ -7,7 +7,7 @@ import {
   MichelsonTypePair,
 } from './michelson-types';
 import { HexParseError, LongIntegerError, TezosIdEncodeError } from './errors';
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 
 export type Tuple<N extends number, T> = N extends 1
   ? [T]
@@ -288,9 +288,9 @@ export const tezosPrefix: Record<TezosIDType, TezosIDPrefix> = {
   OperationListListHash: [32, [29, 159, 109]], // LLo(53)
   ProtocolHash: [32, [2, 170]], // P(51)
   ContextHash: [32, [79, 199]], // Co(52)
-  ED25519PublicKeyHash: [20, [6, 161, 159]], // tz1(36)
-  SECP256K1PublicKeyHash: [20, [6, 161, 161]], // tz2(36)
-  P256PublicKeyHash: [20, [6, 161, 164]], // tz3(36)
+  ED25519PublicKeyHash: [20, [5, 186, 196]], // mv1(36)
+  SECP256K1PublicKeyHash: [20, [5, 186, 199]], // mv2(36)
+  P256PublicKeyHash: [20, [5, 186, 201]], // mv3(36)
   ContractHash: [20, [2, 90, 121]], // KT1(36)
   CryptoboxPublicKeyHash: [16, [153, 103]], // id(30)
   ED25519Seed: [32, [13, 15, 58, 7]], // edsk(54)

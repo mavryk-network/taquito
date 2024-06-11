@@ -8,8 +8,8 @@ describe('Address token', () => {
 
   describe('EncodeObject', () => {
     it('Should encode address to string', () => {
-      expect(token.EncodeObject('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual({
-        string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+      expect(token.EncodeObject('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual({
+        string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
       });
     });
 
@@ -22,8 +22,8 @@ describe('Address token', () => {
 
   describe('Encode', () => {
     it('Should encode address to string', () => {
-      expect(token.Encode(['tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'])).toEqual({
-        string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+      expect(token.Encode(['mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'])).toEqual({
+        string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
       });
     });
 

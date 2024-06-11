@@ -105,10 +105,10 @@ describe('Map token', () => {
       ]);
     });
 
-    it('Encode properly a map with keys of type mutez', () => {
+    it('Encode properly a map with keys of type mumav', () => {
       // Map keys must be in strictly increasing order
       token = createToken(
-        { prim: 'map', args: [{ prim: 'mutez' }, { prim: 'int' }], annots: [] },
+        { prim: 'map', args: [{ prim: 'mumav' }, { prim: 'int' }], annots: [] },
         0
       ) as MapToken;
       const map = MichelsonMap.fromLiteral({
@@ -176,7 +176,7 @@ describe('Map token', () => {
                         },
                       ],
                     },
-                    { prim: 'mutez', annots: ['%myTez'] },
+                    { prim: 'mumav', annots: ['%myTez'] },
                   ],
                 },
               ],
@@ -190,7 +190,7 @@ describe('Map token', () => {
       map.set({ myTez: 12 }, 3); //RR
       map.set({ myTez: 2 }, 3); //RR
       map.set({ myBytes: 'cccc' }, 15); //LLR
-      map.set({ myAddress: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' }, 5); //LLL
+      map.set({ myAddress: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' }, 5); //LLL
       map.set({ myNat: 48 }, 16); //LRR
       map.set({ myPair: { 4: 12, 5: 6 } }, 3); //RLL
       map.set({ myInt: 4 }, 6); //LRL
@@ -207,7 +207,7 @@ describe('Map token', () => {
                 {
                   prim: 'Left',
                   args: [
-                    { prim: 'Left', args: [{ string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' }] },
+                    { prim: 'Left', args: [{ string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' }] },
                   ],
                 },
               ],
@@ -335,7 +335,7 @@ describe('Map token', () => {
                         },
                       ],
                     },
-                    { prim: 'mutez' },
+                    { prim: 'mumav' },
                   ],
                 },
               ],
@@ -349,7 +349,7 @@ describe('Map token', () => {
       map.set({ 6: 12 }, 3); //RR
       map.set({ 6: 2 }, 3); //RR
       map.set({ 1: 'cccc' }, 15); //LLR
-      map.set({ 0: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' }, 5); //LLL
+      map.set({ 0: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' }, 5); //LLL
       map.set({ 3: 48 }, 16); //LRR
       map.set({ 4: { 4: 12, 5: 6 } }, 3); //RLL
       map.set({ 2: 4 }, 6); //LRL
@@ -366,7 +366,7 @@ describe('Map token', () => {
                 {
                   prim: 'Left',
                   args: [
-                    { prim: 'Left', args: [{ string: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu' }] },
+                    { prim: 'Left', args: [{ string: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM' }] },
                   ],
                 },
               ],
@@ -915,7 +915,7 @@ describe('Map token with complex pair', () => {
     nat: string,
     str: string,
     bytes: string,
-    mutez: string,
+    mumav: string,
     b: string,
     keyHash: string,
     ts: string,
@@ -944,7 +944,7 @@ describe('Map token with complex pair', () => {
                         {
                           prim: 'Pair',
                           args: [
-                            { int: mutez },
+                            { int: mumav },
                             {
                               prim: 'Pair',
                               args: [
@@ -1000,7 +1000,7 @@ describe('Map token with complex pair', () => {
                           {
                             prim: 'pair',
                             args: [
-                              { prim: 'mutez' },
+                              { prim: 'mumav' },
                               {
                                 prim: 'pair',
                                 args: [
@@ -1052,9 +1052,9 @@ describe('Map token with complex pair', () => {
           'cafe',
           '10',
           'True',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           '2019-09-06T15:08:29Z',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5'
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV'
         ),
         createValue(
           '1',
@@ -1063,9 +1063,9 @@ describe('Map token with complex pair', () => {
           'cafe',
           '10',
           'False',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           '2019-09-06T15:08:29Z',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5'
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV'
         ),
       ]) as MichelsonMap<any, any>;
 
@@ -1079,9 +1079,9 @@ describe('Map token with complex pair', () => {
         3: 'cafe',
         4: '10',
         5: true,
-        6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+        6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
         7: '2019-09-06T15:08:29.000Z',
-        8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+        8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
       });
 
       expect(value).toBeInstanceOf(BigNumber);
@@ -1094,9 +1094,9 @@ describe('Map token with complex pair', () => {
         3: 'cafe',
         4: '10',
         5: false,
-        6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+        6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
         7: '2019-09-06T15:08:29.000Z',
-        8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+        8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
       });
 
       expect(value2).toBeInstanceOf(BigNumber);
@@ -1113,9 +1113,9 @@ describe('Map token with complex pair', () => {
           3: 'cafe',
           4: '10',
           5: false,
-          6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           7: '2019-09-06T15:08:29.000Z',
-          8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
         },
         1000
       );
@@ -1128,9 +1128,9 @@ describe('Map token with complex pair', () => {
           3: 'cafe',
           4: '10',
           5: true,
-          6: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          6: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           7: '2019-09-06T15:08:29.000Z',
-          8: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          8: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
         },
         101
       );
@@ -1145,9 +1145,9 @@ describe('Map token with complex pair', () => {
           'cafe',
           '10',
           'False',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           '2019-09-06T15:08:29.000Z',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5'
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV'
         )
       );
       expect(encoded[1]).toEqual(
@@ -1158,9 +1158,9 @@ describe('Map token with complex pair', () => {
           'cafe',
           '10',
           'True',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           '2019-09-06T15:08:29.000Z',
-          'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+          'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
           '101'
         )
       );
@@ -1191,8 +1191,8 @@ describe('Map token with complex pair', () => {
               schema: 'bytes'
             },
             4: {
-              __michelsonType: 'mutez',
-              schema: 'mutez'
+              __michelsonType: 'mumav',
+              schema: 'mumav'
             },
             5: {
               __michelsonType: 'bool',

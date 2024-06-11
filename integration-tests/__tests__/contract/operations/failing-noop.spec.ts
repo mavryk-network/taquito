@@ -1,7 +1,7 @@
+import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
 import { CONFIGS } from "../../../config";
-import { OpKind, TezosToolkit } from "@taquito/taquito";
-import { InMemorySigner } from "@taquito/signer";
-import { verifySignature } from "@taquito/utils";
+import { OpKind, TezosToolkit } from "@mavrykdynamics/taquito";
+import { verifySignature } from "@mavrykdynamics/taquito-utils";
 
 CONFIGS().forEach(({ rpc }) => {
   const aliceSKey = 'edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq'

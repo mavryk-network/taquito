@@ -1,4 +1,4 @@
-import { MichelsonV1Expression } from '@taquito/rpc';
+import { MichelsonV1Expression } from '@mavrykdynamics/taquito-rpc';
 export interface MetadataInterface {
 	name?: string;
 	description?: string;

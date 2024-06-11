@@ -3,7 +3,7 @@ import {
   OperationContentsAndResult,
   OperationContentsAndResultReveal,
   OperationResult,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { BehaviorSubject, defer, EMPTY, of, range, ReplaySubject, throwError } from 'rxjs';
 import {
   catchError,
@@ -19,10 +19,10 @@ import {
 } from 'rxjs/operators';
 import { Context } from '../context';
 import { ForgedBytes, hasMetadataWithResult } from './types';
-import { validateOperation, ValidationResult } from '@taquito/utils';
+import { validateOperation, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { createObservableFromSubscription } from '../subscribe/create-observable-from-subscription';
 import { ConfirmationTimeoutError, InvalidConfirmationCountError } from '../errors';
-import { InvalidOperationHashError } from '@taquito/core';
+import { InvalidOperationHashError } from '@mavrykdynamics/taquito-core';
 
 interface PollingConfig {
   timeout: number;

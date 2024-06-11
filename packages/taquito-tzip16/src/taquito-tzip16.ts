@@ -1,9 +1,9 @@
 /**
  * @packageDocumentation
- * @module @taquito/tzip16
+ * @module @mavrykdynamics/taquito-tzip16
  */
 export * from './handlers/http-handler';
-export * from './handlers/tezos-storage-handler';
+export * from './handlers/mavryk-storage-handler';
 export * from './handlers/ipfs-handler';
 export * from './composer';
 export * from './metadata-interface';
@@ -18,8 +18,8 @@ export * from './viewKind/viewFactory';
 export { VERSION } from './version';
 
 /**
- * @deprecated `import { bytesToString, stringToBytes } from "@taquito/tzip16"` is deprecated in favor of
- * `import { bytesToString, stringToBytes } from "@taquito/utils"`
+ * @deprecated `import { bytesToString, stringToBytes } from "@mavrykdynamics/taquito-tzip16"` is deprecated in favor of
+ * `import { bytesToString, stringToBytes } from "@mavrykdynamics/taquito-utils"`
  *
  */
-export { bytesToString, stringToBytes } from '@taquito/utils';
+export { bytesToString, stringToBytes } from '@mavrykdynamics/taquito-utils';

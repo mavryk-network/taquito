@@ -15,7 +15,7 @@ describe('Schema test', () => {
   it('Should parse storage properly', () => {
     const schema = new Schema(storage);
     expect(schema.Execute(rpcContractResponse.script.storage)).toEqual(
-      'tz1UbbpwwefHU7N7EiHr6hiyFA2sDJi5vXkq'
+      'mv1PwvFACmM7WAsRAqoESk8VQWsazRgpYmQN'
     );
   });
 
@@ -34,7 +34,7 @@ describe('Schema test', () => {
         { prim: 'NIL', args: [{ prim: 'operation' }] },
         {
           prim: 'PUSH',
-          args: [{ prim: 'key_hash' }, { string: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh' }],
+          args: [{ prim: 'key_hash' }, { string: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m' }],
         },
         { prim: 'SOME' },
         { prim: 'SET_DELEGATE' },
@@ -45,7 +45,7 @@ describe('Schema test', () => {
       { prim: 'NIL', args: [{ prim: 'operation' }] },
       {
         prim: 'PUSH',
-        args: [{ prim: 'key_hash' }, { string: 'tz1eY5Aqa1kXDFoiebL28emyXFoneAoVg1zh' }],
+        args: [{ prim: 'key_hash' }, { string: 'mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m' }],
       },
       { prim: 'SOME' },
       { prim: 'SET_DELEGATE' },

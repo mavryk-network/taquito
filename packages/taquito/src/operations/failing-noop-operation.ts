@@ -1,4 +1,4 @@
-import { OpKind } from '@taquito/rpc';
+import { OpKind } from '@mavrykdynamics/taquito-rpc';
 
 /**
  * @description FailingNoopOperation interface that contains information about a signed failing_noop operation

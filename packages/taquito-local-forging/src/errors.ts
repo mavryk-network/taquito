@@ -1,5 +1,5 @@
-import { ParameterValidationError } from '@taquito/core';
-import { OperationContents } from '@taquito/rpc';
+import { ParameterValidationError } from '@mavrykdynamics/taquito-core';
+import { OperationContents } from '@mavrykdynamics/taquito-rpc';
 import { ENTRYPOINT_MAX_LENGTH } from './constants';
 
 /**

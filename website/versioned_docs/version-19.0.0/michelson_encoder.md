@@ -205,7 +205,7 @@ const storageType =
 												{
 													prim: 'pair',
 													args: [
-														{ prim: 'pair', args: [ { prim: 'nat' }, { prim: 'mutez' } ] },
+														{ prim: 'pair', args: [ { prim: 'nat' }, { prim: 'mumav' } ] },
 														{
 															prim: 'pair',
 															args: [ { prim: 'nat' }, { prim: 'timestamp' } ]
@@ -224,7 +224,7 @@ const storageType =
 														{ prim: 'nat' },
 														{
 															prim: 'pair',
-															args: [ { prim: 'mutez' }, { prim: 'timestamp' } ]
+															args: [ { prim: 'mumav' }, { prim: 'timestamp' } ]
 														}
 													]
 												}
@@ -401,7 +401,7 @@ Here is an example of `encode`:
 ```js live noInline
 const parameterSchema = new ParameterSchema({"prim":"pair","args":[{"prim":"address","annots":[":spender"]},{"prim":"nat","annots":[":value"]}],"annots":["%approve"]});
 const michelsonData = parameterSchema.Encode(
-    'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     '12'
 )
 println(JSON.stringify(michelsonData, null, 2));
@@ -411,7 +411,7 @@ Here is an example of `encodeObject`:
 ```js live noInline
 const parameterSchema = new ParameterSchema({"prim":"pair","args":[{"prim":"address","annots":[":spender"]},{"prim":"nat","annots":[":value"]}],"annots":["%approve"]});
 const michelsonData = parameterSchema.EncodeObject({
-    spender: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    spender: 'mv1EnD2M4ATv38QrCqx2CbLpC5AKgHqDwdxa',
     value: '12'
 })
 println(JSON.stringify(michelsonData, null, 2));

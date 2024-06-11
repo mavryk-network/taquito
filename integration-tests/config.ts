@@ -1,14 +1,13 @@
-import { CompositeForger, RpcForger, TezosToolkit, Protocols, TaquitoLocalForger, PollingSubscribeProvider } from '@taquito/taquito';
-import { RemoteSigner } from '@taquito/remote-signer';
-import { HttpBackend } from '@taquito/http-utils';
-import { b58cencode, Prefix, prefix } from '@taquito/utils';
-import { importKey, InMemorySigner } from '@taquito/signer';
-import { RpcClient, RpcClientCache } from '@taquito/rpc';
+import { CompositeForger, RpcForger, TezosToolkit, Protocols, TaquitoLocalForger, PollingSubscribeProvider } from '@mavrykdynamics/taquito';
+import { RemoteSigner } from '@mavrykdynamics/taquito-remote-signer';
+import { HttpBackend } from '@mavrykdynamics/taquito-http-utils';
+import { b58cencode, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
+import { importKey, InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 import { KnownContracts } from './known-contracts';
 import { knownContractsProtoALph } from './known-contracts-ProtoALph';
-import { knownContractsPtGhostnet } from './known-contracts-PtGhostnet';
-import { knownContractsProxfordY } from './known-contracts-ProxfordY';
-import { knownContractsPtNairobi } from './known-contracts-PtNairobi';
+import { knownContractsPtBasenet } from './known-contracts-PtBasenet';
+import { knownContractsPtAtLas } from './known-contracts-PtAtLas';
 
 const nodeCrypto = require('crypto');
 
@@ -32,8 +31,8 @@ const forgers: ForgerType[] = [ForgerType.COMPOSITE];
 
 // user running integration test can pass environment variable TEZOS_NETWORK_TYPE=sandbox to specify which network to run against
 export enum NetworkType {
-  TESTNET,  // corresponds ghostnet, oxfordnet and weeklynet etc.
-  SANDBOX,  // corresponds to flextesa local chain
+  TESTNET,  // corresponds basenet, atlasnet and weeklynet etc.
+  SANDBOX,  // corresponds to flexmasa local chain
 }
 
 interface Config {
@@ -79,7 +78,7 @@ interface SecretKeyConfig {
 }
 
 export const defaultSecretKey: SecretKeyConfig = {
-  // pkh is tz2RqxsYQyFuP9amsmrr25x9bUcBMWXGvjuD
+  // pkh is mv2dZ3AF2dGSRJBSABT7bE8J2H6fAqhAZYD2
   type: SignerType.SECRET_KEY,
   secret_key: process.env['SECRET_KEY'] || 'spsk21y52Cp943kGnqPBSjXMC2xf1hz8QDGGih7AJdFqhxPcm1ihRN',
   password: process.env['PASSWORD_SECRET_KEY'] || undefined,
@@ -117,7 +116,7 @@ const defaultConfig = ({
     rpc: process.env[`TEZOS_RPC_${networkName}`] || defaultRpc,
     pollingIntervalMilliseconds: process.env[`POLLING_INTERVAL_MILLISECONDS`] || undefined,
     rpcCacheMilliseconds: process.env[`RPC_CACHE_MILLISECONDS`] || '1000',
-    knownBaker: process.env[`TEZOS_BAKER`] || (networkName === 'WEEKLYNET' ? 'tz1ck3EJwzFpbLVmXVuEn5Ptwzc6Aj14mHSH' : 'tz1cjyja1TU6fiyiFav3mFAdnDsCReJ12hPD'),
+    knownBaker: process.env[`TEZOS_BAKER`] || (networkName === 'WEEKLYNET' ? 'tz1ck3EJwzFpbLVmXVuEn5Ptwzc6Aj14mHSH' : 'mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'),
     knownContract: process.env[`TEZOS_${networkName}_CONTRACT_ADDRESS`] || knownContracts.contract,
     knownBigMapContract: process.env[`TEZOS_${networkName}_BIGMAPCONTRACT_ADDRESS`] || knownContracts.bigMapContract,
     knownTzip1216Contract: process.env[`TEZOS_${networkName}_TZIP1216CONTRACT_ADDRESS`] || knownContracts.tzip12BigMapOffChainContract,
@@ -129,44 +128,35 @@ const defaultConfig = ({
   }
 }
 
-const oxfordnetEphemeral: Config =
+const atlasnetEphemeral: Config =
   defaultConfig({
-    networkName: 'OXFORDNET',
-    protocol: Protocols.ProxfordY,
-    defaultRpc: 'http://ecad-oxfordnet-full.i.tez.ie:8732',
-    knownContracts: knownContractsProxfordY,
-    signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/oxfordnet')
+    networkName: 'ATLASNET',
+    protocol: Protocols.PtAtLas,
+    defaultRpc: 'https://atlasnet.rpc.mavryk.network',
+    knownContracts: knownContractsPtAtLas,
+    signerConfig: defaultEphemeralConfig('http://key-gen-1.i.tez.ie:3010/mondaynet')
   });
 
-const oxfordnetSecretKey: Config =
-  { ...oxfordnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'http://ecad-oxfordnet-full:8732' } };
+const atlasnetSecretKey: Config =
+  { ...atlasnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://atlasnet.rpc.mavryk.network' } };
 
-const nairobinetSecretKey: Config = 
+const basenetEphemeral: Config =
   defaultConfig({
-    networkName: 'NAIROBINET',
-    protocol: Protocols.PtNairobi,
-    defaultRpc: 'http://ecad-nairobinet-full:8732',
-    knownContracts: knownContractsPtNairobi,
-    signerConfig: defaultSecretKey
-  })
-
-const ghostnetEphemeral: Config =
-  defaultConfig({
-    networkName: 'GHOSTNET',
-    protocol: Protocols.ProxfordY,
-    defaultRpc: 'http://ecad-ghostnet-rolling:8732',
-    knownContracts: knownContractsPtGhostnet,
+    networkName: 'BASENET',
+    protocol: Protocols.PtAtLas,
+    defaultRpc: 'https://basenet.rpc.mavryk.network',
+    knownContracts: knownContractsPtBasenet,
     signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/ghostnet')
   });
 
-const ghostnetSecretKey: Config =
-  { ...ghostnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'http://ecad-ghostnet-rolling:8732' } };
+const basenetSecretKey: Config =
+  { ...basenetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://basenet.rpc.mavryk.network' } };
 
 const weeklynetEphemeral: Config =
   defaultConfig({
     networkName: 'WEEKLYNET',
     protocol: Protocols.ProtoALpha,
-    defaultRpc: 'http://mondaynet.ecadinfra.com:8732',
+    defaultRpc: 'https://rpc.mavryk.network/mondaynet',
     knownContracts: knownContractsProtoALph,
     signerConfig: defaultEphemeralConfig('http://key-gen-1.i.tez.ie:3010/mondaynet')
   });
@@ -177,23 +167,21 @@ const weeklynetSecretKey: Config =
 const providers: Config[] = [];
 
 if (process.env['RUN_WITH_SECRET_KEY']) {
-  providers.push(oxfordnetSecretKey);
-} else if (process.env['RUN_OXFORDNET_WITH_SECRET_KEY']) {
-  providers.push(oxfordnetSecretKey);
-} else if (process.env['RUN_GHOSTNET_WITH_SECRET_KEY']) {
-  providers.push(ghostnetSecretKey);
-} else if(process.env['RUN_NAIROBINET_WITH_SECRET_KEY']) {
-  providers.push(nairobinetSecretKey);
+  providers.push(atlasnetSecretKey);
+} else if (process.env['RUN_ATLASNET_WITH_SECRET_KEY']) {
+  providers.push(atlasnetSecretKey);
+} else if (process.env['RUN_BASENET_WITH_SECRET_KEY']) {
+  providers.push(basenetSecretKey);
 } else if (process.env['RUN_WEEKLYNET_WITH_SECRET_KEY']) {
   providers.push(weeklynetSecretKey);
-} else if (process.env['OXFORDNET']) {
-  providers.push(oxfordnetEphemeral);
-} else if (process.env['GHOSTNET']) {
-  providers.push(ghostnetEphemeral);
+} else if (process.env['ATLASNET']) {
+  providers.push(atlasnetEphemeral);
+} else if (process.env['BASENET']) {
+  providers.push(basenetEphemeral);
 } else if (process.env['WEEKLYNET']) {
   providers.push(weeklynetEphemeral);
 } else {
-  providers.push(oxfordnetEphemeral);
+  providers.push(atlasnetEphemeral);
 }
 
 const setupForger = (Tezos: TezosToolkit, forger: ForgerType): void => {

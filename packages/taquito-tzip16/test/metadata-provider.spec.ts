@@ -29,7 +29,7 @@ describe('Metadata provider test', () => {
     handlers = new Map<string, Handler>([
       ['http', mockHttpHandler],
       ['https', mockHttpHandler],
-      ['tezos-storage', mockTezosStorageHandler],
+      ['mavryk-storage', mockTezosStorageHandler],
       ['ipfs', mockIpfsHttpHandler],
     ]);
     metadataProvider = new MetadataProvider(handlers);
@@ -37,7 +37,7 @@ describe('Metadata provider test', () => {
 
   it('Should succesfully fetch metadata on https', async () => {
     mockHttpHandler.getMetadata.mockResolvedValue(
-      `{"name":"test","description":"A metadata test","version":"0.1","license":"MIT","authors":["Taquito <https://taquito.io/>"],"homepage":"https://taquito.io/"}`
+      `{"name":"test","description":"A metadata test","version":"0.1","license":"MIT","authors":["Taquito <https://taquito.mavryk.org/>"],"homepage":"https://taquito.mavryk.org/"}`
     );
 
     const metadata = await metadataProvider.provideMetadata(
@@ -53,8 +53,8 @@ describe('Metadata provider test', () => {
         description: 'A metadata test',
         version: '0.1',
         license: 'MIT',
-        authors: ['Taquito <https://taquito.io/>'],
-        homepage: 'https://taquito.io/',
+        authors: ['Taquito <https://taquito.mavryk.org/>'],
+        homepage: 'https://taquito.mavryk.org/',
       },
       integrityCheckResult: undefined,
       sha256Hash: undefined,
@@ -78,26 +78,26 @@ describe('Metadata provider test', () => {
     });
   });
 
-  it('Should succesfully fetch metadata for tezos-storage', async () => {
+  it('Should succesfully fetch metadata for mavryk-storage', async () => {
     mockTezosStorageHandler.getMetadata.mockResolvedValue(
-      `{"name":"test","description":"A metadata test","version":"0.1","license":"MIT","authors":["Taquito <https://taquito.io/>"],"homepage":"https://taquito.io/"}`
+      `{"name":"test","description":"A metadata test","version":"0.1","license":"MIT","authors":["Taquito <https://taquito.mavryk.org/>"],"homepage":"https://taquito.mavryk.org/"}`
     );
 
     const metadata = await metadataProvider.provideMetadata(
       mockContractAbstraction,
-      'tezos-storage://KT1QDFEu8JijYbsJqzoXq7mKvfaQQamHD1kX/%2Ffoo',
+      'mavryk-storage://KT1QDFEu8JijYbsJqzoXq7mKvfaQQamHD1kX/%2Ffoo',
       mockContext
     );
 
     expect(metadata).toMatchObject({
-      uri: 'tezos-storage://KT1QDFEu8JijYbsJqzoXq7mKvfaQQamHD1kX/%2Ffoo',
+      uri: 'mavryk-storage://KT1QDFEu8JijYbsJqzoXq7mKvfaQQamHD1kX/%2Ffoo',
       metadata: {
         name: 'test',
         description: 'A metadata test',
         version: '0.1',
         license: 'MIT',
-        authors: ['Taquito <https://taquito.io/>'],
-        homepage: 'https://taquito.io/',
+        authors: ['Taquito <https://taquito.mavryk.org/>'],
+        homepage: 'https://taquito.mavryk.org/',
       },
       integrityCheckResult: undefined,
       sha256Hash: undefined,
@@ -106,7 +106,7 @@ describe('Metadata provider test', () => {
 
   it('Should succesfully fetch metadata for IPFS', async () => {
     mockIpfsHttpHandler.getMetadata.mockResolvedValue(
-      `{"name":"test","description":"A metadata test","version":"0.1","license":"MIT","authors":["Taquito <https://taquito.io/>"],"homepage":"https://taquito.io/"}`
+      `{"name":"test","description":"A metadata test","version":"0.1","license":"MIT","authors":["Taquito <https://taquito.mavryk.org/>"],"homepage":"https://taquito.mavryk.org/"}`
     );
 
     const metadata = await metadataProvider.provideMetadata(
@@ -122,8 +122,8 @@ describe('Metadata provider test', () => {
         description: 'A metadata test',
         version: '0.1',
         license: 'MIT',
-        authors: ['Taquito <https://taquito.io/>'],
-        homepage: 'https://taquito.io/',
+        authors: ['Taquito <https://taquito.mavryk.org/>'],
+        homepage: 'https://taquito.mavryk.org/',
       },
       integrityCheckResult: undefined,
       sha256Hash: undefined,
@@ -156,33 +156,33 @@ describe('Metadata provider test', () => {
   it('Should extract protocol info properly', () => {
     expect(
       metadataProvider['extractProtocolInfo'](
-        'tezos-storage://KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here'
+        'mavryk-storage://KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here'
       )
     ).toMatchObject({
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: '//KT1RF4nXUitQb2G8TE5H9zApatxeKLtQymtg/here',
     });
 
-    expect(metadataProvider['extractProtocolInfo']('tezos-storage:hello%2Fworld')).toMatchObject({
+    expect(metadataProvider['extractProtocolInfo']('mavryk-storage:hello%2Fworld')).toMatchObject({
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: 'hello%2Fworld',
     });
 
-    expect(metadataProvider['extractProtocolInfo']('tezos-storage:hello')).toMatchObject({
+    expect(metadataProvider['extractProtocolInfo']('mavryk-storage:hello')).toMatchObject({
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: 'hello',
     });
 
     expect(
       metadataProvider['extractProtocolInfo'](
-        'tezos-storage://KT1GPDQvmV37orH1XH3SZmVVKFaMuzzqsmN7.mainnet/contents'
+        'mavryk-storage://KT1GPDQvmV37orH1XH3SZmVVKFaMuzzqsmN7.mainnet/contents'
       )
     ).toMatchObject({
       sha256hash: undefined,
-      protocol: 'tezos-storage',
+      protocol: 'mavryk-storage',
       location: '//KT1GPDQvmV37orH1XH3SZmVVKFaMuzzqsmN7.mainnet/contents',
     });
 

@@ -14,7 +14,7 @@ A comparison of the methods implemented by Web3js and Taquito can put in perspec
 `npm install web3`
 
 **Taquito**:
-`npm install @taquito/taquito`
+`npm install @mavrykdynamics/taquito`
 
 Web3js comes as a single package containing all the necessary tools to connect to the Ethereum blockchain, while Taquito is made of various packages that you can install and import whenever you need them.
 
@@ -31,7 +31,7 @@ const web3 = new Web3(Web3.providers.HttpProvider('http://localhost:9545'));
 **Taquito**:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('http://localhost:8732');
 ```
@@ -204,7 +204,7 @@ const receipt = await contract.methodsObject.increment(counter + 1).send();
 **Taquito**:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 const Tezos = new TezosToolkit('http://localhost:8732');
 const wallet = Tezos.setProvider({ wallet: walletOfYourChoice }); // use the wallet of your choice
 

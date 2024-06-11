@@ -1,5 +1,5 @@
-import { Parser } from '@taquito/michel-codec'
-import { Schema } from '@taquito/michelson-encoder';
+import { Parser } from '@mavrykdynamics/taquito-michel-codec'
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 
 const example = async () => {
     try {

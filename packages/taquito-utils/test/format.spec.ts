@@ -3,29 +3,29 @@ import BigNumber from 'bignumber.js';
 import { bytesToString, stringToBytes } from '../src/taquito-utils';
 
 describe('Format', () => {
-  it('Should convert mutez to tz', () => {
-    expect(format('mutez', 'tz', 1000000)).toEqual(new BigNumber(1));
+  it('Should convert mumav to mv', () => {
+    expect(format('mumav', 'mv', 1000000)).toEqual(new BigNumber(1));
   });
 
-  it('Should convert mtz to tz', () => {
-    expect(format('mtz', 'tz', 1000)).toEqual(new BigNumber(1));
+  it('Should convert mmv to mv', () => {
+    expect(format('mmv', 'mv', 1000)).toEqual(new BigNumber(1));
   });
 
-  it('Should convert mutez to mtz', () => {
-    expect(format('mutez', 'mtz', 1000000)).toEqual(new BigNumber(1000));
+  it('Should convert mumav to mmv', () => {
+    expect(format('mumav', 'mmv', 1000000)).toEqual(new BigNumber(1000));
   });
 
-  it('Should convert tz to mtz', () => {
-    expect(format('tz', 'mtz', 1)).toEqual(new BigNumber(1000));
+  it('Should convert mv to mmv', () => {
+    expect(format('mv', 'mmv', 1)).toEqual(new BigNumber(1000));
   });
 
-  it('Should convert tz to mutez', () => {
-    expect(format('tz', 'mutez', 1)).toEqual(new BigNumber(1000000));
+  it('Should convert mv to mumav', () => {
+    expect(format('mv', 'mumav', 1)).toEqual(new BigNumber(1000000));
   });
 });
 
-describe('taquito.io example signing formatting', () => {
-  it('Should be valid bytes tezostaquito example https://taquito.io/docs/next/signing#generating-a-signature-with-beacon-sdk with proper padding for bytes length', () => {
+describe('taquito.mavryk.org example signing formatting', () => {
+  it('Should be valid bytes tezostaquito example https://taquito.mavryk.org/docs/next/signing#generating-a-signature-with-beacon-sdk with proper padding for bytes length', () => {
     const formattedInput: string = [
       'Tezos Signed Message:',
       'some url',

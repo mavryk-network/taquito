@@ -1,7 +1,7 @@
 import { CONFIGS } from "../config";
-import { DefaultContractType } from '@taquito/taquito';
-import { Chest, Timelock, ChestKey } from '@taquito/timelock';
-import { stringToBytes } from '@taquito/utils';
+import { DefaultContractType } from '@mavrykdynamics/taquito';
+import { Chest, Timelock, ChestKey } from '@mavrykdynamics/taquito-timelock';
+import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import { timelockCode, timelockStorage } from '../data/timelock-flip-contract';
 
 // please read the following link to understand the game

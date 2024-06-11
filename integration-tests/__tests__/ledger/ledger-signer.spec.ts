@@ -1,9 +1,9 @@
 import { CONFIGS } from '../../config';
-import { LedgerSigner, LedgerTransport, DerivationType } from '@taquito/ledger-signer';
+import { LedgerSigner, LedgerTransport, DerivationType } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
 import { ligoSample } from "../../data/ligo-simple-contract";
-import { TezosToolkit } from '@taquito/taquito';
-import { localForger } from '@taquito/local-forging';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { localForger } from '@mavrykdynamics/taquito-local-forging';
 import { rpcToForge } from '../../data/contract_origination';
 
 // PLEASE NOTE MAY NEED TO TEST ONE TEST AT A TIME
@@ -60,7 +60,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
     });
 
     describe('Verify retrieving the public key from the Ledger', () => {
-      it('Verify that Ledger will provide correct public key and public key hash for tz1 curve and default path', async () => {
+      it('Verify that Ledger will provide correct public key and public key hash for mv1 curve and default path', async () => {
         const signer = new LedgerSigner(
           transport,
           "44'/1729'/0'/0'",
@@ -73,11 +73,11 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           'edpkuRkcStobJ569XFxmE6edyRQQzMmtf4ZnmPkTPfSQnt6P3Nym2V'
         );
         expect(pkh).toEqual(
-          'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY'
+          'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq'
         );
       });
 
-      it('Verify that Ledger will provide correct public key and public key hash for tz2 curve and default path', async () => {
+      it('Verify that Ledger will provide correct public key and public key hash for mv2 curve and default path', async () => {
         const signer = new LedgerSigner(
           transport,
           "44'/1729'/0'/0'",
@@ -90,11 +90,11 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           'sppk7ZMM9NZLPPueTKcoJobdUG7MjLtaGsdrZqddcn9U6C9Yt99m8sU'
         );
         expect(pkh).toEqual(
-          'tz2SxDTGnT3mHzaHf6mwy6Wtw1qUX1hzm1Sw'
+          'mv2efHjyQ74JL9AwwWNDYEh3MpKxLLsjYRPz'
         );
       });
 
-      it('Verify that that Ledger will provide correct public key and public key hash for tz3 curve and path having 1 as account value', async () => {
+      it('Verify that that Ledger will provide correct public key and public key hash for mv3 curve and path having 1 as account value', async () => {
         const signer = new LedgerSigner(
           transport,
           "44'/1729'/1'/0'",
@@ -107,7 +107,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           'p2pk66MZ9MuDHfn5cQsUvtCvU376cijjvDLtTQzBFNeDHMijG4snUZZ'
         );
         expect(pkh).toEqual(
-          'tz3PX4M9x9N7oXp2WWxNcQNK6GtaGdCdesK9'
+          'mv3BtXekGWfUNobFeqXDrE4LFHkYq1i4Lzpz'
         );
       });
     });
@@ -142,7 +142,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
       jest.setTimeout(240000)
       it('Verify that a contract can be originated with Ledger', async () => {
 
-        const fundAccountFirst = await tezos.contract.transfer({ to: 'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY', amount: 9 });
+        const fundAccountFirst = await tezos.contract.transfer({ to: 'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq', amount: 9 });
         await fundAccountFirst.confirmation();
 
         const signer = new LedgerSigner(
@@ -176,7 +176,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
         );
         const Tezos = new TezosToolkit(rpc);
         Tezos.setSignerProvider(signer);
-        const op = await Tezos.wallet.transfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.1 }).send()
+        const op = await Tezos.wallet.transfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.1 }).send()
         await op.confirmation()
         expect(op.opHash).toBeDefined();
       });
@@ -198,7 +198,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
         const pkh = await Tezos.signer.publicKeyHash();
 
         expect(pk).toEqual('edpkujVjFVJtb9Z1D7jpSpPMrKzdTRZSRT8E3L26T42vvA6VSv7jND');
-        expect(pkh).toEqual('tz1UpizQ6AGjMeCZCLpuyuL4BSzoUC4XD1QE');
+        expect(pkh).toEqual('mv1HCCHzQXa5vuynLfPmDj25LTrn2aa5iF2v');
 
       })
     })

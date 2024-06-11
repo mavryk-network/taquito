@@ -74,8 +74,8 @@ const FeatureList = [
       },
       {
         Image: require('../../../static/img/temple-logo.png').default,
-        title: 'Temple - Tezos Wallet',
-        url: 'https://templewallet.com/'
+        title: 'Mavryk Wallet',
+        url: 'https://mavryk.org/wallet/'
       },
       {
         Image: require('../../../static/img/Group.png').default,
@@ -164,9 +164,9 @@ function Feature({ images, title }) {
 export default function TeamsCarousel() {
   return (
     <section className={styles.features}>
-      <div className={styles.container}>
+      {/* <div className={styles.container}>
         <Feature {...FeatureList[0]} />
-      </div>
+      </div> */}
     </section>
   );
 }

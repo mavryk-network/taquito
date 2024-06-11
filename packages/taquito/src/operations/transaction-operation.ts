@@ -2,7 +2,7 @@ import {
   OperationContentsAndResult,
   OperationContentsAndResultTransaction,
   OperationContentsTransaction,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
 import { Context } from '../context';
 import { flattenErrors, flattenOperationResult, MergedOperationResult } from './errors';

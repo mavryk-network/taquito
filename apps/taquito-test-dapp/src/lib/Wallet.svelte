@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount, afterUpdate } from "svelte";
   import { fly } from "svelte/transition";
-  import { TezosToolkit } from "@taquito/taquito";
-  import { BeaconWallet } from "@taquito/beacon-wallet";
-  import { BeaconEvent, type DAppClientOptions } from "@airgap/beacon-sdk";
+  import { TezosToolkit } from "@mavrykdynamics/taquito";
+  import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
+  import { BeaconEvent, type DAppClientOptions } from "@mavrykdynamics/beacon-sdk";
   import store from "../store";
   import { formatTokenAmount, shortenHash } from "../utils";
   import { defaultMatrixNode, getRpcUrl, defaultNetworkType, type SupportedNetworks } from "../config";
@@ -292,9 +292,9 @@
       </span>
       <span>
         {#if $store.userBalance}
-          {formatTokenAmount($store.userBalance / 10 ** 6)} ꜩ
+          {formatTokenAmount($store.userBalance / 10 ** 6)} ṁ
         {:else}
-          0 ꜩ
+          0 ṁ
         {/if}
       </span>
     </button>
@@ -305,7 +305,7 @@
           <div>Address: {shortenHash($store.userAddress)}</div>
           <div>
             {#if $store.userBalance}
-              Balance: {formatTokenAmount($store.userBalance / 10 ** 6)} ꜩ
+              Balance: {formatTokenAmount($store.userBalance / 10 ** 6)} ṁ
             {/if}
           </div>
           <div>

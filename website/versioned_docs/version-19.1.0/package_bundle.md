@@ -6,9 +6,9 @@ author: Davis Sawali
 # Using Taquito in Client-Side Environments
 While Taquito works best in Node runtime applications, some of our users working in client-side development might not have access to such features. To accommodate for that, we have decided to provide separate pure JavaScript bundles that you can import into your client-side environment.
 
-Currently, the available bundles are `@taquito/local-forging` and `@taquito/beacon-wallet` packages.
+Currently, the available bundles are `@mavrykdynamics/taquito-local-forging` and `@mavrykdynamics/taquito-beacon-wallet` packages.
 
-The bundle wraps functions from the `@taquito/local-forging` package into a single variable called `taquito_local_forging`, and from the `@taquito/beacon-wallet` package into a single variable called `taquito_beacon_wallet`.
+The bundle wraps functions from the `@mavrykdynamics/taquito-local-forging` package into a single variable called `taquito_local_forging`, and from the `@mavrykdynamics/taquito-beacon-wallet` package into a single variable called `taquito_beacon_wallet`.
 
 ## Instructions for Using the Bundle
 

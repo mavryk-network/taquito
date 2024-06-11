@@ -6,10 +6,10 @@ import {
   MichelsonV1Expression,
   BallotVote,
   PvmKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { BlockIdentifier } from '../read-provider/interface';
 
-export { OpKind } from '@taquito/rpc';
+export { OpKind } from '@mavrykdynamics/taquito-rpc';
 
 export type withKind<T, K extends OpKind> = T & { kind: K };
 
@@ -195,7 +195,7 @@ export type OriginateParamsBase = {
   fee?: number;
   gasLimit?: number;
   storageLimit?: number;
-  mutez?: boolean;
+  mumav?: boolean;
 };
 
 /**
@@ -307,7 +307,7 @@ export interface TransferParams {
   parameter?: TransactionOperationParameter;
   gasLimit?: number;
   storageLimit?: number;
-  mutez?: boolean;
+  mumav?: boolean;
 }
 
 /**

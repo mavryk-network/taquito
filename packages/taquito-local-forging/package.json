@@ -1,6 +1,6 @@
 {
-  "name": "@taquito/local-forging",
-  "version": "19.2.0",
+  "name": "@mavrykdynamics/taquito-local-forging",
+  "version": "19.2.3",
   "description": "Provide local forging functionality to be with taquito",
   "keywords": [
     "tezos",
@@ -56,7 +56,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^@taquito/utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
+      "^@mavrykdynamics/taquito-utils$": "<rootDir>/../taquito-utils/src/taquito-utils.ts"
     },
     "coveragePathIgnorePatterns": [
       "/node_modules/",
@@ -67,12 +67,12 @@
     ]
   },
   "dependencies": {
-    "@taquito/core": "^19.1.0",
-    "@taquito/utils": "^19.2.0",
+    "@mavrykdynamics/taquito-core": "^19.1.0",
+    "@mavrykdynamics/taquito-utils": "^19.2.3",
     "bignumber.js": "^9.1.2"
   },
   "devDependencies": {
-    "@taquito/rpc": "^19.2.0",
+    "@mavrykdynamics/taquito-rpc": "^19.2.3",
     "@types/bluebird": "^3.5.40",
     "@types/estree": "^1.0.2",
     "@types/jest": "^29.5.5",

@@ -1,6 +1,5 @@
 import { CONFIGS } from '../../../config';
-import { OpKind } from '@taquito/taquito';
-const crypto = require('crypto');
+import { OpKind } from '@mavrykdynamics/taquito';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;
@@ -15,7 +14,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
       const batchOp = await Tezos.contract
         .batch([
-          { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 },
+          { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 },
           {
             kind: OpKind.REGISTER_GLOBAL_CONSTANT,
             value: {
@@ -26,7 +25,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
           }
         ])
         .with([
-          { kind: OpKind.TRANSACTION, to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 },
+          { kind: OpKind.TRANSACTION, to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 },
           {
             kind: OpKind.REGISTER_GLOBAL_CONSTANT,
             value: {

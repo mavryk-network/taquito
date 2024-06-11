@@ -5,7 +5,7 @@ import {
   TokenValidationError,
   SemanticEncoding,
 } from '../token';
-import { b58decode, encodeAddress, validateAddress, ValidationResult } from '@taquito/utils';
+import { b58decode, encodeAddress, validateAddress, ValidationResult } from '@mavrykdynamics/taquito-utils';
 import { BaseTokenSchema } from '../../schema/types';
 
 /**
@@ -131,7 +131,7 @@ export class AddressToken extends ComparableToken {
   }
   compare(address1: string, address2: string) {
     const isImplicit = (address: string) => {
-      return address.startsWith('tz');
+      return address.startsWith('mv');
     };
     const implicit1 = isImplicit(address1);
     const implicit2 = isImplicit(address2);

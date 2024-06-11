@@ -20,14 +20,14 @@ export default ({ command, mode }) => {
     },
     resolve: {
       alias: {
-        // dedupe @airgap/beacon-sdk
+        // dedupe @mavrykdynamics/beacon-sdk
         // I almost have no idea why it needs `cjs` on dev and `esm` on build, but this is how it works 🤷‍♂️
-        "@airgap/beacon-dapp": path.resolve(
+        "@mavrykdynamics/beacon-dapp": path.resolve(
           path.resolve(),
           // "./src/walletbeacon.dapp.min.js"
-          `../../node_modules/@airgap/beacon-dapp/dist/${isBuild ? "esm" : "cjs"
+          `../../node_modules/@mavrykdynamics/beacon-dapp/dist/${isBuild ? "esm" : "cjs"
           }/index.js`
-          // `../../node_modules/@airgap/beacon-dapp/dist/walletbeacon.dapp.min.js`
+          // `../../node_modules/@mavrykdynamics/beacon-dapp/dist/walletbeacon.dapp.min.js`
         ),
         "@airgap/beacon-sdk": path.resolve(
           path.resolve(),

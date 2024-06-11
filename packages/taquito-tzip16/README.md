@@ -1,23 +1,23 @@
 # Taquito TZIP-016 package
-*Documentation can be found [here](https://taquito.io/docs/metadata-tzip16/)*  
-*TypeDoc style documentation is available on-line [here](https://taquito.io/typedoc/modules/_taquito_tzip16.html)*
+*Documentation can be found [here](https://taquito.mavryk.org/docs/metadata-tzip16/)*  
+*TypeDoc style documentation is available on-line [here](https://taquito.mavryk.org/typedoc/modules/_taquito_tzip16.html)*
 
-`@taquito/tzip16` is an npm package that provides developers with TZIP-016 functionality for Taquito. TZIP-016 is a standard for encoding access to smart contract metadata either on-chain or off-chain. The `@taquito/tzip16` package allows developers to retrieve the metadata associated with a smart contract and execute the off-chain views found in the metadata.
+`@mavrykdynamics/taquito-tzip16` is an npm package that provides developers with TZIP-016 functionality for Taquito. TZIP-016 is a standard for encoding access to smart contract metadata either on-chain or off-chain. The `@mavrykdynamics/taquito-tzip16` package allows developers to retrieve the metadata associated with a smart contract and execute the off-chain views found in the metadata.
 
 ## General Information
 
 Contract metadata gathers valuable information about the contract that is not directly used for its operation. According to TZIP-016, a contract with metadata must include in its storage a big_map named `%metadata` of the following type: `(big_map %metadata string bytes)`. The big_map must have an empty string as a key where its value is a byte-encoded URI representing the metadata location. Contract metadata can be located on-chain or off-chain (web services or IPFS). Please refer to the following link for complete documentation on [TZIP-016](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-16/tzip-16.md#introduction).
 
-When using the `@taquito/tzip16` package, developers can retrieve metadata of a contract based on its address. The underlying steps performed by Taquito are to find the URI in the contract storage, decode it, extract the metadata depending on the protocol (tezos-storage, HTTP(S) or IPFS), perform an integrity check if the URI contains a sha256 hash, and return the metadata to the user.
+When using the `@mavrykdynamics/taquito-tzip16` package, developers can retrieve metadata of a contract based on its address. The underlying steps performed by Taquito are to find the URI in the contract storage, decode it, extract the metadata depending on the protocol (mavryk-storage, HTTP(S) or IPFS), perform an integrity check if the URI contains a sha256 hash, and return the metadata to the user.
 
-Another functionality of the `@taquito/tzip16` package allows executing off-chain views. If a contract contains views in its metadata, Taquito builds an ordinary JavaScript object with methods corresponding to the views name.
+Another functionality of the `@mavrykdynamics/taquito-tzip16` package allows executing off-chain views. If a contract contains views in its metadata, Taquito builds an ordinary JavaScript object with methods corresponding to the views name.
 
 ## Install
 
-The package can be used to extend the well-known Taquito contract abstraction. The `@taquito/tzip16` and the `@taquito/taquito` packages need to be installed as follows:
+The package can be used to extend the well-known Taquito contract abstraction. The `@mavrykdynamics/taquito-tzip16` and the `@mavrykdynamics/taquito` packages need to be installed as follows:
 ```
-npm i --save @taquito/tzip16
-npm i --save @taquito/taquito
+npm i --save @mavrykdynamics/taquito-tzip16
+npm i --save @mavrykdynamics/taquito
 ```
 
 ## Usage
@@ -30,9 +30,9 @@ The `MetadataProvider` can be customized by the user if needed.
 **Use the `tzip16` function to extend a contract abstraction**
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
-import { Tzip16Module } from '@taquito/tzip16';
-import { tzip16 } from '@taquito/tzip16';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { Tzip16Module } from '@mavrykdynamics/taquito-tzip16';
+import { tzip16 } from '@mavrykdynamics/taquito-tzip16';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.addExtension(new Tzip16Module());

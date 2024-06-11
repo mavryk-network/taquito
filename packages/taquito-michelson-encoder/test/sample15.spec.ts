@@ -9,10 +9,10 @@ describe('Schema test when calling contract with complex object as param and nul
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", {bool:true})
     const result = schema.Encode(
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address(optional)
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address(optional)
       dataMap,//data
       'AAAA', //label
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //owner
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //owner
       'FFFF', //parent
       '1' //ttl(optional)
     );
@@ -30,7 +30,7 @@ describe('Schema test when calling contract with complex object as param and nul
                   "prim": "Some",
                   "args": [
                     {
-                      "string": "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+                      "string": "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
                     }
                   ]
                 },
@@ -76,7 +76,7 @@ describe('Schema test when calling contract with complex object as param and nul
                   "bytes": "AAAA"
                 },
                 {
-                  "string": "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+                  "string": "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
                 }
               ]
             }
@@ -110,7 +110,7 @@ describe('Schema test when calling contract with complex object as param and nul
       null, //address(optional)
       dataMap,//data
       'AAAA', //label
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //owner
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //owner
       'FFFF', //parent
       '1' //ttl(optional)
     );
@@ -169,7 +169,7 @@ describe('Schema test when calling contract with complex object as param and nul
                   "bytes": "AAAA"
                 },
                 {
-                  "string": "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+                  "string": "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
                 }
               ]
             }
@@ -200,10 +200,10 @@ describe('Schema test when calling contract with complex object as param and nul
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", {bool:true})
     const result = schema.Encode(
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //address(optional)
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //address(optional)
       dataMap,//data
       'AAAA', //label
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //owner
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //owner
       'FFFF', //parent
       null //ttl(optional)
     );
@@ -221,7 +221,7 @@ describe('Schema test when calling contract with complex object as param and nul
                   "prim": "Some",
                   "args": [
                     {
-                      "string": "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+                      "string": "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
                     }
                   ]
                 },
@@ -267,7 +267,7 @@ describe('Schema test when calling contract with complex object as param and nul
                   "bytes": "AAAA"
                 },
                 {
-                  "string": "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+                  "string": "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
                 }
               ]
             }
@@ -296,7 +296,7 @@ describe('Schema test when calling contract with complex object as param and nul
       null, //address(optional)
       dataMap,//data
       'AAAA', //label
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5', //owner
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV', //owner
       'FFFF', //parent
       null //ttl(optional)
     );
@@ -355,7 +355,7 @@ describe('Schema test when calling contract with complex object as param and nul
                   "bytes": "AAAA"
                 },
                 {
-                  "string": "tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"
+                  "string": "mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV"
                 }
               ]
             }
@@ -382,7 +382,7 @@ describe('Schema test when calling contract with complex object as param and nul
     dataMap.set("Hello World", {bool:true})
     const result = schema.Encode(
       '5',//id
-      'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //new_controller(optional)
+      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //new_controller(optional)
       'AAAA', //new_profile(optional)
     );
     expect(schema).toBeTruthy();
@@ -399,7 +399,7 @@ describe('Schema test when calling contract with complex object as param and nul
               "prim": "Some",
               "args": [
                 {
-                  "string": "tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr"
+                  "string": "mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo"
                 }
               ]
             }
@@ -423,7 +423,7 @@ describe('Schema test when calling contract with complex object as param and nul
     dataMap.set("Hello World", {bool:true})
     const result = schema.Encode(
       '5',//id
-      'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //new_controller(optional)
+      'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //new_controller(optional)
       null, //new_profile(optional)
     );
     expect(schema).toBeTruthy();
@@ -440,7 +440,7 @@ describe('Schema test when calling contract with complex object as param and nul
               "prim": "Some",
               "args": [
                 {
-                  "string": "tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr"
+                  "string": "mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo"
                 }
               ]
             }

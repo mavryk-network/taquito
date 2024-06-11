@@ -4,8 +4,9 @@ import {
   MissingRequiredScopes,
 } from '../src/taquito-beacon-wallet';
 import LocalStorageMock from './mock-local-storage';
-import { PermissionScope, LocalStorage, SigningType } from '@airgap/beacon-dapp';
+import { PermissionScope, LocalStorage, SigningType } from '@mavrykdynamics/beacon-dapp';
 import { indexedDB } from 'fake-indexeddb';
+
 global.localStorage = new LocalStorageMock();
 global.indexedDB = indexedDB;
 global.window = { addEventListener: jest.fn() } as any;

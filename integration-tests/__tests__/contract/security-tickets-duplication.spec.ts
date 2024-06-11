@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
 
 // TC-T-022: Duplicate ticket - duplicate transaction operation
@@ -55,7 +55,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                           SWAP;
                           CONTRACT (ticket string);
                           IF_NONE { FAIL } {};
-                          PUSH mutez 0;
+                          PUSH mumav 0;
                           DIG 2;
                           TRANSFER_TOKENS;
                           DUP;

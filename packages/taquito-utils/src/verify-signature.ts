@@ -14,7 +14,7 @@ import {
 } from './taquito-utils';
 import elliptic from 'elliptic';
 import toBuffer from 'typedarray-to-buffer';
-import { InvalidPublicKeyError, InvalidMessageError, InvalidSignatureError } from '@taquito/core';
+import { InvalidPublicKeyError, InvalidMessageError, InvalidSignatureError } from '@mavrykdynamics/taquito-core';
 
 type PkPrefix = Prefix.EDPK | Prefix.SPPK | Prefix.P2PK | Prefix.BLPK;
 type SigPrefix = Prefix.EDSIG | Prefix.SPSIG | Prefix.P2SIG | Prefix.SIG;

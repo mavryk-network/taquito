@@ -21,7 +21,7 @@ describe('Schema test', () => {
                             int: '200',
                           },
                           {
-                            string: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+                            string: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
                           },
                         ],
                         prim: 'Pair',
@@ -32,14 +32,14 @@ describe('Schema test', () => {
                             int: '201',
                           },
                           {
-                            string: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+                            string: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
                           },
                         ],
                         prim: 'Pair',
                       },
                     ],
                     {
-                      string: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+                      string: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
                     },
                   ],
                   prim: 'Pair',
@@ -68,10 +68,10 @@ describe('Schema test', () => {
       schema.Encode(
         'transfer',
         [
-          { amount: 200, beneficiary: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay' },
-          { amount: 201, beneficiary: 'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay' },
+          { amount: 200, beneficiary: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX' },
+          { amount: 201, beneficiary: 'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX' },
         ],
-        'tz1Zwusa1tLQHRyB1KL1p44KjgDbi5KjNKay',
+        'mv1U1aAsZk2cXBBdAtfGnSb7R5yvXr1CyEkX',
         'edpkuLxx9PQD8fZ45eUzrK3BhfDZJHhBuK4Zi49DcEGANwd2rpX82t',
         'edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg'
       )
@@ -79,7 +79,7 @@ describe('Schema test', () => {
     expect(schema.isMultipleEntryPoint).toBeTruthy();
 
     expect(schema.ExtractSignatures()).toContainEqual(["transfer", 
-        {list: {"amount": "mutez", "beneficiary": "contract"}}, 
+        {list: {"amount": "mumav", "beneficiary": "contract"}}, 
         "key_hash", 
         "key", 
         "signature"]);

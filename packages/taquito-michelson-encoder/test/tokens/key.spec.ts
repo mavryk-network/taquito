@@ -15,7 +15,7 @@ describe('Key token', () => {
 
     it('Should throw a validation error when address is not valid', () => {
       expect(() => token.EncodeObject('test')).toThrowError(KeyValidationError);
-      expect(() => token.EncodeObject('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toThrowError(
+      expect(() => token.EncodeObject('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toThrowError(
         KeyValidationError
       );
       expect(() => token.EncodeObject(0)).toThrowError(KeyValidationError);
@@ -32,7 +32,7 @@ describe('Key token', () => {
 
     it('Should throw a validation error when address is not valid', () => {
       expect(() => token.Encode(['test'])).toThrowError(KeyValidationError);
-      expect(() => token.Encode(['tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'])).toThrowError(
+      expect(() => token.Encode(['mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'])).toThrowError(
         KeyValidationError
       );
 

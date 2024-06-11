@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
     - It should not alter your requests, for example, changing the operation data before forging it.
     - It should not censor your operations; you want to know that your operations will reach the network.
 - **Reliability**: Consider your requirements for uptime, and choose your node option accordingly. If node availability is critical for your user-case,  consider self-hosting a node or contracting someone to operate a node specifically for you.
-- ** End-points support**: Public nodes have different policies on the end-points that they expose. Your use case may require specific end-points to be available to your app. We have made a suite of [integration tests](rpc_nodes_integration_test.md) for the Taquito RPC package. These tests show what RPC end-points are available on a given node. These tests are available here: [integration-tests/rpc-nodes.spec.ts](https://github.com/ecadlabs/taquito/blob/master/integration-tests/rpc-nodes.spec.ts).
+- ** End-points support**: Public nodes have different policies on the end-points that they expose. Your use case may require specific end-points to be available to your app. We have made a suite of [integration tests](rpc_nodes_integration_test.md) for the Taquito RPC package. These tests show what RPC end-points are available on a given node. These tests are available here: [integration-tests/rpc-nodes.spec.ts](https://github.com/mavryk-network/mavryk-taquito/blob/master/integration-tests/rpc-nodes.spec.ts).
 
 <Tabs
 defaultValue="communityNodes"
@@ -23,15 +23,9 @@ values={[
 
 | Provider         | Net          | URL                                      | Header                                                                          |
 |------------------|--------------|------------------------------------------|---------------------------------------------------------------------------------|
-| ECAD Labs        | Mainnet      | https://mainnet.ecadinfra.com            | [Check](https://mainnet.ecadinfra.com/chains/main/blocks/head/header)           |
-| ECAD Labs        | Ghostnet     | https://ghostnet.ecadinfra.com           | [Check](https://ghostnet.ecadinfra.com/chains/main/blocks/head/header)          |
-| ECAD Labs        | Nairobinet   | https://nairobinet.ecadinfra.com         | [Check](https://nairobinet.ecadinfra.com/chains/main/blocks/head/header)        |
-| SmartPy          | Mainnet      | https://mainnet.smartpy.io               | [Check](https://mainnet.smartpy.io/chains/main/blocks/head/header)              |
-| SmartPy          | Ghostnet     | https://ghostnet.smartpy.io              | [Check](https://ghostnet.smartpy.io/chains/main/blocks/head/header)             |
-| Tezos Foundation | Mainnet      | https://rpc.tzbeta.net/                  | [Check](https://rpc.tzbeta.net/chains/main/blocks/head/header)                  |
-| Marigold         | Mainnet      | https://mainnet.tezos.marigold.dev/      | [Check](https://mainnet.tezos.marigold.dev/chains/main/blocks/head/header)      |
-| Marigold         | Ghostnet     | https://ghostnet.tezos.marigold.dev/     | [Check](https://ghostnet.tezos.marigold.dev/chains/main/blocks/head/header)     |
-| Marigold         | Nairobinet   | https://nairobinet.tezos.marigold.dev/   | [Check](https://nairobinet.tezos.marigold.dev/chains/main/blocks/head/header)   |
+| Mavryk Dynamics        | Mainnet      | https://mainnet.rpc.mavryk.network            | [Check](https://mainnet.rpc.mavryk.network/chains/main/blocks/head/header)           |
+| Mavryk Dynamics        | Basenet     | https://basenet.rpc.mavryk.network           | [Check](https://basenet.rpc.mavryk.network/chains/main/blocks/head/header)          |
+| Mavryk Dynamics        | Atlasnet    | https://atlasnet.rpc.mavryk.network          | [Check](https://atlasnet.rpc.mavryk.network/chains/main/blocks/head/header)         |
 
 *If you are aware of a public node missing from our list or our information is inaccurate, please help us by submitting an issue or pull request on our GitHub page.*
 </TabItem>

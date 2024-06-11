@@ -7,7 +7,7 @@ Taquito RPC Package Documentation
 
 ## Description
 
-You can use the RPC client package to query the RPC API of your chosen node. The higher-level [`@taquito/taquito`](https://taquito.io/typedoc/modules/_taquito_rpc.html) package builds on this RPC package, in general, you won't need to use this package directly, but it is available for use should you want some specific data and bypass the higher-level abstractions in Taquito.
+You can use the RPC client package to query the RPC API of your chosen node. The higher-level [`@mavrykdynamics/taquito`](https://taquito.mavryk.org/typedoc/modules/_taquito_rpc.html) package builds on this RPC package, in general, you won't need to use this package directly, but it is available for use should you want some specific data and bypass the higher-level abstractions in Taquito.
 
 Methods in the RPC package map one-to-one to the corresponding Tezos RPC API endpoints. All responses from the RPC are returns with TypeScript types. It doesn't do any other parsing or compositions at this level.
 
@@ -16,9 +16,9 @@ Methods in the RPC package map one-to-one to the corresponding Tezos RPC API end
 ```js
 // Initializing the RPC client
 
-import { RpcClient } from '@taquito/rpc';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
-const client = new RpcClient(' https://ghostnet.ecadinfra.com/', 'NetXLH1uAxK7CCh');
+const client = new RpcClient(' https://basenet.rpc.mavryk.network/', 'NetXLH1uAxK7CCh');
 ```
 
 The `RpcClient` constructor takes the URL of the node you want to use and the chain ID.
@@ -27,11 +27,11 @@ The `RpcClient` constructor takes the URL of the node you want to use and the ch
 /* Fetching the balance of an account
  * using the client set up above */
 
-const balance = await client.getBalance('tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb');
+const balance = await client.getBalance('mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv');
 console.log('-- Balance:', balance.toNumber());
 ```
 
-The balance is returned as a `BigNumber` and must be converted to a number to output it. Please note that the returned value is in mutez (micro ꜩ), so if you need the balance in ꜩ, you can divide it by 1000000.
+The balance is returned as a `BigNumber` and must be converted to a number to output it. Please note that the returned value is in mumav (micro ṁ), so if you need the balance in ṁ, you can divide it by 1000000.
 
 ```js
 // gets head block
@@ -113,4 +113,4 @@ const view = await client.runView({
 
 ## Full documentation
 
-You can find the full documentation at the following address: [https://taquito.io/typedoc/classes/\_taquito_rpc.rpcclient.html](https://taquito.io/typedoc/classes/_taquito_rpc.rpcclient.html)
+You can find the full documentation at the following address: [https://taquito.mavryk.org/typedoc/classes/\_taquito_rpc.rpcclient.html](https://taquito.mavryk.org/typedoc/classes/_taquito_rpc.rpcclient.html)

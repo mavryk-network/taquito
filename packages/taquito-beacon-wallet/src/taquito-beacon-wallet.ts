@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @taquito/beacon-wallet
+ * @module @mavrykdynamics/taquito-beacon-wallet
  */
 
 import {
@@ -10,7 +10,7 @@ import {
   PermissionScope,
   getDAppClientInstance,
   SigningType,
-} from '@airgap/beacon-dapp';
+} from '@mavrykdynamics/beacon-dapp';
 import { BeaconWalletNotInitialized, MissingRequiredScopes } from './errors';
 import toBuffer from 'typedarray-to-buffer';
 import {
@@ -23,9 +23,9 @@ import {
   WalletOriginateParams,
   WalletProvider,
   WalletTransferParams,
-} from '@taquito/taquito';
-import { buf2hex, hex2buf, mergebuf } from '@taquito/utils';
-import { UnsupportedActionError } from '@taquito/core';
+} from '@mavrykdynamics/taquito';
+import { buf2hex, hex2buf, mergebuf } from '@mavrykdynamics/taquito-utils';
+import { UnsupportedActionError } from '@mavrykdynamics/taquito-core';
 
 export { VERSION } from './version';
 export { BeaconWalletNotInitialized, MissingRequiredScopes } from './errors';

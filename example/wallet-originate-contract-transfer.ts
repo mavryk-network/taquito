@@ -1,8 +1,8 @@
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 async function example() {
-  const provider = 'https://ghostnet.ecadinfra.com';
+  const provider = 'https://basenet.rpc.mavryk.network';
   const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
   const tezos = new TezosToolkit(provider);
   tezos.setSignerProvider(signer);
@@ -13,7 +13,7 @@ async function example() {
       balance: '0',
       code: `parameter unit;
       storage int;
-      code { PUSH address "tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr" ;
+      code { PUSH address "mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo" ;
              CONTRACT unit ;
              IF_NONE { PUSH string "Not a contract" ; FAILWITH } { DUP ; DIP { DROP } } ;
              DUP ;

@@ -17,7 +17,7 @@ export const contractMapPairKey = [
                     {
                       prim: 'pair',
                       args: [
-                        { prim: 'mutez', annots: ['%amount'] },
+                        { prim: 'mumav', annots: ['%amount'] },
                         { prim: 'int', annots: ['%quantity'] },
                       ],
                     },

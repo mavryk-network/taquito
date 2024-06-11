@@ -6,7 +6,7 @@ author: Simon Boissonneault-Robert
 :::caution Warning
 **Storing private keys in memory is suitable for development workflows but risky for
 production use-cases! Use the InMemorySigner appropriately given your risk profile**
-**More information on why can be found [here](https://github.com/ecadlabs/taquito/issues/1764)**
+**More information on why can be found [here](https://github.com/mavryk-network/mavryk-taquito/issues/1764)**
 :::
 
 Inmemory signer is a local signer implementation that allows you to directly use a private key in your browser or your nodejs app.
@@ -24,8 +24,8 @@ If you require the server-side signing of operations on the mainnet, we recommen
 If you configure Taquito this way, you will now be able to use every function that needs signing support.
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
@@ -39,9 +39,9 @@ The operation will be signed automatically using the signer (no prompt)
 The `fromSecretKey` method takes a secret that is base58 encoded as a parameter. Here are three examples with unencrypted private keys:
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
-// const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey('edsk2rKA8YEExg9Zo2qNPiQnnYheF1DhqjLVmfKdxiFfu5GyGRZRnb')
   .then((theSigner) => {
@@ -56,9 +56,9 @@ InMemorySigner.fromSecretKey('edsk2rKA8YEExg9Zo2qNPiQnnYheF1DhqjLVmfKdxiFfu5GyGR
 ```
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
-// const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey('spsk2Fiz7sGP5fNMJrokp6ynTa4bcFbsRhw58FHXbNf5ProDNFJ5Xq')
   .then((theSigner) => {
@@ -75,10 +75,10 @@ InMemorySigner.fromSecretKey('spsk2Fiz7sGP5fNMJrokp6ynTa4bcFbsRhw58FHXbNf5ProDNF
 When required, Taquito offers the `b58cencode` function allowing to encode the secret in base58. The parameters of the function are the secret, that can be a `hex string` or an `Uint8Array`, and the desired prefix. Here is an example with a `hex string`:
 
 ```js live noInline
-// import { b58cencode, prefix, Prefix } from '@taquito/utils';
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
-// const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+// import { b58cencode, prefix, Prefix } from '@mavrykdynamics/taquito-utils';
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 const b58encodedSecret = b58cencode(
   '7c842c15c8b0c8fd228e6cb5302a50201f41642dd36b699003fb3c857920bc9d',
@@ -105,8 +105,8 @@ InMemorySigner.fromSecretKey(b58encodedSecret)
 If your private key is encrypted, you can specify a passphrase to decrypt it. Doing so will automatically decrypt the key and allow you to use the signer to sign transactions.
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.setProvider({
@@ -117,9 +117,9 @@ Tezos.setProvider({
 Here are three examples with encrypted private keys where the passphrase used is `test`:
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
-// const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey(
   'edesk1GXwWmGjXiLHBKxGBxwmNvG21vKBh6FBxc4CyJ8adQQE2avP5vBB57ZUZ93Anm7i4k8RmsHaPzVAvpnHkFF',
@@ -137,9 +137,9 @@ InMemorySigner.fromSecretKey(
 ```
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
-// const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey(
   'spesk24UQkAiJk8X6AufNtRv1WWPp2BAssEgmijCTQPMgUXweSKPmLdbyAjPmCG1pR2dC9P5UZZVeZcb7zVodUHZ',
@@ -157,9 +157,9 @@ InMemorySigner.fromSecretKey(
 ```
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito'
-// import { InMemorySigner } from '@taquito/signer'
-// const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito'
+// import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey(
   'p2esk28hoUE2J88QNFj2aDX2pjzL7wcVh2g8tkEwtWWguby9M3FHUgSbzvF2Sd7wQ4Kd8crFwvto6gF3otcBuo4T',
@@ -186,9 +186,9 @@ derivation path MUST start with "44'/1729'/"
 With ed25519 default derivation path (Reminder Must be hardened with either h or ')
 
 ```js live noInline
-  // import { TezosToolkit } from '@taquito/taquito
-  // import { InMemorySigner } from '@taquito/signer'
-  // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+  // import { TezosToolkit } from '@mavrykdynamics/taquito
+  // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+  // const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
   // ed25519 must have all hardened paths
 
@@ -207,12 +207,12 @@ With ed25519 default derivation path (Reminder Must be hardened with either h or
     .catch(err => println(err))
 ```
 
-With a non-default derivation path non-hardened with a tz2 address
+With a non-default derivation path non-hardened with a mv2 address
 
 ```js live noInline
-  // import { TezosToolkit } from '@taquito/taquito
-  // import { InMemorySigner } from '@taquito/signer'
-  // const Tezos = new TezosToolkit('https://nairobinet.ecadinfra.com');
+  // import { TezosToolkit } from '@mavrykdynamics/taquito
+  // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
+  // const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
   const params = {
     mnemonic: 'author crumble medal dose ribbon permit ankle sport final hood shadow vessel horn hawk enter zebra prefer devote captain during fly found despair business',
@@ -243,8 +243,8 @@ If you require to sign operations with many different keys, then implementing a 
 The `signerFactory` function example creates a new Tezos instance. Use the Tezos instance for signing, and discard it when complete.
 
 ```js
-import { InMemorySigner } from '@taquito/signer';
-import { TezosToolkit } from '@taquito/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const signerFactory = async (rpcUrl: string, pk: string) => {
   const Tezos = new TezosToolkit(rpcUrl);
@@ -253,7 +253,7 @@ const signerFactory = async (rpcUrl: string, pk: string) => {
 };
 
 const bob = await signerFactory('bobs_secret_key');
-const alice = await signerFactory('alices_secret_key');
+const alice = await signerFactory('alice_secret_key');
 ```
 
 [0]: https://signatory.io

@@ -1,4 +1,4 @@
-import { PreapplyResponse, ConstantsResponse, RPCSimulateOperationParam } from '@taquito/rpc';
+import { PreapplyResponse, ConstantsResponse, RPCSimulateOperationParam } from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
 import { flattenErrors, flattenOperationResult, TezosOperationError } from '../operations/errors';
 import {
@@ -20,22 +20,22 @@ import {
 } from '../operations/types';
 import { Estimate, EstimateProperties } from './estimate';
 import { EstimationProvider } from '../estimate/estimate-provider-interface';
-import { validateAddress, ValidationResult, invalidDetail } from '@taquito/utils';
+import { validateAddress, ValidationResult, invalidDetail } from '@mavrykdynamics/taquito-utils';
 import { RevealEstimateError } from './errors';
 import { ContractMethod, ContractMethodObject, ContractProvider } from '../contract';
 import { Provider } from '../provider';
 import { PrepareProvider } from '../prepare/prepare-provider';
 import { PreparedOperation } from '../prepare';
-import { InvalidAddressError, InvalidAmountError } from '@taquito/core';
+import { InvalidAddressError, InvalidAmountError } from '@mavrykdynamics/taquito-core';
 
 // stub signature that won't be verified by tezos rpc simulate_operation
 const STUB_SIGNATURE =
   'edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg';
 
 export class RPCEstimateProvider extends Provider implements EstimationProvider {
-  private readonly OP_SIZE_REVEAL = 324; // injecting size tz1=320, tz2=322, tz3=322, tz4=420(not supported)
+  private readonly OP_SIZE_REVEAL = 324; // injecting size mv1=320, mv2=322, mv3=322, mv4=420(not supported)
   private readonly MILLIGAS_BUFFER = 100 * 1000; // 100 buffer depends on operation kind
-  private readonly STORAGE_BUFFER = 20; // according to octez-client
+  private readonly STORAGE_BUFFER = 20; // according to mavkit-client
 
   private prepare = new PrepareProvider(this.context);
 
@@ -88,15 +88,15 @@ export class RPCEstimateProvider extends Provider implements EstimationProvider 
           : consumedMilligas,
         storageLimit: accumulatedStorage > 0 ? accumulatedStorage + this.STORAGE_BUFFER : 0,
         opSize: size,
-        minimalFeePerStorageByteMutez: costPerByte.toNumber(),
+        minimalFeePerStorageByteMumav: costPerByte.toNumber(),
       };
     } else {
       return {
         milligasLimit: 0,
         storageLimit: 0,
         opSize: size,
-        minimalFeePerStorageByteMutez: costPerByte.toNumber(),
-        baseFeeMutez: 0,
+        minimalFeePerStorageByteMumav: costPerByte.toNumber(),
+        baseFeeMumav: 0,
       };
     }
   }

@@ -1,5 +1,5 @@
-import { HttpResponseError, STATUS_CODE } from '@taquito/http-utils';
-import { BigMapKeyType, MichelsonMap, MichelsonMapKey, Schema } from '@taquito/michelson-encoder';
+import { HttpResponseError, STATUS_CODE } from '@mavrykdynamics/taquito-http-utils';
+import { BigMapKeyType, MichelsonMap, MichelsonMapKey, Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import {
   OpKind,
   OperationContentsBallot,
@@ -18,19 +18,19 @@ import {
   OperationContentsTransferTicket,
   OperationContentsUpdateConsensusKey,
   ScriptResponse,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import {
   encodeExpr,
   invalidDetail,
   validateAddress,
   validateContractAddress,
   ValidationResult,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import {
   InvalidAddressError,
   InvalidContractAddressError,
   InvalidAmountError,
-} from '@taquito/core';
+} from '@mavrykdynamics/taquito-core';
 import { OperationBatch } from '../batch/rpc-batch-provider';
 import { Context } from '../context';
 import { DelegateOperation } from '../operations/delegate-operation';

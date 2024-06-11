@@ -21,7 +21,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       // Actual tests
 
       const ACCOUNT1_ADDRESS = await Tezos.signer.publicKeyHash()
-      const ACCOUNT2_ADDRESS = 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu'
+      const ACCOUNT2_ADDRESS = 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 
       // Originate a contract with a known state
       const op = await Tezos.contract.originate({

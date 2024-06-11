@@ -234,7 +234,7 @@ function _compareMichelsonData(t: MichelsonType, a: MichelsonData, b: MichelsonD
     switch (t.prim) {
       case 'int':
       case 'nat':
-      case 'mutez':
+      case 'mumav':
         if ('int' in a && 'int' in b) {
           return new LongInteger(a.int).cmp(new LongInteger(b.int));
         }
@@ -342,7 +342,7 @@ function assertDataValidInternal(d: MichelsonData, t: MichelsonType, ctx: Contex
       throw new MichelsonTypeError(t, `integer value expected: ${JSON.stringify(d)}`, d);
 
     case 'nat':
-    case 'mutez':
+    case 'mumav':
       if ('int' in d && isNatural(d.int)) {
         return;
       }
@@ -1114,7 +1114,7 @@ function functionTypeInternal(
 
       case 'FAILWITH': {
         const s = args(0, null)[0];
-        if (!ProtoInferiorTo(proto, Protocol.PtEdo2Zk)) {
+        if (!ProtoInferiorTo(proto, Protocol.PtAtLas)) {
           ensurePackableType(s);
         }
         return { failed: s, level: 0 };
@@ -1168,8 +1168,8 @@ function functionTypeInternal(
       case 'ADD': {
         const s = args(
           0,
-          ['nat', 'int', 'timestamp', 'mutez', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr'],
-          ['nat', 'int', 'timestamp', 'mutez', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr']
+          ['nat', 'int', 'timestamp', 'mumav', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr'],
+          ['nat', 'int', 'timestamp', 'mumav', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr']
         );
         if (
           (s[0].prim === 'nat' && s[1].prim === 'int') ||
@@ -1184,7 +1184,7 @@ function functionTypeInternal(
         } else if (
           (s[0].prim === 'int' ||
             s[0].prim === 'nat' ||
-            s[0].prim === 'mutez' ||
+            s[0].prim === 'mumav' ||
             s[0].prim === 'bls12_381_g1' ||
             s[0].prim === 'bls12_381_g2' ||
             s[0].prim === 'bls12_381_fr') &&
@@ -1200,8 +1200,8 @@ function functionTypeInternal(
       }
 
       case 'SUB': {
-        const s = ProtoInferiorTo(proto, Protocol.PsiThaCa)
-          ? args(0, ['nat', 'int', 'timestamp', 'mutez'], ['nat', 'int', 'timestamp', 'mutez'])
+        const s = ProtoInferiorTo(proto, Protocol.PtAtLas)
+          ? args(0, ['nat', 'int', 'timestamp', 'mumav'], ['nat', 'int', 'timestamp', 'mumav'])
           : args(0, ['nat', 'int', 'timestamp'], ['nat', 'int', 'timestamp']);
 
         if (
@@ -1212,8 +1212,8 @@ function functionTypeInternal(
           return [annotateVar({ prim: 'int' }), ...stack.slice(2)];
         } else if (s[0].prim === 'timestamp' && s[1].prim === 'int') {
           return [annotateVar({ prim: 'timestamp' }), ...stack.slice(2)];
-        } else if (s[0].prim === 'mutez' && s[1].prim === 'mutez') {
-          return [annotateVar({ prim: 'mutez' }), ...stack.slice(2)];
+        } else if (s[0].prim === 'mumav' && s[1].prim === 'mumav') {
+          return [annotateVar({ prim: 'mumav' }), ...stack.slice(2)];
         }
         throw new MichelsonInstructionError(
           instruction,
@@ -1222,16 +1222,16 @@ function functionTypeInternal(
         );
       }
 
-      case 'SUB_MUTEZ': {
-        const _s = args(0, ['mutez'], ['mutez']);
-        return [annotateVar({ prim: 'option', args: [{ prim: 'mutez' }] }), ...stack.slice(2)];
+      case 'SUB_MUMAV': {
+        const _s = args(0, ['mumav'], ['mumav']);
+        return [annotateVar({ prim: 'option', args: [{ prim: 'mumav' }] }), ...stack.slice(2)];
       }
 
       case 'MUL': {
         const s = args(
           0,
-          ['nat', 'int', 'mutez', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr'],
-          ['nat', 'int', 'mutez', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr']
+          ['nat', 'int', 'mumav', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr'],
+          ['nat', 'int', 'mumav', 'bls12_381_g1', 'bls12_381_g2', 'bls12_381_fr']
         );
         if (
           (s[0].prim === 'nat' && s[1].prim === 'int') ||
@@ -1239,10 +1239,10 @@ function functionTypeInternal(
         ) {
           return [annotateVar({ prim: 'int' }), ...stack.slice(2)];
         } else if (
-          (s[0].prim === 'nat' && s[1].prim === 'mutez') ||
-          (s[0].prim === 'mutez' && s[1].prim === 'nat')
+          (s[0].prim === 'nat' && s[1].prim === 'mumav') ||
+          (s[0].prim === 'mumav' && s[1].prim === 'nat')
         ) {
-          return [annotateVar({ prim: 'mutez' }), ...stack.slice(2)];
+          return [annotateVar({ prim: 'mumav' }), ...stack.slice(2)];
         } else if (
           ((s[0].prim === 'bls12_381_g1' ||
             s[0].prim === 'bls12_381_g2' ||
@@ -1266,13 +1266,13 @@ function functionTypeInternal(
 
       case 'EDIV': {
         const res = (
-          a: 'nat' | 'int' | 'mutez',
-          b: 'nat' | 'int' | 'mutez'
+          a: 'nat' | 'int' | 'mumav',
+          b: 'nat' | 'int' | 'mumav'
         ): MichelsonTypeOption<MichelsonType> => ({
           prim: 'option',
           args: [{ prim: 'pair', args: [{ prim: a }, { prim: b }] }],
         });
-        const s = args(0, ['nat', 'int', 'mutez'], ['nat', 'int', 'mutez']);
+        const s = args(0, ['nat', 'int', 'mumav'], ['nat', 'int', 'mumav']);
         if (s[0].prim === 'nat' && s[1].prim === 'nat') {
           return [annotateVar(res('nat', 'nat')), ...stack.slice(2)];
         } else if (
@@ -1280,10 +1280,10 @@ function functionTypeInternal(
           (s[1].prim === 'nat' || s[1].prim === 'int')
         ) {
           return [annotateVar(res('int', 'nat')), ...stack.slice(2)];
-        } else if (s[0].prim === 'mutez' && s[1].prim === 'nat') {
-          return [annotateVar(res('mutez', 'mutez')), ...stack.slice(2)];
-        } else if (s[0].prim === 'mutez' && s[1].prim === 'mutez') {
-          return [annotateVar(res('nat', 'mutez')), ...stack.slice(2)];
+        } else if (s[0].prim === 'mumav' && s[1].prim === 'nat') {
+          return [annotateVar(res('mumav', 'mumav')), ...stack.slice(2)];
+        } else if (s[0].prim === 'mumav' && s[1].prim === 'mumav') {
+          return [annotateVar(res('nat', 'mumav')), ...stack.slice(2)];
         }
         throw new MichelsonInstructionError(
           instruction,
@@ -1398,7 +1398,7 @@ function functionTypeInternal(
       }
 
       case 'TRANSFER_TOKENS': {
-        const s = args(0, null, ['mutez'], ['contract']);
+        const s = args(0, null, ['mumav'], ['contract']);
         ensureTypesEqual(s[0], s[2].args[0]);
         return [annotateVar({ prim: 'operation' }), ...stack.slice(3)];
       }
@@ -1423,10 +1423,10 @@ function functionTypeInternal(
         return [annotateVar({ prim: 'timestamp' }, '@now'), ...stack];
 
       case 'AMOUNT':
-        return [annotateVar({ prim: 'mutez' }, '@amount'), ...stack];
+        return [annotateVar({ prim: 'mumav' }, '@amount'), ...stack];
 
       case 'BALANCE':
-        return [annotateVar({ prim: 'mutez' }, '@balance'), ...stack];
+        return [annotateVar({ prim: 'mumav' }, '@balance'), ...stack];
 
       case 'CHECK_SIGNATURE':
         args(0, ['key'], ['signature'], ['bytes']);
@@ -1757,7 +1757,7 @@ function functionTypeInternal(
 
       case 'CREATE_CONTRACT': {
         const ia = instructionAnn({ v: 2 });
-        const s = args(0, ['option'], ['mutez'], null);
+        const s = args(0, ['option'], ['mumav'], null);
         if (typeID(s[0].args[0]) !== 'key_hash') {
           throw new MichelsonInstructionError(
             instruction,
@@ -1864,7 +1864,7 @@ function functionTypeInternal(
       case 'TICKET': {
         const s = args(0, null, ['nat'])[0];
         ensureComparableType(s);
-        if (ProtoInferiorTo(proto, Protocol.PtLimaPtL)) {
+        if (ProtoInferiorTo(proto, Protocol.PtAtLas)) {
           return [
             annotate({ prim: 'ticket', args: [s] }, instructionAnn({ t: 1, v: 1 })),
             ...stack.slice(2),
@@ -1986,7 +1986,7 @@ function functionTypeInternal(
             `${instruction.prim}: sapling memo size mismatch: ${s[0].args[0].int} != ${s[1].args[0].int}`
           );
         }
-        return ProtoInferiorTo(proto, Protocol.PtJakarta)
+        return ProtoInferiorTo(proto, Protocol.PtAtLas)
           ? [
               annotateVar({
                 prim: 'option',

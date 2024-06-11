@@ -1,4 +1,4 @@
-import { TaquitoError, TezosToolkitConfigError } from '@taquito/core';
+import { TaquitoError, TezosToolkitConfigError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

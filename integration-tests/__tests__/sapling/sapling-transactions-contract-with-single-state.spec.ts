@@ -1,6 +1,6 @@
-import { ContractAbstraction, ContractProvider, RpcReadAdapter } from '@taquito/taquito';
+import { ContractAbstraction, ContractProvider, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
-import { InMemorySpendingKey, SaplingToolkit } from '@taquito/sapling';
+import { InMemorySpendingKey, SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
 import BigNumber from 'bignumber.js';
 import { singleSaplingStateContractJProtocol } from '../../data/single_sapling_state_contract_jakarta_michelson';
 import * as bip39 from 'bip39';
@@ -82,7 +82,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       const aliceTxViewer = await aliceSaplingToolkit.getSaplingTransactionViewer();
       const aliceBalance = await aliceTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalance).toEqual(new BigNumber(3000000));
 
       const inputsAlice = await aliceTxViewer.getIncomingAndOutgoingTransactions();
@@ -127,7 +127,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       const aliceTxViewer = await aliceSaplingToolkit.getSaplingTransactionViewer();
       const aliceBalance = await aliceTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalance).toEqual(new BigNumber(1000000));
 
       const inputsAlice = await aliceTxViewer.getIncomingAndOutgoingTransactions();
@@ -165,7 +165,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       const bobTxViewer = await bobSaplingToolkit.getSaplingTransactionViewer();
       const bobBalance = await bobTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(bobBalance).toEqual(new BigNumber(2000000));
 
       const inputsBob = await bobTxViewer.getIncomingAndOutgoingTransactions();

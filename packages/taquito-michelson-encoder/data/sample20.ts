@@ -150,7 +150,7 @@ export const rpcContractResponse = {
 															{
 																prim: 'pair',
 																args: [
-																	{ prim: 'mutez', annots: [ '%currentBidAmount' ] },
+																	{ prim: 'mumav', annots: [ '%currentBidAmount' ] },
 																	{ prim: 'address', annots: [ '%currentBidOwner' ] }
 																]
 															},
@@ -190,7 +190,7 @@ export const rpcContractResponse = {
 												args: [
 													{ prim: 'nat', annots: [ '%fee' ] },
 													{ prim: 'address', annots: [ '%owner' ] },
-													{ prim: 'mutez', annots: [ '%price' ] }
+													{ prim: 'mumav', annots: [ '%price' ] }
 												]
 											}
 										]
@@ -375,7 +375,7 @@ export const rpcContractResponse = {
 																									args: [
 																										{
 																											prim:
-																												'mutez'
+																												'mumav'
 																										},
 																										{
 																											prim:
@@ -432,7 +432,7 @@ export const rpcContractResponse = {
 																							prim: 'pair',
 																							args: [
 																								{ prim: 'address' },
-																								{ prim: 'mutez' }
+																								{ prim: 'mumav' }
 																							]
 																						}
 																					]
@@ -1200,7 +1200,7 @@ export const rpcContractResponse = {
 																prim: 'PUSH',
 																args: [ { prim: 'nat' }, { int: '1000000000000' } ]
 															},
-															{ prim: 'PUSH', args: [ { prim: 'mutez' }, { int: '1' } ] },
+															{ prim: 'PUSH', args: [ { prim: 'mumav' }, { int: '1' } ] },
 															{ prim: 'DUP', args: [ { int: '5' } ] },
 															{ prim: 'CAR' },
 															{ prim: 'GET', args: [ { int: '3' } ] },
@@ -1293,7 +1293,7 @@ export const rpcContractResponse = {
 																		},
 																		{
 																			prim: 'PUSH',
-																			args: [ { prim: 'mutez' }, { int: '0' } ]
+																			args: [ { prim: 'mumav' }, { int: '0' } ]
 																		},
 																		{
 																			prim: 'PUSH',
@@ -1304,7 +1304,7 @@ export const rpcContractResponse = {
 																		},
 																		{
 																			prim: 'PUSH',
-																			args: [ { prim: 'mutez' }, { int: '1' } ]
+																			args: [ { prim: 'mumav' }, { int: '1' } ]
 																		},
 																		{ prim: 'DUP', args: [ { int: '7' } ] },
 																		{ prim: 'CAR' },
@@ -1421,7 +1421,7 @@ export const rpcContractResponse = {
 																		},
 																		{
 																			prim: 'PUSH',
-																			args: [ { prim: 'mutez' }, { int: '1' } ]
+																			args: [ { prim: 'mumav' }, { int: '1' } ]
 																		},
 																		{ prim: 'DIG', args: [ { int: '8' } ] },
 																		{ prim: 'CAR' },
@@ -2704,7 +2704,7 @@ export const rpcContractResponse = {
 																							prim: 'pair',
 																							args: [
 																								{ prim: 'address' },
-																								{ prim: 'mutez' }
+																								{ prim: 'mumav' }
 																							]
 																						}
 																					]
@@ -2728,7 +2728,7 @@ export const rpcContractResponse = {
 																		},
 																		{
 																			prim: 'PUSH',
-																			args: [ { prim: 'mutez' }, { int: '1' } ]
+																			args: [ { prim: 'mumav' }, { int: '1' } ]
 																		},
 																		{ prim: 'AMOUNT' },
 																		{ prim: 'EDIV' },
@@ -2808,7 +2808,7 @@ export const rpcContractResponse = {
 																					{
 																						prim: 'PUSH',
 																						args: [
-																							{ prim: 'mutez' },
+																							{ prim: 'mumav' },
 																							{ int: '0' }
 																						]
 																					},
@@ -2822,7 +2822,7 @@ export const rpcContractResponse = {
 																					{
 																						prim: 'PUSH',
 																						args: [
-																							{ prim: 'mutez' },
+																							{ prim: 'mumav' },
 																							{ int: '1' }
 																						]
 																					},
@@ -2863,7 +2863,7 @@ export const rpcContractResponse = {
 																					{
 																						prim: 'PUSH',
 																						args: [
-																							{ prim: 'mutez' },
+																							{ prim: 'mumav' },
 																							{ int: '1' }
 																						]
 																					},
@@ -2967,7 +2967,7 @@ export const rpcContractResponse = {
 																						prim: 'pair',
 																						args: [
 																							{ prim: 'address' },
-																							{ prim: 'mutez' }
+																							{ prim: 'mumav' }
 																						]
 																					}
 																				]
@@ -3018,7 +3018,7 @@ export const rpcContractResponse = {
 																							{
 																								prim: 'pair',
 																								args: [
-																									{ prim: 'mutez' },
+																									{ prim: 'mumav' },
 																									{ prim: 'address' }
 																								]
 																							},
@@ -3190,7 +3190,7 @@ export const rpcContractResponse = {
 																							prim: 'pair',
 																							args: [
 																								{ prim: 'address' },
-																								{ prim: 'mutez' }
+																								{ prim: 'mumav' }
 																							]
 																						}
 																					]
@@ -3307,7 +3307,7 @@ export const rpcContractResponse = {
 																		{
 																			prim: 'PUSH',
 																			args: [
-																				{ prim: 'mutez' },
+																				{ prim: 'mumav' },
 																				{ int: '1000000' }
 																			]
 																		},
@@ -3591,7 +3591,7 @@ export const rpcContractResponse = {
 																		{
 																			prim: 'PUSH',
 																			args: [
-																				{ prim: 'mutez' },
+																				{ prim: 'mumav' },
 																				{ int: '1000000' }
 																			]
 																		},
@@ -3677,7 +3677,7 @@ export const rpcContractResponse = {
 																							prim: 'pair',
 																							args: [
 																								{ prim: 'address' },
-																								{ prim: 'mutez' }
+																								{ prim: 'mumav' }
 																							]
 																						}
 																					]
@@ -3749,7 +3749,7 @@ export const rpcContractResponse = {
 																													args: [
 																														{
 																															prim:
-																																'mutez'
+																																'mumav'
 																														},
 																														{
 																															prim:
@@ -3945,8 +3945,8 @@ export const rpcContractResponse = {
 						{
 							prim: 'Pair',
 							args: [
-								{ string: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao' },
-								{ string: 'tz1gi6qyzWuK2ciD2tAXDW2XdudmoQHy5YR9' }
+								{ string: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo' },
+								{ string: 'mv1BGRhvgEi5NFv5r317pu8GTLJvHnWY51ht' }
 							]
 						},
 						{ int: '68953' },

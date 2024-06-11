@@ -114,7 +114,7 @@ export const codeViewsTopLevel = [
 			{
 				prim: 'pair',
 				args: [
-					{ prim: 'pair', args: [{ prim: 'mutez' }, { prim: 'mutez' }] },
+					{ prim: 'pair', args: [{ prim: 'mumav' }, { prim: 'mumav' }] },
 					{
 						prim: 'pair',
 						args: [

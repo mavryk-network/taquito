@@ -1,15 +1,15 @@
 import { CONFIGS } from './config';
-import { MichelsonMap, OriginateParams, RpcForger, TezosToolkit } from '@taquito/taquito';
+import { MichelsonMap, OriginateParams, RpcForger, TezosToolkit } from '@mavrykdynamics/taquito';
 import { singleSaplingStateContractJProtocol } from './data/single_sapling_state_contract_jakarta_michelson';
 import { fa2ForTokenMetadataView } from './data/fa2-for-token-metadata-view';
-import { stringToBytes } from '@taquito/utils';
+import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import BigNumber from 'bignumber.js';
 import { codeViewsTopLevel } from './data/contract_views_top_level';
 import { knownBigMapContract } from './data/knownBigMapContract';
 import { knownContract } from './data/knownContract';
 import * as fs from 'fs/promises';
 
-const MUTEZ_UNIT = new BigNumber(1000000);
+const MUMAV_UNIT = new BigNumber(1000000);
 
 CONFIGS().forEach(({ lib, setup, protocol }) => {
   const tezos = lib;
@@ -90,12 +90,12 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     // KnownBigMapContract
     const allowancesBigMap = new MichelsonMap();
     const ledgerBigMap = new MichelsonMap();
-    ledgerBigMap.set('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP', { allowances: allowancesBigMap, balance: '100' });
+    ledgerBigMap.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances: allowancesBigMap, balance: '100' });
     await originateKnownContract('bigMapContract', tezos, {
       code: knownBigMapContract,
       storage: {
         ledger: ledgerBigMap,
-        owner: 'tz1gvF4cD2dDtqitL3ZTraggSR1Mju2BKFEM',
+        owner: 'mv1VHiNCXPvaU7W7UN8K6QNhbRsLJHZj9Y9q',
         paused: true,
         totalSupply: '100',
       }
@@ -105,14 +105,14 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     const ledger = new MichelsonMap();
     ledger.set(
       {
-        0: 'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+        0: 'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
         1: 0,
       },
       '20000'
     );
     ledger.set(
       {
-        0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+        0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
         1: 1,
       },
       '20000'
@@ -152,7 +152,7 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     await originateKnownContract('tzip12BigMapOffChainContract', tezos, {
       code: fa2ForTokenMetadataView,
       storage: {
-        administrator: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+        administrator: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
         all_tokens: '2',
         ledger: ledger,
         metadata,
@@ -180,10 +180,10 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     console.log(`
 ################################################################################
 Public Key Hash : ${keyPkh}
-Initial Balance : ${keyInitialBalance.dividedBy(MUTEZ_UNIT)} XTZ
-Final Balance   : ${(await tezos.tz.getBalance(keyPkh)).dividedBy(MUTEZ_UNIT)} XTZ
+Initial Balance : ${keyInitialBalance.dividedBy(MUMAV_UNIT)} XTZ
+Final Balance   : ${(await tezos.tz.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
 
-Total XTZ Spent : ${keyInitialBalance.minus(await tezos.tz.getBalance(keyPkh)).dividedBy(MUTEZ_UNIT)} XTZ
+Total XTZ Spent : ${keyInitialBalance.minus(await tezos.tz.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
 `)
   })();
 

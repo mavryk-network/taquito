@@ -3,9 +3,9 @@ require('dotenv').config();
 
 module.exports = {
   title: 'Taquito',
-  tagline: 'A TypeScript library suite for development on the Tezos blockchain.',
+  tagline: 'A TypeScript library suite for development on the Mavryk blockchain.',
   favicon: 'img/favicon.svg',
-  url: 'https://taquito.io',
+  url: 'https://taquito.mavryk.org',
   baseUrl: '/',
   projectName: 'taquito',
   organizationName: 'ecadlabs',
@@ -24,9 +24,9 @@ module.exports = {
     'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css',
   ],
   customFields: {
-    repoUrl: 'https://github.com/ecadlabs/taquito',
+    repoUrl: 'https://github.com/mavryk-network/mavryk-taquito',
     description:
-      'A TypeScript library suite made available as a set of npm packages aiming to make building on top of Tezos easier and more enjoyable.',
+      'A TypeScript library suite made available as a set of npm packages aiming to make building on top of Mavryk easier and more enjoyable.',
   },
   themes: [require.resolve('@docusaurus/theme-live-codeblock'), '@docusaurus/theme-mermaid'],
   themeConfig: {
@@ -73,19 +73,19 @@ module.exports = {
           className: 'header-link button_link',
         },
         {
-          href: 'https://discord.gg/JgvVdWV7BN',
+          href: 'https://discord.gg/BDBYA4ASf2',
           position: 'right',
           className: 'header-link header-discord-link',
           'aria-label': 'Discord',
         },
         {
-          href: 'https://twitter.com/tezostaquito',
+          href: 'https://x.com/mavrykdynamics',
           position: 'right',
           className: 'header-link header-twitter-link',
-          'aria-label': 'Twitter',
+          'aria-label': 'X',
         },
         {
-          href: 'https://github.com/ecadlabs/taquito',
+          href: 'https://github.com/mavryk-network/mavryk-taquito',
           position: 'right',
           className: 'header-link header-github-link',
           'aria-label': 'GitHub repository',
@@ -99,11 +99,11 @@ module.exports = {
           items: [
             {
               label: 'Report Issues',
-              to: 'https://github.com/ecadlabs/taquito/issues/new/choose',
+              to: 'https://github.com/mavryk-network/mavryk-taquito/issues/new/choose',
             },
             {
               label: 'Contribute',
-              to: 'https://github.com/ecadlabs/taquito/blob/master/CONTRIBUTING.md',
+              to: 'https://github.com/mavryk-network/mavryk-taquito/blob/master/CONTRIBUTING.md',
             },
           ],
         },
@@ -111,25 +111,25 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Exchange',
-              to: 'https://tezos.stackexchange.com/questions/tagged/taquito',
-            },
+            // {
+            //   label: 'Stack Exchange',
+            //   to: 'https://tezos.stackexchange.com/questions/tagged/taquito',
+            // },
             {
               label: 'Discord',
               to: 'https://discord.gg/JgvVdWV7BN',
             },
             {
-              label: 'Twitter',
-              to: 'https://twitter.com/tezostaquito',
+              label: 'X',
+              to: 'https://x.com/mavrykdynamics',
             },
             {
               label: 'Code of Conduct',
-              to: 'https://github.com/ecadlabs/taquito/blob/master/code-of-conduct.md',
+              to: 'https://github.com/mavryk-network/mavryk-taquito/blob/master/code-of-conduct.md',
             },
             {
               label: 'GitHub',
-              to: 'https://github.com/ecadlabs/taquito',
+              to: 'https://github.com/mavryk-network/mavryk-taquito',
             },
           ],
         },
@@ -142,7 +142,7 @@ module.exports = {
             },
             {
               label: 'TypeDoc Reference',
-              to: 'https://taquito.io/typedoc',
+              to: 'https://taquito.mavryk.org/typedoc',
             },
           ],
         },
@@ -154,13 +154,13 @@ module.exports = {
             {
               html: `
 									<p class='footerDescription'>
-									Developing On Tezos Can Be Delicious!
+									Developing On Mavryk Can Be Delicious!
 									</p>
 								  `,
             },
             {
               html: `
-									<a class='footerButton' href='https://github.com/ecadlabs/taquito'>
+									<a class='footerButton' href='https://github.com/mavryk-network/mavryk-taquito'>
 										GITHUB
 									</a>
 								  `,

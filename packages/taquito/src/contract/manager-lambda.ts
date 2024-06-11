@@ -12,7 +12,7 @@ const setDelegate = (key: string) => {
   ];
 };
 
-const transferImplicit = (key: string, mutez: number) => {
+const transferImplicit = (key: string, mumav: number) => {
   return [
     { prim: 'DROP' },
     { prim: 'NIL', args: [{ prim: 'operation' }] },
@@ -23,7 +23,7 @@ const transferImplicit = (key: string, mutez: number) => {
     { prim: 'IMPLICIT_ACCOUNT' },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${mutez}` }],
+      args: [{ prim: 'mumav' }, { int: `${mumav}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },
@@ -56,7 +56,7 @@ const transferToContract = (key: string, amount: number) => {
     },
     {
       prim: 'PUSH',
-      args: [{ prim: 'mutez' }, { int: `${amount}` }],
+      args: [{ prim: 'mumav' }, { int: `${amount}` }],
     },
     { prim: 'UNIT' },
     { prim: 'TRANSFER_TOKENS' },

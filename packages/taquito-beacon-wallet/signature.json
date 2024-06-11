@@ -74,7 +74,7 @@
       "entry": "packageJson/v1alpha2",
       "value": {
         "packageJson": {
-          "name": "@taquito/beacon-wallet",
+          "name": "@mavrykdynamics/taquito-beacon-wallet",
           "version": "8.0.4-beta.0",
           "description": "Beacon wallet provider",
           "keywords": [
@@ -134,9 +134,9 @@
             ]
           },
           "dependencies": {
-            "@airgap/beacon-sdk": "4.0.12",
-            "@taquito/taquito": "^8.0.4-beta.0",
-            "@taquito/utils": "^8.0.4-beta.0"
+            "@mavrykdynamics/beacon-sdk": "4.0.12",
+            "@mavrykdynamics/taquito": "^8.0.4-beta.0",
+            "@mavrykdynamics/taquito-utils": "^8.0.4-beta.0"
           },
           "devDependencies": {
             "@types/chrome": "0.0.126",

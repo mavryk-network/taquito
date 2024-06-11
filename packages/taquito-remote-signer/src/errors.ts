@@ -1,4 +1,4 @@
-import { PermissionDeniedError, TaquitoError } from '@taquito/core';
+import { PermissionDeniedError, TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

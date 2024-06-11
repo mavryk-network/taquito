@@ -9,12 +9,12 @@ import {
   OperationContentsAndResultTransferTicket,
   OperationContentsAndResultIncreasePaidStorage,
   OperationContentsAndResultUpdateConsensusKey,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { PreparedOperation } from '../src/prepare';
 
 const defaultTransferData = {
   kind: OpKind.TRANSACTION as OpKind.TRANSACTION,
-  source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+  source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
   fee: '2991',
   counter: '121619',
   gas_limit: '26260',
@@ -25,17 +25,17 @@ const defaultTransferData = {
 
 const defaultDelegationData = {
   kind: OpKind.DELEGATION as OpKind.DELEGATION,
-  source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+  source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
   fee: '2991',
   counter: '121619',
   gas_limit: '26260',
   storage_limit: '257',
-  delegate: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+  delegate: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
 };
 
 const defaultRevealData = {
   kind: OpKind.REVEAL as OpKind.REVEAL,
-  source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+  source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
   fee: '2991',
   counter: '121619',
   gas_limit: '26260',
@@ -45,7 +45,7 @@ const defaultRevealData = {
 
 const defaultOrigininateData = {
   kind: OpKind.ORIGINATION as OpKind.ORIGINATION,
-  source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+  source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
   fee: '30000',
   counter: '1121110',
   gas_limit: '90000',
@@ -59,7 +59,7 @@ const defaultOrigininateData = {
 
 const defaultRegisterGlobalConstantData = {
   kind: OpKind.REGISTER_GLOBAL_CONSTANT as OpKind.REGISTER_GLOBAL_CONSTANT,
-  source: 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys',
+  source: 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg',
   fee: '2991',
   counter: '121619',
   gas_limit: '26260',
@@ -69,7 +69,7 @@ const defaultRegisterGlobalConstantData = {
 
 const defaultTransferTicketData = {
   kind: OpKind.TRANSFER_TICKET as OpKind.TRANSFER_TICKET,
-  source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+  source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
   fee: '804',
   gas_limit: '5009',
   storage_limit: '130',
@@ -84,7 +84,7 @@ const defaultTransferTicketData = {
 
 const defaultIncreasePaidStorageData = {
   kind: OpKind.INCREASE_PAID_STORAGE as OpKind.INCREASE_PAID_STORAGE,
-  source: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+  source: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
   fee: '349',
   counter: '108123',
   gas_limit: '1000',
@@ -95,7 +95,7 @@ const defaultIncreasePaidStorageData = {
 
 const defaultUpdateConsensusKeyData = {
   kind: OpKind.UPDATE_CONSENSUS_KEY as OpKind.UPDATE_CONSENSUS_KEY,
-  source: 'tz1MY8g5UqVmQtpAp7qs1cUwEof1GjZCHgVv',
+  source: 'mv19ubyfoCo7zAbPxSQiFSAxPpWyq82Aeimr',
   fee: '369',
   counter: '19043',
   gas_limit: '1100',
@@ -446,7 +446,7 @@ export const ticketTokenTestMock = {
         prim: 'Elt',
         args: [
           {
-            string: 'tz1QYD1zbK2gTUu1YWX8m7hPcKNkuXoxPo73',
+            string: 'mv1Ga4Zsxmmc3eP2PeJQMiZhgWQj43eeJBsE',
           },
           {
             prim: 'Pair',
@@ -468,7 +468,7 @@ export const ticketTokenTestMock = {
         prim: 'Elt',
         args: [
           {
-            string: 'tz1cor8JEddCMvLFpWBK1EcNFDU3QgaSwvc1',
+            string: 'mv1BpELbJnJoGdbs8Yb9PDmJC9HpVNnSUmY2',
           },
           {
             prim: 'Pair',
@@ -490,7 +490,7 @@ export const ticketTokenTestMock = {
         prim: 'Elt',
         args: [
           {
-            string: 'tz1h5GajcQWq4ybaWuwSiYrR5PvmUxndm8T8',
+            string: 'mv1VfEYVXSTwXgB5EQXE5q4EwB4R89GBqT4N',
           },
           {
             prim: 'Pair',
@@ -608,8 +608,8 @@ export const preparedTransactionMock = {
         gas_limit: '1101',
         storage_limit: '257',
         amount: '1000000',
-        destination: 'tz3SBLWcdfGnt4RFSjJnmmvWgeKHooVZKn5P',
-        source: 'tz2XWgpXu3Fqdhsm1FzGQXRqgvqizfFjxpLt',
+        destination: 'mv3FkAzvLSQDQ22m5GzPHQZ1P4o13Q1uS91W',
+        source: 'mv2MsKsSRvxRRzZupQJUujoRUFVZxRAJP7Fp',
         counter: '31552',
       },
     ],

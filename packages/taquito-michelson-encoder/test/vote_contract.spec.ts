@@ -58,11 +58,11 @@ describe('Schema test', () => {
     const schema = new Schema(storage);
     expect(schema.Execute(rpcContractResponse.script.storage)).toEqual({
       mgr1: {
-        addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         key: null,
       },
       mgr2: {
-        addr: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        addr: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         key: null,
       },
     });

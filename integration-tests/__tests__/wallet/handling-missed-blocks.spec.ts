@@ -1,4 +1,4 @@
-import { PollingSubscribeProvider } from "@taquito/taquito";
+import { PollingSubscribeProvider } from "@mavrykdynamics/taquito";
 import { CONFIGS } from "../../config";
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
@@ -13,7 +13,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       // Before fixing issue #1783, if a block was skipped, the `WalletOperation` class was throwing an error `MissedBlockDuringConfirmationError`
       // After fixing issue #1783, if blocks are skipped, they will be retrieved and inspected by the WalletOperation class
       Tezos.setStreamProvider(Tezos.getFactory(PollingSubscribeProvider)({ pollingIntervalMilliseconds: 60000 }));
-      const op = await Tezos.wallet.transfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 }).send();
+      const op = await Tezos.wallet.transfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 }).send();
       await op.confirmation();
       expect(op.opHash).toBeDefined();
       expect(await op.status()).toBe('applied');

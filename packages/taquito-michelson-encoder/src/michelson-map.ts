@@ -1,7 +1,7 @@
-import { MichelsonV1Expression } from '@taquito/rpc';
+import { MichelsonV1Expression } from '@mavrykdynamics/taquito-rpc';
 import { Schema } from './schema/storage';
 import stringify from 'fast-json-stable-stringify';
-import { TaquitoError } from '@taquito/core';
+import { TaquitoError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

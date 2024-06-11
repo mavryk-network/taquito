@@ -25,7 +25,7 @@ describe('Schema test', () => {
     const storage = schema.Execute(rpcContractResponse4.script.storage);
     expect(storage).toEqual({
       '0': expectMichelsonMap(),
-      '1': 'tz1W8qq2VPJcbXkAMxG8zwXCbtwbDPMfTRZd',
+      '1': 'mv1HdwZEZJKKjzZzmHbWxyofbXkndkHAraUR',
     });
   });
 
@@ -33,7 +33,7 @@ describe('Schema test', () => {
     const schema = new Schema(storage4);
     const result = schema.Encode({
       '0': new MichelsonMap(),
-      '1': 'tz1W8qq2VPJcbXkAMxG8zwXCbtwbDPMfTRZd',
+      '1': 'mv1HdwZEZJKKjzZzmHbWxyofbXkndkHAraUR',
     });
     expect(result).toEqual({
       args: [[], rpcContractResponse4.script.storage.args[1]],

@@ -22,7 +22,7 @@ To do so, let's look at three examples of contract origination showing initial v
     (pair
         (pair (address %theAddress) (bool %theBool))
         (pair (nat %theNat) (int %theNumber)))
-    (mutez %theTez))
+    (mumav %theTez))
 ```
 
 We need to write the storage as a Javascript object and include the annotated names in it.
@@ -36,13 +36,13 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .originate({
     code: contractStorageAnnot,
     storage: {
-      theAddress: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      theAddress: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       theBool: true,
       theNat: '3',
       theNumber: '5',
@@ -62,13 +62,13 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .originate({
     code: contractStorageAnnot,
     storage: {
-      theAddress: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr',
+      theAddress: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
       theBool: true,
       theNat: '3',
       theNumber: '5',
@@ -84,7 +84,7 @@ Tezos.wallet
     println(`Origination completed.`);
   })
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
-```   
+```
   </TabItem>
 </Tabs>
 
@@ -97,7 +97,7 @@ Tezos.wallet
     (pair
         (pair (address) (bool))
         (pair (nat) (int)))
-    (mutez))
+    (mumav))
 ```
 
 All properties in storage are accessible by the index corresponding to the order that the storage is defined.
@@ -111,17 +111,17 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .originate({
     code: contractStorageWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       2: '3', //nat
       3: '5', //int
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .then((originationOp) => {
@@ -137,17 +137,17 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .originate({
     code: contractStorageWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       2: '3', //nat
       3: '5', //int
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .send()
@@ -159,7 +159,7 @@ Tezos.wallet
     println(`Origination completed.`);
   })
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
-```  
+```
   </TabItem>
 </Tabs>
 
@@ -172,7 +172,7 @@ Tezos.wallet
     (pair
         (pair (address) (bool))
         (pair (nat %theNat) (int %theNumber)))
-    (mutez))
+    (mumav))
 ```
 
 In the following example, only the elements in positions 2 and 3 have an annotation. We need to access these elements with their annotated name and the others with corresponding indexes.
@@ -188,17 +188,17 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .originate({
     code: contractStorageWithAndWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       theNat: '3',
       theNumber: '5',
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .then((originationOp) => {
@@ -215,17 +215,17 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://jakartanet.ecadinfra.com');
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .originate({
     code: contractStorageWithAndWithoutAnnot,
     storage: {
-      0: 'tz1PgQt52JMirBUhhkq1eanX8hVd1Fsg71Lr', //address
+      0: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
       1: true, //bool
       theNat: '3',
       theNumber: '5',
-      4: '10', //mutez
+      4: '10', //mumav
     },
   })
   .send()
@@ -237,6 +237,6 @@ Tezos.wallet
     println(`Origination completed.`);
   })
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
-```    
+```
   </TabItem>
 </Tabs>

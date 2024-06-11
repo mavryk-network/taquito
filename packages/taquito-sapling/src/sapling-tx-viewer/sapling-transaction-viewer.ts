@@ -1,7 +1,7 @@
 import * as sapling from '@airgap/sapling-wasm';
 import BigNumber from 'bignumber.js';
-import { hex2buf, mergebuf } from '@taquito/utils';
-import { CommitmentsAndCiphertexts, SaplingDiffResponse } from '@taquito/rpc';
+import { hex2buf, mergebuf } from '@mavrykdynamics/taquito-utils';
+import { CommitmentsAndCiphertexts, SaplingDiffResponse } from '@mavrykdynamics/taquito-rpc';
 import blake from 'blakejs';
 import { openSecretBox } from '@stablelib/nacl';
 import { InMemoryViewingKey } from '../sapling-keys/in-memory-viewing-key';
@@ -9,7 +9,7 @@ import { bufToUint8Array, convertValueToBigNumber, readableFormat } from './help
 import { KDF_KEY, OCK_KEY } from '../constants';
 import { Input, SaplingContractId, SaplingIncomingAndOutgoingTransaction } from '../types';
 import { SaplingTransactionViewerError } from '../errors';
-import { TzReadProvider } from '@taquito/taquito';
+import { TzReadProvider } from '@mavrykdynamics/taquito';
 
 /**
  * @description Allows to retrieve and decrypt sapling transactions using on a viewing key
@@ -36,7 +36,7 @@ export class SaplingTransactionViewer {
   /**
    * @description Retrieve the unspent balance associated with the configured viewing key and sapling state
    *
-   * @returns the balance in mutez represented as a BigNumber
+   * @returns the balance in mumav represented as a BigNumber
    *
    */
   async getBalance(): Promise<BigNumber> {

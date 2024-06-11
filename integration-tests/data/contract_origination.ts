@@ -1,11 +1,11 @@
-import { OperationContentsOrigination } from "@taquito/rpc"
+import { OperationContentsOrigination } from "@mavrykdynamics/taquito-rpc"
 
 export const rpcToForge = {
   "branch": "BLQ6JyEEzUNkA7WEDSAbyFYLoEK7RVcNcjbjrN5LrmqoUW4qmu3",
   "contents":
     [{
       "kind": 'origination',
-      "source": "tz1UpizQ6AGjMeCZCLpuyuL4BSzoUC4XD1QE", "fee": "515",
+      "source": "mv1HCCHzQXa5vuynLfPmDj25LTrn2aa5iF2v", "fee": "515",
       "counter": "340273", "gas_limit": "1533", "storage_limit": "409",
       "balance": "0",
       "script":
@@ -53,7 +53,7 @@ export const rpcToForge = {
               { "prim": "SWAP" },
               {
                 "prim": "PUSH",
-                "args": [{ "prim": "mutez" }, { "int": "0" }]
+                "args": [{ "prim": "mumav" }, { "int": "0" }]
               },
               { "prim": "SWAP" },
               { "prim": "TRANSFER_TOKENS" },

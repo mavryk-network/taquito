@@ -1,18 +1,18 @@
 # Taquito Beacon Wallet package
 
-_Documentation can be found [here](https://taquito.io/docs/wallet_API)_  
-_TypeDoc style documentation is available [here](https://taquito.io/typedoc/modules/_taquito_beacon_wallet.html)_
+_Documentation can be found [here](https://taquito.mavryk.org/docs/wallet_API)_  
+_TypeDoc style documentation is available [here](https://taquito.mavryk.org/typedoc/modules/_taquito_beacon_wallet.html)_
 
 ## General Information
 
-`@taquito/taquito-beacon-wallet` is an npm package implementing the TZIP-10 standard that describes the communication between decentralized applications and wallets. The package provides developers a way to connect a dapp built with Taquito to a wallet giving the freedom to the users of the dapp to choose the wallet they want.
+`@mavrykdynamics/taquito-beacon-wallet` is an npm package implementing the TZIP-10 standard that describes the communication between decentralized applications and wallets. The package provides developers a way to connect a dapp built with Taquito to a wallet giving the freedom to the users of the dapp to choose the wallet they want.
 
 ## Install
 
 Install the package as follows
 
 ```
-npm install @taquito/beacon-wallet
+npm install @mavrykdynamics/taquito-beacon-wallet
 ```
 
 ## Usage
@@ -20,12 +20,12 @@ npm install @taquito/beacon-wallet
 Create a wallet instance with defined option parameters and set the wallet provider using `setWalletProvider` to the `TezosToolkit` instance
 
 ```ts
-import { TezosToolkit } from '@taquito/taquito';
-import { BeaconWallet } from '@taquito/beacon-wallet';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 
 const options = {
   name: 'MyAwesomeDapp',
-  iconUrl: 'https://taquito.io/img/favicon.svg',
+  iconUrl: 'https://taquito.mavryk.org/img/favicon.svg',
   preferredNetwork: 'chosen_network',
   eventHandlers: {
     PERMISSION_REQUEST_SUCCESS: {

@@ -1,4 +1,4 @@
-import { ParameterValidationError, RpcError, TaquitoError } from '@taquito/core';
+import { ParameterValidationError, RpcError, TaquitoError } from '@mavrykdynamics/taquito-core';
 import {
   MichelsonV1ExpressionBase,
   OperationContentsAndResult,
@@ -12,7 +12,7 @@ import {
   OperationResultTransferTicket,
   PreapplyResponse,
   TezosGenericOperationError,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import {
   hasMetadata,
   hasMetadataWithInternalOperationResult,

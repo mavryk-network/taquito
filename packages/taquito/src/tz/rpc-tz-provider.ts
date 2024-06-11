@@ -8,8 +8,8 @@ import {
   validateKeyHash,
   InvalidKeyHashError,
   invalidDetail,
-} from '@taquito/utils';
-import { InvalidAddressError } from '@taquito/core';
+} from '@mavrykdynamics/taquito-utils';
+import { InvalidAddressError } from '@mavrykdynamics/taquito-core';
 import { Provider } from '../provider';
 import { PrepareProvider } from '../prepare';
 

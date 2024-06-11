@@ -1,7 +1,7 @@
 import { smartContractAbstractionSemantic } from '../../src/contract/semantic';
 import { RpcContractProvider } from '../../src/contract/rpc-contract-provider';
 import { Context } from '../../src/context';
-import { Semantic } from '@taquito/michelson-encoder';
+import { Semantic } from '@mavrykdynamics/taquito-michelson-encoder';
 
 describe('smartContractAbstractionSemantic test', () => {
   let rpcContractProvider: RpcContractProvider;

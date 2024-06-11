@@ -2,7 +2,7 @@ import { createToken } from '../tokens/createToken';
 import { Token, Semantic, TokenValidationError, SemanticEncoding } from '../tokens/token';
 import { OrToken } from '../tokens/or';
 import { OptionToken } from '../tokens/option';
-import { ScriptResponse, MichelsonV1ExpressionExtended, MichelsonV1Expression } from '@taquito/rpc';
+import { ScriptResponse, MichelsonV1ExpressionExtended, MichelsonV1Expression } from '@mavrykdynamics/taquito-rpc';
 import { TokenSchema } from './types';
 import { InvalidRpcResponseError, ParameterEncodingError } from './errors';
 

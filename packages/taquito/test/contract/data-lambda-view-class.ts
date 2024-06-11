@@ -109,7 +109,7 @@ export const script = {
         [
           { prim: 'DUP' },
           { prim: 'CDR' },
-          { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+          { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
           { prim: 'AMOUNT' },
           { prim: 'COMPARE' },
           { prim: 'NEQ' },
@@ -390,7 +390,7 @@ export const script = {
                                   { prim: 'CAR' },
                                   {
                                     prim: 'PUSH',
-                                    args: [{ prim: 'mutez' }, { int: '0' }],
+                                    args: [{ prim: 'mumav' }, { int: '0' }],
                                   },
                                   { prim: 'DIG', args: [{ int: '3' }] },
                                   { prim: 'TRANSFER_TOKENS' },
@@ -441,7 +441,7 @@ export const script = {
                                   { prim: 'CDR' },
                                   {
                                     prim: 'PUSH',
-                                    args: [{ prim: 'mutez' }, { int: '0' }],
+                                    args: [{ prim: 'mumav' }, { int: '0' }],
                                   },
                                   { prim: 'DIG', args: [{ int: '3' }] },
                                   { prim: 'CDR' },
@@ -465,7 +465,7 @@ export const script = {
                                   { prim: 'CAR' },
                                   {
                                     prim: 'PUSH',
-                                    args: [{ prim: 'mutez' }, { int: '0' }],
+                                    args: [{ prim: 'mumav' }, { int: '0' }],
                                   },
                                   { prim: 'DIG', args: [{ int: '3' }] },
                                   { prim: 'CDR' },

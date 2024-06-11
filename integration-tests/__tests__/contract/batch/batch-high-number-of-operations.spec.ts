@@ -1,9 +1,9 @@
 import { CONFIGS } from '../../../config';
-import { b58cencode, Prefix, prefix } from '@taquito/utils';
-import { InMemorySigner } from '@taquito/signer';
+import { b58cencode, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 const crypto = require('crypto');
 
-// This test is skipped on Flextesa due to the high number of operations taking too long to resolve in the sandbox
+// This test is skipped on Flexmasa due to the high number of operations taking too long to resolve in the sandbox
 CONFIGS().forEach(({ lib, rpc, setup }) => {
     const Tezos = lib;
 

@@ -1,9 +1,9 @@
 import { CONFIGS } from '../../config';
-import { ContractsLibrary } from '@taquito/contracts-library';
+import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
 import { entrypoints } from '../../data/contract-entrypoints';
-import { tzip16, Tzip16Module } from '@taquito/tzip16';
-import { compose } from '@taquito/taquito';
-import { tzip12 } from '@taquito/tzip12';
+import { tzip16, Tzip16Module } from '@mavrykdynamics/taquito-tzip16';
+import { compose } from '@mavrykdynamics/taquito';
+import { tzip12 } from '@mavrykdynamics/taquito-tzip12';
 
 CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract, knownTzip1216Contract }) => {
     const Tezos = lib;

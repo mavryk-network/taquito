@@ -13,8 +13,8 @@ Taquito provides a simple way of forging and sending transactions to the blockch
  * ONE OF THESE TRANSACTIONS WILL FAIL
  * AND YOU WILL GET AN ERROR MESSAGE
  */
-const op1 = await contract.methodsObject.interact('tezos').send();
-const op2 = await contract.methodsObject.wait(UnitValue).send();
+const op1 = await contract.methodsObject.interact({ 0: 'tezos' }).send();
+const op2 = await contract.methodsObject.wait({ 0: UnitValue }).send();
 
 await op1.confirmation();
 await op2.confirmation();
@@ -27,7 +27,7 @@ await op2.confirmation();
  * Error Message that was returned by the node (before Kathmandu):
  * "Error while applying operation opWH2nEcmmzUwK4T6agHg3bn9GDR7fW1ynqWL58AVRAb7aZFciD:
  * branch refused (Error:
- * Counter 1122148 already used for contract tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb (expected 1122149))"
+ * Counter 1122148 already used for contract mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv (expected 1122149))"
  */
 ```
 
@@ -37,7 +37,7 @@ await op2.confirmation();
 The `contract` or `wallet` property of the `TezosToolkit` object exposes a method called `batch` (the choice between `contract` or `wallet` depends on your use case, whether the transaction will be signed by a wallet or not). Subsequently, the returned object exposes six different methods that you can concatenate according to the number of transactions to emit.
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('RPC address here');
 const batch = Tezos.wallet.batch(); // or Tezos.contract.batch()
@@ -53,13 +53,13 @@ After concatenating the different methods to batch operations together, a single
 
 #### - The `withTransfer` method
 
-This method allows you to add a transfer of tez to the batched operations. It takes an object as a parameter with 4 properties. Two of them are mandatory: `to` indicates the recipient of the transfer and `amount` indicates the amount of tez to be transferred. Two other properties are optional: if `mutez` is set to `true`, the value specified in `amount` is considered to be in mutez. The `parameter` property takes an object where you can indicate an entrypoint and a value for the transfer.
+This method allows you to add a transfer of tez to the batched operations. It takes an object as a parameter with 4 properties. Two of them are mandatory: `to` indicates the recipient of the transfer and `amount` indicates the amount of tez to be transferred. Two other properties are optional: if `mumav` is set to `true`, the value specified in `amount` is considered to be in mumav. The `parameter` property takes an object where you can indicate an entrypoint and a value for the transfer.
 
 ```js
 const batch = await Tezos.wallet.batch()
-  .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 })
-  .withTransfer({ to: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', amount: 4000000, mutez: true })
-  .withTransfer({ to: 'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6', amount: 3 });
+  .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
+  .withTransfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 4000000, mumav: true })
+  .withTransfer({ to: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 3 });
 ```
 
 #### - The `withOrigination` method
@@ -68,12 +68,12 @@ This method allows you to add the origination of one or multiple contracts to an
 
 ```js
 const batch = await Tezos.contract.batch()
-  .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 2 })
+  .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
   .withOrigination({
     code: validCode,
     storage: initialStorage,
     balance: 2,
-    delegate: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+    delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
   });
 ```
 
@@ -83,7 +83,7 @@ This simple method allows batching multiple delegation transactions. The method 
 
 ```js
 const batch = await Tezos.contract.batch().withDelegation({
-  delegate: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+  delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
 });
 ```
 
@@ -94,23 +94,23 @@ This method may be one of the most useful ones as it allows you to batch and emi
 ```js
 const contract = await Tezos.wallet.at(VALID_CONTRACT_ADDRESS);
 const batch = await Tezos.wallet.batch()
-  .withContractCall(contractObject.interact('tezos'))
-  .withContractCall(contract.methodsObject.wait(UnitValue));
+  .withContractCall(contract.methodsObject.interact({ 0: 'tezos' }))
+  .withContractCall(contract.methodsObject.wait({ 1: UnitValue });
 ```
 
 #### - The `array of transactions` method
 
-If you prefer having an array that contains objects with the different transactions you want to emit, you can use the `with` method. It allows you to group transactions as objects instead of concatenating function calls. The object you use expects the same properties as the parameter of the corresponding method with an additional `kind` property that indicates the kind of transaction you want to emit (a handy `opKind` enum is [exported from the Taquito package](https://github.com/ecadlabs/taquito/blob/master/packages/taquito-rpc/src/opkind.ts) with the valid values for the `kind` property).
+If you prefer having an array that contains objects with the different transactions you want to emit, you can use the `with` method. It allows you to group transactions as objects instead of concatenating function calls. The object you use expects the same properties as the parameter of the corresponding method with an additional `kind` property that indicates the kind of transaction you want to emit (a handy `opKind` enum is [exported from the Taquito package](https://github.com/mavryk-network/mavryk-taquito/blob/master/packages/taquito-rpc/src/opkind.ts) with the valid values for the `kind` property).
 
 ```js
-import { OpKind } from '@taquito/taquito';
+import { OpKind, UnitValue } from '@mavrykdynamics/taquito';
 
 const batch = await Tezos.wallet.batch([
   {
     kind: OpKind.TRANSACTION,
-    to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu',
+    to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
     amount: 2000000,
-    mutez: true,
+    mumav: true,
   },
   {
     kind: OpKind.ORIGINATION,
@@ -120,10 +120,10 @@ const batch = await Tezos.wallet.batch([
   },
   {
     kind: OpKind.DELEGATION,
-    delegate: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+    delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
   },
   { kind: OpKind.TRANSACTION,
-    ...contract.methodsObject.default(UnitValue).toTransferParams()
+    ...contract.methodsObject.default({ 0: UnitValue }).toTransferParams()
   }
 ]);
 ```
@@ -151,5 +151,5 @@ In addition to that, only a single account can sign batched operations.
 
 ## References
 
-- [Integration tests](https://github.com/ecadlabs/taquito/blob/master/integration-tests/batch-api.spec.ts)
-- [Documentation](https://taquito.io/typedoc/classes/_taquito_taquito.walletoperationbatch.html)
+- [Integration tests](https://github.com/mavryk-network/mavryk-taquito/blob/master/integration-tests/batch-api.spec.ts)
+- [Documentation](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.walletoperationbatch.html)

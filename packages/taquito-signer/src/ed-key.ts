@@ -9,12 +9,12 @@ import {
   Prefix,
   invalidDetail,
   ValidationResult,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import toBuffer from 'typedarray-to-buffer';
-import { InvalidKeyError } from '@taquito/core';
+import { InvalidKeyError } from '@mavrykdynamics/taquito-core';
 
 /**
- * @description Provide signing logic for ed25519 curve based key (tz1)
+ * @description Provide signing logic for ed25519 curve based key (mv1)
  */
 export class Tz1 {
   private _key: Uint8Array;
@@ -89,7 +89,7 @@ export class Tz1 {
    */
   async publicKeyHash(): Promise<string> {
     await this.isInit;
-    return b58cencode(hash(new Uint8Array(this._publicKey), 20), prefix.tz1);
+    return b58cencode(hash(new Uint8Array(this._publicKey), 20), prefix.mv1);
   }
 
   /**

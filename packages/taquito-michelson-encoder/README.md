@@ -1,9 +1,9 @@
 
 # Taquito Michelson Encoder package
-*Documentation can be found [here](https://taquito.io/docs/michelson_encoder)*  
-*TypeDoc style documentation is available on-line [here](https://taquito.io/typedoc/modules/_taquito_michelson_encoder.html)*
+*Documentation can be found [here](https://taquito.mavryk.org/docs/michelson_encoder)*  
+*TypeDoc style documentation is available on-line [here](https://taquito.mavryk.org/typedoc/modules/_taquito_michelson_encoder.html)*
 
-`@taquito/michelson-encoder` provides a JavaScript abstraction based on a Tezos Smart contracts code, parameters, storage, and views.
+`@mavrykdynamics/taquito-michelson-encoder` provides a JavaScript abstraction based on a Tezos Smart contracts code, parameters, storage, and views.
 
 ## General Information
 
@@ -15,7 +15,7 @@ The `Schema` class is intended to represent the contract storage, while the `Par
 
 ## Install 
 ```
-npm i --save @taquito/michelson-encoder
+npm i --save @mavrykdynamics/taquito-michelson-encoder
 ```
 
 ## Usage

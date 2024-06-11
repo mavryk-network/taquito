@@ -19,7 +19,7 @@ export interface MetadataEnvelope {
 export interface MetadataProvider {
     /**
      *
-     * @description Fetch the metadata. The uri parameter contains the required information to locate metadata contents (http/https, ipfs, tezos-storage).
+     * @description Fetch the metadata. The uri parameter contains the required information to locate metadata contents (http/https, ipfs, mavryk-storage).
      *
      * @returns An object representing the metadata
      *
@@ -58,7 +58,7 @@ Out of scope of this protocol type:
 Consider adding a request interceptor in Taquito to allow user specify custom request authentication mecanism. In general this is an improvement that will benefit every component of Taquito that use http (RpcClient for example)
 
 ## Smart contract
-> tezos-storage://KT1QDFEu8JijYbsJqzoXq7mKvfaQQamHD1kX/foo
+> mavryk-storage://KT1QDFEu8JijYbsJqzoXq7mKvfaQQamHD1kX/foo
 
 Reuse the smart contract abstraction to retrieve the data from the storage.
 

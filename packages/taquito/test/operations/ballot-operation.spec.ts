@@ -1,5 +1,5 @@
-import { BallotOperation, ForgedBytes } from '@taquito/taquito';
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { BallotOperation, ForgedBytes } from '@mavrykdynamics/taquito';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 
 describe('Ballot operation', () => {
@@ -10,7 +10,7 @@ describe('Ballot operation', () => {
   const successfulResult = [
     {
       kind: 'ballot',
-      source: 'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      source: 'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       period: 3,
       proposal: 'PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg',
       ballot: 'yay',
@@ -37,20 +37,20 @@ describe('Ballot operation', () => {
     const op = new BallotOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       {} as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext
     );
 
-    expect(op.source).toEqual('tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU');
+    expect(op.source).toEqual('mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm');
   });
 
   it('should return period of Ballot operation', () => {
     const op = new BallotOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       {} as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext
@@ -63,7 +63,7 @@ describe('Ballot operation', () => {
     const op = new BallotOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       { proposal: 'PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg' } as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext
@@ -76,7 +76,7 @@ describe('Ballot operation', () => {
     const op = new BallotOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       { ballot: 'yay' } as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext

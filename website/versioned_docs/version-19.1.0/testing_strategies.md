@@ -22,7 +22,7 @@ We use the following Test Heuristics to achieve these assurance goals. Taquito u
 Unit Tests are detailed tests of simple software components at the atomic level. Taquito includes unit tests in each of its packages. Here is an example:
 
   ```javascript
-  it('Public key returned by ledger device should be compressed adequately for tz1 before b58 encoding', () => {
+  it('Public key returned by ledger device should be compressed adequately for mv1 before b58 encoding', () => {
     const buff = Buffer.from(
       '02063ed375b28dd2c1841138d4959f57b4a2715730e2e28fcda9144a19876dd3c6',
       'hex'
@@ -46,9 +46,9 @@ Here is a simple example of an integration test. The test sends Taquito instruct
 ```javascript
     it('Simple transfers with origination', async () => {
       const batch = await Tezos.batch()
-        .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-        .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
-        .withTransfer({ to: 'tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu', amount: 0.02 })
+        .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+        .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
+        .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
         .withOrigination({
           balance: "1",
           code: ligoSample,

@@ -35,7 +35,7 @@ values={[
 
 ```js
 import TransportWebHID from "@ledgerhq/hw-transport-webhid";
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 
 const transport = await TransportWebHID.create();
 const ledgerSigner = new LedgerSigner(transport);
@@ -46,7 +46,7 @@ const ledgerSigner = new LedgerSigner(transport);
 
 ```js
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid';
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 
 const transport = await TransportNodeHid.create();
 const ledgerSigner = new LedgerSigner(transport);
@@ -62,11 +62,11 @@ The constructor of the `LedgerSigner` class can take three other parameters. If 
   _More details about paths below_
 - prompt: **default is true**
   If true, you will be asked on your Ledger device to send your public key for validation.
-- derivationType: **default is DerivationType.ED25519**
-  It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (tz1), DerivationType.SECP256K1 (tz2) or DerivationType.P256 (tz3).
+- derivationType: **default is DerivationType.ED25519**  
+  It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (mv1), DerivationType.SECP256K1 (mv2) or DerivationType.P256 (mv3).
 
 ```js
-import { LedgerSigner, DerivationType, HDPathTemplate } from '@taquito/ledger-signer';
+import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
 
 const ledgerSigner = new LedgerSigner(
   transport, //required
@@ -79,9 +79,9 @@ const ledgerSigner = new LedgerSigner(
 ## Usage
 
 ```js
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid';
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
@@ -107,9 +107,9 @@ values={[
 
 ```js
 const amount = 0.5;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-console.log(`Transfering ${amount} ꜩ to ${address}...`);
+console.log(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
@@ -125,9 +125,9 @@ Tezos.contract
 
 ```js
 const amount = 0.5;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-console.log(`Transfering ${amount} ꜩ to ${address}...`);
+console.log(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.wallet
   .transfer({ to: address, amount: amount })
   .send()
@@ -196,10 +196,10 @@ Having your Ledger device connected to your computer and the `Tezos Wallet App` 
 _Note that this example is not intended to be a complete example of paths scanning but only a rough outline of what it is possible to do._
 
 ```js live noInline
-//import { LedgerSigner, DerivationType, HDPathTemplate } from '@taquito/ledger-signer';
-//import { TezosToolkit } from '@taquito/taquito';
+//import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
+//import { TezosToolkit } from '@mavrykdynamics/taquito';
 // import TransportWebHID from "@ledgerhq/hw-transport-webhid";
-//const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+//const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 TransportWebHID.create().then((transport) => {
   for (let index = 0, p = Promise.resolve(); index < 10; index++) {
@@ -230,7 +230,7 @@ function getAddressInfo(transport, index) {
           `The public key hash related to the derivation path having the index ${index} is ${pkh}.`
         );
         if (getPublicKey) {
-          println(`The balance is ${balance.toNumber() / 1000000} ꜩ.\n`);
+          println(`The balance is ${balance.toNumber() / 1000000} ṁ.\n`);
         } else {
           println('This account is not revealed.\n');
         }
@@ -240,4 +240,4 @@ function getAddressInfo(transport, index) {
 }
 ```
 
-A similar example using `@ledgerhq/hw-transport-node-hid` can be found [here](https://github.com/ecadlabs/taquito/tree/master/example/scan-path-ledger.ts). This example directly retrieves the public keys from the Ledger without asking for confirmation on the device.
+A similar example using `@ledgerhq/hw-transport-node-hid` can be found [here](https://github.com/mavryk-network/mavryk-taquito/tree/master/example/scan-path-ledger.ts). This example directly retrieves the public keys from the Ledger without asking for confirmation on the device.

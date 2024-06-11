@@ -7,7 +7,7 @@ describe('Contract with unit encoding', () => {
     const schema = new Schema(code[1].args[0] as any);
     expect(
       schema.Encode({
-        owner: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        owner: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         totalSupply: '100',
         accounts: new MichelsonMap(),
       })
@@ -19,7 +19,7 @@ describe('Contract with unit encoding', () => {
           args: [
             [],
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
           ],
         },
@@ -34,7 +34,7 @@ describe('Contract with unit encoding', () => {
     const schema = new Schema(code[1].args[0] as any);
     expect(
       schema.Encode({
-        owner: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        owner: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         totalSupply: '100',
         accounts: {},
       })
@@ -46,7 +46,7 @@ describe('Contract with unit encoding', () => {
           args: [
             [],
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
           ],
         },
@@ -61,10 +61,10 @@ describe('Contract with unit encoding', () => {
     const schema = new Schema(code[1].args[0] as any);
     expect(
       schema.Encode({
-        owner: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        owner: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         totalSupply: '100',
         accounts: MichelsonMap.fromLiteral({
-          tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: {
+          mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: {
             balance: '0',
             allowances: new MichelsonMap(),
           },
@@ -80,7 +80,7 @@ describe('Contract with unit encoding', () => {
               {
                 prim: 'Elt',
                 args: [
-                  { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+                  { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
                   {
                     prim: 'Pair',
                     args: [[], { int: '0' }],
@@ -89,7 +89,7 @@ describe('Contract with unit encoding', () => {
               },
             ],
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
           ],
         },
@@ -104,10 +104,10 @@ describe('Contract with unit encoding', () => {
     const schema = new Schema(code[1].args[0] as any);
     expect(
       schema.Encode({
-        owner: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        owner: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         totalSupply: '100',
         accounts: {
-          tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: {
+          mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: {
             balance: '0',
             allowances: {},
           },
@@ -123,7 +123,7 @@ describe('Contract with unit encoding', () => {
               {
                 prim: 'Elt',
                 args: [
-                  { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+                  { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
                   {
                     prim: 'Pair',
                     args: [[], { int: '0' }],
@@ -132,7 +132,7 @@ describe('Contract with unit encoding', () => {
               },
             ],
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
           ],
         },
@@ -147,18 +147,18 @@ describe('Contract with unit encoding', () => {
     const schema = new Schema(code[1].args[0] as any);
     expect(
       schema.Encode({
-        owner: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        owner: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         totalSupply: '100',
         accounts: MichelsonMap.fromLiteral({
-          tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: {
+          mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: {
             balance: '0',
             allowances: new MichelsonMap(),
           },
-          tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK: {
+          mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g: {
             balance: '0',
             allowances: MichelsonMap.fromLiteral({
-              tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: '2',
-              tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK: '3',
+              mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: '2',
+              mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g: '3',
             }),
           },
         }),
@@ -173,18 +173,18 @@ describe('Contract with unit encoding', () => {
               {
                 prim: 'Elt',
                 args: [
-                  { string: 'tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK' },
+                  { string: 'mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g' },
                   {
                     prim: 'Pair',
                     args: [
                       [
                         {
                           prim: 'Elt',
-                          args: [{ string: 'tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK' }, { int: '3' }],
+                          args: [{ string: 'mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g' }, { int: '3' }],
                         },
                         {
                           prim: 'Elt',
-                          args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '2' }],
+                          args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '2' }],
                         },
                       ],
                       { int: '0' },
@@ -195,7 +195,7 @@ describe('Contract with unit encoding', () => {
               {
                 prim: 'Elt',
                 args: [
-                  { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+                  { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
                   {
                     prim: 'Pair',
                     args: [[], { int: '0' }],
@@ -204,7 +204,7 @@ describe('Contract with unit encoding', () => {
               },
             ],
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
           ],
         },
@@ -219,18 +219,18 @@ describe('Contract with unit encoding', () => {
     const schema = new Schema(code[1].args[0] as any);
     expect(
       schema.Encode({
-        owner: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+        owner: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
         totalSupply: '100',
         accounts: {
-          tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: {
+          mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: {
             balance: '0',
             allowances: {},
           },
-          tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK: {
+          mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g: {
             balance: '0',
             allowances: {
-              tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn: '2',
-              tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK: '3',
+              mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW: '2',
+              mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g: '3',
             },
           },
         },
@@ -245,18 +245,18 @@ describe('Contract with unit encoding', () => {
               {
                 prim: 'Elt',
                 args: [
-                  { string: 'tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK' },
+                  { string: 'mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g' },
                   {
                     prim: 'Pair',
                     args: [
                       [
                         {
                           prim: 'Elt',
-                          args: [{ string: 'tz1LhS2WFCinpwUTdUb991ocL2D9Uk6FJGJK' }, { int: '3' }],
+                          args: [{ string: 'mv185dsN5Nk3wWeGH5XiKpS5KzCmavMzLc9g' }, { int: '3' }],
                         },
                         {
                           prim: 'Elt',
-                          args: [{ string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }, { int: '2' }],
+                          args: [{ string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }, { int: '2' }],
                         },
                       ],
                       { int: '0' },
@@ -267,7 +267,7 @@ describe('Contract with unit encoding', () => {
               {
                 prim: 'Elt',
                 args: [
-                  { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' },
+                  { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' },
                   {
                     prim: 'Pair',
                     args: [[], { int: '0' }],
@@ -276,7 +276,7 @@ describe('Contract with unit encoding', () => {
               },
             ],
             {
-              string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+              string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
             },
           ],
         },

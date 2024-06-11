@@ -21,7 +21,7 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
                 bidCount: 'nat',
                 claimed: 'bool',
                 creator: 'address',
-                currentBidAmount: 'mutez',
+                currentBidAmount: 'mumav',
                 currentBidOwner: 'address',
                 duration: 'int',
                 startTime: 'timestamp',
@@ -47,7 +47,7 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
               value: {
                 fee: 'nat',
                 owner: 'address',
-                price: 'mutez',
+                price: 'mumav',
               },
             },
           },
@@ -101,8 +101,8 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
                       "schema": "address"
                     },
                     currentBidAmount: {
-                      "__michelsonType": "mutez",
-                      "schema": "mutez"
+                      "__michelsonType": "mumav",
+                      "schema": "mumav"
                     },
                     currentBidOwner: {
                       "__michelsonType": "address",
@@ -169,8 +169,8 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
                       "schema": "address"
                     },
                     price: {
-                      "__michelsonType": "mutez",
-                      "schema": "mutez"
+                      "__michelsonType": "mumav",
+                      "schema": "mumav"
                     },
                   }
                 },
@@ -189,8 +189,8 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
   it('Test storage parsing', () => {
     const schema = new Schema(storage);
     expect(schema.Execute(rpcContractResponse.script.storage)).toEqual({
-      _euranov: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao',
-      admin: 'tz1gi6qyzWuK2ciD2tAXDW2XdudmoQHy5YR9',
+      _euranov: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo',
+      admin: 'mv1BGRhvgEi5NFv5r317pu8GTLJvHnWY51ht',
       auctions: '68953',
       authorizedSC: '68954',
       balance: new BigNumber('5000000000000000000'),
@@ -206,15 +206,15 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
     const nestedBigMap = new MichelsonMap();
     nestedBigMap.set(2, {
       fee: '3',
-      owner: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao',
+      owner: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo',
       price: '2',
     });
     selling.set('KT1LGGwuY8BVnnzuQCNmJgsY49VhqnxmnZh8', nestedBigMap);
 
     expect(
       schema.Encode({
-        _euranov: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao',
-        admin: 'tz1gi6qyzWuK2ciD2tAXDW2XdudmoQHy5YR9',
+        _euranov: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo',
+        admin: 'mv1BGRhvgEi5NFv5r317pu8GTLJvHnWY51ht',
         auctions: new MichelsonMap(),
         authorizedSC: new MichelsonMap(),
         balance: new BigNumber('5000000000000000000'),
@@ -231,8 +231,8 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
             {
               prim: 'Pair',
               args: [
-                { string: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao' },
-                { string: 'tz1gi6qyzWuK2ciD2tAXDW2XdudmoQHy5YR9' },
+                { string: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo' },
+                { string: 'mv1BGRhvgEi5NFv5r317pu8GTLJvHnWY51ht' },
               ],
             },
             {
@@ -282,7 +282,7 @@ describe('Contract test where the value of the map "selling" is a big_map', () =
                                   prim: 'Pair',
                                   args: [
                                     {
-                                      string: 'tz1b3cJ4Vz9cERNN3mJVxSkf4ksXrRjpGwao',
+                                      string: 'mv18iDc74fniK8jDLRxFhMRxJByUoT82YJWo',
                                     },
                                     {
                                       int: '2',

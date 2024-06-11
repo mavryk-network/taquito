@@ -1,5 +1,5 @@
-import { PermissionScope } from '@airgap/beacon-dapp';
-import { PermissionDeniedError } from '@taquito/core';
+import { PermissionScope } from '@mavrykdynamics/beacon-dapp';
+import { PermissionDeniedError } from '@mavrykdynamics/taquito-core';
 
 /**
  *  @category Error

@@ -1,13 +1,13 @@
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
-import { InMemorySpendingKey, SaplingToolkit } from '@taquito/sapling';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
+import { InMemorySpendingKey, SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
 import { singleSaplingStateContractJProtocol } from '../integration-tests/data/single_sapling_state_contract_jakarta_michelson';
 const numberOfSaplingTx = 1;
 let totalTime = 0;
 
 async function example() {
     try {
-        const provider = 'https://ghostnet.ecadinfra.com';
+        const provider = 'https://basenet.rpc.mavryk.network';
         const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
         const tezos = new TezosToolkit(provider);
         tezos.setSignerProvider(signer);
@@ -43,7 +43,7 @@ async function example() {
                 to: 'zet14CMN2T4x1f8sgXeAGWQwczSf6SJ8bm8nyP2Tg7HJn2VmtPtB2nE2q7MMgdmMEwpGQ',
                 amount: 2,
                 memo: `tx ${i}`,
-                mutez: true
+                mumav: true
             }])
 
             const millis = Date.now() - start;

@@ -1,4 +1,4 @@
-import { DefaultContractType } from "@taquito/taquito";
+import { DefaultContractType } from "@mavrykdynamics/taquito";
 import { CONFIGS } from "../../config";
 
 CONFIGS().forEach(({ lib, setup }) => {

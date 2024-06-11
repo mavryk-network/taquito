@@ -13,7 +13,7 @@ export const collection_code = [{
             },
             {
               "prim": "map",
-              "args": [{ "prim": "nat" }, { "prim": "mutez" }],
+              "args": [{ "prim": "nat" }, { "prim": "mumav" }],
               "annots": ["%setMap"]
             }]
         },
@@ -38,7 +38,7 @@ export const collection_code = [{
             },
             {
               "prim": "map",
-              "args": [{ "prim": "nat" }, { "prim": "mutez" }],
+              "args": [{ "prim": "nat" }, { "prim": "mumav" }],
               "annots": ["%map1"]
             }]
         },
@@ -71,7 +71,7 @@ export const collection_code = [{
                       "prim": "map",
                       "args":
                         [{ "prim": "nat" },
-                        { "prim": "mutez" }]
+                        { "prim": "mumav" }]
                     }]
                 },
                 { "prim": "set", "args": [{ "prim": "nat" }] }]
@@ -88,7 +88,7 @@ export const collection_code = [{
                 {
                   "prim": "map",
                   "args":
-                    [{ "prim": "nat" }, { "prim": "mutez" }]
+                    [{ "prim": "nat" }, { "prim": "mumav" }]
                 }]
             },
             { "prim": "set", "args": [{ "prim": "nat" }] }]
@@ -124,14 +124,14 @@ export const collection_code = [{
                       "prim": "map",
                       "args":
                         [{ "prim": "nat" },
-                        { "prim": "mutez" }]
+                        { "prim": "mumav" }]
                     }]
                 },
                 { "prim": "set", "args": [{ "prim": "nat" }] }]
             },
             {
               "prim": "map",
-              "args": [{ "prim": "nat" }, { "prim": "mutez" }]
+              "args": [{ "prim": "nat" }, { "prim": "mumav" }]
             }]
         },
         {
@@ -144,7 +144,7 @@ export const collection_code = [{
                 {
                   "prim": "map",
                   "args":
-                    [{ "prim": "nat" }, { "prim": "mutez" }]
+                    [{ "prim": "nat" }, { "prim": "mumav" }]
                 }]
             },
             { "prim": "set", "args": [{ "prim": "nat" }] }]
@@ -180,7 +180,7 @@ export const collection_code = [{
                       "prim": "map",
                       "args":
                         [{ "prim": "nat" },
-                        { "prim": "mutez" }]
+                        { "prim": "mumav" }]
                     }]
                 },
                 { "prim": "set", "args": [{ "prim": "nat" }] }]
@@ -197,7 +197,7 @@ export const collection_code = [{
                 {
                   "prim": "map",
                   "args":
-                    [{ "prim": "nat" }, { "prim": "mutez" }]
+                    [{ "prim": "nat" }, { "prim": "mumav" }]
                 }]
             },
             { "prim": "set", "args": [{ "prim": "nat" }] }]

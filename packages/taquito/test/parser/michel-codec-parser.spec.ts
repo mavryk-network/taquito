@@ -10,7 +10,7 @@ describe('MichelCodec parser', () => {
   };
 
   mockRpcClient.getProtocols.mockResolvedValue({
-    next_protocol: 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
+    next_protocol: 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
   });
 
   it('is instantiable', () => {
@@ -21,14 +21,14 @@ describe('MichelCodec parser', () => {
     it('calls getProtocols from the rpc client', async () => {
       const parser = new MichelCodecParser(new Context(mockRpcClient as any));
       const result = await parser['getNextProto']();
-      expect(result).toStrictEqual(Protocols.PtEdo2Zk);
+      expect(result).toStrictEqual(Protocols.PtAtLas);
     });
   });
 
   describe('prepareCodeOrigination', () => {
     it('prepares code and init parameters when they are in Michelson', async () => {
       const code = `parameter int; storage (pair int address); code { DUP; };`;
-      const init = '(Pair 0 "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn")';
+      const init = '(Pair 0 "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW")';
       const originateParams: OriginateParams = { code, init };
       const parser = new MichelCodecParser(new Context(mockRpcClient as any));
       const result = await parser.prepareCodeOrigination(originateParams);
@@ -48,7 +48,7 @@ describe('MichelCodec parser', () => {
           ],
           init: {
             prim: 'Pair',
-            args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }],
+            args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }],
           },
         })
       );
@@ -65,7 +65,7 @@ describe('MichelCodec parser', () => {
       ];
       const init = {
         prim: 'Pair',
-        args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }],
+        args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }],
       };
       const originateParams: OriginateParams = { code, init };
       const parser = new MichelCodecParser(new Context(mockRpcClient as any));
@@ -86,7 +86,7 @@ describe('MichelCodec parser', () => {
           ],
           init: {
             prim: 'Pair',
-            args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }],
+            args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }],
           },
         })
       );
@@ -103,7 +103,7 @@ describe('MichelCodec parser', () => {
       ];
       const init = {
         prim: 'Pair',
-        args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }],
+        args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }],
       };
       const originateParams: OriginateParams = { code, init };
       const parser = new MichelCodecParser(new Context(mockRpcClient as any));
@@ -124,7 +124,7 @@ describe('MichelCodec parser', () => {
           ],
           init: {
             prim: 'Pair',
-            args: [{ int: '0' }, { string: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn' }],
+            args: [{ int: '0' }, { string: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW' }],
           },
         })
       );
@@ -132,7 +132,7 @@ describe('MichelCodec parser', () => {
 
     it('Throws InvalidMichelsonCode when code is an empty string', async () => {
       const code = ``;
-      const init = '(Pair 0 "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn")';
+      const init = '(Pair 0 "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW")';
       const originateParams: OriginateParams = { code, init };
       const parser = new MichelCodecParser(new Context(mockRpcClient as any));
 

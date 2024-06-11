@@ -11,7 +11,7 @@ The goal of this document is to acquaint yourself with the different values in t
 
 The storage of the LB contract is made of 5 values:
 - __tokenPool__: a value of type `nat` (i.e. a positive number) that represents the amount of tokens (in this case, tzBTC) held by the contract
-- __xtzPool__: a value of type `mutez` (i.e. an amount of tez) that represents the amount of XTZ held by the contract
+- __xtzPool__: a value of type `mumav` (i.e. an amount of tez) that represents the amount of XTZ held by the contract
 - __lqtTotal__: a value of type `nat` that represents the amount of liquidity tokens (or LB tokens) the contract holds. The LB token is an FA1.2 token that represents a pair consisting of XTZ and tzBTC provided to the contract as liquidity
 - __tokenAddress__: a value of type `address` (i.e. the address of an implicit account or a contract) that holds the address to the tzBTC contract
 - __lqtAddress__ : a value of type `address` that holds the address of the LB token
@@ -59,7 +59,7 @@ The main friction point of interacting with the LB contract in JavaScript is abo
 
 - __%tokenToXtz__:
 ```ts
-import { TezosToolkit } from "@taquito/taquito"
+import { TezosToolkit } from "@mavrykdynamics/taquito"
 
 // to take into account the subsidy added to the LB contract
 // when the transaction will be baked
@@ -143,7 +143,7 @@ This code sends a transaction to the `%tokenToXtz` entrypoint of the contract to
 
 - __%xtzToToken__:
 ```ts
-import { TezosToolkit, OpKind } from "@taquito/taquito"
+import { TezosToolkit, OpKind } from "@mavrykdynamics/taquito"
 
 // outputs the amount of tzBTC tokens for a given amount of XTZ
 const xtzToTokenTokenOutput = (p: {
@@ -186,7 +186,7 @@ const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
 // the deadline value is arbitrary and can be changed
 const deadline = new Date(Date.now() + 60000).toISOString();
 const minTokensBought = xtzToTokenTokenOutput({
-    xtzIn: xtzAmountInMutez,
+    xtzIn: xtzAmountInMumav,
     xtzPool,
     tokenPool
   }).toNumber();
@@ -205,7 +205,7 @@ This code sends a transaction to the `%xtzToToken` entrypoint of the contract to
 
 - __%addLiquidity__:
 ```ts
-import { TezosToolkit, OpKind } from "@taquito/taquito"
+import { TezosToolkit, OpKind } from "@mavrykdynamics/taquito"
 
 const Tezos = new TezosToolkit(RPC_URL);
 const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
@@ -242,7 +242,7 @@ const batchOp = await Tezos.wallet
           })
           .toTransferParams(),
         amount: AMOUNT_IN_XTZ,
-        mutez: true
+        mumav: true
     },
     {
         kind: OpKind.TRANSACTION,
@@ -260,7 +260,7 @@ The maximum amount of tzBTC tokens to be sold is calculated using this formula: 
 
 - __%removeLiquidity__:
 ```ts
-import { TezosToolkit } from "@taquito/taquito"
+import { TezosToolkit } from "@mavrykdynamics/taquito"
 
 const calculateLqtOutput = ({
   lqTokens,

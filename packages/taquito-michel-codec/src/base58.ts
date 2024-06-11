@@ -1,4 +1,4 @@
-import { InvalidMessageError, TaquitoError } from '@taquito/core';
+import { InvalidMessageError, TaquitoError } from '@mavrykdynamics/taquito-core';
 
 const H = [
   0x6a09e667 | 0,

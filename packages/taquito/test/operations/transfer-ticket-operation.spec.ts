@@ -1,11 +1,11 @@
-import { ForgedBytes, TransferTicketOperation } from '@taquito/taquito';
+import { ForgedBytes, TransferTicketOperation } from '@mavrykdynamics/taquito';
 import {
   METADATA_BALANCE_UPDATES_CATEGORY,
   OperationContentsAndResult,
   OperationContentsAndResultTransferTicket,
   OperationContentsTransferTicket,
   OpKind,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 
 describe('Transfer Operation L2 Tx Rollup', () => {
@@ -14,7 +14,7 @@ describe('Transfer Operation L2 Tx Rollup', () => {
 
   const params: OperationContentsTransferTicket = {
     kind: OpKind.TRANSFER_TICKET,
-    source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+    source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
     counter: '145',
     fee: '804',
     gas_limit: '5009',
@@ -30,7 +30,7 @@ describe('Transfer Operation L2 Tx Rollup', () => {
   const successfulResult = [
     {
       kind: OpKind.TRANSFER_TICKET,
-      source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+      source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
       fee: '804',
       gas_limit: '5009',
       storage_limit: '130',
@@ -45,7 +45,7 @@ describe('Transfer Operation L2 Tx Rollup', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+            contract: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
             change: '-804',
             origin: 'block',
           },
@@ -61,7 +61,7 @@ describe('Transfer Operation L2 Tx Rollup', () => {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+              contract: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
               change: '-16500',
               origin: 'block',
             },
@@ -82,7 +82,7 @@ describe('Transfer Operation L2 Tx Rollup', () => {
   const successfulResultWithoutResults = [
     {
       kind: OpKind.TRANSFER_TICKET,
-      source: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+      source: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
       fee: '804',
       gas_limit: '5009',
       storage_limit: '130',
@@ -97,7 +97,7 @@ describe('Transfer Operation L2 Tx Rollup', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+            contract: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
             change: '-804',
             origin: 'block',
           },

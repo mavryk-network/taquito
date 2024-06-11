@@ -1,5 +1,5 @@
-import { ForgedBytes, IncreasePaidStorageOperation } from '@taquito/taquito';
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { ForgedBytes, IncreasePaidStorageOperation } from '@mavrykdynamics/taquito';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 import { IncreasePaidStorageOperationBuilder } from '../helpers';
 
@@ -10,7 +10,7 @@ describe('IncreasePaidStorage operation', () => {
   const successfulResult = [
     {
       kind: 'increase_paid_storage',
-      source: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+      source: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
       fee: '349',
       counter: '108123',
       gas_limit: '1000',
@@ -21,7 +21,7 @@ describe('IncreasePaidStorage operation', () => {
         balance_updates: [
           {
             kind: 'contract',
-            contract: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+            contract: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
             change: '-349',
             origin: 'block',
           },
@@ -37,7 +37,7 @@ describe('IncreasePaidStorage operation', () => {
           balance_updates: [
             {
               kind: 'contract',
-              contract: 'tz2RVendfy3AQGEBwrhXF4kwyRiJUpa7qLnG',
+              contract: 'mv2Sg8RFaNDiaHG6G3nsQevPxnheyNLBeLG2',
               change: '-500',
               origin: 'block',
             },

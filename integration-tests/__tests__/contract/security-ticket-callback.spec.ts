@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
 
 // TC-T-008: assume that the ticket is just a (pair address cty nat) and can "easily" be created via a callback.
@@ -22,7 +22,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                    IF_LEFT
                      { CONTRACT unit ;
                        IF_NONE { PUSH string "none" ; FAILWITH } {} ;
-                       PUSH mutez 0 ;
+                       PUSH mumav 0 ;
                        UNIT ;
                        TRANSFER_TOKENS ;
                        SWAP ;
@@ -54,7 +54,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                 CONTRACT %setToken (pair address string nat);
                 IF_NONE { FAIL } {};
                 SWAP;
-                PUSH mutez 0;
+                PUSH mumav 0;
                 DUG 1;
                 TRANSFER_TOKENS;
                 NIL operation;

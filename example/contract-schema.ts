@@ -1,8 +1,8 @@
-import { TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 async function example() {
-    const provider = 'https://ghostnet.ecadinfra.com';
+    const provider = 'https://basenet.rpc.mavryk.network';
     const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
     const tezos = new TezosToolkit(provider);
     tezos.setSignerProvider(signer);
@@ -15,7 +15,7 @@ async function example() {
         console.log(contract.methodsObject);
         console.log("Showing initial storage...");
         console.log(await contract.storage())
-        const op = await contract.methodsObject.mint({to: "tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys", value: 100}).send()
+        const op = await contract.methodsObject.mint({to: "mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg", value: 100}).send()
         console.log('Awaiting confirmation...');
         await op.confirmation();
         console.log(op.hash, op.includedInBlock);

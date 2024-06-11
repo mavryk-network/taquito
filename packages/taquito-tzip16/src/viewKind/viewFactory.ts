@@ -1,5 +1,5 @@
-import { RpcClientInterface } from '@taquito/rpc';
-import { ContractAbstraction, ContractProvider, Wallet, TzReadProvider } from '@taquito/taquito';
+import { RpcClientInterface } from '@mavrykdynamics/taquito-rpc';
+import { ContractAbstraction, ContractProvider, Wallet, TzReadProvider } from '@mavrykdynamics/taquito';
 import { ViewImplementation, ViewImplementationType } from '../metadata-interface';
 import { MichelsonStorageView } from './michelson-storage-view';
 

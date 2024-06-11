@@ -1,5 +1,5 @@
 import { TestScheduler } from 'rxjs/testing';
-import { BlockResponse } from '@taquito/rpc';
+import { BlockResponse } from '@mavrykdynamics/taquito-rpc';
 import { Context } from '../../src/context';
 import { WalletOperation } from '../../src/wallet';
 import { blockResponse } from './data';

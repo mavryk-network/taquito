@@ -305,7 +305,7 @@
             "sha512": "1693ab9af8a3ffe231a898d22cb3484b2beb3f030ab42f941c1e960f6deb89a1bf959c6c5c9067b9a02df732af1e258ea0e0c101000b3fa9303d65720b4a2fe3"
           },
           {
-            "path": "packages/taquito-michelson-encoder/dist/lib/tokens/comparable/mutez.js",
+            "path": "packages/taquito-michelson-encoder/dist/lib/tokens/comparable/mumav.js",
             "sha512": "65e44f25687c7afd7346ab0732c2d8359c46ef567a61984a75c0734d093de8251ed4a9424a3f6137e5a13f0e293f8831e801a1cfbbc27bd2dfced88339d38b44"
           },
           {
@@ -1065,7 +1065,7 @@
             "sha512": "bc8a09a1550381f1d2eaa75374f678e1c27febc482db147d679e46056741e287965ce45427426950ed0a5326ab0432507a664844b4277c4aeae1d3273eb241eb"
           },
           {
-            "path": "packages/taquito-michelson-encoder/dist/lib/tokens/comparable/mutez.js.map",
+            "path": "packages/taquito-michelson-encoder/dist/lib/tokens/comparable/mumav.js.map",
             "sha512": "5da59d85126ca23dbf7b2be5819d96440c4c812460a3464ea235ecc40cd4b8092ed465444fa4af07e6ebb9b02ad9ee4929d03be0c195a6f9c709baa282d39ad3"
           },
           {
@@ -2085,7 +2085,7 @@
             "sha512": "c0525196089b4a7a00fe80f942278161010aaacdec86aae3a7f71ec589dd7ba35a7971c454f8e7fda3f550c69f433350e918abb3db54646ed61e1e73b2b8fb16"
           },
           {
-            "path": "packages/taquito-michelson-encoder/dist/types/tokens/comparable/mutez.d.ts",
+            "path": "packages/taquito-michelson-encoder/dist/types/tokens/comparable/mumav.d.ts",
             "sha512": "f87157ac98a76cde0af8108c6698b701265f35a38746278856ec03d4b42b9295568230057322783675eed38d5f3ebdffd3dee0b68432b8defb99ba293fe4f904"
           },
           {
@@ -2495,14 +2495,14 @@
               "js"
             ],
             "moduleNameMapper": {
-              "^@taquito/rpc$": "<rootDir>/packages/taquito-rpc/src/taquito-rpc.ts",
-              "^@taquito/taquito$": "<rootDir>/packages/taquito/src/taquito.ts",
-              "^@taquito/michelson-encoder$": "<rootDir>/packages/taquito-michelson-encoder/src/taquito-michelson-encoder.ts",
-              "^@taquito/michel-codec$": "<rootDir>/packages/taquito-michel-codec/src/taquito-michel-codec.ts",
-              "^@taquito/http-utils$": "<rootDir>/packages/taquito-http-utils/src/taquito-http-utils.ts",
-              "^@taquito/utils$": "<rootDir>/packages/taquito-utils/src/taquito-utils.ts",
-              "^@taquito/signer$": "<rootDir>/packages/taquito-signer/src/taquito-signer.ts",
-              "^@taquito/local-forging$": "<rootDir>/packages/taquito-local-forging/src/taquito-local-forging.ts"
+              "^@mavrykdynamics/taquito-rpc$": "<rootDir>/packages/taquito-rpc/src/taquito-rpc.ts",
+              "^@mavrykdynamics/taquito$": "<rootDir>/packages/taquito/src/taquito.ts",
+              "^@mavrykdynamics/taquito-michelson-encoder$": "<rootDir>/packages/taquito-michelson-encoder/src/taquito-michelson-encoder.ts",
+              "^@mavrykdynamics/taquito-michel-codec$": "<rootDir>/packages/taquito-michel-codec/src/taquito-michel-codec.ts",
+              "^@mavrykdynamics/taquito-http-utils$": "<rootDir>/packages/taquito-http-utils/src/taquito-http-utils.ts",
+              "^@mavrykdynamics/taquito-utils$": "<rootDir>/packages/taquito-utils/src/taquito-utils.ts",
+              "^@mavrykdynamics/taquito-signer$": "<rootDir>/packages/taquito-signer/src/taquito-signer.ts",
+              "^@mavrykdynamics/taquito-local-forging$": "<rootDir>/packages/taquito-local-forging/src/taquito-local-forging.ts"
             },
             "coveragePathIgnorePatterns": [
               "/node_modules/",

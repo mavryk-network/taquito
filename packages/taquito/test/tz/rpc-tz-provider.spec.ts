@@ -16,11 +16,11 @@ describe('RpcTzProvider test', () => {
       mockRpcClient.getBalance.mockResolvedValue(new BigNumber('10000'));
 
       const provider = new RpcTzProvider(new Context(mockRpcClient as any));
-      const result = await provider.getBalance('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn');
+      const result = await provider.getBalance('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW');
       expect(result).toBeInstanceOf(BigNumber);
       expect(result.toString()).toStrictEqual('10000');
       expect(mockRpcClient.getBalance.mock.calls[0][0]).toEqual(
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
       );
     });
   });
@@ -34,10 +34,10 @@ describe('RpcTzProvider test', () => {
       mockRpcClient.getDelegate.mockResolvedValue('KT1G393LjojNshvMdf68XQD24Hwjn7xarzNe');
 
       const provider = new RpcTzProvider(new Context(mockRpcClient as any));
-      const result = await provider.getDelegate('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn');
+      const result = await provider.getDelegate('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW');
       expect(result).toStrictEqual('KT1G393LjojNshvMdf68XQD24Hwjn7xarzNe');
       expect(mockRpcClient.getDelegate.mock.calls[0][0]).toEqual(
-        'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn'
+        'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW'
       );
     });
   });
@@ -92,7 +92,7 @@ describe('RpcTzProvider test', () => {
       const context = new Context(mockRpcClient as any, mockSigner as any);
       context.forger = mockForger;
       const provider = new RpcTzProvider(context);
-      const result = await provider.activate('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m', '123');
+      const result = await provider.activate('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC', '123');
       expect(result.raw).toEqual({
         counter: 0,
         opOb: {
@@ -100,7 +100,7 @@ describe('RpcTzProvider test', () => {
           contents: [
             {
               kind: 'activate_account',
-              pkh: 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m',
+              pkh: 'mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC',
               secret: '123',
             },
           ],

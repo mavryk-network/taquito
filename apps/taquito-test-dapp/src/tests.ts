@@ -5,11 +5,11 @@ import {
   MichelsonMap,
   OpKind,
   UnitValue
-} from "@taquito/taquito";
-import type { ContractProvider } from "@taquito/taquito";
-import type { BeaconWallet } from "@taquito/beacon-wallet";
-import { stringToBytes, verifySignature } from "@taquito/utils";
-import { SigningType, type RequestSignPayloadInput } from "@airgap/beacon-types";
+} from "@mavrykdynamics/taquito";
+import type { ContractProvider } from "@mavrykdynamics/taquito";
+import type { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
+import { stringToBytes, verifySignature } from "@mavrykdynamics/taquito-utils";
+import { SigningType, type RequestSignPayloadInput } from "@mavrykdynamics/beacon-types";
 import { get } from "svelte/store";
 import type { TestSettings, TestResult } from "./types";
 import store from "./store";
@@ -40,7 +40,7 @@ const sendTez = async (Tezos: TezosToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
-      .transfer({ to: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb", amount: 0.1 })
+      .transfer({ to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv", amount: 0.1 })
       .send();
     await op.confirmation();
     opHash = op.opHash;
@@ -193,21 +193,21 @@ const batchApiTest = async (Tezos: TezosToolkit): Promise<TestResult> => {
       .batch([
         {
           kind: OpKind.TRANSACTION,
-          to: "tz1ZfrERcALBwmAqwonRXYVQBDT9BjNjBHJu",
+          to: "mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM",
           amount: 300000,
-          mutez: true
+          mumav: true
         },
         {
           kind: OpKind.TRANSACTION,
-          to: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb",
+          to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv",
           amount: 300000,
-          mutez: true
+          mumav: true
         },
         {
           kind: OpKind.TRANSACTION,
-          to: "tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6",
+          to: "mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU",
           amount: 300000,
-          mutez: true
+          mumav: true
         }
       ])
       .send();
@@ -410,7 +410,7 @@ const tryConfirmationObservable = async (
   let opHash = "";
   try {
     /*const op = await Tezos.wallet
-        .transfer({ to: "tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb", amount: 1 })
+        .transfer({ to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv", amount: 1 })
         .send();*/
     store.resetConfirmationObservableTest();
 
@@ -575,7 +575,7 @@ export const init = (
       id: "send-tez",
       name: "Send tez",
       description: "This test sends 0.1 tez to Alice's address",
-      documentation: 'https://taquito.io/docs/wallet_API#making-transfers',
+      documentation: 'https://taquito.mavryk.org/docs/wallet_API#making-transfers',
       keyword: 'transfer',
       run: () => sendTez(Tezos),
       showExecutionTime: false,
@@ -586,7 +586,7 @@ export const init = (
       id: "contract-call-simple-type",
       name: "Contract call with int",
       description: "This test calls a contract entrypoint and passes an int",
-      documentation: 'https://taquito.io/docs/smartcontracts',
+      documentation: 'https://taquito.mavryk.org/docs/smartcontracts',
       keyword: 'methods',
       run: () => sendInt(contract),
       showExecutionTime: false,
@@ -598,7 +598,7 @@ export const init = (
       name: "Contract call with (pair nat string)",
       description:
         "This test calls a contract entrypoint and passes a pair holding a nat and a string",
-      documentation: 'https://taquito.io/docs/smartcontracts/#choosing-between-the-methods-or-methodsobject-members-to-interact-with-smart-contracts',
+      documentation: 'https://taquito.mavryk.org/docs/smartcontracts/#choosing-between-the-methods-or-methodsobject-members-to-interact-with-smart-contracts',
       keyword: 'methodsObject',
       run: () => sendComplexParam(contract),
       showExecutionTime: false,
@@ -610,7 +610,7 @@ export const init = (
       name: "Contract call that fails",
       description:
         'This test calls a contract entrypoint that fails with the message "Fail entrypoint"',
-      documentation: 'https://taquito.io/docs/failwith_errors/',
+      documentation: 'https://taquito.mavryk.org/docs/failwith_errors/',
       keyword: 'failwith',
       run: () => callFail(contract),
       showExecutionTime: false,
@@ -621,7 +621,7 @@ export const init = (
       id: "contract-call-fail-with-int",
       name: "Contract call that fails with int",
       description: "This test calls a contract entrypoint that fails with an int",
-      documentation: 'https://taquito.io/docs/failwith_errors/',
+      documentation: 'https://taquito.mavryk.org/docs/failwith_errors/',
       keyword: 'failwith',
       run: () => callFaiWithInt(contract),
       showExecutionTime: false,
@@ -632,7 +632,7 @@ export const init = (
       id: "contract-call-fail-with-pair",
       name: "Contract call that fails with (pair int string)",
       description: "This test calls a contract entrypoint that fails with a pair",
-      documentation: 'https://taquito.io/docs/failwith_errors/',
+      documentation: 'https://taquito.mavryk.org/docs/failwith_errors/',
       keyword: 'failwith',
       run: () => callFaiWithPair(contract),
       showExecutionTime: false,
@@ -643,7 +643,7 @@ export const init = (
       id: "originate-success",
       name: "Originate smart contract with success",
       description: "This test successfully originates a smart contract",
-      documentation: 'https://taquito.io/docs/originate/#originate-the-contract-using-taquito',
+      documentation: 'https://taquito.mavryk.org/docs/originate/#originate-the-contract-using-taquito',
       keyword: 'originate',
       run: () => originateSuccess(Tezos),
       showExecutionTime: false,
@@ -654,7 +654,7 @@ export const init = (
       id: "batch-api",
       name: "Use the Batch API with a wallet",
       description: "This test sends 0.3 tez to 3 different addresses",
-      documentation: 'https://taquito.io/docs/batch_api/#--the-withtransfer-method',
+      documentation: 'https://taquito.mavryk.org/docs/batch_api/#--the-withtransfer-method',
       keyword: 'withTransfer',
       run: () => batchApiTest(Tezos),
       showExecutionTime: false,
@@ -665,7 +665,7 @@ export const init = (
       id: "batch-api-contract-call",
       name: "Use the Batch API for contract calls",
       description: "This test calls the same entrypoint 3 times in 1 transaction",
-      documentation: 'https://taquito.io/docs/batch_api/#--the-withcontractcall-method',
+      documentation: 'https://taquito.mavryk.org/docs/batch_api/#--the-withcontractcall-method',
       keyword: 'withcontractcall',
       run: () =>
         batchApiContractCallsTest(
@@ -681,7 +681,7 @@ export const init = (
       id: "sign-payload",
       name: "Sign the provided payload",
       description: "This test signs the payload provided by the user",
-      documentation: 'https://taquito.io/docs/signing/#generating-a-signature-with-beacon-sdk',
+      documentation: 'https://taquito.mavryk.org/docs/signing/#generating-a-signature-with-beacon-sdk',
       keyword: 'requestSignPayload',
       run: input => signPayload(input.text, wallet),
       showExecutionTime: false,
@@ -694,7 +694,7 @@ export const init = (
       name: "Sign and send the signature to the contract",
       description:
         "This test signs the provided payload and sends it to the contract to check it",
-      documentation: 'https://taquito.io/docs/signing/#sending-the-signature-to-a-smart-contract',
+      documentation: 'https://taquito.mavryk.org/docs/signing/#sending-the-signature-to-a-smart-contract',
       keyword: 'check_signature',
       run: input => signPayloadAndSend(input.text, wallet, contract),
       showExecutionTime: false,
@@ -706,7 +706,7 @@ export const init = (
       id: "sign-failingNoop",
       name: "Sign the provided payload in a failing noop",
       description: "This test signs the payload provided by the user wrapped in a failing noop",
-      documentation: 'https://taquito.io/docs/failing_noop',
+      documentation: 'https://taquito.mavryk.org/docs/failing_noop',
       keyword: 'failingNoop',
       run: input => signFailingNoop(input.text, Tezos),
       showExecutionTime: false,
@@ -719,7 +719,7 @@ export const init = (
       name: "Verify a provided signature",
       description:
         "This test signs the provided payload and uses Taquito to verify the signature",
-      documentation: 'https://taquito.io/docs/signing/#verifying-a-signature',
+      documentation: 'https://taquito.mavryk.org/docs/signing/#verifying-a-signature',
       keyword: 'verifySignature',
       run: input => verifySignatureWithTaquito(input.text, wallet, contract),
       showExecutionTime: false,
@@ -732,7 +732,7 @@ export const init = (
       name: "Set the transaction limits",
       description:
         "This test allows you to set the fee, storage limit and gas limit manually",
-      documentation: 'https://taquito.io/docs/transaction_limits/#setting-the-limits',
+      documentation: 'https://taquito.mavryk.org/docs/transaction_limits/#setting-the-limits',
       keyword: 'transaction limits',
       run: input =>
         setTransactionLimits(
@@ -751,7 +751,7 @@ export const init = (
       name: "Subscribe to confirmations",
       description:
         "This test updates the underlying contract and subscribes to 3 confirmations",
-      documentation: 'https://taquito.io/docs/confirmation_event_stream/#setting-up-the-observable',
+      documentation: 'https://taquito.mavryk.org/docs/confirmation_event_stream/#setting-up-the-observable',
       keyword: 'confirmationObservable',
       run: () =>
         tryConfirmationObservable(contract as ContractAbstraction<Wallet>),
@@ -773,7 +773,7 @@ export const init = (
       id: "sapling-shielded",
       name: "Sapling shielded transaction",
       description: "This test prepares and sends a shielded transaction to a Sapling pool",
-      documentation: 'https://taquito.io/docs/sapling/',
+      documentation: 'https://taquito.mavryk.org/docs/sapling/',
       keyword: 'sapling',
       run: () => saplingShielded(contract as ContractAbstraction<Wallet>),
       showExecutionTime: false,

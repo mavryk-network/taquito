@@ -24,7 +24,7 @@ import {
   UnsupportedPvmKindError,
 } from '../src/errors';
 import { bytesEncoder } from '../src/michelson/codec';
-import { InvalidHexStringError, InvalidPublicKeyError, InvalidKeyHashError } from '@taquito/core';
+import { InvalidHexStringError, InvalidPublicKeyError, InvalidKeyHashError } from '@mavrykdynamics/taquito-core';
 
 describe('Tests for Entrypoint functions and for encode and decoder error messages', () => {
   test('Entrypoint encoder', () => {
@@ -66,21 +66,21 @@ describe('Tests for Entrypoint functions and for encode and decoder error messag
   });
 
   test(`Verify publicKeyHashEncoder`, async () => {
-    const tz1 = publicKeyHashEncoder('tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY');
-    expect(tz1).toEqual('00c9fc72e8491bd2973e196f04ec6918ad5bcee22d');
-    const tz2 = publicKeyHashEncoder('tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD');
-    expect(tz2).toEqual('012ffebbf1560632ca767bc960ccdb84669d284c2c');
-    const tz3 = publicKeyHashEncoder('tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5');
-    expect(tz3).toEqual('026fde46af0356a0476dae4e4600172dc9309b3aa4');
-    const tz4 = publicKeyHashEncoder('tz4HQ8VeXAyrZMhES1qLMJAc9uAVXjbMpS8u');
-    expect(tz4).toEqual('035c14a7a05c10fc8b402fbcdd48dc8136236bf3c1');
-    expect(() => publicKeyHashEncoder('tz5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5')).toThrow(
+    const mv1 = publicKeyHashEncoder('mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq');
+    expect(mv1).toEqual('00c9fc72e8491bd2973e196f04ec6918ad5bcee22d');
+    const mv2 = publicKeyHashEncoder('mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ');
+    expect(mv2).toEqual('012ffebbf1560632ca767bc960ccdb84669d284c2c');
+    const mv3 = publicKeyHashEncoder('mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV');
+    expect(mv3).toEqual('026fde46af0356a0476dae4e4600172dc9309b3aa4');
+    const mv4 = publicKeyHashEncoder('mv4V7CnM8pzPbWHtiRRbvSLkaheyM4pEnMSC');
+    expect(mv4).toEqual('035c14a7a05c10fc8b402fbcdd48dc8136236bf3c1');
+    expect(() => publicKeyHashEncoder('mv5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5')).toThrow(
       InvalidKeyHashError
     );
     try {
-      publicKeyHashEncoder('tz5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5');
+      publicKeyHashEncoder('mv5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5');
     } catch (e) {
-      expect(e.message).toContain(`Invalid public key hash "tz5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"`);
+      expect(e.message).toContain(`Invalid public key hash "mv5WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5"`);
     }
   });
 
@@ -90,10 +90,10 @@ describe('Tests for Entrypoint functions and for encode and decoder error messag
     const empty = publicKeyHashesEncoder([]);
     expect(empty).toEqual('ff00000000');
     const tz = publicKeyHashesEncoder([
-      'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY',
-      'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
-      'tz4HQ8VeXAyrZMhES1qLMJAc9uAVXjbMpS8u',
+      'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq',
+      'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
+      'mv4V7CnM8pzPbWHtiRRbvSLkaheyM4pEnMSC',
     ]);
     expect(tz).toEqual(
       'ff0000005400c9fc72e8491bd2973e196f04ec6918ad5bcee22d012ffebbf1560632ca767bc960ccdb84669d284c2c026fde46af0356a0476dae4e4600172dc9309b3aa4035c14a7a05c10fc8b402fbcdd48dc8136236bf3c1'
@@ -120,9 +120,9 @@ describe('Tests for Entrypoint functions and for encode and decoder error messag
       )
     );
     expect(tz).toEqual([
-      'tz1e42w8ZaGAbM3gucbBy8iRypdbnqUj7oWY',
-      'tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD',
-      'tz3WXYtyDUNL91qfiCJtVUX746QpNv5i5ve5',
+      'mv1SRWEiswZXAcpv3wA3CxQT8qVaMDuwZNEq',
+      'mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ',
+      'mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV',
     ]);
     //
   });

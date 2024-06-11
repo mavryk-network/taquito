@@ -21,14 +21,14 @@ import {
   InvalidAddressError,
   InvalidContractAddressError,
   InvalidOperationKindError,
-} from '@taquito/core';
+} from '@mavrykdynamics/taquito-core';
 import {
   validateAddress,
   validateContractAddress,
   ValidationResult,
   invalidDetail,
-} from '@taquito/utils';
-import { OperationContentsFailingNoop } from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-utils';
+import { OperationContentsFailingNoop } from '@mavrykdynamics/taquito-rpc';
 
 export interface PKHOption {
   forceRefetch?: boolean;

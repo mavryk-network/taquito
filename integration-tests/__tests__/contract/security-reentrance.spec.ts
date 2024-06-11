@@ -1,4 +1,4 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
 
 /**
@@ -12,7 +12,7 @@ import { CONFIGS } from '../../config';
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
   const Tezos = lib;
   const weeklynet = protocol === Protocols.ProtoALpha ? test : test.skip;
-  const address = 'tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys';
+  const address = 'mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg';
 
   describe(`Test contracts using: ${rpc}`, () => {
     beforeEach(async () => {
@@ -23,9 +23,9 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       const vestingContractOp = await Tezos.contract.originate({
         balance: '8',
         code: `{ parameter
-            (or (pair %adminPayout (mutez %amount) (address %destination))
-                (pair %payout (mutez %amount) (address %destination))) ;
-          storage (pair (address %admin) (mutez %minLockedValue)) ;
+            (or (pair %adminPayout (mumav %amount) (address %destination))
+                (pair %payout (mumav %amount) (address %destination))) ;
+          storage (pair (address %admin) (mumav %minLockedValue)) ;
           code { UNPAIR ;
                  IF_LEFT
                    { SWAP ;
@@ -62,7 +62,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                      DIG 2 ;
                      CONS ;
                      PAIR } } }`,
-        init: `(Pair "tz1bwsEWCwSEXdRvnJxvegQZKeX5dj6oKEys" 4000000)`,
+        init: `(Pair "mv1QKLY6XJjb6uD9vdXmtW6aUfP4C7h66aTg" 4000000)`,
       });
 
       await vestingContractOp.confirmation();
@@ -80,11 +80,11 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
                storage unit ;
                code { CDR ;
                  PUSH address "${vestingContract.address}" ;
-                    CONTRACT %payout (pair (mutez %amount) (address %destination)) ;
+                    CONTRACT %payout (pair (mumav %amount) (address %destination)) ;
                       IF_NONE { PUSH string "none" ; FAILWITH } {} ;
-                      PUSH mutez 0 ;
+                      PUSH mumav 0 ;
                       PUSH address "${address}" ;
-                      PUSH mutez 3000000 ;
+                      PUSH mumav 3000000 ;
                       PAIR ;
                       TRANSFER_TOKENS ;
                       SWAP ;

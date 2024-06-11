@@ -13,17 +13,17 @@ import TabItem from '@theme/TabItem';
 The following instructions assume you have a project already created, and you have `npm` installed and operable.
 
 ```bash
-npm install @taquito/taquito
+npm install @mavrykdynamics/taquito
 ```
 
 ## Import the library in your project
 
-### Import `TezosToolkit` from `@taquito/taquito` and instantiate it
+### Import `TezosToolkit` from `@mavrykdynamics/taquito` and instantiate it
 
 The constructor of the `TezosToolkit` class takes an RPC URL as a parameter. It can be a string or a [RpcClient](rpc_package.md) object. A list of community-run nodes can be accessed [here](rpc_nodes.md#list-of-community-run-nodes).
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 ```
@@ -39,8 +39,8 @@ Taquito's Contract API supports different signers. There is no default signer co
 You can set which signer you wish to use as follows:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
-import { RemoteSigner } from '@taquito/remote-signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { RemoteSigner } from '@mavrykdynamics/taquito-remote-signer';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
@@ -56,12 +56,12 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 ### Get the current Tezos balance for an address
 
 ```js live noInline
-// import { TezosToolkit } from '@taquito/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.tz
-  .getBalance('tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY')
-  .then((balance) => println(`${balance.toNumber() / 1000000} ꜩ`))
+  .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
+  .then((balance) => println(`${balance.toNumber() / 1000000} ṁ`))
   .catch((error) => println(JSON.stringify(error)));
 ```
 
@@ -76,8 +76,8 @@ This feature will import your private key in memory and sign operations using th
 If you have a private key, you can import it as follows:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner, importKey } from '@taquito/signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner, importKey } from '@mavrykdynamics/taquito-signer';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 
@@ -102,9 +102,9 @@ values={[
 
 ```js live noInline
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Transfering ${amount} ꜩ to ${address}...`);
+println(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
@@ -120,9 +120,9 @@ Tezos.contract
 
 ```js live noInline wallet
 const amount = 2;
-const address = 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY';
+const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
-println(`Transfering ${amount} ꜩ to ${address}...`);
+println(`Transfering ${amount} ṁ to ${address}...`);
 Tezos.wallet
   .transfer({ to: address, amount: amount })
   .send()
@@ -190,6 +190,6 @@ Tezos.wallet
   </TabItem>
 </Tabs>
 
-[boilerplate]: https://github.com/ecadlabs/taquito-boilerplate
+[boilerplate]: https://github.com/mavryk-network/mavryk-taquito-boilerplate
 [smart_contract_source]: https://ide.ligolang.org/p/2sVshnZ_Aat5pIuUypIBsQ
-[smart_contract_on_better_call_dev]: https://better-call.dev/ghostnet/KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7/operations
+[smart_contract_on_better_call_dev]: https://better-call.dev/basenet/KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7/operations

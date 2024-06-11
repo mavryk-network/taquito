@@ -87,10 +87,10 @@ export const fa2ForTokenMetadataView = [
                                     {
                                         prim: 'pair',
                                         args: [
-                                            { prim: 'mutez', annots: ['%amount'] },
+                                            { prim: 'mumav', annots: ['%amount'] },
                                             { prim: 'address', annots: ['%destination'] }
                                         ],
-                                        annots: ['%mutez_transfer']
+                                        annots: ['%mumav_transfer']
                                     },
                                     { prim: 'address', annots: ['%set_administrator'] }
                                 ]
@@ -445,7 +445,7 @@ export const fa2ForTokenMetadataView = [
                                                     { prim: 'NIL', args: [{ prim: 'operation' }] },
                                                     { prim: 'DIG', args: [{ int: '2' }] },
                                                     { prim: 'CDR' },
-                                                    { prim: 'PUSH', args: [{ prim: 'mutez' }, { int: '0' }] },
+                                                    { prim: 'PUSH', args: [{ prim: 'mumav' }, { int: '0' }] },
                                                     { prim: 'DIG', args: [{ int: '3' }] },
                                                     { prim: 'TRANSFER_TOKENS' },
                                                     { prim: 'CONS' }

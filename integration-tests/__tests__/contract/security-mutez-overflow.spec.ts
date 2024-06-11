@@ -1,8 +1,8 @@
-import { Protocols } from '@taquito/taquito';
+import { Protocols } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
 
 /**
- * TC-005: Example of mutez overflow. If overflows are not prevented the contract is unusable.
+ * TC-005: Example of mumav overflow. If overflows are not prevented the contract is unusable.
  * Any tokens locked in the contract will be irretrievable, etc.
  */
 
@@ -15,14 +15,14 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       await setup();
     });
 
-    weeklynet('Verify mutez overflow example', async () => {
+    weeklynet('Verify mumav overflow example', async () => {
       try {
         const op = await Tezos.contract.originate({
           code: `        { parameter unit ;
-            storage mutez ;
+            storage mumav ;
             code {
                    DROP;
-                   PUSH @mutez mutez 1000000000;
+                   PUSH @mumav mumav 1000000000;
                    PUSH nat 10000000000;
                    MUL;
                    NIL operation ;

@@ -1,11 +1,11 @@
 import { CONFIGS } from '../../config';
-import { DefaultContractType, Protocols } from "@taquito/taquito";
-import { RpcClientCache, RpcClient, RPCRunViewParam, RPCRunScriptViewParam, PendingOperationsV1, PendingOperationsV2, PvmKind } from '@taquito/rpc';
-import { encodeExpr } from '@taquito/utils';
-import { Schema } from '@taquito/michelson-encoder';
+import { DefaultContractType, Protocols } from "@mavrykdynamics/taquito";
+import { RpcClientCache, RpcClient, RPCRunViewParam, RPCRunScriptViewParam, PendingOperationsV1, PendingOperationsV2, PvmKind } from '@mavrykdynamics/taquito-rpc';
+import { encodeExpr } from '@mavrykdynamics/taquito-utils';
+import { Schema } from '@mavrykdynamics/taquito-michelson-encoder';
 import { tokenBigmapCode, tokenBigmapStorage } from '../../data/token_bigmap';
 import { ticketCode, ticketStorage } from '../../data/code_with_ticket';
-import { ProtoGreaterOrEqual } from '@taquito/michel-codec';
+import { ProtoGreaterOrEqual } from '@mavrykdynamics/taquito-michel-codec';
 
 CONFIGS().forEach(
   ({
@@ -21,7 +21,7 @@ CONFIGS().forEach(
   }) => {
     const Tezos = lib;
     const unrestrictedRPCNode = rpc.endsWith("ecadinfra.com") ? test.skip : test;
-    const oxfordAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.ProxfordY) ? test : test.skip;
+    const atlasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtAtLas) ? test : test.skip;
 
     let ticketContract: DefaultContractType;
 
@@ -117,7 +117,7 @@ CONFIGS().forEach(
             ],
             annots: ['%ledger'],
           });
-          const { key, type } = schema.EncodeBigMapKey('tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP');
+          const { key, type } = schema.EncodeBigMapKey('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD');
           const { packed } = await rpcClient.packData({ data: key, type });
           const contract = await Tezos.contract.at(knownBigMapContract);
           const storage: any = await contract.storage();
@@ -234,7 +234,7 @@ CONFIGS().forEach(
               {
                 kind: 'origination',
                 counter: '1',
-                source: 'tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn',
+                source: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
                 fee: '10000',
                 gas_limit: '10',
                 storage_limit: '10',
@@ -388,7 +388,7 @@ CONFIGS().forEach(
             entrypoint: 'getBalance',
             chain_id: chainId,
             input: {
-              string: 'tz1btkXVkVFWLgXa66sbRJa8eeUSwvQFX4kP'
+              string: 'mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD'
             }
           };
 
@@ -470,7 +470,7 @@ CONFIGS().forEach(
           expect(pendingOperations.branch_refused).toBeInstanceOf(Array);
         });
 
-        oxfordAndAlpha('Verify that rpcClient.getPendingOperations v2 will retrieve the pending operations in mempool with property validated', async () => {
+        atlasAndAlpha('Verify that rpcClient.getPendingOperations v2 will retrieve the pending operations in mempool with property validated', async () => {
           const pendingOperations = await rpcClient.getPendingOperations({ version: '2' }) as PendingOperationsV2;
           expect(pendingOperations).toBeDefined();
           expect(pendingOperations.validated).toBeInstanceOf(Array);

@@ -13,7 +13,7 @@ export const saplingLiveCodeContract =  `{ parameter (list (sapling_transaction 
                   SWAP ;
                   UNPAIR ;
                   DUP ;
-                  DIP { ABS ; PUSH mutez 1 ; MUL } ;
+                  DIP { ABS ; PUSH mumav 1 ; MUL } ;
                   { GT ;
                     IF
                       { DIP 2
@@ -23,12 +23,12 @@ export const saplingLiveCodeContract =  `{ parameter (list (sapling_transaction 
                       { DIP 2 { SWAP } ;
                         DIP { SWAP } ;
                         SWAP ;
-                        SUB_MUTEZ ;
+                        SUB_MUMAV ;
                         { IF_NONE { { UNIT ; FAILWITH } } {} } ;
                         DIP 2
                              { SIZE ; PUSH nat 0 ; { { COMPARE ; EQ } ; IF {} { { UNIT ; FAILWITH } } } } ;
                         SWAP } } } ;
-           DIP { PUSH mutez 0 ; { { COMPARE ; EQ } ; IF {} { { UNIT ; FAILWITH } } } } ;
+           DIP { PUSH mumav 0 ; { { COMPARE ; EQ } ; IF {} { { UNIT ; FAILWITH } } } } ;
            SWAP ;
            PAIR } }
         `

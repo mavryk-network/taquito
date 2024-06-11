@@ -1,5 +1,5 @@
-import { ProposalsOperation, ForgedBytes } from '@taquito/taquito';
-import { OperationContentsAndResult } from '@taquito/rpc';
+import { ProposalsOperation, ForgedBytes } from '@mavrykdynamics/taquito';
+import { OperationContentsAndResult } from '@mavrykdynamics/taquito-rpc';
 import { defaultConfigConfirmation } from '../../src/context';
 
 describe('Proposals operation', () => {
@@ -10,7 +10,7 @@ describe('Proposals operation', () => {
   const successfulResult = [
     {
       kind: 'proposals',
-      source: 'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      source: 'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       period: 2,
       proposals: ['PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg'],
     },
@@ -36,20 +36,20 @@ describe('Proposals operation', () => {
     const op = new ProposalsOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       {} as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext
     );
 
-    expect(op.source).toEqual('tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU');
+    expect(op.source).toEqual('mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm');
   });
 
   it('should return period of Proposals operation', () => {
     const op = new ProposalsOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       {} as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext
@@ -62,7 +62,7 @@ describe('Proposals operation', () => {
     const op = new ProposalsOperation(
       'ooBghN2ok5EpgEuMqYWqvfwNLBiK9eNFoPai91iwqk2nRCyUKgE',
       { proposals: ['PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg'] } as any,
-      'tz1YPSCGWXwBdTncK2aCctSZAXWvGsGwVJqU',
+      'mv1J9yX7MXY2E4rLTTtSfJo9Y8dmHghy7zDm',
       fakeForgedBytes,
       successfulResult,
       fakeContext

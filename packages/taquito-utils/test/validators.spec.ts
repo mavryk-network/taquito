@@ -14,30 +14,30 @@ import {
 
 describe('validateAddress', () => {
   it('Validate address properly', () => {
-    expect(validateAddress('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual(ValidationResult.VALID);
+    expect(validateAddress('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual(ValidationResult.VALID);
     expect(validateAddress('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D')).toEqual(ValidationResult.VALID);
-    expect(validateAddress('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m')).toEqual(ValidationResult.VALID);
-    expect(validateAddress('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN')).toEqual(ValidationResult.VALID);
+    expect(validateAddress('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC')).toEqual(ValidationResult.VALID);
+    expect(validateAddress('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL')).toEqual(ValidationResult.VALID);
     expect(validateAddress('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D%test')).toEqual(
       ValidationResult.VALID
     );
-    expect(validateAddress('tz4EECtMxAuJ9UDLaiMZH7G1GCFYUWsj8HZn')).toEqual(ValidationResult.VALID);
+    expect(validateAddress('mv4iZavVJgwFdqwLdeaV3Vj1Km5rA55ocbjW')).toEqual(ValidationResult.VALID);
 
     // Invalid checksum
-    expect(validateAddress('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hm')).toEqual(
+    expect(validateAddress('mv1XAMJySucFtqRVW5M2Lh7rQEPUa3jtPMUu')).toEqual(
       ValidationResult.INVALID_CHECKSUM
     );
     expect(validateAddress('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7sp')).toEqual(
       ValidationResult.INVALID_CHECKSUM
     );
-    expect(validateAddress('tz1')).toEqual(ValidationResult.INVALID_CHECKSUM);
-    expect(validateAddress('tz2')).toEqual(ValidationResult.INVALID_CHECKSUM);
-    expect(validateAddress('tz3')).toEqual(ValidationResult.INVALID_CHECKSUM);
+    expect(validateAddress('mv1')).toEqual(ValidationResult.INVALID_CHECKSUM);
+    expect(validateAddress('mv2')).toEqual(ValidationResult.INVALID_CHECKSUM);
+    expect(validateAddress('mv3')).toEqual(ValidationResult.INVALID_CHECKSUM);
     expect(validateAddress('KT1')).toEqual(ValidationResult.INVALID_CHECKSUM);
-    expect(validateAddress('tz4')).toEqual(ValidationResult.INVALID_CHECKSUM);
+    expect(validateAddress('mv4')).toEqual(ValidationResult.INVALID_CHECKSUM);
     expect(validateAddress('test')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateAddress('')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
-    expect(validateAddress('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9mAAAAAAAAAA')).toEqual(
+    expect(validateAddress('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFCAAAAAAAAAA')).toEqual(
       ValidationResult.INVALID_CHECKSUM
     );
 
@@ -50,22 +50,22 @@ describe('validateAddress', () => {
 
 describe('validateSmartRollupAddress', () => {
   it('Validate smart rollup address properly', () => {
-    expect(validateSmartRollupAddress('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual(
+    expect(validateSmartRollupAddress('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(validateSmartRollupAddress('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateSmartRollupAddress('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m')).toEqual(
+    expect(validateSmartRollupAddress('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateSmartRollupAddress('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN')).toEqual(
+    expect(validateSmartRollupAddress('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(validateSmartRollupAddress('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D%test')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateSmartRollupAddress('tz4EECtMxAuJ9UDLaiMZH7G1GCFYUWsj8HZn')).toEqual(
+    expect(validateSmartRollupAddress('mv4iZavVJgwFdqwLdeaV3Vj1Km5rA55ocbjW')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
 
@@ -90,9 +90,9 @@ describe('validateChain', () => {
     expect(validateChain('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7sp')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateChain('tz1')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
-    expect(validateChain('tz2')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
-    expect(validateChain('tz3')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
+    expect(validateChain('mv1')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
+    expect(validateChain('mv2')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
+    expect(validateChain('mv3')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateChain('KT1')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateChain('test')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
     expect(validateChain('')).toEqual(ValidationResult.NO_PREFIX_MATCHED);
@@ -101,12 +101,12 @@ describe('validateChain', () => {
 
 describe('validateKeyHash', () => {
   it('Validate key hash properly', () => {
-    expect(validateKeyHash('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual(ValidationResult.VALID);
+    expect(validateKeyHash('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual(ValidationResult.VALID);
     expect(validateKeyHash('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateKeyHash('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m')).toEqual(ValidationResult.VALID);
-    expect(validateKeyHash('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN')).toEqual(ValidationResult.VALID);
+    expect(validateKeyHash('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC')).toEqual(ValidationResult.VALID);
+    expect(validateKeyHash('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL')).toEqual(ValidationResult.VALID);
   });
 });
 
@@ -115,13 +115,13 @@ describe('validateContractAddress', () => {
     expect(validateContractAddress('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D')).toEqual(
       ValidationResult.VALID
     );
-    expect(validateContractAddress('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual(
+    expect(validateContractAddress('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateContractAddress('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m')).toEqual(
+    expect(validateContractAddress('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateContractAddress('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN')).toEqual(
+    expect(validateContractAddress('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(
@@ -135,16 +135,16 @@ describe('validateContractAddress', () => {
 
 describe('validatePublicKey', () => {
   it('Validate public key properly', () => {
-    expect(validatePublicKey('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual(
+    expect(validatePublicKey('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(validatePublicKey('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validatePublicKey('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m')).toEqual(
+    expect(validatePublicKey('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validatePublicKey('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN')).toEqual(
+    expect(validatePublicKey('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(validatePublicKey('edpkvS5QFv7KRGfa3b87gg9DBpxSm3NpSwnjhUjNBQrRUUR66F7C9g')).toEqual(
@@ -184,16 +184,16 @@ describe('validateSignature', () => {
     expect(validateSignature('sigUdRdXYCXW14xqT8mFTMkX4wSmDMBmcW1Vuz1vanGWqYT')).toEqual(
       ValidationResult.INVALID_CHECKSUM
     );
-    expect(validateSignature('tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn')).toEqual(
+    expect(validateSignature('mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(validateSignature('KT1Fe71jyjrxFg9ZrYqtvaX7uQjcLo7svE4D')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateSignature('tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m')).toEqual(
+    expect(validateSignature('mv2ZLWuozgeXpSsauhhLYroGjdjCHuqTSwFC')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
-    expect(validateSignature('tz3VEZ4k6a4Wx42iyev6i2aVAptTRLEAivNN')).toEqual(
+    expect(validateSignature('mv3Fqu4nnPcvRQREkhxCjVJfznU7JfiQ3CGL')).toEqual(
       ValidationResult.NO_PREFIX_MATCHED
     );
     expect(validateSignature('edpkvS5QFv7KRGfa3b87gg9DBpxSm3NpSwnjhUjNBQrRUUR66F7C9g')).toEqual(
@@ -241,34 +241,7 @@ describe('validateOperation', () => {
 
 describe('validateProtocol', () => {
   it('Validate Protocol Hash properly', () => {
-    expect(validateProtocol('Pt24m4xiPbLDhVgVfABUjirbmda3yohdN82Sp9FeuAXJ4eV9otd')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsBABY5HQTSkA4297zNHfsZNKtxULfL18y95qb3m53QJiXGmrbU')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsBabyM1eUXZseaJdmXFApDSBqj8YBfwELoxZHHW77EMcAbbwAS')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsDELPH1Kxsxt8f9eWbxQeRxkjfbxoqM52jvs5Y5fBxWWh4ifpo')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsFLorenaUUuikDWvMDr6fGBRG8kt3e3D3fHoXK1j1BFRxeSH4i')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PtGRANADsDU8R9daYKAgWnQYAJ64omN1o3KMGVCykShA97vQbvV')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PtHangz2aRngywmSRGGvrcTyMbbdpWdpFKuS4uMWxg2RaH9i1qx')).toEqual(
-      ValidationResult.VALID
-    );
-    expect(validateProtocol('PsiThaCaT47Zboaw71QWScM8sXeMM7bbQFncK9FLqYc6EKdpjVP')).toEqual(
+    expect(validateProtocol('PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp')).toEqual(
       ValidationResult.VALID
     );
     expect(validateProtocol('ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK')).toEqual(

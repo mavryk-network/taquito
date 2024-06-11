@@ -27,7 +27,7 @@ The main benefit of this workflow is that the user does not have to trust a dApp
 The first thing to do is to use the wallet API is to install it. You just need to install the Taquito package to use the wallet API:
 
 ```
-npm install @taquito/taquito @taquito/beacon-wallet @temple-wallet/dapp
+npm install @mavrykdynamics/taquito @mavrykdynamics/taquito-beacon-wallet @temple-wallet/dapp
 ```
 
 A separate step from setting up the wallet in the dApp code as a developer is to set up the wallet as the user. This step is different for each wallet (e.g., Temple needs the user to install a browser extension). Some wallets are browser extensions, while others are mobile apps or web wallets.
@@ -40,12 +40,12 @@ After installing the Taquito package in your dapp project and the package contai
 To start, let's import the Tezos Toolkit from Taquito and create a new instance of the Tezos singleton:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
 ```
 
-This object exposes different methods we are going to use to set up our wallet. TZIP-10 has become the official standard of communication and interaction between wallets and dapps, so let's start with the `@taquito/beacon-wallet` package that implements this standard!
+This object exposes different methods we are going to use to set up our wallet. TZIP-10 has become the official standard of communication and interaction between wallets and dapps, so let's start with the `@mavrykdynamics/taquito-beacon-wallet` package that implements this standard!
 
 ### - TZIP-10 wallet
 
@@ -54,7 +54,7 @@ The `BeaconWallet` is a package implementing the TZIP-10 standard that describes
 First, the `BeaconWallet` class must be imported:
 
 ```js
-import { BeaconWallet } from '@taquito/beacon-wallet';
+import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 ```
 
 Then, you can start initializing the wallet:
@@ -62,8 +62,8 @@ Then, you can start initializing the wallet:
 ```js
 const options = {
   name: 'MyAwesomeDapp',
-  iconUrl: 'https://taquito.io/img/favicon.svg',
-  network: { type: 'ghostnet' },
+  iconUrl: 'https://taquito.mavryk.org/img/favicon.svg',
+  network: { type: 'basenet' },
   eventHandlers: {
     PERMISSION_REQUEST_SUCCESS: {
       handler: async (data) => {
@@ -76,7 +76,7 @@ const options = {
 const wallet = new BeaconWallet(options);
 ```
 
-The necessary bare minimum to instantiate the wallet is an object with a `name` property that contains the name of your dapp and the network you want it to point to. In this case, we choose to point it to `ghostnet`. However, the Beacon wallet allows you to customize your dapp responses to different events. In the example above, instead of getting the default Beacon pop-up after the user connects the wallet, it will display the available data in the console. You can use whatever solution you prefer for feedback. You can find a list of all the default handlers [in the beacon-sdk Github repo](https://github.com/airgap-it/beacon-sdk/blob/master/packages/beacon-dapp/src/events.ts).
+The necessary bare minimum to instantiate the wallet is an object with a `name` property that contains the name of your dapp and the network you want it to point to. In this case, we choose to point it to `basenet`. However, the Beacon wallet allows you to customize your dapp responses to different events. In the example above, instead of getting the default Beacon pop-up after the user connects the wallet, it will display the available data in the console. You can use whatever solution you prefer for feedback. You can find a list of all the default handlers [in the beacon-sdk Github repo](https://github.com/airgap-it/beacon-sdk/blob/master/packages/beacon-dapp/src/events.ts).
 
 The `enableMetrics` property is an optional parameter that allows you to enable or disable the collection of metrics. It also allows the user to report bugs via a link in the wallet pop-up.
 
@@ -95,7 +95,7 @@ Please check out the section [Subscribing to events](#subscribing-to-events) to 
 
 In previous versions of Beacon, you were able to set the `network` property when doing `requestPermissions()`. This behavior was removed from Beacon, and you must now set the network when instantiating the wallet.
 
-You can choose among `mainnet`, `oxfordnet`, `ghostnet` and `custom` to set up the network. Once the permissions have been configured, you can get the user's address by calling the `getPKH` method on the wallet:
+You can choose among `mainnet`, `atlasnet`, `basenet` and `custom` to set up the network. Once the permissions have been configured, you can get the user's address by calling the `getPKH` method on the wallet:
 
 ```js
 const userAddress = await wallet.getPKH();
@@ -118,7 +118,7 @@ Tezos.setProvider({ wallet });
 Make sure you have the Beacon browser extension installed (the extension offers minimal features, the BeaconWallet works with any wallet implementing the TZIP-10 standard), the AirGap wallet on your phone, or any TZIP-10 ready wallet like Temple or Kukai.
 
 ```js live noInline wallet
-// import { BeaconWallet } from '@taquito/beacon-wallet';
+// import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 // const options = { name: 'exampleWallet', enableMetrics: true };
 // const wallet = new BeaconWallet(options);
 
@@ -182,7 +182,7 @@ const wallet = new TempleWallet('MyAwesomeDapp');
 The class constructor takes one parameter, the name of your dapp (this will be used later in the transaction confirmation pop-up). After the instantiation, we can connect the wallet by calling the `connect` method:
 
 ```js
-await wallet.connect('mainnet' | 'oxfordnet' | 'ghostnet' | 'mondaynet' | 'sandbox');
+await wallet.connect('mainnet' | 'atlasnet' | 'basenet' | 'sandbox');
 ```
 
 (Temple used to be called Thanos and some Taquito code still uses the name Thanos.)
@@ -218,7 +218,7 @@ TempleWallet.isAvailable()
   .then(() => {
     const myWallet = new TempleWallet('MyAwesomeDapp');
     myWallet
-      .connect('ghostnet')
+      .connect('basenet')
       .then(() => {
         Tezos.setWalletProvider(myWallet);
         return myWallet.getPKH();
@@ -238,7 +238,7 @@ Although it is possible to transfer tokens directly from the wallets, Taquito ca
 
 ```js live noInline wallet
 Tezos.wallet
-  .transfer({ to: 'tz1NhNv9g7rtcjyNsH8Zqu79giY5aTqDDrzB', amount: 0.2 })
+  .transfer({ to: 'mv1JnsMA5ArZr926mKNzQf4TeTpibVWfpEx3', amount: 0.2 })
   .send()
   .then((op) => {
     println(`Hash: ${op.opHash}`);
@@ -256,7 +256,7 @@ Tezos.wallet
   });
 ```
 
-The `transfer` method takes an object with only two required properties: the `to` property that indicates the recipient of the transaction and the `amount` property for the number of tokens that should be sent. Unlike the Contract API, the transfer must be _sent_ by using the `.send` method, which returns a promise that will resolve with an instance of the [**TransactionWalletOperation class**](https://taquito.io/typedoc/classes/_taquito_taquito.transactionwalletoperation.html). This instance holds, among others, the transaction hash under the `opHash` property. You can then call the `.confirmation()` method and pass as a parameter the number of confirmations you want to wait (one by default). Once confirmed, the returned promise is resolved to an object with a `complete` property set to true if the operation has been confirmed.
+The `transfer` method takes an object with only two required properties: the `to` property that indicates the recipient of the transaction and the `amount` property for the number of tokens that should be sent. Unlike the Contract API, the transfer must be _sent_ by using the `.send` method, which returns a promise that will resolve with an instance of the [**TransactionWalletOperation class**](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.transactionwalletoperation.html). This instance holds, among others, the transaction hash under the `opHash` property. You can then call the `.confirmation()` method and pass as a parameter the number of confirmations you want to wait (one by default). Once confirmed, the returned promise is resolved to an object with a `complete` property set to true if the operation has been confirmed.
 
 ### - Transfer to smart contracts
 
@@ -321,7 +321,7 @@ In the case of multiple arguments (for example if the entrypoint expects a pair)
 Tezos.wallet
   .at('KT1SHiNUNmqBFGNysX9pmh1DC2tQ5pGmRagC')
   .then((contract) =>
-    contract.methodsObject.addName({0: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb', 1: 'Alice'}).send()
+    contract.methodsObject.addName({0: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', 1: 'Alice'}).send()
   )
   .then((op) => {
     println(`Hash: ${op.opHash}`);
@@ -361,7 +361,7 @@ interface SendParams {
   gasLimit?: number;
   amount: number;
   source?: string;
-  mutez?: boolean;
+  mumav?: boolean;
 }
 ```
 
@@ -375,11 +375,11 @@ If you choose to use the parameters, only one property is mandatory: the `amount
 
 - `source`: a string indicating the source of the transaction
 
-- `mutez`: if set to `true`, it indicates that the amount provided is in mutez
+- `mumav`: if set to `true`, it indicates that the amount provided is in mumav
 
 ### - Operation hash and confirmation
 
-The `.send()` method returns an instance of the [`TransactionWalletOperation`](https://taquito.io/typedoc/classes/_taquito_taquito.transactionwalletoperation.html) class with different properties and methods you can use to gather information about the transaction. Among them, there are two properties and one method that you will use most of the time when using Taquito:
+The `.send()` method returns an instance of the [`TransactionWalletOperation`](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.transactionwalletoperation.html) class with different properties and methods you can use to gather information about the transaction. Among them, there are two properties and one method that you will use most of the time when using Taquito:
 
 1. `.opHash`: this property holds the hash of the current transaction. It can be useful for debugging purposes or checking the status of the transaction in a block explorer.
 
@@ -408,7 +408,7 @@ const code = contract.script.code;
 If you get the contract code through this method, it will already be properly formatted for origination. If you have a `.tz` file, you can use the `michel-codec` package to encode it properly:
 
 ```js
-import { Parser } from '@taquito/michel-codec';
+import { Parser } from '@mavrykdynamics/taquito-michel-codec';
 const parser = new Parser();
 const parsedMichelson = parser.parseScript(michelsonCode);
 ```
@@ -501,7 +501,7 @@ If you use the Ligo programming language and the storage is a record, you can si
 {
   code: parsedMichelson,
   storage: {
-    owner: "tz1...",
+    owner: "mv1...",
     counter: 2,
     paused: false
   }
@@ -509,17 +509,17 @@ If you use the Ligo programming language and the storage is a record, you can si
 
 ```
 
-In case of a map or a big map, you must import `MichelsonMap` from `@taquito/taquito` and use it to initialize the map:
+In case of a map or a big map, you must import `MichelsonMap` from `@mavrykdynamics/taquito` and use it to initialize the map:
 
 ```js
 
-import { MichelsonMap } from "@taquito/taquito";
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 
 {
   code: parsedMichelson,
   storage: {
     ledger: new MichelsonMap(),
-    owner: "tz1..."
+    owner: "mv1..."
   }
 }
 
@@ -529,17 +529,17 @@ You can even initialize your map/big map with key/value pairs if you wish:
 
 ```js
 
-import { MichelsonMap } from "@taquito/taquito";
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 
 {
   code: parsedMichelson,
   storage: {
-    // ledger must be of type (map string int/nat/mutez) or (big_map string int/nat/mutez)
+    // ledger must be of type (map string int/nat/mumav) or (big_map string int/nat/mumav)
     ledger: MichelsonMap.fromLiteral({
       alice: 25,
       bob: 16
     }),
-    owner: "tz1..."
+    owner: "mv1..."
   }
 }
 
@@ -578,7 +578,7 @@ Taquito makes interacting with smart contracts very easy! With only the smart co
 First, you need to import the Tezos singleton object or instantiate the Tezos toolkit and configure the RPC host you want to connect to:
 
 ```js
-import { Tezos } from '@taquito/taquito';
+import { Tezos } from '@mavrykdynamics/taquito';
 
 Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 ```
@@ -586,7 +586,7 @@ Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 _or_
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit();
 
@@ -603,7 +603,7 @@ This returns the contract abstraction that you can now use to interact with the 
 
 ### - Contract properties and methods
 
-Now, let's observe the contract abstraction that we obtained. It's an instance of the [ContractAbstraction class](https://taquito.io/typedoc/classes/_taquito_taquito.contractabstraction.html) with different properties and methods:
+Now, let's observe the contract abstraction that we obtained. It's an instance of the [ContractAbstraction class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.contractabstraction.html) with different properties and methods:
 
 _Properties:_
 
@@ -611,9 +611,9 @@ _Properties:_
 
 2. `methodsObject`: an object whose methods are named after the contract entrypoints (if the entrypoints are not annotated, the methods will be numbers).
 
-3. `parameterSchema`: an instance of the [Parameter class](https://github.com/ecadlabs/taquito/blob/d424fa178a95675920b21c8e8c228fbe0e7df36e/packages/taquito-michelson-encoder/src/schema/parameter.ts) with two useful methods: `hasAnnotation` tells you if the entrypoints are annotated and `isMultipleEntryPoint` tells you if the contract has multiple entrypoints (if _false_, you can interact with the contract with `.methodsObject.default()`).
+3. `parameterSchema`: an instance of the [Parameter class](https://github.com/mavryk-network/mavryk-taquito/blob/d424fa178a95675920b21c8e8c228fbe0e7df36e/packages/taquito-michelson-encoder/src/schema/parameter.ts) with two useful methods: `hasAnnotation` tells you if the entrypoints are annotated and `isMultipleEntryPoint` tells you if the contract has multiple entrypoints (if _false_, you can interact with the contract with `.methodsObject.default()`).
 
-4. `schema`: an instance of the [Schema class](https://github.com/ecadlabs/taquito/blob/d424fa178a95675920b21c8e8c228fbe0e7df36e/packages/taquito-michelson-encoder/src/schema/storage.ts#L15) with various methods to get more information about the storage or the structure of the contract.
+4. `schema`: an instance of the [Schema class](https://github.com/mavryk-network/mavryk-taquito/blob/d424fa178a95675920b21c8e8c228fbe0e7df36e/packages/taquito-michelson-encoder/src/schema/storage.ts#L15) with various methods to get more information about the storage or the structure of the contract.
 
 5. `script`: an object with two properties: `code` is an array with three objects, each representing the JSON formatted Michelson code for the parameter, storage and code (respectively), `storage` is the JSON formatted Michelson code for the storage of the contract.
 
@@ -621,11 +621,11 @@ _Methods:_
 
 1. `bigMap`: a promise that takes a key from the big map in the storage as a parameter and returns the value associated with that key.
 
-2. `storage`: a promise that returns a representation of the storage value(s). The storage is represented as an object whose keys are the name of the values. `map` and `big map` values are returned as an instance of the [BigMapAbstraction](https://taquito.io/typedoc/classes/_taquito_taquito.bigmapabstraction.html) while numeric values are returned as BigNumber.
+2. `storage`: a promise that returns a representation of the storage value(s). The storage is represented as an object whose keys are the name of the values. `map` and `big map` values are returned as an instance of the [BigMapAbstraction](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.bigmapabstraction.html) while numeric values are returned as BigNumber.
 
 ## The Wallet instance
 
-The Tezos singleton object exposes a _wallet_ property in the same fashion it exposes the _contract_ property to which you may be used. This property is an instance of the [Wallet class](https://taquito.io/typedoc/classes/_taquito_taquito.wallet.html) with a few useful methods you want to check out. It becomes available as soon as you set up a wallet by calling `Tezos.setProvider({wallet})` or `Tezos.setWalletProvider(wallet)`. Here is a list of the methods and a basic description of their function before seeing some examples:
+The Tezos singleton object exposes a _wallet_ property in the same fashion it exposes the _contract_ property to which you may be used. This property is an instance of the [Wallet class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.wallet.html) with a few useful methods you want to check out. It becomes available as soon as you set up a wallet by calling `Tezos.setProvider({wallet})` or `Tezos.setWalletProvider(wallet)`. Here is a list of the methods and a basic description of their function before seeing some examples:
 
 1. `at`: creates a smart contract abstraction for the address specified
 
@@ -656,7 +656,7 @@ const op = await Tezos.wallet
   .batch([
     {
       kind: 'transaction',
-      to: 'tz1...',
+      to: 'mv1...',
       amount: 2,
     },
     {
@@ -676,7 +676,7 @@ or
 ```js
 const batch = Tezos.wallet
   .batch()
-  .withTransfer({ to: 'tz1...', amount: 2 })
+  .withTransfer({ to: 'mv1...', amount: 2 })
   .withOrigination({
     balance: '1',
     code: code,
@@ -727,15 +727,15 @@ await op.confirmation();
 The `setDelegate` method takes an object as a parameter with a `delegate` property set to the address you want to set as a delegate:
 
 ```js
-const op = await Tezos.wallet.setDelegate({ delegate: 'tz1...' }).send();
+const op = await Tezos.wallet.setDelegate({ delegate: 'mv1...' }).send();
 
 await op.confirmation();
 ```
 
-Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mutez`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
+Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mumav`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
 
 ```js
-const op = await Tezos.wallet.transfer({ to: 'tz1...', amount: 2 }).send();
+const op = await Tezos.wallet.transfer({ to: 'mv1...', amount: 2 }).send();
 
 await op.confirmation();
 ```

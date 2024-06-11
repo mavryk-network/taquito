@@ -12,7 +12,7 @@ export const tacoContractTzip16 = [ { "prim": "parameter", "args": [ { "prim": "
                   { "prim": "pair",
                     "args":
                       [ { "prim": "nat", "annots": [ "%current_stock" ] },
-                        { "prim": "mutez", "annots": [ "%max_price" ] } ] } ],
+                        { "prim": "mumav", "annots": [ "%max_price" ] } ] } ],
               "annots": [ "%taco_shop_storage" ] } ] } ] },
 { "prim": "code",
   "args":
@@ -68,7 +68,7 @@ export const tacoContractTzip12 = [ { "prim": "parameter", "args": [ { "prim": "
                   { "prim": "pair",
                     "args":
                       [ { "prim": "nat", "annots": [ "%current_stock" ] },
-                        { "prim": "mutez", "annots": [ "%max_price" ] } ] } ],
+                        { "prim": "mumav", "annots": [ "%max_price" ] } ] } ],
               "annots": [ "%taco_shop_storage" ] },
             { "prim": "big_map",
               "args":

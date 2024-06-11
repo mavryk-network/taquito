@@ -28,21 +28,21 @@ export const DEFAULT_STORAGE_LIMIT = {
   TRANSFER: 257,
   REVEAL: 0,
 };
-// value is based on octez-client reveal operation gasLimit of each address type
+// value is based on mavkit-client reveal operation gasLimit of each address type
 const REVEAL_GAS_LIMIT = {
   TZ1: 169,
   TZ2: 155,
   TZ3: 445,
   TZ4: 1674,
 };
-// value is based on octez-client reveal operation fee of each address type
+// value is based on mavkit-client reveal operation fee of each address type
 const REVEAL_FEE = {
   TZ1: 276,
   TZ2: 276,
   TZ3: 305,
   TZ4: 477,
 };
-// value is based on octez-client reveal operation storageLimit of all address type
+// value is based on mavkit-client reveal operation storageLimit of all address type
 export const REVEAL_STORAGE_LIMIT = 0;
 // protocol constants
 export const ORIGINATION_SIZE = 257;
@@ -50,63 +50,18 @@ export const ORIGINATION_SIZE = 257;
 export const COST_PER_BYTE = 250;
 
 export enum Protocols {
-  Pt24m4xi = 'Pt24m4xiPbLDhVgVfABUjirbmda3yohdN82Sp9FeuAXJ4eV9otd',
-  PsBABY5H = 'PsBABY5HQTSkA4297zNHfsZNKtxULfL18y95qb3m53QJiXGmrbU',
-  PsBabyM1 = 'PsBabyM1eUXZseaJdmXFApDSBqj8YBfwELoxZHHW77EMcAbbwAS',
-  PsCARTHA = 'PsCARTHAGazKbHtnKfLzQg3kms52kSRpgnDY982a9oYsSXRLQEb',
-  PsDELPH1 = 'PsDELPH1Kxsxt8f9eWbxQeRxkjfbxoqM52jvs5Y5fBxWWh4ifpo',
-  PtEdo2Zk = 'PtEdo2ZkT9oKpimTah6x2embF25oss54njMuPzkJTEi5RqfdZFA',
-  PsFLorena = 'PsFLorenaUUuikDWvMDr6fGBRG8kt3e3D3fHoXK1j1BFRxeSH4i',
-  PtGRANADs = 'PtGRANADsDU8R9daYKAgWnQYAJ64omN1o3KMGVCykShA97vQbvV',
-  PtHangz2 = 'PtHangz2aRngywmSRGGvrcTyMbbdpWdpFKuS4uMWxg2RaH9i1qx',
-  PsiThaCa = 'PsiThaCaT47Zboaw71QWScM8sXeMM7bbQFncK9FLqYc6EKdpjVP',
-  Psithaca2 = 'Psithaca2MLRFYargivpo7YvUr7wUDqyxrdhC5CQq78mRvimz6A',
-  PtJakart2 = 'PtJakart2xVj7pYXJBXrqHgd82rdkLey5ZeeGwDgPp9rhQUbSqY',
-  PtKathman = 'PtKathmankSpLLDALzWw7CGD2j2MtyveTwboEYokqUCP4a1LxMg',
-  PtLimaPtL = 'PtLimaPtLMwfNinJi9rCfDPWea8dFgTZ1MeJ9f1m2SRic6ayiwW',
-  PtMumbaii = 'PtMumbaiiFFEGbew1rRjzSPyzRbA51Tm3RVZL5suHPxSZYDhCEc',
-  PtMumbai2 = 'PtMumbai2TmsJHNGRkD8v8YDbtao7BLUC3wjASn1inAKLFCjaH1',
-  PtNairobi = 'PtNairobiyssHuh87hEhfVBGCVrK3WnS8Z2FT4ymB5tAa4r1nQf',
-  ProxfordY = 'ProxfordYmVfjWnRcgjWH36fW6PArwqykTFzotUxRs6gmTcZDuH',
+  PtAtLas = 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
   ProtoALpha = 'ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK',
 }
 
 export const protocols = {
-  '004': [Protocols.Pt24m4xi],
-  '005': [Protocols.PsBABY5H, Protocols.PsBabyM1],
-  '006': [Protocols.PsCARTHA],
-  '007': [Protocols.PsDELPH1],
-  '008': [Protocols.PtEdo2Zk], // edonet v2
-  '009': [Protocols.PsFLorena],
-  '010': [Protocols.PtGRANADs],
-  '011': [Protocols.PtHangz2], // hangzhou v2,
-  '012': [Protocols.PsiThaCa, Protocols.Psithaca2],
-  '013': [Protocols.PtJakart2],
-  '014': [Protocols.PtKathman],
-  '015': [Protocols.PtLimaPtL],
-  '016': [Protocols.PtMumbai2], // mumbai v2
-  '017': [Protocols.PtNairobi],
-  '019': [Protocols.ProxfordY],
+  '019': [Protocols.PtAtLas],
   '020': [Protocols.ProtoALpha],
 };
 
 export enum ChainIds {
   MAINNET = 'NetXdQprcVkpaWU',
-  CARTHAGENET = 'NetXjD3HPJJjmcd',
-  DELPHINET = 'NetXm8tYqnMWky1',
-  EDONET = 'NetXSgo1ZT2DRUG',
-  FLORENCENET = 'NetXxkAx4woPLyu',
-  GRANADANET = 'NetXz969SFaFn8k',
-  HANGZHOUNET = 'NetXZSsxBpMQeAT',
-  ITHACANET = 'NetXbhmtAbMukLc',
-  ITHACANET2 = 'NetXnHfVqm9iesp',
-  JAKARTANET2 = 'NetXLH1uAxK7CCh',
-  KATHMANDUNET = 'NetXazhm4yetmff',
-  LIMANET = 'NetXizpkH94bocH',
-  MUMBAINET = 'NetXQw6nWSnrJ5t',
-  MUMBAINET2 = 'NetXgbcrNtXD2yA',
-  NAIROBINET = 'NetXyuzvDo2Ugzb',
-  OXFORDNET2 = 'NetXxWsskGahzQB',
+  ATLASNET = 'NetXvyTAafh8goH',
 }
 
 // A fixed fee reveal operation gasLimit accepted by both simulate and injection endpoint is between 1.2-5 times of actual gas consumption (3.5 fails occasionally with gas exhausted; 4 fails occasionally with fee too low)
@@ -115,13 +70,13 @@ export const getRevealGasLimit = (address: string) =>
 
 const getRevealGasLimitInternal = (address: string) => {
   switch (address.substring(0, 3)) {
-    case 'tz1':
+    case 'mv1':
       return REVEAL_GAS_LIMIT.TZ1;
-    case 'tz2':
+    case 'mv2':
       return REVEAL_GAS_LIMIT.TZ2;
-    case 'tz3':
+    case 'mv3':
       return REVEAL_GAS_LIMIT.TZ3;
-    case 'tz4':
+    case 'mv4':
       return REVEAL_GAS_LIMIT.TZ4;
     default:
       throw new Error(`Cannot estimate reveal gas limit for ${address}`);
@@ -133,13 +88,13 @@ export const getRevealFee = (address: string) =>
 
 export const getRevealFeeInternal = (address: string) => {
   switch (address.substring(0, 3)) {
-    case 'tz1':
+    case 'mv1':
       return REVEAL_FEE.TZ1;
-    case 'tz2':
+    case 'mv2':
       return REVEAL_FEE.TZ2;
-    case 'tz3':
+    case 'mv3':
       return REVEAL_FEE.TZ3;
-    case 'tz4':
+    case 'mv4':
       return REVEAL_FEE.TZ4;
     default:
       throw new Error(`Cannot estimate reveal fee for ${address}`);

@@ -1,14 +1,14 @@
 # Taquito Ledger Signer package
-*Documentation can be found [here](https://taquito.io/docs/ledger_signer)*  
-*TypeDoc style documentation is available [here](https://taquito.io/typedoc/modules/_taquito_ledger_signer.html)*
+*Documentation can be found [here](https://taquito.mavryk.org/docs/ledger_signer)*  
+*TypeDoc style documentation is available [here](https://taquito.mavryk.org/typedoc/modules/_taquito_ledger_signer.html)*
 
 ## General Information
-`@taquito/ledger-signer` is an npm package that provides developers with ledger signing functionality for Taquito. It implements the Signer interface of Taquito, allowing you to sign operations from a Ledger Nano device.
+`@mavrykdynamics/taquito-ledger-signer` is an npm package that provides developers with ledger signing functionality for Taquito. It implements the Signer interface of Taquito, allowing you to sign operations from a Ledger Nano device.
 
 ## Install
 Install the package as follows
 ```
-npm install @taquito/ledger-signer
+npm install @mavrykdynamics/taquito-ledger-signer
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The Ledger Signer has currently been tested with `@ledgerhq/hw-transport-node-hi
 Pass an instance of the transport of your choice to the Ledger Signer as follows:
 ```ts
 import transportWeb from '@ledgerhq/hw-transport-webhid';
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 
 const transport = await transportWeb.create();
 const ledgerSigner = new LedgerSigner(transport);
@@ -29,14 +29,14 @@ const ledgerSigner = new LedgerSigner(transport);
 The constructor of the `LedgerSigner` class takes three other optional parameters. If none are specified, the following default values are used:
 
 - `path`: **default value is "44'/1729'/0'/0'"**  
-  You can use as a parameter the `HDPathTemplate` which refers to `44'/1729'/${account}'/0'`. You have to specify the index of the account you want to use. Or you can also use a complete path as a parameter. More details about paths [here](https://taquito.io/docs/ledger_signer#derivation-paths-hd-wallet--bip-standards)
+  You can use as a parameter the `HDPathTemplate` which refers to `44'/1729'/${account}'/0'`. You have to specify the index of the account you want to use. Or you can also use a complete path as a parameter. More details about paths [here](https://taquito.mavryk.org/docs/ledger_signer#derivation-paths-hd-wallet--bip-standards)
 - `prompt`: **default is true**  
   If true, you will be asked on your Ledger device to send your public key for validation. **_Note that confirmation is required when using `@ledgerhq/hw-transport-webhid`, so you should not set this parameter to false if you are using this transport._**
 - `derivationType`: **default is DerivationType.ED25519**  
-  It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (tz1), DerivationType.SECP256K1 (tz2) or DerivationType.P256 (tz3).
+  It can be DerivationType.ED25519 | DerivationType.BIP32_ED25519 (mv1), DerivationType.SECP256K1 (mv2) or DerivationType.P256 (mv3).
 
 ```ts
-import { LedgerSigner, DerivationType, HDPathTemplate } from '@taquito/ledger-signer';
+import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
 
 const ledgerSigner = new LedgerSigner(
   transport, //required
@@ -49,9 +49,9 @@ const ledgerSigner = new LedgerSigner(
 ### Code Example
 
 ```ts
-import { LedgerSigner } from '@taquito/ledger-signer';
+import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportWeb from '@ledgerhq/hw-transport-webhid';
-import { TezosToolkit } from '@taquito/taquito';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
 
 const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 

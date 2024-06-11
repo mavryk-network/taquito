@@ -28,16 +28,16 @@ import {
   SmartRollupOriginateParams,
   SmartRollupExecuteOutboxMessageParams,
 } from '../operations/types';
-import { OpKind } from '@taquito/rpc';
+import { OpKind } from '@mavrykdynamics/taquito-rpc';
 import { ContractMethodObject } from '../contract/contract-methods/contract-method-object-param';
-import { validateAddress, validateKeyHash, ValidationResult, invalidDetail } from '@taquito/utils';
+import { validateAddress, validateKeyHash, ValidationResult, invalidDetail } from '@mavrykdynamics/taquito-utils';
 import { EstimationProvider } from '../estimate/estimate-provider-interface';
 import {
   InvalidAddressError,
   InvalidKeyHashError,
   InvalidOperationKindError,
   InvalidAmountError,
-} from '@taquito/core';
+} from '@mavrykdynamics/taquito-core';
 import { Provider } from '../provider';
 import { PrepareProvider } from '../prepare';
 
@@ -85,7 +85,7 @@ export class OperationBatch extends Provider {
 
   /**
    *
-   * @description Transfer tickets from a Tezos address (tz1,tz2 or tz3) to a smart contract address( KT1)
+   * @description Transfer tickets from a Tezos address (mv1,mv2 or mv3) to a smart contract address( KT1)
    *
    * @param params Transfer operation parameter
    */

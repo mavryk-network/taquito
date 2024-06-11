@@ -23,9 +23,9 @@ function Feature({ title, url }) {
 export default function FooterTop() {
   return (
     <section className={styles.features}>
-      <div className={styles.container}>
+      {/* <div className={styles.container}>
         <Feature {...FeatureList[0]} />
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -226,7 +226,7 @@ const sidebars = {
     {
       type: 'link',
       label: 'TypeDoc Reference',
-      href: 'https://taquito.io/typedoc',
+      href: 'https://taquito.mavryk.org/typedoc',
     },
   ],
 };

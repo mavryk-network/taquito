@@ -9,7 +9,7 @@ describe('Schema test', () => {
     const storage = schema.ExtractSchema();
 
     expect(schema.ExtractSignatures()).toContainEqual(['0', 'address', 'string', 'bytes']);
-    expect(schema.ExtractSignatures()).toContainEqual(['1', 'mutez']);
+    expect(schema.ExtractSignatures()).toContainEqual(['1', 'mumav']);
     expect(schema.ExtractSignatures()).toContainEqual(['2', 'address', 'bool']);
 
     expect(storage).toEqual({
@@ -18,7 +18,7 @@ describe('Schema test', () => {
         '1': 'string',
         '2': { Some: 'bytes' },
       },
-      '1': 'mutez',
+      '1': 'mumav',
       '2': {
         '2': 'address',
         '3': 'bool',
@@ -59,8 +59,8 @@ describe('Schema test', () => {
           },
         },
         '1': {
-          __michelsonType: 'mutez',
-          schema: 'mutez',
+          __michelsonType: 'mumav',
+          schema: 'mumav',
         },
         '2': {
           __michelsonType: 'pair',

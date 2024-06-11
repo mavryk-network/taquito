@@ -1,5 +1,5 @@
 {
-  "name": "@taquito/website",
+  "name": "@mavrykdynamics/taquito-website",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -13,8 +13,8 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "delete-index": "node ./scripts/delete-index.js",
-    "netlify:preview": "netlify deploy --json --alias=$(git rev-parse --short HEAD) --message \"Deployment for $(git branch --show-current)\"",
-    "netlify:publish": "netlify deploy --json --prod --message \"Deployment for $(git branch --show-current)\""
+    "netlify:preview": "netlify deploy -d build --json --alias=$(git rev-parse --short HEAD) --message \"Deployment for $(git branch --show-current)\"",
+    "netlify:publish": "netlify deploy -d build --json --prod --message \"Deployment for $(git branch --show-current)\""
   },
   "dependencies": {
     "@docusaurus/core": "2.4.3",
@@ -29,19 +29,19 @@
     "@ledgerhq/hw-transport-webhid": "^6.27.19",
     "@mdx-js/react": "^1.6.22",
     "@svgr/webpack": "^8.1.0",
-    "@taquito/beacon-wallet": "file:../packages/taquito-beacon-wallet",
-    "@taquito/core": "file:../packages/taquito-core",
-    "@taquito/http-utils": "file:../packages/taquito-http-utils",
-    "@taquito/ledger-signer": "file:../packages/taquito-ledger-signer",
-    "@taquito/michel-codec": "file:../packages/taquito-michel-codec",
-    "@taquito/michelson-encoder": "file:../packages/taquito-michelson-encoder",
-    "@taquito/remote-signer": "file:../packages/taquito-remote-signer",
-    "@taquito/rpc": "file:../packages/taquito-rpc",
-    "@taquito/signer": "file:../packages/taquito-signer",
-    "@taquito/taquito": "file:../packages/taquito",
-    "@taquito/tzip12": "file:../packages/taquito-tzip12",
-    "@taquito/tzip16": "file:../packages/taquito-tzip16",
-    "@taquito/utils": "file:../packages/taquito-utils",
+    "@mavrykdynamics/taquito-core": "file:../packages/taquito-core",
+    "@mavrykdynamics/taquito-beacon-wallet": "file:../packages/taquito-beacon-wallet",
+    "@mavrykdynamics/taquito-http-utils": "file:../packages/taquito-http-utils",
+    "@mavrykdynamics/taquito-ledger-signer": "file:../packages/taquito-ledger-signer",
+    "@mavrykdynamics/taquito-michel-codec": "file:../packages/taquito-michel-codec",
+    "@mavrykdynamics/taquito-michelson-encoder": "file:../packages/taquito-michelson-encoder",
+    "@mavrykdynamics/taquito-remote-signer": "file:../packages/taquito-remote-signer",
+    "@mavrykdynamics/taquito-rpc": "file:../packages/taquito-rpc",
+    "@mavrykdynamics/taquito-signer": "file:../packages/taquito-signer",
+    "@mavrykdynamics/taquito": "file:../packages/taquito",
+    "@mavrykdynamics/taquito-tzip12": "file:../packages/taquito-tzip12",
+    "@mavrykdynamics/taquito-tzip16": "file:../packages/taquito-tzip16",
+    "@mavrykdynamics/taquito-utils": "file:../packages/taquito-utils",
     "abort-controller": "^3.0.0",
     "algoliasearch": "^4.22.1",
     "axios": "^0.28.0",
@@ -87,5 +87,5 @@
       "last 1 safari version"
     ]
   },
-  "version": "19.2.0"
+  "version": "19.2.3"
 }

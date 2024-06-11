@@ -1,6 +1,6 @@
 import { CONFIGS } from "../config";
 import { Chest, Timelock, ChestKey } from '../../packages/taquito-timelock/src/taquito-timelock';
-import { buf2hex } from '@taquito/utils';
+import { buf2hex } from '@mavrykdynamics/taquito-utils';
 import * as crypto from 'crypto';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {

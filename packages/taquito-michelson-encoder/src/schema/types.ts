@@ -8,7 +8,7 @@ export type BaseTokenSchema = {
     | 'int'
     | 'key'
     | 'key_hash'
-    | 'mutez'
+    | 'mumav'
     | 'nat'
     | 'string'
     | 'timestamp'

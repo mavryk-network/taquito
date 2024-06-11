@@ -1,6 +1,6 @@
 import { CONFIGS } from '../../config';
-import { RpcClient } from '@taquito/rpc';
-import { Protocols, TezosToolkit } from '@taquito/taquito';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
+import { Protocols, TezosToolkit } from '@mavrykdynamics/taquito';
 
 // TC001 - non-existing KT addresses can not be prefunded
 

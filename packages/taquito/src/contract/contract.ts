@@ -1,16 +1,16 @@
-import { ParameterSchema, Schema, ViewSchema, EventSchema } from '@taquito/michelson-encoder';
+import { ParameterSchema, Schema, ViewSchema, EventSchema } from '@mavrykdynamics/taquito-michelson-encoder';
 import {
   EntrypointsResponse,
   MichelsonV1Expression,
   RpcClientInterface,
   ScriptResponse,
-} from '@taquito/rpc';
+} from '@mavrykdynamics/taquito-rpc';
 import {
   invalidDetail,
   validateChain,
   validateContractAddress,
   ValidationResult,
-} from '@taquito/utils';
+} from '@mavrykdynamics/taquito-utils';
 import { ChainIds } from '../constants';
 import { TzReadProvider } from '../read-provider/interface';
 import { Wallet } from '../wallet';
@@ -20,7 +20,7 @@ import { ContractMethodObject } from './contract-methods/contract-method-object-
 import { OnChainView } from './contract-methods/contract-on-chain-view';
 import { InvalidParameterError } from './errors';
 import { ContractProvider, StorageProvider } from './interface';
-import { InvalidChainIdError, DeprecationError } from '@taquito/core';
+import { InvalidChainIdError, DeprecationError } from '@mavrykdynamics/taquito-core';
 
 export const DEFAULT_SMART_CONTRACT_METHOD_NAME = 'default';
 

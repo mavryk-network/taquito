@@ -1,5 +1,5 @@
 import { CONFIGS } from "../../config";
-import { MichelsonMap } from "@taquito/taquito";
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 import { tokenBigmapCode } from "../../data/token_bigmap";
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
@@ -22,20 +22,20 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
               [addr]: "1"
             })
           },
-          "tz2Ch1abG7FNiibmV26Uzgdsnfni9XGrk5wD": {
+          "mv2QQ5sHsmFuksCRmRgkZpp2DUHBxrZkQzcZ": {
             balance: "1",
             allowances: MichelsonMap.fromLiteral({
               [addr]: "1"
             })
           },
-          "tz3YjfexGakCDeCseXFUpcXPSAN9xHxE9TH2": {
+          "mv3WNhwFRPV4fCkK2iBDWZtLNsDg4tecU5X5": {
             balance: "2",
             allowances: MichelsonMap.fromLiteral({
               KT1CDEg2oY3VfMa1neB7hK5LoVMButvivKYv: "1",
               [addr]: "1"
             })
           },
-          "tz1ccqAEwfPgeoipnXtjAv1iucrpQv3DFmmS": {
+          "mv1Ly8iGNbSg8hSNd632hnGf5xKzoGE67MTp": {
             balance: "1",
             allowances: MichelsonMap.fromLiteral({
               [addr]: "1"

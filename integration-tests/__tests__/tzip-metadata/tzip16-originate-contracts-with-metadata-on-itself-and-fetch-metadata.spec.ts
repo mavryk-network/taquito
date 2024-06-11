@@ -1,7 +1,7 @@
 import { CONFIGS } from "../../config";
-import { tzip16, Tzip16Module, stringToBytes } from '@taquito/tzip16';
+import { tzip16, Tzip16Module, stringToBytes } from '@mavrykdynamics/taquito-tzip16';
 import { tacoContractTzip16 } from "../../data/modified-taco-contract"
-import { MichelsonMap } from "@taquito/taquito";
+import { MichelsonMap } from "@mavrykdynamics/taquito";
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;
@@ -22,13 +22,13 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         "version": "0.1",
         "license": "MIT",
         "authors": [
-          "Taquito <https://taquito.io/>"
+          "Taquito <https://taquito.mavryk.org/>"
         ],
-        "homepage": "https://taquito.io/"
+        "homepage": "https://taquito.mavryk.org/"
       };
 
       const metadataBigMap = new MichelsonMap();
-      metadataBigMap.set("", stringToBytes('tezos-storage:here'));
+      metadataBigMap.set("", stringToBytes('mavryk-storage:here'));
       metadataBigMap.set("here", stringToBytes(JSON.stringify(metadataJSON)))
 
       // Ligo Taco shop contract modified to include metadata in storage
@@ -54,7 +54,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const contract = await Tezos.wallet.at(contractAddress, tzip16);
       const metadata = await contract.tzip16().getMetadata();
 
-      expect(metadata.uri).toEqual('tezos-storage:here');
+      expect(metadata.uri).toEqual('mavryk-storage:here');
       expect(metadata.integrityCheckResult).toBeUndefined();
       expect(metadata.sha256Hash).toBeUndefined();
       expect(metadata.metadata).toEqual({
@@ -63,17 +63,17 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         "version": "0.1",
         "license": "MIT",
         "authors": [
-          "Taquito <https://taquito.io/>"
+          "Taquito <https://taquito.mavryk.org/>"
         ],
-        "homepage": "https://taquito.io/"
+        "homepage": "https://taquito.mavryk.org/"
       });
 
       expect(await (await contract.tzip16()).metadataName()).toEqual('test')
       expect(await (await contract.tzip16()).metadataDescription()).toEqual('A metadata test')
       expect(await (await contract.tzip16()).metadataVersion()).toEqual('0.1')
       expect(await (await contract.tzip16()).metadataLicense()).toEqual('MIT')
-      expect(await (await contract.tzip16()).metadataAuthors()).toEqual(["Taquito <https://taquito.io/>"])
-      expect(await (await contract.tzip16()).metadataHomepage()).toEqual('https://taquito.io/')
+      expect(await (await contract.tzip16()).metadataAuthors()).toEqual(["Taquito <https://taquito.mavryk.org/>"])
+      expect(await (await contract.tzip16()).metadataHomepage()).toEqual('https://taquito.mavryk.org/')
       expect(await (await contract.tzip16()).metadataSource()).toBeUndefined()
       expect(await (await contract.tzip16()).metadataInterfaces()).toBeUndefined()
       expect(await (await contract.tzip16()).metadataErrors()).toBeUndefined()
@@ -84,7 +84,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     it('Verify contract.originate for a contract having metadata inside another contract same network', async () => {
 
       const metadataBigMap = new MichelsonMap();
-      metadataBigMap.set("", stringToBytes(`tezos-storage://${contractAddress}/here`));
+      metadataBigMap.set("", stringToBytes(`mavryk-storage://${contractAddress}/here`));
 
       const tacoShopStorageMap = new MichelsonMap();
 
@@ -106,7 +106,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const contract = await Tezos.wallet.at(contractMetadataInAnotherContract, tzip16);
       const metadata = await contract.tzip16().getMetadata();
 
-      expect(metadata.uri).toEqual(`tezos-storage://${contractAddress}/here`);
+      expect(metadata.uri).toEqual(`mavryk-storage://${contractAddress}/here`);
       expect(metadata.integrityCheckResult).toBeUndefined();
       expect(metadata.sha256Hash).toBeUndefined();
       expect(metadata.metadata).toEqual({
@@ -115,17 +115,17 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         "version": "0.1",
         "license": "MIT",
         "authors": [
-          "Taquito <https://taquito.io/>"
+          "Taquito <https://taquito.mavryk.org/>"
         ],
-        "homepage": "https://taquito.io/"
+        "homepage": "https://taquito.mavryk.org/"
       });
 
       expect(await (await contract.tzip16()).metadataName()).toEqual('test')
       expect(await (await contract.tzip16()).metadataDescription()).toEqual('A metadata test')
       expect(await (await contract.tzip16()).metadataVersion()).toEqual('0.1')
       expect(await (await contract.tzip16()).metadataLicense()).toEqual('MIT')
-      expect(await (await contract.tzip16()).metadataAuthors()).toEqual(["Taquito <https://taquito.io/>"])
-      expect(await (await contract.tzip16()).metadataHomepage()).toEqual('https://taquito.io/')
+      expect(await (await contract.tzip16()).metadataAuthors()).toEqual(["Taquito <https://taquito.mavryk.org/>"])
+      expect(await (await contract.tzip16()).metadataHomepage()).toEqual('https://taquito.mavryk.org/')
       expect(await (await contract.tzip16()).metadataSource()).toBeUndefined()
       expect(await (await contract.tzip16()).metadataInterfaces()).toBeUndefined()
       expect(await (await contract.tzip16()).metadataErrors()).toBeUndefined()

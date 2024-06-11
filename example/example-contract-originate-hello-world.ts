@@ -1,7 +1,7 @@
-import { TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
-const provider = 'https://ghostnet.ecadinfra.com';
+const provider = 'https://basenet.rpc.mavryk.network';
 
 async function example() {
   const tezos = new TezosToolkit(provider);

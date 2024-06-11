@@ -1,5 +1,5 @@
-import { createTransferOperation } from '@taquito/taquito';
-import { encodeOpHash } from '@taquito/utils';
+import { createTransferOperation } from '@mavrykdynamics/taquito';
+import { encodeOpHash } from '@mavrykdynamics/taquito-utils';
 import { CONFIGS } from '../../config';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
@@ -38,7 +38,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       // The createTransferOperation function returns RPCTransferOperation where we include the estimated fees
       const rpcTransferOperation = await createTransferOperation({
         ...transferParams,
-        fee: estimate.suggestedFeeMutez,
+        fee: estimate.suggestedFeeMumav,
         gasLimit: estimate.gasLimit,
         storageLimit: estimate.storageLimit
       });

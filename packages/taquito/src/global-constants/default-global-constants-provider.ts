@@ -1,4 +1,4 @@
-import { GlobalConstantHashAndValue } from '@taquito/michel-codec';
+import { GlobalConstantHashAndValue } from '@mavrykdynamics/taquito-michel-codec';
 import { GlobalConstantNotFound } from './errors';
 import { GlobalConstantHash, GlobalConstantsProvider } from './interface-global-constants-provider';
 

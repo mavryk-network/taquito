@@ -1,6 +1,6 @@
-import { ContractAbstraction, ContractProvider, RpcReadAdapter } from '@taquito/taquito';
+import { ContractAbstraction, ContractProvider, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
-import { InMemorySpendingKey, SaplingToolkit, InMemoryProvingKey } from '@taquito/sapling';
+import { InMemorySpendingKey, SaplingToolkit, InMemoryProvingKey } from '@mavrykdynamics/taquito-sapling';
 import BigNumber from 'bignumber.js';
 import { singleSaplingStateContractJProtocol } from '../../data/single_sapling_state_contract_jakarta_michelson';
 import * as bip39 from 'bip39';
@@ -13,7 +13,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
   let aliceInMemorySpendingKey: InMemorySpendingKey;
   let aliceInMemoryProvingKey: InMemoryProvingKey;
   let alicePaymentAddress: string;
-  const tezosAddress = 'tz2TSvNTh2epDMhZHrw73nV9piBX7kLZ9K9m';
+  const tezosAddress = 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG';
   const memoSize = 8;
 
   describe(`Test producing proofs with a proving key rather than a spending key: ${rpc}`, () => {
@@ -77,7 +77,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const aliceTxViewer = await aliceSaplingToolkit.getSaplingTransactionViewer();
       const aliceBalance = await aliceTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalance).toEqual(new BigNumber(3000000));
 
       const inputsAlice = await aliceTxViewer.getIncomingAndOutgoingTransactions();
@@ -130,7 +130,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const aliceTxViewer = await aliceSaplingToolkit.getSaplingTransactionViewer();
       const aliceBalance = await aliceTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(aliceBalance).toEqual(new BigNumber(1000000));
 
       const inputsAlice = await aliceTxViewer.getIncomingAndOutgoingTransactions();
@@ -168,7 +168,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const bobTxViewer = await bobSaplingToolkit.getSaplingTransactionViewer();
       const bobBalance = await bobTxViewer.getBalance();
 
-      // The returned balance is in MUTEZ
+      // The returned balance is in MUMAV
       expect(bobBalance).toEqual(new BigNumber(2000000));
 
       const inputsBob = await bobTxViewer.getIncomingAndOutgoingTransactions();

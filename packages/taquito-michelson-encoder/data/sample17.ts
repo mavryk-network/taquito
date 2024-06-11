@@ -18,7 +18,7 @@ export const script17 = {
                                         prim: 'pair',
                                         args: [
                                             { prim: 'nat', annots: ['%current_stock'] },
-                                            { prim: 'mutez', annots: ['%max_price'] }
+                                            { prim: 'mumav', annots: ['%max_price'] }
                                         ]
                                     }
                                 ],

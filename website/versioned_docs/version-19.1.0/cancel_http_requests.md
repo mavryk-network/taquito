@@ -80,7 +80,7 @@ class CancellableHttpBackend extends HttpBackend {
 Create a class called `CancellableRpcClient` which extends the `RpcClient` class. Pass its constructor an instance of our `CancellableHttpBackend` class. And lastly, add the `cancelRequest` method which is used to trigger the abort signal.
 
 ``` ts
-import { RpcClient } from '@taquito/rpc';
+import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 class CancellableRpcClient extends RpcClient {
   httpBackend: CancellableHttpBackend;
@@ -104,8 +104,8 @@ class CancellableRpcClient extends RpcClient {
 Set `CancellableRpcClient` on our `TezosToolkit` instance instead of using the default `RpcClient` class:
 
 ``` ts
-import { TezosToolkit } from '@taquito/taquito';
-import { InMemorySigner } from '@taquito/signer';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 const signer: any = new InMemorySigner('your_key');
 const customRpcClient = new CancellableRpcClient('your_RPC_URL')  

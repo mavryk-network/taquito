@@ -249,7 +249,7 @@ export const voteInitSample = {
             "args":
                 [{
                     "string":
-                        "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn"
+                        "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW"
                 },
                 { "prim": "None" }]
         },
@@ -258,7 +258,7 @@ export const voteInitSample = {
             "args":
                 [{
                     "string":
-                        "tz1QZ6KY7d3BuZDT1d19dUxoQrtFPN2QJ3hn"
+                        "mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW"
                 },
                 { "prim": "None" }]
         }]

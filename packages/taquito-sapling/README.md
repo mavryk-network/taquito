@@ -1,7 +1,7 @@
 # Taquito Sapling package
 
-_Documentation can be found [here](https://taquito.io/docs/next/sapling)_
-_TypeDoc style documentation is available on-line [here](https://taquito.io/typedoc/modules/_taquito_sapling.html)_
+_Documentation can be found [here](https://taquito.mavryk.org/docs/next/sapling)_  
+_TypeDoc style documentation is available on-line [here](https://taquito.mavryk.org/typedoc/modules/_taquito_sapling.html)_
 
 ## General Information
 
@@ -12,19 +12,19 @@ Sapling is a protocol allowing to perform private transactions in a decentralize
 Install the package as follows
 
 ```
-npm install @taquito/sapling
+npm install @mavrykdynamics/taquito-sapling
 ```
 ## Usage
 
 **Retrieve a balance in the Sapling shielded pool**
 
-The returned balance is in mutez.
+The returned balance is in mumav.
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
+const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
 
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
@@ -44,13 +44,13 @@ const initialBalance = await txViewer.getBalance();
 
 **Prepare a shielded transaction**
 
-A shielded transaction allows sending tokens from a Tezos account (tz1, tz2, tz3) to a Sapling address (zet).
+A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3) to a Sapling address (zet).
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@taquito/taquito';
-import { SaplingToolkit, InMemorySpendingKey } from '@taquito/sapling';
+import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
+const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
 // set up your signer on the TezosToolkit as usual
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
@@ -73,7 +73,7 @@ const shieldedTx = await saplingToolkit.prepareShieldedTransaction([{
     to: paymentAddress,
     amount: 3,
     memo: 'test',
-    mutez: false // set to false by default
+    mumav: false // set to false by default
 }])
 
 // Inject the sapling transaction using the ContractAbstraction
@@ -82,7 +82,7 @@ const op = await saplingContract.methodsObject.default([shieldedTx]).send({ amou
 await op.confirmation();
 ```
 
-Refer to the website documentation for further examples and information: https://taquito.io/docs/next/sapling
+Refer to the website documentation for further examples and information: https://taquito.mavryk.org/docs/next/sapling
 
 ## Additional info
 

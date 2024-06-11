@@ -1,4 +1,4 @@
-import { HttpBackend } from '@taquito/http-utils';
+import { HttpBackend } from '@mavrykdynamics/taquito-http-utils';
 
 describe('HttpBackend request', () => {
   it('should fail with url and error message with a timeout error', async () => {

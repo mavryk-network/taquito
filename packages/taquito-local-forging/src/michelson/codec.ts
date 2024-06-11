@@ -5,7 +5,7 @@ import { Encoder } from '../taquito-local-forging';
 import { opMappingReverse, opMapping } from '../constants';
 import { pad } from '../utils';
 import { UnexpectedMichelsonValueError } from '../errors';
-import { InvalidHexStringError } from '@taquito/core';
+import { InvalidHexStringError } from '@mavrykdynamics/taquito-core';
 
 export type PrimValue = { prim: string; args?: MichelsonValue[]; annots?: string[] };
 export type BytesValue = { bytes: string };

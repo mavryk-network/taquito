@@ -80,7 +80,7 @@ export function chunkOperation(messageToSend: any, operation: Buffer) {
 
 /**
  *
- * @description Verify if the signature returned by the ledger for tz2 and tz3 is valid
+ * @description Verify if the signature returned by the ledger for mv2 and mv3 is valid
  * @param response The signature returned by the Ledger (return from the signWithLedger function)
  * @returns True if valid, false otherwise
  */

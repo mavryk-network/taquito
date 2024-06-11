@@ -14,8 +14,8 @@ The constructor of the `RpcClientCache` class takes a `RpcClient` instance as a 
 The following example shows how to integrate the `RpcClientCache` with the TezosToolkit:
 
 ```js
-import { TezosToolkit } from '@taquito/taquito';
-import { RpcClient, RpcClientCache } from '@taquito/rpc';
+import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 
 const rpcClient = new RpcClient('replace_with_RPC_URL');
 const tezos = new TezosToolkit(new RpcClientCache(rpcClient));
