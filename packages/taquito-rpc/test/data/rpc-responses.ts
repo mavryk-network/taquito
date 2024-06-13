@@ -2302,13 +2302,13 @@ export const contract = {
 export const unstakeRequestsResponse = {
   finalizable: [
     {
-      delegate: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA',
+      delegate: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5',
       cycle: 10,
       amount: new BigNumber('500000000'),
     },
   ],
   unfinalizable: {
-    delegate: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA',
+    delegate: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5',
     requests: [
       {
         cycle: 11,
@@ -2325,7 +2325,7 @@ export const delegates = {
   current_frozen_deposits: new BigNumber('2028957741'),
   frozen_deposits: new BigNumber('1028957741'),
   staking_balance: new BigNumber('10289576365'),
-  delegated_contracts: ['tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb'],
+  delegated_contracts: ['mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv'],
   delegated_balance: new BigNumber('0'),
   min_delegated_in_current_cycle: {
     amount: '8260618624',
@@ -2344,7 +2344,7 @@ export const delegates = {
   staking_denominator: new BigNumber('0'),
   voting_power: new BigNumber('10289577405'),
   remaining_proposals: 20,
-  active_consensus_key: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+  active_consensus_key: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
 };
 export const votingInfo = {
   voting_power: '1005169895965',

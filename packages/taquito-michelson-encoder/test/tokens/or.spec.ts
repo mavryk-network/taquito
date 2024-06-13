@@ -1450,7 +1450,7 @@ describe('Or token', () => {
         args: [
           [
             {
-              string: 'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6',
+              string: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU',
             },
           ],
           [],
@@ -1464,7 +1464,7 @@ describe('Or token', () => {
                     prim: 'Pair',
                     args: [
                       {
-                        string: 'tz1dcjLdDM6uYKYdQhK177cUbtvL8QwX4ebH',
+                        string: 'mv1Sb4BEoqiZodff25B2nRdtN3qL6fPPZ7wt',
                       },
                       {
                         string: '2024-04-19T13:53:22Z',
@@ -1490,11 +1490,11 @@ describe('Or token', () => {
         ],
       };
       const execute_Legacy = {
-        owners: ['tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6'],
+        owners: ['mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU'],
         inheritors: [],
         status: {
           rECOVERING: {
-            3: 'tz1dcjLdDM6uYKYdQhK177cUbtvL8QwX4ebH',
+            3: 'mv1Sb4BEoqiZodff25B2nRdtN3qL6fPPZ7wt',
             4: '2024-04-19T13:53:22.000Z',
           },
         },
@@ -1504,11 +1504,11 @@ describe('Or token', () => {
         direct_debit_mandates_history: '414523',
       };
       const execte_ResetFields = {
-        owners: ['tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6'],
+        owners: ['mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU'],
         inheritors: [],
         status: {
           rECOVERING: {
-            0: 'tz1dcjLdDM6uYKYdQhK177cUbtvL8QwX4ebH',
+            0: 'mv1Sb4BEoqiZodff25B2nRdtN3qL6fPPZ7wt',
             1: '2024-04-19T13:53:22.000Z',
           },
         },
@@ -1587,7 +1587,7 @@ describe('Or token', () => {
         args: [
           [
             {
-              string: 'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6',
+              string: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU',
             },
           ],
           [],
@@ -1601,7 +1601,7 @@ describe('Or token', () => {
                     prim: 'Pair',
                     args: [
                       {
-                        string: 'tz1dcjLdDM6uYKYdQhK177cUbtvL8QwX4ebH',
+                        string: 'mv1Sb4BEoqiZodff25B2nRdtN3qL6fPPZ7wt',
                       },
                       {
                         string: '2024-04-19T13:53:22Z',
@@ -1615,21 +1615,21 @@ describe('Or token', () => {
         ],
       };
       const execute_Legacy = {
-        owners: ['tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6'],
+        owners: ['mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU'],
         inheritors: [],
         status: {
           rECOVERING: {
-            3: 'tz1dcjLdDM6uYKYdQhK177cUbtvL8QwX4ebH',
+            3: 'mv1Sb4BEoqiZodff25B2nRdtN3qL6fPPZ7wt',
             4: '2024-04-19T13:53:22.000Z',
           },
         },
       };
       const execute_ResetFields = {
-        owners: ['tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6'],
+        owners: ['mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU'],
         inheritors: [],
         status: {
           rECOVERING: {
-            0: 'tz1dcjLdDM6uYKYdQhK177cUbtvL8QwX4ebH',
+            0: 'mv1Sb4BEoqiZodff25B2nRdtN3qL6fPPZ7wt',
             1: '2024-04-19T13:53:22.000Z',
           },
         },

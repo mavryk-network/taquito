@@ -687,7 +687,7 @@ describe('RpcContractProvider test', () => {
 
       expect(async () => {
         await rpcContractProvider.stake({
-          to: 'tz1iedjFYksExq8snZK9MNo4AvXHBdXfTsGX',
+          to: 'mv1KEw8vxBCtfdHfnc1BbGkCNArmRuF1oHjw',
           amount: 2,
         });
       }).rejects.toThrow();

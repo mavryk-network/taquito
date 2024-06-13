@@ -194,13 +194,13 @@ describe('RpcClient test', () => {
       expect(response).toEqual({
         finalizable: [
           {
-            delegate: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA',
+            delegate: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5',
             cycle: 10,
             amount: new BigNumber('500000000'),
           },
         ],
         unfinalizable: {
-          delegate: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA',
+          delegate: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5',
           requests: [
             {
               cycle: 11,
@@ -314,7 +314,7 @@ describe('RpcClient test', () => {
 
   describe('getAllDelegates', () => {
     it('should query the right url and data', async () => {
-      httpBackend.createRequest.mockResolvedValue(['tz1cjyja1TU6fiyiFav3mFAdnDsCReJ12hPD']);
+      httpBackend.createRequest.mockResolvedValue(['mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc']);
       const result = await client.getAllDelegates({ active: true, with_minimal_stake: true });
       await client.getAllDelegates({ active: true, with_minimal_stake: true });
       expect(httpBackend.createRequest.mock.calls[0][0]).toEqual({
@@ -323,7 +323,7 @@ describe('RpcClient test', () => {
         query: { active: true, with_minimal_stake: true },
       });
 
-      expect(result).toEqual(['tz1cjyja1TU6fiyiFav3mFAdnDsCReJ12hPD']);
+      expect(result).toEqual(['mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc']);
     });
   });
 
@@ -333,7 +333,7 @@ describe('RpcClient test', () => {
       current_frozen_deposits: new BigNumber('2028957741'),
       frozen_deposits: new BigNumber('1028957741'),
       staking_balance: new BigNumber('10289576365'),
-      delegated_contracts: ['tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb'],
+      delegated_contracts: ['mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv'],
       delegated_balance: new BigNumber('0'),
       min_delegated_in_current_cycle: {
         amount: '8260618624',
@@ -352,7 +352,7 @@ describe('RpcClient test', () => {
       staking_denominator: new BigNumber('0'),
       voting_power: new BigNumber('10289577405'),
       remaining_proposals: 20,
-      active_consensus_key: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+      active_consensus_key: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
     };
 
     it('should query the right url', async () => {
@@ -374,7 +374,7 @@ describe('RpcClient test', () => {
         current_frozen_deposits: new BigNumber('2028957741'),
         frozen_deposits: new BigNumber('1028957741'),
         staking_balance: new BigNumber('10289576365'),
-        delegated_contracts: ['tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb'],
+        delegated_contracts: ['mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv'],
         delegated_balance: new BigNumber('0'),
         min_delegated_in_current_cycle: {
           amount: '8260618624',
@@ -393,7 +393,7 @@ describe('RpcClient test', () => {
         staking_denominator: new BigNumber('0'),
         voting_power: new BigNumber('10289577405'),
         remaining_proposals: 20,
-        active_consensus_key: 'tz1VSUr8wwNhLAzempoch5d6hLRiTh8Cjcjb',
+        active_consensus_key: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
       });
     });
 
@@ -2807,9 +2807,9 @@ describe('RpcClient test', () => {
                     block_payload_hash: 'vh27AvfjAJob9VdcZHEPHFbMAzi6nhCiHVzAyDBEdAPDCcEa676t',
                     dal_attestation: '0',
                     metadata: {
-                      delegate: 'tz1Zt8QQ9aBznYNk5LUBjtME9DuExomw9YRs',
+                      delegate: 'mv1CaYhbjXN399YZ91o39R6bNRoJBN7SPFTu',
                       consensus_power: 532,
-                      consensus_key: 'tz1Zt8QQ9aBznYNk5LUBjtME9DuExomw9YRs',
+                      consensus_key: 'mv1CaYhbjXN399YZ91o39R6bNRoJBN7SPFTu',
                     },
                   },
                 ],
@@ -2868,7 +2868,7 @@ describe('RpcClient test', () => {
                 contents: [
                   {
                     kind: 'dal_publish_commitment',
-                    source: 'tz1Mp9zrMAJ3jckh3juLXGobfDv6oyUycfSy',
+                    source: 'mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf',
                     fee: '513',
                     counter: '67',
                     gas_limit: '1433',
@@ -2884,7 +2884,7 @@ describe('RpcClient test', () => {
                       balance_updates: [
                         {
                           kind: 'contract',
-                          contract: 'tz1Mp9zrMAJ3jckh3juLXGobfDv6oyUycfSy',
+                          contract: 'mv1ArAmw2TmmDcxKy3kjRDCnfrwGqSsHj7yf',
                           change: '-513',
                           origin: 'block',
                         },

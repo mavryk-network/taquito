@@ -48,13 +48,13 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol, knownBaker }) => {
 
     parisAndAlpha('should throw error when param is against pseudo operation', async () => {
       expect(async () => {
-        const op = await Tezos.wallet.stake({ amount: 1, to: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA' }).send();
+        const op = await Tezos.wallet.stake({ amount: 1, to: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5' }).send();
       }).rejects.toThrow(InvalidStakingAddressError);
       expect(async () => {
-        const op = await Tezos.wallet.unstake({ amount: 1, to: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA' }).send();
+        const op = await Tezos.wallet.unstake({ amount: 1, to: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5' }).send();
       }).rejects.toThrow(InvalidStakingAddressError);
       expect(async () => {
-        const op = await Tezos.wallet.finalizeUnstake({ to: 'tz1PZY3tEWmXGasYeehXYqwXuw2Z3iZ6QDnA' }).send();
+        const op = await Tezos.wallet.finalizeUnstake({ to: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5' }).send();
       }).rejects.toThrow(InvalidStakingAddressError);
       expect(async () => {
         const op = await Tezos.wallet.finalizeUnstake({ amount: 1 }).send();

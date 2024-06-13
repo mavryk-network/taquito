@@ -89,7 +89,7 @@ CONFIGS().forEach(
         });
 
         it(`Verify that rpcClient.getUnstakeRequests for knownBaker returns the unstaked requests`, async () => {
-          const response = await rpcClient.getUnstakeRequests('tz1KqYu4VQG67fgq1Pfn93ASoZxhSW7mTDbC');
+          const response = await rpcClient.getUnstakeRequests('mv19thf7SS3FsU3BXZsE4e3bWPcHrtdJXvRM');
           expect(response).toBeDefined();
         });
 
