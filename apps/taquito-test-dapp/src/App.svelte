@@ -14,6 +14,7 @@
   let availableNetworks = [
     { value: "basenet", label: "Basenet", group: "current testnets" },
     { value: "atlasnet", label: "Atlasnet", group: "current testnets" },
+    { value: "parisnet", label: "Parisnet", group: "current testnets" },
     { value: "mainnet", label: "Mainnet", group: "mainnet" },
     { value: "dailynet", label: "Dailynet", group: "other testnets" },
     { value: "weeklynet", label: "Weeklynet", group: "other testnets" },
@@ -41,6 +42,9 @@
         break;
       case "atlasnet":
         store.updateNetworkType(NetworkType.ATLASNET);
+        break;
+      case "parisnet":
+        store.updateNetworkType(NetworkType.PARISNET);
         break;
       case "custom":
         //TODO: input custom RPC URL

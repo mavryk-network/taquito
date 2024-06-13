@@ -36,11 +36,90 @@ const preparePayloadToSign = (
   };
 };
 
+const sendTezToEtherlink = async (
+  amount: number,
+  address: string,
+  tezos: TezosToolkit,
+): Promise<TestResult> => {
+  let opHash = "";
+  try {
+    const contract = await tezos.wallet.at('KT1VEjeQfDBSfpDH5WeBM5LukHPGM2htYEh3')
+    let op = await contract.methodsObject.deposit({ evm_address: 'sr18wx6ezkeRjt1SZSeZ2UQzQN3Uc3YLMLqg', l2_address: address }).send({ amount });
+    await op.confirmation()
+    opHash = op.hasOwnProperty("opHash") ? op["opHash"] : op["hash"];
+    console.log("Operation successful with op hash:", opHash);
+    return { success: true, opHash };
+  } catch (error) {
+    console.log(error);
+    return { success: false, opHash: "" };
+  }
+};
+
 const sendTez = async (Tezos: TezosToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
       .transfer({ to: "mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv", amount: 0.1 })
+      .send();
+    await op.confirmation();
+    opHash = op.opHash;
+    return { success: true, opHash };
+  } catch (error) {
+    console.log(error);
+    return { success: false, opHash: "" };
+  }
+};
+
+const setDelegate = async (delegate: string, Tezos: TezosToolkit): Promise<TestResult> => {
+  let opHash = "";
+  try {
+    const op = await Tezos.wallet
+      .setDelegate({ delegate })
+      .send();
+    await op.confirmation();
+    opHash = op.opHash;
+    return { success: true, opHash };
+  } catch (error) {
+    console.log(error);
+    return { success: false, opHash: "" };
+  }
+};
+
+const stake = async (amount: number, Tezos: TezosToolkit): Promise<TestResult> => {
+  let opHash = "";
+  try {
+    const op = await Tezos.wallet
+      .stake({ amount })
+      .send();
+    await op.confirmation();
+    opHash = op.opHash;
+    return { success: true, opHash };
+  } catch (error) {
+    console.log(error);
+    return { success: false, opHash: "" };
+  }
+};
+
+const unstake = async (amount: number, Tezos: TezosToolkit): Promise<TestResult> => {
+  let opHash = "";
+  try {
+    const op = await Tezos.wallet
+      .unstake({ amount })
+      .send();
+    await op.confirmation();
+    opHash = op.opHash;
+    return { success: true, opHash };
+  } catch (error) {
+    console.log(error);
+    return { success: false, opHash: "" };
+  }
+};
+
+const finalizeUnstake = async (Tezos: TezosToolkit): Promise<TestResult> => {
+  let opHash = "";
+  try {
+    const op = await Tezos.wallet
+      .finalizeUnstake({})
       .send();
     await op.confirmation();
     opHash = op.opHash;
@@ -302,7 +381,7 @@ const signPayloadAndSend = async (
     const publicKey = activeAccount.publicKey;
     // sends transaction to contract
     const op = await contract.methodsObject
-      .check_signature({0: publicKey, 1: signedPayload.signature, 2: payload.payload})
+      .check_signature({ 0: publicKey, 1: signedPayload.signature, 2: payload.payload })
       .send();
     await op.confirmation();
     return {
@@ -455,7 +534,7 @@ const permit = async (Tezos: TezosToolkit, wallet: BeaconWallet) => {
     const contract = await Tezos.wallet.at(contractAddress);
     // hashes the parameter for the contract call
     const mintParam: any = contract.methodsObject
-      .mint({0: store.userAddress, 1: 100})
+      .mint({ 0: store.userAddress, 1: 100 })
       .toTransferParams().parameter?.value;
     const mintParamType = contract.entrypoints.entrypoints["mint"];
     // packs the entrypoint call
@@ -548,6 +627,11 @@ const saplingShielded = async (
 
 export const list = [
   "Send tez",
+  "Set Delegate",
+  "[parisnet] Stake",
+  "[parisnet] Unstake",
+  "[parisnet] Finalize Unstake",
+  "[ghostnet] Send tez from Ghostnet to Etherlink",
   "Contract call with int",
   "Contract call with (pair nat string)",
   "Contract call that fails",
@@ -562,8 +646,8 @@ export const list = [
   "Verify a provided signature",
   "Set the transaction limits",
   "Subscribe to confirmations",
-  "Permit contract",
-  "Sapling"
+  "[wip] Permit contract",
+  "[wip] Sapling"
 ];
 
 export const init = (
@@ -580,6 +664,71 @@ export const init = (
       run: () => sendTez(Tezos),
       showExecutionTime: false,
       inputRequired: false,
+      lastResult: { option: "none", val: false }
+    },
+    {
+      id: "set-delegate",
+      name: "Set Delegate",
+      description: "This test sets delegate to your specified address",
+      documentation: 'https://taquito.io/docs/set_delegate/#setdelegate',
+      keyword: 'delegate',
+      run: input => setDelegate(input.delegate, Tezos),
+      showExecutionTime: false,
+      inputRequired: true,
+      inputType: "delegate",
+      lastResult: { option: "none", val: false }
+    },
+    {
+      id: "stake",
+      name: "[parisnet] Stake",
+      description: "This test stake your spendable balance into frozen staked balance",
+      documentation: 'https://taquito.io/docs/staking',
+      keyword: 'stake',
+      run: input => stake(input.stake, Tezos),
+      showExecutionTime: false,
+      inputRequired: true,
+      inputType: "stake",
+      lastResult: { option: "none", val: false }
+    },
+    {
+      id: "unstake",
+      name: "[parisnet] Unstake",
+      description: "This test unstake amount from your frozen staked balance into unstaked frozen balance which after 4 cycles will become unstaked finalizable balance",
+      documentation: 'https://taquito.io/docs/staking',
+      keyword: 'unstake',
+      run: input => unstake(input.unstake, Tezos),
+      showExecutionTime: false,
+      inputRequired: true,
+      inputType: "unstake",
+      lastResult: { option: "none", val: false }
+    },
+    {
+      id: "finalize-unstake",
+      name: "[parisnet] Finalize unstake",
+      description: "This test transfer all unstaked finalizable balance back into spendable balance",
+      documentation: 'https://taquito.io/docs/staking',
+      keyword: 'finalizeUnstake',
+      run: () => finalizeUnstake(Tezos),
+      showExecutionTime: false,
+      inputRequired: false,
+      lastResult: { option: "none", val: false }
+    },
+    {
+      id: "send-tez-to-etherlink",
+      name: "[ghostnet] Send tez from Ghostnet to Etherlink",
+      description:
+        "This test allows you send your ghostnet tez to etherlink address",
+      documentation: '',
+      keyword: 'etherlink',
+      run: input =>
+        sendTezToEtherlink(
+          input.amount,
+          input.address,
+          Tezos
+        ),
+      showExecutionTime: false,
+      inputRequired: true,
+      inputType: "etherlink",
       lastResult: { option: "none", val: false }
     },
     {
@@ -761,7 +910,7 @@ export const init = (
     },
     {
       id: "permit",
-      name: "Permit contract",
+      name: "[wip] Permit contract",
       description: "This test implements TZIP-17",
       keyword: 'permit',
       run: () => permit(Tezos, wallet),
@@ -771,7 +920,7 @@ export const init = (
     },
     {
       id: "sapling-shielded",
-      name: "Sapling shielded transaction",
+      name: "[wip] Sapling shielded transaction",
       description: "This test prepares and sends a shielded transaction to a Sapling pool",
       documentation: 'https://taquito.mavryk.org/docs/sapling/',
       keyword: 'sapling',

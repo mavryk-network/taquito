@@ -1,12 +1,13 @@
 import { NetworkType } from "@mavrykdynamics/beacon-types";
 
-export type SupportedNetworks = NetworkType.ATLASNET | NetworkType.BASENET | NetworkType.MAINNET | NetworkType.CUSTOM;
+export type SupportedNetworks = NetworkType.PARISNET | NetworkType.ATLASNET | NetworkType.BASENET | NetworkType.MAINNET | NetworkType.CUSTOM;
 
 const rpcUrls: Record<SupportedNetworks, string> = {
   [NetworkType.MAINNET]: "https://mainnet.rpc.mavryk.network",
   [NetworkType.BASENET]: "https://basenet.rpc.mavryk.network",
   [NetworkType.ATLASNET]: "https://atlasnet.rpc.mavryk.network",
-  [NetworkType.CUSTOM]: "https://atlasnet.rpc.mavryk.network",
+  [NetworkType.PARISNET]: "https://rpc.parisnet.teztnets.com/",
+  [NetworkType.CUSTOM]: "https://basenet.rpc.mavryk.network",
 };
 
 export const getRpcUrl = (networkType: SupportedNetworks): string => {
@@ -21,6 +22,8 @@ export const getTzKtUrl = (networkType: SupportedNetworks): string | undefined =
       return "https://basenet.api.mavryk.network";
     case NetworkType.ATLASNET:
       return "https://atlasnet.api.mavryk.network";
+      case NetworkType.PARISNET:
+        return "https://parisnet.tzkt.io";
     case NetworkType.CUSTOM:
       return undefined;
   }
@@ -35,4 +38,5 @@ export const contractAddress = {
   mainnet: "KT1ShtH2zCrKMuWGRejEd6RAcnePwxBQeMAN",
   basenet: "KT1QKmcNBcfzVTXG2kBcE6XqXtEuYYUzMcT5",
   atlasnet: "KT1GYx1KDhMQt2GJEztRh8EyYxJUPM6fnAMM",
+  parisnet: "KT1LBQmSDGsRj4LFa2bsCsZLkGCtmRFVVcPh",
 };

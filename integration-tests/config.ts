@@ -7,6 +7,7 @@ import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 import { KnownContracts } from './known-contracts';
 import { knownContractsProtoALph } from './known-contracts-ProtoALph';
 import { knownContractsPtBasenet } from './known-contracts-PtBasenet';
+import { knownContractsPtParisBQ } from './known-contracts-PtParisBQ';
 import { knownContractsPtAtLas } from './known-contracts-PtAtLas';
 
 const nodeCrypto = require('crypto');
@@ -31,7 +32,7 @@ const forgers: ForgerType[] = [ForgerType.COMPOSITE];
 
 // user running integration test can pass environment variable TEZOS_NETWORK_TYPE=sandbox to specify which network to run against
 export enum NetworkType {
-  TESTNET,  // corresponds basenet, atlasnet and weeklynet etc.
+  TESTNET,  // corresponds basenet, parisnet and weeklynet etc.
   SANDBOX,  // corresponds to flexmasa local chain
 }
 
@@ -128,17 +129,26 @@ const defaultConfig = ({
   }
 }
 
-const atlasnetEphemeral: Config =
+const parisnetEphemeral: Config =
+  defaultConfig({
+    networkName: 'PARISNET',
+    protocol: Protocols.PtParisBQ,
+    defaultRpc: 'http://parisnet.i.ecadinfra.com:8732/',
+    knownContracts: knownContractsPtParisBQ,
+    signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/parisnet')
+  });
+
+const parisnetSecretKey: Config =
+  { ...parisnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'http://parisnet.i.ecadinfra.com:8732/' } };
+
+const atlasnetSecretKey: Config =
   defaultConfig({
     networkName: 'ATLASNET',
     protocol: Protocols.PtAtLas,
     defaultRpc: 'https://atlasnet.rpc.mavryk.network',
     knownContracts: knownContractsPtAtLas,
-    signerConfig: defaultEphemeralConfig('http://key-gen-1.i.tez.ie:3010/mondaynet')
+    signerConfig: defaultSecretKey
   });
-
-const atlasnetSecretKey: Config =
-  { ...atlasnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'https://atlasnet.rpc.mavryk.network' } };
 
 const basenetEphemeral: Config =
   defaultConfig({
@@ -167,21 +177,23 @@ const weeklynetSecretKey: Config =
 const providers: Config[] = [];
 
 if (process.env['RUN_WITH_SECRET_KEY']) {
-  providers.push(atlasnetSecretKey);
-} else if (process.env['RUN_ATLASNET_WITH_SECRET_KEY']) {
-  providers.push(atlasnetSecretKey);
+  providers.push(parisnetSecretKey);
+} else if (process.env['RUN_PARISNET_WITH_SECRET_KEY']) {
+  providers.push(parisnetSecretKey);
 } else if (process.env['RUN_BASENET_WITH_SECRET_KEY']) {
   providers.push(basenetSecretKey);
+} else if (process.env['RUN_ATLASNET_WITH_SECRET_KEY']) {
+  providers.push(atlasnetSecretKey);
 } else if (process.env['RUN_WEEKLYNET_WITH_SECRET_KEY']) {
   providers.push(weeklynetSecretKey);
-} else if (process.env['ATLASNET']) {
-  providers.push(atlasnetEphemeral);
+} else if (process.env['PARISNET']) {
+  providers.push(parisnetEphemeral);
 } else if (process.env['BASENET']) {
   providers.push(basenetEphemeral);
 } else if (process.env['WEEKLYNET']) {
   providers.push(weeklynetEphemeral);
 } else {
-  providers.push(atlasnetEphemeral);
+  providers.push(parisnetEphemeral);
 }
 
 const setupForger = (Tezos: TezosToolkit, forger: ForgerType): void => {

@@ -1,12 +1,10 @@
-import { DefaultContractType, OriginationOperation, Protocols } from "@mavrykdynamics/taquito";
+import { DefaultContractType, OriginationOperation } from "@mavrykdynamics/taquito";
 import { CONFIGS } from "../../config";
-import { ProtoGreaterOrEqual } from "@mavrykdynamics/taquito-michel-codec";
 import { buf2hex } from "@mavrykdynamics/taquito-utils";
 import { Chest } from '@mavrykdynamics/taquito-timelock';
 
-CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
+CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;
-  const atlasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtAtLas) ? test : test.skip;
 
   describe(`Test contract origination with timelock types (chest or chest_key) in storage and retrieve its value through contract api: ${rpc}`, () => {
     const { chest, key } = Chest.newChestAndKey(new TextEncoder().encode('test'), 1000);
@@ -31,7 +29,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       await opChestKey.confirmation()
     })
 
-    atlasAndAlpha('Verify contract.originate for a contract with chest in storage', async () => {
+    it('Verify contract.originate for a contract with chest in storage', async () => {
       expect(opChest.hash).toBeDefined();
       expect(opChest.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY)
       const contract = await opChest.contract();
@@ -40,7 +38,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
       expect(storage).toEqual(buf2hex(chest.encode()));
     });
 
-    atlasAndAlpha('Verify contract.originate for a contract with chest_key in storage', async () => {
+    it('Verify contract.originate for a contract with chest_key in storage', async () => {
       expect(opChestKey.hash).toBeDefined();
       expect(opChestKey.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY)
       const contract = await opChestKey.contract();

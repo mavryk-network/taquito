@@ -43,8 +43,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - testnet: atlasnet
-            testnet_uppercase: ATLASNET
+          - testnet: parisnet
+            testnet_uppercase: PARISNET
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
