@@ -62,10 +62,10 @@ const lambda = MANAGER_LAMBDA.transferImplicit(RECIPIENT_ADDRESS, AMOUNT);
 
 Next, we will use the lambda to create the required payload for this action:
 ```typescript
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 import { Parser, packDataBytes } from "@mavrykdynamics/taquito-michel-codec";
 
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 const chainId = await Tezos.rpc.getChainId();
 const contract = await Tezos.contract.at(MULTISIG_ADDRESS);
 const storage: any = await contract.storage();
@@ -134,7 +134,7 @@ const sig = (
 ).prefixSig;
 ``` 
 
-The instance of the `TezosToolkit` holds a signer that you can use to sign arbitrary data as shown above. It returns different values and we will keep the one under the `prefixSig` property.
+The instance of the `MavrykToolkit` holds a signer that you can use to sign arbitrary data as shown above. It returns different values and we will keep the one under the `prefixSig` property.
 
 From there, the payload will be shared with the other participants. Each one of them will review it, and sign it and the initiator of the contract call will collect all the signatures to submit them with the transaction.
 
@@ -174,10 +174,10 @@ const michelineListOfKeys = `{ ${listOfKeys
 
 Next, we are going to pack the required nested pair in the same way we did earlier while changing some values in the pair:
 ```typescript
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 import { Parser } from "@mavrykdynamics/taquito-michel-codec";
 
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 const chainId = await Tezos.rpc.getChainId();
 const contract = await Tezos.contract.at(MULTISIG_ADDRESS);
 const storage: any = await contract.storage();

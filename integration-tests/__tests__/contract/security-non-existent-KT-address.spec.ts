@@ -1,6 +1,6 @@
 import { CONFIGS } from '../../config';
 import { RpcClient } from '@mavrykdynamics/taquito-rpc';
-import { Protocols, TezosToolkit } from '@mavrykdynamics/taquito';
+import { Protocols, MavrykToolkit } from '@mavrykdynamics/taquito';
 
 // TC001 - non-existing KT addresses can not be prefunded
 
@@ -10,7 +10,7 @@ const testContractAddress = 'KT1PWx2mnDueood7fEmfbBDKx1D9BAnnXitn';
 
 CONFIGS().forEach(({ rpc, setup, protocol }) => {
   const weeklynet = protocol === Protocols.ProtoALpha ? test : test.skip;
-  const Tezos = new TezosToolkit(new RpcClient(rpc));
+  const Tezos = new MavrykToolkit(new RpcClient(rpc));
 
   describe(`Test contracts using: ${rpc}`, () => {
     beforeEach(async () => {

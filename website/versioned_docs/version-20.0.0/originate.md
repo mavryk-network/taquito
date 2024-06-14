@@ -34,8 +34,8 @@ This requires a signer to be configured, ie:
 
 ```
 import { importKey } from '@mavrykdynamics/taquito-signer';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
+const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
 ```
 
@@ -44,8 +44,8 @@ importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
 
 ```
 import {  BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
+const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com');
 const option = { name: "nameOfWallet", network: { type: 'ghostnet' }, enableMetrics: true};
 const wallet = new BeaconWallet(option);
 
@@ -92,8 +92,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
@@ -121,8 +121,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
@@ -163,8 +163,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
@@ -188,8 +188,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
@@ -224,8 +224,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
@@ -261,8 +261,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation

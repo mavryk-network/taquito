@@ -21,14 +21,14 @@ npm install @mavrykdynamics/taquito
 ```
 
 ### Using the Contract API
-The Contract API is exposed through the `contract` property of the `TezosToolkit` object. The `contract` property exposes methods that allow you to interact with smart contracts.
+The Contract API is exposed through the `contract` property of the `MavrykToolkit` object. The `contract` property exposes methods that allow you to interact with smart contracts.
 
 Below is a quick example of how to use the `transaction` operation via the Contract API.
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('RPC address here');
+const Tezos = new MavrykToolkit('RPC address here');
 const op = await Tezos.contract.transfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 100 });
 await op.confirmation();
 ```
@@ -107,8 +107,8 @@ We provide a level of independence and customizability if you choose to do so, w
 
 ### Preparing a Transaction Operation
 ```typescript
-import { TezosToolkit } from '@mavrykdynamics/taquito'
-const Tezos = new TezosToolkit(RPC_URL);
+import { MavrykToolkit } from '@mavrykdynamics/taquito'
+const Tezos = new MavrykToolkit(RPC_URL);
 
 // The PrepareProvider returns a 'PreparedOperation' type object
 const prepared = await Tezos.prepare.transaction({

@@ -11,15 +11,15 @@ The `@mavrykdynamics/taquito-tzip12` package allows retrieving metadata associat
 
 The package can act as an extension to the well-known Taquito contract abstraction. 
 
-1. **We first need to create an instance of `Tzip12Module` and add it as an extension to our `TezosToolkit`**
+1. **We first need to create an instance of `Tzip12Module` and add it as an extension to our `MavrykToolkit`**
 
 The constructor of the `Tzip12Module` takes an optional `MetadataProvider` as a parameter. When none is passed, the default `MetadataProvider` of Taquito is instantiated, and the default handlers (`HttpHandler,` `IpfsHandler,` and `TezosStorageHandler`) are used.
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { Tzip12Module } from '@mavrykdynamics/taquito-tzip12';
 
-const Tezos = new TezosToolkit('rpcUrl');
+const Tezos = new MavrykToolkit('rpcUrl');
 Tezos.addExtension(new Tzip12Module());
 
 ```
@@ -85,10 +85,10 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit, compose } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit, compose } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
 // import { tzip16 } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new TezosToolkit('rpc_url');
+// const Tezos = new MavrykToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip12Module());
 
@@ -109,10 +109,10 @@ Tezos.contract.at(contractAddress, compose(tzip12, tzip16))
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit, compose } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit, compose } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
 // import { tzip16 } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new TezosToolkit('rpc_url');
+// const Tezos = new MavrykToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip12Module());
 
@@ -143,9 +143,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip16Module, tzip16, bytesToString } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new TezosToolkit('rpc_url');
+// const Tezos = new MavrykToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
 
@@ -172,9 +172,9 @@ Tezos.contract.at(contractAddress, tzip16)
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip16Module, tzip16, bytesToString } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new TezosToolkit('rpc_url');
+// const Tezos = new MavrykToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip16Module());
 
@@ -251,9 +251,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
-// const Tezos = new TezosToolkit('rpc_url');
+// const Tezos = new MavrykToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip12Module());
 
@@ -274,9 +274,9 @@ Tezos.contract.at(contractAddress, tzip12)
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
-// const Tezos = new TezosToolkit('rpc_url');
+// const Tezos = new MavrykToolkit('rpc_url');
 
 Tezos.addExtension(new Tzip12Module());
 

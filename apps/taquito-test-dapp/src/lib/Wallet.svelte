@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, afterUpdate } from "svelte";
   import { fly } from "svelte/transition";
-  import { TezosToolkit } from "@mavrykdynamics/taquito";
+  import { MavrykToolkit } from "@mavrykdynamics/taquito";
   import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
   import { BeaconEvent, type DAppClientOptions } from "@mavrykdynamics/beacon-sdk";
   import store from "../store";
@@ -58,7 +58,7 @@
       const userAddress = (await wallet.getPKH()) as TezosAccountAddress;
       store.updateUserAddress(userAddress);
       const url = getRpcUrl($store.networkType);
-      const Tezos = new TezosToolkit(url);
+      const Tezos = new MavrykToolkit(url);
       Tezos.setWalletProvider(wallet);
       store.updateTezos(Tezos);
 
@@ -90,7 +90,7 @@
     const wallet = createNewWallet(config);
     store.updateWallet(wallet);
     const url = getRpcUrl(config.networkType);
-    const Tezos = new TezosToolkit(url);
+    const Tezos = new MavrykToolkit(url);
     Tezos.setWalletProvider(wallet);
     store.updateTezos(Tezos);
 

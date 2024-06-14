@@ -18,14 +18,14 @@ npm install @mavrykdynamics/taquito
 
 ## Import the library in your project
 
-### Import `TezosToolkit` from `@mavrykdynamics/taquito` and instantiate it
+### Import `MavrykToolkit` from `@mavrykdynamics/taquito` and instantiate it
 
-The constructor of the `TezosToolkit` class takes an RPC URL as a parameter. It can be a string or a [RpcClient](rpc_package.md) object. A list of community-run nodes can be accessed [here](rpc_nodes.md#list-of-community-run-nodes).
+The constructor of the `MavrykToolkit` class takes an RPC URL as a parameter. It can be a string or a [RpcClient](rpc_package.md) object. A list of community-run nodes can be accessed [here](rpc_nodes.md#list-of-community-run-nodes).
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 ```
 
 In some cases, it can be useful to make more than one instance of Taquito, perhaps if you wanted to communicate with two different RPC nodes or offer other Signing options. You can now up separate instances with various providers or configurations per instance.
@@ -39,10 +39,10 @@ Taquito's Contract API supports different signers. There is no default signer co
 You can set which signer you wish to use as follows:
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { RemoteSigner } from '@mavrykdynamics/taquito-remote-signer';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 Tezos.setProvider({
   signer: new RemoteSigner(pkh, rootUrl, { headers: requestHeaders });,
@@ -56,8 +56,8 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 ### Get the current Tezos spendable balance for an address
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.tz
   .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
@@ -76,10 +76,10 @@ This feature will import your private key in memory and sign operations using th
 If you have a private key, you can import it as follows:
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { InMemorySigner, importKey } from '@mavrykdynamics/taquito-signer';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 Tezos.setProvider({
   signer: new InMemorySigner('YOUR_PRIVATE_KEY'),

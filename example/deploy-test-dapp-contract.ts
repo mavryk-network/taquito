@@ -1,4 +1,4 @@
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 import { code, storage } from './data/test-dapp-contract';
 
@@ -8,7 +8,7 @@ const rpcUrl = 'http://parisnet.i.ecadinfra.com:8732'
 originate(rpcUrl)
 
 async function originate(url: string) {
-  const Tezos = new TezosToolkit(url)
+  const Tezos = new MavrykToolkit(url)
   // if it's a new protocol might need to fund alice's address mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv
   Tezos.setSignerProvider(new InMemorySigner('edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq'))
 

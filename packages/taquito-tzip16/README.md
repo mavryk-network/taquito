@@ -22,7 +22,7 @@ npm i --save @mavrykdynamics/taquito
 
 ## Usage
 
-**Create an instance of the `Tzip16Module` and add it as an extension to the `TezosToolkit`**
+**Create an instance of the `Tzip16Module` and add it as an extension to the `MavrykToolkit`**
 
 The constructor of the `Tzip16Module` takes an optional `MetadataProvider` as a parameter. When none is passed, the default `MetadataProvider` of Taquito is instantiated, and the default handlers (`HttpHandler`, `IpfsHandler`, and `TezosStorageHandler`) are used. 
 The `MetadataProvider` can be customized by the user if needed.
@@ -30,11 +30,11 @@ The `MetadataProvider` can be customized by the user if needed.
 **Use the `tzip16` function to extend a contract abstraction**
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { Tzip16Module } from '@mavrykdynamics/taquito-tzip16';
 import { tzip16 } from '@mavrykdynamics/taquito-tzip16';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.addExtension(new Tzip16Module());
 
 const contract = await Tezos.contract.at("contractAddress", tzip16)

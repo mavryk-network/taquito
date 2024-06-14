@@ -35,12 +35,12 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract, knownTzip1216Contract
         ],
         storage: { prim: 'Pair', args: [{ int: '7' }, { int: '60101' }] }
     }
-    describe(`Test extensions TezosToolkit through contract api: ${rpc}`, () => {
+    describe(`Test extensions MavrykToolkit through contract api: ${rpc}`, () => {
         beforeEach(async () => {
             await setup();
         });
 
-        it('Verify configuration of a ContractsLibrary and a Tzip16Module on the TezosToolkit instance', async () => {
+        it('Verify configuration of a ContractsLibrary and a Tzip16Module on the MavrykToolkit instance', async () => {
             const contractsLibrary = new ContractsLibrary();
 
             // We intentionally load a script that does not match the knownBigMapContract script
@@ -50,7 +50,7 @@ CONFIGS().forEach(({ lib, rpc, setup, knownBigMapContract, knownTzip1216Contract
                     entrypoints
                 }
             });
-            // Add the contractsLibrary and Tzip16Module as extensions to our TezosToolkit
+            // Add the contractsLibrary and Tzip16Module as extensions to our MavrykToolkit
             Tezos.addExtension([contractsLibrary, new Tzip16Module()]);
 
             // We can access the functionalities of the Tzip12 and Tzip16 modules

@@ -143,12 +143,12 @@ Let's originate the contract with initial storage values `level` of 0, a stub ch
 `timelockCode` and `timelockStorage` can be found [here](https://github.com/ecadlabs/taquito/blob/master/integration-tests/data/timelock-flip-contract.ts)
 
 ```
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Chest } from '@mavrykdynamics/taquito-timelock';
 // import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 // import { timelockCode, timelockStorage } from './timelock-flip-contract';
 
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com');
 
 const originate = await Tezos.contract.originate({ code: timelockCode, init: timelockStorage });
 await originate.confirmation()

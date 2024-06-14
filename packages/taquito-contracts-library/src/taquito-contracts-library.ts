@@ -20,9 +20,9 @@ interface ContractsData {
  * @example
  * ```
  * import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
- * import { TezosToolkit } from '@mavrykdynamics/taquito';
+ * import { MavrykToolkit } from '@mavrykdynamics/taquito';
  *
- * const Tezos = new TezosToolkit('rpcUrl');
+ * const Tezos = new MavrykToolkit('rpcUrl');
  * const contractsLibrary = new ContractsLibrary();
  *
  * contractsLibrary.addContract({
@@ -45,7 +45,7 @@ export class ContractsLibrary implements Extension {
    *
    * @param contract is an object where the key is a contract address and the value is an object having a script and an entrypoints properties.
    * Note: the expected format for the script and entrypoints properties are the same as the one respectivlely returned by
-   * `TezosToolkit.rpc.getContract('contractAddress').script` and `TezosToolkit.rpc.getEntrypoints`
+   * `MavrykToolkit.rpc.getContract('contractAddress').script` and `MavrykToolkit.rpc.getEntrypoints`
    * @throws {@link InvalidAddressError} If the contract address is not valid
    * @throws {@link InvalidScriptFormatError} If the script is not in the expected format
    */
@@ -80,7 +80,7 @@ export class ContractsLibrary implements Extension {
   private validateContractScriptFormat(script: ScriptedContracts, address: string) {
     if (!script.code) {
       throw new InvalidScriptFormatError(
-        `Invalid script format of ${address} missing property "code". Valid script can be retrieved from "TezosToolkit.rpc.getNormalizedScript(${address})".`,
+        `Invalid script format of ${address} missing property "code". Valid script can be retrieved from "MavrykToolkit.rpc.getNormalizedScript(${address})".`,
         script,
         address
       );

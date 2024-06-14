@@ -40,8 +40,8 @@ values={[
 
 ```js live noInline
 import { MichelsonMap } from '@mavrykdynamics/taquito';
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
 storageMap.set('1', { current_stock: '10000', max_price: '50' });
@@ -69,8 +69,8 @@ Tezos.contract
 
 ```js live noInline wallet
 import { MichelsonMap } from '@mavrykdynamics/taquito';
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
 storageMap.set('1', { current_stock: '10000', max_price: '50' });
@@ -873,13 +873,13 @@ Now, Taquito allows you to pack the required data locally to fetch values from a
 Implementing this feature is a very easy 2 step process:
 
 1. Importing the `MichelCodecPacker` class from `@mavrykdynamics/taquito`
-2. Creating an instance of the `MichelCodecPacker` class and passing it to the `setPackerProvider` method of the `TezosToolkit` instance.
+2. Creating an instance of the `MichelCodecPacker` class and passing it to the `setPackerProvider` method of the `MavrykToolkit` instance.
 
 Here is an example:
 
 ```js
 import { MichelCodecPacker } from '@mavrykdynamics/taquito';
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 Tezos.setPackerProvider(new MichelCodecPacker());
 ```
 
@@ -902,8 +902,8 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')
@@ -932,8 +932,8 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')

@@ -1,11 +1,11 @@
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
-import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { MichelsonMap, MavrykToolkit } from '@mavrykdynamics/taquito';
 import { tzip7Contract } from '../integration-tests/data/tzip_7_contract';
 
 async function example() {
   const provider = 'https://basenet.rpc.mavryk.network';
     const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
-    const tezos = new TezosToolkit(provider);
+    const tezos = new MavrykToolkit(provider);
     tezos.setSignerProvider(signer);
 
   try {

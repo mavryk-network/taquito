@@ -32,14 +32,14 @@ const balance = await client.getBalance('mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv');
 
 ### RpcClientCache
 
-The `RpcClientCache` class aims to improve the performance of dApps built using Taquito by reducing the number of calls made to the RPC. Its constructor takes a RpcClient instance as a parameter and an optional ttl (time to live). The RpcClient responses will be cached for the period defined by the ttl (default is of 1000 milliseconds). The `RpcClientCache` can be injected to the TezosToolkit as follow:
+The `RpcClientCache` class aims to improve the performance of dApps built using Taquito by reducing the number of calls made to the RPC. Its constructor takes a RpcClient instance as a parameter and an optional ttl (time to live). The RpcClient responses will be cached for the period defined by the ttl (default is of 1000 milliseconds). The `RpcClientCache` can be injected to the MavrykToolkit as follow:
 
 ```ts
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 
 const rpcClient = new RpcClient('https://YOUR_PREFERRED_RPC_URL');
-const tezos = new TezosToolkit(new RpcClientCache(rpcClient));
+const tezos = new MavrykToolkit(new RpcClientCache(rpcClient));
 ```
 ## Additional info
 

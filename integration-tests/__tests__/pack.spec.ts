@@ -1,5 +1,5 @@
 import { CONFIGS } from "../config";
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 import { MichelsonType, MichelsonData, ProtocolID, packDataBytes } from "@mavrykdynamics/taquito-michel-codec";
 import { MichelsonV1Expression } from "@mavrykdynamics/taquito-rpc";
 import fs from "fs";
@@ -14,7 +14,7 @@ interface TypedTestData {
 }
 
 CONFIGS().forEach(({ rpc, protocol }) => {
-    const Tezos = new TezosToolkit(rpc);
+    const Tezos = new MavrykToolkit(rpc);
 
     describe(`Test binary encoding: ${rpc}`, () => {
         const files = [

@@ -4,14 +4,14 @@
 // rerun two or three times if needed
 
 import { LedgerSigner, DerivationType } from '@mavrykdynamics/taquito-ledger-signer';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
 
 async function example() {
 
     const transport = await TransportNodeHid.create();
     let index = 0;
-    const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network')
+    const tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
     while (index < 8) {
         const ledgerSigner = new LedgerSigner(transport, `44'/1729'/${index}'/0'`, false, DerivationType.ED25519);
         tezos.setProvider({ signer: ledgerSigner });

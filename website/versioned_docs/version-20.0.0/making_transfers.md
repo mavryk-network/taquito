@@ -22,8 +22,8 @@ await Tezos.contract.transfer({ to: contract.address, amount: 1 });
 In the following example, we transfer 0.5ṁ from a `mv1PYMQXgRiJBMsrEaM9Yre4JyvcLVbUr8pv` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 render(`Fetching a private key...`);
 fetch('https://keygen.ecadinfra.com/basenet/', {

@@ -1,6 +1,6 @@
 # Taquito Contracts Library package
 
-`@mavrykdynamics/taquito-contracts-library` allows developers to specify static data related to contracts (i.e., script and entrypoints) avoiding Taquito to fetch them from the network. The `contracts-library` module provide a `ContractsLibrary` class that can be injected as an extension to a TezosToolkit instance in order to increase dApps performance.
+`@mavrykdynamics/taquito-contracts-library` allows developers to specify static data related to contracts (i.e., script and entrypoints) avoiding Taquito to fetch them from the network. The `contracts-library` module provide a `ContractsLibrary` class that can be injected as an extension to a MavrykToolkit instance in order to increase dApps performance.
 
 ```ts
 import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';

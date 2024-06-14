@@ -1,11 +1,11 @@
 import { CONFIGS } from "../config";
 import { commonCases, pariscases } from '../data/allTestsCases';
 import { LocalForger, ProtocolsHash } from '@mavrykdynamics/taquito-local-forging'
-import { Protocols, TezosToolkit } from "@mavrykdynamics/taquito";
+import { Protocols, MavrykToolkit } from "@mavrykdynamics/taquito";
 import { ProtoGreaterOrEqual } from '@mavrykdynamics/taquito-michel-codec';
 
 CONFIGS().forEach(({ rpc, protocol }) => {
-  const Tezos = new TezosToolkit(rpc);
+  const Tezos = new MavrykToolkit(rpc);
   const parisAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtParisBQ) ? test : test.skip
 
   describe(`Test local forger: ${rpc}`, () => {

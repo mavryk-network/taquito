@@ -235,7 +235,7 @@ export class Context {
   }
 
   /**
-   * @description Allows extensions set on the TezosToolkit to inject logic into the context
+   * @description Allows extensions set on the MavrykToolkit to inject logic into the context
    */
   registerProviderDecorator(fx: (context: Context) => Context) {
     this.providerDecorator.push(fx);
@@ -244,7 +244,7 @@ export class Context {
   /**
    * @description Applies the decorators on a cloned instance of the context and returned this cloned instance.
    * The decorators are functions that inject logic into the context.
-   * They are provided by the extensions set on the TezosToolkit by calling the registerProviderDecorator method.
+   * They are provided by the extensions set on the MavrykToolkit by calling the registerProviderDecorator method.
    */
   withExtensions = (): Context => {
     let clonedContext = this.clone();

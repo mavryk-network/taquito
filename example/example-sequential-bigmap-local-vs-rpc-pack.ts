@@ -1,4 +1,4 @@
-import { BigMapAbstraction, TezosToolkit, MichelCodecPacker } from '@mavrykdynamics/taquito';
+import { BigMapAbstraction, MavrykToolkit, MichelCodecPacker } from '@mavrykdynamics/taquito';
 import BigNumber from 'bignumber.js';
 
 const rpc = 'https://basenet.rpc.mavryk.network';
@@ -8,7 +8,7 @@ const repeat = 1; // How many times we want to fetch all the keys
 async function example() {
 
     try {
-        const tezos = new TezosToolkit(rpc);
+        const tezos = new MavrykToolkit(rpc);
 
         const contractAddress = 'KT1KbMj3No1gFa2jwXcEUQ5uydc1arahnpiT';
         const contract = await tezos.contract.at(contractAddress);
@@ -55,7 +55,7 @@ example();
 // Code to deploy the contract used in the example:
 /*
         const signer: any = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
-        const tezos = new TezosToolkit(rpc);
+        const tezos = new MavrykToolkit(rpc);
         tezos.setSignerProvider( signer );
 
         console.log('Deploying contract...');

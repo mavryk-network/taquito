@@ -81,9 +81,9 @@ const ledgerSigner = new LedgerSigner(
 ```js
 import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const transport = await TransportNodeHid.create();
 const ledgerSigner = new LedgerSigner(transport);
@@ -197,9 +197,9 @@ _Note that this example is not intended to be a complete example of paths scanni
 
 ```js live noInline
 //import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
-//import { TezosToolkit } from '@mavrykdynamics/taquito';
+//import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import TransportWebHID from "@ledgerhq/hw-transport-webhid";
-//const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+//const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 TransportWebHID.create().then((transport) => {
   for (let index = 0, p = Promise.resolve(); index < 10; index++) {

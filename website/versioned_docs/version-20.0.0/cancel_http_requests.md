@@ -101,15 +101,15 @@ class CancellableRpcClient extends RpcClient {
 ```   
 
 #### **Set the RpcProvider**  
-Set `CancellableRpcClient` on our `TezosToolkit` instance instead of using the default `RpcClient` class:
+Set `CancellableRpcClient` on our `MavrykToolkit` instance instead of using the default `RpcClient` class:
 
 ``` ts
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 const signer: any = new InMemorySigner('your_key');
 const customRpcClient = new CancellableRpcClient('your_RPC_URL')  
-const tezos = new TezosToolkit(customRpcClient);
+const tezos = new MavrykToolkit(customRpcClient);
 tezos.setSignerProvider(signer);
 ```   
  

@@ -7,18 +7,18 @@ To increase dApp performance, we aim to provide ways to reduce the number of cal
 The `@mavrykdynamics/taquito-contracts-library` package allows developers to supply the static contracts data, preventing Taquito from fetching them from the network.
 
 
-The `ContractsLibrary` class can be populated by users with contract addresses and their corresponding script and entry points. Then, the `ContractsLibrary` instance can be injected into a `TezosToolkit` as an extension using its `addExtension` method. 
+The `ContractsLibrary` class can be populated by users with contract addresses and their corresponding script and entry points. Then, the `ContractsLibrary` instance can be injected into a `MavrykToolkit` as an extension using its `addExtension` method. 
 
-When creating a `ContractAbstraction` instance using the `at` method of the Contract or the Wallet API, if a `ContractsLibrary` is present on the `TezosToolkit` instance, the script and entry points of the contract will be loaded from the `ContractsLibrary`. Otherwise, the values will be fetched from the RPC as usual.
+When creating a `ContractAbstraction` instance using the `at` method of the Contract or the Wallet API, if a `ContractsLibrary` is present on the `MavrykToolkit` instance, the script and entry points of the contract will be loaded from the `ContractsLibrary`. Otherwise, the values will be fetched from the RPC as usual.
 
 ### Example of use:
 
 ```ts
 import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
 const contractsLibrary = new ContractsLibrary();
-const Tezos = new TezosToolkit('rpc');
+const Tezos = new MavrykToolkit('rpc');
 
 contractsLibrary.addContract({
     'contractAddress1': {

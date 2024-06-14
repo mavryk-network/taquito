@@ -1,7 +1,7 @@
 {
   "name": "@mavrykdynamics/taquito-contracts-library",
   "version": "20.0.0",
-  "description": "Can be used as an extension on the TezosToolkit to provide contracts data",
+  "description": "Can be used as an extension on the MavrykToolkit to provide contracts data",
   "keywords": [
     "tezos"
   ],

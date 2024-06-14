@@ -1,8 +1,8 @@
-import { PollingSubscribeProvider, TezosToolkit } from '@mavrykdynamics/taquito';
+import { PollingSubscribeProvider, MavrykToolkit } from '@mavrykdynamics/taquito';
 
 async function example() {
   const provider = 'https://basenet.rpc.mavryk.network/';
-  const tezos = new TezosToolkit(provider)
+  const tezos = new MavrykToolkit(provider)
   tezos.setStreamProvider(tezos.getFactory(PollingSubscribeProvider)({ shouldObservableSubscriptionRetry: true, pollingIntervalMilliseconds: 15000 }));
   try {
 

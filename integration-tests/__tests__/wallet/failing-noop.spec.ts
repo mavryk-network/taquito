@@ -1,5 +1,5 @@
 import { CONFIGS } from "../../config";
-import { OpKind, TezosToolkit } from "@mavrykdynamics/taquito";
+import { OpKind, MavrykToolkit } from "@mavrykdynamics/taquito";
 import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
 import { verifySignature } from "@mavrykdynamics/taquito-utils";
 
@@ -36,10 +36,10 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
   });
 
   describe(`Test failing_noop through wallet api, based on genesis and secret_key on mainnet`, () => {
-    let Mainnet: TezosToolkit;
+    let Mainnet: MavrykToolkit;
 
     beforeAll(async () => {
-      Mainnet = new TezosToolkit('https://rpc.tzkt.io/mainnet'); // public archive node to fetch genesis block
+      Mainnet = new MavrykToolkit('https://rpc.tzkt.io/mainnet'); // public archive node to fetch genesis block
       Mainnet.setSignerProvider(new InMemorySigner('edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq')); // alice's secret key
     });
 

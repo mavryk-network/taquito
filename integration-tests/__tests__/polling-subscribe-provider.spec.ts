@@ -1,5 +1,5 @@
 import { CONFIGS, sleep } from '../config';
-import { PollingSubscribeProvider, TezosToolkit } from '@mavrykdynamics/taquito';
+import { PollingSubscribeProvider, MavrykToolkit } from '@mavrykdynamics/taquito';
 import { localForger } from '@mavrykdynamics/taquito-local-forging';
 import { send } from 'process';
 import { validateAddress } from '@mavrykdynamics/taquito-utils';
@@ -105,7 +105,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
   const Tezos = lib;
   let calledContractAddress: string;
   let mainContractAddress: string;
-  let secondUser: TezosToolkit;
+  let secondUser: MavrykToolkit;
 
   describe(`Polling Subscribe Provider using ${rpc}`, () => {
     beforeAll(async () => {

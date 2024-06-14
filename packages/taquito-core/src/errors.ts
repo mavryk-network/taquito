@@ -23,7 +23,7 @@ export class RpcError extends TaquitoError {}
  *  @category Error
  *  @description Error that indicates TezosToolKit has not been configured appropriately
  */
-export class TezosToolkitConfigError extends TaquitoError {}
+export class MavrykToolkitConfigError extends TaquitoError {}
 
 /**
  *  @category Error

@@ -1,4 +1,4 @@
-import { BigMapAbstraction, TezosToolkit } from '../packages/taquito/src/taquito';
+import { BigMapAbstraction, MavrykToolkit } from '../packages/taquito/src/taquito';
 import { RpcClient } from '../packages/taquito-rpc/src/taquito-rpc';
 import { castToString } from '../packages/taquito-rpc/src/utils/utils';
 import BigNumber from 'bignumber.js';
@@ -9,7 +9,7 @@ const client = new RpcClient(provider);
 
 async function example() {
   try {
-    const tezos = new TezosToolkit(provider);
+    const tezos = new MavrykToolkit(provider);
 
     console.log('Getting storage...');
     const contract = await tezos.contract.at('KT1LRBZUde7PbmKEELT829Ts3HjownyYmW2F') // knownBigMapContract used in integration tests

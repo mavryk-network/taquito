@@ -1,5 +1,5 @@
 import { CONFIGS } from './config';
-import { MichelsonMap, OriginateParams, RpcForger, TezosToolkit } from '@mavrykdynamics/taquito';
+import { MichelsonMap, OriginateParams, RpcForger, MavrykToolkit } from '@mavrykdynamics/taquito';
 import { singleSaplingStateContractJProtocol } from './data/single_sapling_state_contract_jakarta_michelson';
 import { fa2ForTokenMetadataView } from './data/fa2-for-token-metadata-view';
 import { stringToBytes } from '@mavrykdynamics/taquito-utils';
@@ -36,7 +36,7 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
           console.error(err);
         });
     };
-    let originateKnownContract = async (contractName: string, tezos: TezosToolkit, contractOriginateParams: OriginateParams): Promise<void> => {
+    let originateKnownContract = async (contractName: string, tezos: MavrykToolkit, contractOriginateParams: OriginateParams): Promise<void> => {
       try {
         const operation = await tezos.contract.originate(contractOriginateParams);
         await operation.confirmation();
@@ -188,7 +188,7 @@ Total XTZ Spent : ${keyInitialBalance.minus(await tezos.tz.getBalance(keyPkh)).d
   })();
 
 
-  async function printBalance(pkh: string, tezos: TezosToolkit): Promise<void> {
+  async function printBalance(pkh: string, tezos: MavrykToolkit): Promise<void> {
     let balance = await tezos.tz.getBalance(pkh);
     console.log(`${pkh} balance: ${balance}`);
   }

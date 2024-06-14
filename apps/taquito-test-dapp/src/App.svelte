@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { TezosToolkit } from "@mavrykdynamics/taquito";
+  import { MavrykToolkit } from "@mavrykdynamics/taquito";
   import { NetworkType } from "@mavrykdynamics/beacon-types";
   import Select from "svelte-select";
   import { getRpcUrl } from "./config";
@@ -72,7 +72,7 @@
         if (!getRpcUrl(NetworkType.CUSTOM)) {
           // TODO: This logic does not seem right
           // in case the user did not provide any custom network URL
-          store.updateTezos(new TezosToolkit(getRpcUrl(NetworkType.BASENET)));
+          store.updateTezos(new MavrykToolkit(getRpcUrl(NetworkType.BASENET)));
         }
         break;
     }

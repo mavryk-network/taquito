@@ -11,7 +11,7 @@ For example, if you want to wait 10 confirmations before giving a final confirma
 ## Forging the operation
 The operation is forged like any other operation you would create with Taquito. For example, if you wish to create a contract call:
 ```typescript
-const TezosToolkit = new TezosToolkit(RPC_URL);
+const MavrykToolkit = new MavrykToolkit(RPC_URL);
 const contract = await Tezos.wallet.at(contractAddress);
 const op = await contract.methodsObject.entrypoint(param).send();
 ```

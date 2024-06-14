@@ -1,10 +1,10 @@
 import { CONFIGS, isSandbox } from "../../config";
-import { MANAGER_LAMBDA, TezosToolkit } from "@mavrykdynamics/taquito";
+import { MANAGER_LAMBDA, MavrykToolkit } from "@mavrykdynamics/taquito";
 import { genericMultisig } from "../../data/multisig";
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
   const Funder = lib;
-  let Tezos: TezosToolkit;
+  let Tezos: MavrykToolkit;
   describe(`Generic Multisig set delegate: ${rpc}`, () => {
     beforeAll(async () => {
       await setup(true);

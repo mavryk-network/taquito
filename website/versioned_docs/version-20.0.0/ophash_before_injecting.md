@@ -18,11 +18,11 @@ Here is a simple example on getting the operation hash of a transaction (transfe
 
 ```js
 
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { encodeOpHash } from '@mavrykdynamics/taquito-utils';
 // import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 
-// const Tezos = new TezosToolkit('RPC_ENDPOINT');
+// const Tezos = new MavrykToolkit('RPC_ENDPOINT');
 
 const preparedTransfer = await Tezos.prepare.transaction({
   amount: 1,

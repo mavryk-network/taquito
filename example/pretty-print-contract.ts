@@ -1,11 +1,11 @@
 import { Parser, emitMicheline } from '@mavrykdynamics/taquito-michel-codec'
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
 const provider = 'https://mainnet.ecadinfra.com/';
 
 const example = async () => {
 
-  const tezos = new TezosToolkit(provider)
+  const tezos = new MavrykToolkit(provider)
 
   try {
     const contract = await tezos.contract.at('KT1EctCuorV2NfVb1XTQgvzJ88MQtWP8cMMv') //StakerDAO

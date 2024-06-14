@@ -42,8 +42,8 @@ values={[
 <TabItem value="signer">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
@@ -67,8 +67,8 @@ Tezos.estimate
   <TabItem value="wallet">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
@@ -108,8 +108,8 @@ We have updated the estimate provider to have a `contractCall()` method.
 The `contractCall()` member method can now be used to estimate contract calls as such:
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 Tezos.contract
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
@@ -136,8 +136,8 @@ Tezos.contract
   <TabItem value="wallet">
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
       
 Tezos.wallet
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
@@ -177,8 +177,8 @@ values={[
 <TabItem value="signer">
 
 ```js live noInline
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 println(`Estimating the contract origination : `);
 Tezos.estimate
@@ -207,8 +207,8 @@ Tezos.estimate
 
 
 ```js live noInline wallet
-// import { TezosToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// import { MavrykToolkit } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 println(`Estimating the contract origination : `);
 Tezos.estimate

@@ -9,7 +9,7 @@
 ///   Execute this script with
 ///     node -r ts-node/register deploy-docs-live-code-contracts.ts
 
-import { MichelsonMap, TezosToolkit } from '@mavrykdynamics/taquito';
+import { MichelsonMap, MavrykToolkit } from '@mavrykdynamics/taquito';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { tzip7Contract } from '../integration-tests/data/tzip_7_contract';
 import { contractMapPairKey } from './data/contractMapPairKey';
@@ -36,7 +36,7 @@ const provider = 'https://basenet.rpc.mavryk.network/';
 export const signer = new InMemorySigner(
   'edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca'
 );
-export const tezos = new TezosToolkit(provider);
+export const tezos = new MavrykToolkit(provider);
 
 
 const contract_catalogue = new Map();
@@ -82,7 +82,7 @@ async function checkBalances(users: string | any[]) {
   // IF FAILS try uncommenting below and running with lending other tezos instance funds
 
   // // used to top up other account so it wouldnt fail
-  //  const tezosLender = new TezosToolkit(provider)
+  //  const tezosLender = new MavrykToolkit(provider)
   //  await importKey(
   //    tezosLender,
   //    email,

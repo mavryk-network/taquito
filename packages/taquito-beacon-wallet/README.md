@@ -17,10 +17,10 @@ npm install @mavrykdynamics/taquito-beacon-wallet
 
 ## Usage
 
-Create a wallet instance with defined option parameters and set the wallet provider using `setWalletProvider` to the `TezosToolkit` instance
+Create a wallet instance with defined option parameters and set the wallet provider using `setWalletProvider` to the `MavrykToolkit` instance
 
 ```ts
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 
 const options = {
@@ -40,7 +40,7 @@ await wallet.client.subscribeToEvent(
 );
 await wallet.requestPermissions();
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.setWalletProvider(wallet);
 ```
 

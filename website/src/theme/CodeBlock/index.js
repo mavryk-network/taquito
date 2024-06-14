@@ -58,7 +58,7 @@ export default ({
 
   useEffect(() => {
     async function getDependencies() {
-      const { TezosToolkit, MichelsonMap, compose, getRevealFee, RpcReadAdapter, UnitValue } = await import('@mavrykdynamics/taquito');
+      const { MavrykToolkit, MichelsonMap, compose, getRevealFee, RpcReadAdapter, UnitValue } = await import('@mavrykdynamics/taquito');
       const { verifySignature } = await import('@mavrykdynamics/taquito-utils');
       const {
         validateAddress,
@@ -94,7 +94,7 @@ export default ({
         // can use localStorage on the browser, not on the server
         wallet = new BeaconWallet({ name:"exampleWallet", network: { type: 'basenet'}, enableMetrics: true, });
       }      
-      const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
+      const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
       setDependencies({
         Tezos,
         wallet,

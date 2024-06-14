@@ -40,9 +40,9 @@ After installing the Taquito package in your dapp project and the package contai
 To start, let's import the Tezos Toolkit from Taquito and create a new instance of the Tezos singleton:
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com/');
+const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com/');
 ```
 
 This object exposes different methods we are going to use to set up our wallet. TZIP-10 has become the official standard of communication and interaction between wallets and dapps, so let's start with the `@mavrykdynamics/taquito-beacon-wallet` package that implements this standard!
@@ -579,9 +579,9 @@ Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 _or_
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit();
+const Tezos = new MavrykToolkit();
 
 Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 ```

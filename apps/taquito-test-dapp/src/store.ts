@@ -1,11 +1,11 @@
 import { writable } from "svelte/store";
-import type { TezosToolkit } from "@mavrykdynamics/taquito";
+import type { MavrykToolkit } from "@mavrykdynamics/taquito";
 import type { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 import { defaultMatrixNode, defaultNetworkType, type SupportedNetworks } from "./config";
 import type { TestSettings } from "./types";
 
 interface State {
-  Tezos: TezosToolkit | undefined;
+  Tezos: MavrykToolkit | undefined;
   userAddress: string | undefined;
   userBalance: number | undefined;
   wallet: BeaconWallet | undefined;
@@ -50,7 +50,7 @@ const state = {
       ...store,
       userBalance: balance
     })),
-  updateTezos: (Tezos: TezosToolkit) =>
+  updateTezos: (Tezos: MavrykToolkit) =>
     store.update(store => ({
       ...store,
       Tezos

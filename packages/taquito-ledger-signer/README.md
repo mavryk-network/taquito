@@ -51,9 +51,9 @@ const ledgerSigner = new LedgerSigner(
 ```ts
 import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportWeb from '@ledgerhq/hw-transport-webhid';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const transport = await TransportWeb.create();
 const ledgerSigner = new LedgerSigner(transport);

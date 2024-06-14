@@ -96,9 +96,9 @@ npm i @mavrykdynamics/taquito
 Now, open the file `index.ts` and replace the code with the following:
 
 ```ts
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
-var tezosToolkit = new TezosToolkit("https://basenet.rpc.mavryk.network");
+var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
 tezosToolkit.tz.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
     console.log(balance.toNumber());
@@ -195,10 +195,10 @@ Open the file `index.ts` and replace the code with the following:
 
 ```ts
 import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
 async function main() {
-    var tezosToolkit = new TezosToolkit("https://basenet.rpc.mavryk.network");
+    var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
     // WARNING: DO NOT DO THIS IN PRODUCTION, KEEP YOUR SECRETS SAFE
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
@@ -221,10 +221,10 @@ Now, if you run your code, you should be able to see the address of the signer (
 
 What is happening here? Let's break it down:
 
-1. We create a new instance of `TezosToolkit` and pass the URL of the node we want to connect to.
+1. We create a new instance of `MavrykToolkit` and pass the URL of the node we want to connect to.
 1. We create a new instance of `InMemorySigner` and pass the private key of the address we want to use to sign the operation.
 1. We get the public key hash of the address.
-1. We set the provider of the `TezosToolkit` instance to the signer we created in step 2.
+1. We set the provider of the `MavrykToolkit` instance to the signer we created in step 2.
 1. We send a `Transfer` operation to the blockchain. Taquito will automatically do the following behind the scenes:
     1. Estimate the cost of the operation.
     1. Encode the operation.
@@ -272,7 +272,7 @@ Open the file `index.ts` and change the `main` function to the following:
 
 ```ts
 async function main() {
-    var tezosToolkit = new TezosToolkit("https://basenet.rpc.mavryk.network");
+    var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
     tezosToolkit.setProvider({ signer });
@@ -423,15 +423,15 @@ Open the file `src/App.tsx` and replace the content with the following code:
 
 ```tsx
 import { useState } from "react";
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
 import Transfer from "./components/Transfer";
 import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 
 const App = () => {
-  const [Tezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://basenet.rpc.mavryk.network")
+  const [Tezos] = useState<MavrykToolkit>(
+    new MavrykToolkit("https://basenet.rpc.mavryk.network")
   );
   const [wallet, setWallet] = useState<BeaconWallet | undefined>(undefined);
   const [userAddress, setUserAddress] = useState<string | undefined>(undefined);
@@ -461,14 +461,14 @@ Create a new file `src/components/ConnectWallet.tsx` and add the following code:
 
 ```tsx
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 import {
   NetworkType,
 } from "@airgap/beacon-dapp";
 
 type ButtonProps = {
-  Tezos: TezosToolkit;
+  Tezos: MavrykToolkit;
   setUserAddress: Dispatch<SetStateAction<string | undefined>>;
   setWallet: Dispatch<SetStateAction<BeaconWallet | undefined>>;
   wallet: BeaconWallet | undefined;
@@ -531,12 +531,12 @@ Create a new file `src/components/Transfer.tsx` and add the following code:
 
 ```tsx
 import { useState } from "react";
-import { TezosToolkit } from "@mavrykdynamics/taquito";
+import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
 const Transfer = ({
   Tezos,
 }: {
-  Tezos: TezosToolkit;
+  Tezos: MavrykToolkit;
 }): JSX.Element => {
   const [recipient, setRecipient] = useState<string>("");
   const [amount, setAmount] = useState<string>("");

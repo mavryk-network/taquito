@@ -28,7 +28,7 @@ The difference between the 2 methods is that `registerDelegate()` will set the d
 Use `setDelegate()` to delegate your coins to a registered delegate (baker).
 
 ```js
-// const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 await Tezos.contract.setDelegate({ source: 'mv1_source', delegate: 'mv1_baker' });
 ```
@@ -37,7 +37,7 @@ await Tezos.contract.setDelegate({ source: 'mv1_source', delegate: 'mv1_baker' }
 To run a delegate you must first be registered. Use`registerDelegate()` to accomplish this.
 
 ```js
-// const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 await Tezos.contract.registerDelegate({});
 ```
@@ -59,7 +59,7 @@ A call to the KT1's smart contract's `do` method must be made to delegate to a K
 ### Example of delegation for a KT1
 
 ```js
-// const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const contract = await Tezos.contract.at('kt1...');
 await contract.methodsObject.do(setDelegate('mv1_delegate')).send();
@@ -88,7 +88,7 @@ const setDelegate = (key: string) => {
 It is possible to `undelegate` by executing a new `setDelegate` operation and not specifying the `delegate` property.
 
 ```ts
-// const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 await Tezos.contract.setDelegate({ source: 'mv1_source'});
 ```

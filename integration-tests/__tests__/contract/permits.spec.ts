@@ -1,5 +1,5 @@
 import { CONFIGS } from '../../config';
-import { MichelsonMap, MichelCodecPacker, TezosToolkit } from '@mavrykdynamics/taquito';
+import { MichelsonMap, MichelCodecPacker, MavrykToolkit } from '@mavrykdynamics/taquito';
 import { permit_admin_42_expiry } from '../../data/permit_admin_42_expiry';
 import { permit_admin_42_set } from '../../data/permit_admin_42_set';
 import { permit_fa12_smartpy } from '../../data/permit_fa12_smartpy';
@@ -10,7 +10,7 @@ import { packDataBytes } from "@mavrykdynamics/taquito-michel-codec"
 const blake = require('blakejs');
 const bob_address = 'mv1JzsKuzj5RFo68zyW6TG7aHx6p5gzoNuuU';
 
-const create_bytes_to_sign = async (Tezos: TezosToolkit, contractAddress: string, methodHash: string) => {
+const create_bytes_to_sign = async (Tezos: MavrykToolkit, contractAddress: string, methodHash: string) => {
   const chainId = await Tezos.rpc.getChainId();
 
   const contract = await Tezos.contract.at(contractAddress)

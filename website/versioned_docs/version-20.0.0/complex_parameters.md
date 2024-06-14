@@ -50,9 +50,9 @@ As described above, the `map %data` uses a value that we chose between different
 An annotation identifies every argument. Therefore we can ignore optional values if they are not needed. In the first entry of the `bigMap %records` of this example, we do not specify values for the `address %address` or the `nat %ttl` or the `nat %validator` but we define one for the `nat %validator` of the second entry of the bigmap.
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
 // import { importKey } from '@mavrykdynamics/taquito-signer';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 //%data
 const dataMap = new MichelsonMap();
@@ -128,8 +128,8 @@ The way to write the parameter when calling the function of a contract with Taqu
 #### Inspect parameter
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network')
+// import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
@@ -152,8 +152,8 @@ importKey(Tezos, secretKey)
 #### Call the set_child_record function when all the arguments are defined
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network')
+// import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
@@ -183,8 +183,8 @@ importKey(Tezos, secretKey)
 The `address %address` and the `nat %ttl` of the `set_child_record` function are optional. If we want one or both to be null, we must specify the value of the argument as `null` or `undefined`.
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network')
+// import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)

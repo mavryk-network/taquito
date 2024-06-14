@@ -39,9 +39,9 @@ The `PrepareProvider` class affords extension and control to users when preparin
 ## Usage example
 
 ### Individual Operations
-The `PrepareProvider` will be accessible via the `TezosToolkit`:
+The `PrepareProvider` will be accessible via the `MavrykToolkit`:
 ```typescript
-// const Tezos = new TezosToolkit('RPC_ENDPOINT');
+// const Tezos = new MavrykToolkit('RPC_ENDPOINT');
 
 const prepared = await Tezos.prepare.transaction({
   to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',

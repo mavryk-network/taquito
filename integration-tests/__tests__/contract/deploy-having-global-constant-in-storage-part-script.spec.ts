@@ -52,7 +52,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         beforeEach(async () => {
             await setup(true);
 
-            // We need to set up a global constants provider on the TezosToolkit
+            // We need to set up a global constants provider on the MavrykToolkit
             // We use an instance of DefaultGlobalConstantsProvider where the global constant hash and its corresponding expression need to be loaded manually
             // Taquito use the globalConstantProvider to properly transform the storage object into the corresponding Michelson data on contract origination
             const globalConstantProvider = new DefaultGlobalConstantsProvider();

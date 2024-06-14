@@ -1,4 +1,4 @@
-import { CompositeForger, RpcForger, TezosToolkit, Protocols, TaquitoLocalForger, PollingSubscribeProvider } from '@mavrykdynamics/taquito';
+import { CompositeForger, RpcForger, MavrykToolkit, Protocols, TaquitoLocalForger, PollingSubscribeProvider } from '@mavrykdynamics/taquito';
 import { RemoteSigner } from '@mavrykdynamics/taquito-remote-signer';
 import { HttpBackend } from '@mavrykdynamics/taquito-http-utils';
 import { b58cencode, Prefix, prefix } from '@mavrykdynamics/taquito-utils';
@@ -59,9 +59,9 @@ export enum SignerType {
 }
 
 interface ConfigWithSetup extends Config {
-  lib: TezosToolkit;
+  lib: MavrykToolkit;
   setup: (preferFreshKey?: boolean) => Promise<void>;
-  createAddress: () => Promise<TezosToolkit>;
+  createAddress: () => Promise<MavrykToolkit>;
 }
 /**
  * EphemeralConfig contains configuration for interacting with the [tezos-key-gen-api](https://github.com/ecadlabs/tezos-key-gen-api)
@@ -196,7 +196,7 @@ if (process.env['RUN_WITH_SECRET_KEY']) {
   providers.push(parisnetEphemeral);
 }
 
-const setupForger = (Tezos: TezosToolkit, forger: ForgerType): void => {
+const setupForger = (Tezos: MavrykToolkit, forger: ForgerType): void => {
   if (forger === ForgerType.LOCAL) {
     Tezos.setProvider({ forger: Tezos.getFactory(TaquitoLocalForger)() });
   } else if (forger === ForgerType.COMPOSITE) {
@@ -210,7 +210,7 @@ const setupForger = (Tezos: TezosToolkit, forger: ForgerType): void => {
 };
 
 const setupSignerWithFreshKey = async (
-  Tezos: TezosToolkit,
+  Tezos: MavrykToolkit,
   { keyUrl, requestHeaders }: EphemeralConfig
 ) => {
   const httpClient = new HttpBackend();
@@ -231,7 +231,7 @@ const setupSignerWithFreshKey = async (
 };
 
 const setupSignerWithEphemeralKey = async (
-  Tezos: TezosToolkit,
+  Tezos: MavrykToolkit,
   { keyUrl, requestHeaders }: EphemeralConfig
 ) => {
   const ephemeralUrl = `${keyUrl}/ephemeral`;
@@ -251,11 +251,11 @@ const setupSignerWithEphemeralKey = async (
   }
 };
 
-const setupWithSecretKey = async (Tezos: TezosToolkit, signerConfig: SecretKeyConfig) => {
+const setupWithSecretKey = async (Tezos: MavrykToolkit, signerConfig: SecretKeyConfig) => {
   Tezos.setSignerProvider(new InMemorySigner(signerConfig.secret_key, signerConfig.password));
 };
 
-const configurePollingInterval = (Tezos: TezosToolkit, pollingIntervalMilliseconds: string | undefined) => {
+const configurePollingInterval = (Tezos: MavrykToolkit, pollingIntervalMilliseconds: string | undefined) => {
   if (pollingIntervalMilliseconds) {
     Tezos.setStreamProvider(Tezos.getFactory(PollingSubscribeProvider)({ pollingIntervalMilliseconds: Number(pollingIntervalMilliseconds) }));
   }
@@ -263,9 +263,9 @@ const configurePollingInterval = (Tezos: TezosToolkit, pollingIntervalMillisecon
 
 const configureRpcCache = (rpc: string, rpcCacheMilliseconds: string) => {
   if (rpcCacheMilliseconds === '0') {
-    return new TezosToolkit(rpc);
+    return new MavrykToolkit(rpc);
   } else {
-    return new TezosToolkit(new RpcClientCache(new RpcClient(rpc), Number(rpcCacheMilliseconds)));
+    return new MavrykToolkit(new RpcClientCache(new RpcClient(rpc), Number(rpcCacheMilliseconds)));
   }
 }
 

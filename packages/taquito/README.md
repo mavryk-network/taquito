@@ -13,7 +13,7 @@ crossorigin="anonymous" integrity="sha384-IxvP0ECHi5oqLyz94wF85pU9+ktcsL1HHtA42M
 
 ## General Information
 
-The `TezosToolkit` is a facade class that surfaces all of the library's capability and allows its configuration through different providers.
+The `MavrykToolkit` is a facade class that surfaces all of the library's capability and allows its configuration through different providers.
 
 ## Install
 
@@ -23,17 +23,17 @@ npm i --save @mavrykdynamics/taquito
 
 
 ## Minimal configuration
-### TezosToolkit instantiation
+### MavrykToolkit instantiation
 
-The `TezosToolkit` constructor takes at least an RPC URL as a parameter. When instantiating the toolkit with a URL, a default instance of `RpcClient` is created. The `RpcClient` class is used to interact with the Tezos network.
+The `MavrykToolkit` constructor takes at least an RPC URL as a parameter. When instantiating the toolkit with a URL, a default instance of `RpcClient` is created. The `RpcClient` class is used to interact with the Tezos network.
 
 ```ts
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 ```
 
-It is also possible to instantiate the `TezosToolkit` with a class that implements the `RpcClientInterface`. See the `RpcClientCache` from the `@mavrykdynamics/taquito-rpc` package as an example that provides caching functionality.
+It is also possible to instantiate the `MavrykToolkit` with a class that implements the `RpcClientInterface`. See the `RpcClientCache` from the `@mavrykdynamics/taquito-rpc` package as an example that provides caching functionality.
 
 ### Choosing between the contract or the wallet APIs
 
@@ -45,9 +45,9 @@ Sending operations using the Contract API requires a signer to be configured. Ta
 
 ```js
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 Tezos.setProvider({ signer: await InMemorySigner.fromSecretKey('edsk...') });
 
@@ -57,13 +57,13 @@ await Tezos.contract.transfer({ to: publicKeyHash, amount: 2 });
 
 **Configure a wallet to use the Wallet API**
 
-Sending operations using the Wallet API requires a wallet to be configured. The wallet API supports different kinds of wallets. For example, the `BeaconWallet` from the `@mavrykdynamics/taquito-beacon-wallet` can be used. Use the `setWalletProvider` method of the `TezosToolkit` to set the wallet and refer to the `@mavrykdynamics/taquito-beacon-wallet` for specific configuration:
+Sending operations using the Wallet API requires a wallet to be configured. The wallet API supports different kinds of wallets. For example, the `BeaconWallet` from the `@mavrykdynamics/taquito-beacon-wallet` can be used. Use the `setWalletProvider` method of the `MavrykToolkit` to set the wallet and refer to the `@mavrykdynamics/taquito-beacon-wallet` for specific configuration:
 
 ```ts
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 
-const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 const wallet = new BeaconWallet(options);
 
 await wallet.requestPermissions(network);
@@ -74,9 +74,9 @@ Tezos.setWalletProvider(wallet);
 await Tezos.wallet.transfer({ to: publicKeyHash, amount: 2 }).send();
 ```
 
-## TezosToolkit examples of additional configuration
+## MavrykToolkit examples of additional configuration
 
-The `TezosToolkit` contains different default providers that are customizable to adapt to users' needs.
+The `MavrykToolkit` contains different default providers that are customizable to adapt to users' needs.
 
 ### Forger
 

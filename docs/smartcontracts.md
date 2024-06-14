@@ -75,7 +75,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -90,7 +90,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -123,7 +123,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -137,7 +137,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -167,7 +167,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -188,7 +188,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
@@ -230,7 +230,7 @@ values={[
 In the following example, a contract's `set_child_record` method will be called by passing the parameter in an object format. The `methodsObject` member of the `ContractAbstraction` class allows doing so. First, it is possible to obtain details about the signature of the `set_child_record` entry point by using the `getSignature` method as follow:
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 Tezos.contract
   .at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
@@ -250,8 +250,8 @@ Tezos.contract
 The preceding example returns an object giving indication on how to structure the parameter when calling the`set_child_record` method. Here is an example where the `set_child_record` method is called by passing the parameter in an object format:
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network')
+// import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)
@@ -282,7 +282,7 @@ importKey(Tezos, secretKey)
 In the following example, a contract's `set_child_record` method will be called by passing the arguments using the flattened representation. The `methods` member of the `ContractAbstraction` class allows doing so. First, it is possible to obtain details about the signature of the `set_child_record` entry point by using the `getSignature` method as follow:
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com');
+// const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com');
 
 Tezos.contract
   .at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
@@ -302,8 +302,8 @@ Tezos.contract
 The preceding example returns an array which contains the different possible signatures. Different signatures are possible as the `set_child_record` method contains some optional arguments. In the following example the `set_child_record` method is called by passing the arguments in the flattened way:
 
 ```js live noInline
-// import { TezosToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new TezosToolkit('https://ghostnet.ecadinfra.com')
+// import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
+// const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
 importKey(Tezos, secretKey)

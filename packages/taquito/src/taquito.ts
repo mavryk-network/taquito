@@ -100,13 +100,13 @@ export interface VersionInfo {
  *
  * @param _rpc The RPC server to use
  */
-export class TezosToolkit {
+export class MavrykToolkit {
   private _options: SetProviderOptions = {};
   private _rpcClient: RpcClientInterface;
   private _wallet: Wallet;
   private _context: Context;
   /**
-   * @deprecated TezosToolkit.batch has been deprecated in favor of TezosToolkit.contract.batch
+   * @deprecated MavrykToolkit.batch has been deprecated in favor of MavrykToolkit.contract.batch
    *
    */
   public batch: RPCBatchProvider['batch'];
@@ -434,9 +434,9 @@ export class TezosToolkit {
   }
 
   /**
-   * @description Allow to add a module to the TezosToolkit instance. This method adds the appropriate Providers(s) required by the module to the internal context.
+   * @description Allow to add a module to the MavrykToolkit instance. This method adds the appropriate Providers(s) required by the module to the internal context.
    *
-   * @param module extension to add to the TezosToolkit instance
+   * @param module extension to add to the MavrykToolkit instance
    *
    * @example Tezos.addExtension(new Tzip16Module());
    */

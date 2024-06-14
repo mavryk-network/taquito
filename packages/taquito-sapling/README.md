@@ -21,10 +21,10 @@ npm install @mavrykdynamics/taquito-sapling
 The returned balance is in mumav.
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { MavrykToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
+const tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
 
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
@@ -47,11 +47,11 @@ const initialBalance = await txViewer.getBalance();
 A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3) to a Sapling address (zet).
 
 ```ts
-import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { MavrykToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit, InMemorySpendingKey } from '@mavrykdynamics/taquito-sapling';
 
-const tezos = new TezosToolkit('https://basenet.rpc.mavryk.network/');
-// set up your signer on the TezosToolkit as usual
+const tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
+// set up your signer on the MavrykToolkit as usual
 const saplingContract = await tezos.contract.at('KT1UYwMR6Q6LZnwQEi77DSBrAjKT1tEJb245');
 
 const inMemorySpendingKey = await InMemorySpendingKey.fromMnemonic('YOUR_MNEMONIC');

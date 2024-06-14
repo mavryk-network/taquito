@@ -59,7 +59,7 @@ The main friction point of interacting with the LB contract in JavaScript is abo
 
 - __%tokenToXtz__:
 ```ts
-import { TezosToolkit } from "@mavrykdynamics/taquito"
+import { MavrykToolkit } from "@mavrykdynamics/taquito"
 
 // to take into account the subsidy added to the LB contract
 // when the transaction will be baked
@@ -108,7 +108,7 @@ const tokenToXtzXtzOutput = (p: {
     }
 };
 
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
 // the deadline value is arbitrary and can be changed
 const deadline = new Date(Date.now() + 60000).toISOString();
@@ -143,7 +143,7 @@ This code sends a transaction to the `%tokenToXtz` entrypoint of the contract to
 
 - __%xtzToToken__:
 ```ts
-import { TezosToolkit, OpKind } from "@mavrykdynamics/taquito"
+import { MavrykToolkit, OpKind } from "@mavrykdynamics/taquito"
 
 // outputs the amount of tzBTC tokens for a given amount of XTZ
 const xtzToTokenTokenOutput = (p: {
@@ -181,7 +181,7 @@ const xtzToTokenTokenOutput = (p: {
     }
   };
 
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
 // the deadline value is arbitrary and can be changed
 const deadline = new Date(Date.now() + 60000).toISOString();
@@ -205,9 +205,9 @@ This code sends a transaction to the `%xtzToToken` entrypoint of the contract to
 
 - __%addLiquidity__:
 ```ts
-import { TezosToolkit, OpKind } from "@mavrykdynamics/taquito"
+import { MavrykToolkit, OpKind } from "@mavrykdynamics/taquito"
 
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
 const tzBtcContract = await Tezos.wallet.at(TZBTC_ADDRESS);
 const maxTokensSold = Math.floor(
@@ -260,7 +260,7 @@ The maximum amount of tzBTC tokens to be sold is calculated using this formula: 
 
 - __%removeLiquidity__:
 ```ts
-import { TezosToolkit } from "@mavrykdynamics/taquito"
+import { MavrykToolkit } from "@mavrykdynamics/taquito"
 
 const calculateLqtOutput = ({
   lqTokens,
@@ -282,7 +282,7 @@ const calculateLqtOutput = ({
     };
 };
 
-const Tezos = new TezosToolkit(RPC_URL);
+const Tezos = new MavrykToolkit(RPC_URL);
 const lbContract = await Tezos.wallet.at(LB_CONTRACT_ADDRESS);
 // the deadline value is arbitrary and can be changed
 const deadline = new Date(Date.now() + 60000).toISOString();

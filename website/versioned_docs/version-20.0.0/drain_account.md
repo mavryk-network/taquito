@@ -9,7 +9,7 @@ This section shows how to transfer all tokens from one account (implicit or orig
 
 We want to "empty" an implicit account by sending all of its tokens to another account. It can be tricky to empty a tezos account because the system must subtract the gas fee from the account balance.
 
-To do so, we first need to estimate the fees related to this operation. The `estimate` property of the `TezosToolkit` provides access to operation estimation utilities. Calling the `transfer` method will return an instance of the `Estimate` class and its `suggestedFeeMumav` property will allow us to know the fee associated with the operation.
+To do so, we first need to estimate the fees related to this operation. The `estimate` property of the `MavrykToolkit` provides access to operation estimation utilities. Calling the `transfer` method will return an instance of the `Estimate` class and its `suggestedFeeMumav` property will allow us to know the fee associated with the operation.
 
 Once we know the associated fees, we can calculate the maximum amount that needs to send to drain the account by subtracting these fees from the account balance.
 
@@ -22,7 +22,7 @@ In the following example, we have not revealed the account that we want to empty
 :::
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 // import { getRevealFee } from "@mavrykdynamics/taquito";
 
 Tezos.signer
@@ -87,7 +87,7 @@ The contract we originate is a `manager contract.` It has a `do` method taking a
 In the example, we estimate the transfer operation before doing it. The associated fees are deducted from the manager's address when draining the account. Thus, for the operation to be successful, the manager's address for that account must contain funds to cover the gas.
 
 ```js live noInline
-// const Tezos = new TezosToolkit('https://basenet.rpc.mavryk.network');
+// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 function transferImplicit(key, mumav) {
   return [

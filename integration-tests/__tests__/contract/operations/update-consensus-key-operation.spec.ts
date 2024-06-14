@@ -1,4 +1,4 @@
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../../config';
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
@@ -7,7 +7,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
 
   describe(`Test Update Consensus Key using: ${rpc}`, () => {
     let consensusPk: string;
-    let delegateAccount: TezosToolkit;
+    let delegateAccount: MavrykToolkit;
     beforeAll(async () => {
       await setup(true);
 

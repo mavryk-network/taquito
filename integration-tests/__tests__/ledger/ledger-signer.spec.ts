@@ -2,7 +2,7 @@ import { CONFIGS } from '../../config';
 import { LedgerSigner, LedgerTransport, DerivationType } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
 import { ligoSample } from "../../data/ligo-simple-contract";
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { localForger } from '@mavrykdynamics/taquito-local-forging';
 import { rpcToForge } from '../../data/contract_origination';
 
@@ -151,7 +151,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           false,
           DerivationType.ED25519
         );
-        const Tezos = new TezosToolkit(rpc);
+        const Tezos = new MavrykToolkit(rpc);
         Tezos.setSignerProvider(signer);
         const op = await Tezos.contract.originate({
           balance: "1",
@@ -174,7 +174,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           false,
           DerivationType.ED25519
         );
-        const Tezos = new TezosToolkit(rpc);
+        const Tezos = new MavrykToolkit(rpc);
         Tezos.setSignerProvider(signer);
         const op = await Tezos.wallet.transfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.1 }).send()
         await op.confirmation()
@@ -191,7 +191,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           false,
           DerivationType.BIP32_ED25519
         )
-        const Tezos = new TezosToolkit(rpc);
+        const Tezos = new MavrykToolkit(rpc);
         Tezos.setSignerProvider(signer);
 
         const pk = await Tezos.signer.publicKey();
@@ -212,7 +212,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           false,
           DerivationType.BIP32_ED25519
         )
-        const Tezos = new TezosToolkit(rpc);
+        const Tezos = new MavrykToolkit(rpc);
         Tezos.setSignerProvider(signer);
 
         const contractCode = rpcToForge.contents[0].script!
@@ -232,7 +232,7 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
           false,
           DerivationType.BIP32_ED25519
         )
-        const Tezos = new TezosToolkit(rpc);
+        const Tezos = new MavrykToolkit(rpc);
 
         const forge = await localForger.forge(rpcToForge)
         const sig = await signer.sign(forge, new Uint8Array([3]))

@@ -31,13 +31,13 @@ const web3 = new Web3(Web3.providers.HttpProvider('http://localhost:9545'));
 **Taquito**:
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new TezosToolkit('http://localhost:8732');
+const Tezos = new MavrykToolkit('http://localhost:8732');
 ```
 
 The Web3js package exports a class that needs to be instantiated before being used. The difference between _Web3_ and _web3_ is a common source of Ethereum development errors.
-Taquito also exports a class named `TezosToolkit` that needs to be instantiated before being used, similar to the Web3js code.
+Taquito also exports a class named `MavrykToolkit` that needs to be instantiated before being used, similar to the Web3js code.
 
 ## Get account balance
 
@@ -204,8 +204,8 @@ const receipt = await contract.methodsObject.increment(counter + 1).send();
 **Taquito**:
 
 ```js
-import { TezosToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new TezosToolkit('http://localhost:8732');
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
+const Tezos = new MavrykToolkit('http://localhost:8732');
 const wallet = Tezos.setProvider({ wallet: walletOfYourChoice }); // use the wallet of your choice
 
 const userBalance = await Tezos.tz.getBalance('tz_address');

@@ -1,4 +1,4 @@
-import { MANAGER_LAMBDA, getRevealFee, TezosToolkit } from '@mavrykdynamics/taquito';
+import { MANAGER_LAMBDA, getRevealFee, MavrykToolkit } from '@mavrykdynamics/taquito';
 import { Contract } from '@mavrykdynamics/taquito';
 import { CONFIGS } from '../../config';
 import { originate, originate2, transferImplicit2 } from '../../data/lambda';
@@ -10,7 +10,7 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
   const Tezos = lib;
 
   describe(`Test estimate scenarios using: ${rpc}`, () => {
-    let LowAmountTez: TezosToolkit;
+    let LowAmountTez: MavrykToolkit;
     let contract: Contract;
     let amt = 2000000
 
@@ -160,7 +160,7 @@ CONFIGS().forEach(({ lib, setup, knownBaker, createAddress, rpc }) => {
 
 
   describe(`Test estimate scenarios with very low balance using: ${rpc}`, () => {
-    let LowAmountTez: TezosToolkit;
+    let LowAmountTez: MavrykToolkit;
     let amt = 2000
 
     beforeAll(async () => {

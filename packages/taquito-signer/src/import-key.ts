@@ -1,5 +1,5 @@
 import { InMemorySigner } from './taquito-signer';
-import { TezosToolkit } from '@mavrykdynamics/taquito';
+import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
 /**
  *
@@ -13,7 +13,7 @@ import { TezosToolkit } from '@mavrykdynamics/taquito';
  * @param secret Faucet secret
  */
 export async function importKey(
-  toolkit: TezosToolkit,
+  toolkit: MavrykToolkit,
   privateKeyOrEmail: string,
   passphrase?: string,
   mnemonic?: string,

@@ -1,5 +1,5 @@
 import {
-  TezosToolkit,
+  MavrykToolkit,
   ContractAbstraction,
   Wallet,
   MichelsonMap,
@@ -39,7 +39,7 @@ const preparePayloadToSign = (
 const sendTezToEtherlink = async (
   amount: number,
   address: string,
-  tezos: TezosToolkit,
+  tezos: MavrykToolkit,
 ): Promise<TestResult> => {
   let opHash = "";
   try {
@@ -55,7 +55,7 @@ const sendTezToEtherlink = async (
   }
 };
 
-const sendTez = async (Tezos: TezosToolkit): Promise<TestResult> => {
+const sendTez = async (Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
@@ -70,7 +70,7 @@ const sendTez = async (Tezos: TezosToolkit): Promise<TestResult> => {
   }
 };
 
-const setDelegate = async (delegate: string, Tezos: TezosToolkit): Promise<TestResult> => {
+const setDelegate = async (delegate: string, Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
@@ -85,7 +85,7 @@ const setDelegate = async (delegate: string, Tezos: TezosToolkit): Promise<TestR
   }
 };
 
-const stake = async (amount: number, Tezos: TezosToolkit): Promise<TestResult> => {
+const stake = async (amount: number, Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
@@ -100,7 +100,7 @@ const stake = async (amount: number, Tezos: TezosToolkit): Promise<TestResult> =
   }
 };
 
-const unstake = async (amount: number, Tezos: TezosToolkit): Promise<TestResult> => {
+const unstake = async (amount: number, Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
@@ -115,7 +115,7 @@ const unstake = async (amount: number, Tezos: TezosToolkit): Promise<TestResult>
   }
 };
 
-const finalizeUnstake = async (Tezos: TezosToolkit): Promise<TestResult> => {
+const finalizeUnstake = async (Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
@@ -248,7 +248,7 @@ const callFaiWithPair = async (
   }
 };
 
-const originateSuccess = async (Tezos: TezosToolkit): Promise<TestResult> => {
+const originateSuccess = async (Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     // fetches contract code
@@ -265,7 +265,7 @@ const originateSuccess = async (Tezos: TezosToolkit): Promise<TestResult> => {
   }
 };
 
-const batchApiTest = async (Tezos: TezosToolkit): Promise<TestResult> => {
+const batchApiTest = async (Tezos: MavrykToolkit): Promise<TestResult> => {
   let opHash = "";
   try {
     const op = await Tezos.wallet
@@ -300,7 +300,7 @@ const batchApiTest = async (Tezos: TezosToolkit): Promise<TestResult> => {
 };
 
 const batchApiContractCallsTest = async (
-  Tezos: TezosToolkit,
+  Tezos: MavrykToolkit,
   contract: ContractAbstraction<Wallet> | ContractAbstraction<ContractProvider>,
   callToContract
 ): Promise<TestResult> => {
@@ -397,7 +397,7 @@ const signPayloadAndSend = async (
 
 const signFailingNoop = async (
   input: string,
-  tezos: TezosToolkit,
+  tezos: MavrykToolkit,
 ): Promise<TestResult> => {
   const bytes = stringToBytes(input);
   try {
@@ -523,7 +523,7 @@ const tryConfirmationObservable = async (
   }
 };
 
-const permit = async (Tezos: TezosToolkit, wallet: BeaconWallet) => {
+const permit = async (Tezos: MavrykToolkit, wallet: BeaconWallet) => {
   const store = get(localStore);
 
   const expectedBytes =
@@ -651,7 +651,7 @@ export const list = [
 ];
 
 export const init = (
-  Tezos: TezosToolkit,
+  Tezos: MavrykToolkit,
   contract: ContractAbstraction<Wallet> | ContractAbstraction<ContractProvider>,
   wallet: BeaconWallet | undefined
 ): TestSettings[] => [

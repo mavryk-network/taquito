@@ -1,4 +1,4 @@
-import { TezosToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
+import { MavrykToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { InMemorySpendingKey, SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
 import { singleSaplingStateContractJProtocol } from '../integration-tests/data/single_sapling_state_contract_jakarta_michelson';
@@ -9,7 +9,7 @@ async function example() {
     try {
         const provider = 'https://basenet.rpc.mavryk.network';
         const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
-        const tezos = new TezosToolkit(provider);
+        const tezos = new MavrykToolkit(provider);
         tezos.setSignerProvider(signer);
 
         const saplingContractOrigination = await tezos.contract.originate({
