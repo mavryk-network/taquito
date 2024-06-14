@@ -97,7 +97,7 @@ export { OpKind } from './opkind';
 export { VERSION } from './version';
 
 /***
- * @description RpcClient allows interaction with Tezos network through an rpc node
+ * @description RpcClient allows interaction with Mavryk network through an rpc node
  */
 export class RpcClient implements RpcClientInterface {
   /**

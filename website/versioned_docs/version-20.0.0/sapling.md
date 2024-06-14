@@ -4,7 +4,7 @@ author: Roxane Letourneau
 ---
 
 Sapling is a protocol allowing private transactions in a decentralized environment.
-Sapling was introduced in Tezos in the Edo protocol. Refer to the Tezos documentation for more information on Sapling: https://tezos.gitlab.io/active/sapling.html
+Sapling was introduced in Mavryk in the Edo protocol. Refer to the Mavryk documentation for more information on Sapling: https://tezos.gitlab.io/active/sapling.html
 
 ## Keys
 
@@ -43,7 +43,7 @@ The constructor of the `SaplingToolkit` takes the following properties:
   - the address of the Sapling contract (string)
   - the size of the memo of the corresponding Sapling contract (number)
   - an optional Sapling id that must be specified if the contract contains more than one Sapling state.
-- an instance of a class implementing the `TzReadProvider` interface, which allows getting data from the blockchain
+- an instance of a class implementing the `MvReadProvider` interface, which allows getting data from the blockchain
 - it is possible to specify a different packer than the `MichelCodecPacker`, which is used by default
 
 Here is an example of how to instantiate a `SaplingToolkit`:
@@ -53,9 +53,9 @@ import { MavrykToolkit, RpcReadAdapter } from '@mavrykdynamics/taquito';
 import { SaplingToolkit } from '@mavrykdynamics/taquito-sapling';
 import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
-const tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
+const mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
 const readProvider = new RpcReadAdapter(new RpcClient('https://YOUR_PREFERRED_RPC_URL'));
-const saplingContract = await tezos.contract.at('KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf');
+const saplingContract = await mavryk.contract.at('KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf');
 
 const inMemorySpendingKey = await InMemorySpendingKey.fromMnemonic('YOUR_MNEMONIC');
 
@@ -138,15 +138,15 @@ saplingToolkit.getSaplingTransactionViewer()
 
 ## How to prepare a shielded transaction?
 
-A shielded transaction allows sending tokens from a Tezos account (mv1, mv2, mv3) to a Sapling address (zet). The `prepareShieldedTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send tez to multiple addresses at once if needed.
+A shielded transaction allows sending tokens from a Mavryk account (mv1, mv2, mv3) to a Sapling address (zet). The `prepareShieldedTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send mav to multiple addresses at once if needed.
 
 The `ParametersSaplingTransaction` is an object made of:
 - a `to` property, which is the destination address (zet)
-- an `amount` property, which is the amount to shield in tez by default
+- an `amount` property, which is the amount to shield in mav by default
 - an optional `memo` that cannot be longer than the specified memo size
-- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
+- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than mav
 
-The `prepareShieldedTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done. Note that in a case of a shielded transaction, the shielded amount must be sent along when calling the smart contract to transfer the tez to the shielded pool, or it will result in an error.
+The `prepareShieldedTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done. Note that in a case of a shielded transaction, the shielded amount must be sent along when calling the smart contract to transfer the mav to the shielded pool, or it will result in an error.
 
 Here is an example of how to prepare and inject a shielded transaction using Taquito:
 
@@ -158,7 +158,7 @@ Here is an example of how to prepare and inject a shielded transaction using Taq
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
 const rpcUrl = 'https://basenet.rpc.mavryk.network/';
 const readProvider = new RpcReadAdapter(new RpcClient(rpcUrl));
-// const Tezos = new MavrykToolkit(rpcUrl);
+// const Mavryk = new MavrykToolkit(rpcUrl);
 // Note: you need to set up your signer on the MavrykToolkit as usual
 
 // Alice spending key
@@ -189,10 +189,10 @@ inMemorySpendingKey.getSaplingViewingKeyProvider()
   })
   .then((shieldedTx) => {
     println(`The sapling transaction parameter is: ${shieldedTx}`);
-    Tezos.contract.at(saplingContractAddress)
+    Mavryk.contract.at(saplingContractAddress)
     .then((saplingContract) => {
         println(`Injecting the Sapling transaction using the ContractAbstraction...`);
-        // The amount MUST be specified in the send method to transfer the 3 tez to the shielded pool
+        // The amount MUST be specified in the send method to transfer the 3 mav to the shielded pool
         return saplingContract.methodsObject.default([shieldedTx]).send({ amount: 3 });
     })
     .then((op) => {
@@ -206,13 +206,13 @@ inMemorySpendingKey.getSaplingViewingKeyProvider()
 
 ## How to prepare a Sapling transaction?
 
-A Sapling transaction allows sending tokens from an address (zet) to an address (zet). The `prepareSaplingTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send tez to multiple addresses at once if needed.
+A Sapling transaction allows sending tokens from an address (zet) to an address (zet). The `prepareSaplingTransaction` method of the `SaplingToolkit` takes an array of `ParametersSaplingTransaction`, making it possible to send mav to multiple addresses at once if needed.
 
 The `ParametersSaplingTransaction` is an object made of:
 - a `to` property, which is the destination address (zet)
-- an `amount` property, which is the amount to shield in tez by default
+- an `amount` property, which is the amount to shield in mav by default
 - an optional `memo` that cannot be longer than the specified memo size
-- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
+- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than mav
 
 The `prepareSaplingTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done.
 
@@ -230,7 +230,7 @@ Here is an example of how to prepare and inject a Sapling transaction using Taqu
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
 const rpcUrl = 'https://basenet.rpc.mavryk.network/';
 const readProvider = new RpcReadAdapter(new RpcClient(rpcUrl));
-// const Tezos = new MavrykToolkit(rpcUrl);
+// const Mavryk = new MavrykToolkit(rpcUrl);
 // Note: you need to set up your signer on the MavrykToolkit as usual
 
 // Alice spending key
@@ -253,7 +253,7 @@ saplingToolkit.prepareSaplingTransaction([{
 }])
 .then((saplingTx) => {
     println(`The sapling transaction parameter is: ${saplingTx}`);
-    Tezos.contract.at(saplingContractAddress)
+    Mavryk.contract.at(saplingContractAddress)
     .then((saplingContract) => {
         println(`Injecting the Sapling transaction using the ContractAbstraction...`);
         return saplingContract.methodsObject.default([saplingTx]).send();
@@ -269,12 +269,12 @@ saplingToolkit.prepareSaplingTransaction([{
 
 ## How to prepare an unshielded transaction?
 
-An unshielded transaction allows sending tokens from an address (zet) to a Tezos address (mv1, mv2, mv3). The `prepareUnshieldedTransaction` method of the `SaplingToolkit` takes a single `ParametersUnshieldedTransaction`.
+An unshielded transaction allows sending tokens from an address (zet) to a Mavryk address (mv1, mv2, mv3). The `prepareUnshieldedTransaction` method of the `SaplingToolkit` takes a single `ParametersUnshieldedTransaction`.
 
 The `ParametersUnshieldedTransaction` is an object made of:
 - a `to` property, which is the destination  account (mv1, mv2, mv3)
-- an `amount` property, which is the amount to shield in tez by default
-- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than tez
+- an `amount` property, which is the amount to shield in mav by default
+- an optional `mumav` property that must be set to true if the specified amount is in mumav rather than mav
 
 The `prepareUnshieldedTransaction` method returns the crafted Sapling transaction parameter but does not perform any change on the shielded pool. A subsequent step where the Sapling transaction parameter is submitted to the smart contract must be done to retrieve the tokens from the pool.
 
@@ -288,7 +288,7 @@ Here is an example of how to prepare and inject an unshielded transaction using 
 const saplingContractAddress = 'KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf'
 const rpcUrl = 'https://basenet.rpc.mavryk.network/';
 const readProvider = new RpcReadAdapter(new RpcClient(rpcUrl));
-// const Tezos = new MavrykToolkit(rpcUrl);
+// const Mavryk = new MavrykToolkit(rpcUrl);
 // Note: you need to set up your signer on the MavrykToolkit as usual
 
 // Alice spending key
@@ -310,7 +310,7 @@ saplingToolkit.prepareUnshieldedTransaction({
 })
 .then((unshieldedTx) => {
     println(`The sapling transaction parameter is: ${unshieldedTx}`);
-    Tezos.contract.at(saplingContractAddress)
+    Mavryk.contract.at(saplingContractAddress)
     .then((saplingContract) => {
         println(`Injecting the Sapling transaction using the ContractAbstraction...`);
         return saplingContract.methodsObject.default([unshieldedTx]).send();
@@ -332,7 +332,7 @@ The constructor of the `SaplingTransactionViewer` takes the following properties
 - an instance of `InMemoryViewingKey`
 - the second parameter is an object containing:
   - the address of the Sapling contract or a Sapling id if the contract contains more than one Sapling state.
-- an instance of a class implementing the `TzReadProvider` interface, which allows getting data from the blockchain
+- an instance of a class implementing the `MvReadProvider` interface, which allows getting data from the blockchain
 
 Here is an example of how to instantiate a `SaplingTransactionViewer`:
 
@@ -342,9 +342,9 @@ import { InMemoryViewingKey } from '@mavrykdynamics/taquito-sapling';
 import { RpcClient } from '@mavrykdynamics/taquito-rpc';
 
 const readProvider = new RpcReadAdapter(new RpcClient('https://YOUR_PREFERRED_RPC_URL'));
-const tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
+const mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network/');
 
-const saplingContract = await tezos.contract.at('KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf');
+const saplingContract = await mavryk.contract.at('KT1ToBD7bovonshNrxs3i4KMFuZ8PE2LUmQf');
 
 const inMemoryViewingKey = new InMemoryViewingKey(
     '000000000000000000977d725fc96387e8ec1e603e7ae60c6e63529fb84e36e126770e9db9899d7f2344259fd700dc80120d3c9ca65d698f6064043b048b079caa4f198aed96271740b1d6fd523d71b15cd0b3d75644afbe9abfedb6883e299165665ab692c14ca5c835c61a0e53de553a751c78fbc42d5e7eca807fd441206651c84bf88de803efba837583145a5f338b1a7af8a5f9bec4783054f9d063d365f2352f72cbced95e0a'

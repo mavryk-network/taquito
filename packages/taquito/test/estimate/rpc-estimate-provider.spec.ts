@@ -1061,7 +1061,7 @@ describe('RPCEstimateProvider test signer', () => {
             ],
           },
         ],
-        name: 'TezosOperationError',
+        name: 'MavrykOperationError',
         id: 'proto.011-PtHangzH.context.storage_error',
         kind: 'permanent',
         message: '(permanent) proto.011-PtHangzH.context.storage_error',

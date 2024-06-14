@@ -22,18 +22,18 @@ interface ContractsData {
  * import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
  * import { MavrykToolkit } from '@mavrykdynamics/taquito';
  *
- * const Tezos = new MavrykToolkit('rpcUrl');
+ * const Mavryk = new MavrykToolkit('rpcUrl');
  * const contractsLibrary = new ContractsLibrary();
  *
  * contractsLibrary.addContract({
  *      ['contractAddress1']: {
- *          script: script1, // obtained from Tezos.rpc.getContract('contractAddress1').script
- *          entrypoints: entrypoints1 // obtained from Tezos.rpc.getEntrypoints('contractAddress1')
+ *          script: script1, // obtained from Mavryk.rpc.getContract('contractAddress1').script
+ *          entrypoints: entrypoints1 // obtained from Mavryk.rpc.getEntrypoints('contractAddress1')
  *      },
  *      // load more contracts
  * });
  *
- * Tezos.addExtension(contractsLibrary);
+ * Mavryk.addExtension(contractsLibrary);
  * ```
  *
  */

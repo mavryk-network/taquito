@@ -20,7 +20,7 @@ export type SaplingStateQuery = {
 // block identifier can be head, a block relative to head, a block hash or a block level
 export type BlockIdentifier = 'head' | `head~${number}` | `B${string}` | number;
 
-export interface TzReadProvider {
+export interface MvReadProvider {
   /**
    * @description Access the spendable balance of a contract, excluding frozen bonds.
    * @param address address from which we want to retrieve the balance

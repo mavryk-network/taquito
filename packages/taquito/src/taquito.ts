@@ -15,7 +15,7 @@ import { GlobalConstantsProvider } from './global-constants/interface-global-con
 import { NoopGlobalConstantsProvider } from './global-constants/noop-global-constants-provider';
 import { Packer } from './packer/interface';
 import { RpcPacker } from './packer/rpc-packer';
-import { TzReadProvider } from './read-provider/interface';
+import { MvReadProvider } from './read-provider/interface';
 import { RpcReadAdapter } from './read-provider/rpc-read-adapter';
 import { PreparationProvider } from './prepare/interface';
 import { Signer } from './signer/interface';
@@ -68,7 +68,7 @@ export {
   BigMapQuery,
   SaplingStateQuery,
   BlockIdentifier,
-  TzReadProvider,
+  MvReadProvider,
 } from './read-provider/interface';
 export { RpcReadAdapter } from './read-provider/rpc-read-adapter';
 export * from './estimate';
@@ -79,7 +79,7 @@ export interface SetProviderOptions {
   forger?: Forger;
   wallet?: WalletProvider;
   rpc?: string | RpcClientInterface;
-  readProvider?: TzReadProvider;
+  readProvider?: MvReadProvider;
   stream?: string | SubscribeProvider;
   signer?: Signer;
   protocol?: Protocols;
@@ -126,12 +126,12 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets configuration on the Tezos Taquito instance. Allows user to choose which signer, rpc client, rpc url, forger and so forth
+   * @description Sets configuration on the Mavryk Taquito instance. Allows user to choose which signer, rpc client, rpc url, forger and so forth
    *
-   * @param options rpc url or rpcClient to use to interact with the Tezos network
+   * @param options rpc url or rpcClient to use to interact with the Mavryk network
    *
-   * @example Tezos.setProvider({rpc: 'https://mainnet.ecadinfra.com/', signer: new InMemorySigner.fromSecretKey(“edsk...”)})
-   * @example Tezos.setProvider({ config: { confirmationPollingTimeoutSecond: 300 }})
+   * @example Mavryk.setProvider({rpc: 'https://mainnet.ecadinfra.com/', signer: new InMemorySigner.fromSecretKey(“edsk...”)})
+   * @example Mavryk.setProvider({ config: { confirmationPollingTimeoutSecond: 300 }})
    *
    */
 
@@ -167,11 +167,11 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets signer provider on the Tezos Taquito instance.
+   * @description Sets signer provider on the Mavryk Taquito instance.
    *
-   * @param options signer to use to interact with the Tezos network
+   * @param options signer to use to interact with the Mavryk network
    *
-   * @example Tezos.setSignerProvider(new InMemorySigner.fromSecretKey('edsk...'))
+   * @example Mavryk.setSignerProvider(new InMemorySigner.fromSecretKey('edsk...'))
    *
    */
   setSignerProvider(signer?: SetProviderOptions['signer']) {
@@ -185,11 +185,11 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets rpc provider on the Tezos Taquito instance
+   * @description Sets rpc provider on the Mavryk Taquito instance
    *
-   * @param options rpc url or rpcClient to use to interact with the Tezos network
+   * @param options rpc url or rpcClient to use to interact with the Mavryk network
    *
-   * @example Tezos.setRpcProvider('https://mainnet.ecadinfra.com/')
+   * @example Mavryk.setRpcProvider('https://mainnet.ecadinfra.com/')
    *
    */
   setRpcProvider(rpc?: SetProviderOptions['rpc']) {
@@ -205,12 +205,12 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets forger provider on the Tezos Taquito instance
+   * @description Sets forger provider on the Mavryk Taquito instance
    * The `LocalForger` from `@mavrykdynamics/taquito-local-forging` is set by default.
    *
-   * @param options forger to use to interact with the Tezos network
+   * @param options forger to use to interact with the Mavryk network
    *
-   * @example Tezos.setForgerProvider(this.getFactory(RpcForger)())
+   * @example Mavryk.setForgerProvider(this.getFactory(RpcForger)())
    *
    */
   setForgerProvider(forger?: SetProviderOptions['forger']) {
@@ -225,11 +225,11 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets stream provider on the Tezos Taquito instance
+   * @description Sets stream provider on the Mavryk Taquito instance
    *
-   * @param options stream to use to interact with the Tezos network
+   * @param options stream to use to interact with the Mavryk network
    *
-   * @example Tezos.setStreamProvider(...)
+   * @example Mavryk.setStreamProvider(...)
    *
    */
   setStreamProvider(stream?: SetProviderOptions['stream']) {
@@ -248,11 +248,11 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets wallet provider on the Tezos Taquito instance
+   * @description Sets wallet provider on the Mavryk Taquito instance
    *
-   * @param options wallet to use to interact with the Tezos network
+   * @param options wallet to use to interact with the Mavryk network
    *
-   * @example Tezos.setWalletProvider(...)
+   * @example Mavryk.setWalletProvider(...)
    *
    */
   setWalletProvider(wallet?: SetProviderOptions['wallet']) {
@@ -267,11 +267,11 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets Packer provider on the Tezos Taquito instance
+   * @description Sets Packer provider on the Mavryk Taquito instance
    *
-   * @param options packer to use to interact with the Tezos network
+   * @param options packer to use to interact with the Mavryk network
    *
-   * @example Tezos.setPackerProvider(new MichelCodecPacker())
+   * @example Mavryk.setPackerProvider(new MichelCodecPacker())
    *
    */
   setPackerProvider(packer?: SetProviderOptions['packer']) {
@@ -286,9 +286,9 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets global constants provider on the Tezos Taquito instance
+   * @description Sets global constants provider on the Mavryk Taquito instance
    *
-   * @param options globalConstantsProvider to use to interact with the Tezos network
+   * @param options globalConstantsProvider to use to interact with the Mavryk network
    *
    * @example
    * ```
@@ -297,7 +297,7 @@ export class MavrykToolkit {
    *  "expruu5BTdW7ajqJ9XPTF3kgcV78pRiaBW3Gq31mgp3WSYjjUBYxre": { prim: "int" },
    *  // ...
    * })
-   * Tezos.setGlobalConstantsProvider(globalConst);
+   * Mavryk.setGlobalConstantsProvider(globalConst);
    * ```
    *
    */
@@ -315,10 +315,10 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets read provider on the Tezos Taquito instance
-   * By default reads are done from the RPC usign the RpcReadAdapter class, this can be overridden to read from an indexer that implements the TzReadProvider interface
+   * @description Sets read provider on the Mavryk Taquito instance
+   * By default reads are done from the RPC usign the RpcReadAdapter class, this can be overridden to read from an indexer that implements the MvReadProvider interface
    *
-   * @param options TzReadProvider to use to interact with the Tezos network
+   * @param options MvReadProvider to use to interact with the Mavryk network
    *
    */
   setReadProvider(readProvider?: SetProviderOptions['readProvider']) {
@@ -328,9 +328,9 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets parser provider on the Tezos Taquito instance
+   * @description Sets parser provider on the Mavryk Taquito instance
    *
-   * @param options parserProvider to use to interact with the Tezos network
+   * @param options parserProvider to use to interact with the Mavryk network
    *
    */
   setParserProvider(parserProvider?: SetProviderOptions['parserProvider']) {
@@ -345,9 +345,9 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Sets injector provider on the Tezos Taquito instance
+   * @description Sets injector provider on the Mavryk Taquito instance
    *
-   * @param options Injector to use to interact with the Tezos network by default RpcInjector
+   * @param options Injector to use to interact with the Mavryk network by default RpcInjector
    *
    */
   setInjectorProvider(injectorProvider?: SetProviderOptions['injectorProvider']) {
@@ -370,7 +370,7 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Provide access to tezos account management
+   * @description Provide access to mavryk account management
    */
   get mv(): MvProvider {
     return this._context.mv;
@@ -384,7 +384,7 @@ export class MavrykToolkit {
   }
 
   /**
-   * @description Provide access to tezos operation preparation utilities
+   * @description Provide access to mavryk operation preparation utilities
    */
   get prepare(): PreparationProvider {
     return this._context.prepare;
@@ -438,7 +438,7 @@ export class MavrykToolkit {
    *
    * @param module extension to add to the MavrykToolkit instance
    *
-   * @example Tezos.addExtension(new Tzip16Module());
+   * @example Mavryk.addExtension(new Tzip16Module());
    */
   addExtension(module: Extension | Extension[]) {
     if (Array.isArray(module)) {

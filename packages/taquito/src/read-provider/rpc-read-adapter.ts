@@ -8,12 +8,12 @@ import {
   AILaunchCycleResponse,
 } from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
-import { BigMapQuery, BlockIdentifier, SaplingStateQuery, TzReadProvider } from './interface';
+import { BigMapQuery, BlockIdentifier, SaplingStateQuery, MvReadProvider } from './interface';
 
 /**
- * @description Converts calls from TzReadProvider into calls to the wrapped RpcClient in a format it can understand.
+ * @description Converts calls from MvReadProvider into calls to the wrapped RpcClient in a format it can understand.
  */
-export class RpcReadAdapter implements TzReadProvider {
+export class RpcReadAdapter implements MvReadProvider {
   constructor(private rpc: RpcClientInterface) {}
 
   /**

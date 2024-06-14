@@ -4,12 +4,12 @@ import { MavrykToolkit } from '@mavrykdynamics/taquito';
 async function example() {
   const provider = 'https://basenet.rpc.mavryk.network';
   const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
-  const tezos = new MavrykToolkit(provider);
-  tezos.setSignerProvider(signer);
+  const mavryk = new MavrykToolkit(provider);
+  mavryk.setSignerProvider(signer);
 
   try {
     console.log('Deploying Wallet Test contract...');
-    const op = await tezos.wallet.originate({
+    const op = await mavryk.wallet.originate({
       code: `parameter (or
         (or (or (pair %addName address string) (bool %areYouThere))
             (or (string %changeMessage) (int %decrement)))

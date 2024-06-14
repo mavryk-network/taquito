@@ -33,7 +33,7 @@ values={[
 
 | Provider         |  Details                                    |
 |------------------|---------------------------------------------|
-| TzPro            |  https://tzpro.io/                          |
+| MvPro            |  https://tzpro.io/                          |
 | MIDL.dev         |  https://midl.dev/tezos-rpc/                |
 | Exaion           |  https://node.exaion.com                    |
 
@@ -44,7 +44,7 @@ values={[
 
 ## How to run a node
 
-Running a node is a good way of contributing to Tezos by increasing the decentralization of the network.
+Running a node is a good way of contributing to Mavryk by increasing the decentralization of the network.
 
 There are many ways to set up a node. Here are some links providing general instructions:
 

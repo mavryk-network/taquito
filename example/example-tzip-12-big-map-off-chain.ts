@@ -8,21 +8,21 @@ const nodeCrypto = require('crypto');
 const provider = 'https://basenet.rpc.mavryk.network';
 
 async function createAddress() {
-  const tezos = new MavrykToolkit(provider)
+  const mavryk = new MavrykToolkit(provider)
 
   const keyBytes = Buffer.alloc(32);
   nodeCrypto.randomFillSync(keyBytes)
 
   const key = b58cencode(new Uint8Array(keyBytes), prefix[Prefix.P2SK]);
-  await importKey(tezos, key);
+  await importKey(mavryk, key);
 
-  return tezos;
+  return mavryk;
 }
 
 async function example() {
-  const tezos = new MavrykToolkit(provider)
+  const mavryk = new MavrykToolkit(provider)
   const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
-  tezos.setSignerProvider(signer);
+  mavryk.setSignerProvider(signer);
   
   try {
     console.log('Deploying Tzip12BigMapsOffChain contract...');
@@ -80,10 +80,10 @@ async function example() {
 			});
 
 
-			const op = await tezos.contract.originate({
+			const op = await mavryk.contract.originate({
 				code: fa2ForTokenMetadataView,
 				storage: {
-					administrator: await tezos.signer.publicKeyHash(),
+					administrator: await mavryk.signer.publicKeyHash(),
 					all_tokens: '2',
 					ledger,
 					metadata,

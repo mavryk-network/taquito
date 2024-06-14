@@ -3,7 +3,7 @@
   "version": "20.0.0",
   "description": "Can be used as an extension on the MavrykToolkit to provide contracts data",
   "keywords": [
-    "tezos"
+    "mavryk"
   ],
   "main": "dist/taquito-contracts-library.umd.js",
   "module": "dist/taquito-contracts-library.es6.js",

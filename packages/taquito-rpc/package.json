@@ -1,9 +1,9 @@
 {
   "name": "@mavrykdynamics/taquito-rpc",
   "version": "20.0.0",
-  "description": "Provides low level methods, and types to invoke RPC calls from a Nomadic Tezos RPC node",
+  "description": "Provides low level methods, and types to invoke RPC calls from a Nomadic Mavryk RPC node",
   "keywords": [
-    "tezos",
+    "mavryk",
     "blockchain",
     "rpc"
   ],

@@ -40,8 +40,8 @@ await wallet.client.subscribeToEvent(
 );
 await wallet.requestPermissions();
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
-Tezos.setWalletProvider(wallet);
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+Mavryk.setWalletProvider(wallet);
 ```
 
 ## Additional Info

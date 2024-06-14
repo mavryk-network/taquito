@@ -8,11 +8,11 @@ import {
   AILaunchCycleResponse,
 } from '@mavrykdynamics/taquito-rpc';
 import { ContractsLibrary } from './taquito-contracts-library';
-import { BigMapQuery, BlockIdentifier, SaplingStateQuery, TzReadProvider } from '@mavrykdynamics/taquito';
+import { BigMapQuery, BlockIdentifier, SaplingStateQuery, MvReadProvider } from '@mavrykdynamics/taquito';
 
-export class ReadWrapperContractsLibrary implements TzReadProvider {
+export class ReadWrapperContractsLibrary implements MvReadProvider {
   constructor(
-    private readProvider: TzReadProvider,
+    private readProvider: MvReadProvider,
     private contractslibrary: ContractsLibrary
   ) {}
 

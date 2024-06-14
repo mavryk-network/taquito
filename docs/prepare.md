@@ -41,9 +41,9 @@ The `PrepareProvider` class affords extension and control to users when preparin
 ### Individual Operations
 The `PrepareProvider` will be accessible via the `MavrykToolkit`:
 ```typescript
-// const Tezos = new MavrykToolkit('RPC_ENDPOINT');
+// const Mavryk = new MavrykToolkit('RPC_ENDPOINT');
 
-const prepared = await Tezos.prepare.transaction({
+const prepared = await Mavryk.prepare.transaction({
   to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
   amount: 5
 });
@@ -62,7 +62,7 @@ transaction(params: TransferParams , source?: string): Promise<PreparedOperation
 ### Batch Operations
 The `PrepareProvider` also provides support for batch operations:
 ```typescript
-const prepared = await Tezos.prepare.batch([
+const prepared = await Mavryk.prepare.batch([
   {
     kind: OpKind.TRANSACTION,
     to: 'mv1NiGqJHiRwivfGULeVz8kV16AnhepCa5rW',
@@ -82,9 +82,9 @@ Users are also able to utilize the `PrepareProvider` to prepare contract calls:
 ```typescript
 // contractAddress refers to an originated increment/decrement smart contract,
 // omitted for brevity
-const contractAbs = await Tezos.contract.at(contractAddress);
+const contractAbs = await Mavryk.contract.at(contractAddress);
 const method = await contractAbs.methodsObject.increment(1);
-const prepared = await Tezos.prepare.contractCall(method);
+const prepared = await Mavryk.prepare.contractCall(method);
 ```
 
 ## Conversion methods
@@ -96,14 +96,14 @@ The `toPreapply()` method converts a `PreparedOperation` object into an entity t
 
 #### Example
 ```typescript
-// prepared transfer of tez from one account to another
+// prepared transfer of mav from one account to another
 // omitted for brevity
-const preparedTransferOp = await Tezos.prepare.transaction({
+const preparedTransferOp = await Mavryk.prepare.transaction({
     amount: 1,
     to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
-const params = await Tezos.prepare.toPreapply(preparedTransferOp);
-const preapplyOp = await Tezos.rpc.preapplyOperations(params);
+const params = await Mavryk.prepare.toPreapply(preparedTransferOp);
+const preapplyOp = await Mavryk.rpc.preapplyOperations(params);
 ```
 
 ### `toForge()`
@@ -113,10 +113,10 @@ The `toForge()` method converts a `PreparedOperation` into an object that can be
 #### Example
 
 ```typescript
-const preparedTransfer = await Tezos.prepare.transaction({
+const preparedTransfer = await Mavryk.prepare.transaction({
   amount: 1,
   to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM'
 });
-const params = Tezos.prepare.toForge(preparedTransfer);
+const params = Mavryk.prepare.toForge(preparedTransfer);
 const forgedBytes = await forger.forge(params);
 ```

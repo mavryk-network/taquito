@@ -5,7 +5,7 @@ import { defaultMatrixNode, defaultNetworkType, type SupportedNetworks } from ".
 import type { TestSettings } from "./types";
 
 interface State {
-  Tezos: MavrykToolkit | undefined;
+  Mavryk: MavrykToolkit | undefined;
   userAddress: string | undefined;
   userBalance: number | undefined;
   wallet: BeaconWallet | undefined;
@@ -21,7 +21,7 @@ interface State {
 }
 
 const initialState: State = {
-  Tezos: undefined,
+  Mavryk: undefined,
   userAddress: undefined,
   userBalance: undefined,
   wallet: undefined,
@@ -50,10 +50,10 @@ const state = {
       ...store,
       userBalance: balance
     })),
-  updateTezos: (Tezos: MavrykToolkit) =>
+  updateMavryk: (Mavryk: MavrykToolkit) =>
     store.update(store => ({
       ...store,
-      Tezos
+      Mavryk
     })),
   updateWallet: (wallet: BeaconWallet | undefined) =>
     store.update(store => ({

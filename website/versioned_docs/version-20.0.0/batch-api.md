@@ -6,14 +6,14 @@ author: Claude Barde
 
 ## What is the Batch API?
 
-Taquito provides a simple way of forging and sending transactions to the blockchain, whether you wish to send a few tez to a certain address or interact with a smart contract. Each Tezos account holds a counter that increments every time an operation is included in a block on the network. This feature prevents users from sending two or multiple transactions in a row as illustrated in this code snippet:
+Taquito provides a simple way of forging and sending transactions to the blockchain, whether you wish to send a few mav to a certain address or interact with a smart contract. Each Mavryk account holds a counter that increments every time an operation is included in a block on the network. This feature prevents users from sending two or multiple transactions in a row as illustrated in this code snippet:
 
 ```js
 /*
  * ONE OF THESE TRANSACTIONS WILL FAIL
  * AND YOU WILL GET AN ERROR MESSAGE
  */
-const op1 = await contract.methodsObject.interact({ 0: 'tezos' }).send();
+const op1 = await contract.methodsObject.interact({ 0: 'mavryk' }).send();
 const op2 = await contract.methodsObject.wait({ 0: UnitValue }).send();
 
 await op1.confirmation();
@@ -39,8 +39,8 @@ The `contract` or `wallet` property of the `MavrykToolkit` object exposes a meth
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('RPC address here');
-const batch = Tezos.wallet.batch(); // or Tezos.contract.batch()
+const Mavryk = new MavrykToolkit('RPC address here');
+const batch = Mavryk.wallet.batch(); // or Mavryk.contract.batch()
 
 // Add here the operations to be emitted together
 
@@ -53,10 +53,10 @@ After concatenating the different methods to batch operations together, a single
 
 #### - The `withTransfer` method
 
-This method allows you to add a transfer of tez to the batched operations. It takes an object as a parameter with 4 properties. Two of them are mandatory: `to` indicates the recipient of the transfer and `amount` indicates the amount of tez to be transferred. Two other properties are optional: if `mumav` is set to `true`, the value specified in `amount` is considered to be in mumav. The `parameter` property takes an object where you can indicate an entrypoint and a value for the transfer.
+This method allows you to add a transfer of mav to the batched operations. It takes an object as a parameter with 4 properties. Two of them are mandatory: `to` indicates the recipient of the transfer and `amount` indicates the amount of mav to be transferred. Two other properties are optional: if `mumav` is set to `true`, the value specified in `amount` is considered to be in mumav. The `parameter` property takes an object where you can indicate an entrypoint and a value for the transfer.
 
 ```js
-const batch = await Tezos.wallet.batch()
+const batch = await Mavryk.wallet.batch()
   .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
   .withTransfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 4000000, mumav: true })
   .withTransfer({ to: 'mv1NpEEq8FLgc2Yi4wNpEZ3pvc1kUZrp2JWU', amount: 3 });
@@ -67,7 +67,7 @@ const batch = await Tezos.wallet.batch()
 This method allows you to add the origination of one or multiple contracts to an existing batch of operations. It takes an object as a parameter with 4 properties. The `code` property is mandatory and can be a string representing the plain Michelson code or the JSON representation of the Michelson contract. The parameter object must also include an `init` or `storage` property: when `init` is specified, `storage` is optional and vice-versa. `init` is the initial storage object value that can be either Micheline or JSON encoded. `storage` is a JavaScript representation of a storage object. Optionally, you can also indicate a `balance` for the newly created contract and a `delegate`.
 
 ```js
-const batch = await Tezos.contract.batch()
+const batch = await Mavryk.contract.batch()
   .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 2 })
   .withOrigination({
     code: validCode,
@@ -82,7 +82,7 @@ const batch = await Tezos.contract.batch()
 This simple method allows batching multiple delegation transactions. The method takes an object as a parameter with a single property: the address of the delegate.
 
 ```js
-const batch = await Tezos.contract.batch().withDelegation({
+const batch = await Mavryk.contract.batch().withDelegation({
   delegate: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv',
 });
 ```
@@ -92,9 +92,9 @@ const batch = await Tezos.contract.batch().withDelegation({
 This method may be one of the most useful ones as it allows you to batch and emit multiple contract calls under one transaction. The parameter is also pretty simple: it takes the function you would call on the contract abstraction object if you would send a single transaction.
 
 ```js
-const contract = await Tezos.wallet.at(VALID_CONTRACT_ADDRESS);
-const batch = await Tezos.wallet.batch()
-  .withContractCall(contract.methodsObject.interact({ 0: 'tezos' }))
+const contract = await Mavryk.wallet.at(VALID_CONTRACT_ADDRESS);
+const batch = await Mavryk.wallet.batch()
+  .withContractCall(contract.methodsObject.interact({ 0: 'mavryk' }))
   .withContractCall(contract.methodsObject.wait({ 1: UnitValue });
 ```
 
@@ -105,7 +105,7 @@ If you prefer having an array that contains objects with the different transacti
 ```js
 import { OpKind, UnitValue } from '@mavrykdynamics/taquito';
 
-const batch = await Tezos.wallet.batch([
+const batch = await Mavryk.wallet.batch([
   {
     kind: OpKind.TRANSACTION,
     to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM',
@@ -133,7 +133,7 @@ const batch = await Tezos.wallet.batch([
 After batching all the necessary operations together, you must use the `send` method to emit them. This step is very similar to what you would do to emit a single transaction.
 
 ```js
-const batch = Tezos.contract.batch();
+const batch = Mavryk.contract.batch();
 /*
  * Here happens all the operation batching
  */
@@ -146,7 +146,7 @@ Like with other operations created by Taquito, the `send` method is a promise th
 
 ## What are the limitations?
 
-The limitations of batched operations are within the constraints of single processes. For example, the gas limit of the Tezos blockchain limits the number of functions that can batch together.
+The limitations of batched operations are within the constraints of single processes. For example, the gas limit of the Mavryk blockchain limits the number of functions that can batch together.
 In addition to that, only a single account can sign batched operations.
 
 ## References

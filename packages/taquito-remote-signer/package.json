@@ -3,7 +3,7 @@
   "version": "20.0.0",
   "description": "Remote signer provider",
   "keywords": [
-    "tezos",
+    "mavryk",
     "blockchain"
   ],
   "main": "dist/taquito-remote-signer.umd.js",

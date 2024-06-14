@@ -3,7 +3,7 @@
   "version": "20.0.0",
   "description": "Michelson parser/validator/formatter",
   "keywords": [
-    "tezos",
+    "mavryk",
     "blockchain",
     "signer"
   ],

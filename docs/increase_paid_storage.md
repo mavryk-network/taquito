@@ -7,7 +7,7 @@ Increase Paid Storage is a new operation available for use starting from Protoco
 
 This helps resolve an issue where several operations on the same contract would fail when they are added at the same level due to the storage limit being lower than the `paid_storage_size_diff`.
 
-For more information on this change, refer to this [MR](https://gitlab.com/tezos/tezos/-/merge_requests/5605) in the Tezos codebase.
+For more information on this change, refer to this [MR](https://gitlab.com/tezos/tezos/-/merge_requests/5605) in the Mavryk codebase.
 ## Examples
 Similar to other operations, the Increase Paid Storage operation is available in the Contract and Wallet API
 
@@ -15,7 +15,7 @@ Similar to other operations, the Increase Paid Storage operation is available in
 
 #### Simple Usage
 ```js
-const op = await Tezos.contract.increasePaidStorage({
+const op = await Mavryk.contract.increasePaidStorage({
   amount: 2,
   destination: 'SMART_CONTRACT_ADDRESS'
 });
@@ -29,7 +29,7 @@ After waiting for the operation confirmation, you will also have access to vario
 
 #### Usage in Batches
 ```typescript
-const op = await Tezos.contract
+const op = await Mavryk.contract
     .batch()
     .withOrigination({
       balance: "1",
@@ -53,7 +53,7 @@ const op = await Tezos.contract
 
 or 
 ```typescript
-const op = await Tezos.contract.batch([
+const op = await Mavryk.contract.batch([
     {
       kind: 'origination', 
       balance: '1', 
@@ -77,7 +77,7 @@ Both syntax will work fine for batching any operations, including `increase_paid
 
 #### Usage Example
 ```typescript
-const op = await Tezos.wallet.increasePaidStorage({
+const op = await Mavryk.wallet.increasePaidStorage({
   amount: 1,
   destination: simpleContractAddress
 }).send();
@@ -85,7 +85,7 @@ const op = await Tezos.wallet.increasePaidStorage({
 
 #### Usage in Batches
 ```typescript
-const batch = await Tezos.wallet
+const batch = await Mavryk.wallet
   .batch()
   .withOrigination({
     balance: "1",

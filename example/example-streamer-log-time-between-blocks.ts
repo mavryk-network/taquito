@@ -25,12 +25,12 @@ function logLevelAndTime(data: number) {
 }
 
 async function example() {
-  const tezos = new MavrykToolkit(provider)
+  const mavryk = new MavrykToolkit(provider)
 
   console.log(provider)
-  tezos.setStreamProvider(tezos.getFactory(PollingSubscribeProvider)({ pollingIntervalMilliseconds }));
+  mavryk.setStreamProvider(mavryk.getFactory(PollingSubscribeProvider)({ pollingIntervalMilliseconds }));
   try {
-    const sub = tezos.stream.subscribeBlock('head')
+    const sub = mavryk.stream.subscribeBlock('head')
     sub.on('data', (data) => logLevelAndTime(data.header.level))
   }
   catch (ex) {

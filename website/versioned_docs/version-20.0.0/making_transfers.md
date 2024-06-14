@@ -5,7 +5,7 @@ author: Simon Boissonneault-Robert
 
 # Examples demonstrating transfers between various address types
 
-In Tezos, a transfer operation transfers tokens between two addresses.
+In Mavryk, a transfer operation transfers tokens between two addresses.
 
 When the `Babylon/proto005` protocol amendment came into effect, it changed how token transfer involving KT1 addresses work. The transfer of tokens _from_ a KT1 account is completed by calling the KT1's smart contract `do` method. The `do` method takes a lambda function, and it is the logic of this function that causes the desired transfer of tokens to happen.
 
@@ -16,14 +16,14 @@ The Taquito [integration tests](https://github.com/mavryk-network/mavryk-taquito
 This is the simplest token transfer scenario
 
 ```js
-await Tezos.contract.transfer({ to: contract.address, amount: 1 });
+await Mavryk.contract.transfer({ to: contract.address, amount: 1 });
 ```
 
 In the following example, we transfer 0.5ṁ from a `mv1PYMQXgRiJBMsrEaM9Yre4JyvcLVbUr8pv` address that signs the operation to `mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc`.
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 render(`Fetching a private key...`);
 fetch('https://keygen.ecadinfra.com/basenet/', {
@@ -33,14 +33,14 @@ fetch('https://keygen.ecadinfra.com/basenet/', {
   .then((response) => response.text())
   .then((privateKey) => {
     render(`Importing the private key...`);
-    return importKey(Tezos, privateKey);
+    return importKey(Mavryk, privateKey);
   })
   .then(() => {
     const amount = 0.5;
     const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
     render(`Transfering ${amount} ṁ to ${address}...`);
-    return Tezos.contract.transfer({ to: address, amount: amount });
+    return Mavryk.contract.transfer({ to: address, amount: amount });
   })
   .then((op) => {
     render(`Waiting for ${op.hash} to be confirmed...`);
@@ -52,9 +52,9 @@ fetch('https://keygen.ecadinfra.com/basenet/', {
 
 ## Transfers involving "originated" KT1 addresses
 
-Pre-`Babylon/proto005` "script-less" KT1 addresses were common. This situation changed when the Tezos blockchain migrated to the new `Babylon/proto005` protocol.
+Pre-`Babylon/proto005` "script-less" KT1 addresses were common. This situation changed when the Mavryk blockchain migrated to the new `Babylon/proto005` protocol.
 
-During the migration from `proto004` to `proto005`, all KT1 addresses migrated so that they got a contract called [manager.mv](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.mv). This change meant that there are no longer any "script-less" KT1 addresses in Tezos.
+During the migration from `proto004` to `proto005`, all KT1 addresses migrated so that they got a contract called [manager.mv](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.mv). This change meant that there are no longer any "script-less" KT1 addresses in Mavryk.
 
 A call to the KT1's smart contracts' `do` method is required to transfer tokens from KT1 addresses with the new `manager.mv` contract. The `do` method takes a lambda function, and it is this lambda function that causes changes to occur in the KT1 address.
 
@@ -67,7 +67,7 @@ Sending 50 mumav from `kt1...` to `mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m`.
 ### Example transfer from a KT1 to a mv1 address on Carthage/Proto006
 
 ```js
-const contract = await Tezos.contract.at('kt1...');
+const contract = await Mavryk.contract.at('kt1...');
 await contract.methodsObject
   .do(transferImplicit('mv1UE4jMeeBM49FjNmyvtE19aBKT73HDvM2m', 50))
   .send({ amount: 0 });
@@ -103,7 +103,7 @@ Sending 1 mumav to `KT1KLbEeEgW5h1QLkPuPvqdgurHx6v4hGyic` from `KT1...`
 ### Example for Babylon/Proto005 or higher
 
 ```js
-const contract = await Tezos.contract.at('KT1...');
+const contract = await Mavryk.contract.at('KT1...');
 await contract.methodsObject
   .do(transferToContract('KT1KLbEeEgW5h1QLkPuPvqdgurHx6v4hGyic', 1))
   .send({ amount: 0 });

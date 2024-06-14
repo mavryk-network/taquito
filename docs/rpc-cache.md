@@ -18,5 +18,5 @@ import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 
 const rpcClient = new RpcClient('replace_with_RPC_URL');
-const tezos = new MavrykToolkit(new RpcClientCache(rpcClient));
+const mavryk = new MavrykToolkit(new RpcClientCache(rpcClient));
 ```

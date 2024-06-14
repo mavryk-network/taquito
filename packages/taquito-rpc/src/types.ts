@@ -1366,33 +1366,33 @@ export interface OperationResultTransferTicket {
   ticket_updates?: TicketUpdates[];
   consumed_milligas?: string;
   paid_storage_size_diff?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultIncreasePaidStorage {
   status: OperationResultStatusEnum;
   balance_updates?: OperationBalanceUpdates;
   consumed_milligas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultUpdateConsensusKey {
   status: OperationResultStatusEnum;
   consumed_milligas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultDelegation {
   status: OperationResultStatusEnum;
   consumed_gas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
   consumed_milligas?: string;
 }
 
 export interface OperationResultSetDepositsLimit {
   status: OperationResultStatusEnum;
   consumed_gas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
   consumed_milligas?: string;
 }
 
@@ -1402,7 +1402,7 @@ export interface OperationResultRegisterGlobalConstant {
   consumed_gas?: string;
   storage_size?: string;
   global_address?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
   consumed_milligas?: string;
 }
 
@@ -1413,13 +1413,13 @@ export interface OperationResultSmartRollupOriginate {
   genesis_commitment_hash?: string;
   consumed_milligas?: string;
   size?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupAddMessages {
   status: OperationResultStatusEnum;
   consumed_milligas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupExecuteOutboxMessage {
@@ -1428,7 +1428,7 @@ export interface OperationResultSmartRollupExecuteOutboxMessage {
   ticket_updates?: TicketUpdates[];
   consumed_milligas?: string;
   paid_storage_size_diff?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupPublish {
@@ -1437,7 +1437,7 @@ export interface OperationResultSmartRollupPublish {
   staked_hash?: string;
   published_at_level?: number;
   balance_updates?: OperationBalanceUpdates;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupCement {
@@ -1445,7 +1445,7 @@ export interface OperationResultSmartRollupCement {
   consumed_milligas?: string;
   inbox_level?: number;
   commitment_hash?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupRefute {
@@ -1453,14 +1453,14 @@ export interface OperationResultSmartRollupRefute {
   consumed_milligas?: string;
   game_status?: SmartRollupGameStatus;
   balance_updates?: OperationBalanceUpdates;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupRecoverBond {
   status: OperationResultStatusEnum;
   balance_updates?: OperationBalanceUpdates;
   consumed_milligas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultSmartRollupTimeout {
@@ -1468,7 +1468,7 @@ export interface OperationResultSmartRollupTimeout {
   consumed_milligas?: string;
   game_status?: SmartRollupGameStatus;
   balance_updates?: OperationBalanceUpdates;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationResultDalPublishCommitment {
@@ -1480,7 +1480,7 @@ export interface OperationResultDalPublishCommitment {
     commitment: string;
   };
   consumed_milligas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface ContractBigMapDiffItem {
@@ -1497,7 +1497,7 @@ export interface ContractBigMapDiffItem {
 
 export type ContractBigMapDiff = ContractBigMapDiffItem[];
 
-export interface TezosGenericOperationError {
+export interface MavrykGenericOperationError {
   kind: string;
   id: string;
   delegate?: string;
@@ -1560,7 +1560,7 @@ export interface OperationResultTransaction {
   storage_size?: string;
   paid_storage_size_diff?: string;
   allocated_destination_contract?: boolean;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
   consumed_milligas?: string;
   lazy_storage_diff?: LazyStorageDiff[];
   ticket_hash?: string;
@@ -1569,7 +1569,7 @@ export interface OperationResultTransaction {
 export interface OperationResultReveal {
   status: OperationResultStatusEnum;
   consumed_gas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
   consumed_milligas?: string;
 }
 
@@ -1753,7 +1753,7 @@ export interface OperationResultOrigination {
   consumed_gas?: string;
   storage_size?: string;
   paid_storage_size_diff?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
   consumed_milligas?: string;
   lazy_storage_diff?: LazyStorageDiff[];
 }
@@ -1761,7 +1761,7 @@ export interface OperationResultOrigination {
 export interface OperationResultEvent {
   status: OperationResultStatusEnum;
   consumed_milligas?: string;
-  errors?: TezosGenericOperationError[];
+  errors?: MavrykGenericOperationError[];
 }
 
 export interface OperationContentsAndResultMetadataOrigination {
@@ -2387,7 +2387,7 @@ type FailedProcessedOperation = Pick<
   OperationEntry,
   'hash' | 'protocol' | 'branch' | 'contents' | 'signature'
 > & {
-  error: TezosGenericOperationError[];
+  error: MavrykGenericOperationError[];
 };
 
 export interface PendingOperationsV1 {

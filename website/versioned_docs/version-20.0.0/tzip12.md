@@ -13,23 +13,23 @@ The package can act as an extension to the well-known Taquito contract abstracti
 
 1. **We first need to create an instance of `Tzip12Module` and add it as an extension to our `MavrykToolkit`**
 
-The constructor of the `Tzip12Module` takes an optional `MetadataProvider` as a parameter. When none is passed, the default `MetadataProvider` of Taquito is instantiated, and the default handlers (`HttpHandler,` `IpfsHandler,` and `TezosStorageHandler`) are used.
+The constructor of the `Tzip12Module` takes an optional `MetadataProvider` as a parameter. When none is passed, the default `MetadataProvider` of Taquito is instantiated, and the default handlers (`HttpHandler,` `IpfsHandler,` and `MavrykStorageHandler`) are used.
 
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { Tzip12Module } from '@mavrykdynamics/taquito-tzip12';
 
-const Tezos = new MavrykToolkit('rpcUrl');
-Tezos.addExtension(new Tzip12Module());
+const Mavryk = new MavrykToolkit('rpcUrl');
+Mavryk.addExtension(new Tzip12Module());
 
 ```
 
-*Note that the `Tzip16Module` and `Tzip12Module` use the same `MetadataProvider`. If you have already set `Tezos.addExtension(new Tzip16Module());`, you can omit this step.*
+*Note that the `Tzip16Module` and `Tzip12Module` use the same `MetadataProvider`. If you have already set `Mavryk.addExtension(new Tzip16Module());`, you can omit this step.*
 
 2. **Use the `tzip12` function to extend a contract abstraction**
 
 ```js
-const contract = await Tezos.contract.at("contractAddress", tzip12)
+const contract = await Mavryk.contract.at("contractAddress", tzip12)
 ```
 
 **The compose function**  
@@ -39,7 +39,7 @@ Thus, all methods of the `ContractAbstraction`, `Tzip12ContractAbstraction` and 
 ```js
 import { compose } from '@mavrykdynamics/taquito';
 
-const contract = await Tezos.contract.at('contractAddress', compose(tzip16, tzip12));
+const contract = await Mavryk.contract.at('contractAddress', compose(tzip16, tzip12));
 
 await contract.storage(); // ContractAbstraction method
 await contract.tzip12().getTokenMetadata(1); // Tzip12ContractAbstraction method
@@ -88,14 +88,14 @@ values={[
 // import { MavrykToolkit, compose } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
 // import { tzip16 } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new MavrykToolkit('rpc_url');
+// const Mavryk = new MavrykToolkit('rpc_url');
 
-Tezos.addExtension(new Tzip12Module());
+Mavryk.addExtension(new Tzip12Module());
 
 const contractAddress = "KT1NMtSQq484bDYSFvNrBjfkGtpug2Fm1rrr";
 const tokenId = 1;
 
-Tezos.contract.at(contractAddress, compose(tzip12, tzip16))
+Mavryk.contract.at(contractAddress, compose(tzip12, tzip16))
 .then(contract => {
   println(`Fetching the token metadata for the token ID ${tokenId}...`);
   return contract.tzip12().getTokenMetadata(tokenId);
@@ -112,14 +112,14 @@ Tezos.contract.at(contractAddress, compose(tzip12, tzip16))
 // import { MavrykToolkit, compose } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
 // import { tzip16 } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new MavrykToolkit('rpc_url');
+// const Mavryk = new MavrykToolkit('rpc_url');
 
-Tezos.addExtension(new Tzip12Module());
+Mavryk.addExtension(new Tzip12Module());
 
 const contractAddress = "KT1NMtSQq484bDYSFvNrBjfkGtpug2Fm1rrr";
 const tokenId = 1;
 
-Tezos.wallet.at(contractAddress, compose(tzip12, tzip16))
+Mavryk.wallet.at(contractAddress, compose(tzip12, tzip16))
 .then(wallet => {
   println(`Fetching the token metadata for the token ID ${tokenId}...`);
   return wallet.tzip12().getTokenMetadata(tokenId);
@@ -145,14 +145,14 @@ values={[
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip16Module, tzip16, bytesToString } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new MavrykToolkit('rpc_url');
+// const Mavryk = new MavrykToolkit('rpc_url');
 
-Tezos.addExtension(new Tzip16Module());
+Mavryk.addExtension(new Tzip16Module());
 
 const contractAddress = "KT1NMtSQq484bDYSFvNrBjfkGtpug2Fm1rrr";
 const tokenId = 1;
 
-Tezos.contract.at(contractAddress, tzip16)
+Mavryk.contract.at(contractAddress, tzip16)
 .then(contract => {
   println(`Initialising the views for ${contractAddress}...`);
   return contract.tzip16().metadataViews();
@@ -174,14 +174,14 @@ Tezos.contract.at(contractAddress, tzip16)
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip16Module, tzip16, bytesToString } from "@mavrykdynamics/taquito-tzip16";
-// const Tezos = new MavrykToolkit('rpc_url');
+// const Mavryk = new MavrykToolkit('rpc_url');
 
-Tezos.addExtension(new Tzip16Module());
+Mavryk.addExtension(new Tzip16Module());
 
 const contractAddress = "KT1NMtSQq484bDYSFvNrBjfkGtpug2Fm1rrr";
 const tokenId = 1;
 
-Tezos.wallet.at(contractAddress, tzip16)
+Mavryk.wallet.at(contractAddress, tzip16)
 .then(wallet => {
   println(`Initialising the views for ${contractAddress}...`);
   return wallet.tzip16().metadataViews();
@@ -253,14 +253,14 @@ values={[
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
-// const Tezos = new MavrykToolkit('rpc_url');
+// const Mavryk = new MavrykToolkit('rpc_url');
 
-Tezos.addExtension(new Tzip12Module());
+Mavryk.addExtension(new Tzip12Module());
 
 const contractAddress = "KT1NMtSQq484bDYSFvNrBjfkGtpug2Fm1rrr";
 const tokenId = 1;
 
-Tezos.contract.at(contractAddress, tzip12)
+Mavryk.contract.at(contractAddress, tzip12)
 .then(contract => {
   println(`Fetching the token metadata for the token ID ${tokenId} of ${contractAddress}...`);
   return contract.tzip12().getTokenMetadata(tokenId);
@@ -276,14 +276,14 @@ Tezos.contract.at(contractAddress, tzip12)
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Tzip12Module, tzip12 } from "@mavrykdynamics/taquito-tzip12";
-// const Tezos = new MavrykToolkit('rpc_url');
+// const Mavryk = new MavrykToolkit('rpc_url');
 
-Tezos.addExtension(new Tzip12Module());
+Mavryk.addExtension(new Tzip12Module());
 
 const contractAddress = "KT1NMtSQq484bDYSFvNrBjfkGtpug2Fm1rrr";
 const tokenId = 1;
 
-Tezos.wallet.at(contractAddress, tzip12)
+Mavryk.wallet.at(contractAddress, tzip12)
 .then(wallet => {
   println(`Fetching the token metadata for the token ID ${tokenId} of ${contractAddress}...`);
   return wallet.tzip12().getTokenMetadata(tokenId);

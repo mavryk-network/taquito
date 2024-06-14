@@ -4,7 +4,7 @@ id: proposal_and_ballot
 author: Davis Sawali
 ---
 
-In Tezos, the economic protocol can be amended by proposing and voting for changes. The protocol change will happen depending on the result of the votes.
+In Mavryk, the economic protocol can be amended by proposing and voting for changes. The protocol change will happen depending on the result of the votes.
 
 ## Proposals
 A `Proposals` operation can be injected during a **Proposal Period**. It allows a delegate to submit a proposal identified by a protocol hash. Submitting a proposal also upvotes said proposal during the **Proposal Period**, not to be confused with *Ballot* votes in the section below. 
@@ -18,7 +18,7 @@ Note: Each delegate can submit a maximum of 20 proposals
 ### Example
 The `Proposals` operation is currently available in the Contract API, and can be used as such:
 ```typescript
-const op = await Tezos.contract.proposals({
+const op = await Mavryk.contract.proposals({
   proposals: ['PROTOCOL_HASH1', 'PROTOCOL_HASH2']
 });
 
@@ -32,7 +32,7 @@ The `Ballot` operation allows delegates to cast one `Yay`, `Nay`, or `Pass` ball
 ### Example
 The `Ballot` operation is currently available in the Contract API, and can be used as such:
 ```typescript
-const op = await Tezos.contract.ballot({
+const op = await Mavryk.contract.ballot({
   proposal: 'PROTOCOL_HASH',
   ballot: 'BALLOT_VOTE_STRING'
 });

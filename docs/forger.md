@@ -21,10 +21,10 @@ Using a Composite forger can provide additional security because the binary retu
 import { MavrykToolkit, RpcForger, CompositeForger } from '@mavrykdynamics/taquito';
 import { localForger } from '@mavrykdynamics/taquito-local-forging';
 
-const tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
-const rpcForger = tezos.getFactory(RpcForger)();
+const mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const rpcForger = mavryk.getFactory(RpcForger)();
 const composite = new CompositeForger([rpcForger, localForger]);
-tezos.setForgerProvider(composite);
+mavryk.setForgerProvider(composite);
 ```
 
 #### RpcForger
@@ -34,6 +34,6 @@ When the node is trusted, the forger can be set to an instance of `RpcForger` as
 ```js
 import { MavrykToolkit, RpcForger } from '@mavrykdynamics/taquito';
 
-const tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
-tezos.setForgerProvider(Tezos.getFactory(RpcForger)());
+const mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+mavryk.setForgerProvider(Mavryk.getFactory(RpcForger)());
 ```

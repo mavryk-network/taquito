@@ -12,7 +12,7 @@ This is a manager operation that must be signed by the manager key of the baker.
 
 ### Examples
 ```typescript
-const op = await Tezos.contract.updateConsensusKey({
+const op = await Mavryk.contract.updateConsensusKey({
     pk: 'PUBLIC_KEY'
 });
 
@@ -26,7 +26,7 @@ This is an operation that must be signed by the active consensus key `consensus_
 
 ### Examples
 ```typescript
-const drain = await Tezos.contract.drainDelegate({
+const drain = await Mavryk.contract.drainDelegate({
     consensus_key: 'CONSENSUS_PKH',
     delegate: 'BAKER_PKH',
     destination: 'DESTINATION_PKH',

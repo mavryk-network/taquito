@@ -1,7 +1,7 @@
 {
   "name": "@mavrykdynamics/taquito-timelock",
   "version": "20.0.0",
-  "description": "TypeScript implementation of the Timelock feature in Tezos",
+  "description": "TypeScript implementation of the Timelock feature in Mavryk",
   "main": "./dist/taquito-timelock.umd.js",
   "module": "./dist/taquito-timelock.es6.js",
   "typings": "./dist/types/taquito-timelock.d.ts",

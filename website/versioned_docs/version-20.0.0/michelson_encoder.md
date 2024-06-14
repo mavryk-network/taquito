@@ -56,7 +56,7 @@ const storageSchema = new Schema(storageType);
 ---
 or
 ```js
-const script = await Tezos.rpc.getScript('KT1MTFjUeqBeZoFeW1NLSrzJdcS5apFiUXoB');
+const script = await Mavryk.rpc.getScript('KT1MTFjUeqBeZoFeW1NLSrzJdcS5apFiUXoB');
 const storageSchema = Schema.fromRPCResponse({ script });
 ```
 ### The GenerateSchema method
@@ -352,7 +352,7 @@ The `Execute` method takes an optional parameter of type `Semantic`. It allows o
 
 Here is an example for the `big_map` type:
 If we have a contract having a big map in its storage, when we fetch the contract's storage with the RPC, the returned value looks like the following `{ int: big_map_id }`.
-In the Taquito main package, the `getStorage` method of the `ContractProvider` class uses the semantic parameter to override the representation of big map in the storage. When we fetch the storage of a contract using `Tezos.contract.getStorage('contractAddress')`, an instance of the `BigMapAbstraction` class is returned for the big map instead of its id.
+In the Taquito main package, the `getStorage` method of the `ContractProvider` class uses the semantic parameter to override the representation of big map in the storage. When we fetch the storage of a contract using `Mavryk.contract.getStorage('contractAddress')`, an instance of the `BigMapAbstraction` class is returned for the big map instead of its id.
 
 ```js live noInline
 const schema = new Schema({ prim: 'big_map', args: [{ prim: 'address' }, { prim: 'int' }] });
@@ -383,7 +383,7 @@ println(`Customized representation of the ticket value: ${JSON.stringify(dataCus
 ### How the Schema class is used inside Taquito
 
 The `Schema` class is internally used in Taquito:
-- When calling `Tezos.contract.getStorage()`:
+- When calling `Mavryk.contract.getStorage()`:
     It allows returning a well-formatted JSON object of the contract storage using the `Execute` method to convert the Michelson data into familiar-looking javascript data.
 - When fetching a bigmap key with `BigMapAbstraction.get()` or `RpcContractProvider.getBigMapKey()`:
     It transforms the key we want to fetch into Michelson using the `EncodeBigMapKey` method, and it transforms the fetched value into a javascript object using the `ExecuteOnBigMapValue`.

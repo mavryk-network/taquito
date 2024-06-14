@@ -6,7 +6,7 @@ author: Claude Barde
 
 ## What is the Wallet API?
 
-You have learned how to use Taquito to interact with the Tezos blockchain. Up to this document, we used a signer to sign operations. Interactive dApps (short for "decentralized Apps") commonly use a wallet to sign operations. The Wallet API provides a new yet familiar way to interact with the blockchain and smart contracts by delegating several actions that Taquito previously handled to the wallets. This delegation offers more flexibility for both developers and users and gives the ecosystem more space to evolve. From a user's perspective, the workflow is as follows:
+You have learned how to use Taquito to interact with the Mavryk blockchain. Up to this document, we used a signer to sign operations. Interactive dApps (short for "decentralized Apps") commonly use a wallet to sign operations. The Wallet API provides a new yet familiar way to interact with the blockchain and smart contracts by delegating several actions that Taquito previously handled to the wallets. This delegation offers more flexibility for both developers and users and gives the ecosystem more space to evolve. From a user's perspective, the workflow is as follows:
 
 1. The user has a wallet installed and configured on their device. (Or they might be using a web-based wallet)
 2. The user visits a dApp.
@@ -37,19 +37,19 @@ We will explain the requirements for the different wallets in detail in the sect
 
 After installing the Taquito package in your dapp project and the package containing the Wallet API for the wallet of your choice, it's time to import the Wallet API into your project! Although the steps are very similar for each wallet, they all have their specificities that we will check in the paragraphs below.
 
-To start, let's import the Tezos Toolkit from Taquito and create a new instance of the Tezos singleton:
+To start, let's import the Mavryk Toolkit from Taquito and create a new instance of the Mavryk singleton:
 
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com/');
+const Mavryk = new MavrykToolkit('https://ghostnet.ecadinfra.com/');
 ```
 
 This object exposes different methods we are going to use to set up our wallet. TZIP-10 has become the official standard of communication and interaction between wallets and dapps, so let's start with the `@mavrykdynamics/taquito-beacon-wallet` package that implements this standard!
 
 ### - TZIP-10 wallet
 
-The `BeaconWallet` is a package implementing the TZIP-10 standard that describes the communication between a dapp (decentralized application on Tezos) and a wallet (e.g., a browser extension). The Beacon wallet works with any wallet that supports the TZIP-10 standard (for example, the Beacon extension, Temple, or Kukai). This package is the recommended way of connecting your dapp to a wallet. In addition to being future-proof, it gives your users the freedom to choose the wallet they want.
+The `BeaconWallet` is a package implementing the TZIP-10 standard that describes the communication between a dapp (decentralized application on Mavryk) and a wallet (e.g., a browser extension). The Beacon wallet works with any wallet that supports the TZIP-10 standard (for example, the Beacon extension, Temple, or Kukai). This package is the recommended way of connecting your dapp to a wallet. In addition to being future-proof, it gives your users the freedom to choose the wallet they want.
 
 First, the `BeaconWallet` class must be imported:
 
@@ -97,13 +97,13 @@ const userAddress = await wallet.getPKH();
 To finish, you can set the wallet as your provider:
 
 ```js
-Tezos.setWalletProvider(wallet);
+Mavryk.setWalletProvider(wallet);
 ```
 
 or
 
 ```js
-Tezos.setProvider({ wallet });
+Mavryk.setProvider({ wallet });
 ```
 
 #### Try the Beacon wallet!
@@ -120,7 +120,7 @@ wallet
   .then((_) => wallet.getPKH())
   .then((address) => println(`Your address: ${address}`));
 
-Tezos.setWalletProvider(wallet);
+Mavryk.setWalletProvider(wallet);
 ```
 
 ### Subscribing to events
@@ -183,22 +183,22 @@ Once the wallet is connected, there are a couple of things you can get out of it
 
 ```js
 const wallet = new TempleWallet('MyAwesomeDapp');
-// the TempleWallet can return an instance of the Tezos singleton
-const Tezos = await wallet.toTezos();
+// the TempleWallet can return an instance of the Mavryk singleton
+const Mavryk = await wallet.toMavryk();
 // the TempleWallet can return the user's address
 const userAddress = wallet.pkh || (await wallet.getPKH());
 ```
 
-If you are using your own Tezos singleton instance, it is time to set the wallet as the provider (this is not necessary if you use the one provided by Temple wallet, but remember you have to continue using it throughout your dapp):
+If you are using your own Mavryk singleton instance, it is time to set the wallet as the provider (this is not necessary if you use the one provided by Temple wallet, but remember you have to continue using it throughout your dapp):
 
 ```js
-Tezos.setWalletProvider(wallet);
+Mavryk.setWalletProvider(wallet);
 ```
 
 or
 
 ```js
-Tezos.setProvider({ wallet });
+Mavryk.setProvider({ wallet });
 ```
 
 #### Try the Temple wallet!
@@ -213,7 +213,7 @@ TempleWallet.isAvailable()
     myWallet
       .connect('basenet')
       .then(() => {
-        Tezos.setWalletProvider(myWallet);
+        Mavryk.setWalletProvider(myWallet);
         return myWallet.getPKH();
       })
       .then((pkh) => {
@@ -230,7 +230,7 @@ Although it is possible to transfer tokens directly from the wallets, Taquito ca
 ### - Transfer between implicit accounts
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .transfer({ to: 'mv1JnsMA5ArZr926mKNzQf4TeTpibVWfpEx3', amount: 0.2 })
   .send()
   .then((op) => {
@@ -254,7 +254,7 @@ The `transfer` method takes an object with only two required properties: the `to
 ### - Transfer to smart contracts
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .transfer({ to: 'KT1TBxaaeikEUcVN2qdQY7n9Q21ykcX1NLzY', amount: 0.2 })
   .send()
   .then((op) => {
@@ -274,7 +274,7 @@ Sending a transaction to a smart contract to update its storage will be a differ
 Fortunately, Taquito will make this operation go like a breeze! First, you need the contract abstraction created with the address of the smart contract you are targeting:
 
 ```js
-const contract = await Tezos.wallet.at('KT1TBxaaeikEUcVN2qdQY7n9Q21ykcX1NLzY');
+const contract = await Mavryk.wallet.at('KT1TBxaaeikEUcVN2qdQY7n9Q21ykcX1NLzY');
 ```
 
 This line creates a contract abstraction with multiple methods named after the contract entrypoints. For example, if you have a `transfer` entrypoint in your contract, you will also have a `.transfer()` method in the `contract` object. Each method accepts parameters required by the contract entrypoint.
@@ -288,7 +288,7 @@ Most of the entrypoint method's possible arguments are pretty straightforward an
 Most of the time, the process is simple: you take the contract abstraction you created for the contract you target, you call the `methodsObject` property on it which exposes all the entrypoints of the contract as methods. You pass the argument you want to send to the contract as a function argument before calling the `send()` method to send the transaction:
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1SHiNUNmqBFGNysX9pmh1DC2tQ5pGmRagC')
   .then((contract) => contract.methodsObject.areYouThere(true).send())
   .then((op) => {
@@ -311,7 +311,7 @@ Tezos.wallet
 In the case of multiple arguments (for example if the entrypoint expects a pair), you can just pass the arguments one by one. Be careful of the order of the arguments, they must be in the exact order expected by the contract entrypoint:
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1SHiNUNmqBFGNysX9pmh1DC2tQ5pGmRagC')
   .then((contract) =>
     contract.methodsObject.addName({0: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', 1: 'Alice'}).send()
@@ -388,12 +388,12 @@ The `.send()` method returns an instance of the [`TransactionWalletOperation`](h
 
 ## Originating a contract
 
-In the Tezos lingo, "origination" means "deployment of a contract to the blockchain". Before Taquito, this was painstaking work as it required to interact directly with a Tezos node and type commands to originate the contract. But not anymore! With Taquito, you only need the Michelson code and the initial storage to make it happen.
+In the Mavryk lingo, "origination" means "deployment of a contract to the blockchain". Before Taquito, this was painstaking work as it required to interact directly with a Mavryk node and type commands to originate the contract. But not anymore! With Taquito, you only need the Michelson code and the initial storage to make it happen.
 
 First, you need to get the code of the contract. If you deploy a contract you wrote, then you already have the code. If you want to deploy a copy of a contract, you can easily get its code with the following method:
 
 ```js
-const contract = await Tezos.contract.at(address);
+const contract = await Mavryk.contract.at(address);
 const storage = await contract.storage();
 const code = contract.script.code;
 ```
@@ -543,13 +543,13 @@ Now, we have everything we need to originate a new contract!
 Before doing so, we have to choose the network we want to originate it to:
 
 ```js
-Tezos.setProvider({ rpc: 'https://ghostnet.ecadinfra.com/' });
+Mavryk.setProvider({ rpc: 'https://ghostnet.ecadinfra.com/' });
 ```
 
-Then, we can start the process. The Tezos singleton has a `wallet` property with an `originate` method. This is the one that must be called to originate the contract. This method takes an argument, an object with two properties: `code` that holds the parsed Michelson code to be originated and `storage` that has the initial storage. After passing this argument, you call the `send()` method to originate the contract.
+Then, we can start the process. The Mavryk singleton has a `wallet` property with an `originate` method. This is the one that must be called to originate the contract. This method takes an argument, an object with two properties: `code` that holds the parsed Michelson code to be originated and `storage` that has the initial storage. After passing this argument, you call the `send()` method to originate the contract.
 
 ```js
-const op = await Tezos.wallet
+const op = await Mavryk.wallet
   .originate({
     code: parsedMichelson,
     storage,
@@ -568,12 +568,12 @@ Taquito makes interacting with smart contracts very easy! With only the smart co
 
 ### - Instance creation
 
-First, you need to import the Tezos singleton object or instantiate the Tezos toolkit and configure the RPC host you want to connect to:
+First, you need to import the Mavryk singleton object or instantiate the Mavryk toolkit and configure the RPC host you want to connect to:
 
 ```js
-import { Tezos } from '@mavrykdynamics/taquito';
+import { Mavryk } from '@mavrykdynamics/taquito';
 
-Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
+Mavryk.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 ```
 
 _or_
@@ -581,15 +581,15 @@ _or_
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit();
+const Mavryk = new MavrykToolkit();
 
-Tezos.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
+Mavryk.setProvider({ rpc: 'https://YOUR_PREFERRED_RPC_URL' });
 ```
 
 Next, you can use the singleton object to create the smart contract instance with the contract address:
 
 ```js
-const contractInstance = await Tezos.wallet.at('contract address');
+const contractInstance = await Mavryk.wallet.at('contract address');
 ```
 
 This returns the contract abstraction that you can now use to interact with the contract.
@@ -618,7 +618,7 @@ _Methods:_
 
 ## The Wallet instance
 
-The Tezos singleton object exposes a _wallet_ property in the same fashion it exposes the _contract_ property to which you may be used. This property is an instance of the [Wallet class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.wallet.html) with a few useful methods you want to check out. It becomes available as soon as you set up a wallet by calling `Tezos.setProvider({wallet})` or `Tezos.setWalletProvider(wallet)`. Here is a list of the methods and a basic description of their function before seeing some examples:
+The Mavryk singleton object exposes a _wallet_ property in the same fashion it exposes the _contract_ property to which you may be used. This property is an instance of the [Wallet class](https://taquito.mavryk.org/typedoc/classes/_taquito_taquito.wallet.html) with a few useful methods you want to check out. It becomes available as soon as you set up a wallet by calling `Mavryk.setProvider({wallet})` or `Mavryk.setWalletProvider(wallet)`. Here is a list of the methods and a basic description of their function before seeing some examples:
 
 1. `at`: creates a smart contract abstraction for the address specified
 
@@ -632,12 +632,12 @@ The Tezos singleton object exposes a _wallet_ property in the same fashion it ex
 
 6. `setDelegate`: sets the delegate for a contract
 
-7. `transfer`: transfers Tezos tokens from the current address to a specific address or call a smart contract
+7. `transfer`: transfers Mavryk tokens from the current address to a specific address or call a smart contract
 
 We have already seen the `at` method of the Wallet instance earlier in order to create the contract abstraction:
 
 ```js
-const contract = await Tezos.wallet.at('KT1HNgQQEUb7mDmnmLKy4xcq1xdPw3ieoKzv');
+const contract = await Mavryk.wallet.at('KT1HNgQQEUb7mDmnmLKy4xcq1xdPw3ieoKzv');
 ```
 
 The method is a promise that expects the contract's address for which you want to create the abstraction.
@@ -645,7 +645,7 @@ The method is a promise that expects the contract's address for which you want t
 This feature may be a lesser-known feature of Taquito, but it is possible to send operations batches at once! This operation is what the `batch` method does. There are two different ways of using it: you can either pass the operations to send as an array of objects in the parameter of the method or you can use the `withTransfer`, `withContractCall`, `withTransfer`, `withOrigination` or `withDelegation` methods it provides:
 
 ```js
-const op = await Tezos.wallet
+const op = await Mavryk.wallet
   .batch([
     {
       kind: 'transaction',
@@ -667,7 +667,7 @@ await op.confirmation();
 or
 
 ```js
-const batch = Tezos.wallet
+const batch = Mavryk.wallet
   .batch()
   .withTransfer({ to: 'mv1...', amount: 2 })
   .withOrigination({
@@ -689,7 +689,7 @@ _See [the Batch API documentation](batch-api.md) for more examples using the `ba
 We already checked the `originate` method earlier, and it takes an object as a parameter with two properties: `code` with the Michelson code of the contract in a JSON format and storage with the initial storage.
 
 ```js
-const op = await Tezos.wallet
+const op = await Mavryk.wallet
   .originate({
     code: parsedMichelson,
     storage,
@@ -704,15 +704,15 @@ Next, the `pkh` method allows you to retrieve the public key hash currently asso
 
 ```js
 // to fetch the current public key hash
-const pkh = await Tezos.wallet.pkh();
+const pkh = await Mavryk.wallet.pkh();
 // to force Taquito to retrieve the current public key hash
-const refetchedPkh = await Tezos.wallet.pkh({ forceRefetch: true });
+const refetchedPkh = await Mavryk.wallet.pkh({ forceRefetch: true });
 ```
 
-The Wallet instance also provides two methods to deal with delegate things on Tezos: the `registerDelegate` method takes the current address and registers it as a new delegate:
+The Wallet instance also provides two methods to deal with delegate things on Mavryk: the `registerDelegate` method takes the current address and registers it as a new delegate:
 
 ```js
-const op = await Tezos.wallet.registerDelegate().send();
+const op = await Mavryk.wallet.registerDelegate().send();
 
 await op.confirmation();
 ```
@@ -720,7 +720,7 @@ await op.confirmation();
 The `setDelegate` method takes an object as a parameter with a `delegate` property set to the address you want to set as a delegate:
 
 ```js
-const op = await Tezos.wallet.setDelegate({ delegate: 'mv1...' }).send();
+const op = await Mavryk.wallet.setDelegate({ delegate: 'mv1...' }).send();
 
 await op.confirmation();
 ```
@@ -728,7 +728,7 @@ await op.confirmation();
 Finally, the `transfer` method allows transfers between implicit accounts and calls to a smart contract. It takes an object as a parameter with four properties: `amount`, `mumav`, `parameter` and `to`. Here is how to use it to transfer tokens between two addresses:
 
 ```js
-const op = await Tezos.wallet.transfer({ to: 'mv1...', amount: 2 }).send();
+const op = await Mavryk.wallet.transfer({ to: 'mv1...', amount: 2 }).send();
 
 await op.confirmation();
 ```
@@ -736,7 +736,7 @@ await op.confirmation();
 If you want to send a transaction to a contract, the process is very similar with the addition of the `parameter` property that must point to the entrypoint you are targeting and the value you want to pass:
 
 ```js
-const op = await Tezos.wallet
+const op = await Mavryk.wallet
   .transfer({ to: 'KT1...', parameter: { entrypoint: 'increment', value: 2 } })
   .send();
 

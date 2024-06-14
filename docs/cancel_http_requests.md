@@ -109,8 +109,8 @@ import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 
 const signer: any = new InMemorySigner('your_key');
 const customRpcClient = new CancellableRpcClient('your_RPC_URL')  
-const tezos = new MavrykToolkit(customRpcClient);
-tezos.setSignerProvider(signer);
+const mavryk = new MavrykToolkit(customRpcClient);
+mavryk.setSignerProvider(signer);
 ```   
  
 #### **Trigger the abort signal**  

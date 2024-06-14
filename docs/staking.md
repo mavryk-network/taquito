@@ -8,11 +8,11 @@ import TabItem from '@theme/TabItem';
 
 # Staking and Adaptive Issuance
 
-Staking is an update to the "Proof of Stake" Mechanism in Tezos.
+Staking is an update to the "Proof of Stake" Mechanism in Mavryk.
 
-Before Staking, the only way for Tez holders to participate in the network was by delegating their tokens to a baker. Delegated funds contributed to a delegate's voting and baking power, but were not subject to staking: they could not be slashed in case the baker misbehaved. This is a useful feature for many users, but limits the total amount of staked tez to the amount of tez that bakers themselves hold. In other words, participating in the "Proof of Stake" mechanism required setting up and maintaining a baker, which is a significant barrier to entry for many users.
+Before Staking, the only way for Mav holders to participate in the network was by delegating their tokens to a baker. Delegated funds contributed to a delegate's voting and baking power, but were not subject to staking: they could not be slashed in case the baker misbehaved. This is a useful feature for many users, but limits the total amount of staked mav to the amount of mav that bakers themselves hold. In other words, participating in the "Proof of Stake" mechanism required setting up and maintaining a baker, which is a significant barrier to entry for many users.
 
-Staking changes this by allowing any user to participate in the "Proof of Stake" mechanism without setting up a baker. Users can now stake their tokens to their delegates, and their staked tokens will be subject to slashing in case of delegate/baker's misbehaviour. This allows the total amount of staked Tez to be much higher than the amount of tez that bakers themselves hold, which in turn increases the security of the network.
+Staking changes this by allowing any user to participate in the "Proof of Stake" mechanism without setting up a baker. Users can now stake their tokens to their delegates, and their staked tokens will be subject to slashing in case of delegate/baker's misbehaviour. This allows the total amount of staked Mav to be much higher than the amount of mav that bakers themselves hold, which in turn increases the security of the network.
 
 Users can control their staked funds using the `stake`, `unstake`, and `finalize_unstake` operations. These are implemented as pseudo-entrypoints, and the parameters are passed to a transfer operation with the same destination as the sender.
 
@@ -39,7 +39,7 @@ values={[
 
 ```javascript
 
-const op = await Tezos.contract.stake({
+const op = await Mavryk.contract.stake({
         amount: 100,
         mumav: false
       });
@@ -52,7 +52,7 @@ const op = await Tezos.contract.stake({
 
 ```javascript
 
-const op = await Tezos.wallet.stake({
+const op = await Mavryk.wallet.stake({
         amount: 100,
         mumav: false
       }).send();
@@ -78,7 +78,7 @@ values={[
 
 ```javascript
 
-const op = await Tezos.contract.unstake({
+const op = await Mavryk.contract.unstake({
         amount: 50,
         mumav: false
       });
@@ -91,7 +91,7 @@ const op = await Tezos.contract.unstake({
 
 ```javascript
 
-const op = await Tezos.wallet.unstake({
+const op = await Mavryk.wallet.unstake({
         amount: 50,
         mumav: false
       }).send();
@@ -116,7 +116,7 @@ values={[
 
 ```javascript
 
-const op = await Tezos.contract.finalizeUnstake();
+const op = await Mavryk.contract.finalizeUnstake();
       await op.confirmation();
 
 ```
@@ -126,7 +126,7 @@ const op = await Tezos.contract.finalizeUnstake();
 
 ```javascript
 
-const op = await Tezos.wallet.finalizeUnstake().send();
+const op = await Mavryk.wallet.finalizeUnstake().send();
       await op.confirmation();
 
 ```
@@ -150,14 +150,14 @@ When you change your delegate, your funds will be automatically unstaked. You wi
 The `stake` and `unstake` operations will automatically finalize all currently finalizable funds.
 
 ## Adaptive Issuance
-A concept related to staking is adaptive issuance. Adaptive issuance is a mechanism that adjusts the block reward based on the total amount of staked tez. In short, the reward will be adjusted to keep the staked funds about 50% of the total supply. To read more about the mechanism, you can check [this document](https://tezos.gitlab.io/paris/adaptive_issuance.html#adaptive-issuance).
+A concept related to staking is adaptive issuance. Adaptive issuance is a mechanism that adjusts the block reward based on the total amount of staked mav. In short, the reward will be adjusted to keep the staked funds about 50% of the total supply. To read more about the mechanism, you can check [this document](https://tezos.gitlab.io/paris/adaptive_issuance.html#adaptive-issuance).
 
 ## Staking Rewards
 In delegation, rewards were given to the baker, and it was the baker's responsibility to distribute the rewards to the delegators. In staking, the rewards are given directly to the staker. However, rewards are not given immediately, but are distributed through staked (frozen) balance, and the user can spend the reward along with their initial stake when they `unstake` and `finalize_unstake`.
 
 ## Lifetime of Staked Funds
 
-Before you stake some of your Tez, it is in "Spendable" state. When you stake it, it will be in "Staked" state. When you unstake it, it will be in "Unstaked + Frozen" state, this fund is still subject to slashing. After 4 cycles, it will be in "Unstaked + Finalizable" state. You can finalize it to make it "Spendable" again.
+Before you stake some of your Mav, it is in "Spendable" state. When you stake it, it will be in "Staked" state. When you unstake it, it will be in "Unstaked + Frozen" state, this fund is still subject to slashing. After 4 cycles, it will be in "Unstaked + Finalizable" state. You can finalize it to make it "Spendable" again.
 
 ```mermaid
 graph LR

@@ -126,7 +126,7 @@ values={[
 const contractTopLevelViews = 'KT1Anag1s3N7erRXrRAtPpRC2PRXrqcCJ43m';
 const contractCallFib = 'KT1KPDBat3prp2G81aDDLyJ38Vbq6YLYFQo8';
 
-Tezos.contract.at(contractCallFib)
+Mavryk.contract.at(contractCallFib)
   .then((contract) => {
     contract.storage()
       .then((storage) => {
@@ -155,7 +155,7 @@ Tezos.contract.at(contractCallFib)
 const contractTopLevelViews = 'KT1Anag1s3N7erRXrRAtPpRC2PRXrqcCJ43m';
 const contractCallFib = 'KT1KPDBat3prp2G81aDDLyJ38Vbq6YLYFQo8';
 
-Tezos.wallet.at(contractCallFib)
+Mavryk.wallet.at(contractCallFib)
   .then((contract) => {
     contract.storage()
       .then((storage) => {
@@ -211,7 +211,7 @@ const contractTopLevelViews = 'KT1Anag1s3N7erRXrRAtPpRC2PRXrqcCJ43m';
 const contractCallFib = 'KT1KPDBat3prp2G81aDDLyJ38Vbq6YLYFQo8';
 const fibPosition = 7;
 
-Tezos.contract.at(contractTopLevelViews)
+Mavryk.contract.at(contractTopLevelViews)
   .then((contract) => {
     return contract.contractViews.fib(fibPosition).executeView({ viewCaller: contractCallFib })
       .then((viewResult) => {
@@ -229,7 +229,7 @@ const contractTopLevelViews = 'KT1Anag1s3N7erRXrRAtPpRC2PRXrqcCJ43m';
 const contractCallFib = 'KT1KPDBat3prp2G81aDDLyJ38Vbq6YLYFQo8';
 const fibPosition = 7;
 
-Tezos.wallet.at(contractTopLevelViews)
+Mavryk.wallet.at(contractTopLevelViews)
   .then((contract) => {
     return contract.contractViews.fib(fibPosition).executeView({ viewCaller: contractCallFib })
       .then((viewResult) => {

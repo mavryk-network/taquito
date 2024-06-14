@@ -47,7 +47,7 @@ import { securityWrongAnnotations } from '../../data/security-wrong-annotations-
  */
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
-  const Tezos = lib;
+  const Mavryk = lib;
   const weeklynet = protocol === Protocols.ProtoALpha ? test : test.skip;
 
   describe(`Test contracts to verify wrong field annotations are leading to failed transactions using: ${rpc}`, () => {
@@ -56,7 +56,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
     });
 
     weeklynet('Verify annotation combinations on weeklynet', async () => {
-      const addition = await Tezos.contract.originate({
+      const addition = await Mavryk.contract.originate({
         code: securityWrongAnnotations,
         init: `0`,
       });

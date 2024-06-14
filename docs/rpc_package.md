@@ -9,7 +9,7 @@ Taquito RPC Package Documentation
 
 You can use the RPC client package to query the RPC API of your chosen node. The higher-level [`@mavrykdynamics/taquito`](https://taquito.mavryk.org/typedoc/modules/_taquito_rpc.html) package builds on this RPC package, in general, you won't need to use this package directly, but it is available for use should you want some specific data and bypass the higher-level abstractions in Taquito.
 
-Methods in the RPC package map one-to-one to the corresponding Tezos RPC API endpoints. All responses from the RPC are returns with TypeScript types. It doesn't do any other parsing or compositions at this level.
+Methods in the RPC package map one-to-one to the corresponding Mavryk RPC API endpoints. All responses from the RPC are returns with TypeScript types. It doesn't do any other parsing or compositions at this level.
 
 ## Examples
 

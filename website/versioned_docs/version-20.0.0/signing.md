@@ -6,7 +6,7 @@ author: Claude Barde
 
 Signing arbitrary chunks of data is a common practice in a blockchain environment and is usually done to prove that a user has access to a certain account or that a message comes from a certain account.
 
-This practice is still new on Tezos and the use cases are rare. However, as the interactions between users and smart contracts increase, knowing how to sign data and send the signature to a smart contract can set you one step ahead in your knowledge of the Tezos blockchain.
+This practice is still new on Mavryk and the use cases are rare. However, as the interactions between users and smart contracts increase, knowing how to sign data and send the signature to a smart contract can set you one step ahead in your knowledge of the Mavryk blockchain.
 
 ## Understanding what a signature is
 
@@ -41,7 +41,7 @@ You can also sign a string of bytes with a wallet. Unlike the `InMemorySigner`, 
 
 ```js
 const formattedInput: string = [
-  'Tezos Signed Message:',
+  'Mavryk Signed Message:',
   dappUrl,
   ISO8601formatedTimestamp,
   input,
@@ -94,13 +94,13 @@ import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import { RequestSignPayloadInput, SigningType } from '@airgap/beacon-sdk';
 
 // The data to format
-const dappUrl = 'tezos-test-d.app';
+const dappUrl = 'mavryk-test-d.app';
 const ISO8601formatedTimestamp = new Date().toISOString();
 const input = 'Hello world!';
 
 // The full string
 const formattedInput: string = [
-  'Tezos Signed Message:',
+  'Mavryk Signed Message:',
   dappUrl,
   ISO8601formatedTimestamp,
   input,
@@ -148,7 +148,7 @@ Taquito also offers the possibility to sign Michelson code. This feature can be 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import { Parser, packDataBytes, MichelsonData, MichelsonType } from '@mavrykdynamics/taquito-michel-codec';
-// const Tezos = new MavrykToolkit(NODE_RPC_URL);
+// const Mavryk = new MavrykToolkit(NODE_RPC_URL);
 
 const data = `(Pair (Pair { Elt 1
                   (Pair (Pair "mv1JQ19UKK5w264P8SDJmwjHsrXZASegkXrH" "mv18Cw7psUrAAPBpXYd9CtCpHg9EgjHP9KTe")
@@ -165,7 +165,7 @@ const packed = packDataBytes(
   dataJSON, // as MichelsonData
   typeJSON // as MichelsonType
 );
-Tezos.signer
+Mavryk.signer
   .sign(packed.bytes)
   .then((signed) => println(JSON.stringify(signed, null, 2)))
   .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
@@ -185,7 +185,7 @@ In the previous example, the data is packed locally in Taquito using the `packDa
 After forging a signature, you may want to send it to a contract so it can use it within its own logic. Let's imagine you have a contract with an entrypoint that accepts a public key, a signature and bytes called `%check_signature`. Here is how to send it to the contract using Taquito:
 
 ```js
-const contract = await Tezos.wallet.at(CONTRACT_ADDRESS);
+const contract = await Mavryk.wallet.at(CONTRACT_ADDRESS);
 const op = await contract.methodsObject
   .check_signature({public_key, signature, payloadBytes})
   .send();
@@ -196,7 +196,7 @@ In the contract, we can use the `CHECK_SIGNATURE` instruction to compare the sig
 
 ## A few things to keep in mind
 
-The signing functionality has been implemented recently by the web wallets on Tezos and it's still very little used because it presents a major security concern.
+The signing functionality has been implemented recently by the web wallets on Mavryk and it's still very little used because it presents a major security concern.
 
 A fraudulent dapp could convince less tech-savvy users to sign arbitrary data and hide it as another type of operation before sending the signature to a smart contract. If the signature is used by the contract to allow the signer to perform certain actions, this would allow the fraudulent dapp to pose as the signer, which could be disastrous for the user.
 

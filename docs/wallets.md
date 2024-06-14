@@ -3,9 +3,9 @@ title: Wallets
 author: Michael Kernaghan
 ---
 
-## Wallets available for use with Tezos
+## Wallets available for use with Mavryk
 
-Here's a list of the Tezos wallets we know of. Wallets that support the [TZIP-10](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-10/tzip-10.md): Wallet Interaction standard should work with Tezos dApps.
+Here's a list of the Mavryk wallets we know of. Wallets that support the [TZIP-10](https://gitlab.com/tezos/tzip/-/blob/master/proposals/tzip-10/tzip-10.md): Wallet Interaction standard should work with Mavryk dApps.
 
 |       Name        |          Type           | TZIP-10 |            Product web site             |                                         Source code                                          |
 | :---------------: | :---------------------: | :---------------------------------------------------------------------------------: | :-------------------------------------: | :------------------------------------------------------------------------------------------: |
@@ -20,7 +20,7 @@ Here's a list of the Tezos wallets we know of. Wallets that support the [TZIP-10
 | **Ledger NanoX**  |     Hardware Wallet     |                                         N/A                                         |         https://www.ledger.com         |                 [![Github](images/github.png)](https://github.com/LedgerHQ/)                 |
 |     **Naan**      |         Mobile          |                                         No                                          |       https://www.naanwallet.com       |                                                                                              |
 |    **Atomic**     |   Desktop and Mobile    |                                         No                                          |        https://atomicwallet.io         |               [![Github](images/github.png)](https://github.com/Atomicwallet/)               |
-|    **Exodus**     |   Desktop and Mobile    |                                         No                                          | https://www.exodus.com/tezos-wallet-xtz |         [![Github](images/github.png)](https://github.com/ExodusMovement)          |
+|    **Exodus**     |   Desktop and Mobile    |                                         No                                          | https://www.exodus.com/tezos-wallet-mvrk |         [![Github](images/github.png)](https://github.com/ExodusMovement)          |
 |    **Guarda**     |      Web and Phone      |                                         No                                          |     https://guarda.com/web-wallet      |                 [![Github](images/github.png)](https://github.com/guardaco/)                 |
 |     **Magma**     |         Mobile          |                                         No                                          |         https://magmawallet.io         |       [![Gitlab](images/gitlab.png)](https://gitlab.com/camlcase-dev/magmawallet-ios/)       |
 |     **ZenGo**     |         Mobile          |                                         No                                          |         https://www.zengo.com          |                 [![Github](images/github.png)](https://github.com/ZenGo-X/)                  |

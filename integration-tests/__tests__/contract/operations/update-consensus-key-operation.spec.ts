@@ -3,7 +3,7 @@ import { CONFIGS } from '../../../config';
 
 CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
 
-  const Tezos = lib;
+  const Mavryk = lib;
 
   describe(`Test Update Consensus Key using: ${rpc}`, () => {
     let consensusPk: string;
@@ -17,7 +17,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
         const consensusAccount = await createAddress();
         consensusPk = await consensusAccount.signer.publicKey();
 
-        const fund = await Tezos.contract.batch()
+        const fund = await Mavryk.contract.batch()
         .withTransfer({ amount: 2, to: await delegateAccount.signer.publicKeyHash() })
         .withTransfer({ amount: 2, to: await consensusAccount.signer.publicKeyHash()})
         .send();

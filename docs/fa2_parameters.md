@@ -22,8 +22,8 @@ Once you have the address of the contract you want to update, calling the `trans
 ```typescript
 import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
-const Tezos = await new TezosTooolkit(RPC_URL);
-const contract = await Tezos.wallet.at(FA2_CONTRACT_ADDRESS);
+const Mavryk = await new MavrykTooolkit(RPC_URL);
+const contract = await Mavryk.wallet.at(FA2_CONTRACT_ADDRESS);
 const op = await contract.methodsObject.transfer(transfer_params).send();
 await op.confirmation();
 ```
@@ -189,10 +189,10 @@ It can sometimes be useful or more practical to set an operator before sending a
 ```typescript
 import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
-const Tezos = await new MavrykToolkit(RPC_URL);
-const dappContract = await Tezos.wallet.at(DAPP_CONTRACT_ADDRESS);
-const tokenContract = await Tezos.wallet.at(FA2_CONTRACT_ADDRESS);
-const batchOp = await Tezos.wallet.batch()
+const Mavryk = await new MavrykToolkit(RPC_URL);
+const dappContract = await Mavryk.wallet.at(DAPP_CONTRACT_ADDRESS);
+const tokenContract = await Mavryk.wallet.at(FA2_CONTRACT_ADDRESS);
+const batchOp = await Mavryk.wallet.batch()
     .withContractCall(tokenContract.methodsObject.update_operators([
         {
             add_operator: {

@@ -4,8 +4,8 @@ import { MichelsonMap } from "@mavrykdynamics/taquito";
 import { tzip16, Tzip16Module, stringToBytes } from '@mavrykdynamics/taquito-tzip16';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
-  const Tezos = lib;
-  Tezos.addExtension(new Tzip16Module());
+  const Mavryk = lib;
+  Mavryk.addExtension(new Tzip16Module());
 
   let contractAddressEmptyMetadata: string;
   let contractAddressEmoji: string;
@@ -33,7 +33,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       tacoShopStorageMap.set("2", { current_stock: "120", max_price: "20" });
       tacoShopStorageMap.set("3", { current_stock: "50", max_price: "60" });
 
-      const op = await Tezos.contract.originate({
+      const op = await Mavryk.contract.originate({
         code: tacoContractTzip16,
         storage: {
           metadata: metadataBigMAp,
@@ -48,7 +48,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
     test('Verify that the metadata for the contract having empty metadata stored at an HTTPS URL can be fetched', async () => {
 
-      const contract = await Tezos.contract.at(contractAddressEmptyMetadata, tzip16);
+      const contract = await Mavryk.contract.at(contractAddressEmptyMetadata, tzip16);
       const metadata = await contract.tzip16().getMetadata();
 
       expect(metadata.uri).toEqual('https://storage.googleapis.com/tzip-16/empty-metadata.json');
@@ -72,7 +72,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const tacoShopStorageMap = new MichelsonMap();
       tacoShopStorageMap.set("1", { current_stock: "10000", max_price: "50" });
 
-      const op = await Tezos.contract.originate({
+      const op = await Mavryk.contract.originate({
         code: tacoContractTzip16,
         storage: {
           metadata: metadataBigMap,
@@ -99,7 +99,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const tacoShopStorageMap = new MichelsonMap();
       tacoShopStorageMap.set("1", { current_stock: "10000", max_price: "50" });
 
-      const op = await Tezos.contract.originate({
+      const op = await Mavryk.contract.originate({
         code: tacoContractTzip16,
         storage: {
           metadata: metadataBigMAp,
@@ -114,7 +114,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
     test('Verify that the metadata for the contract which contains emoji can be fetched', async () => {
 
-      const contract = await Tezos.contract.at(contractAddressEmoji, tzip16);
+      const contract = await Mavryk.contract.at(contractAddressEmoji, tzip16);
       const metadata = await contract.tzip16().getMetadata();
 
       expect(metadata.uri).toEqual('https://storage.googleapis.com/tzip-16/emoji-in-metadata.json');
@@ -174,7 +174,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
       const tacoShopStorageMap = new MichelsonMap();
       tacoShopStorageMap.set("1", { current_stock: "10000", max_price: "50" });
 
-      const op = await Tezos.contract.originate({
+      const op = await Mavryk.contract.originate({
         code: tacoContractTzip16,
         storage: {
           metadata: metadataBigMAp,
@@ -189,7 +189,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
 
     test('Verify that the invalid metadata of the contract failed to fetch', async () => {
 
-      const contract = await Tezos.contract.at(contractAddressInvalidMetadata, tzip16);
+      const contract = await Mavryk.contract.at(contractAddressInvalidMetadata, tzip16);
       try {
         await contract.tzip16().getMetadata();
       } catch (error: any) {

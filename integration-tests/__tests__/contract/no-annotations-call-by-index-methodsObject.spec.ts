@@ -3,7 +3,7 @@ import { CONFIGS } from "../../config";
 import { noAnnotCode, noAnnotInit } from "../../data/token_without_annotation";
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
-  const Tezos = lib;
+  const Mavryk = lib;
   describe(`Test contract origination with no annotations calling methods by index using methodObjects through contract api: ${rpc}`, () => {
     /** The goal of the test is to verify a contract entrypoint call using the methodsObject method (contract.methodsObject)
      *  in case of a contract having no annotation in its code. */
@@ -26,13 +26,13 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     // Runs the entire tests for a given fieldNumberingStrategy
     const testContract = (strategy: FieldNumberingStrategy, innerObjectStartingIndex: number) => {
       it(`Verify contract.originate for a contract with no annotations for methods using methodObjects with fieldNumberingStrategy: ${strategy}`, async () => {
-        Tezos.setFieldNumberingStrategy(strategy);
-        const ACCOUNT1_ADDRESS = await Tezos.signer.publicKeyHash()
+        Mavryk.setFieldNumberingStrategy(strategy);
+        const ACCOUNT1_ADDRESS = await Mavryk.signer.publicKeyHash()
         // Originate a contract with a known state
-        const op = await Tezos.contract.originate({
+        const op = await Mavryk.contract.originate({
           balance: "1",
           code: noAnnotCode,
-          init: noAnnotInit(await Tezos.signer.publicKeyHash())
+          init: noAnnotInit(await Mavryk.signer.publicKeyHash())
         })
         await op.confirmation()
         const contract = await op.contract()

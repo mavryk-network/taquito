@@ -43,13 +43,13 @@ values={[
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Estimating the transfer of ${amount} ṁ to ${address} : `);
-Tezos.estimate
+Mavryk.estimate
   .transfer({ to: address, amount: amount })
   .then((est) => {
     println(`burnFeeMumav : ${est.burnFeeMumav}, 
@@ -68,13 +68,13 @@ Tezos.estimate
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Estimating the transfer of ${amount} ṁ to ${address} : `);
-Tezos.estimate
+Mavryk.estimate
   .transfer({ to: address, amount: amount })
   .then((est) => {
     println(`burnFeeMumav : ${est.burnFeeMumav}, 
@@ -109,15 +109,15 @@ The `contractCall()` member method can now be used to estimate contract calls as
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
-Tezos.contract
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+Mavryk.contract
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
     return contract.methodsObject.increment(7);
   })
   .then((op) => {
     println(`Estimating the smart contract call: `);
-    return Tezos.estimate.contractCall(op);
+    return Mavryk.estimate.contractCall(op);
   })
   .then((estimate) => {
     println(`burnFeeMumav : ${estimate.burnFeeMumav}, 
@@ -137,16 +137,16 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
       
-Tezos.wallet
+Mavryk.wallet
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
     return contract.methodsObject.increment(7);
   })
   .then((op) => {
     println(`Estimating the smart contract call: `);
-    return Tezos.estimate.contractCall(op);
+    return Mavryk.estimate.contractCall(op);
   })
   .then((estimate) => {
     println(`burnFeeMumav : ${estimate.burnFeeMumav}, 
@@ -178,10 +178,10 @@ values={[
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 println(`Estimating the contract origination : `);
-Tezos.estimate
+Mavryk.estimate
   .originate({
     code: genericMultisigJSONfile,
     storage: {
@@ -208,10 +208,10 @@ Tezos.estimate
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 println(`Estimating the contract origination : `);
-Tezos.estimate
+Mavryk.estimate
   .originate({
     code: genericMultisigJSONfile,
     storage: {

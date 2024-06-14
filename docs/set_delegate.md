@@ -5,17 +5,17 @@ author: Simon Boissonneault-Robert
 
 # Delegation and Baking
 
-## What is baking in Tezos?
-"Baking" in Tezos is a generalized concept of participation in forming blocks on the blockchain using the Proof-of-Stake consensus algorithm. Everyone who holds Tezos coins can produce, sign, and validate blocks to get rewards in proportion to their stake.
+## What is baking in Mavryk?
+"Baking" in Mavryk is a generalized concept of participation in forming blocks on the blockchain using the Proof-of-Stake consensus algorithm. Everyone who holds Mavryk coins can produce, sign, and validate blocks to get rewards in proportion to their stake.
 
-To become a baker, all you need to do is to run your own node with baking software and keep it online and up to date. You will also need a minimum of 8000ṁ (XTZ) to participate in baking. 
+To become a baker, all you need to do is to run your own node with baking software and keep it online and up to date. You will also need a minimum of 8000ṁ (MVRK) to participate in baking. 
 
 Note: the minimum amount needed to have baking rights might change as new protocols get rolled out in the future.
 
 ## What is delegation?
-Delegation is when you give your baking rights to another person (baker). This mechanism in Tezos allows users to participate in staking and receive Tezos rewards without running their own node.
+Delegation is when you give your baking rights to another person (baker). This mechanism in Mavryk allows users to participate in staking and receive Mavryk rewards without running their own node.
 
-In Tezos, a delegation operation will set the delegate of an address.
+In Mavryk, a delegation operation will set the delegate of an address.
 
 When the `Babylon/proto005` protocol amendment came into effect, it changed how delegation from KT1 addresses work. Calling the KT1's smart contract `do` method is required to set the delegate for a KT1 account.  The `do` method takes a lambda function, and it is the logic of this function that causes the desired delegation to happen.
 
@@ -28,25 +28,25 @@ The difference between the 2 methods is that `registerDelegate()` will set the d
 Use `setDelegate()` to delegate your coins to a registered delegate (baker).
 
 ```js
-// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-await Tezos.contract.setDelegate({ source: 'mv1_source', delegate: 'mv1_baker' });
+await Mavryk.contract.setDelegate({ source: 'mv1_source', delegate: 'mv1_baker' });
 ```
 
 ### registerDelegate()
 To run a delegate you must first be registered. Use`registerDelegate()` to accomplish this.
 
 ```js
-// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-await Tezos.contract.registerDelegate({});
+await Mavryk.contract.registerDelegate({});
 ```
 
 ## Delegation involving originated addresses (`KT1` prefix)
 
-Pre-`Babylon/proto005`, it was common to have "script-less" KT1 addresses. This circumstance changed when the Tezos blockchain migrated to the new `Babylon/proto005` protocol.
+Pre-`Babylon/proto005`, it was common to have "script-less" KT1 addresses. This circumstance changed when the Mavryk blockchain migrated to the new `Babylon/proto005` protocol.
 
-During the migration from `proto004` to `proto005`, all KT1 addresses that migrated got a contract called [manager.mv](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.mv). As a result, there are no longer any "script-less" KT1 addresses in Tezos.
+During the migration from `proto004` to `proto005`, all KT1 addresses that migrated got a contract called [manager.mv](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.mv). As a result, there are no longer any "script-less" KT1 addresses in Mavryk.
 
 A call to the KT1's smart contract's `do` method must be made to delegate to a KT1 address with the new `manager.mv` contract. The `do` method takes a lambda function, and it is this lambda function that causes changes to occur in the KT1 address.
 
@@ -59,9 +59,9 @@ A call to the KT1's smart contract's `do` method must be made to delegate to a K
 ### Example of delegation for a KT1
 
 ```js
-// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-const contract = await Tezos.contract.at('kt1...');
+const contract = await Mavryk.contract.at('kt1...');
 await contract.methodsObject.do(setDelegate('mv1_delegate')).send();
 ```
 
@@ -88,7 +88,7 @@ const setDelegate = (key: string) => {
 It is possible to `undelegate` by executing a new `setDelegate` operation and not specifying the `delegate` property.
 
 ```ts
-// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-await Tezos.contract.setDelegate({ source: 'mv1_source'});
+await Mavryk.contract.setDelegate({ source: 'mv1_source'});
 ```

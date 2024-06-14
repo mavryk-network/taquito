@@ -3,7 +3,7 @@
   "version": "20.0.0",
   "description": "Provide local forging functionality to be with taquito",
   "keywords": [
-    "tezos",
+    "mavryk",
     "blockchain",
     "signer"
   ],

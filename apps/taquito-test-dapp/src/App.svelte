@@ -65,14 +65,14 @@
         store.updateMatrixNode("beacon-node-1.sky.papers.tech");
         break;
       case "taquito":
-        store.updateMatrixNode("matrix.tez.ie");
+        store.updateMatrixNode("matrix.mav.ie");
         break;
       case "custom":
         store.updateMatrixNode("beacon-node-1.sky.papers.tech");
         if (!getRpcUrl(NetworkType.CUSTOM)) {
           // TODO: This logic does not seem right
           // in case the user did not provide any custom network URL
-          store.updateTezos(new MavrykToolkit(getRpcUrl(NetworkType.BASENET)));
+          store.updateMavryk(new MavrykToolkit(getRpcUrl(NetworkType.BASENET)));
         }
         break;
     }

@@ -79,12 +79,12 @@ const FeatureList = [
       },
       {
         Image: require('../../../static/img/Group.png').default,
-        title: 'Tezos Domains',
+        title: 'Mavryk Domains',
         url: 'https://tezos.domains'
       },
       {
         Image: require('../../../static/img/tezos_mandala.png').default,
-        title: 'Tezos Mandala',
+        title: 'Mavryk Mandala',
         url: 'https://tezos-mandala.art/'
       },
       {

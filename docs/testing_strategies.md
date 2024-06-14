@@ -45,7 +45,7 @@ Here is a simple example of an integration test. The test sends Taquito instruct
 
 ```javascript
     it('Simple transfers with origination', async () => {
-      const batch = await Tezos.batch()
+      const batch = await Mavryk.batch()
         .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
         .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
         .withTransfer({ to: 'mv1N3KY1vXdYX2x568MGmNBRLEK7k7uc2zEM', amount: 0.02 })
@@ -81,7 +81,7 @@ Taquito uses the Taquito Test Dapp and the Live Code examples in the documentati
 
 When a user raises an issue, Testers will verify the problem using manual methods. For Taquito, such testing could be:
 a quick Taquito script,
-checking a result with tezos-client,
+checking a result with mavkit-client,
 stepping through code with a debugger,
 rerunning scripts with variations each time,
 or other exploratory activities around the code base that are not fully scripted tests in the CICD.
@@ -90,20 +90,20 @@ Ledger Devices require manual testing as they have buttons that an operator must
 
 ### Security Tests
 
-Taquito has implemented some security tests in its integration test suite. These tests check for regressions in the Tezos code that could open known attack techniques. The tests verify that a particular attack is impossible and that appropriate error messaging and exceptions occur when the tests try some well-known attacks.
+Taquito has implemented some security tests in its integration test suite. These tests check for regressions in the Mavryk code that could open known attack techniques. The tests verify that a particular attack is impossible and that appropriate error messaging and exceptions occur when the tests try some well-known attacks.
 
 ### Performance
 
 Ecad DevOps maintains an extensive performance tracking monitoring setup using Loki and Grafana, which generates alerts when specific performance parameters are out of band.
 
-## Managing Tezos Protocol Migrations with Test Nets
+## Managing Mavryk Protocol Migrations with Test Nets
 
-Each time Tezos changes protocol, there is a new test net, and old ones are deprecated. Contracts originated in a more senior test net must be originated again on the new testnet. We have to update RPC content values and recreate Live Code Example contracts. So each protocol change requires an overhaul of some of the test assets to suit the new protocol.
+Each time Mavryk changes protocol, there is a new test net, and old ones are deprecated. Contracts originated in a more senior test net must be originated again on the new testnet. We have to update RPC content values and recreate Live Code Example contracts. So each protocol change requires an overhaul of some of the test assets to suit the new protocol.
 
-The Taquito test suite will run tests in CICD against the current and next test net. There is also testing of “Weeklynet,” which represents the bleeding edge of the available Tezos test code.
+The Taquito test suite will run tests in CICD against the current and next test net. There is also testing of “Weeklynet,” which represents the bleeding edge of the available Mavryk test code.
 
-ECAD Devops maintains a suite of Tezos public nodes that the Tezos community can use. By supporting and monitoring these nodes, ECAD engineers have an overview and insights into the behaviour of these systems and can contribute to problem isolation, bug fixes and general troubleshooting; or specific test scenarios that require DevOps level node access.
+ECAD Devops maintains a suite of Mavryk public nodes that the Mavryk community can use. By supporting and monitoring these nodes, ECAD engineers have an overview and insights into the behaviour of these systems and can contribute to problem isolation, bug fixes and general troubleshooting; or specific test scenarios that require DevOps level node access.
 
 ### Weeklynet and Daily net
 
-To keep up with the current changes proposed for the following Tezos protocol, we can run our integration test suite against the node called "Weeklynet." This node captures the head of the Tezos development branch each Monday. By regression testing this node, we can ascertain changes Taquito may need to make early in the protocol development process. There is also "Daily net," which offers the current Tezos branch head each day.
+To keep up with the current changes proposed for the following Mavryk protocol, we can run our integration test suite against the node called "Weeklynet." This node captures the head of the Mavryk development branch each Monday. By regression testing this node, we can ascertain changes Taquito may need to make early in the protocol development process. There is also "Daily net," which offers the current Mavryk branch head each day.

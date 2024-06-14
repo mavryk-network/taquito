@@ -10,11 +10,11 @@ Before Taquito version 9, this was not possible, but as wallets start to accept 
 
 ## Setting the limits
 
-You can set the limits manually or let `Tezos.estimate` calculate an estimate of the required fees:
+You can set the limits manually or let `Mavryk.estimate` calculate an estimate of the required fees:
 
 To set the fees manually:
 ```typescript
-const contract = await Tezos.wallet.at('contractAddress');
+const contract = await Mavryk.wallet.at('contractAddress');
 const op = await contract.methodsObject.simple_param(5).send({
       storageLimit: 800,
       gasLimit: 8000,
@@ -22,14 +22,14 @@ const op = await contract.methodsObject.simple_param(5).send({
     });
 ```
 
-To set the fees using `Tezos.estimate`:
+To set the fees using `Mavryk.estimate`:
 ```typescript
-const contract = await Tezos.wallet.at('contractAddress');
+const contract = await Mavryk.wallet.at('contractAddress');
 
 const estimateOp = await contract.methods.simple_param(5).toTransferParams({});
 const { gasLimit, 
         storageLimit, 
-        suggestedFeeMumav } = await Tezos.estimate.transfer(estimateOp);
+        suggestedFeeMumav } = await Mavryk.estimate.transfer(estimateOp);
         
 const op = await contract.methodsObject.simple_param(5).send({
       storageLimit: storageLimit,

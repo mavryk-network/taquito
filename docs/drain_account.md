@@ -7,7 +7,7 @@ This section shows how to transfer all tokens from one account (implicit or orig
 
 ## Draining implicit accounts (mv1, mv2, mv3)
 
-We want to "empty" an implicit account by sending all of its tokens to another account. It can be tricky to empty a tezos account because the system must subtract the gas fee from the account balance.
+We want to "empty" an implicit account by sending all of its tokens to another account. It can be tricky to empty a mavryk account because the system must subtract the gas fee from the account balance.
 
 To do so, we first need to estimate the fees related to this operation. The `estimate` property of the `MavrykToolkit` provides access to operation estimation utilities. Calling the `transfer` method will return an instance of the `Estimate` class and its `suggestedFeeMumav` property will allow us to know the fee associated with the operation.
 
@@ -22,19 +22,19 @@ In the following example, we have not revealed the account that we want to empty
 :::
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 // import { getRevealFee } from "@mavrykdynamics/taquito";
 
-Tezos.signer
+Mavryk.signer
     .publicKeyHash()
     .then((address) => {
-        Tezos.mv.getBalance(address).then((balance) => {
+        Mavryk.mv.getBalance(address).then((balance) => {
             println(
                 `The account we want to drain is ${address}.\nIts initial balance is ${
                   balance.toNumber() / 1000000
                   } ṁ.`
             );
-            return Tezos.estimate
+            return Mavryk.estimate
                 .transfer({
                     to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                     amount: balance.toNumber() - getRevealFee(address), // Remove default reveal fee
@@ -53,7 +53,7 @@ Tezos.signer
                           maxAmount / 1000000
                         } ṁ.`
                     );
-                    return Tezos.contract.transfer({
+                    return Mavryk.contract.transfer({
                         to: 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo',
                         mumav: true,
                         amount: maxAmount,
@@ -68,7 +68,7 @@ Tezos.signer
                 })
                 .then((hash) => {
                     println(`The account has been emptied.`);
-                    return Tezos.mv.getBalance(address);
+                    return Mavryk.mv.getBalance(address);
                 })
                 .then((finalBalance) => {
                     println(`The balance is now ${finalBalance.toNumber() / 1000000} ṁ.`);
@@ -87,7 +87,7 @@ The contract we originate is a `manager contract.` It has a `do` method taking a
 In the example, we estimate the transfer operation before doing it. The associated fees are deducted from the manager's address when draining the account. Thus, for the operation to be successful, the manager's address for that account must contain funds to cover the gas.
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 function transferImplicit(key, mumav) {
   return [
@@ -108,10 +108,10 @@ function transferImplicit(key, mumav) {
   ];
 }
 
-Tezos.signer
+Mavryk.signer
   .publicKeyHash()
   .then((address) => {
-    Tezos.contract
+    Mavryk.contract
       .originate({
         balance: '8',
         code: managerCode,
@@ -125,13 +125,13 @@ Tezos.signer
       })
       .then((contract) => {
         println(`Origination completed.`);
-        Tezos.mv.getBalance(contract.address).then((balance) => {
+        Mavryk.mv.getBalance(contract.address).then((balance) => {
           println(`The balance of the contract is ${balance.toNumber() / 1000000} ꜩ.`);
           const estimateOp = contract.methodsObject
             .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
             .toTransferParams({});
           println(`Waiting for the estimation of the smart contract call...`);
-          Tezos.estimate
+          Mavryk.estimate
             .transfer(estimateOp)
             .then((estimate) => {
               //Will be deducted from manager's address
@@ -148,7 +148,7 @@ Tezos.signer
             })
             .then((hash) => {
               println(`The account has been emptied.`);
-              return Tezos.mv.getBalance(contract.address);
+              return Mavryk.mv.getBalance(contract.address);
             })
             .then((finalBalance) => {
               println(`The balance is now ${finalBalance.toNumber() / 1000000} ṁ.`);

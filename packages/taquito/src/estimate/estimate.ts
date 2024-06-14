@@ -21,7 +21,7 @@ export interface EstimateProperties {
  * const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
  *
  * // Estimate gasLimit, storageLimit and fees for a transfer operation
- * const est = await Tezos.estimate.transfer({ to: address, amount: amount })
+ * const est = await Mavryk.estimate.transfer({ to: address, amount: amount })
  * console.log(est.burnFeeMumav, est.gasLimit, est.minimalFeeMumav, est.storageLimit,
  *  est.suggestedFeeMumav, est.totalCost, est.usingBaseFeeMumav)
  *
@@ -32,7 +32,7 @@ export interface EstimateProperties {
  * // generic.json is referring to a Michelson Smart Contract
  *
  * const genericMultisigJSON = require('./generic.json')
- * const est = await Tezos.estimate.originate({
+ * const est = await Mavryk.estimate.originate({
  *   code: genericMultisigJSON,
  *   storage: {
  *     stored_counter: 0,
@@ -53,7 +53,7 @@ export class Estimate {
     public readonly opSize: number | string,
     private readonly minimalFeePerStorageByteMumav: number | string,
     /**
-     * @description Base fee in mumav (1 mumav = 1e10−6 tez)
+     * @description Base fee in mumav (1 mumav = 1e10−6 mav)
      */
     private readonly baseFeeMumav: number | string = MINIMAL_FEE_MUMAV
   ) {}

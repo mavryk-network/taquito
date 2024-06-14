@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 The Ledger Signer implements the Signer interface of Taquito, allowing you to sign operation from a Ledger Nano device.
 
 :::note
-You need to have the [Tezos Wallet app](https://support.ledger.com/hc/en-us/articles/360016057774-Tezos-XTZ-) installed and opened on your Ledger device when using the Ledger Signer.
+You need to have the [Mavryk Wallet app](https://support.ledger.com/hc/en-us/articles/360016057774-Mavryk-MVRK-) installed and opened on your Ledger device when using the Ledger Signer.
 :::
 
 You first need to import the desired transport from the [LedgerJs library](https://github.com/LedgerHQ/ledgerjs). The Ledger Signer has currently been tested with `@ledgerhq/hw-transport-node-hid` for Node-based applications and with ~~`@ledgerhq/hw-transport-u2f`~~ and `@ledgerhq/hw-transport-webhid` for web applications.
@@ -83,16 +83,16 @@ import { LedgerSigner } from '@mavrykdynamics/taquito-ledger-signer';
 import TransportNodeHid from '@ledgerhq/hw-transport-node-hid';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const transport = await TransportNodeHid.create();
 const ledgerSigner = new LedgerSigner(transport);
 
-Tezos.setProvider({ signer: ledgerSigner });
+Mavryk.setProvider({ signer: ledgerSigner });
 
 //Get the public key and the public key hash from the Ledger
-const publicKey = await Tezos.signer.publicKey();
-const publicKeyHash = await Tezos.signer.publicKeyHash();
+const publicKey = await Mavryk.signer.publicKey();
+const publicKeyHash = await Mavryk.signer.publicKeyHash();
 ```
 
 You are all set to sign operation with your Ledger device. You can use your configured ledger signer with both the Contract API or the Wallet API as usual. If you try the following example, you will be asked on your Ledger device to confirm the transaction before sending it.
@@ -110,7 +110,7 @@ const amount = 0.5;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 console.log(`Transfering ${amount} ṁ to ${address}...`);
-Tezos.contract
+Mavryk.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
     console.log(`Waiting for ${op.hash} to be confirmed...`);
@@ -128,7 +128,7 @@ const amount = 0.5;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 console.log(`Transfering ${amount} ṁ to ${address}...`);
-Tezos.wallet
+Mavryk.wallet
   .transfer({ to: address, amount: amount })
   .send()
   .then((op) => {
@@ -155,14 +155,14 @@ Here is the technical specification for the most commonly used HD wallets :
 
 According to BIP44, path is described as follow:
 `purpose' / coin_type' / account' / change / address_index`.
-Where `purpose` is a constant set to `44'` and `coin_type` is set to `1729'` for Tezos.
+Where `purpose` is a constant set to `44'` and `coin_type` is set to `1729'` for Mavryk.
 
-#### Different Tezos HD Paths
+#### Different Mavryk HD Paths
 
-The path always begins with `44'/1729'` and we see some difference for the three other indexes across the Tezos ecosystem. We can notice that changing any number for the three last indexes of the path (`account' / change / address_index`) will lead to different accounts. **But, to ensure consistency, it is important trying to follow the same convention regarding the structure of the path and which index to increase to access the next address.**
+The path always begins with `44'/1729'` and we see some difference for the three other indexes across the Mavryk ecosystem. We can notice that changing any number for the three last indexes of the path (`account' / change / address_index`) will lead to different accounts. **But, to ensure consistency, it is important trying to follow the same convention regarding the structure of the path and which index to increase to access the next address.**
 
-In Tezos, we generally see a slight difference in the path compared to the BIP44 specification. It is common to see path made of 4 indexes instead of 5 (default path being `44'/1729'/0'/0'` instead of `44'/1729'/0'/0'/0'`). For example, the default path used by tezos-client is `44'/1729'/0'/0'`.
-Based on what is done by the Tezos-client, the default path used by Taquito in the `LedgerSigner` is also `44'/1729'/0'/0'`. Taquito offers a template for the path called `HDPathTemplate`. This template uses four indexes and suggests doing the iteration on the `account` index.
+In Mavryk, we generally see a slight difference in the path compared to the BIP44 specification. It is common to see path made of 4 indexes instead of 5 (default path being `44'/1729'/0'/0'` instead of `44'/1729'/0'/0'/0'`). For example, the default path used by mavkit-client is `44'/1729'/0'/0'`.
+Based on what is done by the Mavryk-client, the default path used by Taquito in the `LedgerSigner` is also `44'/1729'/0'/0'`. Taquito offers a template for the path called `HDPathTemplate`. This template uses four indexes and suggests doing the iteration on the `account` index.
 For example, you can use HDPathTemplate(0) (equivalent to `44'/1729'/0'/0'`) to access the first address, HDPathTemplate(1) equivalent to `44'/1729'/1'/0'`) to access the second address, HDPathTemplate(2) (equivalent to `44'/1729'/2'/0'`) to access the third address... _In order to meet the needs of each user, this template is not imposed by Taquito_.
 
 We can see other implementations that use `44'/1729'/0'/0'/0'`, where the next address is accessed by incrementing `account` or `address_index`.
@@ -192,14 +192,14 @@ https://medium.com/mycrypto/wtf-is-a-derivation-path-c3493ca2eb52
 
 ## Live example that iterates from the path `44'/1729'/0'/0'` to `44'/1729'/9'/0'`
 
-Having your Ledger device connected to your computer and the `Tezos Wallet App` opened, you can run the following code example. It will scan your Ledger from path `44'/1729'/0'/0'` to `44'/1729'/9'/0'` to get public key hashes and the balance for revealed accounts. Confirmations will be asked on your Ledger to send the public keys.
+Having your Ledger device connected to your computer and the `Mavryk Wallet App` opened, you can run the following code example. It will scan your Ledger from path `44'/1729'/0'/0'` to `44'/1729'/9'/0'` to get public key hashes and the balance for revealed accounts. Confirmations will be asked on your Ledger to send the public keys.
 _Note that this example is not intended to be a complete example of paths scanning but only a rough outline of what it is possible to do._
 
 ```js live noInline
 //import { LedgerSigner, DerivationType, HDPathTemplate } from '@mavrykdynamics/taquito-ledger-signer';
 //import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // import TransportWebHID from "@ledgerhq/hw-transport-webhid";
-//const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+//const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 TransportWebHID.create().then((transport) => {
   for (let index = 0, p = Promise.resolve(); index < 10; index++) {
@@ -222,10 +222,10 @@ function getAddressInfo(transport, index) {
     true,
     DerivationType.ED25519
   );
-  Tezos.setProvider({ signer: ledgerSigner });
-  return Tezos.signer.publicKeyHash().then((pkh) => {
-    Tezos.mv.getBalance(pkh).then((balance) => {
-      Tezos.rpc.getManagerKey(pkh).then((getPublicKey) => {
+  Mavryk.setProvider({ signer: ledgerSigner });
+  return Mavryk.signer.publicKeyHash().then((pkh) => {
+    Mavryk.mv.getBalance(pkh).then((balance) => {
+      Mavryk.rpc.getManagerKey(pkh).then((getPublicKey) => {
         println(
           `The public key hash related to the derivation path having the index ${index} is ${pkh}.`
         );

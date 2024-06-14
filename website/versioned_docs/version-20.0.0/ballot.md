@@ -9,7 +9,7 @@ The `Ballot` operation allows delegates to cast one `Yay`, `Nay`, or `Pass` ball
 ## Examples
 The `Ballot` operation is currently available in the Contract API, and can be used as such:
 ```typescript
-const op = await Tezos.contract.ballot({
+const op = await Mavryk.contract.ballot({
   proposal: 'PROPOSAL_HASH',
   ballot: 'BALLOT_VOTE_STRING'
 });

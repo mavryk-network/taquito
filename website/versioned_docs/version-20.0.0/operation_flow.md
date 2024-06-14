@@ -5,12 +5,12 @@ author: Michael Kernaghan
 ---
 
 # Taquito Operation Flow
-Taquito makes injecting operations into the Tezos blockchain very simple. This can be accomplished by utilizing the Contract API, Wallet API, or the Batch API.
+Taquito makes injecting operations into the Mavryk blockchain very simple. This can be accomplished by utilizing the Contract API, Wallet API, or the Batch API.
 
 ## Contract API
 
 ### What is the Contract API?
-Taquito Contract API provides a simple way to interact with the Tezos blockchain. It provides methods and abstractions to prepare, forge, sign, and send operations to the Tezos blockchain, as well as interact with smart contracts.
+Taquito Contract API provides a simple way to interact with the Mavryk blockchain. It provides methods and abstractions to prepare, forge, sign, and send operations to the Mavryk blockchain, as well as interact with smart contracts.
 
 ### Installing the Contract API
 The Contract API is part of the `@mavrykdynamics/taquito` package. To install it, run the following command:
@@ -28,13 +28,13 @@ Below is a quick example of how to use the `transaction` operation via the Contr
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('RPC address here');
-const op = await Tezos.contract.transfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 100 });
+const Mavryk = new MavrykToolkit('RPC address here');
+const op = await Mavryk.contract.transfer({ to: 'mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv', amount: 100 });
 await op.confirmation();
 ```
 
 ## Wallet API
-Aside from the Contract API, Taquito provides the ability for our users to interact with the Tezos blockchain via the Wallet API. The Wallet API is functionally similar to the Contract API, but it delegates several actions to the wallet (i.e. signing operations).
+Aside from the Contract API, Taquito provides the ability for our users to interact with the Mavryk blockchain via the Wallet API. The Wallet API is functionally similar to the Contract API, but it delegates several actions to the wallet (i.e. signing operations).
 
 ### Installing the Wallet API
 The Wallet API is part of the `@mavrykdynamics/taquito` package, so the installation method is the exact same as the Contract API in the section above.
@@ -72,7 +72,7 @@ You might think to do something like this:
  * ONE OF THESE TRANSACTIONS WILL FAIL
  * AND YOU WILL GET AN ERROR MESSAGE
  */
-const op1 = await contract.methodsObject.interact('tezos').send();
+const op1 = await contract.methodsObject.interact('mavryk').send();
 const op2 = await contract.methodsObject.wait(UnitValue).send();
 
 await op1.confirmation();
@@ -91,7 +91,7 @@ await op2.confirmation();
  */
 ```
 
-Doing something like this will result in an error message. This is because each Tezos account holds a counter that increments every time an operation is included in a block on the network. This feature prevents users from sending two or multiple transactions in a row.
+Doing something like this will result in an error message. This is because each Mavryk account holds a counter that increments every time an operation is included in a block on the network. This feature prevents users from sending two or multiple transactions in a row.
 
 
 Tracking the confirmation of transactions and the update of the transaction counter can be very frustrating and cumbersome, this is why Taquito provides the Batch API. The Batch API allows you to group all your transactions together and emit them at once under the same transaction counter value and the same transaction hash.
@@ -108,10 +108,10 @@ We provide a level of independence and customizability if you choose to do so, w
 ### Preparing a Transaction Operation
 ```typescript
 import { MavrykToolkit } from '@mavrykdynamics/taquito'
-const Tezos = new MavrykToolkit(RPC_URL);
+const Mavryk = new MavrykToolkit(RPC_URL);
 
 // The PrepareProvider returns a 'PreparedOperation' type object
-const prepared = await Tezos.prepare.transaction({
+const prepared = await Mavryk.prepare.transaction({
   source: SOURCE_PKH,
   to: DESTINATION_PKH,
   amount: 5,
@@ -119,7 +119,7 @@ const prepared = await Tezos.prepare.transaction({
 });
 
 // The PreparedOperation type object needs to be converted into a forgeable type (ForgeParams)
-const forgeable = await Tezos.prepare.toForge(prepared);
+const forgeable = await Mavryk.prepare.toForge(prepared);
 ```
 
 ### Forging the Transaction Operation
@@ -135,12 +135,12 @@ const forgedBytes = await forger.forge(forgeable);
 ### Signing the Operation
 After the transaction operation has been forged, it can be signed as such:
 ```typescript
-const signed = await Tezos.signer.sign(forgedBytes, new Uint8Array([3]))
+const signed = await Mavryk.signer.sign(forgedBytes, new Uint8Array([3]))
 ```
 
 ### Injecting the Operation
 Finally after signing, you can inject your operation to the blockchain.
 
 ```typescript
-const op = await Tezos.rpc.injectOperation(signed.sbytes);
+const op = await Mavryk.rpc.injectOperation(signed.sbytes);
 ```

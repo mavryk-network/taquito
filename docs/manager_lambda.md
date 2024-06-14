@@ -11,8 +11,8 @@ The methods are the following:
 
 - `removeDelegate`: to remove the current baker to whom the balance of the multisig contract has been delegated
 - `setDelegate`: to set a new baker as delegate
-- `transferImplicit`: to transfer a given amount of XTZ to a given implicit account
-- `transferToContract`: to transfer a given amount of XTZ to a given contract
+- `transferImplicit`: to transfer a given amount of MVRK to a given implicit account
+- `transferToContract`: to transfer a given amount of MVRK to a given contract
 
 ## The `removeDelegate` method
 
@@ -80,9 +80,9 @@ TRANSFER_TOKENS ;
 CONS ;
 ```
 
-The method takes 2 parameters: the first one of type `string` whose value is the `key_hash` of the recipient address, the second one of type `number` whose value is the amount of XTZ to be transferred.
+The method takes 2 parameters: the first one of type `string` whose value is the `key_hash` of the recipient address, the second one of type `number` whose value is the amount of MVRK to be transferred.
 
-It produces a list of operations with a single operation in it created by the `TRANSFER_TOKENS` instruction that will transfer the provided amount of XTZ to the provided address.
+It produces a list of operations with a single operation in it created by the `TRANSFER_TOKENS` instruction that will transfer the provided amount of MVRK to the provided address.
 
 ## The `transferToContract` method
 
@@ -112,9 +112,9 @@ IF_NONE
     }
 ```
 
-The method takes 2 parameters: the first one of type `string` whose value is the `key_hash` of the recipient address, the second one of type `number` whose value is the amount of XTZ to be transferred.
+The method takes 2 parameters: the first one of type `string` whose value is the `key_hash` of the recipient address, the second one of type `number` whose value is the amount of MVRK to be transferred.
 
-It produces a list of operations with a single operation in it created by the `TRANSFER_TOKENS` instruction that will transfer the provided amount of XTZ to the provided contract address. The contract must take a parameter of type `unit` (which is the case for the manager contract), this condition is verified by the Michelson code in the lambda.
+It produces a list of operations with a single operation in it created by the `TRANSFER_TOKENS` instruction that will transfer the provided amount of MVRK to the provided contract address. The contract must take a parameter of type `unit` (which is the case for the manager contract), this condition is verified by the Michelson code in the lambda.
 
 ## Information
 

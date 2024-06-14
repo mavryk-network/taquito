@@ -4,7 +4,7 @@ id: web3js_taquito
 author: Claude Barde
 ---
 
-Web3js and Taquito have a common goal: connecting dapps to the Ethereum and Tezos blockchain (respectively) and thus implement similar approaches. However, these approaches are also different due to the nature of Ethereum and the Tezos blockchains.
+Web3js and Taquito have a common goal: connecting dapps to the Ethereum and Mavryk blockchain (respectively) and thus implement similar approaches. However, these approaches are also different due to the nature of Ethereum and the Mavryk blockchains.
 
 A comparison of the methods implemented by Web3js and Taquito can put in perspective their similarities and differences.
 
@@ -33,7 +33,7 @@ const web3 = new Web3(Web3.providers.HttpProvider('http://localhost:9545'));
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('http://localhost:8732');
+const Mavryk = new MavrykToolkit('http://localhost:8732');
 ```
 
 The Web3js package exports a class that needs to be instantiated before being used. The difference between _Web3_ and _web3_ is a common source of Ethereum development errors.
@@ -50,7 +50,7 @@ const balance = await web3.eth.getBalance('account_address');
 **Taquito**
 
 ```js
-const balance = await Tezos.mv.getBalance('account_address');
+const balance = await Mavryk.mv.getBalance('account_address');
 ```
 
 Both Web3js and Taquito use the `getBalance` method with the account address to fetch its spendable balance from the network.
@@ -70,14 +70,14 @@ const op = await web3.eth.sendTransaction({
 **Taquito**:
 
 ```js
-const op = await Tezos.wallet.transfer({
+const op = await Mavryk.wallet.transfer({
   to: 'recipient_address',
   amount: 'amount_in_tez',
 });
 await op.confirmation();
 ```
 
-Web3js and Taquito allow the transfer of tokens from one address to another in a similar fashion. The transaction on Ethereum returns a promise with receipt/event emitter and resolves when the receipt is available. The transaction on Tezos returns a WalletOperation promise with a `confirmation` method that waits for the number of confirmations specified as a parameter (default 1) before resolving.
+Web3js and Taquito allow the transfer of tokens from one address to another in a similar fashion. The transaction on Ethereum returns a promise with receipt/event emitter and resolves when the receipt is available. The transaction on Mavryk returns a WalletOperation promise with a `confirmation` method that waits for the number of confirmations specified as a parameter (default 1) before resolving.
 
 ## Create a contract instance
 
@@ -90,7 +90,7 @@ const contract = new web3.eth.Contract(JSON_ABI);
 **Taquito**:
 
 ```js
-const contract = await Tezos.wallet.at('contract_address');
+const contract = await Mavryk.wallet.at('contract_address');
 ```
 
 The two approaches are radically different here: Web3js constructs the contract interface from the "ABI" that's shipped with the dapp while Taquito fetches the contract structure directly from the blockchain to construct the interface.
@@ -109,9 +109,9 @@ const counter = await contract.methodsObject.getCounter().call();
 const counter = await contract.storage();
 ```
 
-This is another point that shows how different the Ethereum and the Tezos blockchains are.
+This is another point that shows how different the Ethereum and the Mavryk blockchains are.
 On Ethereum, the contract has to implement getter functions to return values from its storage and make them available to dapps.
-On Tezos, the whole storage is always available, and developers don't have to add view functions to their contracts to make the storage values available.
+On Mavryk, the whole storage is always available, and developers don't have to add view functions to their contracts to make the storage values available.
 
 ## Call the increment method on the contract instance
 
@@ -128,7 +128,7 @@ const op = await contract.methodsObject.increment(1).send();
 await op.confirmation();
 ```
 
-Calling functions/entrypoints is very similar to Ethereum and Tezos. Just remember that the function doesn't return any value from the blockchain on Tezos.
+Calling functions/entrypoints is very similar to Ethereum and Mavryk. Just remember that the function doesn't return any value from the blockchain on Mavryk.
 
 ## Deploy/originate a smart contract
 
@@ -147,7 +147,7 @@ const contractAddress = newInstance.options.address;
 **Taquito**:
 
 ```js
-const op = await Tezos.wallet
+const op = await Mavryk.wallet
   .originate({
     code: 'parsed_michelson',
     storage: 'initial_storage',
@@ -205,12 +205,12 @@ const receipt = await contract.methodsObject.increment(counter + 1).send();
 
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new MavrykToolkit('http://localhost:8732');
-const wallet = Tezos.setProvider({ wallet: walletOfYourChoice }); // use the wallet of your choice
+const Mavryk = new MavrykToolkit('http://localhost:8732');
+const wallet = Mavryk.setProvider({ wallet: walletOfYourChoice }); // use the wallet of your choice
 
-const userBalance = await Tezos.mv.getBalance('tz_address');
+const userBalance = await Mavryk.mv.getBalance('tz_address');
 
-const contract = await Tezos.wallet.at('contract_address');
+const contract = await Mavryk.wallet.at('contract_address');
 
 const counter = await contract.storage();
 

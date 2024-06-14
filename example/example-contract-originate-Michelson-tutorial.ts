@@ -4,12 +4,12 @@ import { MavrykToolkit } from '@mavrykdynamics/taquito';
 async function example() {
   const provider = 'https://basenet.rpc.mavryk.network';
     const signer = new InMemorySigner('edskRtmEwZxRzwd1obV9pJzAoLoxXFWTSHbgqpDBRHx1Ktzo5yVuJ37e2R4nzjLnNbxFU4UiBU1iHzAy52pK5YBRpaFwLbByca');
-    const tezos = new MavrykToolkit(provider);
-    tezos.setSignerProvider(signer);
+    const mavryk = new MavrykToolkit(provider);
+    mavryk.setSignerProvider(signer);
 
   try {
     console.log('Deploying Michelson Tutorial contract...');
-    const op = await tezos.contract.originate({
+    const op = await mavryk.contract.originate({
       code: `parameter (pair address mumav);
       storage (map address mumav);
       code { DUP ; CAR ; SWAP ; CDR ; SWAP ; DUP ; DUG 2 ; CDR ; DIG 2 ; CAR ; SWAP ; SOME ; SWAP ; UPDATE ; NIL operation ; PAIR }`,

@@ -17,8 +17,8 @@ You can get the events in a contract through the `eventSchema` field of the `Con
 ### Example
 #### Usage
 ```typescript
-const Tezos = new MavrykToolkit(RPC_URL);
-const contractAbstraction = Tezos.contract.at('KT1...');
+const Mavryk = new MavrykToolkit(RPC_URL);
+const contractAbstraction = Mavryk.contract.at('KT1...');
 console.log(contractAbstraction.eventSchema);
 ```
 
@@ -54,17 +54,17 @@ Taquito provides a simple way for users to subscribe to certain events on the bl
 ### Example
 #### Usage
 ```typescript
-const Tezos = new MavrykToolkit(RPC_URL);
+const Mavryk = new MavrykToolkit(RPC_URL);
 
-Tezos.setStreamProvider(
-  Tezos.getFactory(PollingSubscribeProvider)({
+Mavryk.setStreamProvider(
+  Mavryk.getFactory(PollingSubscribeProvider)({
     shouldObservableSubscriptionRetry: true,
     pollingIntervalMilliseconds: 1500
   })
 );
 
 try {
-  const sub = Tezos.stream.subscribeEvent({
+  const sub = Mavryk.stream.subscribeEvent({
     tag: 'tagName',
     address: 'KT1_CONTRACT_ADDRESS',
     excludeFailedOperations: true

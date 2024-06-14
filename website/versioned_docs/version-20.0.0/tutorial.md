@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 In this tutorial, we will walk through the process of creating a simple dApp (short for "Decentralized Application") using Taquito. We will:
 
 1. Create a simple command-line application that reads the balance of an address from the blockchain
-1. Establish a high-level understanding of the blockchain, Tezos, dApps, and Taquito
+1. Establish a high-level understanding of the blockchain, Mavryk, dApps, and Taquito
 1. Send a `Transfer` operation to the blockchain using Taquito
 1. Interact with a smart contract using Taquito
 1. Implement a simple GUI dApp
@@ -86,7 +86,7 @@ npx ts-node index.ts
 ```
 
 If everything is done right, you should be able to see the output `Hello Blockchain!` in the terminal.
-Now, we can start using Taquito to interact with the Tezos blockchain.
+Now, we can start using Taquito to interact with the Mavryk blockchain.
 Run the following command to install Taquito:
 
 ```bash
@@ -98,16 +98,16 @@ Now, open the file `index.ts` and replace the code with the following:
 ```ts
 import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
-var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
+var mavrykToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
-tezosToolkit.mv.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
+mavrykToolkit.mv.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
     console.log(balance.toNumber());
 });
 ```
 
-Running `npx ts-node index.ts` should now show the spendable balance of the specified address. This balance is in units of Mumav (micro Mav). Tez is the currency of Tezos, its code is `MVRK`, and the symbol is `ṁ`. 1 Mav is 1,000,000 Mumav.
+Running `npx ts-node index.ts` should now show the spendable balance of the specified address. This balance is in units of Mumav (micro Mav). Mav is the currency of Mavryk, its code is `MVRK`, and the symbol is `ṁ`. 1 Mav is 1,000,000 Mumav.
 
-Congratulations! You have just interacted with the Tezos blockchain using Taquito. In the next section, we will establish a high-level understanding of the blockchain, Tezos, dApps, and Taquito. If you are already familiar with these concepts, you can skip to [Sending a Transfer operation to the blockchain using Taquito](#sending-operations).
+Congratulations! You have just interacted with the Mavryk blockchain using Taquito. In the next section, we will establish a high-level understanding of the blockchain, Mavryk, dApps, and Taquito. If you are already familiar with these concepts, you can skip to [Sending a Transfer operation to the blockchain using Taquito](#sending-operations).
 
 ## What is a blockchain?
 The blockchain is a way to trust a network of computers run by strangers (so you don't have to trust the individual people). It might seem impossible, but it works. How?
@@ -145,22 +145,22 @@ When Bitcoin was invented, it used a consensus algorithm called "Proof of Work".
 
 While POW is a genius solution, it is also very energy-intensive. It is estimated that the Bitcoin network uses as much energy as the entire country of Argentina. This is not sustainable.
 
-A later generation of blockchains introduced the "Proof of Stake". In this algorithm, the computers that participate in the consensus are selected based on the amount of tokens they have. The more tokens you have, the higher your chance of being selected to create the next block. This is much more energy-efficient. The Tezos blockchain uses this algorithm.
+A later generation of blockchains introduced the "Proof of Stake". In this algorithm, the computers that participate in the consensus are selected based on the amount of tokens they have. The more tokens you have, the higher your chance of being selected to create the next block. This is much more energy-efficient. The Mavryk blockchain uses this algorithm.
 </details>
 
-## What makes Tezos different? {#about-tezos}
+## What makes Mavryk different? {#about-tezos}
 
-Some interesting features in Tezos are designed to address the shortcomings of the earlier generations of blockchain. When Tezos was created, it had these benefits over existing blockchains:
+Some interesting features in Mavryk are designed to address the shortcomings of the earlier generations of blockchain. When Mavryk was created, it had these benefits over existing blockchains:
 
 1. Proof of stake (It is now being adopted by some other blockchains as well). This eliminates a big problem with earlier blockchains: the need for a lot of energy to run the network.
-1. Evolution of the blockchain. Remember that the blockchain is a network of computers that run the same software. This means that if you want to upgrade the software, all the nodes need to be upgraded at the same time. This is not easy to do. Tezos solves this problem by having evolution baked into the protocol. This means that the blockchain can evolve over time without the need for a "hard fork".
+1. Evolution of the blockchain. Remember that the blockchain is a network of computers that run the same software. This means that if you want to upgrade the software, all the nodes need to be upgraded at the same time. This is not easy to do. Mavryk solves this problem by having evolution baked into the protocol. This means that the blockchain can evolve over time without the need for a "hard fork".
 1. Delegation: Users can "delegate" their funds to a "baker". The baker will participate in the network consensus and will receive rewards. The baker will then share the rewards with the delegators. This makes it possible for users to participate in the network consensus without the need to run a node themselves or give control of their funds to a third party.
 
-Because Tezos is designed to evolve, it is now much more than what it was when it was created.
+Because Mavryk is designed to evolve, it is now much more than what it was when it was created.
 
-Different versions of Tezos protocol are named after historic cities. At the time of this writing, we are in the "Nairobi" era. But the next protocol "Atlas" is being implemented and will be voted on soon, then the next one would be a city that starts with "P". 🤔 I wonder what will happen after we reach Z. 🤷
+Different versions of Mavryk protocol are named after historic cities. At the time of this writing, we are in the "Nairobi" era. But the next protocol "Atlas" is being implemented and will be voted on soon, then the next one would be a city that starts with "P". 🤔 I wonder what will happen after we reach Z. 🤷
 
-The "mainnet" is the actual Tezos Blockchain. However, there are several "testnets" that are used for testing. One of them is named "basenet", and it evolves to the new protocol much earlier than the mainnet, so that the ecosystem has enough time to implement and test the new protocol's features.
+The "mainnet" is the actual Mavryk Blockchain. However, there are several "testnets" that are used for testing. One of them is named "basenet", and it evolves to the new protocol much earlier than the mainnet, so that the ecosystem has enough time to implement and test the new protocol's features.
 
 ## What is a dApp?
 
@@ -168,9 +168,9 @@ A dApp is a web application that interacts with a blockchain. The blockchain is 
 
 ## What is Taquito?
 
-Taquito is a JavaScript library that makes it easy to interact with the Tezos blockchain. It is designed to be used in dApps. It is also used in some wallets and other tools. It is open-source, developed and maintained by ECAD Labs.
+Taquito is a JavaScript library that makes it easy to interact with the Mavryk blockchain. It is designed to be used in dApps. It is also used in some wallets and other tools. It is open-source, developed and maintained by ECAD Labs.
 
-Without Taquito, sending operations to the Tezos blockchain requires you to write a lot of code. Some of that is to:
+Without Taquito, sending operations to the Mavryk blockchain requires you to write a lot of code. Some of that is to:
 1. Estimate the costs for the operation
 1. Properly encode the operation
 1. Sign the operation
@@ -178,7 +178,7 @@ Without Taquito, sending operations to the Tezos blockchain requires you to writ
 1. Get the operation receipt
 1. Monitor the chain for inclusion of the operation
 
-And to implement all these, you need detailed information about different data types, protocols, constants, and algorithms used in the Tezos blockchain. Taquito abstracts away all this complexity and provides a simple API for interacting with the blockchain.
+And to implement all these, you need detailed information about different data types, protocols, constants, and algorithms used in the Mavryk blockchain. Taquito abstracts away all this complexity and provides a simple API for interacting with the blockchain.
 
 ## Sending a `Transfer` operation to the blockchain using Taquito {#sending-operations}
 Now, we want to send an operation to the blockchain. When reading, we just sent a read request. When sending an operation, we need to prove that we own the address. To do this, we need to sign the operation with the private key of the address.
@@ -198,7 +198,7 @@ import { InMemorySigner } from "@mavrykdynamics/taquito-signer";
 import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
 async function main() {
-    var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
+    var mavrykToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
     // WARNING: DO NOT DO THIS IN PRODUCTION, KEEP YOUR SECRETS SAFE
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
@@ -206,9 +206,9 @@ async function main() {
     const pkh = await signer.publicKeyHash();
     console.log(pkh);
 
-    tezosToolkit.setProvider({ signer });
+    mavrykToolkit.setProvider({ signer });
 
-    const op = await tezosToolkit.contract.transfer({ to: 'mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr', amount: 1 });
+    const op = await mavrykToolkit.contract.transfer({ to: 'mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr', amount: 1 });
     await op.confirmation();
 
     console.log(op.hash);
@@ -243,16 +243,16 @@ For the purpose of this section, I have created a new address and funded it on t
   Most users can simply use a wallet to create addresses. This is useful for dApps that run inside a browser. If you are running a dApp as a desktop, mobile, or server process, you can create your own key pair. Here is how you can do it:
 
   ```bash
-    docker run --pull always -it --entrypoint sh docker.io/tezos/tezos:latest
+    docker run --pull always -it --entrypoint sh docker.io/mavrykdynamics/mavryk:latest
 
     # now you are inside the docker container
     mavkit-client -E https://basenet.rpc.mavryk.network gen keys mysamplekey -s secp256k1
     mavkit-client -E https://basenet.rpc.mavryk.network show address mysamplekey -S
   ```
-  The new address you just created has a balance of zero. For the testnet, You can go to [basenet faucet](https://basenet.faucet.mavryk.network/) and send some ṁ to it for free. On mainnet, you need to buy actual Tez on an exchange.
+  The new address you just created has a balance of zero. For the testnet, You can go to [basenet faucet](https://basenet.faucet.mavryk.network/) and send some ṁ to it for free. On mainnet, you need to buy actual Mav on an exchange.
 </details>
 
-Congratulations! You have just sent an operation to the Tezos blockchain using Taquito.
+Congratulations! You have just sent an operation to the Mavryk blockchain using Taquito.
 
 ## Interacting with a smart contract using Taquito
 
@@ -260,11 +260,11 @@ In this section, we will interact with a smart contract using Taquito. We will m
 
 Well, objk.com is the production service. We will use the testnet one: [basenet.objkt.com](https://basenet.objkt.com/), because to mint NFT on it, you only need basenet ṁ, which is free. Also, because I want to put my test secret key here, and I don't like to share my mainnet secret key with actual ṁ in it with everyone.
 
-The concepts you learn here are not limited to objkt.com or NFTs. You can use the same concepts to interact with any smart contract on the Tezos blockchain.
+The concepts you learn here are not limited to objkt.com or NFTs. You can use the same concepts to interact with any smart contract on the Mavryk blockchain.
 
 Most dApps interact with smart contracts. You can think of a smart contract as a program that runs on the blockchain. The smart contract can store data and execute code. The code is executed when a user sends an operation to one of the smart contract's `entrypoint`s. The smart contract can also send operations to the blockchain, or to other smart contracts.
 
-In Tezos, smart contracts are written using one of the high-level languages (like Ligo), and compiled to Michelson. Then the contract is originated (deployed) to the blockchain. During origination, an address prefixed with `KT1` is created for the contract. You can then interact with the smart contract by sending operations to this address.
+In Mavryk, smart contracts are written using one of the high-level languages (like Ligo), and compiled to Michelson. Then the contract is originated (deployed) to the blockchain. During origination, an address prefixed with `KT1` is created for the contract. You can then interact with the smart contract by sending operations to this address.
 
 In objkt.com, any user can create a number of collections and then mint NFTs in any of these collections. I have already created a collection and made our test address (`mv2DZLWLuDRKUuR4BrWetimZ1C6Pg6pPAo3n`) an operator of the collection. So, this user can now mint NFTs in this collection. Check out the collection [here](https://basenet.objkt.com/collection/KT1XmD31NdBrTcL7bPF3md6i5g4BbE6s2YLv), and note the number of tokens in it.
 
@@ -272,12 +272,12 @@ Open the file `index.ts` and change the `main` function to the following:
 
 ```ts
 async function main() {
-    var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
+    var mavrykToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
     const signer = await InMemorySigner.fromSecretKey('spsk29SxqYRjnreqGzsYiAUEqxyhDwD8j2J57pJjaGgGtReZVD2UiD');
-    tezosToolkit.setProvider({ signer });
+    mavrykToolkit.setProvider({ signer });
 
-    const contract = await tezosToolkit.contract.at('KT1JarALvhDLjtFhraeTMGGoeNLUkuL6jGtM');
+    const contract = await mavrykToolkit.contract.at('KT1JarALvhDLjtFhraeTMGGoeNLUkuL6jGtM');
     const op = await contract.methodsObject.mint_artist({
         collection_id: 71947,
         editions: 1,
@@ -292,7 +292,7 @@ async function main() {
 ```
 
 What happens here? Let's break it down:
-1- We set up the Tezos Toolkit, and the signer as before.
+1- We set up the Mavryk Toolkit, and the signer as before.
 1- We get the contract metadata from the blockchain. This metadata contains information about the contract, including its entrypoints.
 1- We call the `mint_artist` entrypoint of the contract. We need to provide the data it expects, which is provided as a javascript object. Taquito will automatically encode this data to be sent to the contract.
 1- We wait for the confirmation and print the hash as before.
@@ -430,7 +430,7 @@ import Transfer from "./components/Transfer";
 import { BeaconWallet } from "@mavrykdynamics/taquito-beacon-wallet";
 
 const App = () => {
-  const [Tezos] = useState<MavrykToolkit>(
+  const [Mavryk] = useState<MavrykToolkit>(
     new MavrykToolkit("https://basenet.rpc.mavryk.network")
   );
   const [wallet, setWallet] = useState<BeaconWallet | undefined>(undefined);
@@ -438,13 +438,13 @@ const App = () => {
 
   switch (userAddress) {
     case undefined: return <ConnectButton
-      Tezos={Tezos}
+      Mavryk={Mavryk}
       setUserAddress={setUserAddress}
       setWallet={setWallet}
       wallet={wallet}
     />;
     default: return <Transfer
-      Tezos={Tezos}
+      Mavryk={Mavryk}
     />;
 
   }
@@ -468,14 +468,14 @@ import {
 } from "@airgap/beacon-dapp";
 
 type ButtonProps = {
-  Tezos: MavrykToolkit;
+  Mavryk: MavrykToolkit;
   setUserAddress: Dispatch<SetStateAction<string | undefined>>;
   setWallet: Dispatch<SetStateAction<BeaconWallet | undefined>>;
   wallet: BeaconWallet | undefined;
 };
 
 const ConnectButton = ({
-  Tezos,
+  Mavryk,
   setUserAddress,
   setWallet,
   wallet,
@@ -503,7 +503,7 @@ const ConnectButton = ({
         disableDefaultEvents: false,
         enableMetrics: true,
       });
-      Tezos.setWalletProvider(wallet);
+      Mavryk.setWalletProvider(wallet);
       setWallet(wallet);
     })();
   }, []);
@@ -534,9 +534,9 @@ import { useState } from "react";
 import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
 const Transfer = ({
-  Tezos,
+  Mavryk,
 }: {
-  Tezos: MavrykToolkit;
+  Mavryk: MavrykToolkit;
 }): JSX.Element => {
   const [recipient, setRecipient] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
@@ -546,7 +546,7 @@ const Transfer = ({
     if (recipient && amount) {
       setLoading(true);
       try {
-        const op = await Tezos.wallet
+        const op = await Mavryk.wallet
           .transfer({ to: recipient, amount: parseInt(amount), mumav: true })
           .send();
         await op.confirmation();
@@ -629,7 +629,7 @@ If you have not set up a wallet before, clicking on the Kukai wallet opens a pag
 
 We've come a long way:
  1. We started with a simple command-line application that reads the balance of an address from the blockchain.
- 1. Then, we established a high-level understanding of the blockchain, Tezos, dApps, and Taquito.
+ 1. Then, we established a high-level understanding of the blockchain, Mavryk, dApps, and Taquito.
  1. After that, we sent a `Transfer` operation to the blockchain using Taquito.
  1. Then, we interacted with a smart contract using Taquito.
  1. Finally, we implemented a simple GUI dApp.
@@ -638,8 +638,8 @@ Your journey does not end here. There are many more things to learn. Here are so
 
 - Check out the [Taquito documentation](quick_start) to learn more about Taquito.
 - Learn a smart contract language like [Ligo](https://ligolang.org/).
-- Learn more about Tezos and its ecosystem, check out the [Tezos Developer Portal](https://tezos.com/developers/).
-- See what others are doing: Join Tezos community on [Discord](https://discord.gg/tezos), [Reddit](https://www.reddit.com/r/tezos/), [Twitter](https://twitter.com/tezos), and [Telegram](https://t.me/tezosplatform).
+- Learn more about Mavryk and its ecosystem, check out the [Mavryk Developer Portal](https://tezos.com/developers/).
+- See what others are doing: Join Mavryk community on [Discord](https://discord.gg/tezos), [Reddit](https://www.reddit.com/r/tezos/), [Twitter](https://twitter.com/tezos), and [Telegram](https://t.me/tezosplatform).
 - Start building. There is no better way to learn than to build something. You can start with a simple idea and build on it.
 
 ### What is needed to make the dApp production-ready

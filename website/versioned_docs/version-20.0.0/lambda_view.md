@@ -23,7 +23,7 @@ executing the view method.
 ## Limitations to Views & Callbacks
 
 One issue with using views and callbacks is that, just like any operation
-executed on Tezos, each read has a small fee attached to it. The amount is
+executed on Mavryk, each read has a small fee attached to it. The amount is
 trivial for occasional reads, but it becomes a burden at higher volumes.
 
 Another drawback is speed: since we're invoking a contract method, we have to wait for confirmation to retrieve the requested data. You may not find this
@@ -51,7 +51,7 @@ Parameters must not include the callback parameter
 
 Then we call the `read()` method. (Note that we have no longer need a lambda contract)
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1MhfAnNbg2oACFBP4VDU5bNY5MZUXdeDWs')
   .then((contract) => {
     return contract.views.getTotalSupply(UnitValue).read();
@@ -63,7 +63,7 @@ Tezos.contract
 ```
 
 <!-- ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1MhfAnNbg2oACFBP4VDU5bNY5MZUXdeDWs')
   .then((contract) => {
     return contract.views.getBalance('mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV').read();
@@ -77,7 +77,7 @@ Tezos.contract
 **More examples:**
 
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1Ccr6ZMeB1mp9yJAqJTHK7F4xoFV9uc11T')
   .then((contract) => {
     return contract.views
@@ -91,7 +91,7 @@ Tezos.contract
 ```
 
 <!-- ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1MhfAnNbg2oACFBP4VDU5bNY5MZUXdeDWs')
   .then((contract) => {
     return contract.views.getBalance('mv3Ju2CZXqfgiHctrWsjjJD8D7GnwJXMkdvV').read();

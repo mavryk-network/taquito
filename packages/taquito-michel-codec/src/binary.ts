@@ -16,8 +16,8 @@ import {
   assertMichelsonInstruction,
 } from './michelson-validator';
 import {
-  checkDecodeTezosID,
-  encodeTezosID,
+  checkDecodeMavrykID,
+  encodeMavrykID,
   hexBytes,
   isPairData,
   isPairType,
@@ -859,7 +859,7 @@ const getWriteTransformFunc = (t: MichelsonType): WriteTransformFunc => {
         }
         let bytes: BytesLiteral;
         if ('string' in d) {
-          const id = checkDecodeTezosID(d.string, 'ChainID');
+          const id = checkDecodeMavrykID(d.string, 'ChainID');
           if (id === null) {
             throw new MichelsonTypeError(t, `chain id base58 expected: ${d.string}`, d);
           }
@@ -877,7 +877,7 @@ const getWriteTransformFunc = (t: MichelsonType): WriteTransformFunc => {
         }
         let bytes: BytesLiteral;
         if ('string' in d) {
-          const sig = checkDecodeTezosID(
+          const sig = checkDecodeMavrykID(
             d.string,
             'ED25519Signature',
             'SECP256K1Signature',
@@ -901,7 +901,7 @@ const getWriteTransformFunc = (t: MichelsonType): WriteTransformFunc => {
         }
         let bytes: BytesLiteral;
         if ('string' in d) {
-          const pkh = checkDecodeTezosID(
+          const pkh = checkDecodeMavrykID(
             d.string,
             'ED25519PublicKeyHash',
             'SECP256K1PublicKeyHash',
@@ -926,7 +926,7 @@ const getWriteTransformFunc = (t: MichelsonType): WriteTransformFunc => {
         }
         let bytes: BytesLiteral;
         if ('string' in d) {
-          const key = checkDecodeTezosID(
+          const key = checkDecodeMavrykID(
             d.string,
             'ED25519PublicKey',
             'SECP256K1PublicKey',
@@ -952,7 +952,7 @@ const getWriteTransformFunc = (t: MichelsonType): WriteTransformFunc => {
         let bytes: BytesLiteral;
         if ('string' in d) {
           const s = d.string.split('%');
-          const address = checkDecodeTezosID(
+          const address = checkDecodeMavrykID(
             s[0],
             'ED25519PublicKeyHash',
             'SECP256K1PublicKeyHash',
@@ -1028,7 +1028,7 @@ const writePassThrough: WriteTransformFunc = (e: Expr) => {
  * identical to the one used by PACK and UNPACK Michelson instructions.
  * Without a type definition (not recommended) the data will be encoded as a binary form of a generic Michelson expression.
  * Type definition allows some types like `timestamp` and `address` and other base58 representable types to be encoded to
- * corresponding optimized binary forms borrowed from the Tezos protocol
+ * corresponding optimized binary forms borrowed from the Mavryk protocol
  *
  * ```typescript
  * const data: MichelsonData = {
@@ -1202,7 +1202,7 @@ const getReadTransformFuncs = (t: MichelsonType): ReadTransformFuncs => {
           if (bytes === null) {
             throw new MichelsonTypeError(t, `can't parse bytes: ${d.bytes}`, d);
           }
-          return { string: encodeTezosID('ChainID', bytes) };
+          return { string: encodeMavrykID('ChainID', bytes) };
         },
       ];
 
@@ -1220,7 +1220,7 @@ const getReadTransformFuncs = (t: MichelsonType): ReadTransformFuncs => {
           if (bytes === null) {
             throw new MichelsonTypeError(t, `can't parse bytes: ${d.bytes}`, d);
           }
-          return { string: encodeTezosID('GenericSignature', bytes) };
+          return { string: encodeMavrykID('GenericSignature', bytes) };
         },
       ];
 
@@ -1242,7 +1242,7 @@ const getReadTransformFuncs = (t: MichelsonType): ReadTransformFuncs => {
           const addr = readPublicKeyHash(rd);
           return {
             string:
-              encodeTezosID(addr.type, addr.hash) + (addr.entryPoint ? '%' + addr.entryPoint : ''),
+              encodeMavrykID(addr.type, addr.hash) + (addr.entryPoint ? '%' + addr.entryPoint : ''),
           };
         },
       ];
@@ -1263,7 +1263,7 @@ const getReadTransformFuncs = (t: MichelsonType): ReadTransformFuncs => {
           }
           const rd = new Reader(new Uint8Array(bytes));
           const pk = readPublicKey(rd);
-          return { string: encodeTezosID(pk.type, pk.publicKey) };
+          return { string: encodeMavrykID(pk.type, pk.publicKey) };
         },
       ];
 
@@ -1285,7 +1285,7 @@ const getReadTransformFuncs = (t: MichelsonType): ReadTransformFuncs => {
           const addr = readAddress(rd);
           return {
             string:
-              encodeTezosID(addr.type, addr.hash) + (addr.entryPoint ? '%' + addr.entryPoint : ''),
+              encodeMavrykID(addr.type, addr.hash) + (addr.entryPoint ? '%' + addr.entryPoint : ''),
           };
         },
       ];

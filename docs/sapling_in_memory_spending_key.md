@@ -16,7 +16,7 @@ Instantiation of a `InMemorySpendingkey` from Mnemonic does not require a passwo
 
 Params:
   - `mnemonic` list of words
-  - `derivationPath` tezos current standard 'm/'
+  - `derivationPath` mavryk current standard 'm/'
 
 Returns: 
   - InMemorySpendingKey class instantiated

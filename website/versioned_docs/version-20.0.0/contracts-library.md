@@ -18,12 +18,12 @@ import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
 const contractsLibrary = new ContractsLibrary();
-const Tezos = new MavrykToolkit('rpc');
+const Mavryk = new MavrykToolkit('rpc');
 
 contractsLibrary.addContract({
     'contractAddress1': {
-        script: script1, // script should be obtained from Tezos.rpc.getNormalizedScript('contractAddress1')
-        entrypoints: entrypoints1 // entrypoints should be obtained from Tezos.rpc.getEntrypoints('contractAddress1')
+        script: script1, // script should be obtained from Mavryk.rpc.getNormalizedScript('contractAddress1')
+        entrypoints: entrypoints1 // entrypoints should be obtained from Mavryk.rpc.getEntrypoints('contractAddress1')
     },
     'contractAddress2': {
         script: script2,
@@ -31,8 +31,8 @@ contractsLibrary.addContract({
     }
 })
 
-Tezos.addExtension(contractsLibrary);
+Mavryk.addExtension(contractsLibrary);
 
 // The script en entrypoints are loaded from the contractsLibrary instead of the RPC
-const contract = await Tezos.contract.at('contractAddress1');
+const contract = await Mavryk.contract.at('contractAddress1');
 ```

@@ -2,7 +2,7 @@
 
 *TypeDoc style documentation is available on-line [here](https://taquito.mavryk.org/typedoc/modules/_taquito_taquito.html)*
 
-The `@mavrykdynamics/taquito` package contains higher-level functionality that builds upon the other packages in the Tezos Typescript Library Suite.
+The `@mavrykdynamics/taquito` package contains higher-level functionality that builds upon the other packages in the Mavryk Typescript Library Suite.
 
 ## CDN Bundle
 
@@ -25,12 +25,12 @@ npm i --save @mavrykdynamics/taquito
 ## Minimal configuration
 ### MavrykToolkit instantiation
 
-The `MavrykToolkit` constructor takes at least an RPC URL as a parameter. When instantiating the toolkit with a URL, a default instance of `RpcClient` is created. The `RpcClient` class is used to interact with the Tezos network.
+The `MavrykToolkit` constructor takes at least an RPC URL as a parameter. When instantiating the toolkit with a URL, a default instance of `RpcClient` is created. The `RpcClient` class is used to interact with the Mavryk network.
 
 ```ts
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 ```
 
 It is also possible to instantiate the `MavrykToolkit` with a class that implements the `RpcClientInterface`. See the `RpcClientCache` from the `@mavrykdynamics/taquito-rpc` package as an example that provides caching functionality.
@@ -47,12 +47,12 @@ Sending operations using the Contract API requires a signer to be configured. Ta
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-Tezos.setProvider({ signer: await InMemorySigner.fromSecretKey('edsk...') });
+Mavryk.setProvider({ signer: await InMemorySigner.fromSecretKey('edsk...') });
 
 // Using the contract API, the follwing operation is signed using the configured signer:
-await Tezos.contract.transfer({ to: publicKeyHash, amount: 2 });
+await Mavryk.contract.transfer({ to: publicKeyHash, amount: 2 });
 ```
 
 **Configure a wallet to use the Wallet API**
@@ -63,15 +63,15 @@ Sending operations using the Wallet API requires a wallet to be configured. The 
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 const wallet = new BeaconWallet(options);
 
 await wallet.requestPermissions(network);
 
-Tezos.setWalletProvider(wallet);
+Mavryk.setWalletProvider(wallet);
 
 // Using the wallet API, the configured wallet will prepare the transaction and broadcast it
-await Tezos.wallet.transfer({ to: publicKeyHash, amount: 2 }).send();
+await Mavryk.wallet.transfer({ to: publicKeyHash, amount: 2 }).send();
 ```
 
 ## MavrykToolkit examples of additional configuration
@@ -84,7 +84,7 @@ Replace the default `RpcForger` with an instance of `LocalForger`:
 
 ```ts
 import { localForger } from '@mavrykdynamics/taquito-local-forger'
-Tezos.setForgerProvider(localForger);
+Mavryk.setForgerProvider(localForger);
 ```
 
 ### Packer
@@ -94,7 +94,7 @@ To fetch values of the big map using the local implementation to pack data, repl
 ```ts
 import { MichelCodecPacker } from '@mavrykdynamics/taquito';
 // Fetch values of the big map using local implementation to pack data
-Tezos.setPackerProvider(new MichelCodecPacker());
+Mavryk.setPackerProvider(new MichelCodecPacker());
 ```
 
 ### Poller configuration
@@ -102,7 +102,7 @@ Tezos.setPackerProvider(new MichelCodecPacker());
 Polling interval for operation confirmation can be set globally for a taquito instance.
 
 ```js
-Tezos.setProvider(
+Mavryk.setProvider(
     {
         config: {
             confirmationPollingIntervalSecond: 5,
@@ -117,7 +117,7 @@ Tezos.setProvider(
 Use the `estimate` member to estimate fees, gas and storage of operations.
 
 ```ts
-const estimate = await Tezos.estimate.transfer(transferParams);
+const estimate = await Mavryk.estimate.transfer(transferParams);
 ```
 
 ## Stream
@@ -125,7 +125,7 @@ const estimate = await Tezos.estimate.transfer(transferParams);
 Use the `stream` member to subscribe to specific operations:
 
 ```ts
-Tezos.setProvider({
+Mavryk.setProvider({
     config: { shouldObservableSubscriptionRetry: true, streamerPollingIntervalMilliseconds: 15000 }
 });
 
@@ -137,7 +137,7 @@ const bakerDelegation = {
     and: [{ destination: 'mv2MzgCFpDwh37SnEdzzMhQWzmCyj32tCsMG' }, { kind: 'delegation' }]
 }
 
-const sub = tezos.stream.subscribeOperation({
+const sub = mavryk.stream.subscribeOperation({
     or: [bakerAttestationFilter, bakerDelegation]
 })
 

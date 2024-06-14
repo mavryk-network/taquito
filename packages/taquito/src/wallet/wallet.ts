@@ -305,7 +305,7 @@ export class Wallet {
   }
 
   /**
-   * @description Transfer tezos tokens from current address to a specific address or call a smart contract.
+   * @description Transfer mavryk tokens from current address to a specific address or call a smart contract.
    * @returns a TransactionWalletOperation promise object when followed by .send()
    * @param params operation parameter
    */
@@ -348,7 +348,7 @@ export class Wallet {
 
   /**
    * @description Unstake the given amount. If "everything" is given as amount, unstakes everything from the staking balance.
-   * Unstaked tez remains frozen for a set amount of cycles (the slashing period) after the operation. Once this period is over,
+   * Unstaked mav remains frozen for a set amount of cycles (the slashing period) after the operation. Once this period is over,
    * the operation "finalize unstake" must be called for the funds to appear in the liquid balance.
    * @returns a TransactionWalletOperation promise object when followed by .send()
    * @param Unstake pseudo-operation parameter

@@ -6,7 +6,7 @@ import {
 } from '../../data/deposit_contract';
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
-  const Tezos = lib;
+  const Mavryk = lib;
 
   describe(`Test contract call with amount using: ${rpc}`, () => {
     beforeEach(async () => {
@@ -16,7 +16,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
     it(
       'originates a contract with SUB MUMAV and sends base layer tokens when calling contract methods',
       async () => {
-        const op = await Tezos.contract.originate({
+        const op = await Mavryk.contract.originate({
           balance: '0',
           code: depositContractCode,
           init: depositContractStorage,
@@ -27,7 +27,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         const operation = await contract.methods.deposit(null).send({ amount: 1 });
         await operation.confirmation();
         expect(operation.status).toEqual('applied');
-        let balance = await Tezos.mv.getBalance(contract.address);
+        let balance = await Mavryk.mv.getBalance(contract.address);
         expect(balance.toString()).toEqual('1000000');
 
         const operationMumav = await contract.methods
@@ -35,7 +35,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
           .send({ amount: 1, mumav: true } as any);
         await operationMumav.confirmation();
         expect(operationMumav.status).toEqual('applied');
-        balance = await Tezos.mv.getBalance(contract.address);
+        balance = await Mavryk.mv.getBalance(contract.address);
         expect(balance.toString()).toEqual('1000001');
       }
     );

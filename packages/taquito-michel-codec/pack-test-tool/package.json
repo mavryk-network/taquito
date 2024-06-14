@@ -1,7 +1,7 @@
 {
   "name": "pack-test-tool",
   "version": "20.0.0",
-  "description": "Generate pack test data via Tezos RPC",
+  "description": "Generate pack test data via Mavryk RPC",
   "main": "pack-test-tool.js",
   "private": true,
   "scripts": {},

@@ -8,15 +8,15 @@ import { ContractsLibrary } from '@mavrykdynamics/taquito-contracts-library';
 const contractsLibrary = new ContractsLibrary();
 contractsLibrary.addContract({
     'contractAddress1': {
-        script: script1, // obtained from Tezos.rpc.getNormalizedScript('contractAddress1')
-        entrypoints: entrypoints1 // obtained from Tezos.rpc.getEntrypoints('contractAddress1')
+        script: script1, // obtained from Mavryk.rpc.getNormalizedScript('contractAddress1')
+        entrypoints: entrypoints1 // obtained from Mavryk.rpc.getEntrypoints('contractAddress1')
     },
     'contractAddress2': {
         script: script2,
         entrypoints: entrypoints2
     }
 })
-Tezos.addExtension(contractsLibrary);
+Mavryk.addExtension(contractsLibrary);
 ```
 
 See the top-level [https://github.com/ecadlabs/taquito](https://github.com/ecadlabs/taquito) file for details on reporting issues, contributing and versioning.

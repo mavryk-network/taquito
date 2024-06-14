@@ -5,10 +5,10 @@ const provider = 'https://mainnet.ecadinfra.com/';
 
 const example = async () => {
 
-  const tezos = new MavrykToolkit(provider)
+  const mavryk = new MavrykToolkit(provider)
 
   try {
-    const contract = await tezos.contract.at('KT1EctCuorV2NfVb1XTQgvzJ88MQtWP8cMMv') //StakerDAO
+    const contract = await mavryk.contract.at('KT1EctCuorV2NfVb1XTQgvzJ88MQtWP8cMMv') //StakerDAO
     const p = new Parser()
 
     console.log('Pretty Print Michelson:')

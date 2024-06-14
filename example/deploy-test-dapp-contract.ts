@@ -8,12 +8,12 @@ const rpcUrl = 'http://parisnet.i.ecadinfra.com:8732'
 originate(rpcUrl)
 
 async function originate(url: string) {
-  const Tezos = new MavrykToolkit(url)
+  const Mavryk = new MavrykToolkit(url)
   // if it's a new protocol might need to fund alice's address mv1Hox9jGJg3uSmsv9NTvuK7rMHh25cq44nv
-  Tezos.setSignerProvider(new InMemorySigner('edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq'))
+  Mavryk.setSignerProvider(new InMemorySigner('edsk3QoqBuvdamxouPhin7swCvkQNgq4jP5KZPbwWNnwdZpSpJiEbq'))
 
 
-  let contract = await Tezos.contract.originate({
+  let contract = await Mavryk.contract.originate({
     code: code,
     init: storage
   })

@@ -64,7 +64,7 @@ const data = chest.open(chestKey, time);
 - `payload` relates to the message payload you would like to lock in a chest
 
 ## Coinflip Contract Example
-This example is an excerpt from [Tezos docs](https://tezos.gitlab.io/active/timelock.html?highlight=timelock#example) and contracts are taken from [timelock_flip.mv](https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/contracts/timelock_flip.mv).
+This example is an excerpt from [Mavryk docs](https://tezos.gitlab.io/active/timelock.html?highlight=timelock#example) and contracts are taken from [timelock_flip.mv](https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/contracts/timelock_flip.mv).
 
 This game emulates a time constrained "guess who" game using timelocks. The goal of the game is for the challenger to guess which value was stored by the administrator. The challenger has one guess, and must submit it within 10 blocks of the game initialization.
 
@@ -148,9 +148,9 @@ Let's originate the contract with initial storage values `level` of 0, a stub ch
 // import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 // import { timelockCode, timelockStorage } from './timelock-flip-contract';
 
-// const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com');
+// const Mavryk = new MavrykToolkit('https://ghostnet.ecadinfra.com');
 
-const originate = await Tezos.contract.originate({ code: timelockCode, init: timelockStorage });
+const originate = await Mavryk.contract.originate({ code: timelockCode, init: timelockStorage });
 await originate.confirmation()
 contract = await originate.contract();
 const originateStorage: any = await contract.storage()

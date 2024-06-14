@@ -25,7 +25,7 @@ The constructor of the `MavrykToolkit` class takes an RPC URL as a parameter. It
 ```js
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 ```
 
 In some cases, it can be useful to make more than one instance of Taquito, perhaps if you wanted to communicate with two different RPC nodes or offer other Signing options. You can now up separate instances with various providers or configurations per instance.
@@ -34,7 +34,7 @@ In some cases, it can be useful to make more than one instance of Taquito, perha
 
 ### Changing the underlying signer
 
-Taquito's Contract API supports different signers. There is no default signer configured. A signer is required if you intend to inject operations into the Tezos blockchain.
+Taquito's Contract API supports different signers. There is no default signer configured. A signer is required if you intend to inject operations into the Mavryk blockchain.
 
 You can set which signer you wish to use as follows:
 
@@ -42,9 +42,9 @@ You can set which signer you wish to use as follows:
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { RemoteSigner } from '@mavrykdynamics/taquito-remote-signer';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-Tezos.setProvider({
+Mavryk.setProvider({
   signer: new RemoteSigner(pkh, rootUrl, { headers: requestHeaders });,
 });
 ```
@@ -53,13 +53,13 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 
 ## Examples
 
-### Get the current Tezos spendable balance for an address
+### Get the current Mavryk spendable balance for an address
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.mv
+Mavryk.mv
   .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
   .then((balance) => println(`${balance.toNumber() / 1000000} ṁ`))
   .catch((error) => println(JSON.stringify(error)));
@@ -67,7 +67,7 @@ Tezos.mv
 
 ### Using the inMemory Signer and Importing a key
 
-The `InMemorySigner` package is useful for development and testing. It's an easy way to get started with Tezos when you don't need to interact with a user's wallet. The `InMemorySigner` is suitable for testing and development. Should you be writing code for production that deals with real value tokens, we strongly recommend that you use a RemoteSigner that an HSM backs.
+The `InMemorySigner` package is useful for development and testing. It's an easy way to get started with Mavryk when you don't need to interact with a user's wallet. The `InMemorySigner` is suitable for testing and development. Should you be writing code for production that deals with real value tokens, we strongly recommend that you use a RemoteSigner that an HSM backs.
 
 This feature will import your private key in memory and sign operations using this key.
 
@@ -79,9 +79,9 @@ If you have a private key, you can import it as follows:
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 import { InMemorySigner, importKey } from '@mavrykdynamics/taquito-signer';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-Tezos.setProvider({
+Mavryk.setProvider({
   signer: new InMemorySigner('YOUR_PRIVATE_KEY'),
 });
 ```
@@ -105,7 +105,7 @@ const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Transfering ${amount} ṁ to ${address}...`);
-Tezos.contract
+Mavryk.contract
   .transfer({ to: address, amount: amount })
   .then((op) => {
     println(`Waiting for ${op.hash} to be confirmed...`);
@@ -123,7 +123,7 @@ const amount = 2;
 const address = 'mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc';
 
 println(`Transfering ${amount} ṁ to ${address}...`);
-Tezos.wallet
+Mavryk.wallet
   .transfer({ to: address, amount: amount })
   .send()
   .then((op) => {
@@ -150,7 +150,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((contract) => {
     const i = 7;
@@ -170,7 +170,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1BJadpDyLCACMH7Tt9xtpx4dQZVKw9cDF7')
   .then((wallet) => {
     const i = 7;

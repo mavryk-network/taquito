@@ -16,7 +16,7 @@ This feature brings the following:
 
 **Here is a general scenario example of using the global constant:**
 
-- Alice wants to originate a contract, but its code is so large that it does not fit the Tezos size limit for contracts.
+- Alice wants to originate a contract, but its code is so large that it does not fit the Mavryk size limit for contracts.
 - Alice registers a chosen expression from her contract to the global table of constants by sending a `register_global_constant` operation to the node.
 - The precedent operation returns the index of the registered constant, which corresponds to the hash of the expression (Blake2b hash + Base58 encode + prefix expr)
 - Alice replaces the newly registered expression in the code of her contract with the primitive `constant` and the corresponding hash.
@@ -37,7 +37,7 @@ A `registerGlobalConstant` method is available on the `ContractProvider` class. 
 *Note that this example is for demonstration purposes but has no real value as the registered expression is very small.*
 
 ```ts
-const op = await Tezos.contract.registerGlobalConstant({
+const op = await Mavryk.contract.registerGlobalConstant({
     value: { "prim": "or",
                 "args":
                   [ { "prim": "int", "annots": [ "%decrement" ] },
@@ -127,7 +127,7 @@ Here is an example using the `withRegisterGlobalConstant` method:
 ```ts
 import { OpKind } from '@mavrykdynamics/taquito';
 
-const batchOp = await Tezos.contract.batch()
+const batchOp = await Mavryk.contract.batch()
 .withRegisterGlobalConstant({
     value: {
         prim: 'pair',
@@ -149,7 +149,7 @@ Here is an example without using the `withRegisterGlobalConstant` method:
 ```ts
 import { OpKind } from '@mavrykdynamics/taquito';
 
-const batchOp = await Tezos.contract.batch([
+const batchOp = await Mavryk.contract.batch([
     {
         kind: OpKind.REGISTER_GLOBAL_CONSTANT,
         value: {
@@ -179,15 +179,15 @@ import { MavrykToolkit, DefaultGlobalConstantsProvider } from '@mavrykdynamics/t
 const expression = { "prim": "int" }
 const constantHash = 'expruu5BTdW7ajqJ9XPTF3kgcV78pRiaBW3Gq31mgp3WSYjjUBYxre';
 
-const Tezos = new MavrykToolkit('rpc_url');
+const Mavryk = new MavrykToolkit('rpc_url');
 const globalConstantProvider = new DefaultGlobalConstantsProvider();
 globalConstantProvider.loadGlobalConstant({
   [constantHash]: expression
 })
-Tezos.setGlobalConstantsProvider(globalConstantProvider);
+Mavryk.setGlobalConstantsProvider(globalConstantProvider);
 
 // The `getGlobalConstantByHash` method of the configured global constant provider is internally called when preparing the operation. This allows accessing the right Michelson type to encode the storage object into the corresponding Michelson data properly.
-const op = await Tezos.contract.originate({
+const op = await Mavryk.contract.originate({
      code: [{
          prim: 'parameter',
          args: [{

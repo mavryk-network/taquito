@@ -36,9 +36,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractStorageAnnot,
     storage: {
@@ -62,9 +62,9 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractStorageAnnot,
     storage: {
@@ -111,9 +111,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractStorageWithoutAnnot,
     storage: {
@@ -137,9 +137,9 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractStorageWithoutAnnot,
     storage: {
@@ -188,9 +188,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractStorageWithAndWithoutAnnot,
     storage: {
@@ -215,9 +215,9 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractStorageWithAndWithoutAnnot,
     storage: {

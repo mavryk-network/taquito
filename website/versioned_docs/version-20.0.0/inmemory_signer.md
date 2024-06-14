@@ -27,9 +27,9 @@ If you configure Taquito this way, you will now be able to use every function th
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-Tezos.setProvider({ signer: await InMemorySigner.fromSecretKey('your_private_key') });
+Mavryk.setProvider({ signer: await InMemorySigner.fromSecretKey('your_private_key') });
 ```
 
 :::note
@@ -41,13 +41,13 @@ The `fromSecretKey` method takes a secret that is base58 encoded as a parameter.
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito'
 // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey('edsk2rKA8YEExg9Zo2qNPiQnnYheF1DhqjLVmfKdxiFfu5GyGRZRnb')
   .then((theSigner) => {
-    Tezos.setProvider({ signer: theSigner });
+    Mavryk.setProvider({ signer: theSigner });
     //We can access the public key hash
-    return Tezos.signer.publicKeyHash();
+    return Mavryk.signer.publicKeyHash();
   })
   .then((publicKeyHash) => {
     println(`The public key hash associated is: ${publicKeyHash}.`);
@@ -58,13 +58,13 @@ InMemorySigner.fromSecretKey('edsk2rKA8YEExg9Zo2qNPiQnnYheF1DhqjLVmfKdxiFfu5GyGR
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito'
 // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey('spsk2Fiz7sGP5fNMJrokp6ynTa4bcFbsRhw58FHXbNf5ProDNFJ5Xq')
   .then((theSigner) => {
-    Tezos.setProvider({ signer: theSigner });
+    Mavryk.setProvider({ signer: theSigner });
     //We can access the public key hash
-    return Tezos.signer.publicKeyHash();
+    return Mavryk.signer.publicKeyHash();
   })
   .then((publicKeyHash) => {
     println(`The public key hash associated is: ${publicKeyHash}.`);
@@ -78,7 +78,7 @@ When required, Taquito offers the `b58cencode` function allowing to encode the s
 // import { b58cencode, prefix, Prefix } from '@mavrykdynamics/taquito-utils';
 // import { MavrykToolkit } from '@mavrykdynamics/taquito'
 // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 const b58encodedSecret = b58cencode(
   '7c842c15c8b0c8fd228e6cb5302a50201f41642dd36b699003fb3c857920bc9d',
@@ -90,9 +90,9 @@ println(
 //We take the encoded secret to configure the signer.
 InMemorySigner.fromSecretKey(b58encodedSecret)
   .then((theSigner) => {
-    Tezos.setProvider({ signer: theSigner });
+    Mavryk.setProvider({ signer: theSigner });
     //We can access the public key hash
-    return Tezos.signer.publicKeyHash();
+    return Mavryk.signer.publicKeyHash();
   })
   .then((publicKeyHash) => {
     println(`The public key hash associated is: ${publicKeyHash}.`);
@@ -108,8 +108,8 @@ If your private key is encrypted, you can specify a passphrase to decrypt it. Do
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
-Tezos.setProvider({
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+Mavryk.setProvider({
   signer: await InMemorySigner.fromSecretKey('your_private_key', 'your_passphrase'),
 });
 ```
@@ -119,16 +119,16 @@ Here are three examples with encrypted private keys where the passphrase used is
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito'
 // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey(
   'edesk1GXwWmGjXiLHBKxGBxwmNvG21vKBh6FBxc4CyJ8adQQE2avP5vBB57ZUZ93Anm7i4k8RmsHaPzVAvpnHkFF',
   'test'
 )
   .then((theSigner) => {
-    Tezos.setProvider({ signer: theSigner });
+    Mavryk.setProvider({ signer: theSigner });
     //We can access the public key hash
-    return Tezos.signer.publicKeyHash();
+    return Mavryk.signer.publicKeyHash();
   })
   .then((publicKeyHash) => {
     println(`The public key hash associated is: ${publicKeyHash}.`);
@@ -139,16 +139,16 @@ InMemorySigner.fromSecretKey(
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito'
 // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey(
   'spesk24UQkAiJk8X6AufNtRv1WWPp2BAssEgmijCTQPMgUXweSKPmLdbyAjPmCG1pR2dC9P5UZZVeZcb7zVodUHZ',
   'test'
 )
   .then((theSigner) => {
-    Tezos.setProvider({ signer: theSigner });
+    Mavryk.setProvider({ signer: theSigner });
     //We can access the public key hash
-    return Tezos.signer.publicKeyHash();
+    return Mavryk.signer.publicKeyHash();
   })
   .then((publicKeyHash) => {
     println(`The public key hash associated is: ${publicKeyHash}.`);
@@ -159,16 +159,16 @@ InMemorySigner.fromSecretKey(
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito'
 // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 InMemorySigner.fromSecretKey(
   'p2esk28hoUE2J88QNFj2aDX2pjzL7wcVh2g8tkEwtWWguby9M3FHUgSbzvF2Sd7wQ4Kd8crFwvto6gF3otcBuo4T',
   'test'
 )
   .then((theSigner) => {
-    Tezos.setProvider({ signer: theSigner });
+    Mavryk.setProvider({ signer: theSigner });
     //We can access the public key hash
-    return Tezos.signer.publicKeyHash();
+    return Mavryk.signer.publicKeyHash();
   })
   .then((publicKeyHash) => {
     println(`The public key hash associated is: ${publicKeyHash}.`);
@@ -188,7 +188,7 @@ With ed25519 default derivation path (Reminder Must be hardened with either h or
 ```js live noInline
   // import { MavrykToolkit } from '@mavrykdynamics/taquito
   // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-  // const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+  // const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
   // ed25519 must have all hardened paths
 
@@ -199,8 +199,8 @@ With ed25519 default derivation path (Reminder Must be hardened with either h or
 
 
   const signer = InMemorySigner.fromMnemonic(params);
-  Tezos.setSignerProvider(signer)
-  Tezos.signer.publicKeyHash()
+  Mavryk.setSignerProvider(signer)
+  Mavryk.signer.publicKeyHash()
     .then((publicKeyHash) => {
       println(`The public key hash associated is: ${publicKeyHash}`)
     })
@@ -212,7 +212,7 @@ With a non-default derivation path non-hardened with a mv2 address
 ```js live noInline
   // import { MavrykToolkit } from '@mavrykdynamics/taquito
   // import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
-  // const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+  // const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
   const params = {
     mnemonic: 'author crumble medal dose ribbon permit ankle sport final hood shadow vessel horn hawk enter zebra prefer devote captain during fly found despair business',
@@ -222,8 +222,8 @@ With a non-default derivation path non-hardened with a mv2 address
   }
 
   const signer = InMemorySigner.fromMnemonic(params);
-  Tezos.setSignerProvider(signer)
-  Tezos.signer.publicKeyHash()
+  Mavryk.setSignerProvider(signer)
+  Mavryk.signer.publicKeyHash()
     .then((publicKeyHash) => {
       println(`The public key hash associated is: ${publicKeyHash}`)
     })
@@ -240,16 +240,16 @@ Since August 2022, the JSON faucets we used to import with the `importKey` funct
 ### A simple factory multiple keys/wallets
 
 If you require to sign operations with many different keys, then implementing a factory function can be useful.
-The `signerFactory` function example creates a new Tezos instance. Use the Tezos instance for signing, and discard it when complete.
+The `signerFactory` function example creates a new Mavryk instance. Use the Mavryk instance for signing, and discard it when complete.
 
 ```js
 import { InMemorySigner } from '@mavrykdynamics/taquito-signer';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
 
 const signerFactory = async (rpcUrl: string, pk: string) => {
-  const Tezos = new MavrykToolkit(rpcUrl);
-  await Tezos.setProvider({ signer: await InMemorySigner.fromSecretKey(pk) });
-  return Tezos;
+  const Mavryk = new MavrykToolkit(rpcUrl);
+  await Mavryk.setProvider({ signer: await InMemorySigner.fromSecretKey(pk) });
+  return Mavryk;
 };
 
 const bob = await signerFactory('bobs_secret_key');

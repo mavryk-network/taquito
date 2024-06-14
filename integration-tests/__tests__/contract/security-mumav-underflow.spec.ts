@@ -8,7 +8,7 @@ import { CONFIGS } from '../../config';
  */
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
-  const Tezos = lib;
+  const Mavryk = lib;
   const weeklynet = protocol === Protocols.ProtoALpha ? test : test.skip;
 
   describe(`Test contracts using: ${rpc}`, () => {
@@ -18,7 +18,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
 
     weeklynet('Verify mumav underflow example', async () => {
       try {
-        const op = await Tezos.contract.originate({
+        const op = await Mavryk.contract.originate({
           code: `        { parameter unit ;
             storage mumav ;
             code { DROP ;

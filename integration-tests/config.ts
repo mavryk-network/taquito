@@ -30,7 +30,7 @@ export const isSandbox = (config: { rpc: string }) => {
 
 const forgers: ForgerType[] = [ForgerType.COMPOSITE];
 
-// user running integration test can pass environment variable TEZOS_NETWORK_TYPE=sandbox to specify which network to run against
+// user running integration test can pass environment variable MAVRYK_NETWORK_TYPE=sandbox to specify which network to run against
 export enum NetworkType {
   TESTNET,  // corresponds basenet, parisnet and weeklynet etc.
   SANDBOX,  // corresponds to flexmasa local chain
@@ -110,19 +110,19 @@ const defaultConfig = ({
   knownContracts,
   signerConfig
 }: DefaultConfiguration): Config => {
-  const networkType = (process.env['TEZOS_NETWORK_TYPE'] === 'sandbox')
+  const networkType = (process.env['MAVRYK_NETWORK_TYPE'] === 'sandbox')
     ? NetworkType.SANDBOX
     : NetworkType.TESTNET;
   return {
-    rpc: process.env[`TEZOS_RPC_${networkName}`] || defaultRpc,
+    rpc: process.env[`MAVRYK_RPC_${networkName}`] || defaultRpc,
     pollingIntervalMilliseconds: process.env[`POLLING_INTERVAL_MILLISECONDS`] || undefined,
     rpcCacheMilliseconds: process.env[`RPC_CACHE_MILLISECONDS`] || '1000',
-    knownBaker: process.env[`TEZOS_BAKER`] || (networkName === 'WEEKLYNET' ? 'mv1TenQi9u6VPEwjb1kyXCdq5UoLKzH34ozP' : 'mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'),
-    knownContract: process.env[`TEZOS_${networkName}_CONTRACT_ADDRESS`] || knownContracts.contract,
-    knownBigMapContract: process.env[`TEZOS_${networkName}_BIGMAPCONTRACT_ADDRESS`] || knownContracts.bigMapContract,
-    knownTzip1216Contract: process.env[`TEZOS_${networkName}_TZIP1216CONTRACT_ADDRESS`] || knownContracts.tzip12BigMapOffChainContract,
-    knownSaplingContract: process.env[`TEZOS_${networkName}_SAPLINGCONTRACT_ADDRESS`] || knownContracts.saplingContract,
-    knownViewContract: process.env[`TEZOS_${networkName}_ON_CHAIN_VIEW_CONTRACT`] || knownContracts.onChainViewContractAddress,
+    knownBaker: process.env[`MAVRYK_BAKER`] || (networkName === 'WEEKLYNET' ? 'mv1TenQi9u6VPEwjb1kyXCdq5UoLKzH34ozP' : 'mv1A1LYBjHEe6JUT8dg4nLdkftGE7nYPNwfc'),
+    knownContract: process.env[`MAVRYK_${networkName}_CONTRACT_ADDRESS`] || knownContracts.contract,
+    knownBigMapContract: process.env[`MAVRYK_${networkName}_BIGMAPCONTRACT_ADDRESS`] || knownContracts.bigMapContract,
+    knownTzip1216Contract: process.env[`MAVRYK_${networkName}_TZIP1216CONTRACT_ADDRESS`] || knownContracts.tzip12BigMapOffChainContract,
+    knownSaplingContract: process.env[`MAVRYK_${networkName}_SAPLINGCONTRACT_ADDRESS`] || knownContracts.saplingContract,
+    knownViewContract: process.env[`MAVRYK_${networkName}_ON_CHAIN_VIEW_CONTRACT`] || knownContracts.onChainViewContractAddress,
     protocol: protocol,
     signerConfig: signerConfig,
     networkType: networkType
@@ -168,7 +168,7 @@ const weeklynetEphemeral: Config =
     protocol: Protocols.ProtoALpha,
     defaultRpc: 'https://rpc.mavryk.network/mondaynet',
     knownContracts: knownContractsProtoALph,
-    signerConfig: defaultEphemeralConfig('http://key-gen-1.i.tez.ie:3010/mondaynet')
+    signerConfig: defaultEphemeralConfig('http://key-gen-1.i.mav.ie:3010/mondaynet')
   });
 
 const weeklynetSecretKey: Config =
@@ -196,21 +196,21 @@ if (process.env['RUN_WITH_SECRET_KEY']) {
   providers.push(parisnetEphemeral);
 }
 
-const setupForger = (Tezos: MavrykToolkit, forger: ForgerType): void => {
+const setupForger = (Mavryk: MavrykToolkit, forger: ForgerType): void => {
   if (forger === ForgerType.LOCAL) {
-    Tezos.setProvider({ forger: Tezos.getFactory(TaquitoLocalForger)() });
+    Mavryk.setProvider({ forger: Mavryk.getFactory(TaquitoLocalForger)() });
   } else if (forger === ForgerType.COMPOSITE) {
-    const rpcForger = Tezos.getFactory(RpcForger)();
-    const localForger = Tezos.getFactory(TaquitoLocalForger)()
+    const rpcForger = Mavryk.getFactory(RpcForger)();
+    const localForger = Mavryk.getFactory(TaquitoLocalForger)()
     const composite = new CompositeForger([rpcForger, localForger]);
-    Tezos.setProvider({ forger: composite });
+    Mavryk.setProvider({ forger: composite });
   } else if (forger === ForgerType.RPC) {
-    Tezos.setProvider({ forger: Tezos.getFactory(RpcForger)() });
+    Mavryk.setProvider({ forger: Mavryk.getFactory(RpcForger)() });
   }
 };
 
 const setupSignerWithFreshKey = async (
-  Tezos: MavrykToolkit,
+  Mavryk: MavrykToolkit,
   { keyUrl, requestHeaders }: EphemeralConfig
 ) => {
   const httpClient = new HttpBackend();
@@ -224,14 +224,14 @@ const setupSignerWithFreshKey = async (
     });
 
     const signer = new InMemorySigner(key!);
-    Tezos.setSignerProvider(signer);
+    Mavryk.setSignerProvider(signer);
   } catch (e) {
     console.log('An error occurs when trying to fetch a fresh key:', e);
   }
 };
 
 const setupSignerWithEphemeralKey = async (
-  Tezos: MavrykToolkit,
+  Mavryk: MavrykToolkit,
   { keyUrl, requestHeaders }: EphemeralConfig
 ) => {
   const ephemeralUrl = `${keyUrl}/ephemeral`;
@@ -245,19 +245,19 @@ const setupSignerWithEphemeralKey = async (
     });
 
     const signer = new RemoteSigner(pkh, `${ephemeralUrl}/${id}/`, { headers: requestHeaders });
-    Tezos.setSignerProvider(signer);
+    Mavryk.setSignerProvider(signer);
   } catch (e) {
     console.log('An error occurs when trying to fetch an ephemeral key:', e);
   }
 };
 
-const setupWithSecretKey = async (Tezos: MavrykToolkit, signerConfig: SecretKeyConfig) => {
-  Tezos.setSignerProvider(new InMemorySigner(signerConfig.secret_key, signerConfig.password));
+const setupWithSecretKey = async (Mavryk: MavrykToolkit, signerConfig: SecretKeyConfig) => {
+  Mavryk.setSignerProvider(new InMemorySigner(signerConfig.secret_key, signerConfig.password));
 };
 
-const configurePollingInterval = (Tezos: MavrykToolkit, pollingIntervalMilliseconds: string | undefined) => {
+const configurePollingInterval = (Mavryk: MavrykToolkit, pollingIntervalMilliseconds: string | undefined) => {
   if (pollingIntervalMilliseconds) {
-    Tezos.setStreamProvider(Tezos.getFactory(PollingSubscribeProvider)({ pollingIntervalMilliseconds: Number(pollingIntervalMilliseconds) }));
+    Mavryk.setStreamProvider(Mavryk.getFactory(PollingSubscribeProvider)({ pollingIntervalMilliseconds: Number(pollingIntervalMilliseconds) }));
   }
 }
 
@@ -286,13 +286,13 @@ export const CONFIGS = () => {
         signerConfig,
         networkType
       }) => {
-        const Tezos = configureRpcCache(rpc, rpcCacheMilliseconds);
+        const Mavryk = configureRpcCache(rpc, rpcCacheMilliseconds);
 
-        Tezos.setProvider({ config: { confirmationPollingTimeoutSecond: 320 } });
+        Mavryk.setProvider({ config: { confirmationPollingTimeoutSecond: 320 } });
 
-        setupForger(Tezos, forger);
+        setupForger(Mavryk, forger);
 
-        configurePollingInterval(Tezos, pollingIntervalMilliseconds);
+        configurePollingInterval(Mavryk, pollingIntervalMilliseconds);
 
         return {
           rpc,
@@ -300,7 +300,7 @@ export const CONFIGS = () => {
           knownBaker,
           knownContract,
           protocol,
-          lib: Tezos,
+          lib: Mavryk,
           knownBigMapContract,
           knownTzip1216Contract,
           knownSaplingContract,
@@ -309,27 +309,27 @@ export const CONFIGS = () => {
           networkType,
           setup: async (preferFreshKey: boolean = false) => {
             if (signerConfig.type === SignerType.SECRET_KEY) {
-              setupWithSecretKey(Tezos, signerConfig);
+              setupWithSecretKey(Mavryk, signerConfig);
             } else if (signerConfig.type === SignerType.EPHEMERAL_KEY) {
               if (preferFreshKey) {
-                await setupSignerWithFreshKey(Tezos, signerConfig);
+                await setupSignerWithFreshKey(Mavryk, signerConfig);
               } else {
-                await setupSignerWithEphemeralKey(Tezos, signerConfig);
+                await setupSignerWithEphemeralKey(Mavryk, signerConfig);
               }
             }
           },
           createAddress: async () => {
-            const tezos = configureRpcCache(rpc, rpcCacheMilliseconds);
-            setupForger(tezos, forger);
-            configurePollingInterval(tezos, pollingIntervalMilliseconds);
+            const mavryk = configureRpcCache(rpc, rpcCacheMilliseconds);
+            setupForger(mavryk, forger);
+            configurePollingInterval(mavryk, pollingIntervalMilliseconds);
 
             const keyBytes = Buffer.alloc(32);
             nodeCrypto.randomFillSync(keyBytes);
 
             const key = b58cencode(new Uint8Array(keyBytes), prefix[Prefix.P2SK]);
-            await importKey(tezos, key);
+            await importKey(mavryk, key);
 
-            return tezos;
+            return mavryk;
           },
         };
       }

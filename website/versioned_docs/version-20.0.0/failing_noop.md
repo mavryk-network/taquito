@@ -11,7 +11,7 @@ There are use cases for allowing users to sign arbitrary data. It is important t
 ### Signing a failing_noop using the contract api
 
 ```typescript
-const signed = await Tezos.contract.failingNoop({
+const signed = await Mavryk.contract.failingNoop({
     arbitrary: "48656C6C6F20576F726C64", // Hex for: Hello World
     basedOnBlock: 'head', // Can also be 0, to be based on the genesis block
 });
@@ -29,7 +29,7 @@ The payload can be signed on `head`, or a specified number of blocks before `hea
 ### Signing a failing_noop using the wallet api
 
 ```typescript
-const signed = await Tezos.wallet.signFailingNoop({
+const signed = await Mavryk.wallet.signFailingNoop({
     arbitrary: "48656C6C6F20576F726C64", // Hex for: Hello World
     basedOnBlock: 0,
 });
@@ -59,5 +59,5 @@ You can verify the signature:
 ```typescript
 //import { verifySignature } from "@mavrykdynamics/taquito-utils";
 
-verifySignature(signed.bytes, await Tezos.signer.publicKey(), signed.prefixSig, new Uint8Array([3]))
+verifySignature(signed.bytes, await Mavryk.signer.publicKey(), signed.prefixSig, new Uint8Array([3]))
 ```

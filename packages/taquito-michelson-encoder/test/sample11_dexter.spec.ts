@@ -953,7 +953,7 @@ describe('Exchange contract test', () => {
     expect(schema.Execute(rpcToken.script.storage)).toEqual({
       '0': expectMichelsonMap(),
       '1': new BigNumber('1000000'),
-      '2': 'Tezos Gold',
+      '2': 'Mavryk Gold',
       '3': 'TGD',
     });
   });

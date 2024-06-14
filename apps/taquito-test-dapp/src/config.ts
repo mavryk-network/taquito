@@ -14,7 +14,7 @@ export const getRpcUrl = (networkType: SupportedNetworks): string => {
   return rpcUrls[networkType];
 }
 
-export const getTzKtUrl = (networkType: SupportedNetworks): string | undefined => {
+export const getMvKtUrl = (networkType: SupportedNetworks): string | undefined => {
   switch (networkType) {
     case NetworkType.MAINNET:
       return "https://api.mavryk.network";

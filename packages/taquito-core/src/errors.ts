@@ -21,7 +21,7 @@ export class RpcError extends TaquitoError {}
 
 /**
  *  @category Error
- *  @description Error that indicates TezosToolKit has not been configured appropriately
+ *  @description Error that indicates MavrykToolKit has not been configured appropriately
  */
 export class MavrykToolkitConfigError extends TaquitoError {}
 
@@ -102,7 +102,7 @@ export class InvalidBlockHashError extends ParameterValidationError {
 
 /**
  * @category Error
- * @description Error that indicates an invalid amount of tez being passed as a parameter
+ * @description Error that indicates an invalid amount of mav being passed as a parameter
  */
 export class InvalidAmountError extends ParameterValidationError {
   constructor(public readonly amount: string) {

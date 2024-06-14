@@ -22,23 +22,23 @@ Here is a simple example on getting the operation hash of a transaction (transfe
 // import { encodeOpHash } from '@mavrykdynamics/taquito-utils';
 // import { LocalForger } from '@mavrykdynamics/taquito-local-forging';
 
-// const Tezos = new MavrykToolkit('RPC_ENDPOINT');
+// const Mavryk = new MavrykToolkit('RPC_ENDPOINT');
 
-const preparedTransfer = await Tezos.prepare.transaction({
+const preparedTransfer = await Mavryk.prepare.transaction({
   amount: 1,
   to: 'mv1EnD2M4ATv38QrCqx2CbLpC5AKgHqDwdxa'
 });
 
 
 // convert prepared operation into a forgeable object
-const forgeParams = await Tezos.prepare.toForge(preparedTransfer);
+const forgeParams = await Mavryk.prepare.toForge(preparedTransfer);
 
 // forge the transaction operation
 const forger = new LocalForger();
 const forgedBytes = await forger.forge(forgeParams);
 
 // sign the transaction operation
-const signedBytes = await Tezos.signer.sign(forgedBytes);
+const signedBytes = await Mavryk.signer.sign(forgedBytes);
 
 // get the operation hash using the encodeOpHash() function
 const opHash = encodeOpHash(signedBytes.sbytes, new Uint8Array([3]));

@@ -47,16 +47,16 @@ describe('MavrykToolkit test', () => {
   });
 
   it('the default providers are set on the MavrykToolkit at instantiation', () => {
-    const tezos = new MavrykToolkit('rpc');
-    expect(tezos.globalConstants).toBeInstanceOf(NoopGlobalConstantsProvider);
-    expect(tezos.contract).toBeInstanceOf(RpcContractProvider);
-    expect(tezos.estimate).toBeInstanceOf(RPCEstimateProvider);
-    expect(tezos.operation).toBeInstanceOf(OperationFactory);
-    expect(tezos.signer).toBeInstanceOf(NoopSigner);
-    expect(tezos.stream).toBeInstanceOf(PollingSubscribeProvider);
-    expect(tezos.mv).toBeInstanceOf(RpcMvProvider);
-    expect(tezos.wallet).toBeInstanceOf(Wallet);
-    expect(tezos.prepare).toBeInstanceOf(PrepareProvider);
+    const mavryk = new MavrykToolkit('rpc');
+    expect(mavryk.globalConstants).toBeInstanceOf(NoopGlobalConstantsProvider);
+    expect(mavryk.contract).toBeInstanceOf(RpcContractProvider);
+    expect(mavryk.estimate).toBeInstanceOf(RPCEstimateProvider);
+    expect(mavryk.operation).toBeInstanceOf(OperationFactory);
+    expect(mavryk.signer).toBeInstanceOf(NoopSigner);
+    expect(mavryk.stream).toBeInstanceOf(PollingSubscribeProvider);
+    expect(mavryk.mv).toBeInstanceOf(RpcMvProvider);
+    expect(mavryk.wallet).toBeInstanceOf(Wallet);
+    expect(mavryk.prepare).toBeInstanceOf(PrepareProvider);
   });
 
   it('setProvider with string should create rpc provider', () => {

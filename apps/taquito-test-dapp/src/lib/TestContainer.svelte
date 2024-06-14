@@ -4,7 +4,7 @@
   import type { TestSettings, TestResult } from "../types";
   import { shortenHash } from "../utils";
   import { NetworkType } from "@mavrykdynamics/beacon-types";
-  import { getTzKtUrl } from "../config";
+  import { getMvKtUrl } from "../config";
 
   let test: TestSettings | undefined;
   let executionTime = 0;
@@ -31,7 +31,7 @@
         test.id === "set-delegate" ||
         test.id === "stake" ||
         test.id === "unstake" ||
-        test.id === "send-tez-to-etherlink" ||
+        test.id === "send-mav-to-etherlink" ||
         test.id === "set-transaction-limits"
       ) {
         result = await test.run(input);
@@ -328,7 +328,7 @@
           </label>
         </div>
       {:else if test.inputRequired && test.inputType === "etherlink"}
-        <div class="test-input test-send-tez-to-etherlink">
+        <div class="test-input test-send-mav-to-etherlink">
           <label for="etherlink-address">
             <span>Etherlink address</span>
             <input type="string" id="etherlink-address" bind:value={input.address} />
@@ -377,7 +377,7 @@
                 {shortenHash(opHash)}
               {:else}
                 <a
-                  href={`${getTzKtUrl($store.networkType)}/${opHash}`}
+                  href={`${getMvKtUrl($store.networkType)}/${opHash}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

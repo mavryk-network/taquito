@@ -8,11 +8,11 @@ import TabItem from '@theme/TabItem';
 
 Taquito allows developers to interact with Smart Contracts as if they are "Plain Old Javascript Objects."
 
-The "Machine Language" of Tezos Smart Contracts is named [Michelson][3]. Michelson is a stack-based language that is human-readable. It's possible to author Smart-Contracts directly in Michelson. However, developers can use High-Level Languages (such as [Ligo][0] or [SmartPy][1]) to write smart contracts.
+The "Machine Language" of Mavryk Smart Contracts is named [Michelson][3]. Michelson is a stack-based language that is human-readable. It's possible to author Smart-Contracts directly in Michelson. However, developers can use High-Level Languages (such as [Ligo][0] or [SmartPy][1]) to write smart contracts.
 
-Taquito makes developing applications (dApps or traditional programs) around a Tezos Smart Contract easy. Taquito can also "originate" (create) a new Smart Contract to the Tezos Blockchain.
+Taquito makes developing applications (dApps or traditional programs) around a Mavryk Smart Contract easy. Taquito can also "originate" (create) a new Smart Contract to the Mavryk Blockchain.
 
-Michelson is a somewhat specialized language that isn't typical in Javascript or Typescript development contexts. Taquito helps to bridge the gap between the Tezos blockchain and a standard Javascript or Typescript development environment.
+Michelson is a somewhat specialized language that isn't typical in Javascript or Typescript development contexts. Taquito helps to bridge the gap between the Mavryk blockchain and a standard Javascript or Typescript development environment.
 
 ## Taquito's Smart Contract Abstraction
 
@@ -61,7 +61,7 @@ You can view this contract and deploy it to a testnet using the [Ligo WebIDE][2]
 
 ## Loading the contract in Taquito
 
-To load the contract from the Tezos Blockchain, we use the `Tezos.contract.at` method.
+To load the contract from the Mavryk Blockchain, we use the `Mavryk.contract.at` method.
 We can inspect the contract methods and data types using the `c.parameterSchema.ExtractSignatures()` method.
 
 The following example shows how to load the contract and view the methods on that contract.
@@ -75,9 +75,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
   .then((c) => {
     let methods = c.parameterSchema.ExtractSignatures();
@@ -90,9 +90,9 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
   .then((c) => {
     let methods = c.parameterSchema.ExtractSignatures();
@@ -103,14 +103,14 @@ Tezos.wallet
   </TabItem>
 </Tabs>
 
-The `at()` method causes Taquito to query a Tezos nodes RPC API for the contracts "script" and "entrypoints." From these two inputs, Taquito builds an ordinary JavaScript object with methods that correspond to the Smart Contracts entrypoints.
+The `at()` method causes Taquito to query a Mavryk nodes RPC API for the contracts "script" and "entrypoints." From these two inputs, Taquito builds an ordinary JavaScript object with methods that correspond to the Smart Contracts entrypoints.
 
 The `at` method returns a representation of the contract as a plain old javascript object. Taquito dynamically creates an `increment` and `decrement` method that the developer can call as follows:
 
 - `contract.methodsObject.increment()`
 - `contract.methodsObject.decrement()`
 
-In Tezos, to call an entrypoint on a contract, one must send a transfer operation. In the counter contract case, the transfer value can be `0` as the contract does not expect to receive any tokens. The transfer must have the appropriate Michelson values specified as "params" to call the `increment` entrypoint.
+In Mavryk, to call an entrypoint on a contract, one must send a transfer operation. In the counter contract case, the transfer value can be `0` as the contract does not expect to receive any tokens. The transfer must have the appropriate Michelson values specified as "params" to call the `increment` entrypoint.
 
 We can inspect the transfer params produced by Taquito using the `toTransferParams()` method:
 
@@ -123,9 +123,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
   .then((c) => {
     let incrementParams = c.methodsObject.increment(2).toTransferParams();
@@ -137,9 +137,9 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
   .then((c) => {
     let incrementParams = c.methodsObject.increment(2).toTransferParams();
@@ -154,7 +154,7 @@ Tezos.wallet
 
 In the next example, we call the `send()` method. This example requires a different ceremony for getting a temporary key for signing.
 
-We call the `send()` method on the `increment()` method. Taquito then forges this operation into a transfer operation (with a transfer value of zero), signs the operation with our testing key, and injects or broadcasts the operation to the Tezos RPC node.
+We call the `send()` method on the `increment()` method. Taquito then forges this operation into a transfer operation (with a transfer value of zero), signs the operation with our testing key, and injects or broadcasts the operation to the Mavryk RPC node.
 
 Then we wait for the `confirmation(3)` to complete. The `3` number tells Taquito how many confirmations to wait for before resolving the promise. `3` is a good value for this type of demonstration, but we recommend a higher value if you are dealing with mainnet transactions.
 
@@ -167,9 +167,9 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
   .then((contract) => {
     const i = 7;
@@ -188,9 +188,9 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .at('KT1KAUbe1gsdw5BeVQfgjh9xZFrHrKVs8ApD')
   .then((contract) => {
     const i = 7;
@@ -230,9 +230,9 @@ values={[
 In the following example, a contract's `set_child_record` method will be called by passing the parameter in an object format. The `methodsObject` member of the `ContractAbstraction` class allows doing so. First, it is possible to obtain details about the signature of the `set_child_record` entry point by using the `getSignature` method as follow:
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
   .then((contract) => {
     println(`List all contract methods: ${Object.keys(contract.methodsObject)}\n`);
@@ -251,12 +251,12 @@ The preceding example returns an object giving indication on how to structure th
 
 ```js live noInline
 // import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
-importKey(Tezos, secretKey)
+importKey(Mavryk, secretKey)
   .then((signer) => {
-    return Tezos.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN');
+    return Mavryk.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN');
   })
   .then((contract) => {
     return contract.methodsObject
@@ -282,9 +282,9 @@ importKey(Tezos, secretKey)
 In the following example, a contract's `set_child_record` method will be called by passing the arguments using the flattened representation. The `methods` member of the `ContractAbstraction` class allows doing so. First, it is possible to obtain details about the signature of the `set_child_record` entry point by using the `getSignature` method as follow:
 
 ```js live noInline
-// const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com');
+// const Mavryk = new MavrykToolkit('https://ghostnet.ecadinfra.com');
 
-Tezos.contract
+Mavryk.contract
   .at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
   .then((contract) => {
     println(`List all contract methods: ${Object.keys(contract.methodsObject)}\n`);
@@ -303,12 +303,12 @@ The preceding example returns an array which contains the different possible sig
 
 ```js live noInline
 // import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com')
+// const Mavryk = new MavrykToolkit('https://ghostnet.ecadinfra.com')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
-importKey(Tezos, secretKey)
+importKey(Mavryk, secretKey)
   .then((signer) => {
-    return Tezos.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN');
+    return Mavryk.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN');
   })
   .then((contract) => {
     return contract.methods

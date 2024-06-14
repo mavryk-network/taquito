@@ -36,7 +36,7 @@ storage (pair
                                                          (signature %signature))))
                                                  (or
                                                    (or (string %string)
-                                                       (mumav %tez))
+                                                       (mumav %mav))
                                                    (timestamp %timestamp)))))
                               (pair (address %owner) (option %ttl nat)))
                             (option %validator nat))))
@@ -52,7 +52,7 @@ An annotation identifies every argument. Therefore we can ignore optional values
 ```js live noInline
 // import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
 // import { importKey } from '@mavrykdynamics/taquito-signer';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 //%data
 const dataMap = new MichelsonMap();
@@ -83,9 +83,9 @@ const validatorsMap = new MichelsonMap();
 //key is a nat, value is an address
 validatorsMap.set('1', 'mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD')
 
-importKey(Tezos, secretKey)
+importKey(Mavryk, secretKey)
 .then(() => {
-  return Tezos.contract.originate({
+  return Mavryk.contract.originate({
     code : contractJson,
     storage : {
       owner : 'mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', //address
@@ -117,7 +117,7 @@ Here is the parameter of the function defined in Michelson :
                                    (or (bytes %bytes) (int %int)))
                                (or (or (key %key) (key_hash %key_hash))
                                    (or (nat %nat) (signature %signature))))
-                             (or (or (string %string) (mumav %tez))
+                             (or (or (string %string) (mumav %mav))
                                  (timestamp %timestamp)))))
           (pair (bytes %label) (address %owner)))
         (pair (bytes %parent) (option %ttl nat)))
@@ -129,12 +129,12 @@ The way to write the parameter when calling the function of a contract with Taqu
 
 ```js live noInline
 // import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
-importKey(Tezos, secretKey)
+importKey(Mavryk, secretKey)
 .then(signer => {
-    return Tezos.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
+    return Mavryk.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
@@ -153,12 +153,12 @@ importKey(Tezos, secretKey)
 
 ```js live noInline
 // import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
-importKey(Tezos, secretKey)
+importKey(Mavryk, secretKey)
 .then(signer => {
-    return Tezos.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
+    return Mavryk.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { bool : true })
@@ -184,12 +184,12 @@ The `address %address` and the `nat %ttl` of the `set_child_record` function are
 
 ```js live noInline
 // import { MavrykToolkit, MichelsonMap } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network')
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network')
 // import { importKey } from '@mavrykdynamics/taquito-signer';
 
-importKey(Tezos, secretKey)
+importKey(Mavryk, secretKey)
 .then(signer => {
-    return Tezos.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
+    return Mavryk.contract.at('KT1B2exfRrGMjfZqWK1bDemr3nBFhHsUWQuN')
 }).then(myContract => {
     const dataMap = new MichelsonMap();
     dataMap.set("Hello World", { nat : '3' })

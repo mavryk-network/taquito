@@ -70,7 +70,7 @@ npm run test:parisnet -- -t "Verify contract.originate for a contract and call d
 To run tests against a node that is not pre-configured in Taquito, use:
 
 
-`export TEZOS_RPC_PARISNET='http://localhost:8732'`.
+`export MAVRYK_RPC_PARISNET='http://localhost:8732'`.
 
 ## Using a Secret Key Instead of the Keygen API
 

@@ -14,9 +14,9 @@ You first need to include https://www.tezbridge.com/plugin.js in your applicatio
 import { TezBridgeSigner } from '@mavrykdynamics/taquito-tezbridge-signer'
 import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
-const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
-Tezos.setProvider({signer: new TezBridgeSigner()})
+Mavryk.setProvider({signer: new TezBridgeSigner()})
 ```
 
 For more information on how to use TezBridge see https://docs.tezbridge.com/

@@ -9,9 +9,9 @@ import { MichelsonMap } from '@mavrykdynamics/taquito';
 
 Learn how to:
 
-- Fetch data from a `Map` datatype on a Tezos Smart Contract
-- Fetch data from a `BigMap` datatype on a Tezos Smart Contract
-- Initialize `Map` data while originating a new contract to the Tezos Blockchain
+- Fetch data from a `Map` datatype on a Mavryk Smart Contract
+- Fetch data from a `BigMap` datatype on a Mavryk Smart Contract
+- Initialize `Map` data while originating a new contract to the Mavryk Blockchain
 - Use Pairs as a key to access `Map` and `BigMap` values
 - Why Michelson `Map` and `BigMap` don't look like a Javascript `Map`
 
@@ -28,7 +28,7 @@ Michelson offers two variants of `Maps` that are semantically the same but have 
 
 This example builds on the Ligo Lang Taco Shop learning resources.
 
-The storage of the contract used in the following example is a map where a key is a natural number (a `nat`), and a value is a pair composed of two values representing the quantity of stock and `tez` tokens, respectively. The contract's source code is available [here](https://ligolang.org/docs/tutorials/taco-shop/tezos-taco-shop-smart-contract/?lang=jsligo). In the example, the contract is originated with initial values using the `MichelsonMap` class' `set` method.
+The storage of the contract used in the following example is a map where a key is a natural number (a `nat`), and a value is a pair composed of two values representing the quantity of stock and `mav` tokens, respectively. The contract's source code is available [here](https://ligolang.org/docs/tutorials/taco-shop/tezos-taco-shop-smart-contract/?lang=jsligo). In the example, the contract is originated with initial values using the `MichelsonMap` class' `set` method.
 
 <Tabs
 defaultValue="contractAPI"
@@ -41,7 +41,7 @@ values={[
 ```js live noInline
 import { MichelsonMap } from '@mavrykdynamics/taquito';
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
 storageMap.set('1', { current_stock: '10000', max_price: '50' });
@@ -49,7 +49,7 @@ storageMap.set('2', { current_stock: '120', max_price: '20' });
 storageMap.set('3', { current_stock: '50', max_price: '60' });
 
 // contractMapTacoShop variable contains the Michelson Smart Contract source code, and is not shown for brevity
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractMapTacoShop,
     storage: storageMap,
@@ -70,7 +70,7 @@ Tezos.contract
 ```js live noInline wallet
 import { MichelsonMap } from '@mavrykdynamics/taquito';
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
+// const Mavryk = new MavrykToolkit('https://YOUR_PREFERRED_RPC_URL');
 
 const storageMap = new MichelsonMap();
 storageMap.set('1', { current_stock: '10000', max_price: '50' });
@@ -78,7 +78,7 @@ storageMap.set('2', { current_stock: '120', max_price: '20' });
 storageMap.set('3', { current_stock: '50', max_price: '60' });
 
 // contractMapTacoShop variable contains the Michelson Smart Contract source code, and is not shown for brevity
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractMapTacoShop,
     storage: storageMap,
@@ -110,7 +110,7 @@ values={[
 ```js live noInline
 import { MichelsonMap } from '@mavrykdynamics/taquito';
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractMapTacoShop,
     storage: MichelsonMap.fromLiteral({
@@ -135,7 +135,7 @@ Tezos.contract
 ```js live noInline wallet
 import { MichelsonMap } from '@mavrykdynamics/taquito';
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractMapTacoShop,
     storage: MichelsonMap.fromLiteral({
@@ -173,7 +173,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1B3SpFJ1iHagwdkd1utVYP18RyYgZXeGio')
   .then((myContract) => {
     return myContract
@@ -216,7 +216,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1B3SpFJ1iHagwdkd1utVYP18RyYgZXeGio')
   .then((myContract) => {
     return myContract
@@ -316,7 +316,7 @@ storageMap.set(
 );
 
 // contractMapPairKey variable contains the Michelson Smart Contract
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractMapPairKey,
     storage: {
@@ -372,7 +372,7 @@ storageMap.set(
 );
 
 // contractMapPairKey variable contains the Michelson Smart Contract
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractMapPairKey,
     storage: {
@@ -412,7 +412,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1JDDU888CaVWFey2BYxpDzPBaYYn65Q4o3')
   .then((myContract) => {
     return myContract.storage();
@@ -432,7 +432,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1JDDU888CaVWFey2BYxpDzPBaYYn65Q4o3')
   .then((myContract) => {
     return myContract.storage();
@@ -513,7 +513,7 @@ storageMap.set(
 );
 
 // contractMap8pairs variable contains the Michelson Smart Contract
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractMap8pairs,
     storage: storageMap,
@@ -564,7 +564,7 @@ storageMap.set(
 );
 
 // contractMap8pairs variable contains the Michelson Smart Contract
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractMap8pairs,
     storage: storageMap,
@@ -600,7 +600,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1PBDZULVwbDW7BqEANmyEJGWuzjk43hDJG')
   .then((myContract) => {
     return myContract.storage();
@@ -626,7 +626,7 @@ Tezos.contract
 <TabItem value="walletAPI">
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1PBDZULVwbDW7BqEANmyEJGWuzjk43hDJG')
   .then((myContract) => {
     return myContract.storage();
@@ -708,7 +708,7 @@ storageBigMap.set(
   200
 );
 // contractMapBigMap variable contains the Michelson Smart Contract
-Tezos.contract
+Mavryk.contract
   .originate({
     code: contractMapBigMap,
     storage: {
@@ -764,7 +764,7 @@ storageBigMap.set(
   200
 );
 // contractMapBigMap variable contains the Michelson Smart Contract
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: contractMapBigMap,
     storage: {
@@ -799,7 +799,7 @@ values={[
 <TabItem value="contractAPI">
 
 ```js live noInline
-Tezos.contract
+Mavryk.contract
   .at('KT1PZb8sEVvsKQGzLwusyQRkJpSCDQ7WFfny')
   .then((myContract) => {
     return myContract
@@ -832,7 +832,7 @@ Tezos.contract
   <TabItem value="walletAPI">
 
 ```js live noInline wallet
-Tezos.wallet
+Mavryk.wallet
   .at('KT1PZb8sEVvsKQGzLwusyQRkJpSCDQ7WFfny')
   .then((myContract) => {
     return myContract
@@ -866,7 +866,7 @@ Tezos.wallet
 
 ## Local packing for big maps
 
-By default, a call to an RPC node is used to pack data when fetching values from a big map. Big map keys need to be serialized or packed and Taquito relies on the PACK functionality of a Tezos RPC node to pack the big map keys. This may be considered inefficient as it adds a request to a remote node to fetch data.
+By default, a call to an RPC node is used to pack data when fetching values from a big map. Big map keys need to be serialized or packed and Taquito relies on the PACK functionality of a Mavryk RPC node to pack the big map keys. This may be considered inefficient as it adds a request to a remote node to fetch data.
 
 Now, Taquito allows you to pack the required data locally to fetch values from a big map. By relying on the local pack implementation, Taquito eliminates one RPC roundtrip when fetching big map values. This feature makes fetching big map values **50% faster**.
 
@@ -879,8 +879,8 @@ Here is an example:
 
 ```js
 import { MichelCodecPacker } from '@mavrykdynamics/taquito';
-const Tezos = new MavrykToolkit(RPC_URL);
-Tezos.setPackerProvider(new MichelCodecPacker());
+const Mavryk = new MavrykToolkit(RPC_URL);
+Mavryk.setPackerProvider(new MichelCodecPacker());
 ```
 
 After that, Taquito will automatically pack the keys locally when you want to fetch the values of a big map.
@@ -903,9 +903,9 @@ values={[
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.contract
+Mavryk.contract
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')
   .then((contract) => {
     println('Fetching the storage of the contract...');
@@ -933,9 +933,9 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.wallet
+Mavryk.wallet
   .at('KT1LPdW47Aba3kVpNMpRt7sx5yM1M4A8XmAW')
   .then((contract) => {
     println('Fetching the storage of the contract...');

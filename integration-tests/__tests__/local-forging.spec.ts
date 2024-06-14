@@ -5,7 +5,7 @@ import { Protocols, MavrykToolkit } from "@mavrykdynamics/taquito";
 import { ProtoGreaterOrEqual } from '@mavrykdynamics/taquito-michel-codec';
 
 CONFIGS().forEach(({ rpc, protocol }) => {
-  const Tezos = new MavrykToolkit(rpc);
+  const Mavryk = new MavrykToolkit(rpc);
   const parisAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtParisBQ) ? test : test.skip
 
   describe(`Test local forger: ${rpc}`, () => {
@@ -13,7 +13,7 @@ CONFIGS().forEach(({ rpc, protocol }) => {
       parisAndAlpha(`Verify that .forge for local forge will return same result as for network forge for rpc: ${name} (${rpc})`, async () => {
         const localForger = new LocalForger(protocol as unknown as ProtocolsHash);
         const result = await localForger.forge(operation);
-        const rpcResult = await Tezos.rpc.forgeOperations(operation);
+        const rpcResult = await Mavryk.rpc.forgeOperations(operation);
         expect(result).toEqual(rpcResult);
         expect(await localForger.parse(rpcResult)).toEqual(expected || operation);
       });
@@ -23,7 +23,7 @@ CONFIGS().forEach(({ rpc, protocol }) => {
       it(`Verify that .forge for local forge will return same result as for network forge for rpc: ${name} (${rpc})`, async () => {
         const localForger = new LocalForger(protocol as unknown as ProtocolsHash);
         const result = await localForger.forge(operation);
-        const rpcResult = await Tezos.rpc.forgeOperations(operation);
+        const rpcResult = await Mavryk.rpc.forgeOperations(operation);
         expect(result).toEqual(rpcResult);
         expect(await localForger.parse(result)).toEqual(expected || operation);
 

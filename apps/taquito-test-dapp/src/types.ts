@@ -19,8 +19,8 @@ export interface TestSettings {
   lastResult: { option: "none" | "some"; val: boolean };
 }
 
-export type TezosContractAddress = `KT1${string}`;
-export type TezosAccountAddress = `mv${"1" | "2" | "3"}${string}`;
+export type MavrykContractAddress = `KT1${string}`;
+export type MavrykAccountAddress = `mv${"1" | "2" | "3"}${string}`;
 
 // export enum NetworkType {
 //   MAINNET = "mainnet",

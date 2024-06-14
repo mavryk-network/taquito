@@ -6,13 +6,13 @@ author: Simon Boissonneault-Robert
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Taquito can _originate_ (create or deploy) Smart Contracts to the Tezos Blockchain.
+Taquito can _originate_ (create or deploy) Smart Contracts to the Mavryk Blockchain.
 
 ## Example demonstrating origination of a contract
 
 In this example, we will originate the popular multi-sig contract available [here](https://github.com/murbard/smart-contracts/blob/master/multisig/michelson/generic.mv).
 
-> Since version [6.3.2](https://github.com/mavryk-network/mavryk-taquito/releases/tag/6.3.2-beta.0), Taquito allows encoding and decoding between "plain" Michelson and JSON Michelson. Smart Contracts' origination is now more straightforward than it was because it is no longer required to do the tezos-client command-line to convert & expand "plain" Michelson to JSON Michelson. You can now pass JSON Michelson and "plain" Michelson using the `code` parameter of the `originate` method.
+> Since version [6.3.2](https://github.com/mavryk-network/mavryk-taquito/releases/tag/6.3.2-beta.0), Taquito allows encoding and decoding between "plain" Michelson and JSON Michelson. Smart Contracts' origination is now more straightforward than it was because it is no longer required to do the mavkit-client command-line to convert & expand "plain" Michelson to JSON Michelson. You can now pass JSON Michelson and "plain" Michelson using the `code` parameter of the `originate` method.
 
 ## Originate the contract using Taquito
 
@@ -35,8 +35,8 @@ This requires a signer to be configured, ie:
 ```
 import { importKey } from '@mavrykdynamics/taquito-signer';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
-importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
+const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+importKey(Mavryk, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
 ```
 
 </TabItem>
@@ -45,7 +45,7 @@ importKey(Tezos, "p2sk2obfVMEuPUnadAConLWk7Tf4Dt3n4svSgJwrgpamRqJXvaYcg1")
 ```
 import {  BeaconWallet } from '@mavrykdynamics/taquito-beacon-wallet';
 import { MavrykToolkit } from '@mavrykdynamics/taquito';
-const Tezos = new MavrykToolkit('https://ghostnet.ecadinfra.com');
+const Mavryk = new MavrykToolkit('https://ghostnet.ecadinfra.com');
 const option = { name: "nameOfWallet", network: { type: 'ghostnet' }, enableMetrics: true};
 const wallet = new BeaconWallet(option);
 
@@ -57,7 +57,7 @@ await wallet.client.subscribeToEvent(
   },
 
 await wallet.requestPermissions();
-Tezos.setWalletProvider(wallet);
+Mavryk.setWalletProvider(wallet);
 ```
 
   </TabItem>
@@ -93,12 +93,12 @@ values={[
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: genericMultisigJSONfile,
     storage: {
@@ -122,12 +122,12 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: genericMultisigJSONfile,
     storage: {
@@ -164,12 +164,12 @@ values={[
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: genericMultisigJSONfile,
     init: `(Pair 0 (Pair 1 { "edpkuLxx9PQD8fZ45eUzrK3BhfDZJHhBuK4Zi49DcEGANwd2rpX82t" }))`,
@@ -189,12 +189,12 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: genericMultisigJSONfile,
     init: `(Pair 0 (Pair 1 { "edpkuLxx9PQD8fZ45eUzrK3BhfDZJHhBuK4Zi49DcEGANwd2rpX82t" }))`,
@@ -225,12 +225,12 @@ values={[
 
 ```js live noInline
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
 
-Tezos.contract
+Mavryk.contract
   .originate({
     code: genericMultisigJSONfile,
     init: {
@@ -262,12 +262,12 @@ Tezos.contract
 
 ```js live noInline wallet
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
-// const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
+// const Mavryk = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
 // const genericMultisigJSONfile = require('./generic.json')
 // generic.json is referring to Michelson source code in JSON representation
 
-Tezos.wallet
+Mavryk.wallet
   .originate({
     code: genericMultisigJSONfile,
     init: {
@@ -303,7 +303,7 @@ Tezos.wallet
 It is also possible to use Taquito to originate multiple contracts in one operation. The origination operations must be batched with the [Batch API](https://taquito.mavryk.org/docs/batch_API) and after the contracts have been originated, the addresses will be available in an array returned by the `getOriginatedContractAddresses` method of the operation object:
 
 ```js noInline
-const batch = Tezos.contract
+const batch = Mavryk.contract
   .batch()
   .withOrigination({
     balance: '1',

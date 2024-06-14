@@ -5,32 +5,32 @@ import { verifySignature } from "@mavrykdynamics/taquito-utils";
 
 CONFIGS().forEach(({ lib, setup, rpc }) => {
   describe(`Test failing_noop through contract api using: ${rpc}`, () => {
-    let Tezos = lib;
+    let Mavryk = lib;
 
     beforeAll(async () => {
       setup(true);
       if (rpc.includes('parisnet')) {
-        Tezos.setProvider({ rpc: 'https://rpc.tzkt.io/parisnet' }); // public archive node to fetch genesis block
+        Mavryk.setProvider({ rpc: 'https://rpc.tzkt.io/parisnet' }); // public archive node to fetch genesis block
       } else if (rpc.includes('ghostnet')) {
-        Tezos.setProvider({ rpc: 'https://rpc.tzkt.io/ghostnet' }); // public archive node to fetch genesis block
+        Mavryk.setProvider({ rpc: 'https://rpc.tzkt.io/ghostnet' }); // public archive node to fetch genesis block
       }
     });
 
     it('Verify that the contract.failingNoop signs a text on the genesis block', async () => {
-      const signed = await Tezos.contract.failingNoop({
+      const signed = await Mavryk.contract.failingNoop({
         arbitrary: "48656C6C6F20576F726C64", // Hello World
         basedOnBlock: 0,
       });
-      const pk = await Tezos.signer.publicKey();
+      const pk = await Mavryk.signer.publicKey();
       expect(verifySignature(signed.bytes, pk!, signed.signature, new Uint8Array([3]))).toBe(true);
     });
 
     it('Verify that the contract.failingNoop signs a text base on head block', async () => {
-      const signed = await Tezos.contract.failingNoop({
+      const signed = await Mavryk.contract.failingNoop({
         arbitrary: "48656C6C6F20576F726C64", // Hello World
         basedOnBlock: 'head',
       });
-      const pk = await Tezos.signer.publicKey();
+      const pk = await Mavryk.signer.publicKey();
       expect(verifySignature(signed.bytes, pk!, signed.signature, new Uint8Array([3]))).toBe(true);
     });
   });

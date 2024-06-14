@@ -3,7 +3,7 @@
   "version": "20.0.0",
   "description": "Allows reading and preparing sapling transactions",
   "keywords": [
-    "tezos",
+    "mavryk",
     "sapling"
   ],
   "main": "dist/taquito-sapling.umd.js",

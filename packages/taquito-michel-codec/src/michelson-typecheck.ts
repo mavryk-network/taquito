@@ -27,7 +27,7 @@ import {
   parseBytes,
   compareBytes,
   isDecimal,
-  checkDecodeTezosID,
+  checkDecodeMavrykID,
   UnpackedAnnotations,
   Nullable,
   UnpackAnnotationsOptions,
@@ -370,7 +370,7 @@ function assertDataValidInternal(d: MichelsonData, t: MichelsonType, ctx: Contex
     case 'key_hash':
       if (
         'string' in d &&
-        checkDecodeTezosID(
+        checkDecodeMavrykID(
           d.string,
           'ED25519PublicKeyHash',
           'SECP256K1PublicKeyHash',
@@ -403,7 +403,7 @@ function assertDataValidInternal(d: MichelsonData, t: MichelsonType, ctx: Contex
           address = d.string.slice(0, ep);
         }
         if (
-          checkDecodeTezosID(
+          checkDecodeMavrykID(
             address,
             'ED25519PublicKeyHash',
             'SECP256K1PublicKeyHash',
@@ -427,7 +427,7 @@ function assertDataValidInternal(d: MichelsonData, t: MichelsonType, ctx: Contex
     case 'key':
       if (
         'string' in d &&
-        checkDecodeTezosID(d.string, 'ED25519PublicKey', 'SECP256K1PublicKey', 'P256PublicKey') !==
+        checkDecodeMavrykID(d.string, 'ED25519PublicKey', 'SECP256K1PublicKey', 'P256PublicKey') !==
         null
       ) {
         return;
@@ -451,7 +451,7 @@ function assertDataValidInternal(d: MichelsonData, t: MichelsonType, ctx: Contex
       if (
         'bytes' in d ||
         ('string' in d &&
-          checkDecodeTezosID(
+          checkDecodeMavrykID(
             d.string,
             'ED25519Signature',
             'SECP256K1Signature',

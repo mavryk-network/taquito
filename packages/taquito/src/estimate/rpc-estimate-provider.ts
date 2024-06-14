@@ -1,6 +1,6 @@
 import { PreapplyResponse, ConstantsResponse, RPCSimulateOperationParam } from '@mavrykdynamics/taquito-rpc';
 import BigNumber from 'bignumber.js';
-import { flattenErrors, flattenOperationResult, TezosOperationError } from '../operations/errors';
+import { flattenErrors, flattenOperationResult, MavrykOperationError } from '../operations/errors';
 import {
   DelegateParams,
   isOpWithFee,
@@ -31,7 +31,7 @@ import { PrepareProvider } from '../prepare/prepare-provider';
 import { PreparedOperation } from '../prepare';
 import { InvalidAddressError, InvalidAmountError, InvalidStakingAddressError } from '@mavrykdynamics/taquito-core';
 
-// stub signature that won't be verified by tezos rpc simulate_operation
+// stub signature that won't be verified by mavryk rpc simulate_operation
 const STUB_SIGNATURE =
   'edsigtkpiSSschcaCt9pUVrpNPf7TTcgvgDEDD6NCEHMy8NNQJCGnMfLZzYoQj74yLjo9wx6MPVV29CvVzgi7qEcEUok3k7AuMg';
 
@@ -123,7 +123,7 @@ export class RPCEstimateProvider extends Provider implements EstimationProvider 
 
     // Fail early in case of errors
     if (errors.length) {
-      throw new TezosOperationError(
+      throw new MavrykOperationError(
         errors,
         'Error occurred during estimation',
         opResponse.contents

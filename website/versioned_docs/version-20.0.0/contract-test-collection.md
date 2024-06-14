@@ -189,7 +189,7 @@ const allowances = new MichelsonMap();
     const ledger = new MichelsonMap();
     ledger.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances, balance: '100' });
 
-    const opknownBigMapContract = await tezos.contract.originate({
+    const opknownBigMapContract = await mavryk.contract.originate({
       code: knownBigMapContract,
       storage: {
         ledger,
@@ -264,7 +264,7 @@ tokenMetadataBigMap.set('1', {
   extras: new MichelsonMap(),
 });
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   balance: '1',
   code: fa2Contract,
   storage: {
@@ -332,7 +332,7 @@ storageMap.set(
   { quantity: '30', amount: '300' }
 );
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: contractMapPairKey,
   storage: {
     theAddress: user_addresses.get('Alice'),
@@ -414,7 +414,7 @@ storageMap.set(
   1000
 );
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: contractMap8pairs,
   storage: storageMap,
 });
@@ -483,7 +483,7 @@ storage (pair (big_map %thebigmap (pair nat address) int)
   <TabItem value="taquito">
 
 ```js
-Tezos.contract
+Mavryk.contract
   .at('KT1RBE127YSA96FwCYrA8sazvr8pt1TYaThS')
   .then((myContract) => {
     return myContract
@@ -559,7 +559,7 @@ bigMapInit.set(user_addresses.get('Eddy'), { 0: '2', 1: new MichelsonMap() });
 bigMapInit.set(user_addresses.get('Glen'), { 0: '3', 1: new MichelsonMap() });
 bigMapInit.set(user_addresses.get('Freda'), { 0: '4', 1: new MichelsonMap() });
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: tokenCode,
   storage: {
     0: bigMapInit,
@@ -616,7 +616,7 @@ storage (pair
                                                                  (signature %signature))))
                                                          (or
                                                            (or (string %string)
-                                                               (mumav %tez))
+                                                               (mumav %mav))
                                                            (timestamp %timestamp)))))
                                       (pair (address %owner) (option %ttl nat)))
                                     (option %validator nat))))
@@ -644,7 +644,7 @@ recordsBigMap.set('AAAA', {
 const validatorsMap = new MichelsonMap();
 validatorsMap.set('1', user_addresses.get('Deborah'));
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: contractJson,
   storage: {
     owner: user_addresses.get('Glen'),
@@ -697,7 +697,7 @@ const allowances = new MichelsonMap();
 const ledger = new MichelsonMap();
 ledger.set('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD', { allowances, balance: '100' });
 
-const opknownBigMapContract = await tezos.contract.originate({
+const opknownBigMapContract = await mavryk.contract.originate({
   code: knownBigMapContract,
   storage: {
     ledger,
@@ -713,7 +713,7 @@ const opknownBigMapContract = await tezos.contract.originate({
 
 ## BigMapPackContract
 
-By default, a call to an RPC node is used to pack data when fetching values from a big map. Big map keys need to be serialized or packed and Taquito relies on the PACK functionality of a Tezos RPC node to pack the big map keys. This may be considered inefficient as it adds a request to a remote node to fetch data.
+By default, a call to an RPC node is used to pack data when fetching values from a big map. Big map keys need to be serialized or packed and Taquito relies on the PACK functionality of a Mavryk RPC node to pack the big map keys. This may be considered inefficient as it adds a request to a remote node to fetch data.
 
 Now, Taquito allows you to pack the required data locally to fetch values from a big map. By relying on the local pack implementation, Taquito eliminates one RPC roundtrip when fetching big map values.
 
@@ -745,7 +745,7 @@ for (let i = 1; i <= 410; i++) {
   bigmap.set(i, `${i}`);
 }
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code,
   storage: {
     0: '10',
@@ -834,12 +834,12 @@ Tzip-7 introduced the approvable ledger: [Tzip-7](https://gitlab.com/tezos/tzip/
 
 ## TokenContract
 
-- [A Beginner's Guide to Tezos Tzip-7 Proposal](https://claudebarde.medium.com/a-beginners-guide-to-tezos-tzip-7-proposal-90a8b816af7e)
+- [A Beginner's Guide to Mavryk Tzip-7 Proposal](https://claudebarde.medium.com/a-beginners-guide-to-tezos-tzip-7-proposal-90a8b816af7e)
 
 This contract has an FA1.2 interface. To determine if a contract has an FA1.2 interface we can use
 
 ```
-tezos-client check contract KT1CfFBaLoUrgv93k8668KCCcu2hNDNYPz4L implements fa1.2
+mavkit-client check contract KT1CfFBaLoUrgv93k8668KCCcu2hNDNYPz4L implements fa1.2
 ```
 
 #### Entrypoints:
@@ -872,7 +872,7 @@ storage (pair (big_map address (pair nat (map address nat)))
   <TabItem value="taquito">
 
 ```js
-const pkh = await Tezos.signer.publicKeyHash();
+const pkh = await Mavryk.signer.publicKeyHash();
 const bigMap = new MichelsonMap();
 bigMap.set(pkh, {
     0: "2",
@@ -986,7 +986,7 @@ tokens.set('2', {
   total_supply: '20000',
 });
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: fa2ForTokenMetadataView,
   storage: {
     administrator: user_addresses.get('TestFunder'),
@@ -1064,7 +1064,7 @@ metadataBigMap.set('here', stringToBytes(JSON.stringify(metadataJSON)));
 
 const tacoShopStorageMap = new MichelsonMap();
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: tacoContractTzip16,
   storage: {
     metadata: metadataBigMap,
@@ -1123,7 +1123,7 @@ metadataBigMap.set('', bytesUrl);
 const tacoShopStorageMap = new MichelsonMap();
 tacoShopStorageMap.set('1', { current_stock: '10000', max_price: '50' });
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: tacoContractTzip16,
   storage: {
     metadata: metadataBigMap,
@@ -1185,7 +1185,7 @@ metadataBigMap.set('', bytesUrl);
 const tacoShopStorageMap = new MichelsonMap();
 tacoShopStorageMap.set('1', { current_stock: '10000', max_price: '50' });
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: tacoContractTzip16,
   storage: {
     metadata: metadataBigMap,
@@ -1242,7 +1242,7 @@ metadataBigMap.set('', bytesUrl);
 
 const tacoShopStorageMap = new MichelsonMap();
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: tacoContractTzip16,
   storage: {
     metadata: metadataBigMap,
@@ -1294,7 +1294,7 @@ const metadataBigMAp = new MichelsonMap();
 metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
 metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample1)));
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: contractCode,
   storage: {
     0: 7,
@@ -1343,7 +1343,7 @@ const metadataBigMAp = new MichelsonMap();
 metadataBigMAp.set('', stringToBytes('mavryk-storage:here'));
 metadataBigMAp.set('here', stringToBytes(JSON.stringify(metadataViewsExample2)));
 
-const op = await tezos.contract.originate({
+const op = await mavryk.contract.originate({
   code: contractCode,
   storage: {
     0: 7,
@@ -1372,7 +1372,7 @@ Sending a transaction to a smart contract to update its storage will be a differ
 Fortunately, Taquito will make this operation go like a breeze! First, you need the contract abstraction created with the address of the smart contract you are targeting:
 
 ```js
-const contract = await Tezos.wallet.at('KT1B4WtE3MSEjGKnucRL5xhqnXCEX1QkLGPx');
+const contract = await Mavryk.wallet.at('KT1B4WtE3MSEjGKnucRL5xhqnXCEX1QkLGPx');
 ```
 
 This line creates a contract abstraction with multiple methods named after the contract entrypoints. For example, if you have a `transfer` entrypoint in your contract, you will also have a `.transfer()` method in the `contract` object. Each method accepts parameters required by the contract entrypoint.

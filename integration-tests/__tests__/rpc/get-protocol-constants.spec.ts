@@ -4,14 +4,14 @@ import BigNumber from 'bignumber.js';
 import { ConstantsResponseProto019, ConstantsResponseProto020 } from '@mavrykdynamics/taquito-rpc';
 
 CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
-  const Tezos = lib;
+  const Mavryk = lib;
   const atlasnet = (networkType == NetworkType.TESTNET && protocol === Protocols.PtParisBQ) ? test : test.skip;
   const weeklynet = (networkType == NetworkType.TESTNET && protocol === Protocols.ProtoALpha) ? test : test.skip;
   describe('Test fetching constants for all protocols on Mainnet', () => {
     const rpcUrl = 'https://mainnet.ecadinfra.com/';
-    Tezos.setRpcProvider(rpcUrl);
+    Mavryk.setRpcProvider(rpcUrl);
     it(`should successfully fetch Proto19(atlas) constants at head`, async () => {
-      const constants: ConstantsResponseProto019 = await Tezos.rpc.getConstants();
+      const constants: ConstantsResponseProto019 = await Mavryk.rpc.getConstants();
       expect(constants).toEqual({
         adaptive_issuance_activation_vote_enable: false,
         adaptive_issuance_launch_ema_threshold: 1600000000,
@@ -141,8 +141,8 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
 
   describe(`Fetch constants for testnet`, () => {
     parisnet(`should successfully fetch all constants for Parisnet using ${rpc}`, async () => {
-      Tezos.setRpcProvider(rpc);
-      const constants: ConstantsResponseProto020 = await Tezos.rpc.getConstants();
+      Mavryk.setRpcProvider(rpc);
+      const constants: ConstantsResponseProto020 = await Mavryk.rpc.getConstants();
       expect(constants).toEqual({
         adaptive_issuance_activation_vote_enable: true,
         adaptive_issuance_force_activation: false,
@@ -288,8 +288,8 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
     });
 
     weeklynet(`should successfully fetch all constants for weeklynet using ${rpc}`, async () => {
-      Tezos.setRpcProvider(rpc);
-      const constants: ConstantsResponseProto019 = await Tezos.rpc.getConstants();
+      Mavryk.setRpcProvider(rpc);
+      const constants: ConstantsResponseProto019 = await Mavryk.rpc.getConstants();
 
       expect(constants).toEqual({
         adaptive_issuance_launch_ema_threshold: 10000000,

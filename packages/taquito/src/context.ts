@@ -19,7 +19,7 @@ import { RpcPacker } from './packer/rpc-packer';
 import { BehaviorSubject } from 'rxjs';
 import { GlobalConstantsProvider } from './global-constants/interface-global-constants-provider';
 import { NoopGlobalConstantsProvider } from './global-constants/noop-global-constants-provider';
-import { TzReadProvider } from './read-provider/interface';
+import { MvReadProvider } from './read-provider/interface';
 import { RpcReadAdapter } from './read-provider/rpc-read-adapter';
 import { SubscribeProvider } from './subscribe/interface';
 import { PollingSubscribeProvider } from './subscribe/polling-subcribe-provider';
@@ -53,7 +53,7 @@ export class Context {
   private _packer: Packer;
   private providerDecorator: Array<(context: Context) => Context> = [];
   private _globalConstantsProvider: GlobalConstantsProvider;
-  private _readProvider: TzReadProvider;
+  private _readProvider: MvReadProvider;
   private _stream: SubscribeProvider;
   public readonly mv = new RpcMvProvider(this);
   public readonly estimate = new RPCEstimateProvider(this);
@@ -75,7 +75,7 @@ export class Context {
     wallet?: WalletProvider,
     parser?: ParserProvider,
     globalConstantsProvider?: GlobalConstantsProvider,
-    readProvider?: TzReadProvider,
+    readProvider?: MvReadProvider,
     stream?: SubscribeProvider
   ) {
     if (typeof this._rpc === 'string') {
@@ -189,7 +189,7 @@ export class Context {
     return this._readProvider;
   }
 
-  set readProvider(value: TzReadProvider) {
+  set readProvider(value: MvReadProvider) {
     this._readProvider = value;
   }
 

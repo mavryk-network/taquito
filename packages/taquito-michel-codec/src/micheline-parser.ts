@@ -90,7 +90,7 @@ export interface ParserOptions extends ProtocolOptions {
  *
  * Pretty Print a Michelson Smart Contract:
  * ```
- * const contract = await Tezos.contract.at("KT1Vsw3kh9638gqWoHTjvHCoHLPKvCbMVbCg");
+ * const contract = await Mavryk.contract.at("KT1Vsw3kh9638gqWoHTjvHCoHLPKvCbMVbCg");
  * const p = new Parser();
  *
  * const michelsonCode = p.parseJSON(contract.script.code);

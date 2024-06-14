@@ -19,7 +19,7 @@ CONFIGS().forEach(
     knownSaplingContract,
     knownViewContract,
   }) => {
-    const Tezos = lib;
+    const Mavryk = lib;
     const unrestrictedRPCNode = rpc.endsWith("ecadinfra.com") ? test.skip : test;
     const parisAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtParisBQ) ? test : test.skip;
 
@@ -30,7 +30,7 @@ CONFIGS().forEach(
 
       try {
         // originate ticket contract
-        const ticketOp = await Tezos.contract.originate({
+        const ticketOp = await Mavryk.contract.originate({
           code: ticketCode,
           storage: ticketStorage,
         });
@@ -48,7 +48,7 @@ CONFIGS().forEach(
     const rpcList: Array<string> = [rpc];
 
     rpcList.forEach(async (rpc) => {
-      Tezos.setRpcProvider(rpc);
+      Mavryk.setRpcProvider(rpc);
 
       const rpcClient = new RpcClientCache(new RpcClient(rpc));
 
@@ -144,7 +144,7 @@ CONFIGS().forEach(
           });
           const { key, type } = schema.EncodeBigMapKey('mv1Jf7tRzUSYjEpLfHj2R1EDgdYHstopbySD');
           const { packed } = await rpcClient.packData({ data: key, type });
-          const contract = await Tezos.contract.at(knownBigMapContract);
+          const contract = await Mavryk.contract.at(knownBigMapContract);
           const storage: any = await contract.storage();
           const id = Number(storage.ledger.id);
           const encodedExpr = encodeExpr(packed);
@@ -285,7 +285,7 @@ CONFIGS().forEach(
         it('Verify that rpcClient.preapplyOperations simulates the validation of an operation', async () => {
           try {
             // the account needs to be revealed first
-            const reveal = await Tezos.contract.reveal({});
+            const reveal = await Mavryk.contract.reveal({});
             await reveal.confirmation();
           } catch (ex) {
             expect(ex).toEqual(expect.objectContaining({
@@ -300,7 +300,7 @@ CONFIGS().forEach(
                 {
                   kind: 'origination',
                   counter: '1',
-                  source: await Tezos.signer.publicKeyHash(),
+                  source: await Mavryk.signer.publicKeyHash(),
                   fee: '10000',
                   gas_limit: '10',
                   storage_limit: '10',
@@ -345,7 +345,7 @@ CONFIGS().forEach(
                   {
                     kind: 'origination',
                     counter: '1',
-                    source: await Tezos.signer.publicKeyHash(),
+                    source: await Mavryk.signer.publicKeyHash(),
                     fee: '10000',
                     gas_limit: '10',
                     storage_limit: '10',
@@ -380,7 +380,7 @@ CONFIGS().forEach(
                   {
                     kind: 'origination',
                     counter: '1',
-                    source: await Tezos.signer.publicKeyHash(),
+                    source: await Mavryk.signer.publicKeyHash(),
                     fee: '10000',
                     gas_limit: '10',
                     storage_limit: '10',
@@ -403,7 +403,7 @@ CONFIGS().forEach(
 
         it('Verify that rpcClient.runView executes tzip4 views', async () => {
 
-          const chainId = await Tezos.rpc.getChainId();
+          const chainId = await Mavryk.rpc.getChainId();
 
           const params: RPCRunViewParam = {
             contract: knownBigMapContract,
@@ -414,13 +414,13 @@ CONFIGS().forEach(
             }
           };
 
-          const views = await Tezos.rpc.runView(params);
+          const views = await Mavryk.rpc.runView(params);
           expect(views).toBeDefined();
           expect(views).toEqual({ "data": { "int": "100" } });
         });
 
         it('Verify that rpcClient.runScriptView executes michelson view', async () => {
-          const chainId = await Tezos.rpc.getChainId();
+          const chainId = await Mavryk.rpc.getChainId();
           const params: RPCRunScriptViewParam = {
             contract: knownViewContract!,
             view: 'add',
@@ -430,7 +430,7 @@ CONFIGS().forEach(
             }
           };
 
-          const views = await Tezos.rpc.runScriptView(params);
+          const views = await Mavryk.rpc.runScriptView(params);
           expect(views).toBeDefined();
           expect(views).toEqual({ "data": { "int": "2" } });
         });
@@ -453,7 +453,7 @@ CONFIGS().forEach(
           expect(saplingDiffByContract).toBeDefined();
         });
 
-        it('Verify that rpcClient.getProtocols will list past and present Tezos protocols', async () => {
+        it('Verify that rpcClient.getProtocols will list past and present Mavryk protocols', async () => {
           const protocols = await rpcClient.getProtocols();
           expect(protocols).toEqual({ protocol, next_protocol: protocol });
         });

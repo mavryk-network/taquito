@@ -6,28 +6,28 @@ author: Claude Barde
 
 # Catching `FAILWITH` errors with Taquito
 
-When a contract call fails because of the `FAILWITH` instruction, an error is returned by the node. This error is made available by Taquito as an instance of the `TezosOperationError` class.
+When a contract call fails because of the `FAILWITH` instruction, an error is returned by the node. This error is made available by Taquito as an instance of the `MavrykOperationError` class.
 
 ```ts
 try {
     // a contract call that fails
 } catch (err) {
-    if (err instanceof TezosOperationError) {
+    if (err instanceof MavrykOperationError) {
       // process the error
     }
 }
 ```
 &nbsp;
-If the type of value returned by the contract is a `string`, the value will be available in the `message` property of the `TezosOperationError` instance, for example:
+If the type of value returned by the contract is a `string`, the value will be available in the `message` property of the `MavrykOperationError` instance, for example:
 ```ts
 try {
     const contractAddress = "KT1XemmsT8w5obkXt6eoJ8UYn4Vhsjze9zsb";
-    const contract = await Tezos.contract.at(contractAddress);
+    const contract = await Mavryk.contract.at(contractAddress);
     const op = await contract.methodsObject.fail_with_string("error").send();
     await op.confirmation();
     console.log(op.hash);
 } catch (err) {
-    if (err instanceof TezosOperationError) {
+    if (err instanceof MavrykOperationError) {
       console.log(err.message) // will log "error"
     }
 }
@@ -35,18 +35,18 @@ try {
 &nbsp;
 However, if the value is another type, the error message will be available in the `errors` property.
 
-Among other information, the `TezosOperationError` instance has a property called `errors` whose value is an array. The last element of the array holds the error message returned by the `FAILWITH` instruction, i.e. the last value that was on the stack before the contract call failed. This value is an object with a `with` property where you can find the Michelson expression of the last value on the stack.
+Among other information, the `MavrykOperationError` instance has a property called `errors` whose value is an array. The last element of the array holds the error message returned by the `FAILWITH` instruction, i.e. the last value that was on the stack before the contract call failed. This value is an object with a `with` property where you can find the Michelson expression of the last value on the stack.
 
 For example:
 ```ts
 try {
     const contractAddress = "KT1XemmsT8w5obkXt6eoJ8UYn4Vhsjze9zsb";
-    const contract = await Tezos.contract.at(contractAddress);
+    const contract = await Mavryk.contract.at(contractAddress);
     const op = await contract.methodsObject.fail_with_int(2).send();
     await op.confirmation();
     console.log(op.hash);
 } catch (err) {
-    if (err instanceof TezosOperationError) {
+    if (err instanceof MavrykOperationError) {
       console.log(err.errors[err.errors.length - 1])
     }
 }
