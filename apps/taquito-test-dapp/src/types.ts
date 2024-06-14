@@ -20,7 +20,7 @@ export interface TestSettings {
 }
 
 export type TezosContractAddress = `KT1${string}`;
-export type TezosAccountAddress = `tz${"1" | "2" | "3"}${string}`;
+export type TezosAccountAddress = `mv${"1" | "2" | "3"}${string}`;
 
 // export enum NetworkType {
 //   MAINNET = "mainnet",

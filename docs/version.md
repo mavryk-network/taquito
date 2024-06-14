@@ -620,7 +620,7 @@ Protocol Nairobi comes with a couple potential breaking changes for our users:
 
 ### Internals
 - `OperationEmitter` class in `@mavrykdynamics/taquito` have been replaced with `PrepareProvider` and the `Provider` abstract class #2257
-    - RpcContractProvider, RpcEstimateProvider, RpcBatchProvider, and RpcTzProvider no longer extends `OperationEmitter`, and is replaced with a more lightweight abstract class `Provider` #2428, #2429, #2430, #2431
+    - RpcContractProvider, RpcEstimateProvider, RpcBatchProvider, and RpcMvProvider no longer extends `OperationEmitter`, and is replaced with a more lightweight abstract class `Provider` #2428, #2429, #2430, #2431
 - Removed the dependency `axios-fetch-adapter` and adapted the code directly into Taquito [PR#2457](https://github.com/ecadlabs/taquito/pull/2457)
 
 ### `@mavrykdynamics/taquito` - Added a filter for events listener to exclude failed events
@@ -3413,7 +3413,7 @@ Documentation:
 
 ### Features
 
-- Add activation operation support Tezos.tz.activate("pkh", "secret")
+- Add activation operation support Tezos.mv.activate("pkh", "secret")
 - High-level function to import a key Tezos.importKey("your_key")
 - Utility to retrieve private key from faucet/fundraiser account
 - Add RPC support for backing related endpoint (endorsing rights/baking rights)

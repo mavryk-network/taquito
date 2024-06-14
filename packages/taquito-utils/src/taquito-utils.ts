@@ -93,7 +93,7 @@ export function b58decode(payload: string) {
 
   const pref = prefixMap[new Uint8Array(buf.slice(0, 3)).toString()];
   if (pref) {
-    // tz addresses
+    // mv addresses
     const hex = buf2hex(buf.slice(3));
     return pref + hex;
   } else {

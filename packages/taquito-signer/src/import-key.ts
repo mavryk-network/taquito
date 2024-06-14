@@ -25,7 +25,7 @@ export async function importKey(
     const pkh = await signer.publicKeyHash();
     let op;
     try {
-      op = await toolkit.tz.activate(pkh, secret);
+      op = await toolkit.mv.activate(pkh, secret);
     } catch (ex: any) {
       const isInvalidActivationError = ex && ex.body && /Invalid activation/.test(ex.body);
       if (!isInvalidActivationError) {

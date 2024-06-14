@@ -50,7 +50,7 @@ const balance = await web3.eth.getBalance('account_address');
 **Taquito**
 
 ```js
-const balance = await Tezos.tz.getBalance('account_address');
+const balance = await Tezos.mv.getBalance('account_address');
 ```
 
 Both Web3js and Taquito use the `getBalance` method with the account address to fetch its spendable balance from the network.
@@ -208,7 +208,7 @@ import { MavrykToolkit } from '@mavrykdynamics/taquito';
 const Tezos = new MavrykToolkit('http://localhost:8732');
 const wallet = Tezos.setProvider({ wallet: walletOfYourChoice }); // use the wallet of your choice
 
-const userBalance = await Tezos.tz.getBalance('tz_address');
+const userBalance = await Tezos.mv.getBalance('tz_address');
 
 const contract = await Tezos.wallet.at('contract_address');
 

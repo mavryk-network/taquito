@@ -54,9 +54,9 @@ fetch('https://keygen.ecadinfra.com/basenet/', {
 
 Pre-`Babylon/proto005` "script-less" KT1 addresses were common. This situation changed when the Tezos blockchain migrated to the new `Babylon/proto005` protocol.
 
-During the migration from `proto004` to `proto005`, all KT1 addresses migrated so that they got a contract called [manager.tz](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.tz). This change meant that there are no longer any "script-less" KT1 addresses in Tezos.
+During the migration from `proto004` to `proto005`, all KT1 addresses migrated so that they got a contract called [manager.mv](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.mv). This change meant that there are no longer any "script-less" KT1 addresses in Tezos.
 
-A call to the KT1's smart contracts' `do` method is required to transfer tokens from KT1 addresses with the new `manager.tz` contract. The `do` method takes a lambda function, and it is this lambda function that causes changes to occur in the KT1 address.
+A call to the KT1's smart contracts' `do` method is required to transfer tokens from KT1 addresses with the new `manager.mv` contract. The `do` method takes a lambda function, and it is this lambda function that causes changes to occur in the KT1 address.
 
 > The examples following apply only to KT1 addresses migrated as part of the `Babylon/proto005` upgrade. Transfers involving _other_ types of smart-contracts depend on those contracts specifically.
 

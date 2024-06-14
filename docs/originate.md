@@ -10,7 +10,7 @@ Taquito can _originate_ (create or deploy) Smart Contracts to the Tezos Blockcha
 
 ## Example demonstrating origination of a contract
 
-In this example, we will originate the popular multi-sig contract available [here](https://github.com/murbard/smart-contracts/blob/master/multisig/michelson/generic.tz).
+In this example, we will originate the popular multi-sig contract available [here](https://github.com/murbard/smart-contracts/blob/master/multisig/michelson/generic.mv).
 
 > Since version [6.3.2](https://github.com/mavryk-network/mavryk-taquito/releases/tag/6.3.2-beta.0), Taquito allows encoding and decoding between "plain" Michelson and JSON Michelson. Smart Contracts' origination is now more straightforward than it was because it is no longer required to do the tezos-client command-line to convert & expand "plain" Michelson to JSON Michelson. You can now pass JSON Michelson and "plain" Michelson using the `code` parameter of the `originate` method.
 

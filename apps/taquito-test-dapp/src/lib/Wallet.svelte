@@ -62,7 +62,7 @@
       Tezos.setWalletProvider(wallet);
       store.updateTezos(Tezos);
 
-      const balance = await Tezos.tz.getBalance(userAddress);
+      const balance = await Tezos.mv.getBalance(userAddress);
       if (balance) {
         store.updateUserBalance(balance.toNumber());
       }
@@ -99,7 +99,7 @@
       const userAddress = (await wallet.getPKH()) as TezosAccountAddress;
       store.updateUserAddress(userAddress);
 
-      const balance = await Tezos.tz.getBalance(userAddress);
+      const balance = await Tezos.mv.getBalance(userAddress);
       if (balance) {
         store.updateUserBalance(balance.toNumber());
       }

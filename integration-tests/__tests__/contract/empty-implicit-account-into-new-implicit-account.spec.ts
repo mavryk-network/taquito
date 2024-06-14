@@ -26,7 +26,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
             const op2 = await sender.contract.transfer({ to: await Tezos.signer.publicKeyHash(), amount: 0.1 });
             await op2.confirmation();
 
-            const balance = await Tezos.tz.getBalance(sender_pkh);
+            const balance = await Tezos.mv.getBalance(sender_pkh);
 
             const estimate = await sender.estimate.transfer({
                 to: receiver_pkh,
@@ -47,7 +47,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
             });
 
             await opTransfer.confirmation();
-            const finalBalance = await Tezos.tz.getBalance(sender_pkh);
+            const finalBalance = await Tezos.mv.getBalance(sender_pkh);
 
             expect(finalBalance.toString()).toEqual("0")
 

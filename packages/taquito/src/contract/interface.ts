@@ -153,7 +153,7 @@ export interface ContractProvider extends StorageProvider {
 
   /**
    *
-   * @description Transfer tz from current address to a specific address. Will sign and inject an operation using the current context
+   * @description Transfer mv from current address to a specific address. Will sign and inject an operation using the current context
    *
    * @returns An operation handle with the result from the rpc node
    *
@@ -163,7 +163,7 @@ export interface ContractProvider extends StorageProvider {
 
   /**
    *
-   * @description Stake tz from current address to a specific address. Built on top of the existing transaction operation
+   * @description Stake mv from current address to a specific address. Built on top of the existing transaction operation
    *
    * @returns An operation handle with the result from the rpc node
    *
@@ -173,7 +173,7 @@ export interface ContractProvider extends StorageProvider {
 
   /**
    *
-   * @description Unstake tz from current address to a specific address. Built on top of the existing transaction operation
+   * @description Unstake mv from current address to a specific address. Built on top of the existing transaction operation
    *
    * @returns An operation handle with the result from the rpc node
    *
@@ -183,7 +183,7 @@ export interface ContractProvider extends StorageProvider {
 
   /**
    *
-   * @description Finalize unstake tz from current address to a specific address. Built on top of the existing transaction operation
+   * @description Finalize unstake mv from current address to a specific address. Built on top of the existing transaction operation
    *
    * @returns An operation handle with the result from the rpc node
    *

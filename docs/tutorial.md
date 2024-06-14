@@ -100,7 +100,7 @@ import { MavrykToolkit } from "@mavrykdynamics/taquito";
 
 var tezosToolkit = new MavrykToolkit("https://basenet.rpc.mavryk.network");
 
-tezosToolkit.tz.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
+tezosToolkit.mv.getBalance("mv1RK8FjLrVza385ZaeszhTeMiJcDjJk9ZLr").then(balance => {
     console.log(balance.toNumber());
 });
 ```

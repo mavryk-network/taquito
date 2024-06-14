@@ -22,7 +22,7 @@ import { Signer } from './signer/interface';
 import { NoopSigner } from './signer/noop';
 import { SubscribeProvider } from './subscribe/interface';
 import { PollingSubscribeProvider } from './subscribe/polling-subcribe-provider';
-import { TzProvider } from './tz/interface';
+import { MvProvider } from './mv/interface';
 import { VERSION } from './version';
 import { LegacyWalletProvider, Wallet, WalletProvider } from './wallet';
 import { OperationFactory } from './wallet/operation-factory';
@@ -50,7 +50,7 @@ export * from './subscribe/interface';
 export { SubscribeProvider } from './subscribe/interface';
 export { PollingSubscribeProvider } from './subscribe/polling-subcribe-provider';
 export { ObservableSubscription } from './subscribe/observable-subscription';
-export * from './tz/interface';
+export * from './mv/interface';
 export * from './wallet';
 export { Extension } from './extension/extension';
 export * from './injector/interface';
@@ -372,8 +372,8 @@ export class MavrykToolkit {
   /**
    * @description Provide access to tezos account management
    */
-  get tz(): TzProvider {
-    return this._context.tz;
+  get mv(): MvProvider {
+    return this._context.mv;
   }
 
   /**

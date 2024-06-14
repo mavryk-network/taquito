@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { Operation } from '../operations/operations';
 
-export interface TzProvider {
+export interface MvProvider {
   /**
    *
    * @param address Mavryk address you want to get the spendable balance for (eg mv1...)

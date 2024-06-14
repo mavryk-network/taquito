@@ -111,7 +111,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol }) => {
        * Since there are still 5 the reentry failed
        */
 
-      Tezos.tz.getBalance(vestingContract.address).then((vbalance) => {
+      Tezos.mv.getBalance(vestingContract.address).then((vbalance) => {
         let result = vbalance.toNumber();
         expect((result = 5000000));
       });

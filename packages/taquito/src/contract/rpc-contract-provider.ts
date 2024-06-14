@@ -369,7 +369,7 @@ export class RpcContractProvider extends Provider implements ContractProvider, S
 
   /**
    *
-   * @description Transfer tz from current address to a specific address. Will sign and inject an operation using the current context
+   * @description Transfer mv from current address to a specific address. Will sign and inject an operation using the current context
    *
    * @returns An operation handle with the result from the rpc node
    *

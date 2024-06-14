@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { Context } from '../context';
 import { Operation } from '../operations/operations';
-import { TzProvider } from './interface';
+import { MvProvider } from './interface';
 import {
   validateAddress,
   ValidationResult,
@@ -13,7 +13,7 @@ import { InvalidAddressError } from '@mavrykdynamics/taquito-core';
 import { Provider } from '../provider';
 import { PrepareProvider } from '../prepare';
 
-export class RpcTzProvider extends Provider implements TzProvider {
+export class RpcMvProvider extends Provider implements MvProvider {
   constructor(context: Context) {
     super(context);
   }

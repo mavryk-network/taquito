@@ -88,7 +88,7 @@ const FeatureList = [
         url: 'https://tezos-mandala.art/'
       },
       {
-        Image: require('../../../static/img/tz-colors.png').default,
+        Image: require('../../../static/img/mv-colors.png').default,
         title: 'tzcolors',
         url: 'https://www.tzcolors.io/'
       }

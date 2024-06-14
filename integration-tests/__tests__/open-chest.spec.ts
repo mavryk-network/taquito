@@ -5,7 +5,7 @@ import { stringToBytes } from '@mavrykdynamics/taquito-utils';
 import { timelockCode, timelockStorage } from '../data/timelock-flip-contract';
 
 // please read the following link to understand the game
-// https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/contracts/timelock_flip.tz
+// https://gitlab.com/tezos/tezos/-/blob/master/src/proto_alpha/lib_protocol/contracts/timelock_flip.mv
 
 CONFIGS().forEach(({ lib, rpc, setup }) => {
   const Tezos = lib;

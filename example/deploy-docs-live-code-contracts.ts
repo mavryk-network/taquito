@@ -92,18 +92,18 @@ async function checkBalances(users: string | any[]) {
   //  );
 
   //  console.log("checking fund of tezos instance")
-  //  const tezBalance = await tezos.tz.getBalance(pkh)
+  //  const tezBalance = await tezos.mv.getBalance(pkh)
   //  console.log("original balance", tezBalance, await signer.publicKeyHash())
   //  const sendFunds = await tezosLender.contract.transfer({to: await signer.publicKeyHash(), amount: 100})
   //  await sendFunds.confirmation()
-  //  const tezBalance2 = await tezos.tz.getBalance(pkh)
+  //  const tezBalance2 = await tezos.mv.getBalance(pkh)
   //  console.log("next balance", tezBalance2)
 
   // console.log("balance of tezos instance", tezBalance)
   console.log('checking funds of users...');
   try {
     for (let i = 0; i < users.length; i++) {
-      const user_balance = await tezos.tz.getBalance(users[i]);
+      const user_balance = await tezos.mv.getBalance(users[i]);
       if (user_balance < BigNumber(min_balance)) {
         low_balance.push(users[i]);
       }

@@ -22,7 +22,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress, knownBaker }) => {
 
       // Emptying the account
       // The max amount that can be sent now is the total balance minus the fees (no need for reveal fees)
-      const balance = await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())
+      const balance = await Tezos.mv.getBalance(await LocalTez.signer.publicKeyHash())
       const maxAmount = balance.minus(estimate.suggestedFeeMumav).toNumber();
       expect.assertions(1)
       try {

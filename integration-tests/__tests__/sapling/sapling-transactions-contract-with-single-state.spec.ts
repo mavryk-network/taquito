@@ -139,7 +139,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
             paymentAddress: alicePaymentAddress,
             isSpent: true
           },
-          { // This input is a payback for when Alice sent 2 tz to bob (3tz - 2tz = 1tz).
+          { // This input is a payback for when Alice sent 2 mv to bob (3tz - 2tz = 1tz).
             // Alice consumed the 3tz input and received 1tz back.
             value: new BigNumber(1000000),
             memo: '',
@@ -191,7 +191,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
 
       const amount = 1;
       const aliceSaplingToolkit = new SaplingToolkit({ saplingSigner: aliceInMemorySpendingKey }, { contractAddress: saplingContract.address, memoSize }, new RpcReadAdapter(Tezos.rpc));
-      const tezosInitialBalance = await Tezos.tz.getBalance(tezosAddress1);
+      const tezosInitialBalance = await Tezos.mv.getBalance(tezosAddress1);
       const unshieldedTx = await aliceSaplingToolkit.prepareUnshieldedTransaction({
         to: tezosAddress1,
         amount
@@ -205,7 +205,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       expect(op.hash).toBeDefined();
       expect(op.includedInBlock).toBeLessThan(Number.POSITIVE_INFINITY);
 
-      const tezosUpdatedBalance = await Tezos.tz.getBalance(tezosAddress1);
+      const tezosUpdatedBalance = await Tezos.mv.getBalance(tezosAddress1);
       expect(tezosUpdatedBalance).toEqual(tezosInitialBalance.plus(new BigNumber(1000000)));
 
     });

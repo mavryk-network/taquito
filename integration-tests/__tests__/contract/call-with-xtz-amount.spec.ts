@@ -27,7 +27,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
         const operation = await contract.methods.deposit(null).send({ amount: 1 });
         await operation.confirmation();
         expect(operation.status).toEqual('applied');
-        let balance = await Tezos.tz.getBalance(contract.address);
+        let balance = await Tezos.mv.getBalance(contract.address);
         expect(balance.toString()).toEqual('1000000');
 
         const operationMumav = await contract.methods
@@ -35,7 +35,7 @@ CONFIGS().forEach(({ lib, rpc, setup }) => {
           .send({ amount: 1, mumav: true } as any);
         await operationMumav.confirmation();
         expect(operationMumav.status).toEqual('applied');
-        balance = await Tezos.tz.getBalance(contract.address);
+        balance = await Tezos.mv.getBalance(contract.address);
         expect(balance.toString()).toEqual('1000001');
       }
     );

@@ -398,7 +398,7 @@ const storage = await contract.storage();
 const code = contract.script.code;
 ```
 
-If you get the contract code through this method, it will already be properly formatted for origination. If you have a `.tz` file, you can use the `michel-codec` package to encode it properly:
+If you get the contract code through this method, it will already be properly formatted for origination. If you have a `.mv` file, you can use the `michel-codec` package to encode it properly:
 
 ```js
 import { Parser } from '@mavrykdynamics/taquito-michel-codec';

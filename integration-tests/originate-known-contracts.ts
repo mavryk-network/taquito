@@ -66,7 +66,7 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
     await appendOutput("export const knownContracts" + protocolShort + ": KnownContracts = {");
 
     keyPkh = await tezos.signer.publicKeyHash();
-    keyInitialBalance = await tezos.tz.getBalance(keyPkh);
+    keyInitialBalance = await tezos.mv.getBalance(keyPkh);
 
     // KnownContract
     await originateKnownContract('contract', tezos, {
@@ -181,15 +181,15 @@ CONFIGS().forEach(({ lib, setup, protocol }) => {
 ################################################################################
 Public Key Hash : ${keyPkh}
 Initial Balance : ${keyInitialBalance.dividedBy(MUMAV_UNIT)} XTZ
-Final Balance   : ${(await tezos.tz.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
+Final Balance   : ${(await tezos.mv.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
 
-Total XTZ Spent : ${keyInitialBalance.minus(await tezos.tz.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
+Total XTZ Spent : ${keyInitialBalance.minus(await tezos.mv.getBalance(keyPkh)).dividedBy(MUMAV_UNIT)} XTZ
 `)
   })();
 
 
   async function printBalance(pkh: string, tezos: MavrykToolkit): Promise<void> {
-    let balance = await tezos.tz.getBalance(pkh);
+    let balance = await tezos.mv.getBalance(pkh);
     console.log(`${pkh} balance: ${balance}`);
   }
 })

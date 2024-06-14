@@ -224,7 +224,7 @@ function getAddressInfo(transport, index) {
   );
   Tezos.setProvider({ signer: ledgerSigner });
   return Tezos.signer.publicKeyHash().then((pkh) => {
-    Tezos.tz.getBalance(pkh).then((balance) => {
+    Tezos.mv.getBalance(pkh).then((balance) => {
       Tezos.rpc.getManagerKey(pkh).then((getPublicKey) => {
         println(
           `The public key hash related to the derivation path having the index ${index} is ${pkh}.`

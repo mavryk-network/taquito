@@ -28,7 +28,7 @@ In the following example, we have not revealed the account that we want to empty
 Tezos.signer
     .publicKeyHash()
     .then((address) => {
-        Tezos.tz.getBalance(address).then((balance) => {
+        Tezos.mv.getBalance(address).then((balance) => {
             println(
                 `The account we want to drain is ${address}.\nIts initial balance is ${
                   balance.toNumber() / 1000000
@@ -68,7 +68,7 @@ Tezos.signer
                 })
                 .then((hash) => {
                     println(`The account has been emptied.`);
-                    return Tezos.tz.getBalance(address);
+                    return Tezos.mv.getBalance(address);
                 })
                 .then((finalBalance) => {
                     println(`The balance is now ${finalBalance.toNumber() / 1000000} ṁ.`);
@@ -125,7 +125,7 @@ Tezos.signer
       })
       .then((contract) => {
         println(`Origination completed.`);
-        Tezos.tz.getBalance(contract.address).then((balance) => {
+        Tezos.mv.getBalance(contract.address).then((balance) => {
           println(`The balance of the contract is ${balance.toNumber() / 1000000} ꜩ.`);
           const estimateOp = contract.methodsObject
             .do(transferImplicit('mv1EQssQ7RPhKvocd4rhHsSA1BYGe5VKYeDo', balance.toNumber()))
@@ -148,7 +148,7 @@ Tezos.signer
             })
             .then((hash) => {
               println(`The account has been emptied.`);
-              return Tezos.tz.getBalance(contract.address);
+              return Tezos.mv.getBalance(contract.address);
             })
             .then((finalBalance) => {
               println(`The balance is now ${finalBalance.toNumber() / 1000000} ṁ.`);

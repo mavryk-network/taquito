@@ -6,7 +6,7 @@ import { RpcInjector } from './injector/rpc-injector';
 import { Signer } from './signer/interface';
 import { NoopSigner } from './signer/noop';
 import { OperationFactory } from './wallet/operation-factory';
-import { RpcTzProvider } from './tz/rpc-tz-provider';
+import { RpcMvProvider } from './mv/rpc-mv-provider';
 import { RPCEstimateProvider } from './estimate/rpc-estimate-provider';
 import { RpcContractProvider } from './contract/rpc-contract-provider';
 import { RPCBatchProvider } from './batch/rpc-batch-provider';
@@ -55,7 +55,7 @@ export class Context {
   private _globalConstantsProvider: GlobalConstantsProvider;
   private _readProvider: TzReadProvider;
   private _stream: SubscribeProvider;
-  public readonly tz = new RpcTzProvider(this);
+  public readonly mv = new RpcMvProvider(this);
   public readonly estimate = new RPCEstimateProvider(this);
   public readonly contract = new RpcContractProvider(this, this.estimate);
   public readonly prepare = new PrepareProvider(this);

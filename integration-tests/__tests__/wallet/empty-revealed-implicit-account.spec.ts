@@ -17,7 +17,7 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       const op2 = await LocalTez.wallet.transfer({ to: await Tezos.signer.publicKeyHash(), amount: 1 }).send();
       await op2.confirmation();
 
-      const balance = await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())
+      const balance = await Tezos.mv.getBalance(await LocalTez.signer.publicKeyHash())
       const estimate = await LocalTez.estimate.transfer({ to: await Tezos.signer.publicKeyHash(), amount: balance.toNumber(), mumav: true });
 
       // Emptying the account
@@ -27,8 +27,8 @@ CONFIGS().forEach(({ lib, rpc, setup, createAddress }) => {
       const op3 = await LocalTez.wallet.transfer({ to: await Tezos.signer.publicKeyHash(), mumav: true, amount: maxAmount }).send();
       await op3.confirmation();
 
-      //expect((await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())).toString()).toEqual("0")
-      expect((await Tezos.tz.getBalance(await LocalTez.signer.publicKeyHash())).toString()).toBeDefined
+      //expect((await Tezos.mv.getBalance(await LocalTez.signer.publicKeyHash())).toString()).toEqual("0")
+      expect((await Tezos.mv.getBalance(await LocalTez.signer.publicKeyHash())).toString()).toBeDefined
     });
   });
 })

@@ -3,7 +3,7 @@ title: MANAGER_LAMBDA
 author: Claude Barde
 ---
 
-The `MANAGER_LAMBDA` is an object exported from the `@mavrykdynamics/taquito` package that provides a convenient way to create lambda functions in Michelson to interact with the [manager contract](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.tz), a multisig contract.
+The `MANAGER_LAMBDA` is an object exported from the `@mavrykdynamics/taquito` package that provides a convenient way to create lambda functions in Michelson to interact with the [manager contract](https://gitlab.com/nomadic-labs/mi-cho-coq/blob/master/src/contracts/manager.mv), a multisig contract.
 
 The object exposes 4 methods that take different parameters in order to create the corresponding lambda under the hood, so that developers don't have to tinker with Michelson code.
 

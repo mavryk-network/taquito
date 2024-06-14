@@ -59,7 +59,7 @@ Alternatively, you can use a `WalletProvider` to interact with a wallet. Please 
 // import { MavrykToolkit } from '@mavrykdynamics/taquito';
 // const Tezos = new MavrykToolkit('https://basenet.rpc.mavryk.network');
 
-Tezos.tz
+Tezos.mv
   .getBalance('mv1UrqbBFBXnEdHnvSrMpt2BQnZzFMA9HQnc')
   .then((balance) => println(`${balance.toNumber() / 1000000} ṁ`))
   .catch((error) => println(JSON.stringify(error)));

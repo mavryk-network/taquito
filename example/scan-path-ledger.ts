@@ -16,7 +16,7 @@ async function example() {
         const ledgerSigner = new LedgerSigner(transport, `44'/1729'/${index}'/0'`, false, DerivationType.ED25519);
         tezos.setProvider({ signer: ledgerSigner });
         const pkh = await tezos.signer.publicKeyHash();
-        const balance = await tezos.tz.getBalance(pkh)
+        const balance = await tezos.mv.getBalance(pkh)
         const getPublicKey = await tezos.rpc.getManagerKey(pkh)
         console.log(`The public key hash related to the derivation path having the account ${index} is ${pkh}.`)
         if (getPublicKey) {
