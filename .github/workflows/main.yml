@@ -72,7 +72,7 @@ jobs:
           - protocol: Atlas
             testnet: atlasnet
             testnet_uppercase: ATLASNET
-            flexmasa_docker_image: oxheadalpha/flexmasa:20230607
+            flexmasa_docker_image: registry.gitlab.com/mavryk-network/flexmasa:atlas-update-run
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
