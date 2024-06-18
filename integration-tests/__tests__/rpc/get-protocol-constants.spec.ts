@@ -5,7 +5,7 @@ import { ConstantsResponseProto019, ConstantsResponseProto020 } from '@mavrykdyn
 
 CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   const Mavryk = lib;
-  const parisnet = (networkType == NetworkType.TESTNET && protocol === Protocols.PtParisBQ) ? test : test.skip;
+  const boreasnet = (networkType == NetworkType.TESTNET && protocol === Protocols.PtBoreas) ? test : test.skip;
   const weeklynet = (networkType == NetworkType.TESTNET && protocol === Protocols.ProtoALpha) ? test : test.skip;
   describe('Test fetching constants for all protocols on Mainnet', () => {
     const rpcUrl = 'https://mainnet.ecadinfra.com/';
@@ -140,7 +140,7 @@ CONFIGS().forEach(({ lib, protocol, rpc, networkType }) => {
   });
 
   describe(`Fetch constants for testnet`, () => {
-    parisnet(`should successfully fetch all constants for Parisnet using ${rpc}`, async () => {
+    boreasnet(`should successfully fetch all constants for Boreasnet using ${rpc}`, async () => {
       Mavryk.setRpcProvider(rpc);
       const constants: ConstantsResponseProto020 = await Mavryk.rpc.getConstants();
       expect(constants).toEqual({

@@ -7,7 +7,7 @@ Increase Paid Storage is a new operation available for use starting from Protoco
 
 This helps resolve an issue where several operations on the same contract would fail when they are added at the same level due to the storage limit being lower than the `paid_storage_size_diff`.
 
-For more information on this change, refer to this [MR](https://gitlab.com/tezos/tezos/-/merge_requests/5605) in the Mavryk codebase.
+For more information on this change, refer to this [MR](https://gitlab.com/mavryk-network/mavryk-protocol/-/merge_requests/5605) in the Mavryk codebase.
 ## Examples
 Similar to other operations, the Increase Paid Storage operation is available in the Contract and Wallet API
 

@@ -51,7 +51,7 @@ export interface StorageProvider {
    * @param contract contract address you want to get the storage from
    * @param schema optional schema can either be the contract script rpc response or a michelson-encoder schema
    *
-   * @see https://tezos.gitlab.io/api/rpc.html#get-block-id-context-contracts-contract-id-script
+   * @see https://protocol.mavryk.org/api/rpc.html#get-block-id-context-contracts-contract-id-script
    */
   getStorage<T>(contract: string, schema?: ContractSchema): Promise<T>;
 
@@ -65,7 +65,7 @@ export interface StorageProvider {
    *
    * @deprecated Deprecated in favor of getBigMapKeyByID
    *
-   * @see https://tezos.gitlab.io/api/rpc.html#post-block-id-context-contracts-contract-id-big-map-get
+   * @see https://protocol.mavryk.org/api/rpc.html#post-block-id-context-contracts-contract-id-big-map-get
    */
   getBigMapKey<T>(contract: string, key: string, schema?: ContractSchema): Promise<T>;
 
@@ -78,7 +78,7 @@ export interface StorageProvider {
    * @param schema Big Map schema (can be determined using your contract type)
    * @param block optional block level to fetch the value from
    *
-   * @see https://tezos.gitlab.io/api/rpc.html#get-block-id-context-big-maps-big-map-id-script-expr
+   * @see https://protocol.mavryk.org/api/rpc.html#get-block-id-context-big-maps-big-map-id-script-expr
    */
   getBigMapKeyByID<T>(
     id: string,

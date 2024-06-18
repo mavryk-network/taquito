@@ -1,16 +1,16 @@
 import { CONFIGS } from "../config";
-import { commonCases, pariscases } from '../data/allTestsCases';
+import { commonCases, boreasCases } from '../data/allTestsCases';
 import { LocalForger, ProtocolsHash } from '@mavrykdynamics/taquito-local-forging'
 import { Protocols, MavrykToolkit } from "@mavrykdynamics/taquito";
 import { ProtoGreaterOrEqual } from '@mavrykdynamics/taquito-michel-codec';
 
 CONFIGS().forEach(({ rpc, protocol }) => {
   const Mavryk = new MavrykToolkit(rpc);
-  const parisAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtParisBQ) ? test : test.skip
+  const boreasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtBoreas) ? test : test.skip
 
   describe(`Test local forger: ${rpc}`, () => {
-    parisCases.forEach(({ name, operation, expected }) => {
-      parisAndAlpha(`Verify that .forge for local forge will return same result as for network forge for rpc: ${name} (${rpc})`, async () => {
+    boreasCases.forEach(({ name, operation, expected }) => {
+      boreasAndAlpha(`Verify that .forge for local forge will return same result as for network forge for rpc: ${name} (${rpc})`, async () => {
         const localForger = new LocalForger(protocol as unknown as ProtocolsHash);
         const result = await localForger.forge(operation);
         const rpcResult = await Mavryk.rpc.forgeOperations(operation);

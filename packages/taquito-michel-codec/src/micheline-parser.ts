@@ -65,7 +65,7 @@ const bytesRe = new RegExp('^([0-9a-fA-F]{2})*$');
 
 export interface ParserOptions extends ProtocolOptions {
   /**
-   * Expand [Michelson macros](https://tezos.gitlab.io/whitedoc/michelson.html#macros) during parsing.
+   * Expand [Michelson macros](https://protocol.mavryk.org/whitedoc/michelson.html#macros) during parsing.
    */
   expandMacros?: boolean;
   /**

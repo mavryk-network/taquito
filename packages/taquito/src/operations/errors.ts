@@ -29,7 +29,7 @@ const isErrorWithMessage = (error: any): error is MavrykOperationErrorWithMessag
 
 /**
  *  @category Error
- *  @description Generic mavryk error that will be thrown when a mistake occurs when doing an operation; more details here https://tezos.gitlab.io/api/errors.html
+ *  @description Generic mavryk error that will be thrown when a mistake occurs when doing an operation; more details here https://protocol.mavryk.org/api/errors.html
  */
 export class MavrykOperationError extends RpcError {
   public readonly lastError: MavrykGenericOperationError;

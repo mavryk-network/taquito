@@ -336,4 +336,4 @@ importKey(Mavryk, secretKey)
 [0]: https://ligolang.org/
 [1]: https://smartpy.io/
 [2]: https://ide.ligolang.org/local/default-project
-[3]: https://tezos.gitlab.io/whitedoc/michelson.html
+[3]: https://protocol.mavryk.org/whitedoc/michelson.html

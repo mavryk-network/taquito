@@ -5,7 +5,7 @@ import { InvalidStakingAddressError, InvalidFinalizeUnstakeAmountError } from '@
 
 CONFIGS().forEach(({ lib, rpc, setup, protocol, knownBaker }) => {
   const Mavryk = lib;
-  const parisAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtParisBQ) ? test : test.skip;
+  const boreasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtBoreas) ? test : test.skip;
   describe(`Test staking pseudo operations using: ${rpc}`, () => {
     beforeAll(async () => {
       await setup(true);
@@ -20,7 +20,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol, knownBaker }) => {
       }
     });
 
-    parisAndAlpha(`should be able to stake successfully: ${rpc}`, async () => {
+    boreasAndAlpha(`should be able to stake successfully: ${rpc}`, async () => {
       const op = await Mavryk.wallet.stake({ amount: 3 }).send()
       await op.confirmation();
       expect(await op.status()).toBe('applied');
@@ -30,7 +30,7 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol, knownBaker }) => {
       expect(Math.round(stakedBalance.toNumber() / 1000000)).toEqual(3);
     });
 
-    parisAndAlpha(`should be able to unstake successfully: ${rpc}`, async () => {
+    boreasAndAlpha(`should be able to unstake successfully: ${rpc}`, async () => {
       const op = await Mavryk.wallet.unstake({ amount: 1 }).send()
       await op.confirmation();
       expect(await op.status()).toBe('applied');
@@ -40,13 +40,13 @@ CONFIGS().forEach(({ lib, rpc, setup, protocol, knownBaker }) => {
       expect(Math.round(UnstakedBalance.toNumber() / 1000000)).toEqual(1);
     });
 
-    parisAndAlpha(`should be able to finalizeUnstake successfully: ${rpc}`, async () => {
+    boreasAndAlpha(`should be able to finalizeUnstake successfully: ${rpc}`, async () => {
       const op = await Mavryk.wallet.finalizeUnstake({}).send()
       await op.confirmation();
       expect(await op.status()).toBe('applied');
     });
 
-    parisAndAlpha('should throw error when param is against pseudo operation', async () => {
+    boreasAndAlpha('should throw error when param is against pseudo operation', async () => {
       expect(async () => {
         const op = await Mavryk.wallet.stake({ amount: 1, to: 'mv1X83v8gdttgFt4U8kDExzcXV68Ndh141U5' }).send();
       }).rejects.toThrow(InvalidStakingAddressError);

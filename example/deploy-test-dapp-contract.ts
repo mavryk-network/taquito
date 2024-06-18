@@ -3,7 +3,7 @@ import { InMemorySigner } from '@mavrykdynamics/taquito-signer'
 import { code, storage } from './data/test-dapp-contract';
 
 // update the targeted rpc url before running
-const rpcUrl = 'http://parisnet.i.ecadinfra.com:8732'
+const rpcUrl = 'http://boreasnet.i.ecadinfra.com:8732'
 
 originate(rpcUrl)
 

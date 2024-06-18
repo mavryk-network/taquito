@@ -245,4 +245,4 @@ Mavryk.wallet.at(contractTopLevelViews)
 On-chain views should not be confused with lambda views which are also available on the ContractAbstraction class. See the documentation for [lambda_view](lambda_view.md).
 :::
 
-Follow this link for more information about on-chain views: https://tezos.gitlab.io/active/michelson.html#operations-on-views
+Follow this link for more information about on-chain views: https://protocol.mavryk.org/active/michelson.html#operations-on-views

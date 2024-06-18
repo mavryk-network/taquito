@@ -24,8 +24,8 @@
     "vite": "^4.4.11"
   },
   "dependencies": {
-    "@mavrykdynamics/beacon-sdk": "^4.2.2",
-    "@mavrykdynamics/beacon-types": "^4.2.2",
+    "@mavrykdynamics/beacon-sdk": "^4.2.3",
+    "@mavrykdynamics/beacon-types": "^4.2.3",
     "@mavrykdynamics/taquito": "^20.0.0",
     "@mavrykdynamics/taquito-beacon-wallet": "^20.0.0",
     "@mavrykdynamics/taquito-core": "^20.0.0",

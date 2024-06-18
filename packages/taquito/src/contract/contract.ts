@@ -315,7 +315,7 @@ export class ContractAbstraction<
    *
    * @deprecated getBigMapKey has been deprecated in favor of getBigMapKeyByID
    *
-   * @see https://tezos.gitlab.io/api/rpc.html#post-block-id-context-contracts-contract-id-big-map-get
+   * @see https://protocol.mavryk.org/api/rpc.html#post-block-id-context-contracts-contract-id-big-map-get
    */
   public bigMap(key: string) {
     return this.storageProvider.getBigMapKey(this.address, key, this.schema);

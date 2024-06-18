@@ -41,7 +41,7 @@ import { securityWrongAnnotations } from '../../data/security-wrong-annotations-
  *        [a] Value is not a number: undefined
  *        [valueA] Value is not a number: undefined
  *
- *  With Jakarta there is a change regarding Annotations: https://tezos.gitlab.io/protocols/013_jakarta.html#michelson.
+ *  With Jakarta there is a change regarding Annotations: https://protocol.mavryk.org/protocols/013_jakarta.html#michelson.
  *  This means the sub testcases 3 & 7 in TC-009 will behave differently in Jakarta.
  *
  */

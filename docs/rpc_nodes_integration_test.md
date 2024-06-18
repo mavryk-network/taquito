@@ -8,12 +8,12 @@ author: Roxane Letourneau
 1. The RPC nodes' integration tests are disabled by default.
 Remove `./rpc-nodes.spec.ts` from `"testPathIgnorePatterns"` in the package.json.
 
- **parisnet**: `npm run test:parisnet rpc-nodes.spec.ts`
+ **boreasnet**: `npm run test:boreasnet rpc-nodes.spec.ts`
 
 **When all endpoints are accessible for a node, you will obtain:**
 
 ```
-  Test calling all methods from RPC node: http://parisnet.i.ecadinfra.com:8732/
+  Test calling all methods from RPC node: http://boreasnet.i.ecadinfra.com:8732/
     ✓ Verify that rpcClient.getBlockHash returns the head block hash (37 ms)
     ✓ Verify that rpcClient.getLiveBlocks returns the ancestors of the head block (53 ms)
     ✓ Verify that rpcClient.getBalance for knownBaker returns the spendable balance excluding frozen bonds (32 ms)
@@ -62,10 +62,10 @@ Remove `./rpc-nodes.spec.ts` from `"testPathIgnorePatterns"` in the package.json
     ✓ Verify that rpcClient.getStoragePaidSpace will retrieve the paid space of a contract storage (29 ms)
     ✓ Verify that rpcClient.ticketBalance will retrieve the specified ticket owned by the given contract (28 ms)
     ✓ Verify that rpcClient.allTicketBalances will retrieve all tickets owned by the given contract (39 ms)
-    ✓ Verify that rpcClient.getAdaptiveIssuanceLaunchCycle will retrieve launch cycle 6 for http://parisnet.i.ecadinfra.com:8732/ (29 ms)
+    ✓ Verify that rpcClient.getAdaptiveIssuanceLaunchCycle will retrieve launch cycle 6 for http://boreasnet.i.ecadinfra.com:8732/ (29 ms)
     ✓ Verify that rpcClient.getPendingOperations v1 will retrieve the pending operations in mempool with property applied (397 ms)
     ✓ Verify that rpcClient.getPendingOperations v2 will retrieve the pending operations in mempool with property validated (470 ms)
-    ○ skipped Verify that rpcClient.getAdaptiveIssuanceLaunchCycle will retrieve launch cycle null for http://parisnet.i.ecadinfra.com:8732/
+    ○ skipped Verify that rpcClient.getAdaptiveIssuanceLaunchCycle will retrieve launch cycle null for http://boreasnet.i.ecadinfra.com:8732/
 ```
 
 **Otherwise, you will see which endpoints do not work for a specific node:**

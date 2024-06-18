@@ -27,6 +27,6 @@ export type MavrykAccountAddress = `mv${"1" | "2" | "3"}${string}`;
 //   GHOSTNET = "basenet",
 //   WEEKLYNET = "weeklynet",
 //   ATLASNET = "atlasnet",
-//   PARISNET = "parisnet",
+//   BOREASNET = "boreasnet",
 //   CUSTOM = "custom"
 // }

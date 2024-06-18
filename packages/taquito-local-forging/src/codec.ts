@@ -33,7 +33,7 @@ import { Uint8ArrayConsumer } from './uint8array-consumer';
 import { pad, toHexString } from './utils';
 import { InvalidAddressError, InvalidContractAddressError } from '@mavrykdynamics/taquito-core';
 
-// https://tezos.gitlab.io/shell/p2p_api.html specifies data types and structure for forging
+// https://protocol.mavryk.org/shell/p2p_api.html specifies data types and structure for forging
 
 export const prefixEncoder = (prefix: Prefix) => (str: string) => {
   return buf2hex(Buffer.from(b58cdecode(str, prefixMap[prefix])));

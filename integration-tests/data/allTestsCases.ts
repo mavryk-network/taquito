@@ -49,7 +49,7 @@ interface TestCase {
   expected?: object;
 }
 
-export const parisCases: TestCase[] = [
+export const boreasCases: TestCase[] = [
   {
     name: 'Attestation With Dal operation',
     operation: {

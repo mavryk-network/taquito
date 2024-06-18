@@ -25,7 +25,7 @@ values={[
 |------------------|--------------|------------------------------------------|---------------------------------------------------------------------------------|
 | Mavryk Dynamics        | Mainnet     | https://mainnet.rpc.mavryk.network           | [Check](https://mainnet.rpc.mavryk.network/chains/main/blocks/head/header)          |
 | Mavryk Dynamics        | Basenet     | https://basenet.rpc.mavryk.network           | [Check](https://basenet.rpc.mavryk.network/chains/main/blocks/head/header)          |
-| Mavryk Dynamics        | Parisnet    | https://parisnet.rpc.mavryk.network          | [Check](https://parisnet.rpc.mavryk.network/chains/main/blocks/head/header)         |
+| Mavryk Dynamics        | Boreasnet    | https://boreasnet.rpc.mavryk.network          | [Check](https://boreasnet.rpc.mavryk.network/chains/main/blocks/head/header)         |
 
 *If you are aware of a public node missing from our list or our information is inaccurate, please help us by submitting an issue or pull request on our GitHub page.*
 </TabItem>
@@ -48,6 +48,6 @@ Running a node is a good way of contributing to Mavryk by increasing the decentr
 
 There are many ways to set up a node. Here are some links providing general instructions:
 
-- [Use docker images](https://tezos.gitlab.io/introduction/howtoget.html#docker-images)
-- [Build from sources](https://tezos.gitlab.io/introduction/howtoget.html#docker-images)
+- [Use docker images](https://protocol.mavryk.org/introduction/howtoget.html#docker-images)
+- [Build from sources](https://protocol.mavryk.org/introduction/howtoget.html#docker-images)
 - [Use Ansible Role](https://github.com/ecadlabs/ansible-role-tezos-node/blob/master/README.md)

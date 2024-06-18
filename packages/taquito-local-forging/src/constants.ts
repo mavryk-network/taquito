@@ -5,7 +5,7 @@
 
 import { pad } from './utils';
 
-// See: https://tezos.gitlab.io/protocols/005_babylon.html#transactions-now-have-an-entrypoint
+// See: https://protocol.mavryk.org/protocols/005_babylon.html#transactions-now-have-an-entrypoint
 export const ENTRYPOINT_MAX_LENGTH = 31;
 
 export enum CODEC {
@@ -63,7 +63,7 @@ export enum CODEC {
   SLOT_HEADER = 'slot_header',
 }
 
-// See https://tezos.gitlab.io/shell/p2p_api.html#alpha-michelson-v1-primitives-enumeration-unsigned-8-bit-integer
+// See https://protocol.mavryk.org/shell/p2p_api.html#alpha-michelson-v1-primitives-enumeration-unsigned-8-bit-integer
 export const opMapping: { [key: string]: string } = {
   '00': 'parameter',
   '01': 'storage',
@@ -233,7 +233,7 @@ export const opMappingReverse = (() => {
   return result;
 })();
 
-// See https://tezos.gitlab.io/shell/p2p_api.html
+// See https://protocol.mavryk.org/shell/p2p_api.html
 export const kindMapping: { [key: number]: string } = {
   0x04: 'activate_account',
   0x6b: 'reveal',
@@ -267,7 +267,7 @@ export const kindMappingReverse = (() => {
   return result;
 })();
 
-// See https://tezos.gitlab.io/protocols/005_babylon.html#transactions-now-have-an-entrypoint
+// See https://protocol.mavryk.org/protocols/005_babylon.html#transactions-now-have-an-entrypoint
 export const entrypointMapping: { [key: string]: string } = {
   '00': 'default',
   '01': 'root',

@@ -9,7 +9,7 @@ author: Davis Sawali
 ## Introduction
 Contract events is a way for contracts to deliver event-like information to third-party (off-chain) applications. It can be emitted by using the EMIT instruction in Michelson.
 
-For more details and examples of how the EMIT instruction works, refer to [this article](https://tezos.gitlab.io/active/event.html).
+For more details and examples of how the EMIT instruction works, refer to [this article](https://protocol.mavryk.org/active/event.html).
 
 ## Getting contract events in Taquito
 You can get the events in a contract through the `eventSchema` field of the `ContractAbstraction`.

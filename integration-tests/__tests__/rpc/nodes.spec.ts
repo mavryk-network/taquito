@@ -21,7 +21,7 @@ CONFIGS().forEach(
   }) => {
     const Mavryk = lib;
     const unrestrictedRPCNode = rpc.endsWith("ecadinfra.com") ? test.skip : test;
-    const parisAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtParisBQ) ? test : test.skip;
+    const boreasAndAlpha = ProtoGreaterOrEqual(protocol, Protocols.PtBoreas) ? test : test.skip;
 
     let ticketContract: DefaultContractType;
 
@@ -482,7 +482,7 @@ CONFIGS().forEach(
           expect(ticketBalances[0].amount).toBeDefined();
         });
 
-        parisAndAlpha(`Verify that rpcClient.getAdaptiveIssuanceLaunchCycle will retrieve launch cycle 6 for ${rpc}`, async () => {
+        boreasAndAlpha(`Verify that rpcClient.getAdaptiveIssuanceLaunchCycle will retrieve launch cycle 6 for ${rpc}`, async () => {
           const launchCycle = await rpcClient.getAdaptiveIssuanceLaunchCycle();
           expect(launchCycle).toEqual(6);
         })

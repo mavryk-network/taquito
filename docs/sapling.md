@@ -4,7 +4,7 @@ author: Roxane Letourneau
 ---
 
 Sapling is a protocol allowing private transactions in a decentralized environment.
-Sapling was introduced in Mavryk in the Edo protocol. Refer to the Mavryk documentation for more information on Sapling: https://tezos.gitlab.io/active/sapling.html
+Sapling was introduced in Mavryk in the Edo protocol. Refer to the Mavryk documentation for more information on Sapling: https://protocol.mavryk.org/active/sapling.html
 
 ## Keys
 

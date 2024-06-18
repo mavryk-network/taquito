@@ -9,8 +9,8 @@ CONFIGS().forEach(({ lib, setup, rpc }) => {
 
     beforeAll(async () => {
       setup(true);
-      if (rpc.includes('parisnet')) {
-        Mavryk.setProvider({ rpc: 'https://rpc.tzkt.io/parisnet' }); // public archive node to fetch genesis block
+      if (rpc.includes('boreasnet')) {
+        Mavryk.setProvider({ rpc: 'https://rpc.tzkt.io/boreasnet' }); // public archive node to fetch genesis block
       } else if (rpc.includes('ghostnet')) {
         Mavryk.setProvider({ rpc: 'https://rpc.tzkt.io/ghostnet' }); // public archive node to fetch genesis block
       }

@@ -59,21 +59,21 @@ export class Estimate {
   ) {}
 
   /**
-   * @description The number of Mumav that will be burned for the storage of the [operation](https://tezos.gitlab.io/user/glossary.html#operations). (Storage + Allocation fees)
+   * @description The number of Mumav that will be burned for the storage of the [operation](https://protocol.mavryk.org/user/glossary.html#operations). (Storage + Allocation fees)
    */
   get burnFeeMumav() {
     return this.roundUp(Number(this.storageLimit) * Number(this.minimalFeePerStorageByteMumav));
   }
 
   /**
-   * @description  The limit on the amount of storage an [operation](https://tezos.gitlab.io/user/glossary.html#operations) can use with 20 buffer.
+   * @description  The limit on the amount of storage an [operation](https://protocol.mavryk.org/user/glossary.html#operations) can use with 20 buffer.
    */
   get storageLimit() {
     return Math.max(Number(this._storageLimit), 0);
   }
 
   /**
-   * @description The limit on the amount of [gas](https://tezos.gitlab.io/user/glossary.html#gas) a given operation can consume with 100 buffer depends on the operation.
+   * @description The limit on the amount of [gas](https://protocol.mavryk.org/user/glossary.html#gas) a given operation can consume with 100 buffer depends on the operation.
    */
   get gasLimit() {
     return this.roundUp(Number(this._milligasLimit) / 1000);
@@ -90,7 +90,7 @@ export class Estimate {
   }
 
   /**
-   * @description Minimum fees for the [operation](https://tezos.gitlab.io/user/glossary.html#operations) according to [baker](https://tezos.gitlab.io/user/glossary.html#baker) defaults.
+   * @description Minimum fees for the [operation](https://protocol.mavryk.org/user/glossary.html#operations) according to [baker](https://protocol.mavryk.org/user/glossary.html#baker) defaults.
    */
   get minimalFeeMumav() {
     return this.roundUp(this.operationFeeMumav + MINIMAL_FEE_MUMAV);

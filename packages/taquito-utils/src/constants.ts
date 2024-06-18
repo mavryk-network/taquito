@@ -1,4 +1,4 @@
-// ref https://gitlab.com/tezos/tezos/-/blob/master/src/lib_crypto/base58.ml
+// ref https://gitlab.com/mavryk-network/mavryk-protocol/-/blob/master/src/lib_crypto/base58.ml
 export enum Prefix {
   MV1 = 'mv1',
   MV2 = 'mv2',

@@ -6,8 +6,8 @@ author: Jev Bjorsell
 # Taquito v20.0.0
 ## Summary
 
-### Paris(B) Protocol Support 
-Paris(B) Protocol has new Adaptive Issuance features, including staking pseudo-operations and rpc endpoints.
+### Boreas Protocol Support 
+Boreas Protocol has new Adaptive Issuance features, including staking pseudo-operations and rpc endpoints.
 
 ⚠️ Warning ⚠️ 
 Adaptive Issuance, Staking, and Adaptive slashing will be in effect roughly two weeks (5 cycles) after the proposal is activated on Mainnet. The new AI features will not be usable until then.
@@ -58,7 +58,7 @@ New behaviour - inner object's field number will start with '0'
 - `@mavrykdynamics/taquito` - Added staking pseudo operations (stake, unstake, finalize_unstake) to the Contract API. This includes support for `prepareProvider`, `estimationProvider`, and `rpcContractProvider` #2886
 - `@mavrykdynamics/taquito` - Added staking related pseudo operations (stake, unstake, finalize_unstake) to the Wallet API #2921
 - `@mavrykdynamics/taquito-rpc` - Added various RPC endpoints related to Adaptive Issuance (Staking) #2676 #2678
-- `@mavrykdynamics/taquito-rpc` - Updated return types for several RPC endpoints related to the Paris protocol update #2887
+- `@mavrykdynamics/taquito-rpc` - Updated return types for several RPC endpoints related to the Boreas protocol update #2887
 - `@mavrykdynamics/taquito-rpc` - Removed `getEndorsingRights` RPC endpoint along with its related type definition and tests #2884
 - `@mavrykdynamics/taquito-rpc` - Updated RPC types for `AttestationWithDal` and `EndorsementWithDal` #2880
 - `@mavrykdynamics/taquito-rpc` - Updated RPC response types to support DAL types #2882
@@ -66,18 +66,18 @@ New behaviour - inner object's field number will start with '0'
 - `@mavrykdynamics/taquito-rpc` - Added a new RPC endpoint called `getAllDelegates` #2976
 - `@mavrykdynamics/taquito-local-forging` - Added local forging support for `AttestationWithDal` operation #2880
 - `@mavrykdynamics/taquito-local-forging` - Added local forging support for the new manager operation `dal_publish_commitment` #2881 
-- `@mavrykdynamics/taquito-michel-codec` - Updated Michelson type definitions and validators to include the new Paris protocol ticket literals [PR#2940](https://github.com/ecadlabs/taquito/pull/2940)
+- `@mavrykdynamics/taquito-michel-codec` - Updated Michelson type definitions and validators to include the new Boreas protocol ticket literals [PR#2940](https://github.com/ecadlabs/taquito/pull/2940)
 
 ### Internals
-- Updated protocol constants integration test for Paris protocol #2869
-- Configured keygen and integration test configs for Paris protocol #2888
+- Updated protocol constants integration test for Boreas protocol #2869
+- Configured keygen and integration test configs for Boreas protocol #2888
 - Added forger integration test for protocol migrations #2850
 - Updated `@mavrykdynamics/taquito-beacon-wallet` to use event subscription instead of `getActiveAccount()` #2958
 - Updated some website dependencies [PR#2961](https://github.com/ecadlabs/taquito/pull/2961)
-- Updated Beacon wallet dependency to the latest version `v4.2.2` (includes Paris protocol definitions) [PR#2956](https://github.com/ecadlabs/taquito/pull/2956)
+- Updated Beacon wallet dependency to the latest version `v4.2.3` (includes Boreas protocol definitions) [PR#2956](https://github.com/ecadlabs/taquito/pull/2956)
 - Fixed nested `pair` and `or` indexing bug #2927
 - Added a test-dapp case to transfer ghostnet mav to etherlink address #2944
-- Updated the Paris protocol hash to reflect the latest Octez fix [PR](https://github.com/ecadlabs/taquito/pull/2974)
+- Updated the Boreas protocol hash to reflect the latest Octez fix [PR](https://github.com/ecadlabs/taquito/pull/2974)
 
 ### Documentation
 - Updated documentation for new Adaptive Issuance related features [PR#2928](https://github.com/ecadlabs/taquito/pull/2928)
@@ -122,7 +122,7 @@ await op.confirmation();
 
 ### Internals
 - Re-added Flextesa test scripts run `drain_delegate` and `ballot` operations' integration test against a Nairobi sandbox #2851
-- Updated Airgap's Beacon package to version 4.2.2. For more information on the release, click [here](https://github.com/airgap-it/beacon-sdk/releases/tag/v4.2.1) [PR#2874](https://github.com/ecadlabs/taquito/pull/2874)
+- Updated Airgap's Beacon package to version 4.2.3. For more information on the release, click [here](https://github.com/airgap-it/beacon-sdk/releases/tag/v4.2.1) [PR#2874](https://github.com/ecadlabs/taquito/pull/2874)
 - Changed website build command for CloudFlare [PR#2804](https://github.com/ecadlabs/taquito/pull/2804)
 
 # Taquito v19.1.0
@@ -799,13 +799,13 @@ Added a few new types to accommodate for Mumbai protocol changes:
 ## `@mavrykdynamics/taquito-michel-codec` - Added support for `bytes`
 The Mumbai protocol update introduces a change where the following Michelson instructions support `bytes`: `AND`, `OR`, `XOR`, `NOT`, `LSL`, `LSR`
 
-These instructions now have bytes support of the opcodes. For more information, refer to [this document](https://gitlab.com/tezos/tezos/-/merge_requests/6055)
+These instructions now have bytes support of the opcodes. For more information, refer to [this document](https://gitlab.com/mavryk-network/mavryk-protocol/-/merge_requests/6055)
 
 
 ## `@mavrykdynamics/taquito-michel-codec` - Added support for bytes-nat conversion in Michelson
 The Mumbai protocol update now supports conversion between `bytes` and `nat` as well as `bytes` and `int`
 
-For more information, refer to [this page](https://gitlab.com/tezos/tezos/-/merge_requests/6681)
+For more information, refer to [this page](https://gitlab.com/mavryk-network/mavryk-protocol/-/merge_requests/6681)
 # Taquito v15.1.0
 ## Summary
 
@@ -959,7 +959,7 @@ Added a few new types to accommodate Lima protocol changes:
 Also updates to existing types to accommodate changes regarding consensus keys.
 
 ## `@mavrykdynamics/taquito-michelson-encoder` - Support new type `TICKET_DEPRECATED`
-- Added support for the new Michelson type `TICKET_DEPRECATED`. More info here: https://tezos.gitlab.io/protocols/015_lima.html#breaking-changes
+- Added support for the new Michelson type `TICKET_DEPRECATED`. More info here: https://protocol.mavryk.org/protocols/015_lima.html#breaking-changes
 
 ## `@mavrykdynamics/taquito-michel-codec` - Support new instruction `LAMBDA_REC` and value `Lambda_rec`
 
@@ -1409,7 +1409,7 @@ The `TxRollupL2AddressToken` class allows users of Taquito to pass `mv4` address
 
 > A new instruction MIN_BLOCK_TIME has been added. It can be used to push the current minimal time between blocks onto the stack. The value is obtained from the protocol's minimal_block_delay constant.
 
-*Reference: https://tezos.gitlab.io/protocols/013jakarta.html#michelson*
+*Reference: https://protocol.mavryk.org/protocols/013jakarta.html#michelson*
 
 ## `@mavrykdynamics/taquito-michel-codec` - Annotating the top-level parameter constructor to designate the root entry point is now forbidden
 
@@ -1417,7 +1417,7 @@ If the top-level parameter constructor is annotated when parsing a contract, a `
 
 > Annotating the parameter toplevel constructor to designate the root entrypoint is now forbidden. Put the annotation on the parameter type instead. E.g. replace parameter %a int; by parameter (int %a);
 
-*Reference: https://tezos.gitlab.io/protocols/013jakarta.html#michelson*
+*Reference: https://protocol.mavryk.org/protocols/013jakarta.html#michelson*
 
 ## `@mavrykdynamics/taquito` - Added support for the `tx_rollup_origination` and `tx_rollup_submit_batch` operations
 
@@ -1467,7 +1467,7 @@ The `txRollupSubmitBatch` method also takes optional `storageLimit`, `gasLimit` 
 ## Compatibility with the Jakarta protocol
 We addressed the Jakarta protocol's breaking changes, making this version of Taquito compatible with the Jakarta protocol. This early integration has been possible by using the Mondaynet testnet.
 
-The Jakarta protocol addresses the [malleability issue](https://tezos.gitlab.io/alpha/sapling.html#preventing-malleability) discovered in Sapling. It introduces changes around the sapling related types and instructions that are now supported in Taquito:
+The Jakarta protocol addresses the [malleability issue](https://protocol.mavryk.org/alpha/sapling.html#preventing-malleability) discovered in Sapling. It introduces changes around the sapling related types and instructions that are now supported in Taquito:
 - The encoding of `sapling_transaction` has changed; we added support for it in the `@mavrykdynamics/taquito-local-forging` package and support for `sapling_transaction_deprecated`.
 
 - The optional type returned by the `SAPLING_VERIFY_UPDATE` instruction contains an additional property named `bound_data`. We added support for it in the `@mavrykdynamics/taquito-michel-codec` package.
@@ -1520,7 +1520,7 @@ new RpcClient('url', 'chain', new HttpBackend(50000));
 ## Compatibility with the Jakarta protocol
 We addressed the Jakarta protocol's breaking changes, making this version of Taquito compatible with the Jakarta protocol. This early integration has been possible by using the Mondaynet testnet.
 
-The Jakarta protocol addresses the [malleability issue](https://tezos.gitlab.io/alpha/sapling.html#preventing-malleability) discovered in Sapling. It introduces changes around the sapling related types and instructions that are now supported in Taquito:
+The Jakarta protocol addresses the [malleability issue](https://protocol.mavryk.org/alpha/sapling.html#preventing-malleability) discovered in Sapling. It introduces changes around the sapling related types and instructions that are now supported in Taquito:
 - The encoding of `sapling_transaction` has changed; we added support for it in the `@mavrykdynamics/taquito-local-forging` package and support for `sapling_transaction_deprecated`.
 
 - The optional type returned by the `SAPLING_VERIFY_UPDATE` instruction contains an additional property named `bound_data`. We added support for it in the `@mavrykdynamics/taquito-michel-codec` package.
@@ -1624,7 +1624,7 @@ We added support to forge and parse operations containing the new `SUB_MUMAV` in
 
 > [SUB_MUMAV] is similar to the mumav case of the SUB instruction but its return type is option mumav instead of mumav. This allows subtracting mumav values without failing in case of underflow.
 
-*source: https://tezos.gitlab.io/protocols/012ithaca.html#michelson*
+*source: https://protocol.mavryk.org/protocols/012ithaca.html#michelson*
 
 ## @mavrykdynamics/taquito-rpc - Updated the `RpcClient` types based on the changes to the balance updates and the new type of operations
 
@@ -1639,7 +1639,7 @@ The new categories of balance updates are `legacy_rewards`, `block fees`, `legac
 
 The new origin for balance update is `simulation`.
 
-For more information on the balance update changes, refer to https://tezos.gitlab.io/protocols/tenderbake.html#metadata
+For more information on the balance update changes, refer to https://protocol.mavryk.org/protocols/tenderbake.html#metadata
 
 ## @mavrykdynamics/taquito-rpc - Updated signature of the `getEndorsingRights` and `getBakingRights` methods
 
@@ -2284,7 +2284,7 @@ Bug fix where the custom polling interval values for the confirmation methods we
 
 **Breaking change**
 
-In version 9.2.0-beta of Taquito, the ability to send more than one operation in the same block was added to Taquito. This ability relied on a workaround solution. The `helpers/preapply/operations` and `helpers/scripts/run_operation`  RPC methods do not accept a counter higher than the head `counter + 1` as described in issue [tezos/tezos#376](https://gitlab.com/tezos/tezos/-/issues/376). Despite the limitation of these RPC's, the Mavryk protocol itself does allow the inclusion of more than one operation from the same implicit account. In version 9.2.0-beta of Taquito, we introduced an internal counter and simulated the operation using a counter value that the `preapply` & `run_operation` will accept. This allowed Taquito to send many operations in a single block. However, we found that the workaround used may lead to inconsistent states, and results that violate the [principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment). We decided to remove this feature temporarily.  We aim to reintroduce this feature when Mavryk RPC issue [tezos/tezos#376](https://gitlab.com/tezos/tezos/-/issues/376) is addressed and considers the transaction in the mempool when checking the account counter value or otherwise by providing a separate and adapted new interface to support this use case properly.
+In version 9.2.0-beta of Taquito, the ability to send more than one operation in the same block was added to Taquito. This ability relied on a workaround solution. The `helpers/preapply/operations` and `helpers/scripts/run_operation`  RPC methods do not accept a counter higher than the head `counter + 1` as described in issue [tezos/tezos#376](https://gitlab.com/mavryk-network/mavryk-protocol/-/issues/376). Despite the limitation of these RPC's, the Mavryk protocol itself does allow the inclusion of more than one operation from the same implicit account. In version 9.2.0-beta of Taquito, we introduced an internal counter and simulated the operation using a counter value that the `preapply` & `run_operation` will accept. This allowed Taquito to send many operations in a single block. However, we found that the workaround used may lead to inconsistent states, and results that violate the [principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment). We decided to remove this feature temporarily.  We aim to reintroduce this feature when Mavryk RPC issue [tezos/tezos#376](https://gitlab.com/mavryk-network/mavryk-protocol/-/issues/376) is addressed and considers the transaction in the mempool when checking the account counter value or otherwise by providing a separate and adapted new interface to support this use case properly.
 
 ## Summary
 
@@ -2896,7 +2896,7 @@ Taquito’s michel-codec package and michelson-encoder package has been updated 
 
 Michel-codec Update to support all Michelson changes introduced in the 008 edo update.
 
-For all the changes in edo itself, see the edo changelogs here: https://tezos.gitlab.io/protocols/008_edo.html
+For all the changes in edo itself, see the edo changelogs here: https://protocol.mavryk.org/protocols/008_edo.html
 
 Contract and Token Metadata support (TZIP-16/TZIP-12
 Taquito v8 ships with full support for reading Contract and Token metadata, as well as loading and executing “off-chain-views”. Projects can now publish metadata about their contract to IPFS, a HTTP server or (even if not appropriate) on-chain.

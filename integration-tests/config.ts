@@ -7,7 +7,7 @@ import { RpcClient, RpcClientCache } from '@mavrykdynamics/taquito-rpc';
 import { KnownContracts } from './known-contracts';
 import { knownContractsProtoALph } from './known-contracts-ProtoALph';
 import { knownContractsPtBasenet } from './known-contracts-PtBasenet';
-import { knownContractsPtParisBQ } from './known-contracts-PtParisBQ';
+import { knownContractsPtBoreas } from './known-contracts-PtBoreas';
 import { knownContractsPtAtLas } from './known-contracts-PtAtLas';
 
 const nodeCrypto = require('crypto');
@@ -32,7 +32,7 @@ const forgers: ForgerType[] = [ForgerType.COMPOSITE];
 
 // user running integration test can pass environment variable MAVRYK_NETWORK_TYPE=sandbox to specify which network to run against
 export enum NetworkType {
-  TESTNET,  // corresponds basenet, parisnet and weeklynet etc.
+  TESTNET,  // corresponds basenet, boreasnet and weeklynet etc.
   SANDBOX,  // corresponds to flexmasa local chain
 }
 
@@ -129,17 +129,17 @@ const defaultConfig = ({
   }
 }
 
-const parisnetEphemeral: Config =
+const boreasnetEphemeral: Config =
   defaultConfig({
-    networkName: 'PARISNET',
-    protocol: Protocols.PtParisBQ,
-    defaultRpc: 'http://parisnet.i.ecadinfra.com:8732/',
-    knownContracts: knownContractsPtParisBQ,
-    signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/parisnet')
+    networkName: 'BOREASNET',
+    protocol: Protocols.PtBoreas,
+    defaultRpc: 'http://boreasnet.i.ecadinfra.com:8732/',
+    knownContracts: knownContractsPtBoreas,
+    signerConfig: defaultEphemeralConfig('https://keygen.ecadinfra.com/boreasnet')
   });
 
-const parisnetSecretKey: Config =
-  { ...parisnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'http://parisnet.i.ecadinfra.com:8732/' } };
+const boreasnetSecretKey: Config =
+  { ...boreasnetEphemeral, ...{ signerConfig: defaultSecretKey }, ...{ defaultRpc: 'http://boreasnet.i.ecadinfra.com:8732/' } };
 
 const atlasnetSecretKey: Config =
   defaultConfig({
@@ -177,23 +177,23 @@ const weeklynetSecretKey: Config =
 const providers: Config[] = [];
 
 if (process.env['RUN_WITH_SECRET_KEY']) {
-  providers.push(parisnetSecretKey);
-} else if (process.env['RUN_PARISNET_WITH_SECRET_KEY']) {
-  providers.push(parisnetSecretKey);
+  providers.push(boreasnetSecretKey);
+} else if (process.env['RUN_BOREASNET_WITH_SECRET_KEY']) {
+  providers.push(boreasnetSecretKey);
 } else if (process.env['RUN_BASENET_WITH_SECRET_KEY']) {
   providers.push(basenetSecretKey);
 } else if (process.env['RUN_ATLASNET_WITH_SECRET_KEY']) {
   providers.push(atlasnetSecretKey);
 } else if (process.env['RUN_WEEKLYNET_WITH_SECRET_KEY']) {
   providers.push(weeklynetSecretKey);
-} else if (process.env['PARISNET']) {
-  providers.push(parisnetEphemeral);
+} else if (process.env['BOREASNET']) {
+  providers.push(boreasnetEphemeral);
 } else if (process.env['BASENET']) {
   providers.push(basenetEphemeral);
 } else if (process.env['WEEKLYNET']) {
   providers.push(weeklynetEphemeral);
 } else {
-  providers.push(parisnetEphemeral);
+  providers.push(boreasnetEphemeral);
 }
 
 const setupForger = (Mavryk: MavrykToolkit, forger: ForgerType): void => {
