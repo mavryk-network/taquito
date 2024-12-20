@@ -51,6 +51,7 @@ export const COST_PER_BYTE = 250;
 
 export enum Protocols {
   PtAtLas = 'PtAtLasomUEW99aVhVTrqjCHjJSpFUa8uHNEAEamx9v2SNeTaNp',
+  PtBoreas = 'Ps8tUpcuzKw4cTeFT2wJXNCLa9pxkBUWZFDAvb9CXmnAuRE4bzF',
   ProtoALpha = 'ProtoALphaALphaALphaALphaALphaALphaALphaALphaDdp3zK',
 }
 
@@ -62,6 +63,7 @@ export const protocols = {
 export enum ChainIds {
   MAINNET = 'NetXdQprcVkpaWU',
   ATLASNET = 'NetXvyTAafh8goH',
+  BOREASNET = 'NetXo8SqH1c38SS',
 }
 
 // A fixed fee reveal operation gasLimit accepted by both simulate and injection endpoint is between 1.2-5 times of actual gas consumption (3.5 fails occasionally with gas exhausted; 4 fails occasionally with fee too low)
